@@ -125,103 +125,36 @@ _Sample CONTRACT_TYPE:_
 The PARAMETER node defines a contract parameter - what needs to be accomplished to successfully complete the contract.
 
 The following parameters are natively supported by ContractConfigurator:
+* [[Vessel Parameters|Configuration-File-Syntax#vessel-parameters]]
+ * [[ReachAltitudeEnvelope|Configuration-File-Syntax#reachaltitudeenvelope]]
+ * [[ReachSpeedEnvelope|Configuration-File-Syntax#reachspeedenvelope]]
+ * [[ReachBiome|Configuration-File-Syntax#reachbiome]]
+ * [[ReachDestination|Configuration-File-Syntax#reachdestination]]
+ * [[ReachSitutation|Configuration-File-Syntax#reachsitutation]]
+* [[Kerbal Parameters|Configuration-File-Syntax#kerbal-parameters]]
+ * [[BoardAnyVessel|Configuration-File-Syntax#boardanyvessel]]
+ * [[RecoverKerkbal|Configuration-File-Syntax#recoverkerkbal]]
+* [[Progression Parameters|Configuration-File-Syntax#progression-parameters]]
+ * [[LaunchVessel|Configuration-File-Syntax#launchvessel]]
+ * [[AltitudeRecord|Configuration-File-Syntax#altituderecord]]
+ * [[ReachSpace|Configuration-File-Syntax#reachspace]]
+ * [[EnterOrbit|Configuration-File-Syntax#enterorbit]]
+ * [[EnterSOI|Configuration-File-Syntax#entersoi]]
+ * [[LandOnBody|Configuration-File-Syntax#landonbody]]
+* [[Negative Parameters|Configuration-File-Syntax#negative-parameters]]
+ * [[KerbalDeaths|Configuration-File-Syntax#kerbaldeaths]]
+* [[Set Parameters|Configuration-File-Syntax#set-parameters]]
+ * [[Any|Configuration-File-Syntax#any]]
+ * [[All|Configuration-File-Syntax#all]]
+* [[Miscellaneous Parameters|Configuration-File-Syntax#miscellaneous-parameters]]
+ * [[CollectScience|Configuration-File-Syntax#collectscience]]
+ * [[PlantFlag|Configuration-File-Syntax#plantflag]]
+ * [[PartTest|Configuration-File-Syntax#parttest]]
 
-### AltitudeRecord
-The AltituteRecord parameter is met when a craft reaches the given altitude on Kerbin.
+### Vessel Parameters
+These are parameters that operator on vessels (manned or unmanned).
 
-    PARAMETER
-    {
-        name = AltitudeRecord1
-        type = AltitudeRecord
-        altitude = 55000
-    }
-
-### CollectScience
-The CollectScience parameter is met when science is sent home from the given location and celestial body.
-
-    PARAMETER
-    {
-        name = CollectScience1
-        type = CollectScience
-
-        // This can be inherited from the the contract type if necessary
-        targetBody = Duna
-
-        // Valid values are "Surface" and "Space"
-        location = Space
-    }
-
-### EnterOrbit
-The EnterOrbit parameter is met when a craft enters an orbit of the given celestial body.
-
-    PARAMETER
-    {
-        name = EnterOrbit1
-        type = EnterOrbit
-
-        // This can be inherited from the the contract type if necessary
-        targetBody = Duna
-    }
-
-### EnterSOI
-The EnterSOI parameter is met when a craft enters the sphere of influence of the given celestial body.
-
-    PARAMETER
-    {
-        name = EnterSOI1
-        type = EnterSOI
-
-        // This can be inherited from the the contract type if necessary
-        targetBody = Duna
-    }
-
-### KerbalDeaths
-The KerbalDeaths parameter _fails_ if more Kerbals than the countMax die.
-
-    PARAMETER
-    {
-        name = KerbalDeaths1 
-        type = KerbalDeaths
-
-        // Maximum Number of Kerbals that can die before this contract is considered failed
-        // Default = 0
-        countMax = 1
-    }
-
-### LandOnBody
-The LandOnBody parameter is met when a craft lands on the given celestial body.
-
-    PARAMETER
-    {
-        name = LandOnBody1
-        type = LandOnBody
-
-        // This can be inherited from the the contract type if necessary
-        targetBody = Duna
-    }
-
-### LaunchVessel
-To meet this parameter, the player simply needs to launch a vessel.
-
-    PARAMETER
-    {
-        name = LaunchVessel1
-        type = LaunchVessel
-    }
-
-### PlantFlag
-The PlantFlag parameter is met when planting a flag on the given body.
-
-    PARAMETER
-    {
-        name = PlantFlag1
-        type = PlantFlag
-
-        // This can be inherited from the the contract type if necessary
-        targetBody = Duna
-    }
-
-### ReachAltitudeEnvelope
+#### ReachAltitudeEnvelope
 Get to a specific altitude envelope.  Note that this is not tied to a specific celestial body - to do that you need to use multiple parameters together (and set the disableOnStateChange flag to false).
 
     PARAMETER
@@ -235,10 +168,10 @@ Get to a specific altitude envelope.  Note that this is not tied to a specific c
 
         // Text to use for the parameter
         // Default = Altitude: Between <minAltitude> and <maxAltitude> meters
-        //title = 
+        //title =
     }
 
-### ReachSpeedEnvelope
+#### ReachSpeedEnvelope
 Get to a specific speed envelope.  Note that this is not tied to a specific celestial body - to do that you need to use multiple parameters together (and set the disableOnStateChange flag to false).
 
     PARAMETER
@@ -252,10 +185,10 @@ Get to a specific speed envelope.  Note that this is not tied to a specific cele
 
         // Text to use for the parameter
         // Default = Speed: Between <minSpeed> and <maxSpeed> m/s
-        //title = 
+        //title =
     }
 
-### ReachBiome
+#### ReachBiome
 Reach a specific Biome.
 *NOTE - I can't seem to get this one working!  If someone does get this to work for them, let me know.*
 
@@ -269,10 +202,10 @@ Reach a specific Biome.
 
         // Text for the contract parameter.  Note that the biome name is always appended.
         // Default = Biome: <biome>
-        title = Relax on Kerbin's 
+        title = Relax on Kerbin's
     }
 
-### ReachDestination
+#### ReachDestination
 Reach a specific celestial object.
 
     PARAMETER
@@ -286,10 +219,10 @@ Reach a specific celestial object.
         // Text for the contract parameter.  The name of the target body is always appended to this
         // text (blame Squad!).
         // Default = Destination: <targetBody>
-        //title = 
+        //title =
     }
 
-### ReachSitutation
+#### ReachSitutation
 Reach a specific situation.
 
     PARAMETER
@@ -311,19 +244,13 @@ Reach a specific situation.
         // Text for the contract parameter.  The name of the situation is always appended to this
         // text.
         // Default = Situation: <situation>
-        //title = 
+        //title =
     }
 
-### ReachSpace
-Go to space.
+### Kerbal Parameters
+These are parameters that operate on Kerbals.
 
-    PARAMETER
-    {
-        name = ReachSpace1
-        type = ReachSpace
-    }
-
-### BoardAnyVessel
+#### BoardAnyVessel
 The BoardAnyVessel parameter is met when the named Kerbal boards a vessel (this one is from the Squad "rescue" contracts and is a little bit less useful on its own.
 
     PARAMETER
@@ -336,10 +263,10 @@ The BoardAnyVessel parameter is met when the named Kerbal boards a vessel (this 
 
         // Text to use for the parameter
         // Default = <kerbal>: Board a vessel
-        //title = 
+        //title =
     }
 
-### RecoverKerkbal
+#### RecoverKerkbal
 The RecoverKerbal parameter is met when the named Kerbal is "recovered" (ie. goes back in to the available list at the astronaut complex).  This is from the Squad "rescue" contracts.
 
     PARAMETER
@@ -352,42 +279,113 @@ The RecoverKerbal parameter is met when the named Kerbal is "recovered" (ie. goe
 
         // Text to use for the parameter
         // Default = <kerbal>: Recovered
-        //title = 
+        //title =
     }
 
-### PartTest
-PartTest is for testing parts (or just activating them, for staged parts).  This parameter supports child parameters - you will only be able to complete the part test if all child parameters are also completed.
+### Progression Parameters
+Although not tied directly to the acheivement/progression system, these are paramters that are typically used for progression type rewards (do something for the first time).
+
+#### LaunchVessel
+To meet this parameter, the player simply needs to launch a vessel.
 
     PARAMETER
     {
-        name = PartTest1
-        type = PartTest
-
-        // The Kerbal to be recovered
-        part = SmallGearBay
-
-        // Additional notes to display (in the Squad PartTest contract, this is where they say
-        // "Activate through the staging system", etc.
-        // Optional
-        notes = Test this part anywhere, no other requirements!
+        name = LaunchVessel1
+        type = LaunchVessel
     }
 
-### Any
-The Any parameter doesn't provide anything on its own.  It will be completed if any one of its child parameters are completed.
+#### AltitudeRecord
+The AltituteRecord parameter is met when a craft reaches the given altitude on Kerbin.
+
+    PARAMETER
+    {
+        name = AltitudeRecord1
+        type = AltitudeRecord
+        altitude = 55000
+    }
+
+#### ReachSpace
+Go to space.
+
+    PARAMETER
+    {
+        name = ReachSpace1
+        type = ReachSpace
+    }
+
+#### EnterOrbit
+The EnterOrbit parameter is met when a craft enters an orbit of the given celestial body.
+
+    PARAMETER
+    {
+        name = EnterOrbit1
+        type = EnterOrbit
+
+        // This can be inherited from the the contract type if necessary
+        targetBody = Duna
+    }
+
+#### EnterSOI
+The EnterSOI parameter is met when a craft enters the sphere of influence of the given celestial body.
+
+    PARAMETER
+    {
+        name = EnterSOI1
+        type = EnterSOI
+
+        // This can be inherited from the the contract type if necessary
+        targetBody = Duna
+    }
+
+#### LandOnBody
+The LandOnBody parameter is met when a craft lands on the given celestial body.
+
+    PARAMETER
+    {
+        name = LandOnBody1
+        type = LandOnBody
+
+        // This can be inherited from the the contract type if necessary
+        targetBody = Duna
+    }
+
+### Negative Parameters
+These parameters are ones that give a failure condition to a contract.  Note that when the contract fails, the player can't re-attempt it (unless it's set up to be offered again after failure).
+
+#### KerbalDeaths
+The KerbalDeaths parameter _fails_ if more Kerbals than the countMax die.
+
+    PARAMETER
+    {
+        name = KerbalDeaths1
+        type = KerbalDeaths
+
+        // Maximum Number of Kerbals that can die before this contract is considered failed
+        // Default = 0
+        countMax = 1
+    }
+
+### Set Parameters
+Set parameters are special - they do not typically do anything on their own, but work with their child parameters.  Many of them are best used with disableOnStateChange = false on the child parameters.
+
+#### Any
+The Any parameter is be completed if any one of its child parameters are completed.
 
     PARAMETER
     {
         name = Any1
         type = Any
 
-        // The text to display.  Highly recommended that you do not use the default - when the
-        // parameter is complete the text of the children disappears (and the default text doesn't
-        // give the player a very good idea what the parameter was about).
+        // The text to display.  Highly recommended that you do not use the default -
+        // when the parameter is complete the text of the children disappears (and
+        // the default text doesn't give the player a very good idea what the
+        // parameter was about).
         //
         // Default - Complete any ONE of the following
         title = Do this or that
 
-        // Child parameters look just like a regular parameter (and can be infinitely nested)
+        // Child parameters look just like a regular parameter (and can be infinitely
+        // nested)
         PARAMETER
         {
             name = ReachSpace1
@@ -404,8 +402,8 @@ The Any parameter doesn't provide anything on its own.  It will be completed if 
         }
     }
 
-### All
-The All parameter doesn't provide anything on its own.  It is completed once all its child parameters are completed.  Use it with disableOnStateChange = false to build conditions similar to those in the Squad part test contracts.
+#### All
+The All parameter is completed once all its child parameters are completed.
 
     PARAMETER
     {
@@ -443,3 +441,51 @@ The All parameter doesn't provide anything on its own.  It is completed once all
         }
     }
 }
+
+### Miscellaneous Parameters
+
+Other parameters that didn't fit in elsewhere.
+
+#### CollectScience
+The CollectScience parameter is met when science is sent home from the given location and celestial body.
+
+    PARAMETER
+    {
+        name = CollectScience1
+        type = CollectScience
+
+        // This can be inherited from the the contract type if necessary
+        targetBody = Duna
+
+        // Valid values are "Surface" and "Space"
+        location = Space
+    }
+
+#### PlantFlag
+The PlantFlag parameter is met when planting a flag on the given body.
+
+    PARAMETER
+    {
+        name = PlantFlag1
+        type = PlantFlag
+
+        // This can be inherited from the the contract type if necessary
+        targetBody = Duna
+    }
+
+#### PartTest
+PartTest is for testing parts (or just activating them, for staged parts).  This parameter supports child parameters - you will only be able to complete the part test if all child parameters are also completed.
+
+    PARAMETER
+    {
+        name = PartTest1
+        type = PartTest
+
+        // The Kerbal to be recovered
+        part = SmallGearBay
+
+        // Additional notes to display (in the Squad PartTest contract, this is where they say
+        // "Activate through the staging system", etc.
+        // Optional
+        notes = Test this part anywhere, no other requirements!
+    }
