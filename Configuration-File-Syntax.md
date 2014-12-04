@@ -125,6 +125,7 @@ _Sample CONTRACT_TYPE:_
 The PARAMETER node defines a contract parameter - what needs to be accomplished to successfully complete the contract.
 
 The following parameters are natively supported by ContractConfigurator:
+
 * [[Vessel Parameters|Configuration-File-Syntax#vessel-parameters]]
  * [[ReachAltitudeEnvelope|Configuration-File-Syntax#reachaltitudeenvelope]]
  * [[ReachSpeedEnvelope|Configuration-File-Syntax#reachspeedenvelope]]
@@ -200,7 +201,9 @@ Reach a specific Biome.
         // The name of the biome to reach.
         biome = Shores
 
-        // Text for the contract parameter.  Note that the biome name is always appended.
+        // Text for the contract parameter.  Note that the biome name is always
+        // appended.
+        //
         // Default = Biome: <biome>
         title = Relax on Kerbin's
     }
@@ -216,8 +219,8 @@ Reach a specific celestial object.
         // This can be inherited from the the contract type if necessary
         targetBody = Duna
 
-        // Text for the contract parameter.  The name of the target body is always appended to this
-        // text (blame Squad!).
+        // Text for the contract parameter.  The name of the target body is always
+        // appended to this text (blame Squad!).
         // Default = Destination: <targetBody>
         //title =
     }
@@ -241,8 +244,8 @@ Reach a specific situation.
         //    SUB_ORBITAL
         situation = FLYING
 
-        // Text for the contract parameter.  The name of the situation is always appended to this
-        // text.
+        // Text for the contract parameter.  The name of the situation is always
+        // appended to this text.
         // Default = Situation: <situation>
         //title =
     }
@@ -360,7 +363,9 @@ The KerbalDeaths parameter _fails_ if more Kerbals than the countMax die.
         name = KerbalDeaths1
         type = KerbalDeaths
 
-        // Maximum Number of Kerbals that can die before this contract is considered failed
+        // Maximum Number of Kerbals that can die before this contract is considered
+        // failed.
+        //
         // Default = 0
         countMax = 1
     }
@@ -410,9 +415,10 @@ The All parameter is completed once all its child parameters are completed.
         name = All1
         type = All
 
-        // The text to display.  Highly recommended that you do not use the default - when the
-        // parameter is complete the text of the children disappears (and the default text doesn't
-        // give the player a very good idea what the parameter was about).
+        // The text to display.  Highly recommended that you do not use the default -
+        // when the parameter is complete the text of the children disappears (and
+        // the default text doesn't give the player a very good idea what the
+        // parameter was about).
         //
         // Default - Complete ALL of the following
         title = Do these things
