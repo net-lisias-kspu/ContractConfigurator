@@ -92,7 +92,6 @@ Get to a specific speed envelope.  Note that this is not tied to a specific cele
 
 #### ReachBiome
 Reach a specific Biome.
-*NOTE - I can't seem to get this one working!  If someone does get this to work for them, let me know.*
 
     PARAMETER
     {
@@ -102,11 +101,9 @@ Reach a specific Biome.
         // The name of the biome to reach.
         biome = Shores
 
-        // Text for the contract parameter.  Note that the biome name is always
-        // appended.
-        //
+        // Text for the contract parameter.
         // Default = Biome: <biome>
-        title = Relax on Kerbin's
+        title = Relax on Kerbin's Shores
     }
 
 #### ReachDestination
@@ -120,8 +117,7 @@ Reach a specific celestial object.
         // This can be inherited from the the contract type if necessary
         targetBody = Duna
 
-        // Text for the contract parameter.  The name of the target body is always
-        // appended to this text (blame Squad!).
+        // Text for the contract parameter.
         // Default = Destination: <targetBody>
         //title =
     }
@@ -145,8 +141,7 @@ Reach a specific situation.
         //    SUB_ORBITAL
         situation = FLYING
 
-        // Text for the contract parameter.  The name of the situation is always
-        // appended to this text.
+        // Text for the contract parameter.
         // Default = Situation: <situation>
         //title =
     }
