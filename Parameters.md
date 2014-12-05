@@ -12,6 +12,7 @@ The following parameters are natively supported by ContractConfigurator:
  * [[ReachBiome|Parameters#reachbiome]]
  * [[ReachDestination|Parameters#reachdestination]]
  * [[ReachSitutation|Parameters#reachsitutation]]
+ * [[ReturnFrom|Parameters#returnfrom]]
 * [[Kerbal Parameters|Parameters#kerbal-parameters]]
  * [[BoardAnyVessel|Parameters#boardanyvessel]]
  * [[RecoverKerkbal|Parameters#recoverkerkbal]]
@@ -194,6 +195,32 @@ Reach a specific situation.
         // Text for the contract parameter.
         // Default = Situation: <situation>
         //title =
+    }
+
+#### ReturnFrom
+The ReturnFrom parameter requires a player to go to a celestial body and return safely.
+
+    // Return from a place and situation
+    PARAMETER
+    {
+        name = ReturnFrom1
+        type = ReturnFrom
+
+        // The target to return from.  If not specified will defaulted from the
+        // Contract.
+        targetBody = Mun
+
+        // The situation.  Valid values from KSPAchievements.ReturnFrom
+        //    Flight
+        //    FlyBy
+        //    Orbit
+        //    SubOrbit
+        //    Surface
+        situation = Surface
+
+        // Text for the contract parameter.
+        // Default = Return from <situation> on <targetBody>.
+        //title = 
     }
 
 ### Kerbal Parameters
