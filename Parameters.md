@@ -301,7 +301,8 @@ The All parameter is completed once all its child parameters are completed.
         // Default - Complete ALL of the following
         title = Do these things
 
-        // Child parameters look just like a regular parameter (and can be infinitely nested)
+        // Child parameters look just like a regular parameter (and can be infinitely
+        // nested)
         PARAMETER
         {
             name = ReachAltitudeEnvelope1
@@ -368,8 +369,8 @@ PartTest is for testing parts (or just activating them, for staged parts).  This
         // The Kerbal to be recovered
         part = SmallGearBay
 
-        // Additional notes to display (in the Squad PartTest contract, this is where they say
-        // "Activate through the staging system", etc.
+        // Additional notes to display (in the Squad PartTest contract, this is where
+        // they say "Activate through the staging system", etc.
         // Optional
         notes = Test this part anywhere, no other requirements!
     }
