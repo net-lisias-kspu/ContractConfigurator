@@ -5,6 +5,7 @@ The PARAMETER node defines a contract parameter - what needs to be accomplished 
 The following parameters are natively supported by ContractConfigurator:
 
 * [[Vessel Parameters|Parameters#vessel-parameters]]
+ * [[VesselParameterGroup|Parameters#vesselparametergroup]]
  * [[HasCrew|Parameters#hascrew]]
  * [[ReachAltitudeEnvelope|Parameters#reachaltitudeenvelope]]
  * [[ReachSpeedEnvelope|Parameters#reachspeedenvelope]]
@@ -33,6 +34,54 @@ The following parameters are natively supported by ContractConfigurator:
 
 ### Vessel Parameters
 These are parameters that operator on vessels (manned or unmanned).
+
+#### VesselParameterGroup
+**_NEW!_** The VesselParameterGroup is used to group several vessel parameters together.  It can be used to specify a duration for which the parameters must be true, and will track across non-active vessels.
+
+    PARAMETER
+    {
+        name = VesselParameterGroup1
+        type = VesselParameterGroup
+
+        // The title text to display.
+        // Default - Vessel: Any; Duration: <duration>
+        // Note in future this will be expanded to support setting the parameters to be for a
+        // specific vessel
+        //title = 
+
+        // The duration that the conditions must be satisfied for.  Can specify values in
+        // years (y), days (d), hours (h), minutes (m), seconds (s) or any combination of those.
+        duration = 10d 2h
+
+        // Examples of typical child parameters used with VesselParameterGroup
+        PARAMETER
+        {
+            name = ReachSituation1
+            type = ReachSituation
+
+            disableOnStateChange = false
+
+            situation = ORBITING
+        }
+
+        PARAMETER
+        {
+            name = ReachDestination1
+            type = ReachDestination
+
+            disableOnStateChange = false
+
+            targetBody = Kerbin
+        }
+
+        PARAMETER
+        {
+            name = HasCrew1
+            type = HasCrew
+
+            disableOnStateChange = false
+        }
+    }
 
 #### HasCrew
 **_NEW!_** Parameter to indicate that the Vessel in question must have a certain number of crew members (or must have fewer than a certain number.
