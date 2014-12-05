@@ -45,12 +45,13 @@ These are parameters that operator on vessels (manned or unmanned).
 
         // The title text to display.
         // Default - Vessel: Any; Duration: <duration>
-        // Note in future this will be expanded to support setting the parameters to be for a
-        // specific vessel
+        // Note in future this will be expanded to support setting the parameters to be
+        // for a specific vessel
         //title = 
 
-        // The duration that the conditions must be satisfied for.  Can specify values in
-        // years (y), days (d), hours (h), minutes (m), seconds (s) or any combination of those.
+        // The duration that the conditions must be satisfied for.  Can specify values
+        // in years (y), days (d), hours (h), minutes (m), seconds (s) or any
+        // combination of those.
         duration = 10d 2h
 
         // Examples of typical child parameters used with VesselParameterGroup
