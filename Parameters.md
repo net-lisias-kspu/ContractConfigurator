@@ -36,7 +36,7 @@ The following parameters are natively supported by ContractConfigurator:
 These are parameters that operator on vessels (manned or unmanned).
 
 #### VesselParameterGroup
-**_NEW!_** The VesselParameterGroup is used to group several vessel parameters together.  It can be used to specify a duration for which the parameters must be true, and will track across non-active vessels.
+**_NEW!_** The VesselParameterGroup parameter is used to group several child vessel parameters together.  It can also be used to specify a duration for which the parameters must be true, and will track across non-active vessels.  Note that when not used with a VesselParameterGroup parent parameter, the other vessel parameters on this page will only work with the active vessel.
 
     PARAMETER
     {
