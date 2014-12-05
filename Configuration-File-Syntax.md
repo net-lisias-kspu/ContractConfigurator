@@ -2,7 +2,7 @@
 
 The CONTRACT_TYPE node is the main node for all ContractConfigurator contracts.  This node is what defines a contract that will be offered by ContractConfigurator.
 
-_Sample CONTRACT_TYPE:_
+_Sample CONTRACT_TYPE (can be downloaded [here](https://raw.githubusercontent.com/jrossignol/ContractConfigurator/master/test/SampleContract.cfg)):_
 
     // Each CONTRACT_TYPE node represents a type of contract that can be offered
     CONTRACT_TYPE
