@@ -198,7 +198,7 @@ Reach a specific situation.
     }
 
 #### ReturnFrom
-The ReturnFrom parameter requires a player to go to a celestial body and return safely.
+**_NEW!_** The ReturnFrom parameter requires a player to go to a celestial body and return safely.
 
     // Return from a place and situation
     PARAMETER
