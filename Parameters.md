@@ -45,8 +45,8 @@ These are parameters that operator on vessels (manned or unmanned).
 
         // The title text to display.
         // Default - Vessel: Any; Duration: <duration>
-        // Note in future this will be expanded to support setting the parameters to be
-        // for a specific vessel
+        // Note in future this will be expanded to support setting the parameters to
+        // be for a specific vessel
         //title = 
 
         // The duration that the conditions must be satisfied for.  Can specify values
