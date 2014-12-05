@@ -5,6 +5,7 @@ The PARAMETER node defines a contract parameter - what needs to be accomplished 
 The following parameters are natively supported by ContractConfigurator:
 
 * [[Vessel Parameters|Parameters#vessel-parameters]]
+ * [[HasCrew|Parameters#hascrew]]
  * [[ReachAltitudeEnvelope|Parameters#reachaltitudeenvelope]]
  * [[ReachSpeedEnvelope|Parameters#reachspeedenvelope]]
  * [[ReachBiome|Parameters#reachbiome]]
@@ -32,6 +33,28 @@ The following parameters are natively supported by ContractConfigurator:
 
 ### Vessel Parameters
 These are parameters that operator on vessels (manned or unmanned).
+
+#### HasCrew
+**_NEW!_** Parameter to indicate that the Vessel in question must have a certain number of crew members (or must have fewer than a certain number.
+
+    PARAMETER
+    {
+        name = HasCrew1
+        type = HasCrew
+
+        // Minimum crew count, default = 1
+        minCrew = 1
+
+        // Maximum crew count, default = int.MAXVALUE
+        maxCrew = 10
+
+        // Text to use for the parameter
+        // Default (maxCrew = 0) = Crew: Unmanned
+        // Default (maxCrew = int.MAXVALUE) = Crew: At least <minCrew> Kerbals.
+        // Default (minCrew = 0) = Crew: At most <maxCrew> Kerbals.
+        // Default (else) = Crew: Between <minCrew> and <maxCrew> Kerbals.
+        //title =
+    }
 
 #### ReachAltitudeEnvelope
 Get to a specific altitude envelope.  Note that this is not tied to a specific celestial body - to do that you need to use multiple parameters together (and set the disableOnStateChange flag to false).
