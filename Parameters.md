@@ -12,6 +12,7 @@ The following parameters are natively supported by ContractConfigurator:
  * [[ReachBiome|Parameters#reachbiome]]
  * [[ReachDestination|Parameters#reachdestination]]
  * [[ReachSitutation|Parameters#reachsitutation]]
+ * [[ReturnHome|Parameters#returnhome]]
  * [[VesselHasVisited|Parameters#vesselhasvisited]]
 * [[Kerbal Parameters|Parameters#kerbal-parameters]]
  * [[BoardAnyVessel|Parameters#boardanyvessel]]
@@ -197,10 +198,22 @@ Reach a specific situation.
         //title =
     }
 
+#### ReturnHome
+**_NEW!_** The ReturnHome parameter requires a player to return home (ideally after meeting their other contract objectives).
+
+    PARAMETER
+    {
+        name = ReturnHome1
+        type = ReturnHome
+
+        // Text for the contract parameter.
+        // Default = Return home.
+        //title = 
+    }
+
 #### VesselHasVisited
 **_NEW!_** The VesselHasVisited parameter requires a player to go to visit a celestial body under specific circumstances.
 
-    // Go to a place and situation
     PARAMETER
     {
         name = VesselHasVisited1
@@ -221,7 +234,6 @@ Reach a specific situation.
         // Default = Perform <situation> on <targetBody>.
         //title = 
     }
-
 ### Kerbal Parameters
 These are parameters that operate on Kerbals.
 
