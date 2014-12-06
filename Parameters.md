@@ -12,7 +12,7 @@ The following parameters are natively supported by ContractConfigurator:
  * [[ReachBiome|Parameters#reachbiome]]
  * [[ReachDestination|Parameters#reachdestination]]
  * [[ReachSitutation|Parameters#reachsitutation]]
- * [[ReturnFrom|Parameters#returnfrom]]
+ * [[VesselHasVisited|Parameters#vesselhasvisited]]
 * [[Kerbal Parameters|Parameters#kerbal-parameters]]
  * [[BoardAnyVessel|Parameters#boardanyvessel]]
  * [[RecoverKerkbal|Parameters#recoverkerkbal]]
@@ -197,17 +197,16 @@ Reach a specific situation.
         //title =
     }
 
-#### ReturnFrom
-**_NEW!_** The ReturnFrom parameter requires a player to go to a celestial body and return safely.
+#### VesselHasVisited
+**_NEW!_** The VesselHasVisited parameter requires a player to go to visit a celestial body under specific circumstances.
 
-    // Return from a place and situation
+    // Go to a place and situation
     PARAMETER
     {
-        name = ReturnFrom1
-        type = ReturnFrom
+        name = VesselHasVisited1
+        type = VesselHasVisited
 
-        // The target to return from.  If not specified will defaulted from the
-        // Contract.
+        // The target to visit.  If not specified will defaulted from the contract.
         targetBody = Mun
 
         // The situation.  Valid values from KSPAchievements.ReturnFrom
@@ -219,7 +218,7 @@ Reach a specific situation.
         situation = Surface
 
         // Text for the contract parameter.
-        // Default = Return from <situation> on <targetBody>.
+        // Default = Perform <situation> on <targetBody>.
         //title = 
     }
 
