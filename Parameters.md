@@ -104,6 +104,7 @@ These are parameters that operator on vessels (manned or unmanned).
         // Default (maxCrew = 0) = Crew: Unmanned
         // Default (maxCrew = int.MAXVALUE) = Crew: At least <minCrew> Kerbals.
         // Default (minCrew = 0) = Crew: At most <maxCrew> Kerbals.
+        // Default (minCrew = maxCrew) = Crew: Exactly <minCrew> Kerbals.
         // Default (else) = Crew: Between <minCrew> and <maxCrew> Kerbals.
         //title =
     }
