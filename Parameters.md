@@ -513,7 +513,7 @@ The All parameter is completed once all its child parameters are completed.
     }
 
 #### Sequence
-The Sequence parameter is one of two ways to define parameters that need to be completed in sequence.  For this variant, use Sequence as a parent node for all nodes that must be completed in order.  If any parameter completes out of order, this parameter will fail - causing the contract to fail.
+**_NEW!_** The Sequence parameter is one of two ways to define parameters that need to be completed in sequence.  For this variant, use Sequence as a parent node for all nodes that must be completed in order.  If any parameter completes out of order, this parameter will fail - causing the contract to fail.
 
     // In this example of the Sequence parameter, the player must orbit the Mun,
     // then orbit Minmus.  If the player orbits Minmus first, the parameter fails.
@@ -585,7 +585,7 @@ The Sequence parameter is one of two ways to define parameters that need to be c
 
 
 #### SequenceNode
-The SequenceNode parameter is the second way to define parameters that need to be completed in sequence.  For this variant, use SequenceNode as a parent node for each nodes that must be completed in order.  If any parameter completes out of order, this parameter will remain in an incomplete state.
+**_NEW!_** The SequenceNode parameter is the second way to define parameters that need to be completed in sequence.  For this variant, use SequenceNode as a parent node for each nodes that must be completed in order.  If any parameter completes out of order, this parameter will remain in an incomplete state.
 
     // In this example of the SequenceNode parameter, the player must orbit the Mun,
     // then orbit Minmus.  If the player orbits Minmus first, the Minmus portion will
