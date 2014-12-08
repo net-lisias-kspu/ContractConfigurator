@@ -304,8 +304,8 @@ Requirement for having a certain number of contracts completed of the given type
         // Default = 1
         minCount = 1
 
-        // The maximum number of times the given contract type can be completed before
-        // the requirement will no longer be met.
+        // The maximum number of times the given contract type can be completed
+        // before the requirement will no longer be met.
         // Default = Infinite
         maxCount = 5
     }
