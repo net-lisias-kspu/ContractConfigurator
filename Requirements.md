@@ -4,40 +4,40 @@ The REQUIREMENT node defines a contract requirement - the pre-requisites that ar
 
 The following requirements are natively supported by ContractConfigurator:
 
-* [[Progress Based requirements|Requirements#progress-based-requirements
- * [[BaseConstruction|Requirements#baseconstruction
- * [[Docking|Requirements#docking
- * [[Escape|Requirements#escape
- * [[FlyBy|Requirements#flyby
- * [[Landing|Requirements#landing
- * [[Orbit|Requirements#orbit
- * [[Rendezvous|Requirements#rendezvous
- * [[ReturnFromFlyBy|Requirements#returnfromflyby
- * [[ReturnFromOrbit|Requirements#returnfromorbit
- * [[ReturnFromSurface|Requirements#returnfromsurface
- * [[SplashDown|Requirements#splashdown
- * [[SurfaceEVA|Requirements#surfaceeva
- * [[AltitudeRecord|Requirements#altituderecord
- * [[FirstCrewToSurvive|Requirements#firstcrewtosurvive
- * [[FirstLaunch|Requirements#firstlaunch
- * [[KSCLanding|Requirements#ksclanding
- * [[RunwayLanding|Requirements#runwaylanding
- * [[ReachSpace|Requirements#reachspace
- * [[SpaceCrewTransfer|Requirements#spacecrewtransfer
- * [[Spacewalk|Requirements#spacewalk
-* [[Research based requirements|Requirements#research-based-requirements
- * [[PartUnlocked|Requirements#partunlocked
- * [[TechResearched|Requirements#techresearched
-* [[Contract based requirements|Requirements#contract-based-requirements
- * [[CompleteContract|Requirements#completecontract
-* [[Set requirements|Requirements#set-requirements
- * [[Any|Requirements#any
- * [[All|Requirements#all
+* [[Progress Based requirements|Requirements#progress-based-requirements]]
+ * [[BaseConstruction|Requirements#baseconstruction]]
+ * [[Docking|Requirements#docking]]
+ * [[Escape|Requirements#escape]]
+ * [[FlyBy|Requirements#flyby]]
+ * [[Landing|Requirements#landing]]
+ * [[Orbit|Requirements#orbit]]
+ * [[Rendezvous|Requirements#rendezvous]]
+ * [[ReturnFromFlyBy|Requirements#returnfromflyby]]
+ * [[ReturnFromOrbit|Requirements#returnfromorbit]]
+ * [[ReturnFromSurface|Requirements#returnfromsurface]]
+ * [[SplashDown|Requirements#splashdown]]
+ * [[SurfaceEVA|Requirements#surfaceeva]]
+ * [[AltitudeRecord|Requirements#altituderecord]]
+ * [[FirstCrewToSurvive|Requirements#firstcrewtosurvive]]
+ * [[FirstLaunch|Requirements#firstlaunch]]
+ * [[KSCLanding|Requirements#ksclanding]]
+ * [[RunwayLanding|Requirements#runwaylanding]]
+ * [[ReachSpace|Requirements#reachspace]]
+ * [[SpaceCrewTransfer|Requirements#spacecrewtransfer]]
+ * [[Spacewalk|Requirements#spacewalk]]
+* [[Research based requirements|Requirements#research-based-requirements]]
+ * [[PartUnlocked|Requirements#partunlocked]]
+ * [[TechResearched|Requirements#techresearched]]
+* [[Contract based requirements|Requirements#contract-based-requirements]]
+ * [[CompleteContract|Requirements#completecontract]]
+* [[Set requirements|Requirements#set-requirements]]
+ * [[Any|Requirements#any]]
+ * [[All|Requirements#all]]
 
 ### Progress Based requirements
 
 #### BaseConstruction
-Requirement for having built a base.  __Note that this is based on the stock ProgressNode - I'm not 100% sure what they do and do not consider a 'base'__.
+Requirement for having built a base.  _Note that this is based on the stock ProgressNode - I'm not 100% sure what they do and do not consider a 'base'_.
 
     REQUIREMENT
     {
