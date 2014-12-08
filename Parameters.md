@@ -118,6 +118,9 @@ These are parameters that operator on vessels (manned or unmanned).
         name = HasPart1
         type = HasPart
 
+        // The name of the part to check for
+        part = mk1pod
+
         // Minimum count, default = 1
         minCount = 1
 
