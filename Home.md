@@ -4,6 +4,7 @@ Welcome to the ContractConfigurator wiki!  This wiki contains the ContractConfig
 * [[Contract Type|Contract-Type]]
  * [[Parameters|Parameters]]
  * [[Requirements|Requirements]]
+* [[Miscellaneous|Miscellaneous]]
 
 ### Extending ContractConfigurator
 * [[Extending|Extending]]
