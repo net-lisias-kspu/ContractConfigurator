@@ -27,6 +27,7 @@ The following requirements are natively supported by ContractConfigurator:
  * [[Spacewalk|Requirements#spacewalk]]
 * [[Research based requirements|Requirements#research-based-requirements]]
  * [[PartUnlocked|Requirements#partunlocked]]
+ * [[PartModuleUnlocked|Requirements#partmoduleunlocked]]
  * [[TechResearched|Requirements#techresearched]]
 * [[Contract based requirements|Requirements#contract-based-requirements]]
  * [[CompleteContract|Requirements#completecontract]]
@@ -269,6 +270,18 @@ Requirement for having a certain part unlocked from the tech tree.
 
         // Part name that needs to be unlocked.
         part = SmallGearBay
+    }
+
+#### PartModuleUnlocked
+**_NEW!_** Requirement for having any part with the given PartModule unlocked from the tech tree.
+
+    REQUIREMENT
+    {
+        name = PartModule Unlocked1
+        type = PartModuleUnlocked
+
+        // PartModule that needs to be unlocked.
+        partModule = ModuleReactionWheel
     }
 
 #### TechResearched
