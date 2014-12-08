@@ -2,7 +2,7 @@
 
 The CONTRACT_TYPE node is the main node for all ContractConfigurator contracts.  This node is what defines a contract that will be offered by ContractConfigurator.
 
-Also see the detailed pages for the listing of all possible values for PARAMATER and REQUIREMENT nodes:
+Also see the detailed pages for the listing of all possible values for PARAMETER and REQUIREMENT nodes:
 * [[Parameters|Parameters]]
 * [[Requirements|Requirements]]
 
