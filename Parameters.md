@@ -8,6 +8,7 @@ The following parameters are natively supported by ContractConfigurator:
  * [[VesselParameterGroup|Parameters#vesselparametergroup]]
  * [[HasCrew|Parameters#hascrew]]
  * [[HasPart|Parameters#haspart]]
+ * [[HasPartModule|Parameters#haspartmodule]]
  * [[ReachAltitudeEnvelope|Parameters#reachaltitudeenvelope]]
  * [[ReachSpeedEnvelope|Parameters#reachspeedenvelope]]
  * [[ReachBiome|Parameters#reachbiome]]
@@ -128,11 +129,37 @@ These are parameters that operator on vessels (manned or unmanned).
         maxCount = 10
 
         // Text to use for the parameter
-        // Default (maxCount = 0) = <part>: None
-        // Default (maxCount = int.MAXVALUE) = <part>: At least <minCount>
-        // Default (minCount = 0) = <part>: At most <maxCount>
-        // Default (minCount = maxCount ) = <part>: Exactly <minCount>
-        // Default (else) = <part>: Between <minCount> and <maxCount>
+        // Default (maxCount = 0) = Part: <part>: None
+        // Default (maxCount = int.MAXVALUE) = Part: <part>: At least <minCount>
+        // Default (minCount = 0) = Part: <part>: At most <maxCount>
+        // Default (minCount = maxCount ) = Part: <part>: Exactly <minCount>
+        // Default (else) = Part: <part>: Between <minCount> and <maxCount>
+        //title =
+    }
+
+#### HasPartModule
+**_NEW!_** Parameter to indicate that the Vessel in question must have a certain number of a certain PartModule (or must have fewer than a certain number).
+
+    PARAMETER
+    {
+        name = HasPartModule1
+        type = HasPartModule
+
+        // The name of the part module to check for
+        partModule = ModuleReactionWheel
+
+        // Minimum count, default = 1
+        minCount = 1
+
+        // Maximum count, default = int.MAXVALUE
+        maxCount = 10
+
+        // Text to use for the parameter
+        // Default (maxCount = 0) = Module: <partModule>: None
+        // Default (maxCount = int.MAXVALUE) = Module: <partModule>: At least <minCount>
+        // Default (minCount = 0) = Module: <partModule>: At most <maxCount>
+        // Default (minCount = maxCount ) = Module: <partModule>: Exactly <minCount>
+        // Default (else) = Module: <partModule>: Between <minCount> and <maxCount>
         //title =
     }
 
