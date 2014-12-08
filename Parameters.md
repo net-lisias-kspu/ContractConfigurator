@@ -9,6 +9,7 @@ The following parameters are natively supported by ContractConfigurator:
  * [[HasCrew|Parameters#hascrew]]
  * [[HasPart|Parameters#haspart]]
  * [[HasPartModule|Parameters#haspartmodule]]
+ * [[HasResource|Parameters#hasresource]]
  * [[ReachAltitudeEnvelope|Parameters#reachaltitudeenvelope]]
  * [[ReachSpeedEnvelope|Parameters#reachspeedenvelope]]
  * [[ReachBiome|Parameters#reachbiome]]
@@ -160,6 +161,28 @@ These are parameters that operator on vessels (manned or unmanned).
         // Default (minCount = 0) = Module: <partModule>: At most <maxCount>
         // Default (minCount = maxCount ) = Module: <partModule>: Exactly <minCount>
         // Default (else) = Module: <partModule>: Between <minCount> and <maxCount>
+        //title =
+    }
+
+#### HasResource
+**_NEW!_** Parameter to indicate that the Vessel in question must have a certain quantity of a certain resource (or must have fewer than a certain number).
+
+    PARAMETER
+    {
+        name = HasResource1
+        type = HasResource
+
+        // The name of the resource to check for
+        resource = LiquidFuel
+
+        // Minimum quantity, default = 0.01
+        minQuantity = 10.0
+
+        // Maximum quantity, default = double.MAXVALUE
+        maxQuantity = 1000.0
+
+        // Text to use for the parameter
+        // Default Resource: <resource>: <quantity_description>
         //title =
     }
 
