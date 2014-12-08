@@ -37,7 +37,9 @@ The following requirements are natively supported by ContractConfigurator:
 ### Progress Based requirements
 
 #### BaseConstruction
-Requirement for having built a base.  _Note that this is based on the stock ProgressNode - I'm not 100% sure what they do and do not consider a 'base'_.
+Requirement for having built a base.
+
+_Note that this is based on the stock ProgressNode - I'm not 100% sure what they do and do not consider a 'base'_.
 
     REQUIREMENT
     {
@@ -277,8 +279,9 @@ Requirement for having researched a technology.
         name = TechResearched1
         type = TechResearched
 
-        // The technology that needs to have been researched.  Take special note that this does not
-        // get validated - if you make a typo, the requirement will always return false.
+        // The technology that needs to have been researched.  Take special note that
+        // this does not get validated - if you make a typo, the requirement will
+        // always return false.
         tech = basicRocketry
     }
 
@@ -292,17 +295,17 @@ Requirement for having a certain number of contracts completed of the given type
         name = CompleteContract1
         type = CompleteContract
 
-        // The type of contract being checked.  This can either be a ContractConfigurator contract
-        // type or a standard contract type (class).
+        // The type of contract being checked.  This can either be a
+        // ContractConfigurator contract type or a standard contract type (class).
         contractType = SimpleTestContract
 
-        // The minimum number of times the given contract type must have been completed before
-        // the requirement is met.
+        // The minimum number of times the given contract type must have been
+        // completed before the requirement is met.
         // Default = 1
         minCount = 1
 
-        // The maximum number of times the given contract type can be completed before the
-        // requirement will no longer be met.
+        // The maximum number of times the given contract type can be completed before
+        // the requirement will no longer be met.
         // Default = Infinite
         maxCount = 5
     }
