@@ -1,6 +1,6 @@
 ## The CONTRACT_CONFIGURATOR node
 
-**_COMING SOON!_** The CONTRACT_CONFIGURATOR is used for miscellaneous settings.  Currently only supports the disableContractType value - which specifies a ContractType to be disabled.
+**_COMING SOON!_** The CONTRACT_CONFIGURATOR node is used for miscellaneous settings.  Currently only supports the disableContractType value - which specifies a ContractType to be disabled.
 
 The following example disables most of the stock contract types.
 
