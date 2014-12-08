@@ -32,6 +32,8 @@ The following parameters are natively supported by ContractConfigurator:
 * [[Set Parameters|Parameters#set-parameters]]
  * [[Any|Parameters#any]]
  * [[All|Parameters#all]]
+ * [[Sequence|Parameters#sequence]]
+ * [[SequenceNode|Parameters#sequencenode]]
 * [[Miscellaneous Parameters|Parameters#miscellaneous-parameters]]
  * [[CollectScience|Parameters#collectscience]]
  * [[PlantFlag|Parameters#plantflag]]
@@ -509,7 +511,171 @@ The All parameter is completed once all its child parameters are completed.
             maxSpeed = 5000
         }
     }
-}
+
+#### Sequence
+The Sequence parameter is one of two ways to define parameters that need to be completed in sequence.  For this variant, use Sequence as a parent node for all nodes that must be completed in order.  If any parameter completes out of order, this parameter will fail - causing the contract to fail.
+
+    // In this example of the Sequence parameter, the player must orbit the Mun,
+    // then orbit Minmus.  If the player orbits Minmus first, the parameter fails.
+    PARAMETER
+    {
+        name = Sequence1
+        type = Sequence
+
+        // The title to display
+        // Default: Complete the following in order
+        //title =
+
+        PARAMETER
+        {
+            name = OrbitMun
+            type = VesselParameterGroup
+
+            title = Orbit the Mun
+
+            PARAMETER
+            {
+                name = ReachSituation1
+                type = ReachSituation
+
+                disableOnStateChange = false
+
+                situation = ORBITING
+            }
+
+            PARAMETER
+            {
+                name = ReachDestination1
+                type = ReachDestination
+
+                disableOnStateChange = false
+
+                targetBody = Mun
+            }
+        }
+
+        PARAMETER
+        {
+            name = OrbitMinmus
+            type = VesselParameterGroup
+
+            title = Orbit Minmus
+
+            PARAMETER
+            {
+                name = ReachSituation1
+                type = ReachSituation
+
+                disableOnStateChange = false
+
+                situation = ORBITING
+            }
+
+            PARAMETER
+            {
+                name = ReachDestination1
+                type = ReachDestination
+
+                disableOnStateChange = false
+
+                targetBody = Minmus
+            }
+        }
+    }
+
+
+#### SequenceNode
+The SequenceNode parameter is the second way to define parameters that need to be completed in sequence.  For this variant, use SequenceNode as a parent node for each nodes that must be completed in order.  If any parameter completes out of order, this parameter will remain in an incomplete state.
+
+    // In this example of the SequenceNode parameter, the player must orbit the Mun,
+    // then orbit Minmus.  If the player orbits Minmus first, the Minmus portion will
+    // not complete.  The player will be required to go to the Mun, then go *back*
+    // to Minmus to complete the Parameter.
+    PARAMETER
+    {
+        name = OrbitMunSeqNode
+        type = SequenceNode
+
+        // The title to display
+        // Default (variable), one of:
+        //     Complete the following
+        //     Complete after the previous step
+        //     Completed
+        //title =
+
+        PARAMETER
+        {
+            name = OrbitMun
+            type = VesselParameterGroup
+
+            title = Orbit the Mun
+
+            disableOnStateChange = false
+
+            PARAMETER
+            {
+                name = ReachSituation1
+                type = ReachSituation
+
+                disableOnStateChange = false
+
+                situation = ORBITING
+            }
+
+            PARAMETER
+            {
+                name = ReachDestination1
+                type = ReachDestination
+
+                disableOnStateChange = false
+
+                targetBody = Mun
+            }
+        }
+    }
+
+    PARAMETER
+    {
+        name = OrbitMinmusSeqNode
+        type = SequenceNode
+
+        // The title to display
+        // Default (variable), one of:
+        //     Complete the following
+        //     Complete after the previous step
+        //     Completed
+        //title =
+
+        PARAMETER
+        {
+            name = OrbitMinmus
+            type = VesselParameterGroup
+
+            title = Orbit Minmus
+
+            disableOnStateChange = false
+
+            PARAMETER
+            {
+                name = ReachSituation1
+                type = ReachSituation
+
+                disableOnStateChange = false
+
+                situation = ORBITING
+            }
+
+            PARAMETER
+            {
+                name = ReachDestination1
+                type = ReachDestination
+
+                disableOnStateChange = false
+
+                targetBody = Minmus
+            }
+        }
+    }
 
 ### Miscellaneous Parameters
 
