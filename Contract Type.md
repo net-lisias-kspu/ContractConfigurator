@@ -17,6 +17,8 @@ _Sample CONTRACT_TYPE (can be downloaded [here](https://raw.githubusercontent.co
         // Contract text details
         title = Simple Test Contract
         description = A more detailed description of the contract.
+        // COMING SOON!
+        notes = These are contract level notes.
         synopsis = We want you to do a thing.
         completedMessage = You have done the thing.
 
