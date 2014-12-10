@@ -38,6 +38,7 @@ The following parameters are natively supported by ContractConfigurator:
  * [[CollectScience|Parameters#collectscience]]
  * [[PlantFlag|Parameters#plantflag]]
  * [[PartTest|Parameters#parttest]]
+ * [[Timer|Parameters#timer]]
 
 ### Vessel Parameters
 These are parameters that operator on vessels (manned or unmanned).
@@ -723,4 +724,18 @@ PartTest is for testing parts (or just activating them, for staged parts).  This
         // they say "Activate through the staging system", etc.
         // Optional
         notes = Test this part anywhere, no other requirements!
+    }
+
+#### Timer
+**_COMING SOON!_** The Timer parameter sets up a timer that starts when the contract is accepted.  The player only has the specified duration before the timer expires and the contract fails!
+
+    PARAMETER
+    {
+        name = Timer1
+        type = Timer
+
+        // The duration the timer is set to. Can specify values in years (y),
+        // days (d), hours (h), minutes (m), seconds (s) or any combination of
+        // those.
+        duration = 30m
     }
