@@ -4,6 +4,7 @@ ContractConfigurator is extensible!  So if you want to use it as part of your mo
 
 * [[Extending Parameters|Extending#extending-parameters]]
 * [[Extending Requirements|Extending#extending-requirements]]
+* [[Extending Behaviours|Extending#extending-behaviours]]
 
 ### Extending Parameters
 
@@ -111,4 +112,62 @@ The following example shows how the AltitudeRecord requirement is implemented:
             return ProgressTracking.Instance.altitudeRecords.record > minAltitude;
         }
     }
+
+### Extending Behaviours
+
+To create a new BEHAVIOUR type, two classes are required.  One that subclasses ContractBehaviour (which provides the logic for the behaviour), and one that subclasses BehaviourFactory (which loads the data from a ConfigNode and is responsible for creating the ContractBehaviour objects when requested).  In the configuration file, the value of the 'type' node needs to match the name of the BehaviourFactory class (unless it ends with "Factory" - in which case the "Factory" is dropped).
+
+#### BehaviourFactory
+
+For a BehaviourFactory sub-class, there are two methods that need to be implemented:
+
+> `bool Load(ConfigNode)` - This method receives the BEHAVIOUR node to be loaded. Load any additional values that are required by your class.  If you do not require additional config node values, then you do not need to implement this method.
+
+> `ContractBehaviour Generate(ConfiguredContract)` - This method is called when it is time to generate the actual ContractBehaviour that the config file represents.  Each time it is called, a new ContractBehaviour should be created and returned.
+
+The following example shows how the SpawnKerbalFactory behaviour factory is implemented:
+
+**TODO - SpawnKerbalFactory example**
+
+#### ContractBehaviour
+
+For a ContractBehaviour sub-class, there are a large number of methods that can be implemented:
+
+> `void OnAccepted()` - Called when the contract the behaviour is tied to is accepted.
+
+> `void OnCancelled()` - Called when the contract the behaviour is tied to is cancelled.
+
+> `void OnCompleted()` - Called when the contract the behaviour is tied to is completed.
+
+> `void OnDeadlineExpired()` - Called when the deadline expires for completing the contract tied to this behaviour.
+
+> `void OnDeclined()` - Called when the contract the behaviour is tied to is declined.
+
+> `void OnFailed()` - Called when the contract the behaviour is tied to fails.
+
+> `void OnFinished()` - Called when the contract the behaviour is tied to is finished (completed or failed).
+
+> `void OnGenerateFailed()` - Called when there is an error generating the contract.
+
+> `void OnOffered()` - Called when the contract the behaviour is tied to is offered.
+
+> `void OnOfferExpired()` - Called when the deadline expires for accepting the contract tied to this behaviour.
+
+> `void OnParameterStateChange(ContractParameter)` - Called when any parameter on the contract tied to this behaviour changes state.
+
+> `void OnRegister()` - Standard function for registering Unity callbacks.
+
+> `void OnUnregister()` - Standard function for unregistering Unity callbacks.
+
+> `void OnUpdate()` - Called on every frame update.
+
+> `void OnWithdrawn()` - Called when the contract the behaviour is tied to is withdrawn.
+
+> `void OnLoad(ConfigNode)` - Standard function for loading the behaviour from a config node.
+
+> `void OnSave(ConfigNode)` - Standard function for saving the behaviour to a config node.
+
+The following example shows how the SpawnKerbal behaviour is implemented:
+
+**TODO - SpawnKerbal example**
 
