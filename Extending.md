@@ -171,3 +171,9 @@ The following example shows how the SpawnKerbal behaviour is implemented:
 
 **TODO - SpawnKerbal example**
 
+## Copyright statement
+
+_All source code posted on this page is released into the public domain._
+>"Yours without obligation, let or lien. A freely given gift."
+
+>**The Wise Man's Fear**, Patrick Rothfuss
