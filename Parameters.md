@@ -329,6 +329,10 @@ The BoardAnyVessel parameter is met when the named Kerbal boards a vessel (this 
         // The Kerbal that needs to board a vessel
         kerbal = Jebediah Kermin
 
+        // Alternate method of identifying the Kerbal - zero based index of the
+        // entry in a SpawnKerbal BEHAVIOUR node.
+        //index = 0
+
         // Text to use for the parameter
         // Default = <kerbal>: Board a vessel
         //title =
@@ -344,6 +348,10 @@ The RecoverKerbal parameter is met when the named Kerbal is "recovered" (ie. goe
 
         // The Kerbal to be recovered
         kerbal = Jebediah Kermin
+
+        // Alternate method of identifying the Kerbal - zero based index of the
+        // entry in a SpawnKerbal BEHAVIOUR node.
+        //index = 0
 
         // Text to use for the parameter
         // Default = <kerbal>: Recovered
