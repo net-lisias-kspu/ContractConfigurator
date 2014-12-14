@@ -127,9 +127,26 @@ For a BehaviourFactory sub-class, there are two methods that need to be implemen
 
 > `ContractBehaviour Generate(ConfiguredContract)` - This method is called when it is time to generate the actual ContractBehaviour that the config file represents.  Each time it is called, a new ContractBehaviour should be created and returned.
 
-The following example shows how the SpawnKerbalFactory behaviour factory is implemented:
+The following example shows a generic template for a behaviour factory:
 
-**TODO - SpawnKerbalFactory example**
+    public class MyNewBehaviourFactory : BehaviourFactory
+    {
+        public override bool Load(ConfigNode configNode)
+        {
+            // Load base class
+            bool valid = base.Load(configNode);
+
+            // Load class specific data
+            //     ADD YOUR LOGIC HERE
+
+            return valid;
+        }
+
+        public override ContractBehaviour Generate(ConfiguredContract contract)
+        {
+            return new MyNewBehaviour();
+        }
+    }
 
 #### ContractBehaviour
 
