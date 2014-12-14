@@ -5,6 +5,7 @@ ContractConfigurator is extensible!  So if you want to use it as part of your mo
 * [[Extending Parameters|Extending#extending-parameters]]
 * [[Extending Requirements|Extending#extending-requirements]]
 * [[Extending Behaviours|Extending#extending-behaviours]]
+* [[Using the Persistent Data Store|Extending#using-the-persistent-data-store]]
 
 ### Extending Parameters
 
@@ -115,6 +116,7 @@ The following example shows how the AltitudeRecord requirement is implemented:
 
 ### Extending Behaviours
 
+**COMING SOON!**
 To create a new BEHAVIOUR type, two classes are required.  One that subclasses ContractBehaviour (which provides the logic for the behaviour), and one that subclasses BehaviourFactory (which loads the data from a ConfigNode and is responsible for creating the ContractBehaviour objects when requested).  In the configuration file, the value of the 'type' node needs to match the name of the BehaviourFactory class (unless it ends with "Factory" - in which case the "Factory" is dropped).
 
 #### BehaviourFactory
@@ -170,6 +172,17 @@ For a ContractBehaviour sub-class, there are a large number of methods that can 
 The following example shows how the SpawnKerbal behaviour is implemented:
 
 **TODO - SpawnKerbal example**
+
+### Using the Persistent Data Store
+
+**COMING SOON!**
+Contract Configurator contains a persistant data store that may be used by extension modules.  This is intended for storing values that need to be tracked across different contracts.  To store data for a parameter, store it using the OnLoad/OnSave functions of the ContractParameter class.  To store data for a contract, store it using the OnLoad/OnSave functions of a ContractBehaviour class.
+
+The persistant data store is access by calling one of the two following methods on PersistantDataStore.Instance:
+
+> `void Store<T>(string key, T value)` - This will store the value under the given key.  Try to make the key include a prefix for your module to unsure that it unique across all possible Contract Configurator modules.
+
+> `T Retrieve<T>(string key)` - This will retrieve a previously stored value.
 
 ## Copyright statement
 
