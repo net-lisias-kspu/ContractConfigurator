@@ -101,6 +101,14 @@ _Sample CONTRACT_TYPE (can be downloaded [here](https://raw.githubusercontent.co
         failureFunds = 10000.0
         advanceFunds = 10000.0
 
+        // COMING SOON!
+        // The weight is used in the contract generation process.  Each contract
+        // type that is available to be offered is added to a weighted list.
+        // Contract types with a higher value are more likely to be chosen.
+        //
+        // Default = 1.0
+        weight = 10.0
+
         // The PARAMETER node defines a contract parameter.  The following parameter
         // displays all the fields that are supported for a parameter across all
         // types.  See the Parameters page for examples of all supported parameters.
