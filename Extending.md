@@ -169,9 +169,28 @@ For a ContractBehaviour sub-class, there are a large number of methods that can 
 
 > `void OnSave(ConfigNode)` - Standard function for saving the behaviour to a config node.
 
-The following example shows how the SpawnKerbal behaviour is implemented:
+The following example shows a template that can be used for a new ContractBehaviour:
 
-**TODO - SpawnKerbal example**
+    public class MyNewBehaviour : ContractBehaviour
+    {
+        protected override void OnAccepted() { }
+        protected override void OnCancelled() { }
+        protected override void OnCompleted() { }
+        protected override void OnDeadlineExpired() { }
+        protected override void OnDeclined() { }
+        protected override void OnFailed() { }
+        protected override void OnFinished() { }
+        protected override void OnGenerateFailed() { }
+        protected override void OnOffered() { }
+        protected override void OnOfferExpired() { }
+        protected override void OnParameterStateChange(ContractParameter param) { }
+        protected override void OnRegister() { }
+        protected override void OnUnregister() { }
+        protected override void OnUpdate() { }
+        protected override void OnWithdrawn() { }
+        protected override void OnLoad(ConfigNode configNode) { }
+        protected override void OnSave(ConfigNode configNode) { }
+    }
 
 ### Using the Persistent Data Store
 
