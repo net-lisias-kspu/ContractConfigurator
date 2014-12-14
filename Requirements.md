@@ -321,6 +321,13 @@ Requirement for having a certain number of contracts completed of the given type
         // before the requirement will no longer be met.
         // Default = Infinite
         maxCount = 5
+
+        // COMING SOON!
+        // The amount of time after the last instance of the contract was
+        // complete before we can attempt again. Can specify
+        // values in years (y), days (d), hours (h), minutes (m), seconds (s)
+        // or any combination of those.
+        cooldownDuration = 10d
     }
 
 ### Set requirements
