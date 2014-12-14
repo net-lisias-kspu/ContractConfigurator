@@ -12,6 +12,7 @@ Welcome to the ContractConfigurator wiki!  This wiki contains the ContractConfig
  * [[Extending Parameters|Extending#extending-parameters]]
  * [[Extending Requirements|Extending#extending-requirements]]
  * [[Extending Behaviours|Extending#extending-behaviours]]
+ * [[Using the Persistent Data Store|Extending#using-the-persistent-data-store]]
 
 ### Conventions
 
