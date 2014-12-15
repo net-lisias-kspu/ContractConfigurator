@@ -31,6 +31,8 @@ The following requirements are natively supported by ContractConfigurator:
  * [[TechResearched|Requirements#techresearched]]
 * [[Contract based requirements|Requirements#contract-based-requirements]]
  * [[CompleteContract|Requirements#completecontract]]
+* [[Miscellaneous requirements|Requirements#miscellaneous-requirements]]
+ * [[Expression|Requirements#expression]]
 * [[Set requirements|Requirements#set-requirements]]
  * [[Any|Requirements#any]]
  * [[All|Requirements#all]]
@@ -328,6 +330,24 @@ Requirement for having a certain number of contracts completed of the given type
         // values in years (y), days (d), hours (h), minutes (m), seconds (s)
         // or any combination of those.
         cooldownDuration = 10d
+    }
+
+### Miscellaneous requirements
+
+#### Expression
+**_COMING SOON!_** 
+Requirement that executes an expression to check whether the requirement is met.  Can access data in the persistent data store.
+
+    REQUIREMENT
+    {
+        name = Expression1
+        type = Expression
+
+        // The expression to be executed is in the expression field.  It supports
+        // arithmetic operators (+, -, *, /), boolean operators (&&, ||, !),
+        // comparisons (<, <=, ==, !=, >=, >) and parenthesis.  It is able to
+        // access data in the persistent data store.
+        expression = CC_EXPTEST_Success == 1 || !CC_TestVal
     }
 
 ### Set requirements
