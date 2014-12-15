@@ -44,7 +44,7 @@ The following parameters are natively supported by ContractConfigurator:
 These are parameters that operator on vessels (manned or unmanned).
 
 #### VesselParameterGroup
-**_NEW!_** The VesselParameterGroup parameter is used to group several child vessel parameters together.  It can also be used to specify a duration for which the parameters must be true, and will track across non-active vessels.  Note that when not used with a VesselParameterGroup parent parameter, the other vessel parameters on this page will only work with the active vessel.
+The VesselParameterGroup parameter is used to group several child vessel parameters together.  It can also be used to specify a duration for which the parameters must be true, and will track across non-active vessels.  Note that when not used with a VesselParameterGroup parent parameter, the other vessel parameters on this page will only work with the active vessel.
 
     PARAMETER
     {
@@ -93,7 +93,7 @@ These are parameters that operator on vessels (manned or unmanned).
     }
 
 #### HasCrew
-**_NEW!_** Parameter to indicate that the Vessel in question must have a certain number of crew members (or must have fewer than a certain number).
+Parameter to indicate that the Vessel in question must have a certain number of crew members (or must have fewer than a certain number).
 
     PARAMETER
     {
@@ -116,7 +116,7 @@ These are parameters that operator on vessels (manned or unmanned).
     }
 
 #### HasPart
-**_NEW!_** Parameter to indicate that the Vessel in question must have a certain number of a certain part (or must have fewer than a certain number).
+Parameter to indicate that the Vessel in question must have a certain number of a certain part (or must have fewer than a certain number).
 
     PARAMETER
     {
@@ -142,7 +142,7 @@ These are parameters that operator on vessels (manned or unmanned).
     }
 
 #### HasPartModule
-**_NEW!_** Parameter to indicate that the Vessel in question must have a certain number of a certain PartModule (or must have fewer than a certain number).
+Parameter to indicate that the Vessel in question must have a certain number of a certain PartModule (or must have fewer than a certain number).
 
     PARAMETER
     {
@@ -168,7 +168,7 @@ These are parameters that operator on vessels (manned or unmanned).
     }
 
 #### HasResource
-**_NEW!_** Parameter to indicate that the Vessel in question must have a certain quantity of a certain resource (or must have fewer than a certain number).
+Parameter to indicate that the Vessel in question must have a certain quantity of a certain resource (or must have fewer than a certain number).
 
     PARAMETER
     {
@@ -280,7 +280,7 @@ Reach a specific situation.
     }
 
 #### ReturnHome
-**_NEW!_** The ReturnHome parameter requires a player to return home (ideally after meeting their other contract objectives).
+The ReturnHome parameter requires a player to return home (ideally after meeting their other contract objectives).
 
     PARAMETER
     {
@@ -293,7 +293,7 @@ Reach a specific situation.
     }
 
 #### VesselHasVisited
-**_NEW!_** The VesselHasVisited parameter requires a player to go to visit a celestial body under specific circumstances.
+The VesselHasVisited parameter requires a player to go to visit a celestial body under specific circumstances.
 
     PARAMETER
     {
@@ -522,7 +522,7 @@ The All parameter is completed once all its child parameters are completed.
     }
 
 #### Sequence
-**_NEW!_** The Sequence parameter is one of two ways to define parameters that need to be completed in sequence.  For this variant, use Sequence as a parent node for all nodes that must be completed in order.  If any parameter completes out of order, this parameter will fail - causing the contract to fail.
+The Sequence parameter is one of two ways to define parameters that need to be completed in sequence.  For this variant, use Sequence as a parent node for all nodes that must be completed in order.  If any parameter completes out of order, this parameter will fail - causing the contract to fail.
 
     // In this example of the Sequence parameter, the player must orbit the Mun,
     // then orbit Minmus.  If the player orbits Minmus first, the parameter fails.
@@ -594,7 +594,7 @@ The All parameter is completed once all its child parameters are completed.
 
 
 #### SequenceNode
-**_NEW!_** The SequenceNode parameter is the second way to define parameters that need to be completed in sequence.  For this variant, use SequenceNode as a parent node for each nodes that must be completed in order.  If any parameter completes out of order, this parameter will remain in an incomplete state.
+The SequenceNode parameter is the second way to define parameters that need to be completed in sequence.  For this variant, use SequenceNode as a parent node for each nodes that must be completed in order.  If any parameter completes out of order, this parameter will remain in an incomplete state.
 
     // In this example of the SequenceNode parameter, the player must orbit the Mun,
     // then orbit Minmus.  If the player orbits Minmus first, the Minmus portion will
@@ -735,7 +735,7 @@ PartTest is for testing parts (or just activating them, for staged parts).  This
     }
 
 #### Timer
-**_COMING SOON!_** The Timer parameter sets up a timer that starts when the contract is accepted.  The player only has the specified duration before the timer expires and the contract fails!
+**_NEW!_** The Timer parameter sets up a timer that starts when the contract is accepted.  The player only has the specified duration before the timer expires and the contract fails!
 
     PARAMETER
     {
