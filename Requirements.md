@@ -275,7 +275,7 @@ Requirement for having a certain part unlocked from the tech tree.
     }
 
 #### PartModuleUnlocked
-**_NEW!_** Requirement for having any part with the given PartModule unlocked from the tech tree.
+Requirement for having any part with the given PartModule unlocked from the tech tree.
 
     REQUIREMENT
     {
@@ -324,7 +324,7 @@ Requirement for having a certain number of contracts completed of the given type
         // Default = Infinite
         maxCount = 5
 
-        // COMING SOON!
+        // NEW!
         // The amount of time after the last instance of the contract was
         // complete before we can attempt again. Can specify
         // values in years (y), days (d), hours (h), minutes (m), seconds (s)
@@ -335,7 +335,7 @@ Requirement for having a certain number of contracts completed of the given type
 ### Miscellaneous requirements
 
 #### Expression
-**_COMING SOON!_** 
+**_NEW!_** 
 Requirement that executes an expression to check whether the requirement is met.  Can access data in the persistent data store.
 
     REQUIREMENT
