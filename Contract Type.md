@@ -2,9 +2,10 @@
 
 The CONTRACT_TYPE node is the main node for all ContractConfigurator contracts.  This node is what defines a contract that will be offered by ContractConfigurator.
 
-Also see the detailed pages for the listing of all possible values for PARAMETER and REQUIREMENT nodes:
+Also see the detailed pages for the listing of all possible values for PARAMETER, REQUIREMENT and BEHAVIOUR nodes:
 * [[Parameters|Parameters]]
 * [[Requirements|Requirements]]
+* [[Behaviours|Behaviours]]
 
 _Sample CONTRACT_TYPE (can be downloaded [here](https://raw.githubusercontent.com/jrossignol/ContractConfigurator/master/test/SampleContract.cfg)):_
 
