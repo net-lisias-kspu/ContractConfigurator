@@ -1,6 +1,6 @@
 ## The BEHAVIOUR node
 
-**_COMING SOON!_**
+**_NEW!_**
 The BEHAVIOUR node defines a contract behaviour - any behaviour that is at the contract level.  These can provide functionality for parameters, be used to persist data from contract to contract or any number of other things.
 
 The following behaviours are natively supported by ContractConfigurator:
@@ -9,7 +9,7 @@ The following behaviours are natively supported by ContractConfigurator:
 * [[SpawnKerbal|Behaviours#spawnkerbal]]
 
 #### Expression
-**_COMING SOON!_** Behaviour for executing one or more expressions and storing the results in the persistent data store.
+**_NEW!_** Behaviour for executing one or more expressions and storing the results in the persistent data store.
 
     BEHAVIOUR
     {
@@ -44,7 +44,7 @@ The following behaviours are natively supported by ContractConfigurator:
     }
 
 #### SpawnKerbal
-**_COMING SOON!_** Behaviour for spawning one or more Kerbals on land or in orbit.
+**_NEW!_** Behaviour for spawning one or more Kerbals on land or in orbit.
 
     BEHAVIOUR
     {
