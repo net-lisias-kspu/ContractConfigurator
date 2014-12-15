@@ -439,7 +439,7 @@ The KerbalDeaths parameter _fails_ if more Kerbals than the countMax die.
         // Maximum Number of Kerbals that can die before this contract is considered
         // failed.
         //
-        // Default = 0
+        // Default = 1
         countMax = 1
     }
 
