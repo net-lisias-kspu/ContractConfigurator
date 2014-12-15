@@ -1,4 +1,8 @@
-Welcome to the ContractConfigurator wiki!  This wiki contains the ContractConfigurator user documentation:
+Welcome to the Contract Configurator wiki!  This wiki contains the Contract Configurator user documentation.
+
+### How To
+Details on how to create new contracts, debugging contracts and more.
+* [[How To|How-To]]
 
 ### Configuration File Syntax
 * [[Contract Type|Contract-Type]]
