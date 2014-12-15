@@ -22,7 +22,7 @@ _Sample CONTRACT_TYPE (can be downloaded [here](https://raw.githubusercontent.co
         // 1) Supply the full text here in the description field
         //description = A more detailed description of the contract.
 
-        // COMING SOON!
+        // NEW!
         // 2) Supply the following fields, which will be fed into the text
         //    generator.  Use of the CoherentContracts mod is highly recommended,
         //    as it generates far more meaningful text.
@@ -37,7 +37,7 @@ _Sample CONTRACT_TYPE (can be downloaded [here](https://raw.githubusercontent.co
                                       // possible values.  Some values used are:
                                       // flags, test, rescue.
 
-        // COMING SOON!
+        // NEW!
         // Contract notes are displayed in mission control.  Use it to give 
         // any special instructions.
         //
@@ -101,7 +101,7 @@ _Sample CONTRACT_TYPE (can be downloaded [here](https://raw.githubusercontent.co
         failureFunds = 10000.0
         advanceFunds = 10000.0
 
-        // COMING SOON!
+        // NEW!
         // The weight is used in the contract generation process.  Each contract
         // type that is available to be offered is added to a weighted list.
         // Contract types with a higher value are more likely to be chosen.
