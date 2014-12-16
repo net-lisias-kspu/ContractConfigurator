@@ -33,7 +33,7 @@ The following requirements are natively supported by ContractConfigurator:
  * [[CompleteContract|Requirements#completecontract]]
 * [[Miscellaneous requirements|Requirements#miscellaneous-requirements]]
  * [[Expression|Requirements#expression]]
- * [[HasKerbal|Requirements#haskerbal]]
+ * [[HasCrew|Requirements#hascrew]]
 * [[Set requirements|Requirements#set-requirements]]
  * [[Any|Requirements#any]]
  * [[All|Requirements#all]]
@@ -351,14 +351,14 @@ Requirement that executes an expression to check whether the requirement is met.
         expression = CC_EXPTEST_Success == 1 || !CC_TestVal
     }
 
-#### HasKerbal
+#### HasCrew
 **_COMING SOON!_**
 Requirement that checks whether the player has Kerbals in their crew matching the given criteria.
 
     REQUIREMENT
     {
-        name = HasKerbal1
-        type = HasKerbal
+        name = HasCrew1
+        type = HasCrew
 
         // (Optional) The type of trait required.  Valid values are:
         //    Pilot
