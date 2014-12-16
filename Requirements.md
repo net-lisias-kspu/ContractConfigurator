@@ -33,6 +33,7 @@ The following requirements are natively supported by ContractConfigurator:
  * [[CompleteContract|Requirements#completecontract]]
 * [[Miscellaneous requirements|Requirements#miscellaneous-requirements]]
  * [[Expression|Requirements#expression]]
+ * [[HasKerbal|Requirements#haskerbal]]
 * [[Set requirements|Requirements#set-requirements]]
  * [[Any|Requirements#any]]
  * [[All|Requirements#all]]
@@ -348,6 +349,32 @@ Requirement that executes an expression to check whether the requirement is met.
         // comparisons (<, <=, ==, !=, >=, >) and parenthesis.  It is able to
         // access data in the persistent data store.
         expression = CC_EXPTEST_Success == 1 || !CC_TestVal
+    }
+
+#### HasKerbal
+**_COMING SOON!_**
+Requirement that checks whether the player has Kerbals in their crew matching the given criteria.
+
+    REQUIREMENT
+    {
+        name = HasKerbal1
+        type = HasKerbal
+
+        // (Optional) The type of trait required.  Valid values are:
+        //    Pilot
+        //    Engineer
+        //    Scientist
+        trait = Engineer
+
+        // (Optional) Minimum and maximum experience level.  Default values are
+        // 0 and 5 (for min/max).
+        minExperience = 2
+        maxExperience = 5
+
+        // (Optional) Minimum and maximum count.  Default values are 1 and
+        // int.MaxValue (for min/max).
+        minCount = 1
+        maxCount = 5
     }
 
 ### Set requirements
