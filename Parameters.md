@@ -303,13 +303,21 @@ The VesselHasVisited parameter requires a player to go to visit a celestial body
         // The target to visit.  If not specified will defaulted from the contract.
         targetBody = Mun
 
-        // The situation.  Valid values from KSPAchievements.ReturnFrom
+        // The situation.  Valid values from FlightLog.EntryType
+        //    Land
         //    Flight
-        //    FlyBy
+        //    Flyby
         //    Orbit
-        //    SubOrbit
-        //    Surface
-        situation = Surface
+        //    Suborbit
+        //    Escape
+        //    Launch
+        //    ExitVessel
+        //    BoardVessel
+        //    PlantFlag
+        //    Recover
+        //    Die
+        //    Spawn
+        situation = Land
 
         // Text for the contract parameter.
         // Default = Perform <situation> on <targetBody>.
