@@ -34,6 +34,7 @@ The following requirements are natively supported by ContractConfigurator:
 * [[Miscellaneous requirements|Requirements#miscellaneous-requirements]]
  * [[Expression|Requirements#expression]]
  * [[HasCrew|Requirements#hascrew]]
+ * [[Facility|Requirements#facility]]
 * [[Set requirements|Requirements#set-requirements]]
  * [[Any|Requirements#any]]
  * [[All|Requirements#all]]
@@ -375,6 +376,33 @@ Requirement that checks whether the player has Kerbals in their crew matching th
         // int.MaxValue (for min/max).
         minCount = 1
         maxCount = 5
+    }
+
+#### Facility
+**_COMING SOON!_**
+Requirement that checks whether the player has the given facility upgraded (or not upgraded) to the specified level.
+
+    REQUIREMENT
+    {
+        name = Facility
+        type = Facility
+
+        // The facility.  Valid values are:
+        //    LaunchPad
+        //    Runway
+        //    VehicleAssemblyBuilding
+        //    SpaceplaneHangar
+        //    TrackingStation
+        //    AstronautComplex
+        //    MissionControl
+        //    ResearchAndDevelopment
+        //    Administration
+        facility = Administration
+
+        // (Optional) Minimum and maximum facility level.  Default values are
+        // 0 and 2 (for min/max).
+        minLevel = 2
+        maxLevel = 2
     }
 
 ### Set requirements
