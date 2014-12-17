@@ -17,6 +17,7 @@ The following parameters are natively supported by ContractConfigurator:
  * [[ReachSitutation|Parameters#reachsitutation]]
  * [[ReturnHome|Parameters#returnhome]]
  * [[VesselHasVisited|Parameters#vesselhasvisited]]
+ * [[VesselMass|Parameters#vesselmass]]
 * [[Kerbal Parameters|Parameters#kerbal-parameters]]
  * [[BoardAnyVessel|Parameters#boardanyvessel]]
  * [[RecoverKerkbal|Parameters#recoverkerkbal]]
@@ -333,6 +334,30 @@ The VesselHasVisited parameter requires a player to go to visit a celestial body
         // Default = Perform <situation> on <targetBody>.
         //title = 
     }
+
+#### VesselMass
+The VesselMass parameter requires a player's vessel to be within the specified mass range.
+
+    PARAMETER
+    {
+        name = VesselMass1
+        type = VesselMass
+
+    PARAMETER
+    {
+        name = VesselMass
+        type = VesselMass
+
+        // (Optional) Minimum and maximum mass.  Defaults are 0.0
+        // and float.MaxValue for (min/max) respectively.
+        minMass = 1.0
+        maxMass = 10.0
+
+        // Text for the contract parameter.
+        // Default = Vessel mass: <mass>
+        //title = 
+    }
+
 ### Kerbal Parameters
 These are parameters that operate on Kerbals.
 
