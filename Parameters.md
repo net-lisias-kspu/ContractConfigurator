@@ -35,9 +35,11 @@ The following parameters are natively supported by ContractConfigurator:
  * [[All|Parameters#all]]
  * [[Sequence|Parameters#sequence]]
  * [[SequenceNode|Parameters#sequencenode]]
-* [[Miscellaneous Parameters|Parameters#miscellaneous-parameters]]
+* [[Planetary Parameters|Parameters#planetary-parameters]]
  * [[CollectScience|Parameters#collectscience]]
  * [[PlantFlag|Parameters#plantflag]]
+ * [[SCANsatCoverage|Parameters#scansatcoverage]]
+* [[Miscellaneous Parameters|Parameters#miscellaneous-parameters]]
  * [[PartTest|Parameters#parttest]]
  * [[Timer|Parameters#timer]]
 
@@ -729,9 +731,9 @@ The SequenceNode parameter is the second way to define parameters that need to b
         }
     }
 
-### Miscellaneous Parameters
+### Planetary Parameters
 
-Other parameters that didn't fit in elsewhere.
+Parameters specific to doing something related to a planetary body.
 
 #### CollectScience
 The CollectScience parameter is met when science is sent home from the given location and celestial body.
@@ -759,6 +761,46 @@ The PlantFlag parameter is met when planting a flag on the given body.
         // This can be inherited from the the contract type if necessary
         targetBody = Duna
     }
+
+#### SCANsatCoverage
+**_COMING SOON!_**
+The SCANsatCoverage parameter is met when there is sufficient SCANsat coverage for the given planet/type.
+
+    PARAMETER:NEEDS[SCANsat]
+    {
+        name = SCANsatCoverage1
+        type = SCANsatCoverage
+
+        // Target body - if not supplied will be defaulted from the contract.
+        targetBody = Kerbin
+
+        // Coverage percentage that must be reached
+        coverage = 65.0
+
+        // The type of scan to perform.  Valid values are from SCANdata.SCANtype.
+        // Some possible values are:
+        //    AltimetryLoRes
+        //    AltimetryHiRes
+        //    Altimetry
+        //    Biome
+        //    Anomaly
+        //    AnomalyDetail
+        //    Kethane
+        //    Ore
+        //    Uranium
+        //    Thorium
+        //    Alumina
+        //    Water
+        //    Aquifer
+        //    Minerals
+        //    Substrate
+        //    Karbonite
+        scanType = Biome
+    }
+
+### Miscellaneous Parameters
+
+Other parameters that didn't fit in elsewhere.
 
 #### PartTest
 PartTest is for testing parts (or just activating them, for staged parts).  This parameter supports child parameters - you will only be able to complete the part test if all child parameters are also completed.
