@@ -31,6 +31,8 @@ The following requirements are natively supported by ContractConfigurator:
  * [[TechResearched|Requirements#techresearched]]
 * [[Contract based requirements|Requirements#contract-based-requirements]]
  * [[CompleteContract|Requirements#completecontract]]
+* [[Planetary requirements|Requirements#planetary-requirements]]
+ * [[SCANsatCoverage|Requirements#scansatcoverage]]
 * [[Miscellaneous requirements|Requirements#miscellaneous-requirements]]
  * [[Expression|Requirements#expression]]
  * [[HasCrew|Requirements#hascrew]]
@@ -332,6 +334,49 @@ Requirement for having a certain number of contracts completed of the given type
         // values in years (y), days (d), hours (h), minutes (m), seconds (s)
         // or any combination of those.
         cooldownDuration = 10d
+    }
+
+### Planetary requirements
+
+#### SCANsatCoverage
+**_COMING SOON!_**
+Requirement for having a certain level of SCANsat coverage for the given scan type/planet.
+
+    REQUIREMENT:NEEDS[SCANsat]
+    {
+        name = SCANsatCoverage
+        type = SCANsatCoverage
+
+        // Target body - if not supplied will be defaulted from the contract.
+        targetBody = Kerbin
+
+        // Minimum coverage that must be reached before the contract is valid.
+        // Default = 0.0
+        minCoverage = 0.0
+
+        // Maximum coverage that must be reached before the contract is valid.
+        // Default = 100.0
+        maxCoverage = 0.0
+
+        // The type of scan to perform.  Valid values are from SCANdata.SCANtype.
+        // Some possible values are:
+        //    AltimetryLoRes
+        //    AltimetryHiRes
+        //    Altimetry
+        //    Biome
+        //    Anomaly
+        //    AnomalyDetail
+        //    Kethane
+        //    Ore
+        //    Uranium
+        //    Thorium
+        //    Alumina
+        //    Water
+        //    Aquifer
+        //    Minerals
+        //    Substrate
+        //    Karbonite
+        scanType = Biome
     }
 
 ### Miscellaneous requirements
