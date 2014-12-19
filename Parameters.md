@@ -345,11 +345,6 @@ The VesselMass parameter requires a player's vessel to be within the specified m
         name = VesselMass1
         type = VesselMass
 
-    PARAMETER
-    {
-        name = VesselMass
-        type = VesselMass
-
         // (Optional) Minimum and maximum mass.  Defaults are 0.0
         // and float.MaxValue for (min/max) respectively.
         minMass = 1.0
