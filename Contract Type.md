@@ -170,5 +170,15 @@ _Sample CONTRACT_TYPE (can be downloaded [here](https://raw.githubusercontent.co
             //
             // Default = false
             invertRequirement = true
+
+            // COMING SOON!
+            // Most requirements are not checked for active contracts (to
+            // prevent the contract from being withdrawn while the player is
+            // actively working to complete it).  Use this to change that
+            // behaviour.  Note in some cases it's a lot nicer to do that
+            // as a PARAMETER so the player knows what's required of them.
+            //
+            // Default = mostly false, true for a few requirements
+            checkOnActiveContract = true
         }
     }
