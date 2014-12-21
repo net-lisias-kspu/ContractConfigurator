@@ -11,7 +11,27 @@ And then start adding to it!  See the [[Contract Type|Contract-Type]] page for t
 ## Testing a contract
 
 When creating a new contract, the first thing too look at is the debug menu (alt-F12) from the main menu.  If there were any validation errors due to incorrect configuration, this is where they will likely show up.  If there are no errors there, then continue on and test your contracts as normal.
-ee
+
+## Creating an Agency
+
+If you wish to create your own agency, all it takes is one config file, and a couple images.  Within the config file (this can be the same as your Contract Configurator contracts), add the following node:
+
+    AGENT
+    {
+        // The name of your agency
+        name = Contract Configurator Inc.
+      
+        // Description of your agency
+        description = Add a cool description here
+      
+        // Logo URL should be the full path to the image file for the logo (256x160)
+        logoURL = ContractConfigurator/MyLogo
+
+        // Logo URL is the full path to the scaled down image for thumbnails (64x40)
+        logoScaledURL = ContractConfigurator/MyLogo_scaled
+    }
+
+
 ## Using TextGen
 
 TextGen is the Squad system for generating contract descriptions.  If you would like to use this, I highly recommend making use of the [Coherent Contracts](http://forum.kerbalspaceprogram.com/threads/100098-0-25-Coherent-Contracts-v1-01-%28Nov-14%29) mod.
