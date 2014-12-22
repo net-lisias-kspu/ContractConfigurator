@@ -295,7 +295,7 @@ Reach a specific situation.
 
 #### ReachSpecificOrbit
 **_COMING SOON!_**
-The ReachSpecificOrbit is used with the OrbitGenerator behaviour to indicate that a generated orbit must be reached by a vessel.
+The ReachSpecificOrbit is used with the [[OrbitGenerator|Behaviours#orbitgenerator]] behaviour to indicate that a generated orbit must be reached by a vessel.
 
     PARAMETER
     {
