@@ -15,6 +15,7 @@ The following parameters are natively supported by ContractConfigurator:
  * [[ReachBiome|Parameters#reachbiome]]
  * [[ReachDestination|Parameters#reachdestination]]
  * [[ReachSitutation|Parameters#reachsitutation]]
+ * [[ReachSpecificOrbit|Parameters#reachspecificorbit]]
  * [[ReturnHome|Parameters#returnhome]]
  * [[VesselHasVisited|Parameters#vesselhasvisited]]
  * [[VesselMass|Parameters#vesselmass]]
@@ -290,6 +291,21 @@ Reach a specific situation.
         // Text for the contract parameter.
         // Default = Situation: <situation>
         //title =
+    }
+
+#### ReachSpecificOrbit
+**_COMING SOON!_**
+The ReachSpecificOrbit is used with the OrbitGenerator behaviour to indicate that a generated orbit must be reached by a vessel.
+
+    PARAMETER
+    {
+        name = ReachSpecificOrbit1
+        type = ReachSpecificOrbit
+
+        // The index (0-based) in the OrbitGenerator behaviour of the orbit we
+        // wish to reference.
+        // Default = 0
+        index = 0
     }
 
 #### ReturnHome
