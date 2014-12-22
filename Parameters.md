@@ -306,6 +306,12 @@ The ReachSpecificOrbit is used with the [[OrbitGenerator|Behaviours#orbitgenerat
         // wish to reference.
         // Default = 0
         index = 0
+
+        // The deviation window for how close we must match the given orbit.
+        // wish to reference.  Higher values give more room for error.  Note: More
+        // testing is required to better document the realistic range of values.
+        // Default = 3.0
+        deviationWindow = 10.0
     }
 
 #### ReturnHome
