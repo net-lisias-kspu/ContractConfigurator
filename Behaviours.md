@@ -6,6 +6,7 @@ The BEHAVIOUR node defines a contract behaviour - any behaviour that is at the c
 The following behaviours are natively supported by ContractConfigurator:
 
 * [[Expression|Behaviours#expression]]
+* [[OrbitGenerator|Behaviours#orbitgenerator]]
 * [[SpawnKerbal|Behaviours#spawnkerbal]]
 * [[WaypointGenerator|Behaviours#waypointgenerator]]
 
@@ -41,6 +42,60 @@ The following behaviours are natively supported by ContractConfigurator:
         {
             CC_TestVal = CC_TestVal / 2
             CC_EXPTEST_Success = 0
+        }
+    }
+
+#### OrbitGenerator
+**_COMING SOON!_**
+Behaviour for generating orbits.
+
+    BEHAVIOUR
+    {
+        name = OrbitGenerator1
+        type = OrbitGenerator
+
+        // Use this to generate an orbit with specific parameters
+        FIXED_ORBIT
+        {
+            // Body for the orbit - defaulted from the contract if not supplied
+            targetBody = Kerbin
+
+            // Actual orbit details. Note that REF represents the reference
+            // body - but will be overriden by the targetBody.
+            ORBIT
+            {
+                SMA = 1449999.99996286
+                ECC = 1.07570816555399E-05
+                INC = 0
+                LPE = 270.690311604893
+                LAN = 1.93635924563296
+                MNA = 1.55872660382504
+                EPH = 31.3999999999994
+                REF = 1
+            }
+        }
+
+        // Use this to generate an orbit with some randomization
+        RANDOM_ORBIT
+        {
+            // Body for the orbit - defaulted from the contract if not supplied
+            targetBody = Kerbin
+
+            // Type of orbit to generate.  Valid values are from
+            // FinePrint.Utilities.OrbitType:
+            //    EQUATORIAL
+            //    KOLNIYA
+            //    POLAR
+            //    RANDOM
+            //    STATIONARY
+            //    SYNCHRONOUS
+            //    TUNDRA
+            type = KOLNIYA
+
+            // Difficulty multiplier - generally makes the orbits harder to
+            // reach if you increase it.
+            // Default = 1.0
+            difficulty = 10.0
         }
     }
 
