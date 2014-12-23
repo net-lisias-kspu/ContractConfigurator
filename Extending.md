@@ -116,7 +116,6 @@ The following example shows how the AltitudeRecord requirement is implemented:
 
 ### Extending Behaviours
 
-**NEW!**
 To create a new BEHAVIOUR type, two classes are required.  One that subclasses ContractBehaviour (which provides the logic for the behaviour), and one that subclasses BehaviourFactory (which loads the data from a ConfigNode and is responsible for creating the ContractBehaviour objects when requested).  In the configuration file, the value of the 'type' node needs to match the name of the BehaviourFactory class (unless it ends with "Factory" - in which case the "Factory" is dropped).
 
 #### BehaviourFactory
@@ -211,7 +210,6 @@ The following example shows a template that can be used for a new ContractBehavi
 
 ### Using the Persistent Data Store
 
-**NEW!**
 Contract Configurator contains a persistant data store that may be used by extension modules.  This is intended for storing values that need to be tracked across different contracts.  To store data for a parameter, store it using the OnLoad/OnSave functions of the ContractParameter class.  To store data for a contract, store it using the OnLoad/OnSave functions of a ContractBehaviour class.
 
 The persistant data store is access by calling one of the two following methods on PersistantDataStore.Instance:
