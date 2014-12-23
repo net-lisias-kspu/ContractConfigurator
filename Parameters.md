@@ -19,6 +19,7 @@ The following parameters are natively supported by ContractConfigurator:
  * [[ReturnHome|Parameters#returnhome]]
  * [[VesselHasVisited|Parameters#vesselhasvisited]]
  * [[VesselMass|Parameters#vesselmass]]
+ * [[VisitWaypoint|Parameters#visitwaypoint]]
 * [[Kerbal Parameters|Parameters#kerbal-parameters]]
  * [[BoardAnyVessel|Parameters#boardanyvessel]]
  * [[RecoverKerbal|Parameters#recoverkerbal]]
@@ -295,7 +296,7 @@ Reach a specific situation.
 
 #### ReachSpecificOrbit
 **_COMING SOON!_**
-The ReachSpecificOrbit is used with the [[OrbitGenerator|Behaviours#orbitgenerator]] behaviour to indicate that a generated orbit must be reached by a vessel.
+The ReachSpecificOrbit parameter is used with the [[OrbitGenerator|Behaviours#orbitgenerator]] behaviour to indicate that a generated orbit must be reached by a vessel.
 
     PARAMETER
     {
@@ -374,6 +375,30 @@ The VesselMass parameter requires a player's vessel to be within the specified m
 
         // Text for the contract parameter.
         // Default = Vessel mass: <mass>
+        //title = 
+    }
+
+#### VisitWaypoint
+**_COMING SOON!_**
+The VisitWaypoint parameter is used with the [[WaypointGenerator|Behaviours#waypointgenerator]] behaviour to indicate that a generated waypoint must be visited by a vessel.
+
+    PARAMETER
+    {
+        name = VisitWaypoint1
+        type = VisitWaypoint
+
+        // Index of the waypoint in the WaypointGenerator behaviour.
+        // Default = 0
+        index = 0
+
+        // Distance tolerance to be considered at the waypoint.
+        // Default = 500.0 (if on the surface).
+        //         = <waypoint altitude> / 5.0 (if in the air).
+        distance = 500.0
+
+         
+        // Text to use for the parameter
+        // Default = Location: <waypoint>
         //title = 
     }
 
