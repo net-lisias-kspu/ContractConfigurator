@@ -14,7 +14,7 @@ The following parameters are natively supported by ContractConfigurator:
  * [[ReachSpeedEnvelope|Parameters#reachspeedenvelope]]
  * [[ReachBiome|Parameters#reachbiome]]
  * [[ReachDestination|Parameters#reachdestination]]
- * [[ReachSitutation|Parameters#reachsitutation]]
+ * [[ReachSitutaion|Parameters#reachsituation]]
  * [[ReachSpecificOrbit|Parameters#reachspecificorbit]]
  * [[ReturnHome|Parameters#returnhome]]
  * [[VesselHasVisited|Parameters#vesselhasvisited]]
@@ -270,7 +270,7 @@ Reach a specific celestial object.
         //title =
     }
 
-#### ReachSitutation
+#### ReachSituation
 Reach a specific situation.
 
     PARAMETER
