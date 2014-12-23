@@ -295,7 +295,7 @@ Reach a specific situation.
     }
 
 #### ReachSpecificOrbit
-**_COMING SOON!_**
+**_NEW!_**
 The ReachSpecificOrbit parameter is used with the [[OrbitGenerator|Behaviours#orbitgenerator]] behaviour to indicate that a generated orbit must be reached by a vessel.
 
     PARAMETER
@@ -379,7 +379,7 @@ The VesselMass parameter requires a player's vessel to be within the specified m
     }
 
 #### VisitWaypoint
-**_COMING SOON!_**
+**_NEW!_**
 The VisitWaypoint parameter is used with the [[WaypointGenerator|Behaviours#waypointgenerator]] behaviour to indicate that a generated waypoint must be visited by a vessel.
 
     PARAMETER
@@ -805,7 +805,7 @@ The PlantFlag parameter is met when planting a flag on the given body.
     }
 
 #### SCANsatCoverage
-**_COMING SOON!_**
+**_NEW!_**
 The SCANsatCoverage parameter is met when there is sufficient SCANsat coverage for the given planet/type.
 
     PARAMETER:NEEDS[SCANsat]
@@ -862,7 +862,7 @@ PartTest is for testing parts (or just activating them, for staged parts).  This
     }
 
 #### Timer
-**_NEW!_** The Timer parameter sets up a timer that starts when the contract is accepted.  The player only has the specified duration before the timer expires and the contract fails!
+The Timer parameter sets up a timer that starts when the contract is accepted.  The player only has the specified duration before the timer expires and the contract fails!
 
     PARAMETER
     {
