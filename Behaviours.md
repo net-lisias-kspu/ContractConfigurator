@@ -167,7 +167,8 @@ Behaviour for generating waypoints.
         // Use this to generate a waypoint with fixed coordinates
         WAYPOINT
         {
-            // The name of the waypoint - displayed on the marker
+            // The name of the waypoint - displayed on the marker.  If not
+            // supplied a random one is generated.
             name = Kerbal Space Center
 
             // Body for the waypoint - defaulted from the contract if not
