@@ -1,6 +1,5 @@
 ## The BEHAVIOUR node
 
-**_NEW!_**
 The BEHAVIOUR node defines a contract behaviour - any behaviour that is at the contract level.  These can provide functionality for parameters, be used to persist data from contract to contract or any number of other things.
 
 The following behaviours are natively supported by ContractConfigurator:
@@ -11,7 +10,7 @@ The following behaviours are natively supported by ContractConfigurator:
 * [[WaypointGenerator|Behaviours#waypointgenerator]]
 
 #### Expression
-**_NEW!_** Behaviour for executing one or more expressions and storing the results in the persistent data store.
+Behaviour for executing one or more expressions and storing the results in the persistent data store.
 
     BEHAVIOUR
     {
@@ -46,7 +45,7 @@ The following behaviours are natively supported by ContractConfigurator:
     }
 
 #### OrbitGenerator
-**_COMING SOON!_**
+**_NEW!_**
 Behaviour for generating orbits.
 
     BEHAVIOUR
@@ -100,7 +99,7 @@ Behaviour for generating orbits.
     }
 
 #### SpawnKerbal
-**_NEW!_** Behaviour for spawning one or more Kerbals on land or in orbit.
+Behaviour for spawning one or more Kerbals on land or in orbit.
 
     BEHAVIOUR
     {
@@ -156,7 +155,7 @@ Behaviour for generating orbits.
     }
 
 #### WaypointGenerator
-**_COMING SOON!_**
+**_NEW!_**
 Behaviour for generating waypoints.
 
     BEHAVIOUR
