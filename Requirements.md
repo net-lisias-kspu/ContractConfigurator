@@ -328,7 +328,6 @@ Requirement for having a certain number of contracts completed of the given type
         // Default = Infinite
         maxCount = 5
 
-        // NEW!
         // The amount of time after the last instance of the contract was
         // complete before we can attempt again. Can specify
         // values in years (y), days (d), hours (h), minutes (m), seconds (s)
@@ -339,7 +338,7 @@ Requirement for having a certain number of contracts completed of the given type
 ### Planetary requirements
 
 #### SCANsatCoverage
-**_COMING SOON!_**
+**_NEW!_**
 Requirement for having a certain level of SCANsat coverage for the given scan type/planet.
 
     REQUIREMENT:NEEDS[SCANsat]
@@ -382,7 +381,6 @@ Requirement for having a certain level of SCANsat coverage for the given scan ty
 ### Miscellaneous requirements
 
 #### Expression
-**_NEW!_** 
 Requirement that executes an expression to check whether the requirement is met.  Can access data in the persistent data store.
 
     REQUIREMENT
@@ -398,7 +396,7 @@ Requirement that executes an expression to check whether the requirement is met.
     }
 
 #### HasCrew
-**_COMING SOON!_**
+**_NEW!_**
 Requirement that checks whether the player has Kerbals in their crew matching the given criteria.
 
     REQUIREMENT
@@ -424,7 +422,7 @@ Requirement that checks whether the player has Kerbals in their crew matching th
     }
 
 #### Facility
-**_COMING SOON!_**
+**_NEW!_**
 Requirement that checks whether the player has the given facility upgraded (or not upgraded) to the specified level.
 
     REQUIREMENT
