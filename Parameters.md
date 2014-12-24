@@ -10,6 +10,10 @@ The following parameters are natively supported by ContractConfigurator:
  * [[HasPart|Parameters#haspart]]
  * [[HasPartModule|Parameters#haspartmodule]]
  * [[HasResource|Parameters#hasresource]]
+ * [[OrbitApoapsis|Parameters#orbitapoapsis]]
+ * [[OrbitPeriapsis|Parameters#orbitperiapsis]]
+ * [[OrbitEccentricity|Parameters#orbiteccentricity]]
+ * [[OrbitInclination|Parameters#orbitinclination]]
  * [[ReachAltitudeEnvelope|Parameters#reachaltitudeenvelope]]
  * [[ReachSpeedEnvelope|Parameters#reachspeedenvelope]]
  * [[ReachBiome|Parameters#reachbiome]]
@@ -201,6 +205,106 @@ Parameter to indicate that the Vessel in question must have a certain quantity o
 
         // Text to use for the parameter
         // Default Resource: <resource>: <quantity_description>
+        //title =
+    }
+
+#### OrbitApoapsis
+**_COMING SOON!_**
+Orbital parameter to specify a required apoapsis.
+
+    PARAMETER
+    {
+        name = OrbitApoapsis
+        type = OrbitApoapsis
+
+        // Target body, defaulted from the contract if not supplied.
+        targetBody = Kerbin
+
+        // Minimum apoapsis in meters.
+        // Default = 0
+        minApA = 100000
+
+        // Maximum apoapsis in meters.
+        // Default = double.MaxValue
+        maxApA = 250000
+
+        // Text to use for the parameter
+        // Default Apoapsis: Between <min> and <max>
+        //title =
+    }
+
+#### OrbitPeriapsis
+**_COMING SOON!_**
+Orbital parameter to specify a required periapsis.
+
+    PARAMETER
+    {
+        name = OrbitPeriapsis
+        type = OrbitPeriapsis
+
+        // Target body, defaulted from the contract if not supplied.
+        targetBody = Kerbin
+
+        // Minimum periapsis in meters.
+        // Default = 0
+        minPeA = 100000
+
+        // Maximum periapsis in meters.
+        // Default = double.MaxValue
+        maxPeA = 250000
+
+        // Text to use for the parameter
+        // Default Periapsis: Between <min> and <max>
+        //title =
+    }
+
+#### OrbitEccentricity
+**_COMING SOON!_**
+Orbital parameter to specify a required eccentricity.
+
+    PARAMETER
+    {
+        name = OrbitEccentricity
+        type = OrbitEccentricity
+
+        // Target body, defaulted from the contract if not supplied.
+        targetBody = Kerbin
+
+        // Minimum eccentricity.
+        // Default = 0
+        minEccentricity = 0.0
+
+        // Maximum eccentricity.
+        // Default = double.MaxValue
+        maxEccentricity = 0.1
+
+        // Text to use for the parameter
+        // Default Eccentricity: Between <min> and <max>
+        //title =
+    }
+
+#### OrbitInclination
+**_COMING SOON!_**
+Orbital parameter to specify a required inclination.
+
+    PARAMETER
+    {
+        name = OrbitInclination
+        type = OrbitInclination
+
+        // Target body, defaulted from the contract if not supplied.
+        targetBody = Kerbin
+
+        // Minimum inclination in degrees
+        // Default = 0
+        minInclination = 0
+
+        // Maximum inclination in degrees
+        // Default = 180
+        maxInclination = 1
+
+        // Text to use for the parameter
+        // Default Inclination: Between <min> and <max>
         //title =
     }
 
