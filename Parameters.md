@@ -209,7 +209,7 @@ Parameter to indicate that the Vessel in question must have a certain quantity o
     }
 
 #### OrbitApoapsis
-**_COMING SOON!_**
+**_NEW!_**
 Orbital parameter to specify a required apoapsis.
 
     PARAMETER
@@ -234,7 +234,7 @@ Orbital parameter to specify a required apoapsis.
     }
 
 #### OrbitPeriapsis
-**_COMING SOON!_**
+**_NEW!_**
 Orbital parameter to specify a required periapsis.
 
     PARAMETER
@@ -259,7 +259,7 @@ Orbital parameter to specify a required periapsis.
     }
 
 #### OrbitEccentricity
-**_COMING SOON!_**
+**_NEW!_**
 Orbital parameter to specify a required eccentricity.
 
     PARAMETER
@@ -284,7 +284,7 @@ Orbital parameter to specify a required eccentricity.
     }
 
 #### OrbitInclination
-**_COMING SOON!_**
+**_NEW!_**
 Orbital parameter to specify a required inclination.
 
     PARAMETER
