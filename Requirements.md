@@ -29,14 +29,18 @@ The following requirements are natively supported by ContractConfigurator:
  * [[PartUnlocked|Requirements#partunlocked]]
  * [[PartModuleUnlocked|Requirements#partmoduleunlocked]]
  * [[TechResearched|Requirements#techresearched]]
+* [[Space Program requirements|Requirements#space-program-requirements]]
+ * [[HasCrew|Requirements#hascrew]]
+ * [[Facility|Requirements#facility]]
+ * [[Funds|Requirements#funds]]
+ * [[Reputation|Requirements#reputation]]
+ * [[Science|Requirements#science]]
 * [[Contract based requirements|Requirements#contract-based-requirements]]
  * [[CompleteContract|Requirements#completecontract]]
 * [[Planetary requirements|Requirements#planetary-requirements]]
  * [[SCANsatCoverage|Requirements#scansatcoverage]]
 * [[Miscellaneous requirements|Requirements#miscellaneous-requirements]]
  * [[Expression|Requirements#expression]]
- * [[HasCrew|Requirements#hascrew]]
- * [[Facility|Requirements#facility]]
 * [[Set requirements|Requirements#set-requirements]]
  * [[Any|Requirements#any]]
  * [[All|Requirements#all]]
@@ -304,6 +308,121 @@ Requirement for having researched a technology.
         tech = basicRocketry
     }
 
+### Space Program requirements
+
+#### HasCrew
+**_NEW!_**
+Requirement that checks whether the player has Kerbals in their crew matching the given criteria.
+
+    REQUIREMENT
+    {
+        name = HasCrew1
+        type = HasCrew
+
+        // (Optional) The type of trait required.  Valid values are:
+        //    Pilot
+        //    Engineer
+        //    Scientist
+        trait = Engineer
+
+        // (Optional) Minimum and maximum experience level.  Default values are
+        // 0 and 5 (for min/max).
+        minExperience = 2
+        maxExperience = 5
+
+        // (Optional) Minimum and maximum count.  Default values are 1 and
+        // int.MaxValue (for min/max).
+        minCount = 1
+        maxCount = 5
+    }
+
+#### Facility
+**_NEW!_**
+Requirement that checks whether the player has the given facility upgraded (or not upgraded) to the specified level.
+
+    REQUIREMENT
+    {
+        name = Facility
+        type = Facility
+
+        // The facility.  Valid values are:
+        //    LaunchPad
+        //    Runway
+        //    VehicleAssemblyBuilding
+        //    SpaceplaneHangar
+        //    TrackingStation
+        //    AstronautComplex
+        //    MissionControl
+        //    ResearchAndDevelopment
+        //    Administration
+        facility = Administration
+
+        // (Optional) Minimum and maximum facility level.  Default values are
+        // 0 and 2 (for min/max).
+        minLevel = 2
+        maxLevel = 2
+    }
+
+#### Funds
+**_COMING SOON!_**
+Requirement that checks whether the player has enough (or not too much) funds.
+
+    REQUIREMENT
+    {
+        name = Funds
+        type = Funds
+
+        // Minimum amount of funds the player must have before this contract
+        // can show up.
+        // Default = 0.0
+        minFunds = 100000
+
+        // Maximum amount of funds the player can have before this contract
+        // no longer shows up.
+        // Default = double.MaxValue
+        maxFunds = 1000000
+    }
+
+#### Reputation
+**_COMING SOON!_**
+Requirement that checks whether the player has enough (or not too much) reputation.
+
+    REQUIREMENT
+    {
+        name = Reputation
+        type = Reputation
+
+        // Minimum amount of reputation the player must have before this
+        // contract can show up.
+        // Default = -1000.0
+        minReputation = 0
+
+        // Maximum amount of reputation the player can have before this
+        // contract no longer shows up.
+        // Default = 1000.0
+        maxReputation = 500.0
+    }
+
+#### Science
+**_COMING SOON!_**
+Requirement that checks whether the player has enough (or not too much) science.
+
+    REQUIREMENT
+    {
+        name = Science
+        type = Science
+
+        // Minimum amount of science the player must have before this contract
+        // can show up.
+        // Default = 0.0
+        minScience = 100
+
+        // Maximum amount of science the player can have before this contract
+        // no longer shows up.
+        // Default = float.MaxValue
+        maxScience = 10000
+    }
+
 ### Contract based requirements
 
 #### CompleteContract
@@ -393,59 +512,6 @@ Requirement that executes an expression to check whether the requirement is met.
         // comparisons (<, <=, ==, !=, >=, >) and parenthesis.  It is able to
         // access data in the persistent data store.
         expression = CC_EXPTEST_Success == 1 || !CC_TestVal
-    }
-
-#### HasCrew
-**_NEW!_**
-Requirement that checks whether the player has Kerbals in their crew matching the given criteria.
-
-    REQUIREMENT
-    {
-        name = HasCrew1
-        type = HasCrew
-
-        // (Optional) The type of trait required.  Valid values are:
-        //    Pilot
-        //    Engineer
-        //    Scientist
-        trait = Engineer
-
-        // (Optional) Minimum and maximum experience level.  Default values are
-        // 0 and 5 (for min/max).
-        minExperience = 2
-        maxExperience = 5
-
-        // (Optional) Minimum and maximum count.  Default values are 1 and
-        // int.MaxValue (for min/max).
-        minCount = 1
-        maxCount = 5
-    }
-
-#### Facility
-**_NEW!_**
-Requirement that checks whether the player has the given facility upgraded (or not upgraded) to the specified level.
-
-    REQUIREMENT
-    {
-        name = Facility
-        type = Facility
-
-        // The facility.  Valid values are:
-        //    LaunchPad
-        //    Runway
-        //    VehicleAssemblyBuilding
-        //    SpaceplaneHangar
-        //    TrackingStation
-        //    AstronautComplex
-        //    MissionControl
-        //    ResearchAndDevelopment
-        //    Administration
-        facility = Administration
-
-        // (Optional) Minimum and maximum facility level.  Default values are
-        // 0 and 2 (for min/max).
-        minLevel = 2
-        maxLevel = 2
     }
 
 ### Set requirements
