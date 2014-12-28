@@ -122,8 +122,8 @@ Parameter to indicate that the Vessel in question must have a certain number of 
 
         // (Optional) Minimum and maximum count.  Default values are 1 and
         // int.MaxValue (for min/max).
-        minCount = 1
-        maxCount = 10
+        minCrew = 1
+        maxCrew = 10
 
         // Text to use for the parameter
         // Default (maxCrew = 0) = Crew: Unmanned
