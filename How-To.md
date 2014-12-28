@@ -13,7 +13,7 @@ And then start adding to it!  See the [[Contract Type|Contract-Type]] page for t
 When creating a new contract, the first thing too look at is the debug menu (Alt-F12) from the main menu.  If there were any validation errors due to incorrect configuration, this is where they will likely show up.  If there are no errors there, then continue on and test your contracts as normal.
 
 **_NEW!_**
-If there are contract validation errors, there is an in-game menu to allow reloading the contract type data without restarting.  To get to this menu, hit Alt-F9 from either the main menu or space center.  Note that most changes will *NOT* affect contracts that have already been offered.
+If there are contract validation errors, there is an in-game menu to allow reloading the contract type data without restarting.  To get to this menu, hit Alt-F10 from either the main menu or space center.  Note that most changes will *NOT* affect contracts that have already been offered.
 
 ## Creating an Agency
 
