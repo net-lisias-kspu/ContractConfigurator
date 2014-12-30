@@ -6,25 +6,29 @@ The following parameters are natively supported by ContractConfigurator:
 
 * [[Vessel Parameters|Parameters#vessel-parameters]]
  * [[VesselParameterGroup|Parameters#vesselparametergroup]]
- * [[HasCrew|Parameters#hascrew]]
- * [[HasPassengers|Parameters#haspassengers]]
- * [[HasPart|Parameters#haspart]]
- * [[HasPartModule|Parameters#haspartmodule]]
- * [[HasResource|Parameters#hasresource]]
- * [[OrbitApoapsis|Parameters#orbitapoapsis]]
- * [[OrbitPeriapsis|Parameters#orbitperiapsis]]
- * [[OrbitEccentricity|Parameters#orbiteccentricity]]
- * [[OrbitInclination|Parameters#orbitinclination]]
- * [[ReachAltitudeEnvelope|Parameters#reachaltitudeenvelope]]
- * [[ReachSpeedEnvelope|Parameters#reachspeedenvelope]]
- * [[ReachBiome|Parameters#reachbiome]]
- * [[ReachDestination|Parameters#reachdestination]]
- * [[ReachSitutaion|Parameters#reachsituation]]
- * [[ReachSpecificOrbit|Parameters#reachspecificorbit]]
- * [[ReturnHome|Parameters#returnhome]]
- * [[VesselHasVisited|Parameters#vesselhasvisited]]
- * [[VesselMass|Parameters#vesselmass]]
- * [[VisitWaypoint|Parameters#visitwaypoint]]
+ * [[Vessel Attributes|Parameters#vessel-attributes]]
+  * [[HasCrew|Parameters#hascrew]]
+  * [[HasPassengers|Parameters#haspassengers]]
+  * [[HasPart|Parameters#haspart]]
+  * [[HasPartModule|Parameters#haspartmodule]]
+  * [[HasResource|Parameters#hasresource]]
+  * [[VesselMass|Parameters#vesselmass]]
+ * [[Orbit Attributes|Parameters#orbit-attributes]]
+  * [[OrbitApoapsis|Parameters#orbitapoapsis]]
+  * [[OrbitPeriapsis|Parameters#orbitperiapsis]]
+  * [[OrbitEccentricity|Parameters#orbiteccentricity]]
+  * [[OrbitInclination|Parameters#orbitinclination]]
+ * [[Vessel State|Parameters#vessel-state]]
+  * [[ReachAltitudeEnvelope|Parameters#reachaltitudeenvelope]]
+  * [[ReachSpeedEnvelope|Parameters#reachspeedenvelope]]
+  * [[ReachBiome|Parameters#reachbiome]]
+  * [[ReachDestination|Parameters#reachdestination]]
+  * [[ReachSitutaion|Parameters#reachsituation]]
+  * [[ReachSpecificOrbit|Parameters#reachspecificorbit]]
+  * [[ReturnHome|Parameters#returnhome]]
+ * [[Vessel History|Parameters#vessel-history]]
+  * [[VesselHasVisited|Parameters#vesselhasvisited]]
+  * [[VisitWaypoint|Parameters#visitwaypoint]]
 * [[Kerbal Parameters|Parameters#kerbal-parameters]]
  * [[BoardAnyVessel|Parameters#boardanyvessel]]
  * [[RecoverKerbal|Parameters#recoverkerbal]]
@@ -51,7 +55,7 @@ The following parameters are natively supported by ContractConfigurator:
  * [[Timer|Parameters#timer]]
 
 ### Vessel Parameters
-These are parameters that operator on vessels (manned or unmanned).
+These are parameters that operate on vessels (manned or unmanned).
 
 #### VesselParameterGroup
 The VesselParameterGroup parameter is used to group several child vessel parameters together.  It can also be used to specify a duration for which the parameters must be true, and will track across non-active vessels.  Note that when not used with a VesselParameterGroup parent parameter, the other vessel parameters on this page will only work with the active vessel.
@@ -102,7 +106,10 @@ The VesselParameterGroup parameter is used to group several child vessel paramet
         }
     }
 
-#### HasCrew
+#### Vessel Attributes
+These parameters pertain to attributes of a vessel.
+
+##### HasCrew
 Parameter to indicate that the Vessel in question must have a certain number of crew members (or must have fewer than a certain number).
 
     PARAMETER
@@ -135,7 +142,7 @@ Parameter to indicate that the Vessel in question must have a certain number of 
         //title =
     }
 
-#### HasPassengers
+##### HasPassengers
 **_NEW!_**
 Parameter to indicate that the Vessel in question must have a certain number of passengers (or must have fewer than a certain number).  Passengers are represented by empty seats.
 
@@ -157,7 +164,7 @@ Parameter to indicate that the Vessel in question must have a certain number of 
         //title =
     }
 
-#### HasPart
+##### HasPart
 Parameter to indicate that the Vessel in question must have a certain number of a certain part (or must have fewer than a certain number).
 
     PARAMETER
@@ -183,7 +190,7 @@ Parameter to indicate that the Vessel in question must have a certain number of 
         //title =
     }
 
-#### HasPartModule
+##### HasPartModule
 Parameter to indicate that the Vessel in question must have a certain number of a certain PartModule (or must have fewer than a certain number).
 
     PARAMETER
@@ -209,7 +216,7 @@ Parameter to indicate that the Vessel in question must have a certain number of 
         //title =
     }
 
-#### HasResource
+##### HasResource
 Parameter to indicate that the Vessel in question must have a certain quantity of a certain resource (or must have fewer than a certain number).
 
     PARAMETER
@@ -231,7 +238,28 @@ Parameter to indicate that the Vessel in question must have a certain quantity o
         //title =
     }
 
-#### OrbitApoapsis
+##### VesselMass
+The VesselMass parameter requires a player's vessel to be within the specified mass range.
+
+    PARAMETER
+    {
+        name = VesselMass1
+        type = VesselMass
+
+        // (Optional) Minimum and maximum mass.  Defaults are 0.0
+        // and float.MaxValue for (min/max) respectively.
+        minMass = 1.0
+        maxMass = 10.0
+
+        // Text for the contract parameter.
+        // Default = Vessel mass: <mass>
+        //title = 
+    }
+
+#### Orbit Attributes
+These parameters pertain to attributes of a vessel's orbit.
+
+##### OrbitApoapsis
 **_NEW!_**
 Orbital parameter to specify a required apoapsis.
 
@@ -256,7 +284,7 @@ Orbital parameter to specify a required apoapsis.
         //title =
     }
 
-#### OrbitPeriapsis
+##### OrbitPeriapsis
 **_NEW!_**
 Orbital parameter to specify a required periapsis.
 
@@ -281,7 +309,7 @@ Orbital parameter to specify a required periapsis.
         //title =
     }
 
-#### OrbitEccentricity
+##### OrbitEccentricity
 **_NEW!_**
 Orbital parameter to specify a required eccentricity.
 
@@ -306,7 +334,7 @@ Orbital parameter to specify a required eccentricity.
         //title =
     }
 
-#### OrbitInclination
+##### OrbitInclination
 **_NEW!_**
 Orbital parameter to specify a required inclination.
 
@@ -331,7 +359,10 @@ Orbital parameter to specify a required inclination.
         //title =
     }
 
-#### ReachAltitudeEnvelope
+#### Vessel State
+These parameters pertain to the state of a vessel.
+
+##### ReachAltitudeEnvelope
 Get to a specific altitude envelope.  Note that this is not tied to a specific celestial body - to do that you need to use multiple parameters together (and set the disableOnStateChange flag to false).
 
     PARAMETER
@@ -348,7 +379,7 @@ Get to a specific altitude envelope.  Note that this is not tied to a specific c
         //title =
     }
 
-#### ReachSpeedEnvelope
+##### ReachSpeedEnvelope
 Get to a specific speed envelope.  Note that this is not tied to a specific celestial body - to do that you need to use multiple parameters together (and set the disableOnStateChange flag to false).
 
     PARAMETER
@@ -365,7 +396,7 @@ Get to a specific speed envelope.  Note that this is not tied to a specific cele
         //title =
     }
 
-#### ReachBiome
+##### ReachBiome
 Reach a specific Biome.
 
     PARAMETER
@@ -381,7 +412,7 @@ Reach a specific Biome.
         title = Relax on Kerbin's Shores
     }
 
-#### ReachDestination
+##### ReachDestination
 Reach a specific celestial object.
 
     PARAMETER
@@ -397,7 +428,7 @@ Reach a specific celestial object.
         //title =
     }
 
-#### ReachSituation
+##### ReachSituation
 Reach a specific situation.
 
     PARAMETER
@@ -421,7 +452,7 @@ Reach a specific situation.
         //title =
     }
 
-#### ReachSpecificOrbit
+##### ReachSpecificOrbit
 **_NEW!_**
 The ReachSpecificOrbit parameter is used with the [[OrbitGenerator|Behaviours#orbitgenerator]] behaviour to indicate that a generated orbit must be reached by a vessel.
 
@@ -442,7 +473,7 @@ The ReachSpecificOrbit parameter is used with the [[OrbitGenerator|Behaviours#or
         deviationWindow = 10.0
     }
 
-#### ReturnHome
+##### ReturnHome
 The ReturnHome parameter requires a player to return home (ideally after meeting their other contract objectives).
 
     PARAMETER
@@ -455,7 +486,10 @@ The ReturnHome parameter requires a player to return home (ideally after meeting
         //title = 
     }
 
-#### VesselHasVisited
+#### Vessel History
+These parameters pertain to the history of a vessel.
+
+##### VesselHasVisited
 The VesselHasVisited parameter requires a player to go to visit a celestial body under specific circumstances.
 
     PARAMETER
@@ -487,25 +521,7 @@ The VesselHasVisited parameter requires a player to go to visit a celestial body
         //title = 
     }
 
-#### VesselMass
-The VesselMass parameter requires a player's vessel to be within the specified mass range.
-
-    PARAMETER
-    {
-        name = VesselMass1
-        type = VesselMass
-
-        // (Optional) Minimum and maximum mass.  Defaults are 0.0
-        // and float.MaxValue for (min/max) respectively.
-        minMass = 1.0
-        maxMass = 10.0
-
-        // Text for the contract parameter.
-        // Default = Vessel mass: <mass>
-        //title = 
-    }
-
-#### VisitWaypoint
+##### VisitWaypoint
 **_NEW!_**
 The VisitWaypoint parameter is used with the [[WaypointGenerator|Behaviours#waypointgenerator]] behaviour to indicate that a generated waypoint must be visited by a vessel.
 
