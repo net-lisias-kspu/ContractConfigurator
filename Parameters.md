@@ -31,6 +31,7 @@ The following parameters are natively supported by ContractConfigurator:
     * [[VisitWaypoint|Parameters#visitwaypoint]]
   * [[RemoteTech|Parameters#remotetech]]
     * [[KSCConnectivity|Parameters#kscconnectivity]]
+    * [[SignalDelay|Parameters#signaldelay]]
 * [[Kerbal Parameters|Parameters#kerbal-parameters]]
   * [[BoardAnyVessel|Parameters#boardanyvessel]]
   * [[RecoverKerbal|Parameters#recoverkerbal]]
@@ -548,6 +549,7 @@ The VisitWaypoint parameter is used with the [[WaypointGenerator|Behaviours#wayp
     }
 
 #### RemoteTech
+**_COMING SOON!_**
 These are parameters that are specific to the RemoteTech module.
 
 ##### KSCConnectivity
@@ -565,6 +567,28 @@ The KSCConnectivity parameter requires that a vessel has connectivity to the Ker
 
         // Text to use for the parameter's title.
         // Default = Connected to KSC
+        //title =
+    }	
+
+##### SignalDelay
+**_COMING SOON!_**
+The SignalDelay parameter specifies min/max values for the signal delay back to the KSC.
+
+    PARAMETER
+    {
+        name = SignalDelay
+        type = SignalDelay
+
+        // Minimum signal delay in seconds.
+        // Default = 0.0
+        minSignalDelay = 1.0
+
+        // Maximum signal delay in seconds.
+        // Default = double.MaxValue
+        maxSignalDelay = 70.0
+
+        // Text to use for the parameter's title.
+        // Default = Signal delay: Between <min> and <max>.
         //title =
     }	
 
