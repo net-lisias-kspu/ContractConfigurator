@@ -29,6 +29,8 @@ The following parameters are natively supported by ContractConfigurator:
   * [[Vessel History|Parameters#vessel-history]]
     * [[VesselHasVisited|Parameters#vesselhasvisited]]
     * [[VisitWaypoint|Parameters#visitwaypoint]]
+  * [[RemoteTech|Parameters#remotetech]]
+    * [[KSCConnectivity|Parameters#kscconnectivity]]
 * [[Kerbal Parameters|Parameters#kerbal-parameters]]
   * [[BoardAnyVessel|Parameters#boardanyvessel]]
   * [[RecoverKerbal|Parameters#recoverkerbal]]
@@ -544,6 +546,26 @@ The VisitWaypoint parameter is used with the [[WaypointGenerator|Behaviours#wayp
         // Default = Location: <waypoint>
         //title = 
     }
+
+#### RemoteTech
+These are parameters that are specific to the RemoteTech module.
+
+##### KSCConnectivity
+The KSCConnectivity parameter requires that a vessel has connectivity to the Kerbal Space Center (ie. Mission Control).
+
+    PARAMETER
+    {
+        name = KSCConnectivity
+        type = KSCConnectivity
+
+        // Whether to check for connectivity or the lack of connectivity.
+        // Default = true
+        hasConnectivity = true
+
+        // Text to use for the parameter's title.
+        // Default = Connected to KSC
+        //title =
+    }	
 
 ### Kerbal Parameters
 These are parameters that operate on Kerbals.
