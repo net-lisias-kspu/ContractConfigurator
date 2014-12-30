@@ -364,7 +364,7 @@ Requirement that checks whether the player has the given facility upgraded (or n
     }
 
 #### Funds
-**_COMING SOON!_**
+**_NEW!_**
 Requirement that checks whether the player has enough (or not too much) funds.
 
     REQUIREMENT
@@ -384,7 +384,7 @@ Requirement that checks whether the player has enough (or not too much) funds.
     }
 
 #### Reputation
-**_COMING SOON!_**
+**_NEW!_**
 Requirement that checks whether the player has enough (or not too much) reputation.
 
     REQUIREMENT
@@ -404,7 +404,7 @@ Requirement that checks whether the player has enough (or not too much) reputati
     }
 
 #### Science
-**_COMING SOON!_**
+**_NEW!_**
 Requirement that checks whether the player has enough (or not too much) science.
 
     REQUIREMENT
