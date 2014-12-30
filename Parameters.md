@@ -551,6 +551,7 @@ The VisitWaypoint parameter is used with the [[WaypointGenerator|Behaviours#wayp
 These are parameters that are specific to the RemoteTech module.
 
 ##### KSCConnectivity
+**_COMING SOON!_**
 The KSCConnectivity parameter requires that a vessel has connectivity to the Kerbal Space Center (ie. Mission Control).
 
     PARAMETER
