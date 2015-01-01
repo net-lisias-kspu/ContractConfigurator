@@ -107,48 +107,20 @@ _Sample CONTRACT_TYPE (can be downloaded [here](https://raw.githubusercontent.co
         // Default = 1.0
         weight = 10.0
 
-        // The PARAMETER node defines a contract parameter.  The following parameter
-        // displays all the fields that are supported for a parameter across all
-        // types.  See the Parameters page for examples of all supported parameters.
+        // The PARAMETER node defines a contract parameter.  The following shows an
+        // example parameter.  See the Parameters page for examples of all supported
+        // parameters.
         PARAMETER
         {
-            // The parameter name is not used, but should be provided to allow for
-            // the possibility of other mods modifying contracts via ModuleManager.
-            name = Param1
+            name = AltitudeRecord1
 
-            // The type defines the type of Parameter.  See below for all supported
-            // ContractConfigurator parameters
+            // The type defines the type of Parameter.  See the Parameters page for
+            // a list of all supported ContractConfigurator parameters
             type = AltitudeRecord
 
             // This is a parameter specific to the AltituteRecord parameter type.
             // Each parameter type can have include its own custom fields.
             altitude = 45000
-
-            // Target celestial body.  Defaults to the targetBody of the contract.
-            // For most  parameters this only has an impacton the reward/failure
-            // amounts.
-            targetBody = Kerbin
-
-            // Parameter rewards
-            rewardScience = 100.0
-            rewardReputation = 20.0
-            rewardFunds = 100000.0
-            failureReputation = 10.0
-            failureFunds = 10000.0
-
-            // When the parameter's state changes to completed or failed, disable
-            // the parameter.  Use a value of false if you are trying to make
-            // something behave like the Squad part test contract.  Example, if the
-            // parameter says you need to be between 1000 and 2000 meters altitude
-            // then setting this to false will make the parameter go back to
-            // incomplete if you enter and leave the altitude window.
-            //
-            // Default = true
-            disableOnStateChange = true
-
-            // Optional parameters do not need to be completed (mainly for use with
-            // composite parameters)
-            optional = true
         }
 
         REQUIREMENT
