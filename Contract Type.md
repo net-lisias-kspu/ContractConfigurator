@@ -135,4 +135,15 @@ _Sample CONTRACT_TYPE (can be downloaded [here](https://raw.githubusercontent.co
             // for all supported ContractConfigurator requirements.
             type = ReachSpace
         }
+
+        // The BEHAVIOUR node adds additional special contract level behaviour.
+        // See the Behaviours page for examples of all supported behaviours.
+        BEHAVIOUR
+        {
+            name = Behaviour1
+
+            // The type defines the type of Behaviour.  See the Behaviours page
+            // for all supported ContractConfigurator behaviours.
+            type = Behaviour
+        }
     }
