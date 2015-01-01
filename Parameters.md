@@ -80,6 +80,14 @@ The VesselParameterGroup parameter is used to group several child vessel paramet
         // any combination of those.
         duration = 10d 2h
 
+        // COMING SOON!
+        // Define the name of the craft that will complete this parameter group.
+        // Once a craft completes the group, it will be associated with the 
+        // given key, which can then be referenced in other parameters.  The
+        // Vessel <=> key association is persistent, and can be used in future
+        // contracts.
+        define = Vessel Key
+
         // Examples of typical child parameters used with VesselParameterGroup
         PARAMETER
         {
