@@ -124,8 +124,8 @@ _Sample CONTRACT_TYPE (can be downloaded [here](https://raw.githubusercontent.co
         }
 
         // The PARAMETER node defines a contract requirement - a prerequisite that
-        // needs to be met before the contract can be offered.  The following shows an
-        // example requirement.  See the Requirements page for examples of all 
+        // needs to be met before the contract can be offered.  The following shows
+        // an example requirement.  See the Requirements page for examples of all 
         // supported requirements.
         REQUIREMENT
         {
