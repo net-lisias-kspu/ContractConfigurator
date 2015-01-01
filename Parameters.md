@@ -4,9 +4,6 @@ The PARAMETER node defines a contract parameter - what needs to be accomplished 
 
 Parameters all follow the same general structure - the following attributes are available for all parameters:
 
-    // The PARAMETER node defines a contract parameter.  The following parameter
-    // displays all the fields that are supported for a parameter across all
-    // types.  See the Parameters page for examples of all supported parameters.
     PARAMETER
     {
         // The parameter name is not used, but should be provided to allow for
