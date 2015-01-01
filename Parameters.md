@@ -98,7 +98,7 @@ The following parameters are natively supported by ContractConfigurator:
   * [[Timer|Parameters#timer]]
 
 ### Vessel Parameters
-These are parameters that operate on vessels (manned or unmanned).
+These are parameters that operate on vessels (manned or unmanned).  By default, all vessel parameters have disableOnStateChange set to false.
 
 #### VesselParameterGroup
 The VesselParameterGroup parameter is used to group several child vessel parameters together.  It can also be used to specify a duration for which the parameters must be true, and will track across non-active vessels.  Note that when not used with a VesselParameterGroup parent parameter, the other vessel parameters on this page will only work with the active vessel.
