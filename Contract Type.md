@@ -123,31 +123,16 @@ _Sample CONTRACT_TYPE (can be downloaded [here](https://raw.githubusercontent.co
             altitude = 45000
         }
 
+        // The PARAMETER node defines a contract requirement - a prerequisite that
+        // needs to be met before the contract can be offered.  The following shows an
+        // example requirement.  See the Requirements page for examples of all supported
+        // requirements.
         REQUIREMENT
         {
-            // The requirement name is not used, but should be provided to allow
-            // for the possibility of other mods modifying contracts via
-            // ModuleManager.
-            name = Requirement1
+            name = ReachSpace1
 
             // The type defines the type of Requirement.  See the Requirements page
             // for all supported ContractConfigurator requirements.
             type = ReachSpace
-
-            // The invertRequirement is a logical NOT.  In this example, the
-            // requirement becomes that the player must not yet have reached space.
-            //
-            // Default = false
-            invertRequirement = true
-
-            // NEW!
-            // Most requirements are not checked for active contracts (to
-            // prevent the contract from being withdrawn while the player is
-            // actively working to complete it).  Use this to change that
-            // behaviour.  Note in some cases it's a lot nicer to do that
-            // as a PARAMETER so the player knows what's required of them.
-            //
-            // Default = mostly false, true for a few requirements
-            checkOnActiveContract = true
         }
     }
