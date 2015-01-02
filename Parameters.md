@@ -51,6 +51,7 @@ The following parameters are natively supported by ContractConfigurator:
     * [[HasPart|Parameters#haspart]]
     * [[HasPartModule|Parameters#haspartmodule]]
     * [[HasResource|Parameters#hasresource]]
+    * [[PartValidation|Parameters#partvalidatin]]
     * [[IsNotVessel|Parameters#isnotvessel]]
     * [[VesselMass|Parameters#vesselmass]]
   * [[Orbit Attributes|Parameters#orbit-attributes]]
@@ -286,6 +287,58 @@ Parameter to indicate that the Vessel in question must have a certain quantity o
 
         // Text to use for the parameter
         // Default Resource: <resource>: <quantity_description>
+        //title =
+    }
+
+##### PartValidation
+**_COMING SOON!_**
+Parameter to provide validation over a vessel's parts.  Can validate along a number of different attributes.
+
+    PARAMETER
+    {
+        name = PartValidation
+        type = PartValidation
+
+        // The name of the part to check for.  Optional.
+        part = mk1pod
+
+        // PartModule(s) to check for.  Optional, and can be specified multiple times.
+        partModule = ModuleReactionWheel
+        partModule = ModuleSAS
+
+        // Part manufacturer to check for.  Optional.
+        manufacturer = Kerbodyne
+
+        // Part manufacturer to exclude.  Optional.
+        notManufacturer = Rockomax Conglomerate
+
+        // Part category to check for.  Optional.
+        // List of valid values from PartCategories:
+        //   Aero
+        //   Control
+        //   Engine
+        //   FuelTank
+        //   Pods
+        //   Science
+        //   Structural
+        //   Utility
+        category = Engine
+
+        // Part category to exclude.  Optional.
+        notCategory = Science
+
+        // Minimum count, default = 1
+        minCount = 1
+
+        // Maximum count, default = int.MAXVALUE
+        maxCount = 10
+
+        // Text to use for the parameter
+        // Default (maxCount = 0) = Part: <attributes>: None
+        // Default (maxCount = int.MAXVALUE) = Part: <attributes>: At least <minCount>
+        // Default (minCount = 0) = Part: <attributes>: At most <maxCount>
+        // Default (minCount = maxCount ) = Part: <attributes>: Exactly <minCount>
+        // Default (else) = Part: <attributes>: Between <minCount> and <maxCount>
         //title =
     }
 
