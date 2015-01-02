@@ -55,6 +55,7 @@ The following parameters are natively supported by ContractConfigurator:
     * [[IsNotVessel|Parameters#isnotvessel]]
     * [[VesselMass|Parameters#vesselmass]]
   * [[Orbit Attributes|Parameters#orbit-attributes]]
+    * [[OrbitAltitude|Parameters#orbitaltitude]]
     * [[OrbitApoapsis|Parameters#orbitapoapsis]]
     * [[OrbitPeriapsis|Parameters#orbitperiapsis]]
     * [[OrbitEccentricity|Parameters#orbiteccentricity]]
@@ -381,6 +382,31 @@ The VesselMass parameter requires a player's vessel to be within the specified m
 
 #### Orbit Attributes
 These parameters pertain to attributes of a vessel's orbit.
+
+##### OrbitAltitude
+**_COMING SOON!_**
+Orbital parameter to specify a required apoapsis and periapsis.
+
+    PARAMETER
+    {
+        name = OrbitAltitude
+        type = OrbitAltitude
+
+        // Target body, defaulted from the contract if not supplied.
+        targetBody = Kerbin
+
+        // Minimum orbit altitude in meters.
+        // Default = 0
+        minAltitude = 100000
+
+        // Maximum orbit altitude in meters.
+        // Default = double.MaxValue
+        maxAltitude = 250000
+
+        // Text to use for the parameter
+        // Default Orbit: Between <min> and <max>
+        //title =
+    }
 
 ##### OrbitApoapsis
 **_NEW!_**
