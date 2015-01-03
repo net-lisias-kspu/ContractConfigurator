@@ -74,6 +74,7 @@ The following parameters are natively supported by ContractConfigurator:
   * [[RemoteTech|Parameters#remotetech]]
     * [[KSCConnectivity|Parameters#kscconnectivity]]
     * [[SignalDelay|Parameters#signaldelay]]
+    * [[VesselConnectivity|Parameters#vesselconnectivity]]
 * [[Kerbal Parameters|Parameters#kerbal-parameters]]
   * [[BoardAnyVessel|Parameters#boardanyvessel]]
   * [[RecoverKerbal|Parameters#recoverkerbal]]
@@ -735,6 +736,27 @@ The SignalDelay parameter specifies min/max values for the signal delay back to 
 
         // Text to use for the parameter's title.
         // Default = Signal delay: Between <min> and <max>.
+        //title =
+    }	
+
+##### VesselConnectivity
+**_COMING SOON!_**
+The VesselConnectivityparameter requires that the vessel has direct connectivity to another vessel.
+
+    PARAMETER
+    {
+        name = VesselConnectivity
+        type = VesselConnectivity
+
+        // The vessel to check connectivity against.
+        vesselKey = CommSat I
+
+        // Whether to check for connectivity or the lack of connectivity.
+        // Default = true
+        hasConnectivity = true
+
+        // Text to use for the parameter's title.
+        // Default = Direct connection to: <vesselKey>
         //title =
     }	
 
