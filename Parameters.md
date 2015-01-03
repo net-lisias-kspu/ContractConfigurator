@@ -72,6 +72,7 @@ The following parameters are natively supported by ContractConfigurator:
     * [[VesselHasVisited|Parameters#vesselhasvisited]]
     * [[VisitWaypoint|Parameters#visitwaypoint]]
   * [[RemoteTech|Parameters#remotetech]]
+    * [[ActiveVesselConnection|Parameters#activevesselconnection]]
     * [[KSCConnectivity|Parameters#kscconnectivity]]
     * [[SignalDelay|Parameters#signaldelay]]
     * [[VesselConnectivity|Parameters#vesselconnectivity]]
@@ -699,6 +700,23 @@ The VisitWaypoint parameter is used with the [[WaypointGenerator|Behaviours#wayp
 **_COMING SOON!_**
 These are parameters that are specific to the RemoteTech module.
 
+##### ActiveVesselConnection
+**_COMING SOON!_**
+The ActiveVesselConnection requires that the vessel is capable of connecting to the active vessel at a given range.
+
+    PARAMETER
+    {
+        name = ActiveVesselConnection
+        type = ActiveVesselConnection
+
+        // The range in meters that the vessel must be able to connect to.
+        range = 48000000
+
+        // Text to use for the parameter's title.
+        // Default = Active vessel antenna range: <range>
+        //title =
+    }
+
 ##### KSCConnectivity
 **_COMING SOON!_**
 The KSCConnectivity parameter requires that a vessel has connectivity to the Kerbal Space Center (ie. Mission Control).
@@ -741,7 +759,7 @@ The SignalDelay parameter specifies min/max values for the signal delay back to 
 
 ##### VesselConnectivity
 **_COMING SOON!_**
-The VesselConnectivityparameter requires that the vessel has direct connectivity to another vessel.
+The VesselConnectivity parameter requires that the vessel has direct connectivity to another vessel.
 
     PARAMETER
     {
