@@ -704,7 +704,7 @@ These are parameters that are specific to the RemoteTech module.
 **_COMING SOON!_**
 The ActiveVesselConnection requires that the vessel is capable of connecting to the active vessel at a given range.
 
-    PARAMETER
+    PARAMETER:NEEDS[RemoteTech]
     {
         name = ActiveVesselConnection
         type = ActiveVesselConnection
@@ -721,7 +721,7 @@ The ActiveVesselConnection requires that the vessel is capable of connecting to 
 **_COMING SOON!_**
 The KSCConnectivity parameter requires that a vessel has connectivity to the Kerbal Space Center (ie. Mission Control).
 
-    PARAMETER
+    PARAMETER:NEEDS[RemoteTech]
     {
         name = KSCConnectivity
         type = KSCConnectivity
@@ -739,7 +739,7 @@ The KSCConnectivity parameter requires that a vessel has connectivity to the Ker
 **_COMING SOON!_**
 The SignalDelay parameter specifies min/max values for the signal delay back to the KSC.
 
-    PARAMETER
+    PARAMETER:NEEDS[RemoteTech]
     {
         name = SignalDelay
         type = SignalDelay
@@ -761,7 +761,7 @@ The SignalDelay parameter specifies min/max values for the signal delay back to 
 **_COMING SOON!_**
 The VesselConnectivity parameter requires that the vessel has direct connectivity to another vessel.
 
-    PARAMETER
+    PARAMETER:NEEDS[RemoteTech]
     {
         name = VesselConnectivity
         type = VesselConnectivity
