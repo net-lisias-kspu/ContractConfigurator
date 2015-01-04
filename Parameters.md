@@ -99,6 +99,7 @@ The following parameters are natively supported by ContractConfigurator:
   * [[SCANsatCoverage|Parameters#scansatcoverage]]
 * [[Miscellaneous Parameters|Parameters#miscellaneous-parameters]]
   * [[PartTest|Parameters#parttest]]
+  * [[Duration|Parameters#duration]]
   * [[Timer|Parameters#timer]]
 
 ### Vessel Parameters
@@ -1209,6 +1210,35 @@ PartTest is for testing parts (or just activating them, for staged parts).  This
         // they say "Activate through the staging system", etc.
         // Optional
         notes = Test this part anywhere, no other requirements!
+    }
+
+#### Duration
+**_COMING SOON!_**
+The Duration parameter sets up a timer that starts when all sibling parameters are completed.  Once the timer expires, the parameter is completed.
+
+    PARAMETER
+    {
+        name = Duration
+        type = Duration
+
+        // The duration the timer is set to. Can specify values in years (y),
+        // days (d), hours (h), minutes (m), seconds (s) or any combination of
+        // those.
+        duration = 30m 10s
+
+        // The preWaitText overrides the text that is displayed when waiting
+        // for the other parameters to complete.
+        // Default = Waiting time required
+        //preWaitText = 
+
+        // The waitingText overrides the text that is displayed when waiting
+        // for the timer to expire.
+        // Default = Time to completion
+        //waitingText = 
+
+        // The completionText is displayed when the timer completes.
+        // Default = Wait time over
+        //completionText = 
     }
 
 #### Timer
