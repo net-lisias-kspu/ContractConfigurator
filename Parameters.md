@@ -137,8 +137,6 @@ The VesselParameterGroup parameter is used to group several child vessel paramet
             name = ReachSituation1
             type = ReachSituation
 
-            disableOnStateChange = false
-
             situation = ORBITING
         }
 
@@ -147,8 +145,6 @@ The VesselParameterGroup parameter is used to group several child vessel paramet
             name = ReachDestination1
             type = ReachDestination
 
-            disableOnStateChange = false
-
             targetBody = Kerbin
         }
 
@@ -156,8 +152,6 @@ The VesselParameterGroup parameter is used to group several child vessel paramet
         {
             name = HasCrew1
             type = HasCrew
-
-            disableOnStateChange = false
         }
     }
 
@@ -514,7 +508,7 @@ Orbital parameter to specify a required inclination.
 These parameters pertain to the state of a vessel.
 
 ##### ReachAltitudeEnvelope
-Get to a specific altitude envelope.  Note that this is not tied to a specific celestial body - to do that you need to use multiple parameters together (and set the disableOnStateChange flag to false).
+Get to a specific altitude envelope.  Note that this is not tied to a specific celestial body - to do that you need to use multiple parameters together.
 
     PARAMETER
     {
@@ -531,7 +525,7 @@ Get to a specific altitude envelope.  Note that this is not tied to a specific c
     }
 
 ##### ReachSpeedEnvelope
-Get to a specific speed envelope.  Note that this is not tied to a specific celestial body - to do that you need to use multiple parameters together (and set the disableOnStateChange flag to false).
+Get to a specific speed envelope.  Note that this is not tied to a specific celestial body - to do that you need to use multiple parameters together.
 
     PARAMETER
     {
@@ -907,7 +901,7 @@ The KerbalDeaths parameter _fails_ if more Kerbals than the countMax die.
     }
 
 ### Set Parameters
-Set parameters are special - they do not typically do anything on their own, but work with their child parameters.  Many of them are best used with disableOnStateChange = false on the child parameters.
+Set parameters are special - they do not typically do anything on their own, but work with their child parameters.
 
 #### Any
 The Any parameter is be completed if any one of its child parameters are completed.
@@ -966,8 +960,6 @@ The All parameter is completed once all its child parameters are completed.
             name = ReachAltitudeEnvelope1
             type = ReachAltitudeEnvelope
 
-            disableOnStateChange = false
-
             minAltitude = 20000
             maxAltitude = 50000
         }
@@ -976,8 +968,6 @@ The All parameter is completed once all its child parameters are completed.
         {
             name = ReachSpeedEnvelope1
             type = ReachSpeedEnvelope
-
-            disableOnStateChange = false
 
             minSpeed = 1000
             maxSpeed = 5000
@@ -1010,8 +1000,6 @@ The Sequence parameter is one of two ways to define parameters that need to be c
                 name = ReachSituation1
                 type = ReachSituation
 
-                disableOnStateChange = false
-
                 situation = ORBITING
             }
 
@@ -1019,8 +1007,6 @@ The Sequence parameter is one of two ways to define parameters that need to be c
             {
                 name = ReachDestination1
                 type = ReachDestination
-
-                disableOnStateChange = false
 
                 targetBody = Mun
             }
@@ -1038,8 +1024,6 @@ The Sequence parameter is one of two ways to define parameters that need to be c
                 name = ReachSituation1
                 type = ReachSituation
 
-                disableOnStateChange = false
-
                 situation = ORBITING
             }
 
@@ -1047,8 +1031,6 @@ The Sequence parameter is one of two ways to define parameters that need to be c
             {
                 name = ReachDestination1
                 type = ReachDestination
-
-                disableOnStateChange = false
 
                 targetBody = Minmus
             }
@@ -1089,8 +1071,6 @@ The SequenceNode parameter is the second way to define parameters that need to b
                 name = ReachSituation1
                 type = ReachSituation
 
-                disableOnStateChange = false
-
                 situation = ORBITING
             }
 
@@ -1098,8 +1078,6 @@ The SequenceNode parameter is the second way to define parameters that need to b
             {
                 name = ReachDestination1
                 type = ReachDestination
-
-                disableOnStateChange = false
 
                 targetBody = Mun
             }
@@ -1132,8 +1110,6 @@ The SequenceNode parameter is the second way to define parameters that need to b
                 name = ReachSituation1
                 type = ReachSituation
 
-                disableOnStateChange = false
-
                 situation = ORBITING
             }
 
@@ -1141,8 +1117,6 @@ The SequenceNode parameter is the second way to define parameters that need to b
             {
                 name = ReachDestination1
                 type = ReachDestination
-
-                disableOnStateChange = false
 
                 targetBody = Minmus
             }
