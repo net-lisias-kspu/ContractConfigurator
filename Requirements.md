@@ -59,6 +59,9 @@ The following requirements are natively supported by ContractConfigurator:
  * [[PartUnlocked|Requirements#partunlocked]]
  * [[PartModuleUnlocked|Requirements#partmoduleunlocked]]
  * [[TechResearched|Requirements#techresearched]]
+* [[RemoteTech requirements|Requirements#remotetech]]
+ * [[ActiveVesselRange|Requirements#activevesselrange]]
+ * [[CelestialBodyCoverage|Requirements#celestialbodycoverage]]
 * [[Space Program requirements|Requirements#space-program-requirements]]
  * [[HasCrew|Requirements#hascrew]]
  * [[Facility|Requirements#facility]]
@@ -336,6 +339,39 @@ Requirement for having researched a technology.
         // this does not get validated - if you make a typo, the requirement will
         // always return false.
         tech = basicRocketry
+    }
+
+#### RemoteTech requirements
+**_COMING SOON!_**
+These are requirementsthat are specific to the RemoteTech module.
+
+##### ActiveVesselRange
+**_COMING SOON!_**
+The ActiveVesselRange requirement checks that the given celestial body has a satellite with sufficient range (achievable either via an omni antenna or dish set to active vessel).
+
+    REQUIREMENT
+    {
+        name = ActiveVesselRange
+        type = ActiveVesselRange
+
+        // Target body - if not supplied will be defaulted from the contract.
+        targetBody = Kerbin
+
+        // The range that is required, in meters.
+        range = 48000000
+    }
+
+##### CelestialBodyCoverage
+**_COMING SOON!_**
+The CelestialBodyCoverage requirement checks that the given celestial body has a dish pointed to it with sufficient range.
+
+    REQUIREMENT
+    {
+        name = CelestialBodyCoverage
+        type = CelestialBodyCoverage
+
+        // Target body - if not supplied will be defaulted from the contract.
+        targetBody = Duna
     }
 
 ### Space Program requirements
