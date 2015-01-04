@@ -58,6 +58,7 @@ The following requirements are natively supported by ContractConfigurator:
 * [[Research based requirements|Requirements#research-based-requirements]]
  * [[PartUnlocked|Requirements#partunlocked]]
  * [[PartModuleUnlocked|Requirements#partmoduleunlocked]]
+ * [[PartModuleTypeUnlocked|Requirements#partmoduletypeunlocked]]
  * [[TechResearched|Requirements#techresearched]]
 * [[RemoteTech requirements|Requirements#remotetech]]
  * [[ActiveVesselRange|Requirements#activevesselrange]]
@@ -320,11 +321,30 @@ Requirement for having any part with the given PartModule unlocked from the tech
 
     REQUIREMENT
     {
-        name = PartModule Unlocked1
+        name = PartModuleUnlocked1
         type = PartModuleUnlocked
 
         // PartModule that needs to be unlocked.
         partModule = ModuleReactionWheel
+    }
+
+#### PartModuleTypeUnlocked
+**_COMING SOON!_**
+Requirement for having a "type" of PartModule unlocked from the tech tree.
+
+    REQUIREMENT
+    {
+        name = PartModuleTypeUnlocked
+        type = PartModuleTypeUnlocked
+
+        // Type of PartModule that needs to be unlocked.  Valid values are
+        // defined in Squad/Contracts/Contracts.cfg under MODULE_DEFINITIONS:
+        //   Antenna
+        //   Dock
+        //   Grapple
+        //   Power
+        //   Wheel
+        partModuleType = Power
     }
 
 #### TechResearched
