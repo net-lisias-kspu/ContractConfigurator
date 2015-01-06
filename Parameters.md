@@ -73,6 +73,7 @@ The following parameters are natively supported by ContractConfigurator:
     * [[VisitWaypoint|Parameters#visitwaypoint]]
   * [[RemoteTech|Parameters#remotetech]]
     * [[ActiveVesselConnection|Parameters#activevesselconnection]]
+    * [[CelestialBodyCoverage|Parameters#celestialbodycoverage]]
     * [[KSCConnectivity|Parameters#kscconnectivity]]
     * [[SignalDelay|Parameters#signaldelay]]
     * [[VesselConnectivity|Parameters#vesselconnectivity]]
@@ -697,7 +698,7 @@ These are parameters that are specific to the RemoteTech module.
 
 ##### ActiveVesselConnection
 **_COMING SOON!_**
-The ActiveVesselConnection requires that the vessel is capable of connecting to the active vessel at a given range.
+The ActiveVesselConnection parameter requires that the vessel is capable of connecting to the active vessel at a given range.
 
     PARAMETER:NEEDS[RemoteTech]
     {
@@ -709,6 +710,27 @@ The ActiveVesselConnection requires that the vessel is capable of connecting to 
 
         // Text to use for the parameter's title.
         // Default = Active vessel antenna range: <range>
+        //title =
+    }
+
+##### CelestialBodyCoverage
+**_COMING SOON!_**
+The CelestialBodyCoverage parameter requires that a minimum communication coverage of the given celestial body is reached.
+
+    PARAMETER:NEEDS[RemoteTech]
+    {
+        name = CelestialBodyCoverage
+        type = CelestialBodyCoverage
+
+        // The percentage (0.0 to 1.0) of communication coverage that is
+        // needed to meet the contract parameter.
+        coverage = 0.80
+
+        // This can be inherited from the the contract type if necessary
+        targetBody = Duna
+
+        // Text to use for the parameter's title.
+        // Default = <body>: Communication coverage: <coverage> %
         //title =
     }
 
