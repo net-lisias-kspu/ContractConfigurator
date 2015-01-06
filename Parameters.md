@@ -73,9 +73,9 @@ The following parameters are natively supported by ContractConfigurator:
     * [[VesselHasVisited|Parameters#vesselhasvisited]]
     * [[VisitWaypoint|Parameters#visitwaypoint]]
   * [[RemoteTech|Parameters#remotetech]]
-    * [[ActiveVesselConnection|Parameters#activevesselconnection]]
     * [[CelestialBodyCoverage|Parameters#celestialbodycoverage]]
     * [[KSCConnectivity|Parameters#kscconnectivity]]
+    * [[HasAntenna|Parameters#hasantenna]]
     * [[SignalDelay|Parameters#signaldelay]]
     * [[VesselConnectivity|Parameters#vesselconnectivity]]
 * [[Kerbal Parameters|Parameters#kerbal-parameters]]
@@ -724,23 +724,6 @@ The VisitWaypoint parameter is used with the [[WaypointGenerator|Behaviours#wayp
 **_COMING SOON!_**
 These are parameters that are specific to the RemoteTech module.
 
-##### ActiveVesselConnection
-**_COMING SOON!_**
-The ActiveVesselConnection parameter requires that the vessel is capable of connecting to the active vessel at a given range.
-
-    PARAMETER:NEEDS[RemoteTech]
-    {
-        name = ActiveVesselConnection
-        type = ActiveVesselConnection
-
-        // The range in meters that the vessel must be able to connect to.
-        range = 48000000
-
-        // Text to use for the parameter's title.
-        // Default = Active vessel antenna range: <range>
-        //title =
-    }
-
 ##### CelestialBodyCoverage
 **_COMING SOON!_**
 The CelestialBodyCoverage parameter requires that a minimum communication coverage of the given celestial body is reached.
@@ -779,6 +762,49 @@ The KSCConnectivity parameter requires that a vessel has connectivity to the Ker
         // Default = Connected to KSC
         //title =
     }	
+
+##### HasAntenna
+**_COMING SOON!_**
+The HasAntenna parameter requires that the vessel has an antenna that meets the specified criteria.
+
+    PARAMETER:NEEDS[RemoteTech]
+    {
+        name = HasAntenna
+        type = HasAntenna
+
+        // The minimum number of antenna that must meet the criteria.
+        // Default = 1
+        minCount = 1
+
+        // The minimum number of antenna that can meet the criteria.
+        // Default = int.MaxValue
+        maxCount = 3
+
+        // The minimum range in meters that the antenna must have
+        // Default = 0.0
+        minRange = 36000000000
+
+        // The maximum range in meters that the antenna must have
+        // Default = double.MaxValue
+        maxRange = 100000000000
+
+        // The type of antenna.  Dish or Omni.
+        // Optional
+        antennaType = Omni
+
+        // This can be inherited from the the contract type if necessary
+        // Optional
+        targetBody = Duna
+
+        // Specifies whether we are looking for a connection to the active
+        // vessel.  Cannot be true if targetBody is specified.
+        // Default = false
+        activeVessel = True
+
+        // Text to use for the parameter's title.
+        // Default = Active vessel antenna range: <range>
+        //title =
+    }
 
 ##### SignalDelay
 **_COMING SOON!_**
