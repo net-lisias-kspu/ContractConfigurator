@@ -54,14 +54,8 @@ The following parameters are natively supported by ContractConfigurator:
     * [[PartValidation|Parameters#partvalidatin]]
     * [[IsNotVessel|Parameters#isnotvessel]]
     * [[VesselMass|Parameters#vesselmass]]
-  * [[Orbit Attributes|Parameters#orbit-attributes]]
-    * [[OrbitAltitude|Parameters#orbitaltitude]]
-    * [[OrbitApoapsis|Parameters#orbitapoapsis]]
-    * [[OrbitEccentricity|Parameters#orbiteccentricity]]
-    * [[OrbitInclination|Parameters#orbitinclination]]
-    * [[OrbitPeriapsis|Parameters#orbitperiapsis]]
-    * [[OrbitPeriod|Parameters#orbitperiod]]
   * [[Vessel State|Parameters#vessel-state]]
+    * [[Orbit|Parameters#orbit]]
     * [[ReachAltitudeEnvelope|Parameters#reachaltitudeenvelope]]
     * [[ReachSpeedEnvelope|Parameters#reachspeedenvelope]]
     * [[ReachBiome|Parameters#reachbiome]]
@@ -379,9 +373,6 @@ The VesselMass parameter requires a player's vessel to be within the specified m
         //title = 
     }
 
-#### Orbit Attributes
-These parameters pertain to attributes of a vessel's orbit.
-
 ##### OrbitAltitude
 **_COMING SOON!_**
 Orbital parameter to specify a required apoapsis and periapsis.
@@ -402,23 +393,6 @@ Orbital parameter to specify a required apoapsis and periapsis.
         // Default = double.MaxValue
         maxAltitude = 250000
 
-        // Text to use for the parameter
-        // Default Orbit: Between <min> and <max>
-        //title =
-    }
-
-##### OrbitApoapsis
-**_NEW!_**
-Orbital parameter to specify a required apoapsis.
-
-    PARAMETER
-    {
-        name = OrbitApoapsis
-        type = OrbitApoapsis
-
-        // Target body, defaulted from the contract if not supplied.
-        targetBody = Kerbin
-
         // Minimum apoapsis in meters.
         // Default = 0
         minApA = 100000
@@ -426,73 +400,6 @@ Orbital parameter to specify a required apoapsis.
         // Maximum apoapsis in meters.
         // Default = double.MaxValue
         maxApA = 250000
-
-        // Text to use for the parameter
-        // Default Apoapsis: Between <min> and <max>
-        //title =
-    }
-
-##### OrbitEccentricity
-**_NEW!_**
-Orbital parameter to specify a required eccentricity.
-
-    PARAMETER
-    {
-        name = OrbitEccentricity
-        type = OrbitEccentricity
-
-        // Target body, defaulted from the contract if not supplied.
-        targetBody = Kerbin
-
-        // Minimum eccentricity.
-        // Default = 0
-        minEccentricity = 0.0
-
-        // Maximum eccentricity.
-        // Default = double.MaxValue
-        maxEccentricity = 0.1
-
-        // Text to use for the parameter
-        // Default Eccentricity: Between <min> and <max>
-        //title =
-    }
-
-##### OrbitInclination
-**_NEW!_**
-Orbital parameter to specify a required inclination.
-
-    PARAMETER
-    {
-        name = OrbitInclination
-        type = OrbitInclination
-
-        // Target body, defaulted from the contract if not supplied.
-        targetBody = Kerbin
-
-        // Minimum inclination in degrees
-        // Default = 0
-        minInclination = 0
-
-        // Maximum inclination in degrees
-        // Default = 180
-        maxInclination = 1
-
-        // Text to use for the parameter
-        // Default Inclination: Between <min> and <max>
-        //title =
-    }
-
-##### OrbitPeriapsis
-**_NEW!_**
-Orbital parameter to specify a required periapsis.
-
-    PARAMETER
-    {
-        name = OrbitPeriapsis
-        type = OrbitPeriapsis
-
-        // Target body, defaulted from the contract if not supplied.
-        targetBody = Kerbin
 
         // Minimum periapsis in meters.
         // Default = 0
@@ -502,22 +409,21 @@ Orbital parameter to specify a required periapsis.
         // Default = double.MaxValue
         maxPeA = 250000
 
-        // Text to use for the parameter
-        // Default Periapsis: Between <min> and <max>
-        //title =
-    }
+        // Minimum eccentricity.
+        // Default = 0
+        minEccentricity = 0.0
 
-##### OrbitPeriod
-**_COMING SOON!_**
-Orbital parameter to specify a required orbital period (good for requiring Keosynchronous orbit).
+        // Maximum eccentricity.
+        // Default = double.MaxValue
+        maxEccentricity = 0.1
 
-    PARAMETER
-    {
-        name = OrbitPeriod
-        type = OrbitPeriod
+        // Minimum inclination in degrees
+        // Default = 0
+        minInclination = 0
 
-        // Target body, defaulted from the contract if not supplied.
-        targetBody = Kerbin
+        // Maximum inclination in degrees
+        // Default = 180
+        maxInclination = 1
 
         // Duration of the minimum orbital period.  Specify values in years (y),
         // days (d), hours (h), minutes (m), seconds (s) or any combination of
@@ -530,7 +436,7 @@ Orbital parameter to specify a required orbital period (good for requiring Keosy
         minPeriod = 6h 0m 52s
 
         // Text to use for the parameter
-        // Default Orbit Period: Between <min> and <max>
+        // Default Orbit: <orbit details>
         //title =
     }
 
