@@ -373,9 +373,9 @@ The VesselMass parameter requires a player's vessel to be within the specified m
         //title = 
     }
 
-##### OrbitAltitude
+##### Orbit
 **_COMING SOON!_**
-Orbital parameter to specify a required apoapsis and periapsis.
+Orbital parameter to specify required orbital details.
 
     PARAMETER
     {
