@@ -128,6 +128,16 @@ The VesselParameterGroup parameter is used to group several child vessel paramet
         // contracts.
         define = Vessel Key
 
+        // COMING SOON!
+        // Lock this parameter so that it can only be accomplished by the
+        // specified craft.  Note that the name is a "define" name set via
+        // the define key in a *different* VesselParameterGroup parameter
+        // (which can be in the same contract, or a different one).  This
+        // attribute can be specified multiple times to allow multiple vessel
+        // to be available to complete the parameter.
+        vessel = Vessel Key
+        vessel = Some other vessel
+
         // Examples of typical child parameters used with VesselParameterGroup
         PARAMETER
         {
