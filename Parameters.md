@@ -303,9 +303,6 @@ Parameter to provide validation over a vessel's parts.  Can validate along a num
         // Part manufacturer to check for.  Optional.
         manufacturer = Kerbodyne
 
-        // Part manufacturer to exclude.  Optional.
-        notManufacturer = Rockomax Conglomerate
-
         // Part category to check for.  Optional.
         // List of valid values from PartCategories:
         //   Aero
@@ -318,8 +315,11 @@ Parameter to provide validation over a vessel's parts.  Can validate along a num
         //   Utility
         category = Engine
 
-        // Part category to exclude.  Optional.
-        notCategory = Science
+        // Whether to check the conditions against ALL parts or just search
+        // for a count based match (using minCount and maxCount).  Default
+        // is False, and if set to True minCount and maxCount cannot be
+        // provided.
+        allParts = True
 
         // Minimum count, default = 1
         minCount = 1
