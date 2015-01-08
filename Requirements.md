@@ -21,7 +21,6 @@ Requirements all follow the same general structure - the following attributes ar
         // Default = false
         invertRequirement = true
 
-        // NEW!
         // Most requirements are not checked for active contracts (to
         // prevent the contract from being withdrawn while the player is
         // actively working to complete it).  Use this to change that
@@ -329,7 +328,7 @@ Requirement for having any part with the given PartModule unlocked from the tech
     }
 
 #### PartModuleTypeUnlocked
-**_COMING SOON!_**
+**_NEW!_**
 Requirement for having a "type" of PartModule unlocked from the tech tree.
 
     REQUIREMENT
@@ -364,11 +363,11 @@ Requirement for having researched a technology.
     }
 
 #### RemoteTech requirements
-**_COMING SOON!_**
+**_NEW!_**
 These are requirementsthat are specific to the RemoteTech module.
 
 ##### ActiveVesselRange
-**_COMING SOON!_**
+**_NEW!_**
 The ActiveVesselRange requirement checks that the given celestial body has a satellite with sufficient range (achievable either via an omni antenna or dish set to active vessel).
 
     REQUIREMENT
@@ -384,7 +383,7 @@ The ActiveVesselRange requirement checks that the given celestial body has a sat
     }
 
 ##### CelestialBodyCoverage
-**_COMING SOON!_**
+**_NEW!_**
 The CelestialBodyCoverage requirement checks that the given celestial body has a dish pointed to it with sufficient range.
 
     REQUIREMENT
@@ -407,7 +406,6 @@ The CelestialBodyCoverage requirement checks that the given celestial body has a
 ### Space Program requirements
 
 #### HasCrew
-**_NEW!_**
 Requirement that checks whether the player has Kerbals in their crew matching the given criteria.
 
     REQUIREMENT
@@ -433,7 +431,6 @@ Requirement that checks whether the player has Kerbals in their crew matching th
     }
 
 #### Facility
-**_NEW!_**
 Requirement that checks whether the player has the given facility upgraded (or not upgraded) to the specified level.
 
     REQUIREMENT
@@ -460,7 +457,6 @@ Requirement that checks whether the player has the given facility upgraded (or n
     }
 
 #### Funds
-**_NEW!_**
 Requirement that checks whether the player has enough (or not too much) funds.
 
     REQUIREMENT
@@ -480,7 +476,6 @@ Requirement that checks whether the player has enough (or not too much) funds.
     }
 
 #### Reputation
-**_NEW!_**
 Requirement that checks whether the player has enough (or not too much) reputation.
 
     REQUIREMENT
@@ -500,7 +495,6 @@ Requirement that checks whether the player has enough (or not too much) reputati
     }
 
 #### Science
-**_NEW!_**
 Requirement that checks whether the player has enough (or not too much) science.
 
     REQUIREMENT
@@ -553,7 +547,6 @@ Requirement for having a certain number of contracts completed of the given type
 ### Planetary requirements
 
 #### SCANsatCoverage
-**_NEW!_**
 Requirement for having a certain level of SCANsat coverage for the given scan type/planet.
 
     REQUIREMENT:NEEDS[SCANsat]
