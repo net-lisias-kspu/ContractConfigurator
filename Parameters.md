@@ -48,8 +48,6 @@ The following parameters are natively supported by ContractConfigurator:
   * [[Vessel Attributes|Parameters#vessel-attributes]]
     * [[HasCrew|Parameters#hascrew]]
     * [[HasPassengers|Parameters#haspassengers]]
-    * [[HasPart|Parameters#haspart]]
-    * [[HasPartModule|Parameters#haspartmodule]]
     * [[HasResource|Parameters#hasresource]]
     * [[PartValidation|Parameters#partvalidatin]]
     * [[IsNotVessel|Parameters#isnotvessel]]
@@ -120,7 +118,7 @@ The VesselParameterGroup parameter is used to group several child vessel paramet
         // any combination of those.
         duration = 10d 2h
 
-        // COMING SOON!
+        // NEW!
         // Define the name of the craft that will complete this parameter group.
         // Once a craft completes the group, it will be associated with the 
         // given key, which can then be referenced in other parameters.  The
@@ -128,7 +126,7 @@ The VesselParameterGroup parameter is used to group several child vessel paramet
         // contracts.
         define = Vessel Key
 
-        // COMING SOON!
+        // NEW!
         // Lock this parameter so that it can only be accomplished by the
         // specified craft.  Note that the name is a "define" name set via
         // the define key in a *different* VesselParameterGroup parameter
@@ -199,7 +197,6 @@ Parameter to indicate that the Vessel in question must have a certain number of 
     }
 
 ##### HasPassengers
-**_NEW!_**
 Parameter to indicate that the Vessel in question must have a certain number of passengers (or must have fewer than a certain number).  Passengers are represented by empty seats.
 
     PARAMETER
@@ -217,58 +214,6 @@ Parameter to indicate that the Vessel in question must have a certain number of 
         // Default (minPassengers = 0) = Passengers: At most <maxPassengers > Kerbals
         // Default (minPassengers = maxPassengers ) = Passengers: Exactly <minPassengers > Kerbals
         // Default (else) = Passengers: Between <minPassengers > and <maxPassengers > Kerbals
-        //title =
-    }
-
-##### HasPart
-Parameter to indicate that the Vessel in question must have a certain number of a certain part (or must have fewer than a certain number).
-
-    PARAMETER
-    {
-        name = HasPart1
-        type = HasPart
-
-        // The name of the part to check for
-        part = mk1pod
-
-        // Minimum count, default = 1
-        minCount = 1
-
-        // Maximum count, default = int.MAXVALUE
-        maxCount = 10
-
-        // Text to use for the parameter
-        // Default (maxCount = 0) = Part: <part>: None
-        // Default (maxCount = int.MAXVALUE) = Part: <part>: At least <minCount>
-        // Default (minCount = 0) = Part: <part>: At most <maxCount>
-        // Default (minCount = maxCount ) = Part: <part>: Exactly <minCount>
-        // Default (else) = Part: <part>: Between <minCount> and <maxCount>
-        //title =
-    }
-
-##### HasPartModule
-Parameter to indicate that the Vessel in question must have a certain number of a certain PartModule (or must have fewer than a certain number).
-
-    PARAMETER
-    {
-        name = HasPartModule1
-        type = HasPartModule
-
-        // The name of the part module to check for
-        partModule = ModuleReactionWheel
-
-        // Minimum count, default = 1
-        minCount = 1
-
-        // Maximum count, default = int.MAXVALUE
-        maxCount = 10
-
-        // Text to use for the parameter
-        // Default (maxCount = 0) = Module: <partModule>: None
-        // Default (maxCount = int.MAXVALUE) = Module: <partModule>: At least <minCount>
-        // Default (minCount = 0) = Module: <partModule>: At most <maxCount>
-        // Default (minCount = maxCount ) = Module: <partModule>: Exactly <minCount>
-        // Default (else) = Module: <partModule>: Between <minCount> and <maxCount>
         //title =
     }
 
@@ -295,7 +240,7 @@ Parameter to indicate that the Vessel in question must have a certain quantity o
     }
 
 ##### PartValidation
-**_COMING SOON!_**
+**_NEW!_**
 Parameter to provide validation over a vessel's parts.  Can validate along a number of different attributes.
 
     PARAMETER
@@ -347,7 +292,7 @@ Parameter to provide validation over a vessel's parts.  Can validate along a num
     }
 
 ##### IsNotVessel
-**_COMING SOON!_**
+**_NEW!_**
 The IsNotVessel parameter is used to create mutually exclusive groups within a contract.  Use the define attribute in the VesselParameterGroup parameter to define names, and then use the IsNotVessel within those to make the other vessel(s) invalid for completing the other group.
 
     PARAMETER
@@ -384,7 +329,7 @@ The VesselMass parameter requires a player's vessel to be within the specified m
     }
 
 ##### Orbit
-**_COMING SOON!_**
+**_NEW!_**
 Orbital parameter to specify required orbital details.
 
     PARAMETER
@@ -544,7 +489,6 @@ Reach a specific situation.
     }
 
 ##### ReachSpecificOrbit
-**_NEW!_**
 The ReachSpecificOrbit parameter is used with the [[OrbitGenerator|Behaviours#orbitgenerator]] behaviour to indicate that a generated orbit must be reached by a vessel.
 
     PARAMETER
@@ -613,7 +557,6 @@ The VesselHasVisited parameter requires a player to go to visit a celestial body
     }
 
 ##### VisitWaypoint
-**_NEW!_**
 The VisitWaypoint parameter is used with the [[WaypointGenerator|Behaviours#waypointgenerator]] behaviour to indicate that a generated waypoint must be visited by a vessel.
 
     PARAMETER
@@ -637,11 +580,11 @@ The VisitWaypoint parameter is used with the [[WaypointGenerator|Behaviours#wayp
     }
 
 #### RemoteTech
-**_COMING SOON!_**
+**_NEW!_**
 These are parameters that are specific to the RemoteTech module.
 
 ##### CelestialBodyCoverage
-**_COMING SOON!_**
+**_NEW!_**
 The CelestialBodyCoverage parameter requires that a minimum communication coverage of the given celestial body is reached.
 
     PARAMETER:NEEDS[RemoteTech]
@@ -662,7 +605,7 @@ The CelestialBodyCoverage parameter requires that a minimum communication covera
     }
 
 ##### KSCConnectivity
-**_COMING SOON!_**
+**_NEW!_**
 The KSCConnectivity parameter requires that a vessel has connectivity to the Kerbal Space Center (ie. Mission Control).
 
     PARAMETER:NEEDS[RemoteTech]
@@ -680,7 +623,7 @@ The KSCConnectivity parameter requires that a vessel has connectivity to the Ker
     }	
 
 ##### HasAntenna
-**_COMING SOON!_**
+**_NEW!_**
 The HasAntenna parameter requires that the vessel has an antenna that meets the specified criteria.
 
     PARAMETER:NEEDS[RemoteTech]
@@ -723,7 +666,7 @@ The HasAntenna parameter requires that the vessel has an antenna that meets the 
     }
 
 ##### SignalDelay
-**_COMING SOON!_**
+**_NEW!_**
 The SignalDelay parameter specifies min/max values for the signal delay back to the KSC.
 
     PARAMETER:NEEDS[RemoteTech]
@@ -745,7 +688,7 @@ The SignalDelay parameter specifies min/max values for the signal delay back to 
     }	
 
 ##### VesselConnectivity
-**_COMING SOON!_**
+**_NEW!_**
 The VesselConnectivity parameter requires that the vessel has direct connectivity to another vessel.
 
     PARAMETER:NEEDS[RemoteTech]
@@ -1148,7 +1091,6 @@ The PlantFlag parameter is met when planting a flag on the given body.
     }
 
 #### SCANsatCoverage
-**_NEW!_**
 The SCANsatCoverage parameter is met when there is sufficient SCANsat coverage for the given planet/type.
 
     PARAMETER:NEEDS[SCANsat]
@@ -1205,7 +1147,7 @@ PartTest is for testing parts (or just activating them, for staged parts).  This
     }
 
 #### Duration
-**_COMING SOON!_**
+**_NEW!_**
 The Duration parameter sets up a timer that starts when all sibling parameters are completed.  Once the timer expires, the parameter is completed.
 
     PARAMETER
