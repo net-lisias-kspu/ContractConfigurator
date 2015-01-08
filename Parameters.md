@@ -334,8 +334,8 @@ Orbital parameter to specify required orbital details.
 
     PARAMETER
     {
-        name = OrbitAltitude
-        type = OrbitAltitude
+        name = Orbit
+        type = Orbit
 
         // Target body, defaulted from the contract if not supplied.
         targetBody = Kerbin
