@@ -58,7 +58,7 @@ The following parameters are natively supported by ContractConfigurator:
     * [[ReachSpeedEnvelope|Parameters#reachspeedenvelope]]
     * [[ReachBiome|Parameters#reachbiome]]
     * [[ReachDestination|Parameters#reachdestination]]
-    * [[ReachSitutaion|Parameters#reachsituation]]
+    * [[ReachSituation|Parameters#reachsituation]]
     * [[ReachSpecificOrbit|Parameters#reachspecificorbit]]
     * [[ReturnHome|Parameters#returnhome]]
   * [[Vessel History|Parameters#vessel-history]]
@@ -328,6 +328,9 @@ The VesselMass parameter requires a player's vessel to be within the specified m
         //title = 
     }
 
+#### Vessel State
+These parameters pertain to the state of a vessel.
+
 ##### Orbit
 **_NEW!_**
 Orbital parameter to specify required orbital details.
@@ -394,9 +397,6 @@ Orbital parameter to specify required orbital details.
         // Default Orbit: <orbit details>
         //title =
     }
-
-#### Vessel State
-These parameters pertain to the state of a vessel.
 
 ##### ReachAltitudeEnvelope
 Get to a specific altitude envelope.  Note that this is not tied to a specific celestial body - to do that you need to use multiple parameters together.

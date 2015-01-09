@@ -33,52 +33,52 @@ Requirements all follow the same general structure - the following attributes ar
 
 The following requirements are natively supported by ContractConfigurator:
 
-* [[Progress Based requirements|Requirements#progress-based-requirements]]
- * [[BaseConstruction|Requirements#baseconstruction]]
- * [[Docking|Requirements#docking]]
- * [[Escape|Requirements#escape]]
- * [[FlyBy|Requirements#flyby]]
- * [[Landing|Requirements#landing]]
- * [[Orbit|Requirements#orbit]]
- * [[Rendezvous|Requirements#rendezvous]]
- * [[ReturnFromFlyBy|Requirements#returnfromflyby]]
- * [[ReturnFromOrbit|Requirements#returnfromorbit]]
- * [[ReturnFromSurface|Requirements#returnfromsurface]]
- * [[SplashDown|Requirements#splashdown]]
- * [[SurfaceEVA|Requirements#surfaceeva]]
- * [[AltitudeRecord|Requirements#altituderecord]]
- * [[FirstCrewToSurvive|Requirements#firstcrewtosurvive]]
- * [[FirstLaunch|Requirements#firstlaunch]]
- * [[KSCLanding|Requirements#ksclanding]]
- * [[RunwayLanding|Requirements#runwaylanding]]
- * [[ReachSpace|Requirements#reachspace]]
- * [[SpaceCrewTransfer|Requirements#spacecrewtransfer]]
- * [[Spacewalk|Requirements#spacewalk]]
-* [[Research based requirements|Requirements#research-based-requirements]]
- * [[PartUnlocked|Requirements#partunlocked]]
- * [[PartModuleUnlocked|Requirements#partmoduleunlocked]]
- * [[PartModuleTypeUnlocked|Requirements#partmoduletypeunlocked]]
- * [[TechResearched|Requirements#techresearched]]
-* [[RemoteTech requirements|Requirements#remotetech]]
- * [[ActiveVesselRange|Requirements#activevesselrange]]
- * [[CelestialBodyCoverage|Requirements#celestialbodycoverage]]
-* [[Space Program requirements|Requirements#space-program-requirements]]
- * [[HasCrew|Requirements#hascrew]]
- * [[Facility|Requirements#facility]]
- * [[Funds|Requirements#funds]]
- * [[Reputation|Requirements#reputation]]
- * [[Science|Requirements#science]]
-* [[Contract based requirements|Requirements#contract-based-requirements]]
- * [[CompleteContract|Requirements#completecontract]]
-* [[Planetary requirements|Requirements#planetary-requirements]]
- * [[SCANsatCoverage|Requirements#scansatcoverage]]
-* [[Miscellaneous requirements|Requirements#miscellaneous-requirements]]
- * [[Expression|Requirements#expression]]
-* [[Set requirements|Requirements#set-requirements]]
- * [[Any|Requirements#any]]
- * [[All|Requirements#all]]
+* [[Progress Based Requirements|Requirements#progress-based-requirements]]
+  * [[BaseConstruction|Requirements#baseconstruction]]
+  * [[Docking|Requirements#docking]]
+  * [[Escape|Requirements#escape]]
+  * [[FlyBy|Requirements#flyby]]
+  * [[Landing|Requirements#landing]]
+  * [[Orbit|Requirements#orbit]]
+  * [[Rendezvous|Requirements#rendezvous]]
+  * [[ReturnFromFlyBy|Requirements#returnfromflyby]]
+  * [[ReturnFromOrbit|Requirements#returnfromorbit]]
+  * [[ReturnFromSurface|Requirements#returnfromsurface]]
+  * [[SplashDown|Requirements#splashdown]]
+  * [[SurfaceEVA|Requirements#surfaceeva]]
+  * [[AltitudeRecord|Requirements#altituderecord]]
+  * [[FirstCrewToSurvive|Requirements#firstcrewtosurvive]]
+  * [[FirstLaunch|Requirements#firstlaunch]]
+  * [[KSCLanding|Requirements#ksclanding]]
+  * [[RunwayLanding|Requirements#runwaylanding]]
+  * [[ReachSpace|Requirements#reachspace]]
+  * [[SpaceCrewTransfer|Requirements#spacecrewtransfer]]
+  * [[Spacewalk|Requirements#spacewalk]]
+* [[Research Based Requirements|Requirements#research-based-requirements]]
+  * [[PartUnlocked|Requirements#partunlocked]]
+  * [[PartModuleUnlocked|Requirements#partmoduleunlocked]]
+  * [[PartModuleTypeUnlocked|Requirements#partmoduletypeunlocked]]
+  * [[TechResearched|Requirements#techresearched]]
+* [[RemoteTech Requirements|Requirements#remotetech-requirements]]
+  * [[ActiveVesselRange|Requirements#activevesselrange]]
+  * [[CelestialBodyCoverage|Requirements#celestialbodycoverage]]
+* [[Space Program Requirements|Requirements#space-program-requirements]]
+  * [[HasCrew|Requirements#hascrew]]
+  * [[Facility|Requirements#facility]]
+  * [[Funds|Requirements#funds]]
+  * [[Reputation|Requirements#reputation]]
+  * [[Science|Requirements#science]]
+* [[Contract Based Requirements|Requirements#contract-based-requirements]]
+  * [[CompleteContract|Requirements#completecontract]]
+* [[Planetary Requirements|Requirements#planetary-requirements]]
+  * [[SCANsatCoverage|Requirements#scansatcoverage]]
+* [[Miscellaneous Requirements|Requirements#miscellaneous-requirements]]
+  * [[Expression|Requirements#expression]]
+* [[Set Requirements|Requirements#set-requirements]]
+  * [[Any|Requirements#any]]
+  * [[All|Requirements#all]]
 
-### Progress Based requirements
+### Progress Based Requirements
 
 #### BaseConstruction
 Requirement for having built a base.
@@ -301,7 +301,7 @@ Requirement for having done a spacewalk.
         type = Spacewalk
     }
 
-### Research based requirements
+### Research Based Requirements
 
 #### PartUnlocked
 Requirement for having a certain part unlocked from the tech tree.
@@ -362,11 +362,11 @@ Requirement for having researched a technology.
         tech = basicRocketry
     }
 
-#### RemoteTech requirements
+### RemoteTech Requirements
 **_NEW!_**
 These are requirementsthat are specific to the RemoteTech module.
 
-##### ActiveVesselRange
+#### ActiveVesselRange
 **_NEW!_**
 The ActiveVesselRange requirement checks that the given celestial body has a satellite with sufficient range (achievable either via an omni antenna or dish set to active vessel).
 
@@ -382,7 +382,7 @@ The ActiveVesselRange requirement checks that the given celestial body has a sat
         range = 48000000
     }
 
-##### CelestialBodyCoverage
+#### CelestialBodyCoverage
 **_NEW!_**
 The CelestialBodyCoverage requirement checks that the given celestial body has a dish pointed to it with sufficient range.
 
@@ -403,7 +403,7 @@ The CelestialBodyCoverage requirement checks that the given celestial body has a
         targetBody = Duna
     }
 
-### Space Program requirements
+### Space Program Requirements
 
 #### HasCrew
 Requirement that checks whether the player has Kerbals in their crew matching the given criteria.
@@ -513,7 +513,7 @@ Requirement that checks whether the player has enough (or not too much) science.
         maxScience = 10000
     }
 
-### Contract based requirements
+### Contract Based Requirements
 
 #### CompleteContract
 Requirement for having a certain number of contracts completed of the given type.
@@ -544,7 +544,7 @@ Requirement for having a certain number of contracts completed of the given type
         cooldownDuration = 10d
     }
 
-### Planetary requirements
+### Planetary Requirements
 
 #### SCANsatCoverage
 Requirement for having a certain level of SCANsat coverage for the given scan type/planet.
@@ -586,7 +586,7 @@ Requirement for having a certain level of SCANsat coverage for the given scan ty
         scanType = Biome
     }
 
-### Miscellaneous requirements
+### Miscellaneous Requirements
 
 #### Expression
 Requirement that executes an expression to check whether the requirement is met.  Can access data in the persistent data store.
@@ -603,7 +603,7 @@ Requirement that executes an expression to check whether the requirement is met.
         expression = CC_EXPTEST_Success == 1 || !CC_TestVal
     }
 
-### Set requirements
+### Set Requirements
 
 #### Any
 If any child requirement is met, then the requirement is met.

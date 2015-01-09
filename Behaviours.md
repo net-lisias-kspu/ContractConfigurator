@@ -9,7 +9,7 @@ The following behaviours are natively supported by ContractConfigurator:
 * [[SpawnKerbal|Behaviours#spawnkerbal]]
 * [[WaypointGenerator|Behaviours#waypointgenerator]]
 
-#### Expression
+### Expression
 Behaviour for executing one or more expressions and storing the results in the persistent data store.
 
     BEHAVIOUR
@@ -44,7 +44,7 @@ Behaviour for executing one or more expressions and storing the results in the p
         }
     }
 
-#### OrbitGenerator
+### OrbitGenerator
 Behaviour for generating orbits.
 
     BEHAVIOUR
@@ -97,7 +97,7 @@ Behaviour for generating orbits.
         }
     }
 
-#### SpawnKerbal
+### SpawnKerbal
 Behaviour for spawning one or more Kerbals on land or in orbit.
 
     BEHAVIOUR
@@ -153,7 +153,7 @@ Behaviour for spawning one or more Kerbals on land or in orbit.
         }
     }
 
-#### WaypointGenerator
+### WaypointGenerator
 Behaviour for generating waypoints.
 
     BEHAVIOUR
