@@ -54,8 +54,7 @@ _Sample CONTRACT_TYPE (can be downloaded [here](https://raw.githubusercontent.co
         // Agent (agency).  If not populated, a random agent will be selected.
         agent = Integrated Integrals
 
-        // Contract min/max expiry in days.  Default is a contract that does not
-        // expire.
+        // Contract min/max expiry in days.
         minExpiry = 500.0
         maxExpiry = 1000.0
 
