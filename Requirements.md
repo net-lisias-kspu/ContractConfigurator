@@ -9,7 +9,7 @@ Requirements all follow the same general structure - the following attributes ar
         // The requirement name is not used, but should be provided to allow
         // for the possibility of other mods modifying contracts via
         // ModuleManager.
-        name = Requirement1
+        name = Requirement
 
         // The type defines the type of Requirement.  See below for a list of
         // all supported ContractConfigurator requirements.
@@ -87,7 +87,7 @@ _Note that this is based on the stock ProgressNode - I'm not 100% sure what they
 
     REQUIREMENT
     {
-        name = BaseConstruction1
+        name = BaseConstruction
         type = BaseConstruction
 
         // Target celestial body.  Defaults to the targetBody of the contract.
@@ -99,7 +99,7 @@ Requirement for completing a docking at the specified celestial body.
 
     REQUIREMENT
     {
-        name = Docking1
+        name = Docking
         type = Docking
 
         // Target celestial body.  Defaults to the targetBody of the contract.
@@ -111,7 +111,7 @@ Requirement for having escaped the specified celestial body.
 
     REQUIREMENT
     {
-        name = Escape1
+        name = Escape
         type = Escape
 
         // Target celestial body.  Defaults to the targetBody of the contract.
@@ -123,7 +123,7 @@ Requirement for performing a fly-by of the specified celestial body.
 
     REQUIREMENT
     {
-        name = FlyBy1
+        name = FlyBy
         type = FlyBy
 
         // Target celestial body.  Defaults to the targetBody of the contract.
@@ -135,7 +135,7 @@ Requirement for landing on the specified celestial body.
 
     REQUIREMENT
     {
-        name = Landing1
+        name = Landing
         type = Landing
 
         // Target celestial body.  Defaults to the targetBody of the contract.
@@ -147,7 +147,7 @@ Requirement for orbiting the specified celestial body.
 
     REQUIREMENT
     {
-        name = Orbit1
+        name = Orbit
         type = Orbit
 
         // Target celestial body.  Defaults to the targetBody of the contract.
@@ -159,7 +159,7 @@ Requirement for completing a rendezvous near the specified celestial body.
 
     REQUIREMENT
     {
-        name = Rendezvous1
+        name = Rendezvous
         type = Rendezvous
 
         // Target celestial body.  Defaults to the targetBody of the contract.
@@ -171,7 +171,7 @@ Requirement for returning from a fly-by of the specified celestial body.
 
     REQUIREMENT
     {
-        name = ReturnFromFlyBy1
+        name = ReturnFromFlyBy
         type = ReturnFromFlyBy
 
         // Target celestial body.  Defaults to the targetBody of the contract.
@@ -183,7 +183,7 @@ Requirement for returning from orbit of the specified celestial body.
 
     REQUIREMENT
     {
-        name = ReturnFromOrbit1
+        name = ReturnFromOrbit
         type = ReturnFromOrbit
 
         // Target celestial body.  Defaults to the targetBody of the contract.
@@ -195,7 +195,7 @@ Requirement for returning from orbit of the specified celestial body.
 
     REQUIREMENT
     {
-        name = ReturnFromSurface1
+        name = ReturnFromSurface
         type = ReturnFromSurface
 
         // Target celestial body.  Defaults to the targetBody of the contract.
@@ -207,7 +207,7 @@ Requirement for splashing down on the specified celestial body.
 
     REQUIREMENT
     {
-        name = SplashDown1
+        name = SplashDown
         type = SplashDown
 
         // Target celestial body.  Defaults to the targetBody of the contract.
@@ -219,7 +219,7 @@ Requirement for completing a surface EVA on the specified celestial body.
 
     REQUIREMENT
     {
-        name = SurfaceEVA1
+        name = SurfaceEVA
         type = SurfaceEVA
 
         // Target celestial body.  Defaults to the targetBody of the contract.
@@ -231,7 +231,7 @@ Requirement for having reached a minimum launch altitude.
 
     REQUIREMENT
     {
-        name = AltitudeRecord1
+        name = AltitudeRecord
         type = AltitudeRecord
 
         // Minimum altitude that must have been reached
@@ -243,7 +243,7 @@ Requirement for having had a crew return successfully.
 
     REQUIREMENT
     {
-        name = FirstCrewToSurvive1
+        name = FirstCrewToSurvive
         type = FirstCrewToSurvive
     }
 
@@ -252,7 +252,7 @@ Requirement for having made the first launch.
 
     REQUIREMENT
     {
-        name = FirstLaunch1
+        name = FirstLaunch
         type = FirstLaunch
     }
 
@@ -261,7 +261,7 @@ Requirement for having landed at the KSC.
 
     REQUIREMENT
     {
-        name = KSCLanding1
+        name = KSCLanding
         type = KSCLanding
     }
 
@@ -270,7 +270,7 @@ Requirement for having landed on the runway.
 
     REQUIREMENT
     {
-        name = RunwayLanding1
+        name = RunwayLanding
         type = RunwayLanding
     }
 
@@ -279,7 +279,7 @@ Requirement for having reached space.
 
     REQUIREMENT
     {
-        name = ReachSpace1
+        name = ReachSpace
         type = ReachSpace
     }
 
@@ -288,7 +288,7 @@ Requirement for having done a crew transfer in space.
 
     REQUIREMENT
     {
-        name = SpaceCrewTransfer1
+        name = SpaceCrewTransfer
         type = SpaceCrewTransfer
     }
 
@@ -297,7 +297,7 @@ Requirement for having done a spacewalk.
 
     REQUIREMENT
     {
-        name = Spacewalk1
+        name = Spacewalk
         type = Spacewalk
     }
 
@@ -308,7 +308,7 @@ Requirement for having a certain part unlocked from the tech tree.
 
     REQUIREMENT
     {
-        name = PartUnlocked1
+        name = PartUnlocked
         type = PartUnlocked
 
         // Part name that needs to be unlocked.
@@ -320,7 +320,7 @@ Requirement for having any part with the given PartModule unlocked from the tech
 
     REQUIREMENT
     {
-        name = PartModuleUnlocked1
+        name = PartModuleUnlocked
         type = PartModuleUnlocked
 
         // PartModule that needs to be unlocked.
@@ -353,7 +353,7 @@ Requirement for having researched a technology.
 
     REQUIREMENT
     {
-        name = TechResearched1
+        name = TechResearched
         type = TechResearched
 
         // The technology that needs to have been researched.  Take special note that
@@ -410,7 +410,7 @@ Requirement that checks whether the player has Kerbals in their crew matching th
 
     REQUIREMENT
     {
-        name = HasCrew1
+        name = HasCrew
         type = HasCrew
 
         // (Optional) The type of trait required.  Valid values are:
@@ -520,7 +520,7 @@ Requirement for having a certain number of contracts completed of the given type
 
     REQUIREMENT
     {
-        name = CompleteContract1
+        name = CompleteContract
         type = CompleteContract
 
         // The type of contract being checked.  This can either be a
@@ -593,7 +593,7 @@ Requirement that executes an expression to check whether the requirement is met.
 
     REQUIREMENT
     {
-        name = Expression1
+        name = Expression
         type = Expression
 
         // The expression to be executed is in the expression field.  It supports
@@ -610,18 +610,18 @@ If any child requirement is met, then the requirement is met.
 
     REQUIREMENT
     {
-        name = Any1
+        name = Any
         type = Any
 
         REQUIREMENT
         {
-            name = ReachSpace1
+            name = ReachSpace
             type = ReachSpace
         }
 
         REQUIREMENT
         {
-            name = TechResearched1
+            name = TechResearched
             type = TechResearched
 
             tech = basicRocketry
@@ -633,18 +633,18 @@ If all child requirements are met, then the requirement is met.
 
     REQUIREMENT
     {
-        name = All1
+        name = All
         type = All
 
         REQUIREMENT
         {
-            name = ReachSpace1
+            name = ReachSpace
             type = ReachSpace
         }
 
         REQUIREMENT
         {
-            name = TechResearched1
+            name = TechResearched
             type = TechResearched
 
             tech = basicRocketry
