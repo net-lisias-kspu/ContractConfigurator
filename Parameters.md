@@ -49,7 +49,7 @@ The following parameters are natively supported by ContractConfigurator:
     * [[HasCrew|Parameters#hascrew]]
     * [[HasPassengers|Parameters#haspassengers]]
     * [[HasResource|Parameters#hasresource]]
-    * [[PartValidation|Parameters#partvalidatin]]
+    * [[PartValidation|Parameters#partvalidation]]
     * [[IsNotVessel|Parameters#isnotvessel]]
     * [[VesselMass|Parameters#vesselmass]]
   * [[Vessel State|Parameters#vessel-state]]
