@@ -104,7 +104,7 @@ The VesselParameterGroup parameter is used to group several child vessel paramet
 
     PARAMETER
     {
-        name = VesselParameterGroup1
+        name = VesselParameterGroup
         type = VesselParameterGroup
 
         // The title text to display.
@@ -139,7 +139,7 @@ The VesselParameterGroup parameter is used to group several child vessel paramet
         // Examples of typical child parameters used with VesselParameterGroup
         PARAMETER
         {
-            name = ReachSituation1
+            name = ReachSituation
             type = ReachSituation
 
             situation = ORBITING
@@ -147,7 +147,7 @@ The VesselParameterGroup parameter is used to group several child vessel paramet
 
         PARAMETER
         {
-            name = ReachDestination1
+            name = ReachDestination
             type = ReachDestination
 
             targetBody = Kerbin
@@ -155,7 +155,7 @@ The VesselParameterGroup parameter is used to group several child vessel paramet
 
         PARAMETER
         {
-            name = HasCrew1
+            name = HasCrew
             type = HasCrew
         }
     }
@@ -168,7 +168,7 @@ Parameter to indicate that the Vessel in question must have a certain number of 
 
     PARAMETER
     {
-        name = HasCrew1
+        name = HasCrew
         type = HasCrew
 
         // (Optional) The type of trait required.  Valid values are:
@@ -222,7 +222,7 @@ Parameter to indicate that the Vessel in question must have a certain quantity o
 
     PARAMETER
     {
-        name = HasResource1
+        name = HasResource
         type = HasResource
 
         // The name of the resource to check for
@@ -315,7 +315,7 @@ The VesselMass parameter requires a player's vessel to be within the specified m
 
     PARAMETER
     {
-        name = VesselMass1
+        name = VesselMass
         type = VesselMass
 
         // (Optional) Minimum and maximum mass.  Defaults are 0.0
@@ -403,7 +403,7 @@ Get to a specific altitude envelope.  Note that this is not tied to a specific c
 
     PARAMETER
     {
-        name = ReachAltitudeEnvelope1
+        name = ReachAltitudeEnvelope
         type = ReachAltitudeEnvelope
 
         // Minimum and maximum altitudes, required
@@ -420,7 +420,7 @@ Get to a specific speed envelope.  Note that this is not tied to a specific cele
 
     PARAMETER
     {
-        name = ReachSpeedEnvelope1
+        name = ReachSpeedEnvelope
         type = ReachSpeedEnvelope
 
         // Minimum and maximum speeds, required
@@ -437,7 +437,7 @@ Reach a specific Biome.
 
     PARAMETER
     {
-        name = ReachBiome1
+        name = ReachBiome
         type = ReachBiome
 
         // The name of the biome to reach.
@@ -453,7 +453,7 @@ Reach a specific celestial object.
 
     PARAMETER
     {
-        name = ReachDestination1
+        name = ReachDestination
         type = ReachDestination
 
         // This can be inherited from the the contract type if necessary
@@ -469,7 +469,7 @@ Reach a specific situation.
 
     PARAMETER
     {
-        name = ReachSituation1
+        name = ReachSituation
         type = ReachSituation
 
         // The situation.  Valid values from Vessel.Situations:
@@ -493,7 +493,7 @@ The ReachSpecificOrbit parameter is used with the [[OrbitGenerator|Behaviours#or
 
     PARAMETER
     {
-        name = ReachSpecificOrbit1
+        name = ReachSpecificOrbit
         type = ReachSpecificOrbit
 
         // The index (0-based) in the OrbitGenerator behaviour of the orbit we
@@ -513,7 +513,7 @@ The ReturnHome parameter requires a player to return home (ideally after meeting
 
     PARAMETER
     {
-        name = ReturnHome1
+        name = ReturnHome
         type = ReturnHome
 
         // Text for the contract parameter.
@@ -529,7 +529,7 @@ The VesselHasVisited parameter requires a player to go to visit a celestial body
 
     PARAMETER
     {
-        name = VesselHasVisited1
+        name = VesselHasVisited
         type = VesselHasVisited
 
         // The target to visit.  If not specified will defaulted from the contract.
@@ -561,7 +561,7 @@ The VisitWaypoint parameter is used with the [[WaypointGenerator|Behaviours#wayp
 
     PARAMETER
     {
-        name = VisitWaypoint1
+        name = VisitWaypoint
         type = VisitWaypoint
 
         // Index of the waypoint in the WaypointGenerator behaviour.
@@ -716,7 +716,7 @@ The BoardAnyVessel parameter is met when the named Kerbal boards a vessel (this 
 
     PARAMETER
     {
-        name = BoardAnyVessel1
+        name = BoardAnyVessel
         type = BoardAnyVessel
 
         // The Kerbal that needs to board a vessel
@@ -736,7 +736,7 @@ The RecoverKerbal parameter is met when the named Kerbal is "recovered" (ie. goe
 
     PARAMETER
     {
-        name = RecoverKerbal1
+        name = RecoverKerbal
         type = RecoverKerbal
 
         // The Kerbal to be recovered
@@ -759,7 +759,7 @@ To meet this parameter, the player simply needs to launch a vessel.
 
     PARAMETER
     {
-        name = LaunchVessel1
+        name = LaunchVessel
         type = LaunchVessel
     }
 
@@ -768,7 +768,7 @@ The AltituteRecord parameter is met when a craft reaches the given altitude on K
 
     PARAMETER
     {
-        name = AltitudeRecord1
+        name = AltitudeRecord
         type = AltitudeRecord
         altitude = 55000
     }
@@ -778,7 +778,7 @@ Go to space.
 
     PARAMETER
     {
-        name = ReachSpace1
+        name = ReachSpace
         type = ReachSpace
     }
 
@@ -787,7 +787,7 @@ The EnterOrbit parameter is met when a craft enters an orbit of the given celest
 
     PARAMETER
     {
-        name = EnterOrbit1
+        name = EnterOrbit
         type = EnterOrbit
 
         // This can be inherited from the the contract type if necessary
@@ -799,7 +799,7 @@ The EnterSOI parameter is met when a craft enters the sphere of influence of the
 
     PARAMETER
     {
-        name = EnterSOI1
+        name = EnterSOI
         type = EnterSOI
 
         // This can be inherited from the the contract type if necessary
@@ -811,7 +811,7 @@ The LandOnBody parameter is met when a craft lands on the given celestial body.
 
     PARAMETER
     {
-        name = LandOnBody1
+        name = LandOnBody
         type = LandOnBody
 
         // This can be inherited from the the contract type if necessary
@@ -826,7 +826,7 @@ The KerbalDeaths parameter _fails_ if more Kerbals than the countMax die.
 
     PARAMETER
     {
-        name = KerbalDeaths1
+        name = KerbalDeaths
         type = KerbalDeaths
 
         // Maximum Number of Kerbals that can die before this contract is considered
@@ -844,7 +844,7 @@ The Any parameter is be completed if any one of its child parameters are complet
 
     PARAMETER
     {
-        name = Any1
+        name = Any
         type = Any
 
         // The text to display.  Highly recommended that you do not use the default -
@@ -859,13 +859,13 @@ The Any parameter is be completed if any one of its child parameters are complet
         // nested)
         PARAMETER
         {
-            name = ReachSpace1
+            name = ReachSpace
             type = ReachSpace
         }
 
         PARAMETER
         {
-            name = ReachSpeedEnvelope1
+            name = ReachSpeedEnvelope
             type = ReachSpeedEnvelope
 
             minSpeed = 1000
@@ -878,7 +878,7 @@ The All parameter is completed once all its child parameters are completed.
 
     PARAMETER
     {
-        name = All1
+        name = All
         type = All
 
         // The text to display.  Highly recommended that you do not use the default -
@@ -893,7 +893,7 @@ The All parameter is completed once all its child parameters are completed.
         // nested)
         PARAMETER
         {
-            name = ReachAltitudeEnvelope1
+            name = ReachAltitudeEnvelope
             type = ReachAltitudeEnvelope
 
             minAltitude = 20000
@@ -902,7 +902,7 @@ The All parameter is completed once all its child parameters are completed.
 
         PARAMETER
         {
-            name = ReachSpeedEnvelope1
+            name = ReachSpeedEnvelope
             type = ReachSpeedEnvelope
 
             minSpeed = 1000
@@ -917,7 +917,7 @@ The Sequence parameter is one of two ways to define parameters that need to be c
     // then orbit Minmus.  If the player orbits Minmus first, the parameter fails.
     PARAMETER
     {
-        name = Sequence1
+        name = Sequence
         type = Sequence
 
         // The title to display
@@ -933,7 +933,7 @@ The Sequence parameter is one of two ways to define parameters that need to be c
 
             PARAMETER
             {
-                name = ReachSituation1
+                name = ReachSituation
                 type = ReachSituation
 
                 situation = ORBITING
@@ -941,7 +941,7 @@ The Sequence parameter is one of two ways to define parameters that need to be c
 
             PARAMETER
             {
-                name = ReachDestination1
+                name = ReachDestination
                 type = ReachDestination
 
                 targetBody = Mun
@@ -957,7 +957,7 @@ The Sequence parameter is one of two ways to define parameters that need to be c
 
             PARAMETER
             {
-                name = ReachSituation1
+                name = ReachSituation
                 type = ReachSituation
 
                 situation = ORBITING
@@ -965,7 +965,7 @@ The Sequence parameter is one of two ways to define parameters that need to be c
 
             PARAMETER
             {
-                name = ReachDestination1
+                name = ReachDestination
                 type = ReachDestination
 
                 targetBody = Minmus
@@ -1004,7 +1004,7 @@ The SequenceNode parameter is the second way to define parameters that need to b
 
             PARAMETER
             {
-                name = ReachSituation1
+                name = ReachSituation
                 type = ReachSituation
 
                 situation = ORBITING
@@ -1012,7 +1012,7 @@ The SequenceNode parameter is the second way to define parameters that need to b
 
             PARAMETER
             {
-                name = ReachDestination1
+                name = ReachDestination
                 type = ReachDestination
 
                 targetBody = Mun
@@ -1043,7 +1043,7 @@ The SequenceNode parameter is the second way to define parameters that need to b
 
             PARAMETER
             {
-                name = ReachSituation1
+                name = ReachSituation
                 type = ReachSituation
 
                 situation = ORBITING
@@ -1051,7 +1051,7 @@ The SequenceNode parameter is the second way to define parameters that need to b
 
             PARAMETER
             {
-                name = ReachDestination1
+                name = ReachDestination
                 type = ReachDestination
 
                 targetBody = Minmus
@@ -1068,7 +1068,7 @@ The CollectScience parameter is met when science is sent home from the given loc
 
     PARAMETER
     {
-        name = CollectScience1
+        name = CollectScience
         type = CollectScience
 
         // This can be inherited from the the contract type if necessary
@@ -1083,7 +1083,7 @@ The PlantFlag parameter is met when planting a flag on the given body.
 
     PARAMETER
     {
-        name = PlantFlag1
+        name = PlantFlag
         type = PlantFlag
 
         // This can be inherited from the the contract type if necessary
@@ -1095,7 +1095,7 @@ The SCANsatCoverage parameter is met when there is sufficient SCANsat coverage f
 
     PARAMETER:NEEDS[SCANsat]
     {
-        name = SCANsatCoverage1
+        name = SCANsatCoverage
         type = SCANsatCoverage
 
         // Target body - if not supplied will be defaulted from the contract.
@@ -1134,7 +1134,7 @@ PartTest is for testing parts (or just activating them, for staged parts).  This
 
     PARAMETER
     {
-        name = PartTest1
+        name = PartTest
         type = PartTest
 
         // The Kerbal to be recovered
@@ -1180,7 +1180,7 @@ The Timer parameter sets up a timer that starts when the contract is accepted.  
 
     PARAMETER
     {
-        name = Timer1
+        name = Timer
         type = Timer
 
         // The duration the timer is set to. Can specify values in years (y),
