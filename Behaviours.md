@@ -14,7 +14,7 @@ Behaviour for executing one or more expressions and storing the results in the p
 
     BEHAVIOUR
     {
-        name = Expression1
+        name = Expression
         type = Expression
 
         // The CONTRACT_ACCEPTED node gets executed when the contract is
@@ -49,7 +49,7 @@ Behaviour for generating orbits.
 
     BEHAVIOUR
     {
-        name = OrbitGenerator1
+        name = OrbitGenerator
         type = OrbitGenerator
 
         // Use this to generate an orbit with specific parameters
@@ -102,7 +102,7 @@ Behaviour for spawning one or more Kerbals on land or in orbit.
 
     BEHAVIOUR
     {
-        name = SpawnKerbal1
+        name = SpawnKerbal
         type = SpawnKerbal
 
         // The KERBAL node indicates a Kerbal to spawn and can be specified
