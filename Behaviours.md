@@ -45,7 +45,6 @@ Behaviour for executing one or more expressions and storing the results in the p
     }
 
 #### OrbitGenerator
-**_NEW!_**
 Behaviour for generating orbits.
 
     BEHAVIOUR
@@ -155,7 +154,6 @@ Behaviour for spawning one or more Kerbals on land or in orbit.
     }
 
 #### WaypointGenerator
-**_NEW!_**
 Behaviour for generating waypoints.
 
     BEHAVIOUR
