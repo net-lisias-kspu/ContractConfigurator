@@ -273,7 +273,7 @@ Parameter to provide validation over a vessel's parts.  The PartValidation modul
         //title =
     }
 
-**_COMING SOON!_**
+**_NEW!_**
 For the extended mode, parameters may be group into three types of nodes FILTER, VALIDATE_ALL and NONE.  The blocks are applied in order.  Typically, the FILTER blocks should be placed first.
 * FILTER - This will filter the list of parts down to the ones that match the given criteria.
 * VALIDATE_ALL - All remaining parts (after filtering) must match the given criteria.
@@ -430,7 +430,7 @@ Orbital parameter to specify required orbital details.
     }
 
 ##### ReachState
-**_COMING SOON!_**
+**_NEW!_**
 Checks that the vessel is in a specific state.  Use any combination of the attributes below.
 
     PARAMETER
