@@ -241,7 +241,7 @@ Parameter to indicate that the Vessel in question must have a certain quantity o
 
 ##### PartValidation
 **_NEW!_**
-Parameter to provide validation over a vessel's parts.  Can validate along a number of different attributes.
+Parameter to provide validation over a vessel's parts.  The PartValidation module can be used in two different modes - simple and extende.  In the simple mode, simply provide the parameters to filter on, as in the following example:
 
     PARAMETER
     {
@@ -270,12 +270,6 @@ Parameter to provide validation over a vessel's parts.  Can validate along a num
         //   Utility
         category = Engine
 
-        // Whether to check the conditions against ALL parts or just search
-        // for a count based match (using minCount and maxCount).  Default
-        // is False, and if set to True minCount and maxCount cannot be
-        // provided.
-        allParts = True
-
         // Minimum count, default = 1
         minCount = 1
 
@@ -289,6 +283,55 @@ Parameter to provide validation over a vessel's parts.  Can validate along a num
         // Default (minCount = maxCount ) = Part: <attributes>: Exactly <minCount>
         // Default (else) = Part: <attributes>: Between <minCount> and <maxCount>
         //title =
+    }
+
+**_COMING SOON!_**
+For the extended mode, parameters may be group into three types of nodes FILTER, VALIDATE_ALL and NONE.  The blocks are applied in order.  Typically, the FILTER blocks should be placed first.
+* FILTER - This will filter the list of parts down to the ones that match the given criteria.
+* VALIDATE_ALL - All remaining parts (after filtering) must match the given criteria.
+* NONE - None of the remaining parts (after filtering) should match the given criteria.
+
+The blocks can contain any of the attributes listed in the simple model, **except** minCount, maxCount and title.
+
+*Examples:*
+
+This validates that all engines must be manufactured by Rockomax, and there must be at least two of them.
+
+    PARAMETER
+    {
+        name = PartValidation4
+        type = PartValidation
+
+        FILTER
+        {
+            category = Engine
+        }
+
+        VALIDATE_ALL
+        {
+            manufacturer = Rockomax
+        }
+
+        minCount = 2
+    }
+
+This verifies that all parts that have a reaction wheel must not also have a SAS and must not be manufactured by Nightingale Engineering.
+
+    PARAMETER
+    {
+        name = PartValidation
+        type = PartValidation
+
+        FILTER
+        {
+            partModule = ModuleReactionWheel
+        }
+
+        NONE
+        {
+            partModule = ModuleSAS
+            manufacturer = Nightingale Engineering
+        }
     }
 
 ##### IsNotVessel
