@@ -54,11 +54,7 @@ The following parameters are natively supported by ContractConfigurator:
     * [[VesselMass|Parameters#vesselmass]]
   * [[Vessel State|Parameters#vessel-state]]
     * [[Orbit|Parameters#orbit]]
-    * [[ReachAltitudeEnvelope|Parameters#reachaltitudeenvelope]]
-    * [[ReachSpeedEnvelope|Parameters#reachspeedenvelope]]
-    * [[ReachBiome|Parameters#reachbiome]]
-    * [[ReachDestination|Parameters#reachdestination]]
-    * [[ReachSituation|Parameters#reachsituation]]
+    * [[ReachState|Parameters#reachstate]]
     * [[ReachSpecificOrbit|Parameters#reachspecificorbit]]
     * [[ReturnHome|Parameters#returnhome]]
   * [[Vessel History|Parameters#vessel-history]]
@@ -139,18 +135,10 @@ The VesselParameterGroup parameter is used to group several child vessel paramet
         // Examples of typical child parameters used with VesselParameterGroup
         PARAMETER
         {
-            name = ReachSituation
-            type = ReachSituation
+            name = ReachState
+            type = ReachState
 
             situation = ORBITING
-        }
-
-        PARAMETER
-        {
-            name = ReachDestination
-            type = ReachDestination
-
-            targetBody = Kerbin
         }
 
         PARAMETER
@@ -441,79 +429,28 @@ Orbital parameter to specify required orbital details.
         //title =
     }
 
-##### ReachAltitudeEnvelope
-Get to a specific altitude envelope.  Note that this is not tied to a specific celestial body - to do that you need to use multiple parameters together.
+##### ReachState
+**_COMING SOON!_**
+Checks that the vessel is in a specific state.  Use any combination of the attributes below.
 
     PARAMETER
     {
-        name = ReachAltitudeEnvelope
-        type = ReachAltitudeEnvelope
+        name = ReachState
+        type = ReachState
 
-        // Minimum and maximum altitudes, required
+        // Minimum and maximum altitudes.
         minAltitude = 20000
         maxAltitude = 50000
 
-        // Text to use for the parameter
-        // Default = Altitude: Between <minAltitude> and <maxAltitude> meters
-        //title =
-    }
-
-##### ReachSpeedEnvelope
-Get to a specific speed envelope.  Note that this is not tied to a specific celestial body - to do that you need to use multiple parameters together.
-
-    PARAMETER
-    {
-        name = ReachSpeedEnvelope
-        type = ReachSpeedEnvelope
-
-        // Minimum and maximum speeds, required
+        // Minimum and maximum speeds
         minSpeed = 1000
         maxSpeed = 5000
-
-        // Text to use for the parameter
-        // Default = Speed: Between <minSpeed> and <maxSpeed> m/s
-        //title =
-    }
-
-##### ReachBiome
-Reach a specific Biome.
-
-    PARAMETER
-    {
-        name = ReachBiome
-        type = ReachBiome
 
         // The name of the biome to reach.
         biome = Shores
 
-        // Text for the contract parameter.
-        // Default = Biome: <biome>
-        title = Relax on Kerbin's Shores
-    }
-
-##### ReachDestination
-Reach a specific celestial object.
-
-    PARAMETER
-    {
-        name = ReachDestination
-        type = ReachDestination
-
-        // This can be inherited from the the contract type if necessary
+        // Defaulted from the contract
         targetBody = Duna
-
-        // Text for the contract parameter.
-        // Default = Destination: <targetBody>
-        //title =
-    }
-
-##### ReachSituation
-Reach a specific situation.
-
-    PARAMETER
-    {
-        name = ReachSituation
-        type = ReachSituation
 
         // The situation.  Valid values from Vessel.Situations:
         //    DOCKED
@@ -526,8 +463,8 @@ Reach a specific situation.
         //    SUB_ORBITAL
         situation = FLYING
 
-        // Text for the contract parameter.
-        // Default = Situation: <situation>
+        // Text to use for the parameter
+        // Default Vessel State: <state details>
         //title =
     }
 
@@ -908,8 +845,8 @@ The Any parameter is be completed if any one of its child parameters are complet
 
         PARAMETER
         {
-            name = ReachSpeedEnvelope
-            type = ReachSpeedEnvelope
+            name = ReachState
+            type = ReachState
 
             minSpeed = 1000
             maxSpeed = 5000
@@ -936,20 +873,20 @@ The All parameter is completed once all its child parameters are completed.
         // nested)
         PARAMETER
         {
-            name = ReachAltitudeEnvelope
-            type = ReachAltitudeEnvelope
+            name = ReachState
+            type = ReachState
 
             minAltitude = 20000
             maxAltitude = 50000
+
+            minSpeed = 1000
+            maxSpeed = 5000
         }
 
         PARAMETER
         {
-            name = ReachSpeedEnvelope
-            type = ReachSpeedEnvelope
-
-            minSpeed = 1000
-            maxSpeed = 5000
+            name = HasCrew
+            type = HasCrew
         }
     }
 
@@ -976,16 +913,16 @@ The Sequence parameter is one of two ways to define parameters that need to be c
 
             PARAMETER
             {
-                name = ReachSituation
-                type = ReachSituation
+                name = ReachState
+                type = ReachState
 
                 situation = ORBITING
             }
 
             PARAMETER
             {
-                name = ReachDestination
-                type = ReachDestination
+                name = ReachState
+                type = ReachState
 
                 targetBody = Mun
             }
