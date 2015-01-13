@@ -117,7 +117,7 @@ Behaviour for spawning one or more Kerbals on land or in orbit.
             // Default = false
             owned = true
 
-            // COMING SOON!
+            // NEW!
             // Whether the Kerbal should get added to the roster on recovery.
             // Default = true
             addToRoster = true
