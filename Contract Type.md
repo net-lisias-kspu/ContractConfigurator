@@ -55,6 +55,7 @@ _Sample CONTRACT_TYPE (can be downloaded [here](https://raw.githubusercontent.co
         agent = Integrated Integrals
 
         // Contract min/max expiry in days.
+        // Default = 1.0 and 7.0 days, respectively
         minExpiry = 500.0
         maxExpiry = 1000.0
 
