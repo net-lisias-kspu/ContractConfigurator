@@ -453,7 +453,6 @@ Checks that the vessel is in a specific state.  Use any combination of the attri
         targetBody = Duna
 
         // The situation.  Valid values from Vessel.Situations:
-        //    DOCKED
         //    ESCAPING
         //    FLYING
         //    LANDED
