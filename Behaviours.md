@@ -117,6 +117,11 @@ Behaviour for spawning one or more Kerbals on land or in orbit.
             // Default = false
             owned = true
 
+            // COMING SOON!
+            // Whether the Kerbal should get added to the roster on recovery.
+            // Default = true
+            addToRoster = true
+
             // Where the Kerbal should spawn - defaulted from the contract if
             // not supplied.
             targetBody = Kerbin
