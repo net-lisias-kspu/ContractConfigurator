@@ -1,12 +1,18 @@
 ## Creating a new contract
 
-To create new contracts create a new .cfg file in your mod's directory (or if you're creating a new mod, create a new sub-directory under GameData).  The file name can be anything you choose.  In the file, create a CONTRACT_TYPE node, like this:
+To create new contracts create a new .cfg file in your mod's directory.  If you're creating a new mod, then just create a sub-directory under GameData for the .cfg file(s) to live.  If you are creating a *Contract Pack* (a mod that only contains Contract Configurator contracts), then it is suggested that you place your mod's directory as a subdirectory under GameData/ContractPacks/ instead.
+
+The file name for the .cfg files can be anything (although it must end in .cfg).  In the file, create a CONTRACT_TYPE node, like this:
 
     CONTRACT_TYPE
     {
     }
 
-And then start adding to it!  See the [[Contract Type|Contract-Type]] page for the full syntax.  Or if you want to look at some examples, check out the [test directory](https://github.com/jrossignol/ContractConfigurator/tree/master/test).
+And then start adding to it!  See the [[Contract Type|Contract-Type]] page for the full syntax.  Or if you want to look at some examples, check out the [test directory](https://github.com/jrossignol/ContractConfigurator/tree/master/test).  One file may contain one or more of these CONTRACT_TYPE nodes - it's up to you to decide what the best way to organize it for you is.
+
+## Turning on debug
+
+To turn on debug, copy the GameData/ContractConfigurator/ContractConfigurator.cfg.default file to ContractConfigurator.cfg.  Then edit the file and change logLevel = INFO to logLevel = DEBUG.  This will spit out some additional useful information when loading contracts, as well as adding a pop-up notification saying how many contracts loaded (and how many were attempted).
 
 ## Testing a contract
 
@@ -14,7 +20,9 @@ When creating a new contract, the first thing too look at is the debug menu (Alt
 
 If there are contract validation errors, there is an in-game menu to allow reloading the contract type data without restarting.  To get to this menu, hit Alt-F10 from either the main menu or space center.  Note that most changes will *NOT* affect contracts that have already been offered.
 
-## Creating an Agency
+## Miscellaneous
+
+### Creating an Agency
 
 If you wish to create your own agency, all it takes is one config file, and a couple images.  Within the config file (this can be the same as your Contract Configurator contracts), add the following node:
 
@@ -34,7 +42,7 @@ If you wish to create your own agency, all it takes is one config file, and a co
     }
 
 
-## Using TextGen
+### Using TextGen
 
 TextGen is the Squad system for generating contract descriptions.  If you would like to use this, I highly recommend making use of the [Coherent Contracts](http://forum.kerbalspaceprogram.com/threads/100098-0-25-Coherent-Contracts-v1-01-%28Nov-14%29) mod.
 
