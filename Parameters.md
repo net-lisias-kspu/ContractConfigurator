@@ -731,7 +731,7 @@ The RecoverKerbal parameter is met when the named Kerbal is "recovered" (ie. goe
     }
 
 ### Progression Parameters
-Although not tied directly to the acheivement/progression system, these are parameters that are typically used for progression type rewards (do something for the first time).
+Although not tied directly to the achievement/progression system, these are parameters that are typically used for progression type rewards (do something for the first time).  Note that some of these parameters are very similar to the [[vessel parameters|Parameters#vessel-parameters]], but work differently.  The progreession parameters only require you to have done the thing once before, rather than doing it with a specific vessel.
 
 #### LaunchVessel
 To meet this parameter, the player simply needs to launch a vessel.
