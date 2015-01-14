@@ -1,4 +1,14 @@
-## Creating a new contract
+## Table of Contents
+
+* [[Table of Contents|How-To#table-of-contents]]
+* [[Creating a New Contract|How-To#creating-a-new-contract]]
+* [[Turning On Debug|How-To#turning-on-debug]]
+* [[Testing a Contract|How-To#testing-a-contract]]
+* [[Miscellaneous|How-To#miscellaneous]]
+  * [[Creating an Agency|How-To#creating-an-agency]]
+  * [[Using TextGen|How-To#using-textgen]]
+
+## Creating a New Contract
 
 To create new contracts create a new .cfg file in your mod's directory.  If you're creating a new mod, then just create a sub-directory under GameData for the .cfg file(s) to live.  If you are creating a *Contract Pack* (a mod that only contains Contract Configurator contracts), then it is suggested that you place your mod's directory as a subdirectory under GameData/ContractPacks/ instead.
 
@@ -10,11 +20,11 @@ The file name for the .cfg files can be anything (although it must end in .cfg).
 
 And then start adding to it!  See the [[Contract Type|Contract-Type]] page for the full syntax.  Or if you want to look at some examples, check out the [test directory](https://github.com/jrossignol/ContractConfigurator/tree/master/test).  One file may contain one or more of these CONTRACT_TYPE nodes - it's up to you to decide what the best way to organize it for you is.
 
-## Turning on debug
+## Turning On Debug
 
 To turn on debug, copy the GameData/ContractConfigurator/ContractConfigurator.cfg.default file to ContractConfigurator.cfg.  Then edit the file and change logLevel = INFO to logLevel = DEBUG.  This will spit out some additional useful information when loading contracts, as well as adding a pop-up notification saying how many contracts loaded (and how many were attempted).
 
-## Testing a contract
+## Testing a Contract
 
 When creating a new contract, the first thing too look at is the debug menu (Alt-F12) from the main menu.  If there were any validation errors due to incorrect configuration, this is where they will likely show up.  If there are no errors there, then continue on and test your contracts as normal.
 
