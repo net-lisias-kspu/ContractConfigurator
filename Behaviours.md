@@ -158,6 +158,89 @@ Behaviour for spawning one or more Kerbals on land or in orbit.
         }
     }
 
+### SpawnVessel
+**_COMING SOON!_**
+Behaviour for spawning one or more Vessels on land or in orbit.
+
+    BEHAVIOUR
+    {
+        name = SpawnVessel
+        type = SpawnVessel
+
+        // The VESSEL node indicates a Kerbal to spawn and can be specified
+        // multiple times.
+        VESSEL
+        {
+            // If the name is not supplied, defaults from the name within the
+            // craft file
+            name = A vessel
+
+            // Path to the .craft file (relative to the GameData/ directory)
+            craftURL = ContractConfigurator/Little Rocket.craft
+
+            // Location of the flag to use.
+            // Default = Player's flag for the current game
+            flagURL = Squad/Flags/satellite
+
+            // Whether the vessel should show up as owned or unowned.  If it is
+            // owned, then it will be immediately selectable.
+            owned = False
+
+            // Where the vessel should spawn - defaulted from the contract if
+            // not supplied.
+            targetBody = Kerbin
+
+            // The ORBIT node indicates the orbit the vessel is in.  The
+            // easiest way to get this information is to create the orbit
+            // you want in KSP (using HyperEdit or good old fashioned
+            // rocket science), and save your game.  In the persistant.sfs
+            // file, search for your craft, and find the ORBIT node.
+            //
+            // Note that REF represents the reference body - but will be
+            // overriden by the targetBody.
+            ORBIT
+            {
+                SMA = 1449999.99996286
+                ECC = 1.07570816555399E-05
+                INC = 0
+                LPE = 270.690311604893
+                LAN = 1.93635924563296
+                MNA = 1.55872660382504
+                EPH = 31.3999999999994
+                REF = 1
+            }
+
+            // If you wish to specify a landed vessel, you must also 
+            // supply ALL of the following values from the persistant.sfs
+            // file, AS WELL AS including the ORBIT node above.  In a
+            // future release, I may try to look at ways to do it using
+            // only lat-lon, but it's much more complicated, so it's not
+            // a high priority...
+			lat = -0.096992729723051
+			lon = 285.425467968966
+			alt = 67.6843734193826
+
+            // A CREW node indicates one or more crew members to add to the
+            // vessel.  The CREW node may be specified multiple times.
+            CREW
+            {
+                // Name for the crew member - if not provided, one is
+                // auto-generated.
+                name = Patrick R. Kerman
+
+                // Whether or not the Kerbal should be added to the roster on 
+                // recovery.
+                // Default = True
+                addToRoster = True
+
+                // Number of crew to generate from this node.  Shouldn't be
+                // supplied if name is supplied.
+                // Default = 1
+                count = 1
+            }
+        }
+    }
+
 ### WaypointGenerator
 Behaviour for generating waypoints.
 
