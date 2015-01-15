@@ -173,7 +173,10 @@ Behaviour for spawning one or more Vessels on land or in orbit.
         VESSEL
         {
             // If the name is not supplied, defaults from the name within the
-            // craft file
+            // craft file.  Note that this name behaves like the
+            // VesselParameterGroup define field - in other words, you may
+            // refer back to this vessel by this name in VesselParameterGroup
+            // parameters.
             name = A vessel
 
             // Path to the .craft file (relative to the GameData/ directory)
