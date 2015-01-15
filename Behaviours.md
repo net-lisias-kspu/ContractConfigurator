@@ -7,6 +7,7 @@ The following behaviours are natively supported by ContractConfigurator:
 * [[Expression|Behaviours#expression]]
 * [[OrbitGenerator|Behaviours#orbitgenerator]]
 * [[SpawnKerbal|Behaviours#spawnkerbal]]
+* [[SpawnVessel|Behaviours#spawnvessel]]
 * [[WaypointGenerator|Behaviours#waypointgenerator]]
 
 ### Expression
