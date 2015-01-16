@@ -374,6 +374,13 @@ Orbital parameter to specify required orbital details.
         // Target body, defaulted from the contract if not supplied.
         targetBody = Kerbin
 
+        // COMING SOON!
+        // Situation to check for.  Valid list is a subset of Vessel.Situations:
+        //     ESCAPING
+        //     ORBITAL (default)
+        //     SUB_ORBITAL
+        situation = SUB_ORBITAL
+
         // Minimum orbit altitude in meters.
         // Default = 0
         minAltitude = 100000
