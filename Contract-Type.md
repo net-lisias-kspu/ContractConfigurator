@@ -162,7 +162,7 @@ Thanks to DMagic - these values are pulled from [this forum post] (http://forum.
 Contract rewards, advances, and penalties are all affected by a multiplier which is dependent on both the contract prestige and the celestial body.  Those values are:
 
 Body | Trivial | Significant | Exceptional
--- | -- | -- | --
+--- | ---: | ---: | ---:
 Sun | 4 | 5 | 6
 Kerbin | 1 | 1 | 2
 Mun | 2 | 2 | 3
