@@ -2,6 +2,7 @@
 
 * [[Table of Contents|Contract Type#table-of-contents]]
 * [[The CONTRACT_TYPE node|Contract Type#the-contract_type-node]]
+* [[Contract Reward Modifiers|Contract Type#contract-reward-modifiers]]
 
 ## The CONTRACT_TYPE node
 
@@ -153,3 +154,29 @@ _Sample CONTRACT_TYPE (can be downloaded [here](https://raw.githubusercontent.co
             type = Behaviour
         }
     }
+
+## Contract Reward Modifiers
+
+Thanks to DMagic - these values are pulled from [this forum post] (http://forum.kerbalspaceprogram.com/showthread.php?p=1315411#post1315411).
+
+Contract rewards, advances, and penalties are all affected by a multiplier which is dependent on both the contract prestige and the celestial body.  Those values are:
+
+Body | Trivial | Significant | Exceptional
+-- | -- | -- | --
+Sun | 4 | 5 | 6
+Kerbin | 1 | 1 | 2
+Mun | 2 | 2 | 3
+Minmus | 2 | 3 | 4
+Moho | 7 | 9 | 10
+Eve | 5 | 6 | 8
+Duna | 5 | 6 | 8
+Ike | 5 | 6 | 8
+Jool | 6 | 8 | 9
+Laythe | 8 | 10 | 12
+Vall | 8 | 10 | 12
+Bop | 8 | 10 | 12
+Tylo | 8 | 10 | 12
+Gilly | 6 | 8 | 9
+Pol | 8 | 10 | 12
+Dres | 6 | 8 | 9
+Eeloo | 10 | 12 | 15
