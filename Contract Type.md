@@ -1,3 +1,8 @@
+## Table of Contents
+
+* [[Table of Contents|Contract Type#table-of-contents]]
+* [[The CONTRACT_TYPE node|Contract Type#the-contract_type-node]]
+
 ## The CONTRACT_TYPE node
 
 The CONTRACT_TYPE node is the main node for all ContractConfigurator contracts.  This node is what defines a contract that will be offered by ContractConfigurator.
