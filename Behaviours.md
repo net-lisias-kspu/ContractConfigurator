@@ -186,6 +186,17 @@ Behaviour for spawning one or more Vessels on land or in orbit.
             // Default = Player's flag for the current game
             flagURL = Squad/Flags/satellite
 
+            // The type of vessel (affects display in the tracking station).
+            // Valid values from VesselType enum:
+            // Base
+            // Lander
+            // Probe
+            // Rover
+            // Ship (default)
+            // Station
+            // Unknown
+            vesselType = Rover
+
             // Whether the vessel should show up as owned or unowned.  If it is
             // owned, then it will be immediately selectable.
             owned = False
