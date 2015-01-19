@@ -1,8 +1,8 @@
 ## Table of Contents
 
-* [[Table of Contents|Contract Type#table-of-contents]]
-* [[The CONTRACT_TYPE node|Contract Type#the-contract_type-node]]
-* [[Contract Reward Modifiers|Contract Type#contract-reward-modifiers]]
+* [[Table of Contents|Contract-Type#table-of-contents]]
+* [[The CONTRACT_TYPE node|Contract-Type#the-contract_type-node]]
+* [[Contract Reward Modifiers|Contract-Type#contract-reward-modifiers]]
 
 ## The CONTRACT_TYPE node
 

@@ -53,6 +53,7 @@ The following parameters are natively supported by ContractConfigurator:
     * [[IsNotVessel|Parameters#isnotvessel]]
     * [[VesselMass|Parameters#vesselmass]]
   * [[Vessel State|Parameters#vessel-state]]
+    * [[Docking|Parameters#docking]]
     * [[Orbit|Parameters#orbit]]
     * [[ReachState|Parameters#reachstate]]
     * [[ReachSpecificOrbit|Parameters#reachspecificorbit]]
@@ -361,6 +362,39 @@ The VesselMass parameter requires a player's vessel to be within the specified m
 
 #### Vessel State
 These parameters pertain to the state of a vessel.
+
+##### Docking
+**_NEW!_**
+Docking parameters require that a vessel docks with another vessel.
+
+    PARAMETER
+    {
+        name = Docking
+        type = Docking
+
+        // The vessel attribute is the *defined* name of the vessel that must
+        // participate in the docking event.  This is a name of a vessel
+        // defined either with the define attribute of a VesselParameterGroup
+        // parameter, or via a SpawnVessel.
+        //
+        // If this Docking parameter is a child of a VesselParameterGroup
+        // parameter, then no more than *one* vessel should be provided (the
+        // other is the vessel being tracked under the VesselParameterGroup).
+        // If no vessel attributes are provided, the second vessel will match
+        // any vessel.
+        //
+        // If this Docking parameter is NOT a child of a VesselParameterGroup,
+        // then *at least one* vessel must be provided.  If only one vessel is
+        // provided, then the second vessel will match any vessel.
+        vessel = First Vessel to Dock
+        vessel = Second Vessel to Dock
+
+        // New defined name by which to refer to the docked vessel.  Use this
+        // to chain docking parameters, but require them to be done in a certain
+        // order.  Generally this name will never be displayed to the player.
+        // (Optional)
+        defineDockedVessel = My New Vessel
+    }
 
 ##### Orbit
 **_NEW!_**
