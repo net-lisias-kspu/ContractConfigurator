@@ -364,7 +364,7 @@ The VesselMass parameter requires a player's vessel to be within the specified m
 These parameters pertain to the state of a vessel.
 
 ##### Docking
-**_NEW!_**
+**_COMING SOON!_**
 Docking parameters require that a vessel docks with another vessel.
 
     PARAMETER
