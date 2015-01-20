@@ -281,6 +281,7 @@ For the extended mode, parameters may be group into three types of nodes FILTER,
 * FILTER - This will filter the list of parts down to the ones that match the given criteria.
 * VALIDATE_ALL - All remaining parts (after filtering) must match the given criteria.
 * NONE - None of the remaining parts (after filtering) should match the given criteria.
+* VALIDATE - Some of the remaining parts must match (only supports part, minCount and maxCount)
 
 The blocks can contain any of the attributes listed in the simple model, **except** minCount, maxCount and title.
 
@@ -324,6 +325,34 @@ This verifies that all parts that have a reaction wheel must not also have a SAS
             manufacturer = Nightingale Engineering
         }
     }
+
+This verifies that the listed parts in the given quantities are present.
+
+    PARAMETER
+    {
+        name = PartValidation
+        type = PartValidation
+
+        VALIDATE
+        {
+            part = fuelTank3-2
+            minCount = 1
+        }
+
+        VALIDATE
+        {
+            part = largeSolarPanel
+            minCount = 4
+        }
+
+        VALIDATE
+        {
+            part = cupola
+            minCount = 2
+            maxCount = 2
+        }
+    }
+
 
 ##### IsNotVessel
 **_NEW!_**
