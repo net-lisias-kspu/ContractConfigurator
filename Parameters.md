@@ -58,6 +58,7 @@ The following parameters are natively supported by ContractConfigurator:
     * [[ReachState|Parameters#reachstate]]
     * [[ReachSpecificOrbit|Parameters#reachspecificorbit]]
     * [[ReturnHome|Parameters#returnhome]]
+    * [[VesselNotDestroyed|Parameters#vesselnotdestroyed]]
   * [[Vessel History|Parameters#vessel-history]]
     * [[VesselHasVisited|Parameters#vesselhasvisited]]
     * [[VisitWaypoint|Parameters#visitwaypoint]]
@@ -92,6 +93,7 @@ The following parameters are natively supported by ContractConfigurator:
   * [[PartTest|Parameters#parttest]]
   * [[Duration|Parameters#duration]]
   * [[Timer|Parameters#timer]]
+    * [[TargetDestroyed|Parameters#targetdestroyed]]
 
 ### Vessel Parameters
 These are parameters that operate on vessels (manned or unmanned).  By default, all vessel parameters have disableOnStateChange set to false.
@@ -108,7 +110,7 @@ The VesselParameterGroup parameter is used to group several child vessel paramet
         // Default - Vessel: Any; Duration: <duration>
         // Note in future this will be expanded to support setting the parameters to
         // be for a specific vessel
-        //title = 
+        //title =
 
         // The duration that the conditions must be satisfied for.  Can specify
         // values in years (y), days (d), hours (h), minutes (m), seconds (s) or
@@ -117,7 +119,7 @@ The VesselParameterGroup parameter is used to group several child vessel paramet
 
         // NEW!
         // Define the name of the craft that will complete this parameter group.
-        // Once a craft completes the group, it will be associated with the 
+        // Once a craft completes the group, it will be associated with the
         // given key, which can then be referenced in other parameters.  The
         // Vessel <=> key association is persistent, and can be used in future
         // contracts.
@@ -339,7 +341,7 @@ The IsNotVessel parameter is used to create mutually exclusive groups within a c
 
         // Text for the contract parameter.
         // Default = Vessel: Not <vesselKey>
-        //title = 
+        //title =
     }
 
 ##### VesselMass
@@ -357,7 +359,7 @@ The VesselMass parameter requires a player's vessel to be within the specified m
 
         // Text for the contract parameter.
         // Default = Vessel mass: <mass>
-        //title = 
+        //title =
     }
 
 #### Vessel State
@@ -394,6 +396,10 @@ Docking parameters require that a vessel docks with another vessel.
         // order.  Generally this name will never be displayed to the player.
         // (Optional)
         defineDockedVessel = My New Vessel
+
+        // Text for the contract parameter.
+        // Default varies depending on the situation.
+        //title =
     }
 
 ##### Orbit
@@ -538,7 +544,36 @@ The ReturnHome parameter requires a player to return home (ideally after meeting
 
         // Text for the contract parameter.
         // Default = Return home.
-        //title = 
+        //title =
+    }
+
+##### VesselNotDestroyed
+**_COMING SOON!_**
+The VesselNotDestroyed parameter is a negative parameter - it will cause the contract to fail if a specified vessel (or any vessel in some cases) is destroyed.
+
+    PARAMETER
+    {
+        name = VesselNotDestroyed
+        type = VesselNotDestroyed
+
+        // The vessel attribute is the *defined* name of the vessel that should
+        // not be destroyed.  This is a name of a vessel defined either with
+        // the define attribute of a VesselParameterGroup parameter, or via a
+        // SpawnVessel.
+        //
+        // It can be specified multiple times, and if *no* vessel is specified,
+        // then the parameter applies to all vessels.
+        //
+        // If this parameter is a child of a VesselParameterGroup parameter,
+        // and no vessel is provided, *and* the VesselParameterGroup does have
+        // vessels specified, then the list of vessels that cannot be destroyed
+        // is automatically derived from the parent parameter.
+        vessel = First Vessel to Dock
+        vessel = Second Vessel to Dock
+
+        // Text for the contract parameter.
+        // Default varies depending on the situation.
+        //title =
     }
 
 #### Vessel History
@@ -573,7 +608,7 @@ The VesselHasVisited parameter requires a player to go to visit a celestial body
 
         // Text for the contract parameter.
         // Default = Perform <situation> on <targetBody>.
-        //title = 
+        //title =
     }
 
 ##### VisitWaypoint
@@ -593,10 +628,10 @@ The VisitWaypoint parameter is used with the [[WaypointGenerator|Behaviours#wayp
         //         = <waypoint altitude> / 5.0 (if in the air).
         distance = 500.0
 
-         
+        
         // Text to use for the parameter
         // Default = Location: <waypoint>
-        //title = 
+        //title =
     }
 
 #### RemoteTech
@@ -1183,16 +1218,16 @@ The Duration parameter sets up a timer that starts when all sibling parameters a
         // The preWaitText overrides the text that is displayed when waiting
         // for the other parameters to complete.
         // Default = Waiting time required
-        //preWaitText = 
+        //preWaitText =
 
         // The waitingText overrides the text that is displayed when waiting
         // for the timer to expire.
         // Default = Time to completion
-        //waitingText = 
+        //waitingText =
 
         // The completionText is displayed when the timer completes.
         // Default = Wait time over
-        //completionText = 
+        //completionText =
     }
 
 #### Timer
@@ -1207,4 +1242,27 @@ The Timer parameter sets up a timer that starts when the contract is accepted.  
         // days (d), hours (h), minutes (m), seconds (s) or any combination of
         // those.
         duration = 30m
+    }
+
+##### TargetDestroyed
+**_COMING SOON!_**
+The TargetDestroyed indicates that a specific target vessel (or vessels) must be destroyed.  Use it for setting up targets for weapons mods.
+
+    PARAMETER
+    {
+        name = TargetDestroyed
+        type = TargetDestroyed
+
+        // The vessel attribute is the *defined* name of the vessel that should
+        // not be destroyed.  This is a name of a vessel defined either with
+        // the define attribute of a VesselParameterGroup parameter, or via a
+        // SpawnVessel.
+        //
+        // It can be specified multiple times, but there must be at least one.
+        vessel = First Target
+        vessel = Second Target
+
+        // Text for the contract parameter.
+        // Default: Target destroyed
+        //title =
     }
