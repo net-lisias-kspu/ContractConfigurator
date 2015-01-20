@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-perl toc.pl Behaviours.md Contract-Type.md Parameters.md Requirements.md How-To.md
+perl toc.pl Behaviours.md Contract-Group.md Contract-Type.md Parameters.md Requirements.md How-To.md

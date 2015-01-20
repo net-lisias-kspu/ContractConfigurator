@@ -79,7 +79,7 @@ foreach my $file (@ARGV)
         my $tag = lc $name;
         $tag =~ s/ /-/g;
 
-        print(OFILE (' ' x $spaces) . "* [[$name|$identifier#$tag]]\r\n");
+        print(OFILE (' ' x $spaces) . "* [[$name|$identifier#$tag]]\n");
     }
 
     # Dump the garbage

@@ -5,6 +5,7 @@ Details on how to create new contracts, debugging contracts and more.
 * [[How To|How-To]]
 
 ### Configuration File Syntax
+* [[Contract Group|Contract-Group]]
 * [[Contract Type|Contract-Type]]
  * [[Parameters|Parameters]]
  * [[Requirements|Requirements]]
