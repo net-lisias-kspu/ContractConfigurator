@@ -1197,8 +1197,8 @@ PartTest is for testing parts (or just activating them, for staged parts).  This
 
         // Additional notes to display (in the Squad PartTest contract, this is where
         // they say "Activate through the staging system", etc.
-        // Optional
-        notes = Test this part anywhere, no other requirements!
+        // Default = Test this part anywhere, no other requirements!
+        // notes = 
     }
 
 #### Duration
