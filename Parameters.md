@@ -195,16 +195,12 @@ Parameter to indicate that the Vessel in question must have a certain number of 
         name = HasPassengers
         type = HasPassengers
 
-        // (Optional) Minimum and maximum count.  Default values are 1 and
-        // int.MaxValue (for min/max).
-        minPassengers = 1
-        maxPassengers = 1
+        // Number of passengers to load onto the ship.
+        // Default = 1
+        count = 1
 
         // Text to use for the parameter
-        // Default (maxPassengers = int.MAXVALUE) = Passengers: At least <minPassengers > Kerbals
-        // Default (minPassengers = 0) = Passengers: At most <maxPassengers > Kerbals
-        // Default (minPassengers = maxPassengers ) = Passengers: Exactly <minPassengers > Kerbals
-        // Default (else) = Passengers: Between <minPassengers > and <maxPassengers > Kerbals
+        // Default Passengers loaded : <count>
         //title =
     }
 
