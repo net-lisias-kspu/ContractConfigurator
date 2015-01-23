@@ -26,9 +26,17 @@ To turn on debug, copy the GameData/ContractConfigurator/ContractConfigurator.cf
 
 ## Testing a Contract
 
-When creating a new contract, the first thing too look at is the debug menu (Alt-F12) from the main menu.  If there were any validation errors due to incorrect configuration, this is where they will likely show up.  If there are no errors there, then continue on and test your contracts as normal.
+When creating a new contract, the first thing too look at is the Contract Configurator debug menu (Alt-F10) from the main menu.  This will display a GUI with all the Contract Configurator contracts.  If any failed to load, they will be displayed in red.  To see the details of why it failed loading, see the output in the main debug log (Alt-F12).  If there are no errors, then continue on and test your contracts as normal.
 
-If there are contract validation errors, there is an in-game menu to allow reloading the contract type data without restarting.  To get to this menu, hit Alt-F10 from either the main menu or space center.  Note that most changes will *NOT* affect contracts that have already been offered.
+After fixing any errors, the contracts can be reloaded by pressing the the "Reload Contracts" button in the debug menu.  For reference, the debug menu is shown below:
+
+![](http://i.imgur.com/V8lMs9F.png)
+
+Within this menu, the following operations can be performed:
+* Reload contract types
+* View contract type details
+* Inspect underlying ConfigNode details
+* Temporarily disable parameters/requirements/behaviours
 
 ## Miscellaneous
 
@@ -50,7 +58,6 @@ If you wish to create your own agency, all it takes is one config file, and a co
         // Logo URL is the full path to the scaled down image for thumbnails (64x40)
         logoScaledURL = ContractConfigurator/MyLogo_scaled
     }
-
 
 ### Using TextGen
 
