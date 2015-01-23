@@ -195,16 +195,12 @@ Parameter to indicate that the Vessel in question must have a certain number of 
         name = HasPassengers
         type = HasPassengers
 
-        // (Optional) Minimum and maximum count.  Default values are 1 and
-        // int.MaxValue (for min/max).
-        minPassengers = 1
-        maxPassengers = 1
+        // Number of passengers to load onto the ship.
+        // Default = 1
+        count = 1
 
         // Text to use for the parameter
-        // Default (maxPassengers = int.MAXVALUE) = Passengers: At least <minPassengers > Kerbals
-        // Default (minPassengers = 0) = Passengers: At most <maxPassengers > Kerbals
-        // Default (minPassengers = maxPassengers ) = Passengers: Exactly <minPassengers > Kerbals
-        // Default (else) = Passengers: Between <minPassengers > and <maxPassengers > Kerbals
+        // Default Passengers loaded : <count>
         //title =
     }
 
@@ -807,7 +803,7 @@ The BoardAnyVessel parameter is met when the named Kerbal boards a vessel (this 
         kerbal = Jebediah Kermin
 
         // Alternate method of identifying the Kerbal - zero based index of the
-        // entry in a SpawnKerbal BEHAVIOUR node.
+        // entry in a SpawnKerbal or SpawnVessel BEHAVIOUR node.
         //index = 0
 
         // Text to use for the parameter
@@ -827,7 +823,7 @@ The RecoverKerbal parameter is met when the named Kerbal is "recovered" (ie. goe
         kerbal = Jebediah Kermin
 
         // Alternate method of identifying the Kerbal - zero based index of the
-        // entry in a SpawnKerbal BEHAVIOUR node.
+        // entry in a SpawnKerbal or SpawnVessel BEHAVIOUR node.
         //index = 0
 
         // Text to use for the parameter
@@ -1226,8 +1222,8 @@ PartTest is for testing parts (or just activating them, for staged parts).  This
 
         // Additional notes to display (in the Squad PartTest contract, this is where
         // they say "Activate through the staging system", etc.
-        // Optional
-        notes = Test this part anywhere, no other requirements!
+        // Default = Test this part anywhere, no other requirements!
+        // notes = 
     }
 
 #### Duration
