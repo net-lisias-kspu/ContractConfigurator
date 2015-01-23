@@ -41,6 +41,33 @@ Parameters all follow the same general structure - the following attributes are 
         optional = true
     }
 
+Some parameters can have child parameters.  This is only supported for certain parameters, and the details of what the child parameters do is documented on those parameters:
+
+    PARAMETER
+    {
+        name = Param1
+        type = ParamWithChildren
+
+        PARAMETER
+        {
+            ...
+        }
+    }
+
+All parameters can have child requirements.  Child requirements control whether the particular parameter shows up in the contract.  Care must be taken when using this - all contracts must have at least one parameter.  See the [[requirements|Requirements]] page for details on the REQUIREMENT node.
+
+
+    PARAMETER
+    {
+        name = Param1
+        type = ParamWithRequirements
+
+        REQUIREMENT
+        {
+            ...
+        }
+    }
+
 The following parameters are natively supported by ContractConfigurator:
 
 * [[Vessel Parameters|Parameters#vessel-parameters]]
