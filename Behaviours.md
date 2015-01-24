@@ -4,11 +4,37 @@ The BEHAVIOUR node defines a contract behaviour - any behaviour that is at the c
 
 The following behaviours are natively supported by ContractConfigurator:
 
+* [[ExperimentalPart|Behaviours#experimentalpart]]
 * [[Expression|Behaviours#expression]]
 * [[OrbitGenerator|Behaviours#orbitgenerator]]
 * [[SpawnKerbal|Behaviours#spawnkerbal]]
 * [[SpawnVessel|Behaviours#spawnvessel]]
 * [[WaypointGenerator|Behaviours#waypointgenerator]]
+
+### ExperimentalPart
+**_COMING SOON!_**
+Behaviour for adding and removing experimental parts.
+
+    BEHAVIOUR
+    {
+        name = ExperimentalPart
+        type = ExperimentalPart
+
+        // The name of the part to add/remove.
+        part = largeSolarPanel
+
+        // Whether the part should be added as an experimental part (when the
+        // contract is accepted).  Also controls whether the part is removed
+        // if the contract fails or is withdrawn.
+        // Default = True
+        add = True
+
+        // Whether the part should be removed as an experimental part (when the
+        // contract completes successfully).
+        // Default = True
+        add = True
+
+    }
 
 ### Expression
 Behaviour for executing one or more expressions and storing the results in the persistent data store.
