@@ -214,7 +214,7 @@ Contract Configurator contains a persistant data store that may be used by exten
 
 The persistant data store is access by calling one of the two following methods on PersistantDataStore.Instance:
 
-> `void Store<T>(string key, T value)` - This will store the value under the given key.  Try to make the key include a prefix for your module to unsure that it unique across all possible Contract Configurator modules.
+> `void Store<T>(string key, T value)` - This will store the value under the given key.  Try to make the key include a prefix for your module to ensure that it unique across all possible Contract Configurator modules.
 
 > `T Retrieve<T>(string key)` - This will retrieve a previously stored value.
 
