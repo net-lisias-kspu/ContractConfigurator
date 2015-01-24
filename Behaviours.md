@@ -32,7 +32,7 @@ Behaviour for adding and removing experimental parts.
         // Whether the part should be removed as an experimental part (when the
         // contract completes successfully).
         // Default = True
-        add = True
+        remove = True
 
     }
 
