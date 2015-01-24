@@ -388,4 +388,25 @@ Behaviour for generating waypoints.
             // Maximum distance in meters from the 'near' waypoint.
             nearDistance = 25000.0
         }
+
+        // Use this to generate a waypoint with fixed coordinates, based on a
+        // PQSCity object.
+        // COMING SOON
+        PQS_CITY
+        {
+            // The name of the waypoint - displayed on the marker
+            name = Monolith
+
+            // Body for the waypoint - defaulted from the contract if not
+            // supplied.
+            targetBody = Kerbin
+
+            // The icon to use when displaying the waypoint.  At the moment
+            // (0.90), this can only be icons under Squad/Contracts/Icons.
+            // Perhaps that will change in a future release.
+            icon = thermometer
+
+            // The location name
+            pqsCity = Monolith00
+        }
     }
