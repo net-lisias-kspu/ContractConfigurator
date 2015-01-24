@@ -20,8 +20,10 @@ Behaviour for adding and removing experimental parts.
         name = ExperimentalPart
         type = ExperimentalPart
 
-        // The name of the part to add/remove.
+        // The name of the part to add/remove.  Can be specified multiple
+        // times.
         part = largeSolarPanel
+        part = cupola
 
         // Whether the part should be added as an experimental part (when the
         // contract is accepted).  Also controls whether the part is removed
