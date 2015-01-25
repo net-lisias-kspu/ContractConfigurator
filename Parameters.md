@@ -78,6 +78,7 @@ The following parameters are natively supported by ContractConfigurator:
     * [[HasResource|Parameters#hasresource]]
     * [[PartValidation|Parameters#partvalidation]]
     * [[IsNotVessel|Parameters#isnotvessel]]
+    * [[VesselIsType|Parameters#vesselistype]]
     * [[VesselMass|Parameters#vesselmass]]
   * [[Vessel State|Parameters#vessel-state]]
     * [[Docking|Parameters#docking]]
@@ -394,6 +395,27 @@ The IsNotVessel parameter is used to create mutually exclusive groups within a c
         // Text for the contract parameter.
         // Default = Vessel: Not <vesselKey>
         //title =
+    }
+
+##### VesselIsType
+**_COMING SOON!_**
+Checks the VesselType of the given vessel
+
+    PARAMETER
+    {
+        name = VesselIsType
+        type = VesselIsType
+
+        // Type of vessel to check for.  Valid values are a subset from the
+        // VesselType enum:
+        //   Base
+        //   EVA
+        //   Lander
+        //   Probe
+        //   Rover
+        //   Ship
+        //   Station
+        vesselType = EVA
     }
 
 ##### VesselMass
