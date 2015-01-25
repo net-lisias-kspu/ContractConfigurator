@@ -303,9 +303,9 @@ Behaviour for generating waypoints.
             // supplied.
             targetBody = Kerbin
 
-            // The icon to use when displaying the waypoint.  At the moment
-            // (0.90), this can only be icons under Squad/Contracts/Icons.
-            // Perhaps that will change in a future release.
+            // The icon to use when displaying the waypoint.  If the path
+            // is not specified, the Squad/Contracts/Icons directory is
+            // assumed.  Otherwise, the path must be from GameData/
             icon = thermometer
 
             // The altitude of the waypoint.
@@ -332,9 +332,9 @@ Behaviour for generating waypoints.
             // Default = 1
             count = 1
 
-            // The icon to use when displaying the waypoint.  At the moment
-            // (0.90), this can only be icons under Squad/Contracts/Icons.
-            // Perhaps that will change in a future release.
+            // The icon to use when displaying the waypoint.  If the path
+            // is not specified, the Squad/Contracts/Icons directory is
+            // assumed.  Otherwise, the path must be from GameData/
             icon = thermometer
 
             // The altitude of the waypoint.
@@ -367,9 +367,9 @@ Behaviour for generating waypoints.
             // Default = 1
             count = 2
 
-            // The icon to use when displaying the waypoint.  At the moment
-            // (0.90), this can only be icons under Squad/Contracts/Icons.
-            // Perhaps that will change in a future release.
+            // The icon to use when displaying the waypoint.  If the path
+            // is not specified, the Squad/Contracts/Icons directory is
+            // assumed.  Otherwise, the path must be from GameData/
             icon = thermometer
 
             // The altitude of the waypoint.
@@ -403,9 +403,9 @@ Behaviour for generating waypoints.
             // supplied.
             targetBody = Kerbin
 
-            // The icon to use when displaying the waypoint.  At the moment
-            // (0.90), this can only be icons under Squad/Contracts/Icons.
-            // Perhaps that will change in a future release.
+            // The icon to use when displaying the waypoint.  If the path
+            // is not specified, the Squad/Contracts/Icons directory is
+            // assumed.  Otherwise, the path must be from GameData/
             icon = thermometer
 
             // The location name
