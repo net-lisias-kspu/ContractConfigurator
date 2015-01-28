@@ -128,6 +128,7 @@ Behaviour for generating orbits.
     }
 
 ### Message
+**_COMING SOON!_**
 Behaviour for displaying a message within the messaging system in the top right corner.
 
     BEHAVIOUR
