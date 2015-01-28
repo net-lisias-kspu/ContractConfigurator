@@ -72,6 +72,7 @@ The following requirements are natively supported by ContractConfigurator:
   * [[CompleteContract|Requirements#completecontract]]
 * [[Planetary Requirements|Requirements#planetary-requirements]]
   * [[SCANsatCoverage|Requirements#scansatcoverage]]
+  * [[SCANsatLocationCoverage|Requirements#scansatlocationcoverage]]
 * [[Miscellaneous Requirements|Requirements#miscellaneous-requirements]]
   * [[Expression|Requirements#expression]]
 * [[Set Requirements|Requirements#set-requirements]]
