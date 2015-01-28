@@ -231,7 +231,7 @@ Behaviour for spawning one or more Vessels on land or in orbit.
         name = SpawnVessel
         type = SpawnVessel
 
-        // The VESSEL node indicates a Kerbal to spawn and can be specified
+        // The VESSEL node indicates a vessel to spawn and can be specified
         // multiple times.
         VESSEL
         {
