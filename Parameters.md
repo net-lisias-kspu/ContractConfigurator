@@ -1084,6 +1084,11 @@ The Sequence parameter is one of two ways to define parameters that need to be c
         name = Sequence
         type = Sequence
 
+        // COMING SOON!
+        // Hide the parameter with the given name until it is the next one in
+        // the list to be completed.  Can be specified multiple times.
+        hiddenParameter = OrbitMinmus
+
         // The title to display
         // Default: Complete the following in order
         //title =
