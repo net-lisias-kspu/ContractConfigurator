@@ -85,6 +85,7 @@ The following parameters are natively supported by ContractConfigurator:
     * [[Orbit|Parameters#orbit]]
     * [[ReachState|Parameters#reachstate]]
     * [[ReachSpecificOrbit|Parameters#reachspecificorbit]]
+    * [[Rendezvous|Parameters#rendezvous]]
     * [[ReturnHome|Parameters#returnhome]]
     * [[VesselNotDestroyed|Parameters#vesselnotdestroyed]]
   * [[Vessel History|Parameters#vessel-history]]
@@ -145,7 +146,6 @@ The VesselParameterGroup parameter is used to group several child vessel paramet
         // any combination of those.
         duration = 10d 2h
 
-        // NEW!
         // Define the name of the craft that will complete this parameter group.
         // Once a craft completes the group, it will be associated with the
         // given key, which can then be referenced in other parameters.  The
@@ -153,7 +153,6 @@ The VesselParameterGroup parameter is used to group several child vessel paramet
         // contracts.
         define = Vessel Key
 
-        // NEW!
         // Lock this parameter so that it can only be accomplished by the
         // specified craft.  Note that the name is a "define" name set via
         // the define key in a *different* VesselParameterGroup parameter
@@ -255,7 +254,6 @@ Parameter to indicate that the Vessel in question must have a certain quantity o
     }
 
 ##### PartValidation
-**_NEW!_**
 Parameter to provide validation over a vessel's parts.  The PartValidation module can be used in two different modes - simple and extende.  In the simple mode, simply provide the parameters to filter on, as in the following example:
 
     PARAMETER
@@ -300,7 +298,6 @@ Parameter to provide validation over a vessel's parts.  The PartValidation modul
         //title =
     }
 
-**_NEW!_**
 For the extended mode, parameters may be group into three types of nodes FILTER, VALIDATE_ALL and NONE.  The blocks are applied in order.  Typically, the FILTER blocks should be placed first.
 * FILTER - This will filter the list of parts down to the ones that match the given criteria.
 * VALIDATE_ALL - All remaining parts (after filtering) must match the given criteria.
@@ -379,7 +376,6 @@ This verifies that the listed parts in the given quantities are present.
 
 
 ##### IsNotVessel
-**_NEW!_**
 The IsNotVessel parameter is used to create mutually exclusive groups within a contract.  Use the define attribute in the VesselParameterGroup parameter to define names, and then use the IsNotVessel within those to make the other vessel(s) invalid for completing the other group.
 
     PARAMETER
@@ -398,7 +394,7 @@ The IsNotVessel parameter is used to create mutually exclusive groups within a c
     }
 
 ##### VesselIsType
-**_COMING SOON!_**
+**_NEW!_**
 Checks the VesselType of the given vessel
 
     PARAMETER
@@ -440,7 +436,7 @@ The VesselMass parameter requires a player's vessel to be within the specified m
 These parameters pertain to the state of a vessel.
 
 ##### Docking
-**_COMING SOON!_**
+**_NEW!_**
 Docking parameters require that a vessel docks with another vessel.
 
     PARAMETER
@@ -477,7 +473,6 @@ Docking parameters require that a vessel docks with another vessel.
     }
 
 ##### Orbit
-**_NEW!_**
 Orbital parameter to specify required orbital details.
 
     PARAMETER
@@ -488,7 +483,7 @@ Orbital parameter to specify required orbital details.
         // Target body, defaulted from the contract if not supplied.
         targetBody = Kerbin
 
-        // COMING SOON!
+        // NEW!
         // Situation to check for.  Valid list is a subset of Vessel.Situations:
         //     ESCAPING
         //     ORBITAL (default)
@@ -551,7 +546,6 @@ Orbital parameter to specify required orbital details.
     }
 
 ##### ReachState
-**_NEW!_**
 Checks that the vessel is in a specific state.  Use any combination of the attributes below.
 
     PARAMETER
@@ -609,7 +603,7 @@ The ReachSpecificOrbit parameter is used with the [[OrbitGenerator|Behaviours#or
     }
 
 ##### Rendezvous
-**_COMING SOON!_**
+**_NEW!_**
 Rendezvous parameters require that a vessel performs a rendezvous with another vessel.
 
     PARAMETER
@@ -657,7 +651,7 @@ The ReturnHome parameter requires a player to return home (ideally after meeting
     }
 
 ##### VesselNotDestroyed
-**_COMING SOON!_**
+**_NEW!_**
 The VesselNotDestroyed parameter is a negative parameter - it will cause the contract to fail if a specified vessel (or any vessel in some cases) is destroyed.
 
     PARAMETER
@@ -744,11 +738,9 @@ The VisitWaypoint parameter is used with the [[WaypointGenerator|Behaviours#wayp
     }
 
 #### RemoteTech
-**_NEW!_**
 These are parameters that are specific to the RemoteTech module.
 
 ##### CelestialBodyCoverage
-**_NEW!_**
 The CelestialBodyCoverage parameter requires that a minimum communication coverage of the given celestial body is reached.
 
     PARAMETER:NEEDS[RemoteTech]
@@ -769,7 +761,6 @@ The CelestialBodyCoverage parameter requires that a minimum communication covera
     }
 
 ##### KSCConnectivity
-**_NEW!_**
 The KSCConnectivity parameter requires that a vessel has connectivity to the Kerbal Space Center (ie. Mission Control).
 
     PARAMETER:NEEDS[RemoteTech]
@@ -787,7 +778,6 @@ The KSCConnectivity parameter requires that a vessel has connectivity to the Ker
     }	
 
 ##### HasAntenna
-**_NEW!_**
 The HasAntenna parameter requires that the vessel has an antenna that meets the specified criteria.
 
     PARAMETER:NEEDS[RemoteTech]
@@ -830,7 +820,6 @@ The HasAntenna parameter requires that the vessel has an antenna that meets the 
     }
 
 ##### SignalDelay
-**_NEW!_**
 The SignalDelay parameter specifies min/max values for the signal delay back to the KSC.
 
     PARAMETER:NEEDS[RemoteTech]
@@ -852,7 +841,6 @@ The SignalDelay parameter specifies min/max values for the signal delay back to 
     }	
 
 ##### VesselConnectivity
-**_NEW!_**
 The VesselConnectivity parameter requires that the vessel has direct connectivity to another vessel.
 
     PARAMETER:NEEDS[RemoteTech]
@@ -1084,7 +1072,7 @@ The Sequence parameter is one of two ways to define parameters that need to be c
         name = Sequence
         type = Sequence
 
-        // COMING SOON!
+        // NEW!
         // Hide the parameter with the given name until it is the next one in
         // the list to be completed.  Can be specified multiple times.
         hiddenParameter = OrbitMinmus
@@ -1316,7 +1304,6 @@ PartTest is for testing parts (or just activating them, for staged parts).  This
     }
 
 #### Duration
-**_NEW!_**
 The Duration parameter sets up a timer that starts when all sibling parameters are completed.  Once the timer expires, the parameter is completed.
 
     PARAMETER
@@ -1359,7 +1346,7 @@ The Timer parameter sets up a timer that starts when the contract is accepted.  
     }
 
 ##### TargetDestroyed
-**_COMING SOON!_**
+**_NEW!_**
 The TargetDestroyed indicates that a specific target vessel (or vessels) must be destroyed.  Use it for setting up targets for weapons mods.
 
     PARAMETER

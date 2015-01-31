@@ -329,7 +329,6 @@ Requirement for having any part with the given PartModule unlocked from the tech
     }
 
 #### PartModuleTypeUnlocked
-**_NEW!_**
 Requirement for having a "type" of PartModule unlocked from the tech tree.
 
     REQUIREMENT
@@ -364,11 +363,9 @@ Requirement for having researched a technology.
     }
 
 ### RemoteTech Requirements
-**_NEW!_**
 These are requirementsthat are specific to the RemoteTech module.
 
 #### ActiveVesselRange
-**_NEW!_**
 The ActiveVesselRange requirement checks that the given celestial body has a satellite with sufficient range (achievable either via an omni antenna or dish set to active vessel).
 
     REQUIREMENT
@@ -384,7 +381,6 @@ The ActiveVesselRange requirement checks that the given celestial body has a sat
     }
 
 #### CelestialBodyCoverage
-**_NEW!_**
 The CelestialBodyCoverage requirement checks that the given celestial body has a dish pointed to it with sufficient range.
 
     REQUIREMENT

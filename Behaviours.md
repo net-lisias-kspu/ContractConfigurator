@@ -13,7 +13,7 @@ The following behaviours are natively supported by ContractConfigurator:
 * [[WaypointGenerator|Behaviours#waypointgenerator]]
 
 ### ExperimentalPart
-**_COMING SOON!_**
+**_NEW!_**
 Behaviour for adding and removing experimental parts.
 
     BEHAVIOUR
@@ -128,7 +128,7 @@ Behaviour for generating orbits.
     }
 
 ### Message
-**_COMING SOON!_**
+**_NEW!_**
 Behaviour for displaying a message within the messaging system in the top right corner.
 
     BEHAVIOUR
@@ -181,7 +181,6 @@ Behaviour for spawning one or more Kerbals on land or in orbit.
             // Default = false
             owned = true
 
-            // NEW!
             // Whether the Kerbal should get added to the roster on recovery.
             // Default = true
             addToRoster = true
@@ -223,7 +222,7 @@ Behaviour for spawning one or more Kerbals on land or in orbit.
     }
 
 ### SpawnVessel
-**_COMING SOON!_**
+**_NEW!_**
 Behaviour for spawning one or more Vessels on land or in orbit.
 
     BEHAVIOUR
@@ -428,7 +427,7 @@ Behaviour for generating waypoints.
 
         // Use this to generate a waypoint with fixed coordinates, based on a
         // PQSCity object.
-        // COMING SOON
+        // NEW
         PQS_CITY
         {
             // The name of the waypoint - displayed on the marker
