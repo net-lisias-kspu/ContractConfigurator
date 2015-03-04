@@ -223,7 +223,7 @@ Parameter to indicate that the Vessel in question must have a certain number of 
         type = HasPassengers
 
         // Number of passengers to load onto the ship.
-        // Default = 1
+        // Default = 0 (all)
         count = 1
 
         // Start index in the SpawnPassengers behaviour
