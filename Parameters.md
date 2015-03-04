@@ -215,7 +215,7 @@ Parameter to indicate that the Vessel in question must have a certain number of 
     }
 
 ##### HasPassengers
-Parameter to indicate that the Vessel in question must have a certain number of passengers (or must have fewer than a certain number).  Passengers are represented by empty seats.
+Parameter to indicate that the Vessel in question must have a certain number of passengers (or must have fewer than a certain number).  Use with the SpawnPassengers behaviour.
 
     PARAMETER
     {
@@ -225,6 +225,10 @@ Parameter to indicate that the Vessel in question must have a certain number of 
         // Number of passengers to load onto the ship.
         // Default = 1
         count = 1
+
+        // Start index in the SpawnPassengers behaviour
+        // Default = 0
+        index = 0
 
         // Text to use for the parameter
         // Default Passengers loaded : <count>

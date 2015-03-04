@@ -221,6 +221,25 @@ Behaviour for spawning one or more Kerbals on land or in orbit.
         }
     }
 
+### SpawnPassengers
+**_COMING SOON!_**
+Behaviour for spawning passengers on board vessels.
+
+    BEHAVIOUR
+    {
+        name = SpawnPassengers
+        type = SpawnPassengers
+
+        // Count of passengers to spawn.
+        // Default = 1
+        count = 10
+        
+        // Names of passengers to spawn (use instead of count to spawn
+        // passengers with specific names.
+        passengerName = Kerman Kerman
+    }
+
+
 ### SpawnVessel
 **_NEW!_**
 Behaviour for spawning one or more Vessels on land or in orbit.
