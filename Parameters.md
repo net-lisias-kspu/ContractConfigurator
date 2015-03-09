@@ -39,6 +39,15 @@ Parameters all follow the same general structure - the following attributes are 
         // Optional parameters do not need to be completed (mainly for use with
         // composite parameters)
         optional = true
+
+        // NEW!
+        //
+        // Indicates that this parameter needs to be complete "in sequence".
+        // All parameters that are before this parameter in the list (and at
+        // the same level) must be completed before this parameter is allowed
+        // to complete.
+        // Default = false
+        completeInSequence = true
     }
 
 Some parameters can have child parameters.  This is only supported for certain parameters, and the details of what the child parameters do is documented on those parameters:
@@ -1136,6 +1145,9 @@ The Sequence parameter is one of two ways to define parameters that need to be c
 
 
 #### SequenceNode
+**_TO BE REMOVED!_**
+SequenceNode is obsolete - use the completeInSequence attribute on parameters instead.
+
 The SequenceNode parameter is the second way to define parameters that need to be completed in sequence.  For this variant, use SequenceNode as a parent node for each nodes that must be completed in order.  If any parameter completes out of order, this parameter will remain in an incomplete state.
 
     // In this example of the SequenceNode parameter, the player must orbit the Mun,
