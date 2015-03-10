@@ -302,10 +302,6 @@ Parameter to provide validation over a vessel's parts.  The PartValidation modul
         // Maximum count, default = int.MAXVALUE
         maxCount = 10
 
-        // Whether the contract should fail if the part validation is unmet.
-        // Default = true
-        failWhenUnmet = false
-
         // Text to use for the parameter
         // Default (maxCount = 0) = Part: <attributes>: None
         // Default (maxCount = int.MAXVALUE) = Part: <attributes>: At least <minCount>
