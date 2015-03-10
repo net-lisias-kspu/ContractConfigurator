@@ -78,7 +78,8 @@ _Sample CONTRACT_TYPE (can be downloaded [here](https://raw.githubusercontent.co
         declinable = true
 
         // Prestige.  If not specified, this contract type will be available at
-        // any prestige level.  Otherwise, locked to the level specified.
+        // any prestige level.  Otherwise, locked to the level specified.  Can
+        // be specified multiple times.
         // Values from Contract.ContractPrestige:
         //     Trivial
         //     Significant
