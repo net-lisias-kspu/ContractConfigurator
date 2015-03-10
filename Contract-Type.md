@@ -163,24 +163,30 @@ _Sample CONTRACT_TYPE (can be downloaded [here](https://raw.githubusercontent.co
 
 Thanks to DMagic - these values are pulled from [this forum post] (http://forum.kerbalspaceprogram.com/showthread.php?p=1315411#post1315411).
 
-Contract rewards, advances, and penalties are all affected by a multiplier which is dependent on both the contract prestige and the celestial body.  Those values are:
+Contract rewards, advances, and penalties are all affected by a multiplier which is dependent on both the contract prestige and the celestial body.  The multipliers are
 
-Body | Trivial | Significant | Exceptional
---- | ---: | ---: | ---:
-Sun | 4 | 5 | 6
-Kerbin | 1 | 1 | 2
-Mun | 2 | 2 | 3
-Minmus | 2 | 3 | 4
-Moho | 7 | 9 | 10
-Eve | 5 | 6 | 8
-Duna | 5 | 6 | 8
-Ike | 5 | 6 | 8
-Jool | 6 | 8 | 9
-Laythe | 8 | 10 | 12
-Vall | 8 | 10 | 12
-Bop | 8 | 10 | 12
-Tylo | 8 | 10 | 12
-Gilly | 6 | 8 | 9
-Pol | 8 | 10 | 12
-Dres | 6 | 8 | 9
-Eeloo | 10 | 12 | 15
+Body | Multiplier
+--- | ---:
+*Sun* | 4.0
+&nbsp;&nbsp;**Moho** | 7.0
+&nbsp;&nbsp;**Eve** | 5.0
+&nbsp;&nbsp;&nbsp;&nbsp;Gilly | 6.0
+&nbsp;&nbsp;**Kerbin** | 1.0
+&nbsp;&nbsp;&nbsp;&nbsp;Mun | 2.0
+&nbsp;&nbsp;&nbsp;&nbsp;Minmus | 2.0
+&nbsp;&nbsp;**Duna** | 5.0
+&nbsp;&nbsp;&nbsp;&nbsp;Ike | 5.0
+&nbsp;&nbsp;**Jool** | 6.0
+&nbsp;&nbsp;&nbsp;&nbsp;Laythe | 8.0
+&nbsp;&nbsp;&nbsp;&nbsp;Vall | 8.0
+&nbsp;&nbsp;&nbsp;&nbsp;Bop | 8.0
+&nbsp;&nbsp;&nbsp;&nbsp;Tylo | 8.0
+&nbsp;&nbsp;&nbsp;&nbsp;Pol | 8.0
+&nbsp;&nbsp;**Dres** | 6.0
+&nbsp;&nbsp;**Eeloo** | 10.0
+
+Prestige | Multiplier
+--- | ---:
+Trivial | 1.00
+Significant | 1.25
+Exceptional | 1.50
