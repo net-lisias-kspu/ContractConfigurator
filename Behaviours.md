@@ -9,6 +9,7 @@ The following behaviours are natively supported by ContractConfigurator:
 * [[OrbitGenerator|Behaviours#orbitgenerator]]
 * [[Message|Behaviours#message]]
 * [[SpawnKerbal|Behaviours#spawnkerbal]]
+* [[SpawnPassengers|Behaviours#spawnpassengers]]
 * [[SpawnVessel|Behaviours#spawnvessel]]
 * [[WaypointGenerator|Behaviours#waypointgenerator]]
 

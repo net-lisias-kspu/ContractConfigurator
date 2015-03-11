@@ -83,6 +83,7 @@ The following parameters are natively supported by ContractConfigurator:
   * [[VesselParameterGroup|Parameters#vesselparametergroup]]
   * [[Vessel Attributes|Parameters#vessel-attributes]]
     * [[HasCrew|Parameters#hascrew]]
+    * [[HasCrewCapacity|Parameters#hascrewcapacity]]
     * [[HasPassengers|Parameters#haspassengers]]
     * [[HasResource|Parameters#hasresource]]
     * [[PartValidation|Parameters#partvalidation]]
@@ -220,6 +221,24 @@ Parameter to indicate that the Vessel in question must have a certain number of 
         // Default (minCrew = 0) = Crew: At most <maxCrew> Kerbals
         // Default (minCrew = maxCrew) = Crew: Exactly <minCrew> Kerbals
         // Default (else) = Crew: Between <minCrew> and <maxCrew> Kerbals
+        //title =
+    }
+
+##### HasCrewCapacity
+Parameter to require that the Vessel in question must have a certain crew capacity.
+
+    PARAMETER
+    {
+        name = HasCrewCapacity
+        type = HasCrewCapacity
+
+        // Minimum/maximum capacity required.  Defaults are 1 and int.MaxValue,
+        // respectively
+        minCapacity = 1
+        maxCapacity = 10
+
+        // Text to use for the parameter.
+        // Default: Crew Capacity: Between <min> and <max>
         //title =
     }
 
