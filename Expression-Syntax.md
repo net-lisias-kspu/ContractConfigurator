@@ -24,7 +24,7 @@ The following operators can be used:
 
 | Operation | Return Type | Description | Example | Result|
 | :--- | :--- | :--- | :--- | :--- |
-| `<lval> + <rval>` | Same as input type(s) | Adds two values, typically only available for numeric data types. | `3 + 4` | `7` |
-| `<lval> - <rval>` | Same as input type(s) | Subtracts two values, typically only available for numeric data types. | `10 - 4` | `6` |
-| `<lval> * <rval>` | Same as input type(s) | Multiplies two values, typically only available for numeric data types. | `1.5 * 4.0` | `6.0` |
-| `<lval> / <rval>` | Same as input type(s) | Divides two values, typically only available for numeric data types. | `10.0 / 2.5` | `4.0` |
+| `<lval> + <rval>` | Same as lval/rval | Adds two values, typically only available for numeric data types. | `3 + 4` | `7` |
+| `<lval> - <rval>` | Same as lval/rval | Subtracts two values, typically only available for numeric data types. | `10 - 4` | `6` |
+| `<lval> * <rval>` | Same as lval/rval | Multiplies two values, typically only available for numeric data types. | `1.5 * 4.0` | `6.0` |
+| `<lval> / <rval>` | Same as lval/rval| Divides two values, typically only available for numeric data types. | `10.0 / 2.5` | `4.0` |
