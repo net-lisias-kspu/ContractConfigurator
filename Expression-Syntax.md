@@ -39,3 +39,24 @@ The following operators can be used:
 | `<bool> ? <value_if_true> : <value_if_false>` | Same as values | Conditional ternary operator.  If the condition is true, returns the first value, otherwise returns the second value. | `1 == 2 ? Minmus : Mun` | `Mun` |
 | `- <val>` | Same as val | Unary negation. | `- 10` | `-10` |
 | `! <bool>` | boolean | Logical not | `!true` | false |
+
+### Operator precedence
+Standard operator precedence apply, based on the precedence in the table below (lowest to highest):
+
+| Category | Operator(s) |
+| :--- | :--- |
+| Unary | `-  !` |
+| Multiplicative | `*  /` |
+| Additive | `+  -` |
+| Relational | `<  <=  >=  >` |
+| Equality | `==  !=` |
+| Conditional AND | `&&` |
+| Conditional OR | `||` |
+| Conditional | `?  :` |
+
+This means that:
+
+1. Operators that appear higher in the table get applied first.
+1. Operators in the same place in the table are applied left to right.
+
+For example, the expression `2 * 3 + 10 / 2` gets evaluated to `6 + 5` after one pass, and then reduced to `11` on the final pass.
