@@ -7,6 +7,9 @@
   * [[Operator Precedence|Expression-Syntax#operator-precedence]]
 * [[Identifiers|Expression-Syntax#identifiers]]
 * [[Special Identifiers|Expression-Syntax#special-identifiers]]
+* [[Functions/Methods|Expression-Syntax#functionsmethods]]
+* [[Lists of values|Expression-Syntax#lists-of-values]]
+* [[Function/Method Reference Guide|Expression-Syntax#functionmethod-reference-guide]]
 
 ## Overview
 **_COMING SOON!_**
