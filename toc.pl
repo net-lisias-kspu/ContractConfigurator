@@ -78,7 +78,7 @@ foreach my $file (@ARGV)
         # Get the tag
         my $tag = lc $name;
         $tag =~ s/ /-/g;
-        $tag =~ s/\///g;
+        $tag =~ s/[\/\(\)]//g;
 
         print(OFILE (' ' x $spaces) . "* [[$name|$identifier#$tag]]\n");
     }

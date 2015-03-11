@@ -8,7 +8,10 @@
 * [[Identifiers|Expression-Syntax#identifiers]]
 * [[Special Identifiers|Expression-Syntax#special-identifiers]]
 * [[Functions/Methods|Expression-Syntax#functionsmethods]]
+  * [[Functions|Expression-Syntax#functions]]
+  * [[Methods|Expression-Syntax#methods]]
 * [[Lists of values|Expression-Syntax#lists-of-values]]
+  * [[The Where() Method|Expression-Syntax#the-where-method]]
 * [[Function/Method Reference Guide|Expression-Syntax#functionmethod-reference-guide]]
 
 ## Overview
