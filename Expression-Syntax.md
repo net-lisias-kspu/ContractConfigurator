@@ -40,7 +40,7 @@ The following operators can be used:
 | `- <val>` | Same as val | Unary negation. | `- 10` | `-10` |
 | `! <bool>` | boolean | Logical not | `!true` | false |
 
-### Operator precedence
+### Operator Precedence
 Standard operator precedence apply, based on the precedence in the table below (lowest to highest):
 
 | Category | Operator(s) |
@@ -60,3 +60,15 @@ This means that:
 1. Operators in the same place in the table are applied left to right.
 
 For example, the expression `2 * 3 + 10 / 2` gets evaluated to `6 + 5` after one pass, and then reduced to `11` on the final pass.
+
+## Identifiers
+
+Identifiers are barewords (combinations of letters, numbers and underscores) that have a special meaning, depending on the variable context.  The following table lists the different types which support identifiers:
+
+| Type | Meaning of Identifiers | Valid Values | Example |
+| :--- | :--- | :--- | :--- | 
+| double | Retrieves a value from the persistent data store.  See the [[Expression Requirement|Requirements#expression]] and [[Expression Behaviours|Behaviours#expression]] for more information. | Anything | `TourismPassengerCount`  ([Tourism Contract Pack](https://github.com/jrossignol/ContractPack-Tourism))|
+| boolean | The true and false constants are available for use | `true`, `false` | `true` |
+| Enumerations | The constants for a given enumeration can be specified.  Most attributes that use an enumeration list the valid values in the appropriate [[Parameter|Parameters]], [[Requirement|Requirements]] or [[Behaviour|Behaviours]] page.  The valid values are dependent on the enumeration.  For example, the situation enumeration includes `FLYING`, `ORBITING` and others. | Enumeration-dependent | `FLYING` |
+| CelestialBody | The name of any planet loaded in the game.  Note that this can include planets added by mods that add planets.  Also, mods that change/rename planets will have different constants.  For example, in RSS the specifying the value `Kerbin` will result in an error (it will not get translated to `Earth`) | Any valid celestial body | `Kerbin`, `Mun`, `Duna` |
+| Vessel | The identifier for any vessel saved via a [[VesselParameterGroup|Parameters#vesselparametergroup]] parameter. | Dependent on contract configurator | `CommSat I` ([RemoteTech Contract Pack](https://github.com/jrossignol/ContractPack-RemoteTech)) |
