@@ -127,3 +127,9 @@ One detail that can be seen in the above example is that the referenced values c
 rewardFunds = @rewardScience
 rewardScience = @rewardFunds
 ```
+
+## Functions/Methods
+
+## Lists of values
+
+## Function/Method Reference Guide
