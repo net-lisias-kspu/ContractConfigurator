@@ -133,6 +133,34 @@ rewardScience = @rewardFunds
 
 ## Functions/Methods
 
+The expression syntax language supports function calls in three different flavours.
+
+1. Local Functions
+1. Global Functions
+1. Method Calls
+
+### Functions
+
+A function takes zero, one or many parameters and returns a value.  Local functions are only available in a specific context, whereas global functions are available everywhere.  Local functions are typically only used when the return value would be unclear if made global.  Here are some example function calls:
+
+```
+rewardFunds = Random(1000.0, 2000.0)
+targetBody = HomeWorld()
+```
+
+The full list of functions can be found in the [[Function/Method Reference Guide|Expression-Syntax#functionmethod-reference-guide]].
+
+### Methods
+
+Methods are functions that operate on a value (or "object").  They follow the form `<value>.<MethodCall>()`.  Here are some examples of method calls:
+
+```
+targetBody = HomeWorld().GetChildren().Random()
+minAltitude = @targetBody.AtmosphereAltitude()
+```
+
+The full list of methods can be found in the [[Function/Method Reference Guide|Expression-Syntax#functionmethod-reference-guide]].
+
 ## Lists of values
 
 ## Function/Method Reference Guide
