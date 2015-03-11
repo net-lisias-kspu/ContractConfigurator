@@ -27,4 +27,13 @@ The following operators can be used:
 | `<lval> + <rval>` | Same as lval/rval | Adds two values, typically only available for numeric data types. | `3 + 4` | `7` |
 | `<lval> - <rval>` | Same as lval/rval | Subtracts two values, typically only available for numeric data types. | `10 - 4` | `6` |
 | `<lval> * <rval>` | Same as lval/rval | Multiplies two values, typically only available for numeric data types. | `1.5 * 4.0` | `6.0` |
-| `<lval> / <rval>` | Same as lval/rval| Divides two values, typically only available for numeric data types. | `10.0 / 2.5` | `4.0` |
+| `<lval> / <rval>` | Same as lval/rval | Divides two values, typically only available for numeric data types. | `10.0 / 2.5` | `4.0` |
+| `<lval> == <rval>` | boolean | Equality comparison, return true if both values are the same. | `2 == 3` | `false` |
+| `<lval> != <rval>` | boolean | Not equals comparison, return true if both values are not the same. | `2 != 3` | `true` |
+| `<lval> > <rval>` | boolean | Greater than comparison, return true if the first value is greater than the second. | `2 > 3` | `false` |
+| `<lval> >= <rval>` | boolean | Greater than or equal comparison, return true if the first value is greater than the second or they are equal. | `2 >= 3` | `false` |
+| `<lval> <= <rval>` | boolean | Less than or equal comparison, return true if the first value is less than the second or they are equal. | `2 <= 3` | `true` |
+| `<lval> < <rval>` | boolean | Less than comparison, return true if the first value is less than the second. | `2 < 3` | `true` |
+| `<bool1> && <bool2>` | boolean | Logical AND. | `1 == 1 && 3 > 1` | `true` |
+| `<bool1> || <bool2>` | boolean | Logical OR. | `1 == 2 || 3 > 1` | `true` |
+| `<bool> ? <value_if_true> : <value_if_false>` | Same as values | Conditional ternary operator.  If the condition is true, returns the first value, otherwise returns the second value. | `1 == 2 ? Minmus : Mun` | `Mun` |
