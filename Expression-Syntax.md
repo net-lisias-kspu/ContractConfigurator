@@ -142,25 +142,31 @@ The expression syntax language supports function calls in three different flavou
 ### Functions
 
 A function takes zero, one or many parameters and returns a value.  Local functions are only available in a specific context, whereas global functions are available everywhere.  Local functions are typically only used when the return value would be unclear if made global.  Here are some example function calls:
-
 ```
 rewardFunds = Random(1000.0, 2000.0)
 targetBody = HomeWorld()
 ```
-
 The full list of functions can be found in the [[Function/Method Reference Guide|Expression-Syntax#functionmethod-reference-guide]].
 
 ### Methods
 
 Methods are functions that operate on a value (or "object").  They follow the form `<value>.<MethodCall>()`.  Here are some examples of method calls:
-
 ```
 targetBody = HomeWorld().GetChildren().Random()
 minAltitude = @targetBody.AtmosphereAltitude()
 ```
-
 The full list of methods can be found in the [[Function/Method Reference Guide|Expression-Syntax#functionmethod-reference-guide]].
 
 ## Lists of values
+
+Lists of values may be specified using the `[` and `]` array operators and separating the values with `,`.  For example:
+```
+targetBody = [ Mun, Minmus ].Random()
+```
+Note that fields do not directly support assigning from a list of values, but there are two very common uses of lists: the `Random()` method call returns a random value from the list, and the `Where()` method call that can filter the list of values.
+
+### The Where() Method
+
+testing
 
 ## Function/Method Reference Guide
