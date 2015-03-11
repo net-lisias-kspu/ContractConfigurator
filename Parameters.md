@@ -225,6 +225,7 @@ Parameter to indicate that the Vessel in question must have a certain number of 
     }
 
 ##### HasCrewCapacity
+**_COMING SOON!_**
 Parameter to require that the Vessel in question must have a certain crew capacity.
 
     PARAMETER
