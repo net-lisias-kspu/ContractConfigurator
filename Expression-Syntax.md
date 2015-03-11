@@ -37,3 +37,5 @@ The following operators can be used:
 | `<bool1> && <bool2>` | boolean | Logical AND. | `1 == 1 && 3 > 1` | `true` |
 | `<bool1> || <bool2>` | boolean | Logical OR. | `1 == 2 || 3 > 1` | `true` |
 | `<bool> ? <value_if_true> : <value_if_false>` | Same as values | Conditional ternary operator.  If the condition is true, returns the first value, otherwise returns the second value. | `1 == 2 ? Minmus : Mun` | `Mun` |
+| `- <val>` | Same as val | Unary negation. | `- 10` | `-10` |
+| `! <bool>` | boolean | Logical not | `!true` | false |
