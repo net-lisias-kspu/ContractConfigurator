@@ -72,3 +72,48 @@ Identifiers are barewords (combinations of letters, numbers and underscores) tha
 | Enumerations | The constants for a given enumeration can be specified.  Most attributes that use an enumeration list the valid values in the appropriate [[Parameter|Parameters]], [[Requirement|Requirements]] or [[Behaviour|Behaviours]] page.  The valid values are dependent on the enumeration.  For example, the situation enumeration includes `FLYING`, `ORBITING` and others. | Enumeration-dependent | `FLYING` |
 | CelestialBody | The name of any planet loaded in the game.  Note that this can include planets added by mods that add planets.  Also, mods that change/rename planets will have different constants.  For example, in RSS the specifying the value `Kerbin` will result in an error (it will not get translated to `Earth`) | Any valid celestial body | `Kerbin`, `Mun`, `Duna` |
 | Vessel | The identifier for any vessel saved via a [[VesselParameterGroup|Parameters#vesselparametergroup]] parameter. | Dependent on contract configurator | `CommSat I` ([RemoteTech Contract Pack](https://github.com/jrossignol/ContractPack-RemoteTech)) |
+
+## Special Identifiers
+
+A special identifier is an identifier that starts with the `@` symbol, and refers to another node in the contract configuration.
+
+For example:
+```
+rewardFunds = 10000.0
+failureFunds = @rewardFunds / 2.0
+```
+References may include a "path" to reference a value in another part of the configuration.  The path can start with `/` to indicate the root CONTRACT_TYPE node, and can contain `..` to indicate the parent node.  The following are all valid examples (note that the contract below is for illustration purposes only and is missing mandatory fields):
+```
+CONTRACT_TYPE
+{
+    rewardFunds = @/MyGroup/CrewCheck/minCrew * 1000.0
+
+    PARAMETER
+    {
+        name = MyGroup
+        type = VesselParameterGroup
+
+        PARAMETER
+        {
+            name = CrewCheck
+            type = HasCrew
+
+            minCrew = 2
+            maxCrew = @minCrew * 2.0
+        }
+
+        PARAMETER
+        {
+            name = CapacityCheck
+            type = HasCrewCapacity
+
+            minCapacity = @../CrewCheck/minCrew
+        }
+    }
+}
+```
+One detail that can be seen in the above example is that the referenced values can appear in the contract definition in any order.  The only exception is that a circular reference cannot be created.  The following definition would cause an error to be logged and the contract type not to be loaded:
+```
+rewardFunds = @rewardScience
+rewardScience = @rewardFunds
+```
