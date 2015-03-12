@@ -81,7 +81,7 @@ The following requirements are natively supported by ContractConfigurator:
 
 ### Progress Based Requirements
 
-[ [[Top|Requirements]] ] [ [[Progress Based Requirements|Requirements#progress-based-requirements]] ]
+<sub>[ [[Top|Requirements]] ] [ [[Progress Based Requirements|Requirements#progress-based-requirements]] ]</sub>
 
 #### BaseConstruction
 Requirement for having built a base.
@@ -97,7 +97,7 @@ _Note that this is based on the stock ProgressNode - I'm not 100% sure what they
         targetBody = Kerbin
     }
 
-[ [[Top|Requirements]] ] [ [[Progress Based Requirements|Requirements#progress-based-requirements]] / [[BaseConstruction|Requirements#baseconstruction]] ]
+<sub>[ [[Top|Requirements]] ] [ [[Progress Based Requirements|Requirements#progress-based-requirements]] / [[BaseConstruction|Requirements#baseconstruction]] ]</sub>
 
 #### Docking
 Requirement for completing a docking at the specified celestial body.
@@ -111,7 +111,7 @@ Requirement for completing a docking at the specified celestial body.
         targetBody = Kerbin
     }
 
-[ [[Top|Requirements]] ] [ [[Progress Based Requirements|Requirements#progress-based-requirements]] / [[Docking|Requirements#docking]] ]
+<sub>[ [[Top|Requirements]] ] [ [[Progress Based Requirements|Requirements#progress-based-requirements]] / [[Docking|Requirements#docking]] ]</sub>
 
 #### Escape
 Requirement for having escaped the specified celestial body.
@@ -125,7 +125,7 @@ Requirement for having escaped the specified celestial body.
         targetBody = Kerbin
     }
 
-[ [[Top|Requirements]] ] [ [[Progress Based Requirements|Requirements#progress-based-requirements]] / [[Escape|Requirements#escape]] ]
+<sub>[ [[Top|Requirements]] ] [ [[Progress Based Requirements|Requirements#progress-based-requirements]] / [[Escape|Requirements#escape]] ]</sub>
 
 #### FlyBy
 Requirement for performing a fly-by of the specified celestial body.
@@ -139,7 +139,7 @@ Requirement for performing a fly-by of the specified celestial body.
         targetBody = Kerbin
     }
 
-[ [[Top|Requirements]] ] [ [[Progress Based Requirements|Requirements#progress-based-requirements]] / [[FlyBy|Requirements#flyby]] ]
+<sub>[ [[Top|Requirements]] ] [ [[Progress Based Requirements|Requirements#progress-based-requirements]] / [[FlyBy|Requirements#flyby]] ]</sub>
 
 #### Landing
 Requirement for landing on the specified celestial body.
@@ -153,7 +153,7 @@ Requirement for landing on the specified celestial body.
         targetBody = Kerbin
     }
 
-[ [[Top|Requirements]] ] [ [[Progress Based Requirements|Requirements#progress-based-requirements]] / [[Landing|Requirements#landing]] ]
+<sub>[ [[Top|Requirements]] ] [ [[Progress Based Requirements|Requirements#progress-based-requirements]] / [[Landing|Requirements#landing]] ]</sub>
 
 #### Orbit
 Requirement for orbiting the specified celestial body.
@@ -167,7 +167,7 @@ Requirement for orbiting the specified celestial body.
         targetBody = Kerbin
     }
 
-[ [[Top|Requirements]] ] [ [[Progress Based Requirements|Requirements#progress-based-requirements]] / [[Orbit|Requirements#orbit]] ]
+<sub>[ [[Top|Requirements]] ] [ [[Progress Based Requirements|Requirements#progress-based-requirements]] / [[Orbit|Requirements#orbit]] ]</sub>
 
 #### Rendezvous
 Requirement for completing a rendezvous near the specified celestial body.
@@ -181,7 +181,7 @@ Requirement for completing a rendezvous near the specified celestial body.
         targetBody = Kerbin
     }
 
-[ [[Top|Requirements]] ] [ [[Progress Based Requirements|Requirements#progress-based-requirements]] / [[Rendezvous|Requirements#rendezvous]] ]
+<sub>[ [[Top|Requirements]] ] [ [[Progress Based Requirements|Requirements#progress-based-requirements]] / [[Rendezvous|Requirements#rendezvous]] ]</sub>
 
 #### ReturnFromFlyBy
 Requirement for returning from a fly-by of the specified celestial body.
@@ -195,7 +195,7 @@ Requirement for returning from a fly-by of the specified celestial body.
         targetBody = Kerbin
     }
 
-[ [[Top|Requirements]] ] [ [[Progress Based Requirements|Requirements#progress-based-requirements]] / [[ReturnFromFlyBy|Requirements#returnfromflyby]] ]
+<sub>[ [[Top|Requirements]] ] [ [[Progress Based Requirements|Requirements#progress-based-requirements]] / [[ReturnFromFlyBy|Requirements#returnfromflyby]] ]</sub>
 
 #### ReturnFromOrbit
 Requirement for returning from orbit of the specified celestial body.
@@ -209,7 +209,7 @@ Requirement for returning from orbit of the specified celestial body.
         targetBody = Kerbin
     }
 
-[ [[Top|Requirements]] ] [ [[Progress Based Requirements|Requirements#progress-based-requirements]] / [[ReturnFromOrbit|Requirements#returnfromorbit]] ]
+<sub>[ [[Top|Requirements]] ] [ [[Progress Based Requirements|Requirements#progress-based-requirements]] / [[ReturnFromOrbit|Requirements#returnfromorbit]] ]</sub>
 
 #### ReturnFromSurface
 Requirement for returning from orbit of the specified celestial body.
@@ -223,7 +223,7 @@ Requirement for returning from orbit of the specified celestial body.
         targetBody = Duna
     }
 
-[ [[Top|Requirements]] ] [ [[Progress Based Requirements|Requirements#progress-based-requirements]] / [[ReturnFromSurface|Requirements#returnfromsurface]] ]
+<sub>[ [[Top|Requirements]] ] [ [[Progress Based Requirements|Requirements#progress-based-requirements]] / [[ReturnFromSurface|Requirements#returnfromsurface]] ]</sub>
 
 #### SplashDown
 Requirement for splashing down on the specified celestial body.
@@ -237,7 +237,7 @@ Requirement for splashing down on the specified celestial body.
         targetBody = Kerbin
     }
 
-[ [[Top|Requirements]] ] [ [[Progress Based Requirements|Requirements#progress-based-requirements]] / [[SplashDown|Requirements#splashdown]] ]
+<sub>[ [[Top|Requirements]] ] [ [[Progress Based Requirements|Requirements#progress-based-requirements]] / [[SplashDown|Requirements#splashdown]] ]</sub>
 
 #### SurfaceEVA
 Requirement for completing a surface EVA on the specified celestial body.
@@ -251,7 +251,7 @@ Requirement for completing a surface EVA on the specified celestial body.
         targetBody = Kerbin
     }
 
-[ [[Top|Requirements]] ] [ [[Progress Based Requirements|Requirements#progress-based-requirements]] / [[SurfaceEVA|Requirements#surfaceeva]] ]
+<sub>[ [[Top|Requirements]] ] [ [[Progress Based Requirements|Requirements#progress-based-requirements]] / [[SurfaceEVA|Requirements#surfaceeva]] ]</sub>
 
 #### AltitudeRecord
 Requirement for having reached a minimum launch altitude.
@@ -265,7 +265,7 @@ Requirement for having reached a minimum launch altitude.
         minAltitude = 30000
     }
 
-[ [[Top|Requirements]] ] [ [[Progress Based Requirements|Requirements#progress-based-requirements]] / [[AltitudeRecord|Requirements#altituderecord]] ]
+<sub>[ [[Top|Requirements]] ] [ [[Progress Based Requirements|Requirements#progress-based-requirements]] / [[AltitudeRecord|Requirements#altituderecord]] ]</sub>
 
 #### FirstCrewToSurvive
 Requirement for having had a crew return successfully.
@@ -276,7 +276,7 @@ Requirement for having had a crew return successfully.
         type = FirstCrewToSurvive
     }
 
-[ [[Top|Requirements]] ] [ [[Progress Based Requirements|Requirements#progress-based-requirements]] / [[FirstCrewToSurvive|Requirements#firstcrewtosurvive]] ]
+<sub>[ [[Top|Requirements]] ] [ [[Progress Based Requirements|Requirements#progress-based-requirements]] / [[FirstCrewToSurvive|Requirements#firstcrewtosurvive]] ]</sub>
 
 #### FirstLaunch
 Requirement for having made the first launch.
@@ -287,7 +287,7 @@ Requirement for having made the first launch.
         type = FirstLaunch
     }
 
-[ [[Top|Requirements]] ] [ [[Progress Based Requirements|Requirements#progress-based-requirements]] / [[FirstLaunch|Requirements#firstlaunch]] ]
+<sub>[ [[Top|Requirements]] ] [ [[Progress Based Requirements|Requirements#progress-based-requirements]] / [[FirstLaunch|Requirements#firstlaunch]] ]</sub>
 
 #### KSCLanding
 Requirement for having landed at the KSC.
@@ -298,7 +298,7 @@ Requirement for having landed at the KSC.
         type = KSCLanding
     }
 
-[ [[Top|Requirements]] ] [ [[Progress Based Requirements|Requirements#progress-based-requirements]] / [[KSCLanding|Requirements#ksclanding]] ]
+<sub>[ [[Top|Requirements]] ] [ [[Progress Based Requirements|Requirements#progress-based-requirements]] / [[KSCLanding|Requirements#ksclanding]] ]</sub>
 
 #### RunwayLanding
 Requirement for having landed on the runway.
@@ -309,7 +309,7 @@ Requirement for having landed on the runway.
         type = RunwayLanding
     }
 
-[ [[Top|Requirements]] ] [ [[Progress Based Requirements|Requirements#progress-based-requirements]] / [[RunwayLanding|Requirements#runwaylanding]] ]
+<sub>[ [[Top|Requirements]] ] [ [[Progress Based Requirements|Requirements#progress-based-requirements]] / [[RunwayLanding|Requirements#runwaylanding]] ]</sub>
 
 #### ReachSpace
 Requirement for having reached space.
@@ -320,7 +320,7 @@ Requirement for having reached space.
         type = ReachSpace
     }
 
-[ [[Top|Requirements]] ] [ [[Progress Based Requirements|Requirements#progress-based-requirements]] / [[ReachSpace|Requirements#reachspace]] ]
+<sub>[ [[Top|Requirements]] ] [ [[Progress Based Requirements|Requirements#progress-based-requirements]] / [[ReachSpace|Requirements#reachspace]] ]</sub>
 
 #### SpaceCrewTransfer
 Requirement for having done a crew transfer in space.
@@ -331,7 +331,7 @@ Requirement for having done a crew transfer in space.
         type = SpaceCrewTransfer
     }
 
-[ [[Top|Requirements]] ] [ [[Progress Based Requirements|Requirements#progress-based-requirements]] / [[SpaceCrewTransfer|Requirements#spacecrewtransfer]] ]
+<sub>[ [[Top|Requirements]] ] [ [[Progress Based Requirements|Requirements#progress-based-requirements]] / [[SpaceCrewTransfer|Requirements#spacecrewtransfer]] ]</sub>
 
 #### Spacewalk
 Requirement for having done a spacewalk.
@@ -342,11 +342,11 @@ Requirement for having done a spacewalk.
         type = Spacewalk
     }
 
-[ [[Top|Requirements]] ] [ [[Progress Based Requirements|Requirements#progress-based-requirements]] / [[Spacewalk|Requirements#spacewalk]] ]
+<sub>[ [[Top|Requirements]] ] [ [[Progress Based Requirements|Requirements#progress-based-requirements]] / [[Spacewalk|Requirements#spacewalk]] ]</sub>
 
 ### Research Based Requirements
 
-[ [[Top|Requirements]] ] [ [[Research Based Requirements|Requirements#research-based-requirements]] ]
+<sub>[ [[Top|Requirements]] ] [ [[Research Based Requirements|Requirements#research-based-requirements]] ]</sub>
 
 #### PartUnlocked
 Requirement for having a certain part unlocked from the tech tree.
@@ -360,7 +360,7 @@ Requirement for having a certain part unlocked from the tech tree.
         part = SmallGearBay
     }
 
-[ [[Top|Requirements]] ] [ [[Research Based Requirements|Requirements#research-based-requirements]] / [[PartUnlocked|Requirements#partunlocked]] ]
+<sub>[ [[Top|Requirements]] ] [ [[Research Based Requirements|Requirements#research-based-requirements]] / [[PartUnlocked|Requirements#partunlocked]] ]</sub>
 
 #### PartModuleUnlocked
 Requirement for having any part with the given PartModule unlocked from the tech tree.
@@ -374,7 +374,7 @@ Requirement for having any part with the given PartModule unlocked from the tech
         partModule = ModuleReactionWheel
     }
 
-[ [[Top|Requirements]] ] [ [[Research Based Requirements|Requirements#research-based-requirements]] / [[PartModuleUnlocked|Requirements#partmoduleunlocked]] ]
+<sub>[ [[Top|Requirements]] ] [ [[Research Based Requirements|Requirements#research-based-requirements]] / [[PartModuleUnlocked|Requirements#partmoduleunlocked]] ]</sub>
 
 #### PartModuleTypeUnlocked
 Requirement for having a "type" of PartModule unlocked from the tech tree.
@@ -396,7 +396,7 @@ Requirement for having a "type" of PartModule unlocked from the tech tree.
         partModuleType = Power
     }
 
-[ [[Top|Requirements]] ] [ [[Research Based Requirements|Requirements#research-based-requirements]] / [[PartModuleTypeUnlocked|Requirements#partmoduletypeunlocked]] ]
+<sub>[ [[Top|Requirements]] ] [ [[Research Based Requirements|Requirements#research-based-requirements]] / [[PartModuleTypeUnlocked|Requirements#partmoduletypeunlocked]] ]</sub>
 
 #### TechResearched
 Requirement for having researched a technology.
@@ -412,12 +412,12 @@ Requirement for having researched a technology.
         tech = basicRocketry
     }
 
-[ [[Top|Requirements]] ] [ [[Research Based Requirements|Requirements#research-based-requirements]] / [[TechResearched|Requirements#techresearched]] ]
+<sub>[ [[Top|Requirements]] ] [ [[Research Based Requirements|Requirements#research-based-requirements]] / [[TechResearched|Requirements#techresearched]] ]</sub>
 
 ### RemoteTech Requirements
 These are requirementsthat are specific to the RemoteTech module.
 
-[ [[Top|Requirements]] ] [ [[RemoteTech Requirements|Requirements#remotetech-requirements]] ]
+<sub>[ [[Top|Requirements]] ] [ [[RemoteTech Requirements|Requirements#remotetech-requirements]] ]</sub>
 
 #### ActiveVesselRange
 The ActiveVesselRange requirement checks that the given celestial body has a satellite with sufficient range (achievable either via an omni antenna or dish set to active vessel).
@@ -434,7 +434,7 @@ The ActiveVesselRange requirement checks that the given celestial body has a sat
         range = 48000000
     }
 
-[ [[Top|Requirements]] ] [ [[RemoteTech Requirements|Requirements#remotetech-requirements]] / [[ActiveVesselRange|Requirements#activevesselrange]] ]
+<sub>[ [[Top|Requirements]] ] [ [[RemoteTech Requirements|Requirements#remotetech-requirements]] / [[ActiveVesselRange|Requirements#activevesselrange]] ]</sub>
 
 #### CelestialBodyCoverage
 The CelestialBodyCoverage requirement checks that the given celestial body has a dish pointed to it with sufficient range.
@@ -456,11 +456,11 @@ The CelestialBodyCoverage requirement checks that the given celestial body has a
         targetBody = Duna
     }
 
-[ [[Top|Requirements]] ] [ [[RemoteTech Requirements|Requirements#remotetech-requirements]] / [[CelestialBodyCoverage|Requirements#celestialbodycoverage]] ]
+<sub>[ [[Top|Requirements]] ] [ [[RemoteTech Requirements|Requirements#remotetech-requirements]] / [[CelestialBodyCoverage|Requirements#celestialbodycoverage]] ]</sub>
 
 ### Space Program Requirements
 
-[ [[Top|Requirements]] ] [ [[Space Program Requirements|Requirements#space-program-requirements]] ]
+<sub>[ [[Top|Requirements]] ] [ [[Space Program Requirements|Requirements#space-program-requirements]] ]</sub>
 
 #### HasCrew
 Requirement that checks whether the player has Kerbals in their crew matching the given criteria.
@@ -487,7 +487,7 @@ Requirement that checks whether the player has Kerbals in their crew matching th
         maxCount = 5
     }
 
-[ [[Top|Requirements]] ] [ [[Space Program Requirements|Requirements#space-program-requirements]] / [[HasCrew|Requirements#hascrew]] ]
+<sub>[ [[Top|Requirements]] ] [ [[Space Program Requirements|Requirements#space-program-requirements]] / [[HasCrew|Requirements#hascrew]] ]</sub>
 
 #### Facility
 Requirement that checks whether the player has the given facility upgraded (or not upgraded) to the specified level.
@@ -515,7 +515,7 @@ Requirement that checks whether the player has the given facility upgraded (or n
         maxLevel = 2
     }
 
-[ [[Top|Requirements]] ] [ [[Space Program Requirements|Requirements#space-program-requirements]] / [[Facility|Requirements#facility]] ]
+<sub>[ [[Top|Requirements]] ] [ [[Space Program Requirements|Requirements#space-program-requirements]] / [[Facility|Requirements#facility]] ]</sub>
 
 #### Funds
 Requirement that checks whether the player has enough (or not too much) funds.
@@ -536,7 +536,7 @@ Requirement that checks whether the player has enough (or not too much) funds.
         maxFunds = 1000000
     }
 
-[ [[Top|Requirements]] ] [ [[Space Program Requirements|Requirements#space-program-requirements]] / [[Funds|Requirements#funds]] ]
+<sub>[ [[Top|Requirements]] ] [ [[Space Program Requirements|Requirements#space-program-requirements]] / [[Funds|Requirements#funds]] ]</sub>
 
 #### Reputation
 Requirement that checks whether the player has enough (or not too much) reputation.
@@ -557,7 +557,7 @@ Requirement that checks whether the player has enough (or not too much) reputati
         maxReputation = 500.0
     }
 
-[ [[Top|Requirements]] ] [ [[Space Program Requirements|Requirements#space-program-requirements]] / [[Reputation|Requirements#reputation]] ]
+<sub>[ [[Top|Requirements]] ] [ [[Space Program Requirements|Requirements#space-program-requirements]] / [[Reputation|Requirements#reputation]] ]</sub>
 
 #### Science
 Requirement that checks whether the player has enough (or not too much) science.
@@ -578,11 +578,11 @@ Requirement that checks whether the player has enough (or not too much) science.
         maxScience = 10000
     }
 
-[ [[Top|Requirements]] ] [ [[Space Program Requirements|Requirements#space-program-requirements]] / [[Science|Requirements#science]] ]
+<sub>[ [[Top|Requirements]] ] [ [[Space Program Requirements|Requirements#space-program-requirements]] / [[Science|Requirements#science]] ]</sub>
 
 ### Contract Based Requirements
 
-[ [[Top|Requirements]] ] [ [[Contract Based Requirements|Requirements#contract-based-requirements]] ]
+<sub>[ [[Top|Requirements]] ] [ [[Contract Based Requirements|Requirements#contract-based-requirements]] ]</sub>
 
 #### CompleteContract
 Requirement for having a certain number of contracts completed of the given type.
@@ -613,11 +613,11 @@ Requirement for having a certain number of contracts completed of the given type
         cooldownDuration = 10d
     }
 
-[ [[Top|Requirements]] ] [ [[Contract Based Requirements|Requirements#contract-based-requirements]] / [[CompleteContract|Requirements#completecontract]] ]
+<sub>[ [[Top|Requirements]] ] [ [[Contract Based Requirements|Requirements#contract-based-requirements]] / [[CompleteContract|Requirements#completecontract]] ]</sub>
 
 ### Planetary Requirements
 
-[ [[Top|Requirements]] ] [ [[Planetary Requirements|Requirements#planetary-requirements]] ]
+<sub>[ [[Top|Requirements]] ] [ [[Planetary Requirements|Requirements#planetary-requirements]] ]</sub>
 
 #### SCANsatCoverage
 Requirement for having a certain level of SCANsat coverage for the given scan type/planet.
@@ -659,7 +659,7 @@ Requirement for having a certain level of SCANsat coverage for the given scan ty
         scanType = Biome
     }
 
-[ [[Top|Requirements]] ] [ [[Planetary Requirements|Requirements#planetary-requirements]] / [[SCANsatCoverage|Requirements#scansatcoverage]] ]
+<sub>[ [[Top|Requirements]] ] [ [[Planetary Requirements|Requirements#planetary-requirements]] / [[SCANsatCoverage|Requirements#scansatcoverage]] ]</sub>
 
 #### SCANsatLocationCoverage
 Requirement for having a specific location covered for the given scan type/planet.
@@ -700,11 +700,11 @@ Requirement for having a specific location covered for the given scan type/plane
         scanType = Biome
     }
 
-[ [[Top|Requirements]] ] [ [[Planetary Requirements|Requirements#planetary-requirements]] / [[SCANsatLocationCoverage|Requirements#scansatlocationcoverage]] ]
+<sub>[ [[Top|Requirements]] ] [ [[Planetary Requirements|Requirements#planetary-requirements]] / [[SCANsatLocationCoverage|Requirements#scansatlocationcoverage]] ]</sub>
 
 ### Miscellaneous Requirements
 
-[ [[Top|Requirements]] ] [ [[Miscellaneous Requirements|Requirements#miscellaneous-requirements]] ]
+<sub>[ [[Top|Requirements]] ] [ [[Miscellaneous Requirements|Requirements#miscellaneous-requirements]] ]</sub>
 
 #### Expression
 Requirement that executes an expression to check whether the requirement is met.  Can access data in the persistent data store.
@@ -721,11 +721,11 @@ Requirement that executes an expression to check whether the requirement is met.
         expression = CC_EXPTEST_Success == 1 || !CC_TestVal
     }
 
-[ [[Top|Requirements]] ] [ [[Miscellaneous Requirements|Requirements#miscellaneous-requirements]] / [[Expression|Requirements#expression]] ]
+<sub>[ [[Top|Requirements]] ] [ [[Miscellaneous Requirements|Requirements#miscellaneous-requirements]] / [[Expression|Requirements#expression]] ]</sub>
 
 ### Set Requirements
 
-[ [[Top|Requirements]] ] [ [[Set Requirements|Requirements#set-requirements]] ]
+<sub>[ [[Top|Requirements]] ] [ [[Set Requirements|Requirements#set-requirements]] ]</sub>
 
 #### Any
 If any child requirement is met, then the requirement is met.
@@ -750,7 +750,7 @@ If any child requirement is met, then the requirement is met.
         }
     }
 
-[ [[Top|Requirements]] ] [ [[Set Requirements|Requirements#set-requirements]] / [[Any|Requirements#any]] ]
+<sub>[ [[Top|Requirements]] ] [ [[Set Requirements|Requirements#set-requirements]] / [[Any|Requirements#any]] ]</sub>
 
 #### All
 If all child requirements are met, then the requirement is met.
@@ -775,5 +775,5 @@ If all child requirements are met, then the requirement is met.
         }
     }
 
-[ [[Top|Requirements]] ] [ [[Set Requirements|Requirements#set-requirements]] / [[All|Requirements#all]] ]
+<sub>[ [[Top|Requirements]] ] [ [[Set Requirements|Requirements#set-requirements]] / [[All|Requirements#all]] ]</sub>
 

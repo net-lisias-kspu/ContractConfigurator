@@ -11,7 +11,7 @@ ContractConfigurator is extensible!  So if you want to use it as part of your mo
   * [[Using the Persistent Data Store|Extending#using-the-persistent-data-store]]
 * [[Copyright statement|Extending#copyright-statement]]
 
-[ [[Top|Extending]] ] [ [[Extending ContractConfigurator|Extending#extending-contractconfigurator]] ]
+<sub>[ [[Top|Extending]] ] [ [[Extending ContractConfigurator|Extending#extending-contractconfigurator]] ]</sub>
 
 ### Extending Parameters
 
@@ -72,7 +72,7 @@ The following example shows how the CollectScience parameter is implemented:
     }
 
 
-[ [[Top|Extending]] ] [ [[Extending ContractConfigurator|Extending#extending-contractconfigurator]] / [[Extending Parameters|Extending#extending-parameters]] ]
+<sub>[ [[Top|Extending]] ] [ [[Extending ContractConfigurator|Extending#extending-contractconfigurator]] / [[Extending Parameters|Extending#extending-parameters]] ]</sub>
 
 ### Extending Requirements
 To create a new REQUIREMENT type, a new class should be created that extends the ContractRequirement class. In the configuration file, the value of the 'type' node needs to match the class name (unless it ends with "Requirement" - in which case the "Requirement" is dropped). There are two methods that may be implemented:
@@ -122,13 +122,13 @@ The following example shows how the AltitudeRecord requirement is implemented:
         }
     }
 
-[ [[Top|Extending]] ] [ [[Extending ContractConfigurator|Extending#extending-contractconfigurator]] / [[Extending Requirements|Extending#extending-requirements]] ]
+<sub>[ [[Top|Extending]] ] [ [[Extending ContractConfigurator|Extending#extending-contractconfigurator]] / [[Extending Requirements|Extending#extending-requirements]] ]</sub>
 
 ### Extending Behaviours
 
 To create a new BEHAVIOUR type, two classes are required.  One that subclasses ContractBehaviour (which provides the logic for the behaviour), and one that subclasses BehaviourFactory (which loads the data from a ConfigNode and is responsible for creating the ContractBehaviour objects when requested).  In the configuration file, the value of the 'type' node needs to match the name of the BehaviourFactory class (unless it ends with "Factory" - in which case the "Factory" is dropped).
 
-[ [[Top|Extending]] ] [ [[Extending ContractConfigurator|Extending#extending-contractconfigurator]] / [[Extending Behaviours|Extending#extending-behaviours]] ]
+<sub>[ [[Top|Extending]] ] [ [[Extending ContractConfigurator|Extending#extending-contractconfigurator]] / [[Extending Behaviours|Extending#extending-behaviours]] ]</sub>
 
 #### BehaviourFactory
 
@@ -159,7 +159,7 @@ The following example shows a generic template for a behaviour factory:
         }
     }
 
-[ [[Top|Extending]] ] [ [[Extending ContractConfigurator|Extending#extending-contractconfigurator]] / [[Extending Behaviours|Extending#extending-behaviours]] / [[BehaviourFactory|Extending#behaviourfactory]] ]
+<sub>[ [[Top|Extending]] ] [ [[Extending ContractConfigurator|Extending#extending-contractconfigurator]] / [[Extending Behaviours|Extending#extending-behaviours]] / [[BehaviourFactory|Extending#behaviourfactory]] ]</sub>
 
 #### ContractBehaviour
 
@@ -222,7 +222,7 @@ The following example shows a template that can be used for a new ContractBehavi
         protected override void OnSave(ConfigNode configNode) { }
     }
 
-[ [[Top|Extending]] ] [ [[Extending ContractConfigurator|Extending#extending-contractconfigurator]] / [[Extending Behaviours|Extending#extending-behaviours]] / [[ContractBehaviour|Extending#contractbehaviour]] ]
+<sub>[ [[Top|Extending]] ] [ [[Extending ContractConfigurator|Extending#extending-contractconfigurator]] / [[Extending Behaviours|Extending#extending-behaviours]] / [[ContractBehaviour|Extending#contractbehaviour]] ]</sub>
 
 ### Using the Persistent Data Store
 
@@ -234,7 +234,7 @@ The persistant data store is access by calling one of the two following methods 
 
 > `T Retrieve<T>(string key)` - This will retrieve a previously stored value.
 
-[ [[Top|Extending]] ] [ [[Extending ContractConfigurator|Extending#extending-contractconfigurator]] / [[Using the Persistent Data Store|Extending#using-the-persistent-data-store]] ]
+<sub>[ [[Top|Extending]] ] [ [[Extending ContractConfigurator|Extending#extending-contractconfigurator]] / [[Using the Persistent Data Store|Extending#using-the-persistent-data-store]] ]</sub>
 
 ## Copyright statement
 
@@ -243,5 +243,5 @@ _All source code posted on this page is released into the public domain._
 
 >**The Wise Man's Fear**, Patrick Rothfuss
 
-[ [[Top|Extending]] ] [ [[Copyright statement|Extending#copyright-statement]] ]
+<sub>[ [[Top|Extending]] ] [ [[Copyright statement|Extending#copyright-statement]] ]</sub>
 

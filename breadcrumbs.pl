@@ -18,7 +18,7 @@ sub PrintCrumbs
     my $key = shift;
 
     # Output the top link
-    print $fh "[ [[Top|$identifier]] ] [ ";
+    print $fh "<sub>[ [[Top|$identifier]] ] [ ";
 
     my $first = 1;
     foreach my $val (split "$;", $key)
@@ -31,7 +31,7 @@ sub PrintCrumbs
 
         print $fh "[[$backRef{$val}|$identifier#$val]] ";
     }
-    print $fh "]\n\n";
+    print $fh "]</sub>\n\n";
 }
 
 foreach my $file (@ARGV)
@@ -123,7 +123,7 @@ foreach my $file (@ARGV)
             $currentKey = $data{$line};
 	}
 	# Existing breadcrumb line
-	elsif($line =~ /^\[ \[\[Top/)
+	elsif($line =~ /^<sub>\[ \[\[Top/)
 	{
             # Remove line and the one after
 	    <IFILE>;
@@ -136,7 +136,6 @@ foreach my $file (@ARGV)
 	    $line .= "\n";
 	}
 	$lineIsEmpty = ($line eq "\n" || $line eq "\r\n");
-        print ("line is [$line]");
 
 	print OFILE $line;
     }

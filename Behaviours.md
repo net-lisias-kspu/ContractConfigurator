@@ -40,7 +40,7 @@ Behaviour for adding and removing experimental parts.
 
     }
 
-[ [[Top|Behaviours]] ] [ [[ExperimentalPart|Behaviours#experimentalpart]] ]
+<sub>[ [[Top|Behaviours]] ] [ [[ExperimentalPart|Behaviours#experimentalpart]] ]</sub>
 
 ### Expression
 Behaviour for executing one or more expressions and storing the results in the persistent data store.
@@ -77,7 +77,7 @@ Behaviour for executing one or more expressions and storing the results in the p
         }
     }
 
-[ [[Top|Behaviours]] ] [ [[Expression|Behaviours#expression]] ]
+<sub>[ [[Top|Behaviours]] ] [ [[Expression|Behaviours#expression]] ]</sub>
 
 ### OrbitGenerator
 Behaviour for generating orbits.
@@ -132,7 +132,7 @@ Behaviour for generating orbits.
         }
     }
 
-[ [[Top|Behaviours]] ] [ [[OrbitGenerator|Behaviours#orbitgenerator]] ]
+<sub>[ [[Top|Behaviours]] ] [ [[OrbitGenerator|Behaviours#orbitgenerator]] ]</sub>
 
 ### Message
 **_NEW!_**
@@ -168,7 +168,7 @@ Behaviour for displaying a message within the messaging system in the top right 
         }
     }
 
-[ [[Top|Behaviours]] ] [ [[Message|Behaviours#message]] ]
+<sub>[ [[Top|Behaviours]] ] [ [[Message|Behaviours#message]] ]</sub>
 
 ### SpawnKerbal
 Behaviour for spawning one or more Kerbals on land or in orbit.
@@ -230,7 +230,7 @@ Behaviour for spawning one or more Kerbals on land or in orbit.
         }
     }
 
-[ [[Top|Behaviours]] ] [ [[SpawnKerbal|Behaviours#spawnkerbal]] ]
+<sub>[ [[Top|Behaviours]] ] [ [[SpawnKerbal|Behaviours#spawnkerbal]] ]</sub>
 
 ### SpawnPassengers
 **_COMING SOON!_**
@@ -251,7 +251,7 @@ Behaviour for spawning passengers on board vessels.
     }
 
 
-[ [[Top|Behaviours]] ] [ [[SpawnPassengers|Behaviours#spawnpassengers]] ]
+<sub>[ [[Top|Behaviours]] ] [ [[SpawnPassengers|Behaviours#spawnpassengers]] ]</sub>
 
 ### SpawnVessel
 **_NEW!_**
@@ -350,7 +350,7 @@ Behaviour for spawning one or more Vessels on land or in orbit.
         }
     }
 
-[ [[Top|Behaviours]] ] [ [[SpawnVessel|Behaviours#spawnvessel]] ]
+<sub>[ [[Top|Behaviours]] ] [ [[SpawnVessel|Behaviours#spawnvessel]] ]</sub>
 
 ### WaypointGenerator
 Behaviour for generating waypoints.
@@ -481,5 +481,5 @@ Behaviour for generating waypoints.
         }
     }
 
-[ [[Top|Behaviours]] ] [ [[WaypointGenerator|Behaviours#waypointgenerator]] ]
+<sub>[ [[Top|Behaviours]] ] [ [[WaypointGenerator|Behaviours#waypointgenerator]] ]</sub>
 

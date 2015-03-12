@@ -137,7 +137,7 @@ The following parameters are natively supported by ContractConfigurator:
 ### Vessel Parameters
 These are parameters that operate on vessels (manned or unmanned).  By default, all vessel parameters have disableOnStateChange set to false.
 
-[ [[Top|Parameters]] ] [ [[Vessel Parameters|Parameters#vessel-parameters]] ]
+<sub>[ [[Top|Parameters]] ] [ [[Vessel Parameters|Parameters#vessel-parameters]] ]</sub>
 
 #### VesselParameterGroup
 The VesselParameterGroup parameter is used to group several child vessel parameters together.  It can also be used to specify a duration for which the parameters must be true, and will track across non-active vessels.  Note that when not used with a VesselParameterGroup parent parameter, the other vessel parameters on this page will only work with the active vessel.
@@ -190,12 +190,12 @@ The VesselParameterGroup parameter is used to group several child vessel paramet
         }
     }
 
-[ [[Top|Parameters]] ] [ [[Vessel Parameters|Parameters#vessel-parameters]] / [[VesselParameterGroup|Parameters#vesselparametergroup]] ]
+<sub>[ [[Top|Parameters]] ] [ [[Vessel Parameters|Parameters#vessel-parameters]] / [[VesselParameterGroup|Parameters#vesselparametergroup]] ]</sub>
 
 #### Vessel Attributes
 These parameters pertain to attributes of a vessel.
 
-[ [[Top|Parameters]] ] [ [[Vessel Parameters|Parameters#vessel-parameters]] / [[Vessel Attributes|Parameters#vessel-attributes]] ]
+<sub>[ [[Top|Parameters]] ] [ [[Vessel Parameters|Parameters#vessel-parameters]] / [[Vessel Attributes|Parameters#vessel-attributes]] ]</sub>
 
 ##### HasCrew
 Parameter to indicate that the Vessel in question must have a certain number of crew members (or must have fewer than a certain number).
@@ -230,7 +230,7 @@ Parameter to indicate that the Vessel in question must have a certain number of 
         //title =
     }
 
-[ [[Top|Parameters]] ] [ [[Vessel Parameters|Parameters#vessel-parameters]] / [[Vessel Attributes|Parameters#vessel-attributes]] / [[HasCrew|Parameters#hascrew]] ]
+<sub>[ [[Top|Parameters]] ] [ [[Vessel Parameters|Parameters#vessel-parameters]] / [[Vessel Attributes|Parameters#vessel-attributes]] / [[HasCrew|Parameters#hascrew]] ]</sub>
 
 ##### HasCrewCapacity
 **_COMING SOON!_**
@@ -251,7 +251,7 @@ Parameter to require that the Vessel in question must have a certain crew capaci
         //title =
     }
 
-[ [[Top|Parameters]] ] [ [[Vessel Parameters|Parameters#vessel-parameters]] / [[Vessel Attributes|Parameters#vessel-attributes]] / [[HasCrewCapacity|Parameters#hascrewcapacity]] ]
+<sub>[ [[Top|Parameters]] ] [ [[Vessel Parameters|Parameters#vessel-parameters]] / [[Vessel Attributes|Parameters#vessel-attributes]] / [[HasCrewCapacity|Parameters#hascrewcapacity]] ]</sub>
 
 ##### HasPassengers
 Parameter to indicate that the Vessel in question must have a certain number of passengers (or must have fewer than a certain number).  Use with the SpawnPassengers behaviour.
@@ -274,7 +274,7 @@ Parameter to indicate that the Vessel in question must have a certain number of 
         //title =
     }
 
-[ [[Top|Parameters]] ] [ [[Vessel Parameters|Parameters#vessel-parameters]] / [[Vessel Attributes|Parameters#vessel-attributes]] / [[HasPassengers|Parameters#haspassengers]] ]
+<sub>[ [[Top|Parameters]] ] [ [[Vessel Parameters|Parameters#vessel-parameters]] / [[Vessel Attributes|Parameters#vessel-attributes]] / [[HasPassengers|Parameters#haspassengers]] ]</sub>
 
 ##### HasResource
 Parameter to indicate that the Vessel in question must have a certain quantity of a certain resource (or must have fewer than a certain number).
@@ -298,7 +298,7 @@ Parameter to indicate that the Vessel in question must have a certain quantity o
         //title =
     }
 
-[ [[Top|Parameters]] ] [ [[Vessel Parameters|Parameters#vessel-parameters]] / [[Vessel Attributes|Parameters#vessel-attributes]] / [[HasResource|Parameters#hasresource]] ]
+<sub>[ [[Top|Parameters]] ] [ [[Vessel Parameters|Parameters#vessel-parameters]] / [[Vessel Attributes|Parameters#vessel-attributes]] / [[HasResource|Parameters#hasresource]] ]</sub>
 
 ##### PartValidation
 Parameter to provide validation over a vessel's parts.  The PartValidation module can be used in two different modes - simple and extende.  In the simple mode, simply provide the parameters to filter on, as in the following example:
@@ -422,7 +422,7 @@ This verifies that the listed parts in the given quantities are present.
     }
 
 
-[ [[Top|Parameters]] ] [ [[Vessel Parameters|Parameters#vessel-parameters]] / [[Vessel Attributes|Parameters#vessel-attributes]] / [[PartValidation|Parameters#partvalidation]] ]
+<sub>[ [[Top|Parameters]] ] [ [[Vessel Parameters|Parameters#vessel-parameters]] / [[Vessel Attributes|Parameters#vessel-attributes]] / [[PartValidation|Parameters#partvalidation]] ]</sub>
 
 ##### IsNotVessel
 The IsNotVessel parameter is used to create mutually exclusive groups within a contract.  Use the define attribute in the VesselParameterGroup parameter to define names, and then use the IsNotVessel within those to make the other vessel(s) invalid for completing the other group.
@@ -442,7 +442,7 @@ The IsNotVessel parameter is used to create mutually exclusive groups within a c
         //title =
     }
 
-[ [[Top|Parameters]] ] [ [[Vessel Parameters|Parameters#vessel-parameters]] / [[Vessel Attributes|Parameters#vessel-attributes]] / [[IsNotVessel|Parameters#isnotvessel]] ]
+<sub>[ [[Top|Parameters]] ] [ [[Vessel Parameters|Parameters#vessel-parameters]] / [[Vessel Attributes|Parameters#vessel-attributes]] / [[IsNotVessel|Parameters#isnotvessel]] ]</sub>
 
 ##### VesselIsType
 **_NEW!_**
@@ -465,7 +465,7 @@ Checks the VesselType of the given vessel
         vesselType = EVA
     }
 
-[ [[Top|Parameters]] ] [ [[Vessel Parameters|Parameters#vessel-parameters]] / [[Vessel Attributes|Parameters#vessel-attributes]] / [[VesselIsType|Parameters#vesselistype]] ]
+<sub>[ [[Top|Parameters]] ] [ [[Vessel Parameters|Parameters#vessel-parameters]] / [[Vessel Attributes|Parameters#vessel-attributes]] / [[VesselIsType|Parameters#vesselistype]] ]</sub>
 
 ##### VesselMass
 The VesselMass parameter requires a player's vessel to be within the specified mass range.
@@ -485,12 +485,12 @@ The VesselMass parameter requires a player's vessel to be within the specified m
         //title =
     }
 
-[ [[Top|Parameters]] ] [ [[Vessel Parameters|Parameters#vessel-parameters]] / [[Vessel Attributes|Parameters#vessel-attributes]] / [[VesselMass|Parameters#vesselmass]] ]
+<sub>[ [[Top|Parameters]] ] [ [[Vessel Parameters|Parameters#vessel-parameters]] / [[Vessel Attributes|Parameters#vessel-attributes]] / [[VesselMass|Parameters#vesselmass]] ]</sub>
 
 #### Vessel State
 These parameters pertain to the state of a vessel.
 
-[ [[Top|Parameters]] ] [ [[Vessel Parameters|Parameters#vessel-parameters]] / [[Vessel State|Parameters#vessel-state]] ]
+<sub>[ [[Top|Parameters]] ] [ [[Vessel Parameters|Parameters#vessel-parameters]] / [[Vessel State|Parameters#vessel-state]] ]</sub>
 
 ##### Docking
 **_NEW!_**
@@ -529,7 +529,7 @@ Docking parameters require that a vessel docks with another vessel.
         //title =
     }
 
-[ [[Top|Parameters]] ] [ [[Vessel Parameters|Parameters#vessel-parameters]] / [[Vessel State|Parameters#vessel-state]] / [[Docking|Parameters#docking]] ]
+<sub>[ [[Top|Parameters]] ] [ [[Vessel Parameters|Parameters#vessel-parameters]] / [[Vessel State|Parameters#vessel-state]] / [[Docking|Parameters#docking]] ]</sub>
 
 ##### Orbit
 Orbital parameter to specify required orbital details.
@@ -604,7 +604,7 @@ Orbital parameter to specify required orbital details.
         //title =
     }
 
-[ [[Top|Parameters]] ] [ [[Vessel Parameters|Parameters#vessel-parameters]] / [[Vessel State|Parameters#vessel-state]] / [[Orbit|Parameters#orbit]] ]
+<sub>[ [[Top|Parameters]] ] [ [[Vessel Parameters|Parameters#vessel-parameters]] / [[Vessel State|Parameters#vessel-state]] / [[Orbit|Parameters#orbit]] ]</sub>
 
 ##### ReachState
 Checks that the vessel is in a specific state.  Use any combination of the attributes below.
@@ -643,7 +643,7 @@ Checks that the vessel is in a specific state.  Use any combination of the attri
         //title =
     }
 
-[ [[Top|Parameters]] ] [ [[Vessel Parameters|Parameters#vessel-parameters]] / [[Vessel State|Parameters#vessel-state]] / [[ReachState|Parameters#reachstate]] ]
+<sub>[ [[Top|Parameters]] ] [ [[Vessel Parameters|Parameters#vessel-parameters]] / [[Vessel State|Parameters#vessel-state]] / [[ReachState|Parameters#reachstate]] ]</sub>
 
 ##### ReachSpecificOrbit
 The ReachSpecificOrbit parameter is used with the [[OrbitGenerator|Behaviours#orbitgenerator]] behaviour to indicate that a generated orbit must be reached by a vessel.
@@ -665,7 +665,7 @@ The ReachSpecificOrbit parameter is used with the [[OrbitGenerator|Behaviours#or
         deviationWindow = 10.0
     }
 
-[ [[Top|Parameters]] ] [ [[Vessel Parameters|Parameters#vessel-parameters]] / [[Vessel State|Parameters#vessel-state]] / [[ReachSpecificOrbit|Parameters#reachspecificorbit]] ]
+<sub>[ [[Top|Parameters]] ] [ [[Vessel Parameters|Parameters#vessel-parameters]] / [[Vessel State|Parameters#vessel-state]] / [[ReachSpecificOrbit|Parameters#reachspecificorbit]] ]</sub>
 
 ##### Rendezvous
 **_NEW!_**
@@ -702,7 +702,7 @@ Rendezvous parameters require that a vessel performs a rendezvous with another v
         //title =
     }
 
-[ [[Top|Parameters]] ] [ [[Vessel Parameters|Parameters#vessel-parameters]] / [[Vessel State|Parameters#vessel-state]] / [[Rendezvous|Parameters#rendezvous]] ]
+<sub>[ [[Top|Parameters]] ] [ [[Vessel Parameters|Parameters#vessel-parameters]] / [[Vessel State|Parameters#vessel-state]] / [[Rendezvous|Parameters#rendezvous]] ]</sub>
 
 ##### ReturnHome
 The ReturnHome parameter requires a player to return home (ideally after meeting their other contract objectives).
@@ -717,7 +717,7 @@ The ReturnHome parameter requires a player to return home (ideally after meeting
         //title =
     }
 
-[ [[Top|Parameters]] ] [ [[Vessel Parameters|Parameters#vessel-parameters]] / [[Vessel State|Parameters#vessel-state]] / [[ReturnHome|Parameters#returnhome]] ]
+<sub>[ [[Top|Parameters]] ] [ [[Vessel Parameters|Parameters#vessel-parameters]] / [[Vessel State|Parameters#vessel-state]] / [[ReturnHome|Parameters#returnhome]] ]</sub>
 
 ##### VesselNotDestroyed
 **_NEW!_**
@@ -748,12 +748,12 @@ The VesselNotDestroyed parameter is a negative parameter - it will cause the con
         //title =
     }
 
-[ [[Top|Parameters]] ] [ [[Vessel Parameters|Parameters#vessel-parameters]] / [[Vessel State|Parameters#vessel-state]] / [[VesselNotDestroyed|Parameters#vesselnotdestroyed]] ]
+<sub>[ [[Top|Parameters]] ] [ [[Vessel Parameters|Parameters#vessel-parameters]] / [[Vessel State|Parameters#vessel-state]] / [[VesselNotDestroyed|Parameters#vesselnotdestroyed]] ]</sub>
 
 #### Vessel History
 These parameters pertain to the history of a vessel.
 
-[ [[Top|Parameters]] ] [ [[Vessel Parameters|Parameters#vessel-parameters]] / [[Vessel History|Parameters#vessel-history]] ]
+<sub>[ [[Top|Parameters]] ] [ [[Vessel Parameters|Parameters#vessel-parameters]] / [[Vessel History|Parameters#vessel-history]] ]</sub>
 
 ##### VesselHasVisited
 The VesselHasVisited parameter requires a player to go to visit a celestial body under specific circumstances.
@@ -787,7 +787,7 @@ The VesselHasVisited parameter requires a player to go to visit a celestial body
         //title =
     }
 
-[ [[Top|Parameters]] ] [ [[Vessel Parameters|Parameters#vessel-parameters]] / [[Vessel History|Parameters#vessel-history]] / [[VesselHasVisited|Parameters#vesselhasvisited]] ]
+<sub>[ [[Top|Parameters]] ] [ [[Vessel Parameters|Parameters#vessel-parameters]] / [[Vessel History|Parameters#vessel-history]] / [[VesselHasVisited|Parameters#vesselhasvisited]] ]</sub>
 
 ##### VisitWaypoint
 The VisitWaypoint parameter is used with the [[WaypointGenerator|Behaviours#waypointgenerator]] behaviour to indicate that a generated waypoint must be visited by a vessel.
@@ -812,12 +812,12 @@ The VisitWaypoint parameter is used with the [[WaypointGenerator|Behaviours#wayp
         //title =
     }
 
-[ [[Top|Parameters]] ] [ [[Vessel Parameters|Parameters#vessel-parameters]] / [[Vessel History|Parameters#vessel-history]] / [[VisitWaypoint|Parameters#visitwaypoint]] ]
+<sub>[ [[Top|Parameters]] ] [ [[Vessel Parameters|Parameters#vessel-parameters]] / [[Vessel History|Parameters#vessel-history]] / [[VisitWaypoint|Parameters#visitwaypoint]] ]</sub>
 
 #### RemoteTech
 These are parameters that are specific to the RemoteTech module.
 
-[ [[Top|Parameters]] ] [ [[Vessel Parameters|Parameters#vessel-parameters]] / [[RemoteTech|Parameters#remotetech]] ]
+<sub>[ [[Top|Parameters]] ] [ [[Vessel Parameters|Parameters#vessel-parameters]] / [[RemoteTech|Parameters#remotetech]] ]</sub>
 
 ##### CelestialBodyCoverage
 The CelestialBodyCoverage parameter requires that a minimum communication coverage of the given celestial body is reached.
@@ -839,7 +839,7 @@ The CelestialBodyCoverage parameter requires that a minimum communication covera
         //title =
     }
 
-[ [[Top|Parameters]] ] [ [[Vessel Parameters|Parameters#vessel-parameters]] / [[RemoteTech|Parameters#remotetech]] / [[CelestialBodyCoverage|Parameters#celestialbodycoverage]] ]
+<sub>[ [[Top|Parameters]] ] [ [[Vessel Parameters|Parameters#vessel-parameters]] / [[RemoteTech|Parameters#remotetech]] / [[CelestialBodyCoverage|Parameters#celestialbodycoverage]] ]</sub>
 
 ##### KSCConnectivity
 The KSCConnectivity parameter requires that a vessel has connectivity to the Kerbal Space Center (ie. Mission Control).
@@ -858,7 +858,7 @@ The KSCConnectivity parameter requires that a vessel has connectivity to the Ker
         //title =
     }	
 
-[ [[Top|Parameters]] ] [ [[Vessel Parameters|Parameters#vessel-parameters]] / [[RemoteTech|Parameters#remotetech]] / [[KSCConnectivity|Parameters#kscconnectivity]] ]
+<sub>[ [[Top|Parameters]] ] [ [[Vessel Parameters|Parameters#vessel-parameters]] / [[RemoteTech|Parameters#remotetech]] / [[KSCConnectivity|Parameters#kscconnectivity]] ]</sub>
 
 ##### HasAntenna
 The HasAntenna parameter requires that the vessel has an antenna that meets the specified criteria.
@@ -902,7 +902,7 @@ The HasAntenna parameter requires that the vessel has an antenna that meets the 
         //title =
     }
 
-[ [[Top|Parameters]] ] [ [[Vessel Parameters|Parameters#vessel-parameters]] / [[RemoteTech|Parameters#remotetech]] / [[HasAntenna|Parameters#hasantenna]] ]
+<sub>[ [[Top|Parameters]] ] [ [[Vessel Parameters|Parameters#vessel-parameters]] / [[RemoteTech|Parameters#remotetech]] / [[HasAntenna|Parameters#hasantenna]] ]</sub>
 
 ##### SignalDelay
 The SignalDelay parameter specifies min/max values for the signal delay back to the KSC.
@@ -925,7 +925,7 @@ The SignalDelay parameter specifies min/max values for the signal delay back to 
         //title =
     }	
 
-[ [[Top|Parameters]] ] [ [[Vessel Parameters|Parameters#vessel-parameters]] / [[RemoteTech|Parameters#remotetech]] / [[SignalDelay|Parameters#signaldelay]] ]
+<sub>[ [[Top|Parameters]] ] [ [[Vessel Parameters|Parameters#vessel-parameters]] / [[RemoteTech|Parameters#remotetech]] / [[SignalDelay|Parameters#signaldelay]] ]</sub>
 
 ##### VesselConnectivity
 The VesselConnectivity parameter requires that the vessel has direct connectivity to another vessel.
@@ -947,12 +947,12 @@ The VesselConnectivity parameter requires that the vessel has direct connectivit
         //title =
     }	
 
-[ [[Top|Parameters]] ] [ [[Vessel Parameters|Parameters#vessel-parameters]] / [[RemoteTech|Parameters#remotetech]] / [[VesselConnectivity|Parameters#vesselconnectivity]] ]
+<sub>[ [[Top|Parameters]] ] [ [[Vessel Parameters|Parameters#vessel-parameters]] / [[RemoteTech|Parameters#remotetech]] / [[VesselConnectivity|Parameters#vesselconnectivity]] ]</sub>
 
 ### Kerbal Parameters
 These are parameters that operate on Kerbals.
 
-[ [[Top|Parameters]] ] [ [[Kerbal Parameters|Parameters#kerbal-parameters]] ]
+<sub>[ [[Top|Parameters]] ] [ [[Kerbal Parameters|Parameters#kerbal-parameters]] ]</sub>
 
 #### BoardAnyVessel
 The BoardAnyVessel parameter is met when the named Kerbal boards a vessel (this one is from the Squad "rescue" contracts and is a little bit less useful on its own.
@@ -974,7 +974,7 @@ The BoardAnyVessel parameter is met when the named Kerbal boards a vessel (this 
         //title =
     }
 
-[ [[Top|Parameters]] ] [ [[Kerbal Parameters|Parameters#kerbal-parameters]] / [[BoardAnyVessel|Parameters#boardanyvessel]] ]
+<sub>[ [[Top|Parameters]] ] [ [[Kerbal Parameters|Parameters#kerbal-parameters]] / [[BoardAnyVessel|Parameters#boardanyvessel]] ]</sub>
 
 #### RecoverKerbal
 The RecoverKerbal parameter is met when the named Kerbal is "recovered" (ie. goes back in to the available list at the astronaut complex).  This is from the Squad "rescue" contracts.
@@ -996,12 +996,12 @@ The RecoverKerbal parameter is met when the named Kerbal is "recovered" (ie. goe
         //title =
     }
 
-[ [[Top|Parameters]] ] [ [[Kerbal Parameters|Parameters#kerbal-parameters]] / [[RecoverKerbal|Parameters#recoverkerbal]] ]
+<sub>[ [[Top|Parameters]] ] [ [[Kerbal Parameters|Parameters#kerbal-parameters]] / [[RecoverKerbal|Parameters#recoverkerbal]] ]</sub>
 
 ### Progression Parameters
 Although not tied directly to the achievement/progression system, these are parameters that are typically used for progression type rewards (do something for the first time).  Note that some of these parameters are very similar to the [[vessel parameters|Parameters#vessel-parameters]], but work differently.  The progreession parameters only require you to have done the thing once before, rather than doing it with a specific vessel.
 
-[ [[Top|Parameters]] ] [ [[Progression Parameters|Parameters#progression-parameters]] ]
+<sub>[ [[Top|Parameters]] ] [ [[Progression Parameters|Parameters#progression-parameters]] ]</sub>
 
 #### LaunchVessel
 To meet this parameter, the player simply needs to launch a vessel.
@@ -1012,7 +1012,7 @@ To meet this parameter, the player simply needs to launch a vessel.
         type = LaunchVessel
     }
 
-[ [[Top|Parameters]] ] [ [[Progression Parameters|Parameters#progression-parameters]] / [[LaunchVessel|Parameters#launchvessel]] ]
+<sub>[ [[Top|Parameters]] ] [ [[Progression Parameters|Parameters#progression-parameters]] / [[LaunchVessel|Parameters#launchvessel]] ]</sub>
 
 #### AltitudeRecord
 The AltituteRecord parameter is met when a craft reaches the given altitude on Kerbin.
@@ -1024,7 +1024,7 @@ The AltituteRecord parameter is met when a craft reaches the given altitude on K
         altitude = 55000
     }
 
-[ [[Top|Parameters]] ] [ [[Progression Parameters|Parameters#progression-parameters]] / [[AltitudeRecord|Parameters#altituderecord]] ]
+<sub>[ [[Top|Parameters]] ] [ [[Progression Parameters|Parameters#progression-parameters]] / [[AltitudeRecord|Parameters#altituderecord]] ]</sub>
 
 #### ReachSpace
 Go to space.
@@ -1035,7 +1035,7 @@ Go to space.
         type = ReachSpace
     }
 
-[ [[Top|Parameters]] ] [ [[Progression Parameters|Parameters#progression-parameters]] / [[ReachSpace|Parameters#reachspace]] ]
+<sub>[ [[Top|Parameters]] ] [ [[Progression Parameters|Parameters#progression-parameters]] / [[ReachSpace|Parameters#reachspace]] ]</sub>
 
 #### EnterOrbit
 The EnterOrbit parameter is met when a craft enters an orbit of the given celestial body.
@@ -1049,7 +1049,7 @@ The EnterOrbit parameter is met when a craft enters an orbit of the given celest
         targetBody = Duna
     }
 
-[ [[Top|Parameters]] ] [ [[Progression Parameters|Parameters#progression-parameters]] / [[EnterOrbit|Parameters#enterorbit]] ]
+<sub>[ [[Top|Parameters]] ] [ [[Progression Parameters|Parameters#progression-parameters]] / [[EnterOrbit|Parameters#enterorbit]] ]</sub>
 
 #### EnterSOI
 The EnterSOI parameter is met when a craft enters the sphere of influence of the given celestial body.
@@ -1063,7 +1063,7 @@ The EnterSOI parameter is met when a craft enters the sphere of influence of the
         targetBody = Duna
     }
 
-[ [[Top|Parameters]] ] [ [[Progression Parameters|Parameters#progression-parameters]] / [[EnterSOI|Parameters#entersoi]] ]
+<sub>[ [[Top|Parameters]] ] [ [[Progression Parameters|Parameters#progression-parameters]] / [[EnterSOI|Parameters#entersoi]] ]</sub>
 
 #### LandOnBody
 The LandOnBody parameter is met when a craft lands on the given celestial body.
@@ -1077,12 +1077,12 @@ The LandOnBody parameter is met when a craft lands on the given celestial body.
         targetBody = Duna
     }
 
-[ [[Top|Parameters]] ] [ [[Progression Parameters|Parameters#progression-parameters]] / [[LandOnBody|Parameters#landonbody]] ]
+<sub>[ [[Top|Parameters]] ] [ [[Progression Parameters|Parameters#progression-parameters]] / [[LandOnBody|Parameters#landonbody]] ]</sub>
 
 ### Negative Parameters
 These parameters are ones that give a failure condition to a contract.  Note that when the contract fails, the player can't re-attempt it (unless it's set up to be offered again after failure).
 
-[ [[Top|Parameters]] ] [ [[Negative Parameters|Parameters#negative-parameters]] ]
+<sub>[ [[Top|Parameters]] ] [ [[Negative Parameters|Parameters#negative-parameters]] ]</sub>
 
 #### KerbalDeaths
 The KerbalDeaths parameter _fails_ if more Kerbals than the countMax die.
@@ -1099,12 +1099,12 @@ The KerbalDeaths parameter _fails_ if more Kerbals than the countMax die.
         countMax = 1
     }
 
-[ [[Top|Parameters]] ] [ [[Negative Parameters|Parameters#negative-parameters]] / [[KerbalDeaths|Parameters#kerbaldeaths]] ]
+<sub>[ [[Top|Parameters]] ] [ [[Negative Parameters|Parameters#negative-parameters]] / [[KerbalDeaths|Parameters#kerbaldeaths]] ]</sub>
 
 ### Set Parameters
 Set parameters are special - they do not typically do anything on their own, but work with their child parameters.
 
-[ [[Top|Parameters]] ] [ [[Set Parameters|Parameters#set-parameters]] ]
+<sub>[ [[Top|Parameters]] ] [ [[Set Parameters|Parameters#set-parameters]] ]</sub>
 
 #### Any
 The Any parameter is be completed if any one of its child parameters are completed.
@@ -1140,7 +1140,7 @@ The Any parameter is be completed if any one of its child parameters are complet
         }
     }
 
-[ [[Top|Parameters]] ] [ [[Set Parameters|Parameters#set-parameters]] / [[Any|Parameters#any]] ]
+<sub>[ [[Top|Parameters]] ] [ [[Set Parameters|Parameters#set-parameters]] / [[Any|Parameters#any]] ]</sub>
 
 #### All
 The All parameter is completed once all its child parameters are completed.
@@ -1179,7 +1179,7 @@ The All parameter is completed once all its child parameters are completed.
         }
     }
 
-[ [[Top|Parameters]] ] [ [[Set Parameters|Parameters#set-parameters]] / [[All|Parameters#all]] ]
+<sub>[ [[Top|Parameters]] ] [ [[Set Parameters|Parameters#set-parameters]] / [[All|Parameters#all]] ]</sub>
 
 #### Sequence
 The Sequence parameter is one of two ways to define parameters that need to be completed in sequence.  For this variant, use Sequence as a parent node for all nodes that must be completed in order.  If any parameter completes out of order, this parameter will fail - causing the contract to fail.
@@ -1250,7 +1250,7 @@ The Sequence parameter is one of two ways to define parameters that need to be c
     }
 
 
-[ [[Top|Parameters]] ] [ [[Set Parameters|Parameters#set-parameters]] / [[Sequence|Parameters#sequence]] ]
+<sub>[ [[Top|Parameters]] ] [ [[Set Parameters|Parameters#set-parameters]] / [[Sequence|Parameters#sequence]] ]</sub>
 
 #### SequenceNode
 **_TO BE REMOVED!_**
@@ -1340,13 +1340,13 @@ The SequenceNode parameter is the second way to define parameters that need to b
         }
     }
 
-[ [[Top|Parameters]] ] [ [[Set Parameters|Parameters#set-parameters]] / [[SequenceNode|Parameters#sequencenode]] ]
+<sub>[ [[Top|Parameters]] ] [ [[Set Parameters|Parameters#set-parameters]] / [[SequenceNode|Parameters#sequencenode]] ]</sub>
 
 ### Planetary Parameters
 
 Parameters specific to doing something related to a planetary body.
 
-[ [[Top|Parameters]] ] [ [[Planetary Parameters|Parameters#planetary-parameters]] ]
+<sub>[ [[Top|Parameters]] ] [ [[Planetary Parameters|Parameters#planetary-parameters]] ]</sub>
 
 #### CollectScience
 The CollectScience parameter is met when science is sent home from the given location and celestial body.
@@ -1363,7 +1363,7 @@ The CollectScience parameter is met when science is sent home from the given loc
         location = Space
     }
 
-[ [[Top|Parameters]] ] [ [[Planetary Parameters|Parameters#planetary-parameters]] / [[CollectScience|Parameters#collectscience]] ]
+<sub>[ [[Top|Parameters]] ] [ [[Planetary Parameters|Parameters#planetary-parameters]] / [[CollectScience|Parameters#collectscience]] ]</sub>
 
 #### PlantFlag
 The PlantFlag parameter is met when planting a flag on the given body.
@@ -1377,7 +1377,7 @@ The PlantFlag parameter is met when planting a flag on the given body.
         targetBody = Duna
     }
 
-[ [[Top|Parameters]] ] [ [[Planetary Parameters|Parameters#planetary-parameters]] / [[PlantFlag|Parameters#plantflag]] ]
+<sub>[ [[Top|Parameters]] ] [ [[Planetary Parameters|Parameters#planetary-parameters]] / [[PlantFlag|Parameters#plantflag]] ]</sub>
 
 #### SCANsatCoverage
 The SCANsatCoverage parameter is met when there is sufficient SCANsat coverage for the given planet/type.
@@ -1414,13 +1414,13 @@ The SCANsatCoverage parameter is met when there is sufficient SCANsat coverage f
         scanType = Biome
     }
 
-[ [[Top|Parameters]] ] [ [[Planetary Parameters|Parameters#planetary-parameters]] / [[SCANsatCoverage|Parameters#scansatcoverage]] ]
+<sub>[ [[Top|Parameters]] ] [ [[Planetary Parameters|Parameters#planetary-parameters]] / [[SCANsatCoverage|Parameters#scansatcoverage]] ]</sub>
 
 ### Miscellaneous Parameters
 
 Other parameters that didn't fit in elsewhere.
 
-[ [[Top|Parameters]] ] [ [[Miscellaneous Parameters|Parameters#miscellaneous-parameters]] ]
+<sub>[ [[Top|Parameters]] ] [ [[Miscellaneous Parameters|Parameters#miscellaneous-parameters]] ]</sub>
 
 #### PartTest
 PartTest is for testing parts (or just activating them, for staged parts).  This parameter supports child parameters - you will only be able to complete the part test if all child parameters are also completed.
@@ -1439,7 +1439,7 @@ PartTest is for testing parts (or just activating them, for staged parts).  This
         // notes = 
     }
 
-[ [[Top|Parameters]] ] [ [[Miscellaneous Parameters|Parameters#miscellaneous-parameters]] / [[PartTest|Parameters#parttest]] ]
+<sub>[ [[Top|Parameters]] ] [ [[Miscellaneous Parameters|Parameters#miscellaneous-parameters]] / [[PartTest|Parameters#parttest]] ]</sub>
 
 #### Duration
 The Duration parameter sets up a timer that starts when all sibling parameters are completed.  Once the timer expires, the parameter is completed.
@@ -1469,7 +1469,7 @@ The Duration parameter sets up a timer that starts when all sibling parameters a
         //completionText =
     }
 
-[ [[Top|Parameters]] ] [ [[Miscellaneous Parameters|Parameters#miscellaneous-parameters]] / [[Duration|Parameters#duration]] ]
+<sub>[ [[Top|Parameters]] ] [ [[Miscellaneous Parameters|Parameters#miscellaneous-parameters]] / [[Duration|Parameters#duration]] ]</sub>
 
 #### Timer
 The Timer parameter sets up a timer that starts when the contract is accepted.  The player only has the specified duration before the timer expires and the contract fails!
@@ -1485,7 +1485,7 @@ The Timer parameter sets up a timer that starts when the contract is accepted.  
         duration = 30m
     }
 
-[ [[Top|Parameters]] ] [ [[Miscellaneous Parameters|Parameters#miscellaneous-parameters]] / [[Timer|Parameters#timer]] ]
+<sub>[ [[Top|Parameters]] ] [ [[Miscellaneous Parameters|Parameters#miscellaneous-parameters]] / [[Timer|Parameters#timer]] ]</sub>
 
 ##### TargetDestroyed
 **_NEW!_**
@@ -1510,5 +1510,5 @@ The TargetDestroyed indicates that a specific target vessel (or vessels) must be
         //title =
     }
 
-[ [[Top|Parameters]] ] [ [[Miscellaneous Parameters|Parameters#miscellaneous-parameters]] / [[Timer|Parameters#timer]] / [[TargetDestroyed|Parameters#targetdestroyed]] ]
+<sub>[ [[Top|Parameters]] ] [ [[Miscellaneous Parameters|Parameters#miscellaneous-parameters]] / [[Timer|Parameters#timer]] / [[TargetDestroyed|Parameters#targetdestroyed]] ]</sub>
 

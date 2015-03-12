@@ -28,7 +28,7 @@ targetBody = HomeWorld().Children().Random()
 ```
 Which has now changed your contract to randomly come up for either the Mun or Minmus!
 
-[ [[Top|Expression-Syntax]] ] [ [[Overview|Expression-Syntax#overview]] ]
+<sub>[ [[Top|Expression-Syntax]] ] [ [[Overview|Expression-Syntax#overview]] ]</sub>
 
 ## Syntax
 This section documents the various syntax elements that are available.  The following general considerations apply:
@@ -37,7 +37,7 @@ This section documents the various syntax elements that are available.  The foll
 1. All expressions must be on one line.  This is due to limitations of using the stock config nodes as the underlying mechanism.
 1. All expressions have a data type that is inferred by context (the start context being inferred from the type for the config node attribute).   For example, `targetBody` is of type CelestialBody, and `rewardFunds` is of type Double.  This is important to understand when using methods/functions that are only availble for a certain data type.
 
-[ [[Top|Expression-Syntax]] ] [ [[Syntax|Expression-Syntax#syntax]] ]
+<sub>[ [[Top|Expression-Syntax]] ] [ [[Syntax|Expression-Syntax#syntax]] ]</sub>
 
 ### Operations
 The following operators can be used:
@@ -60,7 +60,7 @@ The following operators can be used:
 | `- <val>` | Same as val | Unary negation. | `- 10` | `-10` |
 | `! <bool>` | boolean | Logical not | `!true` | false |
 
-[ [[Top|Expression-Syntax]] ] [ [[Syntax|Expression-Syntax#syntax]] / [[Operations|Expression-Syntax#operations]] ]
+<sub>[ [[Top|Expression-Syntax]] ] [ [[Syntax|Expression-Syntax#syntax]] / [[Operations|Expression-Syntax#operations]] ]</sub>
 
 ### Operator Precedence
 Standard operator precedence apply, based on the precedence in the table below (lowest to highest):
@@ -83,7 +83,7 @@ This means that:
 
 For example, the expression `2 * 3 + 10 / 2` gets evaluated to `6 + 5` after one pass, and then reduced to `11` on the final pass.
 
-[ [[Top|Expression-Syntax]] ] [ [[Syntax|Expression-Syntax#syntax]] / [[Operator Precedence|Expression-Syntax#operator-precedence]] ]
+<sub>[ [[Top|Expression-Syntax]] ] [ [[Syntax|Expression-Syntax#syntax]] / [[Operator Precedence|Expression-Syntax#operator-precedence]] ]</sub>
 
 ## Identifiers
 
@@ -97,7 +97,7 @@ Identifiers are barewords (combinations of letters, numbers and underscores) tha
 | CelestialBody | The name of any planet loaded in the game.  Note that this can include planets added by mods that add planets.  Also, mods that change/rename planets will have different constants.  For example, in RSS the specifying the value `Kerbin` will result in an error (it will not get translated to `Earth`) | Any valid celestial body | `Kerbin`, `Mun`, `Duna` |
 | Vessel | The identifier for any vessel saved via a [[VesselParameterGroup|Parameters#vesselparametergroup]] parameter. | Dependent on contract configurator | `CommSat I` ([RemoteTech Contract Pack](https://github.com/jrossignol/ContractPack-RemoteTech)) |
 
-[ [[Top|Expression-Syntax]] ] [ [[Identifiers|Expression-Syntax#identifiers]] ]
+<sub>[ [[Top|Expression-Syntax]] ] [ [[Identifiers|Expression-Syntax#identifiers]] ]</sub>
 
 ## Special Identifiers
 
@@ -144,7 +144,7 @@ rewardFunds = @rewardScience
 rewardScience = @rewardFunds
 ```
 
-[ [[Top|Expression-Syntax]] ] [ [[Special Identifiers|Expression-Syntax#special-identifiers]] ]
+<sub>[ [[Top|Expression-Syntax]] ] [ [[Special Identifiers|Expression-Syntax#special-identifiers]] ]</sub>
 
 ## Functions/Methods
 
@@ -154,7 +154,7 @@ The expression syntax language supports function calls in three different flavou
 1. Global Functions
 1. Method Calls
 
-[ [[Top|Expression-Syntax]] ] [ [[Functions/Methods|Expression-Syntax#functionsmethods]] ]
+<sub>[ [[Top|Expression-Syntax]] ] [ [[Functions/Methods|Expression-Syntax#functionsmethods]] ]</sub>
 
 ### Functions
 
@@ -165,7 +165,7 @@ targetBody = HomeWorld()
 ```
 The full list of functions can be found in the [[Function Reference Guide|Function-Reference-Guide]].
 
-[ [[Top|Expression-Syntax]] ] [ [[Functions/Methods|Expression-Syntax#functionsmethods]] / [[Functions|Expression-Syntax#functions]] ]
+<sub>[ [[Top|Expression-Syntax]] ] [ [[Functions/Methods|Expression-Syntax#functionsmethods]] / [[Functions|Expression-Syntax#functions]] ]</sub>
 
 ### Methods
 
@@ -176,7 +176,7 @@ minAltitude = @targetBody.AtmosphereAltitude()
 ```
 The full list of methods can be found in the [[Function Reference Guide|Function-Reference-Guide]].
 
-[ [[Top|Expression-Syntax]] ] [ [[Functions/Methods|Expression-Syntax#functionsmethods]] / [[Methods|Expression-Syntax#methods]] ]
+<sub>[ [[Top|Expression-Syntax]] ] [ [[Functions/Methods|Expression-Syntax#functionsmethods]] / [[Methods|Expression-Syntax#methods]] ]</sub>
 
 ## Lists of values
 
@@ -186,7 +186,7 @@ targetBody = [ Mun, Minmus ].Random()
 ```
 Note that fields do not directly support assigning from a list of values, but there are two very common uses of lists: the `Random()` method call returns a random value from the list, and the `Where()` method call that can filter the list of values.
 
-[ [[Top|Expression-Syntax]] ] [ [[Lists of values|Expression-Syntax#lists-of-values]] ]
+<sub>[ [[Top|Expression-Syntax]] ] [ [[Lists of values|Expression-Syntax#lists-of-values]] ]</sub>
 
 ### The Where() Method
 
@@ -196,5 +196,5 @@ targetBody = AllBodies().Where(b => b.HasOcean()).Random()
 ```
 The expression gets a list of all celestial bodies, and then filters it down to a list of all bodies that have oceans.  It then selects a random body from that list.  Note the `b =>` portion of the expression is defining a temporary variable that can be used in the filter expression (the value `b` is an example, any identifier consisting of alphanumeric characters may be used).  That expression will be executed for each value in the list, and only the values where the expression is `true` will be kept.
 
-[ [[Top|Expression-Syntax]] ] [ [[Lists of values|Expression-Syntax#lists-of-values]] / [[The Where() Method|Expression-Syntax#the-where-method]] ]
+<sub>[ [[Top|Expression-Syntax]] ] [ [[Lists of values|Expression-Syntax#lists-of-values]] / [[The Where() Method|Expression-Syntax#the-where-method]] ]</sub>
 

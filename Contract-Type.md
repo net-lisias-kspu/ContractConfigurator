@@ -160,7 +160,7 @@ _Sample CONTRACT_TYPE (can be downloaded [here](https://raw.githubusercontent.co
         }
     }
 
-[ [[Top|Contract-Type]] ] [ [[The CONTRACT_TYPE node|Contract-Type#the-contract_type-node]] ]
+<sub>[ [[Top|Contract-Type]] ] [ [[The CONTRACT_TYPE node|Contract-Type#the-contract_type-node]] ]</sub>
 
 ## Contract Reward Modifiers
 
@@ -194,5 +194,5 @@ Trivial | 1.00
 Significant | 1.25
 Exceptional | 1.50
 
-[ [[Top|Contract-Type]] ] [ [[Contract Reward Modifiers|Contract-Type#contract-reward-modifiers]] ]
+<sub>[ [[Top|Contract-Type]] ] [ [[Contract Reward Modifiers|Contract-Type#contract-reward-modifiers]] ]</sub>
 
