@@ -12,6 +12,10 @@ The CONTRACT_GROUP node provides grouping for multiple Contract Configurator con
         // Name of the contract group
         name = ContractGroup
 
+        // Use this to specify the minimum version of Contract Configurator
+        // That is required to run contracts in this group.
+        minVersion = 0.7.0
+
         // The maximum number of times that contracts within this contract
         // group can be completed (0 being unlimited).
         // Default = 0
