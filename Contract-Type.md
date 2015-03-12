@@ -193,3 +193,6 @@ Prestige | Multiplier
 Trivial | 1.00
 Significant | 1.25
 Exceptional | 1.50
+
+[ [[Top|Contract-Type]] ] [ [[Contract Reward Modifiers|Contract-Type#contract-reward-modifiers]] ]
+

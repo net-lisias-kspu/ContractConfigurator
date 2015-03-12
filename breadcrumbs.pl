@@ -108,6 +108,7 @@ foreach my $file (@ARGV)
 
     # Start reading
     my $currentKey = "";
+    my $lineIsEmpty = 0;
     while ($line = <IFILE>)
     {
         # Key line
@@ -129,7 +130,25 @@ foreach my $file (@ARGV)
 	    next;
 	}
 
+        # Add newline at EOF
+        if ($line !~ /\n$/)
+	{
+	    $line .= "\n";
+	}
+	$lineIsEmpty = ($line eq "\n");
+
 	print OFILE $line;
+    }
+
+    # Last one, print crumbs
+    if ($currentKey ne "")
+    {
+        if (!$lineIsEmpty)
+	{
+	    print OFILE "\n";
+	}
+
+	PrintCrumbs(*OFILE, $currentKey);
     }
 
     close IFILE;

@@ -480,3 +480,6 @@ Behaviour for generating waypoints.
             pqsCity = Monolith00
         }
     }
+
+[ [[Top|Behaviours]] ] [ [[WaypointGenerator|Behaviours#waypointgenerator]] ]
+

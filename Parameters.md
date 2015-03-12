@@ -1509,3 +1509,6 @@ The TargetDestroyed indicates that a specific target vessel (or vessels) must be
         // Default: Target destroyed
         //title =
     }
+
+[ [[Top|Parameters]] ] [ [[Miscellaneous Parameters|Parameters#miscellaneous-parameters]] / [[Timer|Parameters#timer]] / [[TargetDestroyed|Parameters#targetdestroyed]] ]
+
