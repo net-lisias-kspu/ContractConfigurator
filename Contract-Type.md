@@ -160,6 +160,8 @@ _Sample CONTRACT_TYPE (can be downloaded [here](https://raw.githubusercontent.co
         }
     }
 
+[ [[Top|Contract-Type]] ] [ [[The CONTRACT_TYPE node|Contract-Type#the-contract_type-node]] ]
+
 ## Contract Reward Modifiers
 
 Thanks to DMagic - these values are pulled from [this forum post] (http://forum.kerbalspaceprogram.com/showthread.php?p=1315411#post1315411).

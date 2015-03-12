@@ -20,9 +20,13 @@ The file name for the .cfg files can be anything (although it must end in .cfg).
 
 And then start adding to it!  See the [[Contract Type|Contract-Type]] page for the full syntax.  Or if you want to look at some examples, check out the [test directory](https://github.com/jrossignol/ContractConfigurator/tree/master/test).  One file may contain one or more of these CONTRACT_TYPE nodes - it's up to you to decide what the best way to organize it for you is.
 
+[ [[Top|How-To]] ] [ [[Creating a New Contract|How-To#creating-a-new-contract]] ]
+
 ## Turning On Debug
 
 To turn on debug, copy the GameData/ContractConfigurator/ContractConfigurator.cfg.default file to ContractConfigurator.cfg.  Then edit the file and change logLevel = INFO to logLevel = DEBUG.  This will spit out some additional useful information when loading contracts, as well as adding a pop-up notification saying how many contracts loaded (and how many were attempted).
+
+[ [[Top|How-To]] ] [ [[Turning On Debug|How-To#turning-on-debug]] ]
 
 ## Testing a Contract
 
@@ -38,7 +42,11 @@ Within this menu, the following operations can be performed:
 * Inspect underlying ConfigNode details
 * Temporarily disable parameters/requirements/behaviours
 
+[ [[Top|How-To]] ] [ [[Testing a Contract|How-To#testing-a-contract]] ]
+
 ## Miscellaneous
+
+[ [[Top|How-To]] ] [ [[Miscellaneous|How-To#miscellaneous]] ]
 
 ### Creating an Agency
 
@@ -58,6 +66,8 @@ If you wish to create your own agency, all it takes is one config file, and a co
         // Logo URL is the full path to the scaled down image for thumbnails (64x40)
         logoScaledURL = ContractConfigurator/MyLogo_scaled
     }
+
+[ [[Top|How-To]] ] [ [[Miscellaneous|How-To#miscellaneous]] / [[Creating an Agency|How-To#creating-an-agency]] ]
 
 ### Using TextGen
 

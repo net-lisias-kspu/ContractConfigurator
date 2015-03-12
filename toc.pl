@@ -2,6 +2,7 @@
 
 use strict;
 use File::Copy qw(move);
+use Util;
 
 foreach my $file (@ARGV)
 {
@@ -70,15 +71,9 @@ foreach my $file (@ARGV)
             next;
         }
 
-        # Get the name
-        my $name = $line;
-        $name =~ s/^#+ ?//;
-        $name =~ s/[\r\n]//g;
-
-        # Get the tag
-        my $tag = lc $name;
-        $tag =~ s/ /-/g;
-        $tag =~ s/[\/\(\)]//g;
+        # Get the name & tag
+        my $name = Util::MakeName($line);
+        my $tag = Util::MakeTag($line);
 
         print(OFILE (' ' x $spaces) . "* [[$name|$identifier#$tag]]\n");
     }

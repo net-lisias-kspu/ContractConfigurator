@@ -3,7 +3,9 @@
 * [[Table of Contents|Function-Reference-Guide#table-of-contents]]
 * [[Functions & Methods|Function-Reference-Guide#functions-&-methods]]
   * [[Numeric Data Types|Function-Reference-Guide#numeric-data-types]]
-    * [[Functions|Function-Reference-Guide#functions]]
+    * [[Local Functions|Function-Reference-Guide#local-functions]]
+  * [[Enumeration Types|Function-Reference-Guide#enumeration-types]]
+    * [[Local Functions|Function-Reference-Guide#local-functions]]
 
 ## Functions & Methods
 
@@ -12,6 +14,8 @@ This guide lists the functions and methods that are available in the Contract Co
 ### Numeric Data Types
 
 The numeric data types include types such as `int`, `short`, `float` and `double`.  For this section, they are together referred to as `numeric`.
+
+[ [[Top|Function-Reference-Guide]] ] [ [[Numeric Data Types|Function-Reference-Guide#numeric-data-types]] ]
 
 #### Local Functions
 
@@ -22,11 +26,13 @@ The numeric data types include types such as `int`, `short`, `float` and `double
 | `Min` | **`numeric`** `a,` **`numeric`** `b` | `numeric` | Returns whichever is smallest out of `a` and `b`. |
 | `Max` | **`numeric`** `a,` **`numeric`** `b` | `numeric` | Returns whichever is largest out of `a` and `b`. |
 
-[ [[Top|Function-Reference-Guide]] ]
+[ [[Top|Function-Reference-Guide]] ] [ [[Enumeration Types|Function-Reference-Guide#enumeration-types]] / [[Local Functions|Function-Reference-Guide#local-functions]] ]
 
 ### Enumeration Types
 
 Enumerations include all types that have a list of values (typically, the full list of values is documented in the appropriate Contract Configurator parameter.  The type will vary based on the type of enumeration, but is generically referred to as `enum` in this section.
+
+[ [[Top|Function-Reference-Guide]] ] [ [[Enumeration Types|Function-Reference-Guide#enumeration-types]] ]
 
 #### Local Functions
 
@@ -35,4 +41,3 @@ Enumerations include all types that have a list of values (typically, the full l
 | `Random` | *none* | `enum` | Returns a random value from the enumeration. |
 | `AllEnumValues` | *none* | `List<enum>` | Returns all the valid values for the enumeration. |
 
-[ [[Top|Function-Reference-Guide]] ]

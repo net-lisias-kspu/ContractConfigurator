@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+perl toc.pl Behaviours.md Contract-Group.md Contract-Type.md Parameters.md Requirements.md How-To.md Expression-Syntax.md Function-Reference-Guide.md
+perl breadcrumbs.pl Behaviours.md Contract-Type.md Parameters.md Requirements.md How-To.md Expression-Syntax.md Function-Reference-Guide.md

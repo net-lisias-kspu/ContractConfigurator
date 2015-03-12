@@ -28,12 +28,16 @@ targetBody = HomeWorld().Children().Random()
 ```
 Which has now changed your contract to randomly come up for either the Mun or Minmus!
 
+[ [[Top|Expression-Syntax]] ] [ [[Overview|Expression-Syntax#overview]] ]
+
 ## Syntax
 This section documents the various syntax elements that are available.  The following general considerations apply:
 
 1. Whitespace is not significant.  The expression '1+1' and '1 + 1' are treated identically.
 1. All expressions must be on one line.  This is due to limitations of using the stock config nodes as the underlying mechanism.
 1. All expressions have a data type that is inferred by context (the start context being inferred from the type for the config node attribute).   For example, `targetBody` is of type CelestialBody, and `rewardFunds` is of type Double.  This is important to understand when using methods/functions that are only availble for a certain data type.
+
+[ [[Top|Expression-Syntax]] ] [ [[Syntax|Expression-Syntax#syntax]] ]
 
 ### Operations
 The following operators can be used:
@@ -56,6 +60,8 @@ The following operators can be used:
 | `- <val>` | Same as val | Unary negation. | `- 10` | `-10` |
 | `! <bool>` | boolean | Logical not | `!true` | false |
 
+[ [[Top|Expression-Syntax]] ] [ [[Syntax|Expression-Syntax#syntax]] / [[Operations|Expression-Syntax#operations]] ]
+
 ### Operator Precedence
 Standard operator precedence apply, based on the precedence in the table below (lowest to highest):
 
@@ -77,6 +83,8 @@ This means that:
 
 For example, the expression `2 * 3 + 10 / 2` gets evaluated to `6 + 5` after one pass, and then reduced to `11` on the final pass.
 
+[ [[Top|Expression-Syntax]] ] [ [[Syntax|Expression-Syntax#syntax]] / [[Operator Precedence|Expression-Syntax#operator-precedence]] ]
+
 ## Identifiers
 
 Identifiers are barewords (combinations of letters, numbers and underscores) that have a special meaning, depending on the variable context.  The following table lists the different types which support identifiers:
@@ -88,6 +96,8 @@ Identifiers are barewords (combinations of letters, numbers and underscores) tha
 | Enumerations | The constants for a given enumeration can be specified.  Most attributes that use an enumeration list the valid values in the appropriate [[Parameter|Parameters]], [[Requirement|Requirements]] or [[Behaviour|Behaviours]] page.  The valid values are dependent on the enumeration.  For example, the situation enumeration includes `FLYING`, `ORBITING` and others. | Enumeration-dependent | `FLYING` |
 | CelestialBody | The name of any planet loaded in the game.  Note that this can include planets added by mods that add planets.  Also, mods that change/rename planets will have different constants.  For example, in RSS the specifying the value `Kerbin` will result in an error (it will not get translated to `Earth`) | Any valid celestial body | `Kerbin`, `Mun`, `Duna` |
 | Vessel | The identifier for any vessel saved via a [[VesselParameterGroup|Parameters#vesselparametergroup]] parameter. | Dependent on contract configurator | `CommSat I` ([RemoteTech Contract Pack](https://github.com/jrossignol/ContractPack-RemoteTech)) |
+
+[ [[Top|Expression-Syntax]] ] [ [[Identifiers|Expression-Syntax#identifiers]] ]
 
 ## Special Identifiers
 
@@ -134,6 +144,8 @@ rewardFunds = @rewardScience
 rewardScience = @rewardFunds
 ```
 
+[ [[Top|Expression-Syntax]] ] [ [[Special Identifiers|Expression-Syntax#special-identifiers]] ]
+
 ## Functions/Methods
 
 The expression syntax language supports function calls in three different flavours.
@@ -141,6 +153,8 @@ The expression syntax language supports function calls in three different flavou
 1. Local Functions
 1. Global Functions
 1. Method Calls
+
+[ [[Top|Expression-Syntax]] ] [ [[Functions/Methods|Expression-Syntax#functionsmethods]] ]
 
 ### Functions
 
@@ -151,6 +165,8 @@ targetBody = HomeWorld()
 ```
 The full list of functions can be found in the [[Function Reference Guide|Function-Reference-Guide]].
 
+[ [[Top|Expression-Syntax]] ] [ [[Functions/Methods|Expression-Syntax#functionsmethods]] / [[Functions|Expression-Syntax#functions]] ]
+
 ### Methods
 
 Methods are functions that operate on a value (or "object").  They follow the form `<value>.<MethodCall>()`.  Here are some examples of method calls:
@@ -160,6 +176,8 @@ minAltitude = @targetBody.AtmosphereAltitude()
 ```
 The full list of methods can be found in the [[Function Reference Guide|Function-Reference-Guide]].
 
+[ [[Top|Expression-Syntax]] ] [ [[Functions/Methods|Expression-Syntax#functionsmethods]] / [[Methods|Expression-Syntax#methods]] ]
+
 ## Lists of values
 
 Lists of values may be specified using the `[` and `]` array operators and separating the values with `,`.  For example:
@@ -167,6 +185,8 @@ Lists of values may be specified using the `[` and `]` array operators and separ
 targetBody = [ Mun, Minmus ].Random()
 ```
 Note that fields do not directly support assigning from a list of values, but there are two very common uses of lists: the `Random()` method call returns a random value from the list, and the `Where()` method call that can filter the list of values.
+
+[ [[Top|Expression-Syntax]] ] [ [[Lists of values|Expression-Syntax#lists-of-values]] ]
 
 ### The Where() Method
 
