@@ -12,6 +12,10 @@ Details on how to create new contracts, debugging contracts and more.
  * [[Behaviours|Behaviours]]
 * [[Miscellaneous|Miscellaneous]]
 
+### Expressions
+* [[Expression Syntax|Expression-Syntax]]
+* [[Function Reference Guide|Function-Reference-Guide]]
+
 ### Extending ContractConfigurator
 * [[Extending|Extending]]
  * [[Extending Parameters|Extending#extending-parameters]]
