@@ -1,6 +1,9 @@
 ## Table of Contents
 
 * [[Table of Contents|Function-&-Method-Reference-Guide#table-of-contents]]
+* [[Functions & Methods|Function-&-Method-Reference-Guide#functions-&-methods]]
+  * [[Numeric Data Types|Function-&-Method-Reference-Guide#numeric-data-types]]
+    * [[Functions|Function-&-Method-Reference-Guide#functions]]
 
 ## Functions & Methods
 
