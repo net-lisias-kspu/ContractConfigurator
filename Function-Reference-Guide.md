@@ -28,6 +28,12 @@ The numeric data types include types such as `int`, `short`, `float` and `double
 
 <sub>[ [[Top|Function-Reference-Guide]] ] [ [[Enumeration Types|Function-Reference-Guide#enumeration-types]] / [[Local Functions|Function-Reference-Guide#local-functions]] ]</sub>
 
+#### Methods
+
+| Method Name | Parameters | Return Type | Description |
+| :--- | :--- | :--- | :--- |
+| `Print` | *none* | `string` | Returns the pretty-printed string value of the number, using the following rules:<ol><li>Integer numbers less than 10 are printed in english ("one", "two", etc.)</li><li>Numbers greater than 1000 use the number grouping separator (not sure if KSP respects locale in this).  For example "1,000", "1,000,000".</li><li>Real numbers are printed with two decimal places.</li><li>Real numbers less than 1.0 are printed with five decimal places.</li></ol> |
+
 ### Enumeration Types
 
 Enumerations include all types that have a list of values (typically, the full list of values is documented in the appropriate Contract Configurator parameter.  The type will vary based on the type of enumeration, but is generically referred to as `enum` in this section.
@@ -43,3 +49,15 @@ Enumerations include all types that have a list of values (typically, the full l
 
 <sub>[ [[Top|Function-Reference-Guide]] ] [ [[Enumeration Types|Function-Reference-Guide#enumeration-types]] / [[Local Functions|Function-Reference-Guide#local-functions]] ]</sub>
 
+### List Types
+List types are a list of another type (which can be any of the supported types).  In this document, lists types are denoted by `List<T>` where `T` is the type of the elements of the list.  If instead, the list is of a specific type, then the that type will be specified (ie. `List<string>`).
+
+#### Methods
+
+| Method Name | Parameters | Return Type | Description |
+| :--- | :--- | :--- | :--- |
+| `Random` | *none* | `T` | Returns a random value from the list. |
+| `First` | *none* | `T` | Returns the first value in the list. |
+| `Last` | *none* | `T` | Returns the last value in the list. |
+| `Contains` | `T value` | `boolean` | Returns true if the requested value is in the list, false otherwise. |
+| `Count` | *none* | `int` | Returns the number of items in the list. |
