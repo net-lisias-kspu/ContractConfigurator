@@ -41,6 +41,5 @@ Enumerations include all types that have a list of values (typically, the full l
 | `Random` | *none* | `enum` | Returns a random value from the enumeration. |
 | `AllEnumValues` | *none* | `List<enum>` | Returns all the valid values for the enumeration. |
 
-
 [ [[Top|Function-Reference-Guide]] ] [ [[Enumeration Types|Function-Reference-Guide#enumeration-types]] / [[Local Functions|Function-Reference-Guide#local-functions]] ]
 
