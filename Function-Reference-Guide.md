@@ -22,7 +22,7 @@ The numeric data types include types such as `int`, `short`, `float` and `double
 | `Min` | **`numeric`** `a,` **`numeric`** `b` | `numeric` | Returns whichever is smallest out of `a` and `b`. |
 | `Max` | **`numeric`** `a,` **`numeric`** `b` | `numeric` | Returns whichever is largest out of `a` and `b`. |
 
-[ [[Contents|Function-Reference-Guide#table-of-contents]] ]
+[ [[Top|Function-Reference-Guide]] ]
 
 ### Enumeration Types
 
@@ -35,4 +35,4 @@ Enumerations include all types that have a list of values (typically, the full l
 | `Random` | *none* | `enum` | Returns a random value from the enumeration. |
 | `AllEnumValues` | *none* | `List<enum>` | Returns all the valid values for the enumeration. |
 
-[ [[Contents|Function-Reference-Guide#table-of-contents]] ]
+[ [[Top|Function-Reference-Guide]] ]
