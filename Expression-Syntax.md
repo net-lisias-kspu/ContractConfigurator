@@ -148,7 +148,7 @@ A function takes zero, one or many parameters and returns a value.  Local functi
 rewardFunds = Random(1000.0, 2000.0)
 targetBody = HomeWorld()
 ```
-The full list of functions can be found in the [[Function & Method Reference Guide|Function-&-Method-Reference-Guide]].
+The full list of functions can be found in the [[Function Reference Guide|Function-Reference-Guide]].
 
 ### Methods
 
@@ -157,7 +157,7 @@ Methods are functions that operate on a value (or "object").  They follow the fo
 targetBody = HomeWorld().GetChildren().Random()
 minAltitude = @targetBody.AtmosphereAltitude()
 ```
-The full list of methods can be found in the [[Function & Method Reference Guide|Function-&-Method-Reference-Guide]].
+The full list of methods can be found in the [[Function Reference Guide|Function-Reference-Guide]].
 
 ## Lists of values
 
