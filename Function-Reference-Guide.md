@@ -113,3 +113,11 @@ The Vessel class represents anything that is made up of parts (which includes sh
 | Function Signature| Description |
 | :--- | :--- |
 | `List<Vessel> AllVessels()` | Returns a list of all vessels. |
+
+### Miscellaneous 
+
+#### Global Functions
+
+| Function Signature| Description |
+| :--- | :--- |
+| `ContractPrestige Prestige()` | Gets the prestige value of the current contract (Trivial, Significant, Exceptional). |
