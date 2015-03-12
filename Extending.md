@@ -2,10 +2,16 @@
 
 ContractConfigurator is extensible!  So if you want to use it as part of your mod, but it doesn't quite have the right parameter or requirement for your needs, then you can write a new one!
 
-* [[Extending Parameters|Extending#extending-parameters]]
-* [[Extending Requirements|Extending#extending-requirements]]
-* [[Extending Behaviours|Extending#extending-behaviours]]
-* [[Using the Persistent Data Store|Extending#using-the-persistent-data-store]]
+* [[Extending ContractConfigurator|Extending#extending-contractconfigurator]]
+  * [[Extending Parameters|Extending#extending-parameters]]
+  * [[Extending Requirements|Extending#extending-requirements]]
+  * [[Extending Behaviours|Extending#extending-behaviours]]
+    * [[BehaviourFactory|Extending#behaviourfactory]]
+    * [[ContractBehaviour|Extending#contractbehaviour]]
+  * [[Using the Persistent Data Store|Extending#using-the-persistent-data-store]]
+* [[Copyright statement|Extending#copyright-statement]]
+
+[ [[Top|Extending]] ] [ [[Extending ContractConfigurator|Extending#extending-contractconfigurator]] ]
 
 ### Extending Parameters
 
@@ -66,6 +72,8 @@ The following example shows how the CollectScience parameter is implemented:
     }
 
 
+[ [[Top|Extending]] ] [ [[Extending ContractConfigurator|Extending#extending-contractconfigurator]] / [[Extending Parameters|Extending#extending-parameters]] ]
+
 ### Extending Requirements
 To create a new REQUIREMENT type, a new class should be created that extends the ContractRequirement class. In the configuration file, the value of the 'type' node needs to match the class name (unless it ends with "Requirement" - in which case the "Requirement" is dropped). There are two methods that may be implemented:
 
@@ -114,9 +122,13 @@ The following example shows how the AltitudeRecord requirement is implemented:
         }
     }
 
+[ [[Top|Extending]] ] [ [[Extending ContractConfigurator|Extending#extending-contractconfigurator]] / [[Extending Requirements|Extending#extending-requirements]] ]
+
 ### Extending Behaviours
 
 To create a new BEHAVIOUR type, two classes are required.  One that subclasses ContractBehaviour (which provides the logic for the behaviour), and one that subclasses BehaviourFactory (which loads the data from a ConfigNode and is responsible for creating the ContractBehaviour objects when requested).  In the configuration file, the value of the 'type' node needs to match the name of the BehaviourFactory class (unless it ends with "Factory" - in which case the "Factory" is dropped).
+
+[ [[Top|Extending]] ] [ [[Extending ContractConfigurator|Extending#extending-contractconfigurator]] / [[Extending Behaviours|Extending#extending-behaviours]] ]
 
 #### BehaviourFactory
 
@@ -146,6 +158,8 @@ The following example shows a generic template for a behaviour factory:
             return new MyNewBehaviour();
         }
     }
+
+[ [[Top|Extending]] ] [ [[Extending ContractConfigurator|Extending#extending-contractconfigurator]] / [[Extending Behaviours|Extending#extending-behaviours]] / [[BehaviourFactory|Extending#behaviourfactory]] ]
 
 #### ContractBehaviour
 
@@ -208,6 +222,8 @@ The following example shows a template that can be used for a new ContractBehavi
         protected override void OnSave(ConfigNode configNode) { }
     }
 
+[ [[Top|Extending]] ] [ [[Extending ContractConfigurator|Extending#extending-contractconfigurator]] / [[Extending Behaviours|Extending#extending-behaviours]] / [[ContractBehaviour|Extending#contractbehaviour]] ]
+
 ### Using the Persistent Data Store
 
 Contract Configurator contains a persistant data store that may be used by extension modules.  This is intended for storing values that need to be tracked across different contracts.  To store data for a parameter, store it using the OnLoad/OnSave functions of the ContractParameter class.  To store data for a contract, store it using the OnLoad/OnSave functions of a ContractBehaviour class.
@@ -217,6 +233,8 @@ The persistant data store is access by calling one of the two following methods 
 > `void Store<T>(string key, T value)` - This will store the value under the given key.  Try to make the key include a prefix for your module to ensure that it unique across all possible Contract Configurator modules.
 
 > `T Retrieve<T>(string key)` - This will retrieve a previously stored value.
+
+[ [[Top|Extending]] ] [ [[Extending ContractConfigurator|Extending#extending-contractconfigurator]] / [[Using the Persistent Data Store|Extending#using-the-persistent-data-store]] ]
 
 ## Copyright statement
 
