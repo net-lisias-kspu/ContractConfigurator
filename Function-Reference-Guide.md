@@ -1,9 +1,9 @@
 ## Table of Contents
 
-* [[Table of Contents|Function-&-Method-Reference-Guide#table-of-contents]]
-* [[Functions & Methods|Function-&-Method-Reference-Guide#functions-&-methods]]
-  * [[Numeric Data Types|Function-&-Method-Reference-Guide#numeric-data-types]]
-    * [[Functions|Function-&-Method-Reference-Guide#functions]]
+* [[Table of Contents|Function-Reference-Guide#table-of-contents]]
+* [[Functions & Methods|Function-Reference-Guide#functions-&-methods]]
+  * [[Numeric Data Types|Function-Reference-Guide#numeric-data-types]]
+    * [[Functions|Function-Reference-Guide#functions]]
 
 ## Functions & Methods
 
@@ -22,7 +22,7 @@ The numeric data types include types such as `int`, `short`, `float` and `double
 | `Min` | **`numeric`** `a,` **`numeric`** `b` | `numeric` | Returns whichever is smallest out of `a` and `b`. |
 | `Max` | **`numeric`** `a,` **`numeric`** `b` | `numeric` | Returns whichever is largest out of `a` and `b`. |
 
-[ [[Contents|Function-&-Method-Reference-Guide#table-of-contents]] ]
+[ [[Contents|Function-Reference-Guide#table-of-contents]] ]
 
 ### Enumeration Types
 
@@ -35,4 +35,4 @@ Enumerations include all types that have a list of values (typically, the full l
 | `Random` | *none* | `enum` | Returns a random value from the enumeration. |
 | `AllEnumValues` | *none* | `List<enum>` | Returns all the valid values for the enumeration. |
 
-[ [[Contents|Function-&-Method-Reference-Guide#table-of-contents]] ]
+[ [[Contents|Function-Reference-Guide#table-of-contents]] ]
