@@ -19,20 +19,20 @@ The numeric data types include types such as `int`, `short`, `float` and `double
 
 #### Local Functions
 
-| Function Name | Parameters | Return Type | Description |
-| :--- | :--- | :--- | :--- |
-| `Random` | *none* | `numeric` | Returns a random number that is greater than or equal to 0.0, but less than 1.0.  Note for integer types this will *always* return 0 - use the second interface instead. |
-| `Random` | **`numeric`** `min,` **`numeric`** `max` | `numeric` | Returns a random number that is greater than or equal to *min*, but less than *max*. |
-| `Min` | **`numeric`** `a,` **`numeric`** `b` | `numeric` | Returns whichever is smallest out of `a` and `b`. |
-| `Max` | **`numeric`** `a,` **`numeric`** `b` | `numeric` | Returns whichever is largest out of `a` and `b`. |
+| Function Signature | Description |
+| :--- | :--- |
+| `numeric Random()` | *none* | `numeric` | Returns a random number that is greater than or equal to 0.0, but less than 1.0.  Note for integer types this will *always* return 0 - use the second interface instead. |
+| `numeric Random(numeric min, numeric max)` | Returns a random number that is greater than or equal to *min*, but less than *max*. |
+| `numeric Min(numeric a, numeric b)` | Returns whichever is smallest out of `a` and `b`. |
+| `numeric Max(numeric a, numeric b)` | Returns whichever is largest out of `a` and `b`. |
 
 <sub>[ [[Top|Function-Reference-Guide]] ] [ [[Enumeration Types|Function-Reference-Guide#enumeration-types]] / [[Local Functions|Function-Reference-Guide#local-functions]] ]</sub>
 
 #### Methods
 
-| Method Name | Parameters | Return Type | Description |
-| :--- | :--- | :--- | :--- |
-| `Print` | *none* | `string` | Returns the pretty-printed string value of the number, using the following rules:<ol><li>Integer numbers less than 10 are printed in english ("one", "two", etc.)</li><li>Numbers greater than 1000 use the number grouping separator (not sure if KSP respects locale in this).  For example "1,000", "1,000,000".</li><li>Real numbers are printed with two decimal places.</li><li>Real numbers less than 1.0 are printed with five decimal places.</li></ol> |
+| Method Signature | Description |
+| :--- | :--- |
+| `string`&nbsp;`Print()` | Returns the pretty-printed string value of the number, using the following rules:<ol><li>Integer numbers less than 10 are printed in english ("one", "two", etc.)</li><li>Numbers greater than 1000 use the number grouping separator (not sure if KSP respects locale in this).  For example "1,000", "1,000,000".</li><li>Real numbers are printed with two decimal places.</li><li>Real numbers less than 1.0 are printed with five decimal places.</li></ol> |
 
 ### Enumeration Types
 
@@ -42,10 +42,10 @@ Enumerations include all types that have a list of values (typically, the full l
 
 #### Local Functions
 
-| Function Name | Parameters | Return Type | Description |
-| :--- | :--- | :--- | :--- |
-| `Random` | *none* | `enum` | Returns a random value from the enumeration. |
-| `AllEnumValues` | *none* | `List<enum>` | Returns all the valid values for the enumeration. |
+| Function Signature | Description |
+| :--- | :--- |
+| `enum Random()` | Returns a random value from the enumeration. |
+| `List<enum> AllEnumValues()` | Returns all the valid values for the enumeration. |
 
 <sub>[ [[Top|Function-Reference-Guide]] ] [ [[Enumeration Types|Function-Reference-Guide#enumeration-types]] / [[Local Functions|Function-Reference-Guide#local-functions]] ]</sub>
 
@@ -54,13 +54,13 @@ List types are a list of another type (which can be any of the supported types).
 
 #### Methods
 
-| Method Name | Parameters | Return Type | Description |
-| :--- | :--- | :--- | :--- |
-| `Random` | *none* | `T` | Returns a random value from the list. |
-| `First` | *none* | `T` | Returns the first value in the list. |
-| `Last` | *none* | `T` | Returns the last value in the list. |
-| `Contains` | `T value` | `boolean` | Returns true if the requested value is in the list, false otherwise. |
-| `Count` | *none* | `int` | Returns the number of items in the list. |
+| Method Signature | Description |
+| :--- | :--- |
+| `T Random()` | Returns a random value from the list. |
+| `T First()` | Returns the first value in the list. |
+| `T Last()` | Returns the last value in the list. |
+| `boolean Contains(T value)` | Returns true if the requested value is in the list, false otherwise. |
+| `int Count()` | Returns the number of items in the list. |
 
 ### CelestialBody
 
@@ -68,24 +68,24 @@ The CelestialBody class represents a planet, moon or start in KSP.
 
 #### Methods
 
-| Method Name | Parameters | Return Type | Description |
-| :--- | :--- | :--- | :--- |
-| `HasAtmosphere` | *none* | `bool` | Indicates whether the given body has an atmosphere. |
-| `HasOcean` | *none* | `bool` | Indicates whether the given body has an ocean. |
-| `HasSurface` | *none* | `bool` | Indicates whether the given body has a surface (ie. isn't a gas giant). |
-| `IsHomeWorld` | *none* | `bool` | Indicates whether the given body is the home world (ie. Kerbin). |
-| `IsPlanet` | *none* | `bool` | Indicates whether the given body is a planet (not a moon or star). |
-| `IsMoon` | *none* | `bool` | Indicates whether the given body is a moon. |
-| `Parent` | *none* | `CelestialBody` | Returns the body's parent body (ex. The Mun's parent body is Kerbin). |
-| `Children` | *none* | `List<CelestialBody>` | Returns the body's child bodies (ex. Kerbin's child bodies are the Mun and Minmus). |
-| `Radius` | *none* | `double` | Returns the planet's radius (in meters). |
-| `AtmosphereAltitude` | *none* | `float` | Returns the altitude of planet's atmosphere (in meters). |
-| `SphereOfInfluence` | *none* | `double` | Returns the radius of the planet's sphere of influence (in meters). |
+| Method Signature | Description |
+| :--- | :--- |
+| `bool HasAtmosphere()` | Indicates whether the given body has an atmosphere. |
+| `bool HasOcean()` | Indicates whether the given body has an ocean. |
+| `bool HasSurface()` | Indicates whether the given body has a surface (ie. isn't a gas giant). |
+| `bool IsHomeWorld()` | Indicates whether the given body is the home world (ie. Kerbin). |
+| `bool IsPlanet()` | Indicates whether the given body is a planet (not a moon or star). |
+| `bool IsMoon()` | Indicates whether the given body is a moon. |
+| `CelestialBody Parent()` | Returns the body's parent body (ex. The Mun's parent body is Kerbin). |
+| `List<CelestialBody> Children()` | Returns the body's child bodies (ex. Kerbin's child bodies are the Mun and Minmus). |
+| `double Radius()` | Returns the planet's radius (in meters). |
+| `float AtmosphereAltitude()` | Returns the altitude of planet's atmosphere (in meters). |
+| `double SphereOfInfluence()` | Returns the radius of the planet's sphere of influence (in meters). |
 
 #### Global Functions
 
-| Function Name | Parameters | Return Type | Description |
-| :--- | :--- | :--- | :--- |
-| `HomeWorld` | *none* | `CelestialBody` | Returns the home world (ie. Kerbin). |
-| `AllBodies` | *none* | `List<CelestialBody>` | Returns a list of all celestial bodies. |
+| Function Signature| Description |
+| :--- | :--- |
+| `CelestialBody HomeWorld()` | Returns the home world (ie. Kerbin). |
+| `List<CelestialBody> AllBodies()` | Returns a list of all celestial bodies. |
 
