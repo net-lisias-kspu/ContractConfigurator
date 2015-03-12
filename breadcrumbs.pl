@@ -135,7 +135,8 @@ foreach my $file (@ARGV)
 	{
 	    $line .= "\n";
 	}
-	$lineIsEmpty = ($line eq "\n");
+	$lineIsEmpty = ($line eq "\n" || $line eq "\r\n");
+        print ("line is [$line]");
 
 	print OFILE $line;
     }
