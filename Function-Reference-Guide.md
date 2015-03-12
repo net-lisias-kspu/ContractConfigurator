@@ -61,3 +61,31 @@ List types are a list of another type (which can be any of the supported types).
 | `Last` | *none* | `T` | Returns the last value in the list. |
 | `Contains` | `T value` | `boolean` | Returns true if the requested value is in the list, false otherwise. |
 | `Count` | *none* | `int` | Returns the number of items in the list. |
+
+### CelestialBody
+
+The CelestialBody class represents a planet, moon or start in KSP.
+
+#### Methods
+
+| Method Name | Parameters | Return Type | Description |
+| :--- | :--- | :--- | :--- |
+| `HasAtmosphere` | *none* | `bool` | Indicates whether the given body has an atmosphere. |
+| `HasOcean` | *none* | `bool` | Indicates whether the given body has an ocean. |
+| `HasSurface` | *none* | `bool` | Indicates whether the given body has a surface (ie. isn't a gas giant). |
+| `IsHomeWorld` | *none* | `bool` | Indicates whether the given body is the home world (ie. Kerbin). |
+| `IsPlanet` | *none* | `bool` | Indicates whether the given body is a planet (not a moon or star). |
+| `IsMoon` | *none* | `bool` | Indicates whether the given body is a moon. |
+| `Parent` | *none* | `CelestialBody` | Returns the body's parent body (ex. The Mun's parent body is Kerbin). |
+| `Children` | *none* | `List<CelestialBody>` | Returns the body's child bodies (ex. Kerbin's child bodies are the Mun and Minmus). |
+| `Radius` | *none* | `double` | Returns the planet's radius (in meters). |
+| `AtmosphereAltitude` | *none* | `float` | Returns the altitude of planet's atmosphere (in meters). |
+| `SphereOfInfluence` | *none* | `double` | Returns the radius of the planet's sphere of influence (in meters). |
+
+#### Global Functions
+
+| Function Name | Parameters | Return Type | Description |
+| :--- | :--- | :--- | :--- |
+| `HomeWorld` | *none* | `CelestialBody` | Returns the home world (ie. Kerbin). |
+| `AllBodies` | *none* | `List<CelestialBody>` | Returns a list of all celestial bodies. |
+
