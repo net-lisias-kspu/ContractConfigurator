@@ -12,7 +12,6 @@
   * [[Methods|Expression-Syntax#methods]]
 * [[Lists of values|Expression-Syntax#lists-of-values]]
   * [[The Where() Method|Expression-Syntax#the-where-method]]
-* [[Function/Method Reference Guide|Expression-Syntax#functionmethod-reference-guide]]
 
 ## Overview
 **_COMING SOON!_**
@@ -149,7 +148,7 @@ A function takes zero, one or many parameters and returns a value.  Local functi
 rewardFunds = Random(1000.0, 2000.0)
 targetBody = HomeWorld()
 ```
-The full list of functions can be found in the [[Function/Method Reference Guide|Expression-Syntax#functionmethod-reference-guide]].
+The full list of functions can be found in the [[Function & Method Reference Guide|Function-&-Method-Reference-Guide]].
 
 ### Methods
 
@@ -158,7 +157,7 @@ Methods are functions that operate on a value (or "object").  They follow the fo
 targetBody = HomeWorld().GetChildren().Random()
 minAltitude = @targetBody.AtmosphereAltitude()
 ```
-The full list of methods can be found in the [[Function/Method Reference Guide|Expression-Syntax#functionmethod-reference-guide]].
+The full list of methods can be found in the [[Function & Method Reference Guide|Function-&-Method-Reference-Guide]].
 
 ## Lists of values
 
@@ -175,5 +174,3 @@ The Where() method on lists is a special method that has a slightly altered synt
 targetBody = AllBodies().Where(b => b.HasOcean()).Random()
 ```
 The expression gets a list of all celestial bodies, and then filters it down to a list of all bodies that have oceans.  It then selects a random body from that list.  Note the `b =>` portion of the expression is defining a temporary variable that can be used in the filter expression (the value `b` is an example, any identifier consisting of alphanumeric characters may be used).  That expression will be executed for each value in the list, and only the values where the expression is `true` will be kept.
-
-## Function/Method Reference Guide
