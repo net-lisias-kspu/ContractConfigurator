@@ -22,6 +22,8 @@ The numeric data types include types such as `int`, `short`, `float` and `double
 | `Min` | **`numeric`** `a,` **`numeric`** `b` | `numeric` | Returns whichever is smallest out of `a` and `b`. |
 | `Max` | **`numeric`** `a,` **`numeric`** `b` | `numeric` | Returns whichever is largest out of `a` and `b`. |
 
+[ [[Contents|Function-&-Method-Reference-Guide#table-of-contents]] ]
+
 ### Enumeration Types
 
 Enumerations include all types that have a list of values (typically, the full list of values is documented in the appropriate Contract Configurator parameter.  The type will vary based on the type of enumeration, but is generically referred to as `enum` in this section.
@@ -32,3 +34,5 @@ Enumerations include all types that have a list of values (typically, the full l
 | :--- | :--- | :--- | :--- |
 | `Random` | *none* | `enum` | Returns a random value from the enumeration. |
 | `AllEnumValues` | *none* | `List<enum>` | Returns all the valid values for the enumeration. |
+
+[ [[Contents|Function-&-Method-Reference-Guide#table-of-contents]] ]
