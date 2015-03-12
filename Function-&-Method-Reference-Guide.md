@@ -1,6 +1,6 @@
 ## Table of Contents
 
-* [[Table of Contents|Function-Method-Reference-Guide#table-of-contents]]
+* [[Table of Contents|Function-&-Method-Reference-Guide#table-of-contents]]
 
 ## Overview
 
