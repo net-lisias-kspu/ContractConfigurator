@@ -99,7 +99,7 @@ The following parameters are natively supported by ContractConfigurator:
     * [[ReturnHome|Parameters#returnhome]]
     * [[VesselNotDestroyed|Parameters#vesselnotdestroyed]]
   * [[Vessel History|Parameters#vessel-history]]
-  * [[CollectScience|Parameters#collectscience]]
+    * [[CollectScience|Parameters#collectscience]]
     * [[VesselHasVisited|Parameters#vesselhasvisited]]
     * [[VisitWaypoint|Parameters#visitwaypoint]]
   * [[RemoteTech|Parameters#remotetech]]
@@ -755,7 +755,7 @@ These parameters pertain to the history of a vessel.
 
 <sub>[ [[Top|Parameters]] ] [ [[Vessel Parameters|Parameters#vessel-parameters]] / [[Vessel History|Parameters#vessel-history]] ]</sub>
 
-#### CollectScience
+##### CollectScience
 The CollectScience parameter is used to require a player to collect science under specific circumstances.  It also supports settings to require the player to either transmit or recover the data.
 
     PARAMETER
@@ -812,7 +812,7 @@ The CollectScience parameter is used to require a player to collect science unde
         recoveryMethod = Recover
     }
 
-<sub>[ [[Top|Parameters]] ] [ [[Vessel Parameters|Parameters#vessel-parameters]] / [[CollectScience|Parameters#collectscience]] ]</sub>
+<sub>[ [[Top|Parameters]] ] [ [[Vessel Parameters|Parameters#vessel-parameters]] / [[Vessel History|Parameters#vessel-history]] / [[CollectScience|Parameters#collectscience]] ]</sub>
 
 ##### VesselHasVisited
 The VesselHasVisited parameter requires a player to go to visit a celestial body under specific circumstances.
@@ -846,7 +846,7 @@ The VesselHasVisited parameter requires a player to go to visit a celestial body
         //title =
     }
 
-<sub>[ [[Top|Parameters]] ] [ [[Vessel Parameters|Parameters#vessel-parameters]] / [[CollectScience|Parameters#collectscience]] / [[VesselHasVisited|Parameters#vesselhasvisited]] ]</sub>
+<sub>[ [[Top|Parameters]] ] [ [[Vessel Parameters|Parameters#vessel-parameters]] / [[Vessel History|Parameters#vessel-history]] / [[VesselHasVisited|Parameters#vesselhasvisited]] ]</sub>
 
 ##### VisitWaypoint
 The VisitWaypoint parameter is used with the [[WaypointGenerator|Behaviours#waypointgenerator]] behaviour to indicate that a generated waypoint must be visited by a vessel.
@@ -871,7 +871,7 @@ The VisitWaypoint parameter is used with the [[WaypointGenerator|Behaviours#wayp
         //title =
     }
 
-<sub>[ [[Top|Parameters]] ] [ [[Vessel Parameters|Parameters#vessel-parameters]] / [[CollectScience|Parameters#collectscience]] / [[VisitWaypoint|Parameters#visitwaypoint]] ]</sub>
+<sub>[ [[Top|Parameters]] ] [ [[Vessel Parameters|Parameters#vessel-parameters]] / [[Vessel History|Parameters#vessel-history]] / [[VisitWaypoint|Parameters#visitwaypoint]] ]</sub>
 
 #### RemoteTech
 These are parameters that are specific to the RemoteTech module.
