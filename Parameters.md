@@ -99,6 +99,7 @@ The following parameters are natively supported by ContractConfigurator:
     * [[ReturnHome|Parameters#returnhome]]
     * [[VesselNotDestroyed|Parameters#vesselnotdestroyed]]
   * [[Vessel History|Parameters#vessel-history]]
+  * [[CollectScience|Parameters#collectscience]]
     * [[VesselHasVisited|Parameters#vesselhasvisited]]
     * [[VisitWaypoint|Parameters#visitwaypoint]]
   * [[RemoteTech|Parameters#remotetech]]
@@ -125,7 +126,6 @@ The following parameters are natively supported by ContractConfigurator:
   * [[Sequence|Parameters#sequence]]
   * [[SequenceNode|Parameters#sequencenode]]
 * [[Planetary Parameters|Parameters#planetary-parameters]]
-  * [[CollectScience|Parameters#collectscience]]
   * [[PlantFlag|Parameters#plantflag]]
   * [[SCANsatCoverage|Parameters#scansatcoverage]]
 * [[Miscellaneous Parameters|Parameters#miscellaneous-parameters]]
@@ -755,6 +755,65 @@ These parameters pertain to the history of a vessel.
 
 <sub>[ [[Top|Parameters]] ] [ [[Vessel Parameters|Parameters#vessel-parameters]] / [[Vessel History|Parameters#vessel-history]] ]</sub>
 
+#### CollectScience
+The CollectScience parameter is used to require a player to collect science under specific circumstances.  It also supports settings to require the player to either transmit or recover the data.
+
+    PARAMETER
+    {
+        name = CollectScience
+        type = CollectScience
+
+        // Defaulted from the contract type if not provided
+        targetBody = Duna
+
+        // Specifies the biome for which science should be collected.  This can
+        // be any biome that is valid for the target body, but note that it
+        // is not currently validated.
+        // Optional
+        biome = Craters
+
+        // (Optional) Specifies the situation under which science should be
+        // collected.
+        // Valid values are:
+        //    SrfLanded
+        //    SrfSplashed
+        //    FlyingLow
+        //    FlyingHigh
+        //    InSpaceLow
+        //    InSpaceHigh
+        situation = SrfLanded
+
+        // (Optional) Specifies where the experiment should take place.
+        // Valid values are "Surface" and "Space"
+        location = Space
+
+        // (Optional) Specifies the experiment to be run, can be any valid
+        // expirement in stock KSP or added by mods.  The stock list is:
+        //    asteroidSample
+        //    crewReport
+        //    evaReport
+        //    mysteryGoo
+        //    surfaceSample
+        //    mobileMaterialsLab
+        //    temperatureScan
+        //    barometerScan
+        //    seismicScan
+        //    gravityScan
+        //    atmosphereAnalysis
+        experiment = evaReport
+
+        // (Optional) The method for which the science must be recovered.
+        // Defaults to None if not specified.
+        // Valid values are:
+        //    None
+        //    Recover
+        //    Transmit
+        //    RecoverOrTransmit
+        recoveryMethod = Recover
+    }
+
+<sub>[ [[Top|Parameters]] ] [ [[Vessel Parameters|Parameters#vessel-parameters]] / [[CollectScience|Parameters#collectscience]] ]</sub>
+
 ##### VesselHasVisited
 The VesselHasVisited parameter requires a player to go to visit a celestial body under specific circumstances.
 
@@ -787,7 +846,7 @@ The VesselHasVisited parameter requires a player to go to visit a celestial body
         //title =
     }
 
-<sub>[ [[Top|Parameters]] ] [ [[Vessel Parameters|Parameters#vessel-parameters]] / [[Vessel History|Parameters#vessel-history]] / [[VesselHasVisited|Parameters#vesselhasvisited]] ]</sub>
+<sub>[ [[Top|Parameters]] ] [ [[Vessel Parameters|Parameters#vessel-parameters]] / [[CollectScience|Parameters#collectscience]] / [[VesselHasVisited|Parameters#vesselhasvisited]] ]</sub>
 
 ##### VisitWaypoint
 The VisitWaypoint parameter is used with the [[WaypointGenerator|Behaviours#waypointgenerator]] behaviour to indicate that a generated waypoint must be visited by a vessel.
@@ -812,7 +871,7 @@ The VisitWaypoint parameter is used with the [[WaypointGenerator|Behaviours#wayp
         //title =
     }
 
-<sub>[ [[Top|Parameters]] ] [ [[Vessel Parameters|Parameters#vessel-parameters]] / [[Vessel History|Parameters#vessel-history]] / [[VisitWaypoint|Parameters#visitwaypoint]] ]</sub>
+<sub>[ [[Top|Parameters]] ] [ [[Vessel Parameters|Parameters#vessel-parameters]] / [[CollectScience|Parameters#collectscience]] / [[VisitWaypoint|Parameters#visitwaypoint]] ]</sub>
 
 #### RemoteTech
 These are parameters that are specific to the RemoteTech module.
@@ -1347,23 +1406,6 @@ The SequenceNode parameter is the second way to define parameters that need to b
 Parameters specific to doing something related to a planetary body.
 
 <sub>[ [[Top|Parameters]] ] [ [[Planetary Parameters|Parameters#planetary-parameters]] ]</sub>
-
-#### CollectScience
-The CollectScience parameter is met when science is sent home from the given location and celestial body.
-
-    PARAMETER
-    {
-        name = CollectScience
-        type = CollectScience
-
-        // This can be inherited from the the contract type if necessary
-        targetBody = Duna
-
-        // Valid values are "Surface" and "Space"
-        location = Space
-    }
-
-<sub>[ [[Top|Parameters]] ] [ [[Planetary Parameters|Parameters#planetary-parameters]] / [[CollectScience|Parameters#collectscience]] ]</sub>
 
 #### PlantFlag
 The PlantFlag parameter is met when planting a flag on the given body.
