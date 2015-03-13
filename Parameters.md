@@ -767,10 +767,9 @@ The CollectScience parameter is used to require a player to collect science unde
         // Defaulted from the contract type if not provided
         targetBody = Duna
 
-        // Specifies the biome for which science should be collected.  This can
-        // be any biome that is valid for the target body, but note that it
-        // is not currently validated.
-        // Optional
+        // (Optional) Specifies the biome for which science should be collected.
+        // This can be any biome that is valid for the target body, but note that
+        // it is not currently validated.
         biome = Craters
 
         // (Optional) Specifies the situation under which science should be
@@ -1554,4 +1553,3 @@ The TargetDestroyed indicates that a specific target vessel (or vessels) must be
     }
 
 <sub>[ [[Top|Parameters]] ] [ [[Miscellaneous Parameters|Parameters#miscellaneous-parameters]] / [[Timer|Parameters#timer]] / [[TargetDestroyed|Parameters#targetdestroyed]] ]</sub>
-
