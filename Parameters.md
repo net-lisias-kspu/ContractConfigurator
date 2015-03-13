@@ -756,6 +756,7 @@ These parameters pertain to the history of a vessel.
 <sub>[ [[Top|Parameters]] ] [ [[Vessel Parameters|Parameters#vessel-parameters]] / [[Vessel History|Parameters#vessel-history]] ]</sub>
 
 ##### CollectScience
+**_COMING SOON!_**
 The CollectScience parameter is used to require a player to collect science under specific circumstances.  It also supports settings to require the player to either transmit or recover the data.
 
     PARAMETER
