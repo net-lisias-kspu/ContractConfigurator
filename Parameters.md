@@ -132,7 +132,7 @@ The following parameters are natively supported by ContractConfigurator:
   * [[PartTest|Parameters#parttest]]
   * [[Duration|Parameters#duration]]
   * [[Timer|Parameters#timer]]
-    * [[TargetDestroyed|Parameters#targetdestroyed]]
+  * [[TargetDestroyed|Parameters#targetdestroyed]]
 
 ### Vessel Parameters
 These are parameters that operate on vessels (manned or unmanned).  By default, all vessel parameters have disableOnStateChange set to false.
@@ -1529,7 +1529,7 @@ The Timer parameter sets up a timer that starts when the contract is accepted.  
 
 <sub>[ [[Top|Parameters]] ] [ [[Miscellaneous Parameters|Parameters#miscellaneous-parameters]] / [[Timer|Parameters#timer]] ]</sub>
 
-##### TargetDestroyed
+#### TargetDestroyed
 **_NEW!_**
 The TargetDestroyed indicates that a specific target vessel (or vessels) must be destroyed.  Use it for setting up targets for weapons mods.
 
@@ -1552,5 +1552,5 @@ The TargetDestroyed indicates that a specific target vessel (or vessels) must be
         //title =
     }
 
-<sub>[ [[Top|Parameters]] ] [ [[Miscellaneous Parameters|Parameters#miscellaneous-parameters]] / [[Timer|Parameters#timer]] / [[TargetDestroyed|Parameters#targetdestroyed]] ]</sub>
+<sub>[ [[Top|Parameters]] ] [ [[Miscellaneous Parameters|Parameters#miscellaneous-parameters]] / [[TargetDestroyed|Parameters#targetdestroyed]] ]</sub>
 
