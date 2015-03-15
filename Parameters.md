@@ -97,6 +97,7 @@ The following parameters are natively supported by ContractConfigurator:
     * [[ReachSpecificOrbit|Parameters#reachspecificorbit]]
     * [[Rendezvous|Parameters#rendezvous]]
     * [[ReturnHome|Parameters#returnhome]]
+    * [[VesselDestroyed|Parameters#vesseldestroyed]]
     * [[VesselNotDestroyed|Parameters#vesselnotdestroyed]]
   * [[Vessel History|Parameters#vessel-history]]
     * [[CollectScience|Parameters#collectscience]]
@@ -718,6 +719,22 @@ The ReturnHome parameter requires a player to return home (ideally after meeting
     }
 
 <sub>[ [[Top|Parameters]] ] [ [[Vessel Parameters|Parameters#vessel-parameters]] / [[Vessel State|Parameters#vessel-state]] / [[ReturnHome|Parameters#returnhome]] ]</sub>
+
+##### VesselDestroyed
+**_COMING SOON!_**
+The VesselDestroyed parameter requires that the player destroys their vessel!  Khaaaaan!
+
+    PARAMETER
+    {
+        name = VesselDestroyed
+        type = VesselDestroyed
+
+        // Text for the contract parameter.
+        // Default varies depending on the situation.
+        //title =
+    }
+
+<sub>[ [[Top|Parameters]] ] [ [[Vessel Parameters|Parameters#vessel-parameters]] / [[Vessel State|Parameters#vessel-state]] / [[VesselDestroyed|Parameters#vesseldestroyed]] ]</sub>
 
 ##### VesselNotDestroyed
 **_NEW!_**
