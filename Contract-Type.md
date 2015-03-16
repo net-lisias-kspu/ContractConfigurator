@@ -93,6 +93,20 @@ _Sample CONTRACT_TYPE (can be downloaded [here](https://raw.githubusercontent.co
         // Default = null (no celestial body)
         targetBody = Kerbin
 
+        // The following are special fields in that they are not used by any
+        // contract parameters directly, but are available to use to store
+        // values for other expressions to use.
+        
+        // Only one of these two may be used.  Specifies a target vessel or
+        // list of target vessels that will be used within the contract.
+        targetVessel = AllVessels().Where(v => v.isOrbiting()).First()
+        targetVessels = AllVessels().Where(v => v.isOrbiting())
+
+        // Only one of these two may be used.  Specifies a target Kerbal or
+        // list of target Kerbals that will be used within the contract.
+        targetKerbal = Jebediah Kerman
+        targetKerbals = AllKerbals().Where(k => k.RosterStatus() == Available)
+
         // The maximum number of times this contract type can be completed (0
         // being unlimited).
         // Default = 0
