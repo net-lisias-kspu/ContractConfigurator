@@ -477,7 +477,16 @@ Behaviour for generating waypoints.
             icon = thermometer
 
             // The location name
-            pqsCity = Monolith00
+            pqsCity = KSC
+
+            // An optional offset vectorfrom the center of the PQS City.
+            // Use this to make your waypoint relative to the PQS City,
+            // which will make it work even for RSS or other mods that may
+            // move the PQS city.  To get the offset coordinates, position
+            // your ship/kerbal at the desired location and go to the
+            // PQS Offsets tab in the Contract Configurator debug window
+            // (alt-F10).
+            pqsOffset = 447.307865750742, 5.14341771520321E-05, 24.9700656982985
         }
     }
 
