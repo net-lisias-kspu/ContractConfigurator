@@ -40,8 +40,6 @@ Parameters all follow the same general structure - the following attributes are 
         // composite parameters)
         optional = true
 
-        // NEW!
-        //
         // Indicates that this parameter needs to be complete "in sequence".
         // All parameters that are before this parameter in the list (and at
         // the same level) must be completed before this parameter is allowed
@@ -234,7 +232,7 @@ Parameter to indicate that the Vessel in question must have a certain number of 
 <sub>[ [[Top|Parameters]] ] [ [[Vessel Parameters|Parameters#vessel-parameters]] / [[Vessel Attributes|Parameters#vessel-attributes]] / [[HasCrew|Parameters#hascrew]] ]</sub>
 
 ##### HasCrewCapacity
-**_COMING SOON!_**
+**_NEW!_**
 Parameter to require that the Vessel in question must have a certain crew capacity.
 
     PARAMETER
@@ -446,7 +444,6 @@ The IsNotVessel parameter is used to create mutually exclusive groups within a c
 <sub>[ [[Top|Parameters]] ] [ [[Vessel Parameters|Parameters#vessel-parameters]] / [[Vessel Attributes|Parameters#vessel-attributes]] / [[IsNotVessel|Parameters#isnotvessel]] ]</sub>
 
 ##### VesselIsType
-**_NEW!_**
 Checks the VesselType of the given vessel
 
     PARAMETER
@@ -494,7 +491,6 @@ These parameters pertain to the state of a vessel.
 <sub>[ [[Top|Parameters]] ] [ [[Vessel Parameters|Parameters#vessel-parameters]] / [[Vessel State|Parameters#vessel-state]] ]</sub>
 
 ##### Docking
-**_NEW!_**
 Docking parameters require that a vessel docks with another vessel.
 
     PARAMETER
@@ -543,7 +539,6 @@ Orbital parameter to specify required orbital details.
         // Target body, defaulted from the contract if not supplied.
         targetBody = Kerbin
 
-        // NEW!
         // Situation to check for.  Valid list is a subset of Vessel.Situations:
         //     ESCAPING
         //     ORBITAL (default)
@@ -673,7 +668,6 @@ The ReachSpecificOrbit parameter is used with the [[OrbitGenerator|Behaviours#or
 <sub>[ [[Top|Parameters]] ] [ [[Vessel Parameters|Parameters#vessel-parameters]] / [[Vessel State|Parameters#vessel-state]] / [[ReachSpecificOrbit|Parameters#reachspecificorbit]] ]</sub>
 
 ##### Rendezvous
-**_NEW!_**
 Rendezvous parameters require that a vessel performs a rendezvous with another vessel.
 
     PARAMETER
@@ -725,7 +719,7 @@ The ReturnHome parameter requires a player to return home (ideally after meeting
 <sub>[ [[Top|Parameters]] ] [ [[Vessel Parameters|Parameters#vessel-parameters]] / [[Vessel State|Parameters#vessel-state]] / [[ReturnHome|Parameters#returnhome]] ]</sub>
 
 ##### VesselDestroyed
-**_COMING SOON!_**
+**_NEW!_**
 The VesselDestroyed parameter requires that the player destroys their vessel!  Khaaaaan!
 
     PARAMETER
@@ -746,7 +740,6 @@ The VesselDestroyed parameter requires that the player destroys their vessel!  K
 <sub>[ [[Top|Parameters]] ] [ [[Vessel Parameters|Parameters#vessel-parameters]] / [[Vessel State|Parameters#vessel-state]] / [[VesselDestroyed|Parameters#vesseldestroyed]] ]</sub>
 
 ##### VesselNotDestroyed
-**_NEW!_**
 The VesselNotDestroyed parameter is a negative parameter - it will cause the contract to fail if a specified vessel (or any vessel in some cases) is destroyed.
 
     PARAMETER
@@ -782,7 +775,7 @@ These parameters pertain to the history of a vessel.
 <sub>[ [[Top|Parameters]] ] [ [[Vessel Parameters|Parameters#vessel-parameters]] / [[Vessel History|Parameters#vessel-history]] ]</sub>
 
 ##### CollectScience
-**_COMING SOON!_**
+**_NEW!_**
 The CollectScience parameter is used to require a player to collect science under specific circumstances.  It also supports settings to require the player to either transmit or recover the data.
 
     PARAMETER
@@ -1276,7 +1269,6 @@ The Sequence parameter is one of two ways to define parameters that need to be c
         name = Sequence
         type = Sequence
 
-        // NEW!
         // Hide the parameter with the given name until it is the next one in
         // the list to be completed.  Can be specified multiple times.
         hiddenParameter = OrbitMinmus
@@ -1556,7 +1548,6 @@ The Timer parameter sets up a timer that starts when the contract is accepted.  
 <sub>[ [[Top|Parameters]] ] [ [[Miscellaneous Parameters|Parameters#miscellaneous-parameters]] / [[Timer|Parameters#timer]] ]</sub>
 
 #### TargetDestroyed
-**_NEW!_**
 The TargetDestroyed indicates that a specific target vessel (or vessels) must be destroyed.  Use it for setting up targets for weapons mods.
 
     PARAMETER

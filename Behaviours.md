@@ -14,7 +14,6 @@ The following behaviours are natively supported by ContractConfigurator:
 * [[WaypointGenerator|Behaviours#waypointgenerator]]
 
 ### ExperimentalPart
-**_NEW!_**
 Behaviour for adding and removing experimental parts.
 
     BEHAVIOUR
@@ -145,7 +144,6 @@ Behaviour for generating orbits.
 <sub>[ [[Top|Behaviours]] ] [ [[OrbitGenerator|Behaviours#orbitgenerator]] ]</sub>
 
 ### Message
-**_NEW!_**
 Behaviour for displaying a message within the messaging system in the top right corner.
 
     BEHAVIOUR
@@ -243,7 +241,7 @@ Behaviour for spawning one or more Kerbals on land or in orbit.
 <sub>[ [[Top|Behaviours]] ] [ [[SpawnKerbal|Behaviours#spawnkerbal]] ]</sub>
 
 ### SpawnPassengers
-**_COMING SOON!_**
+**_NEW!_**
 Behaviour for spawning passengers on board vessels.
 
     BEHAVIOUR
@@ -264,7 +262,6 @@ Behaviour for spawning passengers on board vessels.
 <sub>[ [[Top|Behaviours]] ] [ [[SpawnPassengers|Behaviours#spawnpassengers]] ]</sub>
 
 ### SpawnVessel
-**_NEW!_**
 Behaviour for spawning one or more Vessels on land or in orbit.
 
     BEHAVIOUR
@@ -471,7 +468,6 @@ Behaviour for generating waypoints.
 
         // Use this to generate a waypoint with fixed coordinates, based on a
         // PQSCity object.
-        // NEW
         PQS_CITY
         {
             // The name of the waypoint - displayed on the marker
