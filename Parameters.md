@@ -619,6 +619,10 @@ Checks that the vessel is in a specific state.  Use any combination of the attri
         minAltitude = 20000
         maxAltitude = 50000
 
+        // Minimum and maximum altitudes above terrain.
+        minTerrainAltitude = 500
+        maxTerrainAltitude = 1000
+
         // Minimum and maximum speeds
         minSpeed = 1000
         maxSpeed = 5000
