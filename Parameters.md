@@ -733,6 +733,11 @@ The VesselDestroyed parameter requires that the player destroys their vessel!  K
         name = VesselDestroyed
         type = VesselDestroyed
 
+        // (Optional) Set to true if this vessel must be destroyed by impacting into
+        // terrain (and not another vessel or a building).
+        // Default = false
+        mustImpactTerrain = true
+
         // Text for the contract parameter.
         // Default varies depending on the situation.
         //title =
@@ -1574,4 +1579,3 @@ The TargetDestroyed indicates that a specific target vessel (or vessels) must be
     }
 
 <sub>[ [[Top|Parameters]] ] [ [[Miscellaneous Parameters|Parameters#miscellaneous-parameters]] / [[TargetDestroyed|Parameters#targetdestroyed]] ]</sub>
-
