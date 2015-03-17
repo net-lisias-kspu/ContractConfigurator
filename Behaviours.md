@@ -75,6 +75,16 @@ Behaviour for executing one or more expressions and storing the results in the p
             CC_TestVal = CC_TestVal / 2
             CC_EXPTEST_Success = 0
         }
+
+        // The PARAMETER_COMPLETED node gets executed when a parameter
+        // is successfully completed.
+        PARAMETER_COMPLETED
+        {
+            // Supply the name of the parameter
+            parameter = SomeParameter
+
+            CC_TestVal = 100
+        }
     }
 
 <sub>[ [[Top|Behaviours]] ] [ [[Expression|Behaviours#expression]] ]</sub>
@@ -491,4 +501,3 @@ Behaviour for generating waypoints.
     }
 
 <sub>[ [[Top|Behaviours]] ] [ [[WaypointGenerator|Behaviours#waypointgenerator]] ]</sub>
-
