@@ -234,7 +234,8 @@ Behaviour for spawning one or more Kerbals on land or in orbit.
             lon = 239.804476675472
             alt = 387.929475510377
 
-            // The location name
+            // The location name.  Use this instead of lat/long coordinates
+            // to specify coordinates based on the location of a PQS city.
             pqsCity = KSC
 
             // An optional offset vector from the center of the PQS City.
