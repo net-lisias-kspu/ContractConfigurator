@@ -2,20 +2,29 @@
 
 * [[Table of Contents|Function-Reference-Guide#table-of-contents]]
 * [[Functions & Methods|Function-Reference-Guide#functions-&-methods]]
-  * [[Numeric Data Types|Function-Reference-Guide#numeric-data-types]]
-  * [[Duration|Function-Reference-Guide#duration]]
-  * [[Enumeration Types|Function-Reference-Guide#enumeration-types]]
-  * [[List Types|Function-Reference-Guide#list-types]]
-  * [[CelestialBody|Function-Reference-Guide#celestialbody]]
-  * [[Vessel|Function-Reference-Guide#vessel]]
-  * [[Kerbal|Function-Reference-Guide#kerbal]]
-  * [[Miscellaneous |Function-Reference-Guide#miscellaneous-]]
+  * [[General Data Types|Function-Reference-Guide#general-data-types]]
+    * [[Numeric Data Types|Function-Reference-Guide#numeric-data-types]]
+    * [[Enumeration Types|Function-Reference-Guide#enumeration-types]]
+    * [[List Types|Function-Reference-Guide#list-types]]
+  * [[KSP Classes|Function-Reference-Guide#ksp-classes]]
+    * [[CelestialBody|Function-Reference-Guide#celestialbody]]
+    * [[Vessel|Function-Reference-Guide#vessel]]
+    * [[Kerbal|Function-Reference-Guide#kerbal]]
+  * [[Other|Function-Reference-Guide#other]]
+    * [[Duration|Function-Reference-Guide#duration]]
+    * [[Miscellaneous |Function-Reference-Guide#miscellaneous-]]
 
 ## Functions & Methods
 
 This guide lists the functions and methods that are available in the Contract Configurator expression language.  The sections are grouped by data type.
 
-### Numeric Data Types
+### General Data Types
+
+This section contains the basic data types.
+
+<sub>[ [[Top|Function-Reference-Guide]] ] [ [[General Data Types|Function-Reference-Guide#general-data-types]] ]</sub>
+
+#### Numeric Data Types
 
 The numeric data types include types such as `int`, `short`, `float` and `double`.  For this section, they are together referred to as `numeric`.
 
@@ -34,21 +43,9 @@ The numeric data types include types such as `int`, `short`, `float` and `double
 | :--- | :--- |
 | `string`&nbsp;`Print()` | Returns the pretty-printed string value of the number, using the following rules:<ol><li>Integer numbers less than 10 are printed in english ("one", "two", etc.)</li><li>Numbers greater than 1000 use the number grouping separator (not sure if KSP respects locale in this).  For example "1,000", "1,000,000".</li><li>Real numbers are printed with two decimal places.</li><li>Real numbers less than 1.0 are printed with five decimal places.</li></ol> |
 
-<sub>[ [[Top|Function-Reference-Guide]] ] [ [[Numeric Data Types|Function-Reference-Guide#numeric-data-types]] ]</sub>
+<sub>[ [[Top|Function-Reference-Guide]] ] [ [[General Data Types|Function-Reference-Guide#general-data-types]] / [[Numeric Data Types|Function-Reference-Guide#numeric-data-types]] ]</sub>
 
-### Duration
-**_COMING SOON!_**
-The duration data type is used anywhere that a contract parameter requests a duration in the form "1d 2h 5s".
-
-**Local Functions**
-
-| Function Signature | Description |
-| :--- | :--- |
-| `Duration Random(Duration min, Duration max)` | Returns a random `Duration` that is greater than or equal to *min*, but less than *max*. |
-
-<sub>[ [[Top|Function-Reference-Guide]] ] [ [[Duration|Function-Reference-Guide#duration]] ]</sub>
-
-### Enumeration Types
+#### Enumeration Types
 
 Enumerations include all types that have a list of values (typically, the full list of values is documented in the appropriate Contract Configurator parameter.  The type will vary based on the type of enumeration, but is generically referred to as `enum` in this section.
 
@@ -59,9 +56,9 @@ Enumerations include all types that have a list of values (typically, the full l
 | `enum Random()` | Returns a random value from the enumeration. |
 | `List<enum> AllEnumValues()` | Returns all the valid values for the enumeration. |
 
-<sub>[ [[Top|Function-Reference-Guide]] ] [ [[Enumeration Types|Function-Reference-Guide#enumeration-types]] ]</sub>
+<sub>[ [[Top|Function-Reference-Guide]] ] [ [[General Data Types|Function-Reference-Guide#general-data-types]] / [[Enumeration Types|Function-Reference-Guide#enumeration-types]] ]</sub>
 
-### List Types
+#### List Types
 List types are a list of another type (which can be any of the supported types).  In this document, lists types are denoted by `List<T>` where `T` is the type of the elements of the list.  If instead, the list is of a specific type, then the that type will be specified (ie. `List<string>`).
 
 **Methods**
@@ -78,9 +75,15 @@ List types are a list of another type (which can be any of the supported types).
 | `List<T> Concat(List<T> list)` | Adds the elements in `list` to the current list and returns it. |
 | `List<T> Add(T item)` | Adds the given item to the current list and returns it. |
 
-<sub>[ [[Top|Function-Reference-Guide]] ] [ [[List Types|Function-Reference-Guide#list-types]] ]</sub>
+<sub>[ [[Top|Function-Reference-Guide]] ] [ [[General Data Types|Function-Reference-Guide#general-data-types]] / [[List Types|Function-Reference-Guide#list-types]] ]</sub>
 
-### CelestialBody
+### KSP Classes
+
+This section contains the supported classes of common objects in KSP.
+
+<sub>[ [[Top|Function-Reference-Guide]] ] [ [[KSP Classes|Function-Reference-Guide#ksp-classes]] ]</sub>
+
+#### CelestialBody
 
 The CelestialBody class represents a planet, moon or start in KSP.
 
@@ -107,9 +110,9 @@ The CelestialBody class represents a planet, moon or start in KSP.
 | `CelestialBody HomeWorld()` | Returns the home world (ie. Kerbin). |
 | `List<CelestialBody> AllBodies()` | Returns a list of all celestial bodies. |
 
-<sub>[ [[Top|Function-Reference-Guide]] ] [ [[CelestialBody|Function-Reference-Guide#celestialbody]] ]</sub>
+<sub>[ [[Top|Function-Reference-Guide]] ] [ [[KSP Classes|Function-Reference-Guide#ksp-classes]] / [[CelestialBody|Function-Reference-Guide#celestialbody]] ]</sub>
 
-### Vessel
+#### Vessel
 
 The Vessel class represents anything that is made up of parts (which includes ships, satellites, stations, bases, and asteroids).
 
@@ -135,9 +138,9 @@ The Vessel class represents anything that is made up of parts (which includes sh
 | :--- | :--- |
 | `List<Vessel> AllVessels()` | Returns a list of all vessels. |
 
-<sub>[ [[Top|Function-Reference-Guide]] ] [ [[Vessel|Function-Reference-Guide#vessel]] ]</sub>
+<sub>[ [[Top|Function-Reference-Guide]] ] [ [[KSP Classes|Function-Reference-Guide#ksp-classes]] / [[Vessel|Function-Reference-Guide#vessel]] ]</sub>
 
-### Kerbal
+#### Kerbal
 
 The Kerbal class (ProtoCrewMember in actualituality) represents a Kerbal in the game.  This includes ship crew, Kerbals at the astronaut complex and applicants.
 
@@ -157,9 +160,27 @@ The Kerbal class (ProtoCrewMember in actualituality) represents a Kerbal in the 
 | :--- | :--- |
 | `List<Kerbal> AllKerbals()` | Returns a list of all Kerbals in the game. |
 
-<sub>[ [[Top|Function-Reference-Guide]] ] [ [[Kerbal|Function-Reference-Guide#kerbal]] ]</sub>
+<sub>[ [[Top|Function-Reference-Guide]] ] [ [[KSP Classes|Function-Reference-Guide#ksp-classes]] / [[Kerbal|Function-Reference-Guide#kerbal]] ]</sub>
 
-### Miscellaneous 
+### Other
+
+All other classes fall into this section.
+
+<sub>[ [[Top|Function-Reference-Guide]] ] [ [[Other|Function-Reference-Guide#other]] ]</sub>
+
+#### Duration
+**_COMING SOON!_**
+The duration data type is used anywhere that a contract parameter requests a duration in the form "1d 2h 5s".
+
+**Local Functions**
+
+| Function Signature | Description |
+| :--- | :--- |
+| `Duration Random(Duration min, Duration max)` | Returns a random `Duration` that is greater than or equal to *min*, but less than *max*. |
+
+<sub>[ [[Top|Function-Reference-Guide]] ] [ [[Other|Function-Reference-Guide#other]] / [[Duration|Function-Reference-Guide#duration]] ]</sub>
+
+#### Miscellaneous 
 
 **Global Functions**
 
@@ -167,5 +188,5 @@ The Kerbal class (ProtoCrewMember in actualituality) represents a Kerbal in the 
 | :--- | :--- |
 | `ContractPrestige Prestige()` | Gets the prestige value of the current contract (Trivial, Significant, Exceptional). |
 
-<sub>[ [[Top|Function-Reference-Guide]] ] [ [[Miscellaneous |Function-Reference-Guide#miscellaneous-]] ]</sub>
+<sub>[ [[Top|Function-Reference-Guide]] ] [ [[Other|Function-Reference-Guide#other]] / [[Miscellaneous |Function-Reference-Guide#miscellaneous-]] ]</sub>
 
