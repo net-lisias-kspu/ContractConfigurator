@@ -36,6 +36,9 @@ Parameters all follow the same general structure - the following attributes are 
         // Default = <differs per parameter, see detailed documentation below>
         disableOnStateChange = true
 
+        // Parameter level notes that may be supplied.
+        notes = These are the notes.
+
         // Optional parameters do not need to be completed (mainly for use with
         // composite parameters)
         optional = true
