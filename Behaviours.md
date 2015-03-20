@@ -497,3 +497,4 @@ Behaviour for generating waypoints.
     }
 
 <sub>[ [[Top|Behaviours]] ] [ [[WaypointGenerator|Behaviours#waypointgenerator]] ]</sub>
+

@@ -3,6 +3,7 @@
 * [[Table of Contents|Function-Reference-Guide#table-of-contents]]
 * [[Functions & Methods|Function-Reference-Guide#functions-&-methods]]
   * [[Numeric Data Types|Function-Reference-Guide#numeric-data-types]]
+  * [[Duration|Function-Reference-Guide#duration]]
   * [[Enumeration Types|Function-Reference-Guide#enumeration-types]]
   * [[List Types|Function-Reference-Guide#list-types]]
   * [[CelestialBody|Function-Reference-Guide#celestialbody]]
@@ -34,6 +35,18 @@ The numeric data types include types such as `int`, `short`, `float` and `double
 | `string`&nbsp;`Print()` | Returns the pretty-printed string value of the number, using the following rules:<ol><li>Integer numbers less than 10 are printed in english ("one", "two", etc.)</li><li>Numbers greater than 1000 use the number grouping separator (not sure if KSP respects locale in this).  For example "1,000", "1,000,000".</li><li>Real numbers are printed with two decimal places.</li><li>Real numbers less than 1.0 are printed with five decimal places.</li></ol> |
 
 <sub>[ [[Top|Function-Reference-Guide]] ] [ [[Numeric Data Types|Function-Reference-Guide#numeric-data-types]] ]</sub>
+
+### Duration
+**_COMING SOON!_**
+The duration data type is used anywhere that a contract parameter requests a duration in the form "1d 2h 5s".
+
+**Local Functions**
+
+| Function Signature | Description |
+| :--- | :--- |
+| `Duration Random(Duration min, Duration max)` | Returns a random `Duration` that is greater than or equal to *min*, but less than *max*. |
+
+<sub>[ [[Top|Function-Reference-Guide]] ] [ [[Duration|Function-Reference-Guide#duration]] ]</sub>
 
 ### Enumeration Types
 
