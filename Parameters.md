@@ -223,6 +223,11 @@ Parameter to indicate that the Vessel in question must have a certain number of 
         minCrew = 1
         maxCrew = 10
 
+        // (Optional) Specific Kerbal(s) that must be on board.  Can be
+        // specified multiple times, but cannot be used with the other
+        // attributes on this parameter.
+        kerbal = Jebediah Kerman
+
         // Text to use for the parameter
         // Default (maxCrew = 0) = Crew: Unmanned
         // Default (maxCrew = int.MAXVALUE) = Crew: At least <minCrew> Kerbals
