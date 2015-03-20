@@ -228,13 +228,23 @@ Behaviour for spawning one or more Kerbals on land or in orbit.
 
             // If you wish to specify a landed Kerbal, you must also 
             // supply ALL of the following values from the persistant.sfs
-            // file, AS WELL AS including the ORBIT node above.  In a
-            // future release, I may try to look at ways to do it using
-            // only lat-lon, but it's much more complicated, so it's not
-            // a high priority...
+            // file.  The orbit information is not needed for landed
+            // Kerbals.
             lat = 10.595910968977
             lon = 239.804476675472
             alt = 387.929475510377
+
+            // The location name
+            pqsCity = KSC
+
+            // An optional offset vector from the center of the PQS City.
+            // Use this to make your Kerbal relative to the PQS City,
+            // which will make it work even for RSS or other mods that may
+            // move the PQS city.  To get the offset coordinates, position
+            // your ship/kerbal at the desired location and go to the
+            // Location tab in the Contract Configurator debug window
+            // (alt-F10).
+            pqsOffset = 447.307865750742, 5.14341771520321E-05, 24.9700656982985
         }
     }
 
@@ -485,12 +495,12 @@ Behaviour for generating waypoints.
             // The location name
             pqsCity = KSC
 
-            // An optional offset vectorfrom the center of the PQS City.
+            // An optional offset vector from the center of the PQS City.
             // Use this to make your waypoint relative to the PQS City,
             // which will make it work even for RSS or other mods that may
             // move the PQS city.  To get the offset coordinates, position
             // your ship/kerbal at the desired location and go to the
-            // PQS Offsets tab in the Contract Configurator debug window
+            // Location tab in the Contract Configurator debug window
             // (alt-F10).
             pqsOffset = 447.307865750742, 5.14341771520321E-05, 24.9700656982985
         }
