@@ -15,7 +15,7 @@ Details on how to create new contracts, debugging contracts and more.
 
 ### Expressions
 * [[Expression Syntax|Expression-Syntax]]
-* [[Data Types|Data-Type]]
+* [[Data Types|Data-Types]]
 * [[Function Reference Guide|Function-Reference-Guide]]
 
 ### Extending ContractConfigurator
