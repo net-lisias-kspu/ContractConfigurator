@@ -28,7 +28,7 @@ The following list the basic data types that are supported in the Contract Confi
 | Type | Description |
 | :--- | :--- |
 | `CelestialBody` | Represents a celestial body in the game (sun, planet or moon). |
-| `Duration` | A duration in time.  Can be specified with units of y, d, h, m, s.  Example: `2d 4h` is 2 days and 6 hours. |
+| `Duration` | A duration in time.  Can be specified with units of y, d, h, m, s.  Example: `2d 4h` is 2 days and 4 hours. |
 | `Kerbal` | A Kerbal.  This actually represents a `ProtoCrewMember` in game. |
 | `Vessel` | A ship, station, base, EVA Kerbal or space object. |
 | `Waypoint` | An in-game waypoint used by contracts. |
