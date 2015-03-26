@@ -7,6 +7,7 @@ Details on how to create new contracts, debugging contracts and more.
 ### Configuration File Syntax
 * [[Contract Group|Contract-Group]]
 * [[Contract Type|Contract-Type]]
+ * [[Data Node|Data-Node]]
  * [[Parameters|Parameters]]
  * [[Requirements|Requirements]]
  * [[Behaviours|Behaviours]]
@@ -14,6 +15,7 @@ Details on how to create new contracts, debugging contracts and more.
 
 ### Expressions
 * [[Expression Syntax|Expression-Syntax]]
+* [[Data Types|Data-Type]]
 * [[Function Reference Guide|Function-Reference-Guide]]
 
 ### Extending ContractConfigurator
