@@ -191,7 +191,7 @@ CONTRACT_TYPE
 <sub>[ [[Top|Function-Reference-Guide]] ] [ [[Contract Configurator Objects|Function-Reference-Guide#contract-configurator-objects]] ]</sub>
 
 #### WaypointGenerator Behaviour
-**_COMING SOON!_**
+**_NEW!_**
 
 **Methods**
 
@@ -202,7 +202,7 @@ CONTRACT_TYPE
 <sub>[ [[Top|Function-Reference-Guide]] ] [ [[Contract Configurator Objects|Function-Reference-Guide#contract-configurator-objects]] / [[WaypointGenerator Behaviour|Function-Reference-Guide#waypointgenerator-behaviour]] ]</sub>
 
 #### SpawnKerbal Behaviour
-**_COMING SOON!_**
+**_NEW!_**
 
 **Methods**
 
@@ -219,7 +219,7 @@ All other classes fall into this section.
 <sub>[ [[Top|Function-Reference-Guide]] ] [ [[Other|Function-Reference-Guide#other]] ]</sub>
 
 #### Duration
-**_COMING SOON!_**
+**_NEW!_**
 The duration data type is used anywhere that a contract parameter requests a duration in the form "1d 2h 5s".
 
 **Local Functions**

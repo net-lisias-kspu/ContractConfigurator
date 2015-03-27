@@ -1,4 +1,4 @@
-**_COMING SOON!_**
+**_NEW!_**
 
 ## Table of Contents
 
