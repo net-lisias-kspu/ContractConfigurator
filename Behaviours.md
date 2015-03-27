@@ -385,6 +385,11 @@ Behaviour for generating waypoints.
             // supplied a random one is generated.
             name = Kerbal Space Center
 
+            // (Optional) The parameter that must be completed before the
+            // waypoint becomes visible.  If not specific, the waypoint
+            // is always visible.
+            parameter = SomeParameterName
+
             // Body for the waypoint - defaulted from the contract if not
             // supplied.
             targetBody = Kerbin
@@ -409,6 +414,11 @@ Behaviour for generating waypoints.
         {
             // The name of the waypoint - displayed on the marker
             name = A waypoint on Kerbin
+
+            // (Optional) The parameter that must be completed before the
+            // waypoint becomes visible.  If not specific, the waypoint
+            // is always visible.
+            parameter = SomeParameterName
 
             // Body for the waypoint - defaulted from the contract if not
             // supplied.
@@ -444,6 +454,11 @@ Behaviour for generating waypoints.
         {
             // The name of the waypoint - displayed on the marker
             name = A waypoint near something
+
+            // (Optional) The parameter that must be completed before the
+            // waypoint becomes visible.  If not specific, the waypoint
+            // is always visible.
+            parameter = SomeParameterName
 
             // Body for the waypoint - defaulted from the contract if not
             // supplied.
@@ -487,6 +502,11 @@ Behaviour for generating waypoints.
         {
             // The name of the waypoint - displayed on the marker
             name = Monolith
+
+            // (Optional) The parameter that must be completed before the
+            // waypoint becomes visible.  If not specific, the waypoint
+            // is always visible.
+            parameter = SomeParameterName
 
             // Body for the waypoint - defaulted from the contract if not
             // supplied.
