@@ -473,8 +473,12 @@ Behaviour for generating waypoints.
             // the count parameter (if it exists).
             nearIndex = 1
 
+            // Minimum distance in meters from the 'near' waypoint.
+            // Default = 0.0
+            minDistance = 100.0
+
             // Maximum distance in meters from the 'near' waypoint.
-            nearDistance = 25000.0
+            maxDistance = 25000.0
         }
 
         // Use this to generate a waypoint with fixed coordinates, based on a
