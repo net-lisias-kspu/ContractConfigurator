@@ -102,7 +102,6 @@ The following parameters are natively supported by ContractConfigurator:
     * [[VesselNotDestroyed|Parameters#vesselnotdestroyed]]
   * [[Vessel History|Parameters#vessel-history]]
     * [[CollectScience|Parameters#collectscience]]
-    * [[VesselHasVisited|Parameters#vesselhasvisited]]
     * [[VisitWaypoint|Parameters#visitwaypoint]]
   * [[RemoteTech|Parameters#remotetech]]
     * [[CelestialBodyCoverage|Parameters#celestialbodycoverage]]
@@ -117,16 +116,12 @@ The following parameters are natively supported by ContractConfigurator:
   * [[LaunchVessel|Parameters#launchvessel]]
   * [[AltitudeRecord|Parameters#altituderecord]]
   * [[ReachSpace|Parameters#reachspace]]
-  * [[EnterOrbit|Parameters#enterorbit]]
-  * [[EnterSOI|Parameters#entersoi]]
-  * [[LandOnBody|Parameters#landonbody]]
 * [[Negative Parameters|Parameters#negative-parameters]]
   * [[KerbalDeaths|Parameters#kerbaldeaths]]
 * [[Set Parameters|Parameters#set-parameters]]
   * [[Any|Parameters#any]]
   * [[All|Parameters#all]]
   * [[Sequence|Parameters#sequence]]
-  * [[SequenceNode|Parameters#sequencenode]]
 * [[Planetary Parameters|Parameters#planetary-parameters]]
   * [[PlantFlag|Parameters#plantflag]]
   * [[SCANsatCoverage|Parameters#scansatcoverage]]
@@ -841,40 +836,6 @@ The CollectScience parameter is used to require a player to collect science unde
 
 <sub>[ [[Top|Parameters]] ] [ [[Vessel Parameters|Parameters#vessel-parameters]] / [[Vessel History|Parameters#vessel-history]] / [[CollectScience|Parameters#collectscience]] ]</sub>
 
-##### VesselHasVisited
-The VesselHasVisited parameter requires a player to go to visit a celestial body under specific circumstances.
-
-    PARAMETER
-    {
-        name = VesselHasVisited
-        type = VesselHasVisited
-
-        // The target to visit.  If not specified will defaulted from the contract.
-        targetBody = Mun
-
-        // The situation.  Valid values from FlightLog.EntryType
-        //    Land
-        //    Flight
-        //    Flyby
-        //    Orbit
-        //    Suborbit
-        //    Escape
-        //    Launch
-        //    ExitVessel
-        //    BoardVessel
-        //    PlantFlag
-        //    Recover
-        //    Die
-        //    Spawn
-        situation = Land
-
-        // Text for the contract parameter.
-        // Default = Perform <situation> on <targetBody>.
-        //title =
-    }
-
-<sub>[ [[Top|Parameters]] ] [ [[Vessel Parameters|Parameters#vessel-parameters]] / [[Vessel History|Parameters#vessel-history]] / [[VesselHasVisited|Parameters#vesselhasvisited]] ]</sub>
-
 ##### VisitWaypoint
 The VisitWaypoint parameter is used with the [[WaypointGenerator|Behaviours#waypointgenerator]] behaviour to indicate that a generated waypoint must be visited by a vessel.
 
@@ -1123,48 +1084,6 @@ Go to space.
 
 <sub>[ [[Top|Parameters]] ] [ [[Progression Parameters|Parameters#progression-parameters]] / [[ReachSpace|Parameters#reachspace]] ]</sub>
 
-#### EnterOrbit
-The EnterOrbit parameter is met when a craft enters an orbit of the given celestial body.
-
-    PARAMETER
-    {
-        name = EnterOrbit
-        type = EnterOrbit
-
-        // This can be inherited from the the contract type if necessary
-        targetBody = Duna
-    }
-
-<sub>[ [[Top|Parameters]] ] [ [[Progression Parameters|Parameters#progression-parameters]] / [[EnterOrbit|Parameters#enterorbit]] ]</sub>
-
-#### EnterSOI
-The EnterSOI parameter is met when a craft enters the sphere of influence of the given celestial body.
-
-    PARAMETER
-    {
-        name = EnterSOI
-        type = EnterSOI
-
-        // This can be inherited from the the contract type if necessary
-        targetBody = Duna
-    }
-
-<sub>[ [[Top|Parameters]] ] [ [[Progression Parameters|Parameters#progression-parameters]] / [[EnterSOI|Parameters#entersoi]] ]</sub>
-
-#### LandOnBody
-The LandOnBody parameter is met when a craft lands on the given celestial body.
-
-    PARAMETER
-    {
-        name = LandOnBody
-        type = LandOnBody
-
-        // This can be inherited from the the contract type if necessary
-        targetBody = Duna
-    }
-
-<sub>[ [[Top|Parameters]] ] [ [[Progression Parameters|Parameters#progression-parameters]] / [[LandOnBody|Parameters#landonbody]] ]</sub>
-
 ### Negative Parameters
 These parameters are ones that give a failure condition to a contract.  Note that when the contract fails, the player can't re-attempt it (unless it's set up to be offered again after failure).
 
@@ -1342,96 +1261,6 @@ The Sequence parameter is one of two ways to define parameters that need to be c
 
 <sub>[ [[Top|Parameters]] ] [ [[Set Parameters|Parameters#set-parameters]] / [[Sequence|Parameters#sequence]] ]</sub>
 
-#### SequenceNode
-**_TO BE REMOVED!_**
-SequenceNode is obsolete - use the completeInSequence attribute on parameters instead.
-
-The SequenceNode parameter is the second way to define parameters that need to be completed in sequence.  For this variant, use SequenceNode as a parent node for each nodes that must be completed in order.  If any parameter completes out of order, this parameter will remain in an incomplete state.
-
-    // In this example of the SequenceNode parameter, the player must orbit the Mun,
-    // then orbit Minmus.  If the player orbits Minmus first, the Minmus portion will
-    // not complete.  The player will be required to go to the Mun, then go *back*
-    // to Minmus to complete the Parameter.
-    PARAMETER
-    {
-        name = OrbitMunSeqNode
-        type = SequenceNode
-
-        // The title to display
-        // Default (variable), one of:
-        //     Complete the following
-        //     Complete after the previous step
-        //     Completed
-        //title =
-
-        PARAMETER
-        {
-            name = OrbitMun
-            type = VesselParameterGroup
-
-            title = Orbit the Mun
-
-            disableOnStateChange = false
-
-            PARAMETER
-            {
-                name = ReachSituation
-                type = ReachSituation
-
-                situation = ORBITING
-            }
-
-            PARAMETER
-            {
-                name = ReachDestination
-                type = ReachDestination
-
-                targetBody = Mun
-            }
-        }
-    }
-
-    PARAMETER
-    {
-        name = OrbitMinmusSeqNode
-        type = SequenceNode
-
-        // The title to display
-        // Default (variable), one of:
-        //     Complete the following
-        //     Complete after the previous step
-        //     Completed
-        //title =
-
-        PARAMETER
-        {
-            name = OrbitMinmus
-            type = VesselParameterGroup
-
-            title = Orbit Minmus
-
-            disableOnStateChange = false
-
-            PARAMETER
-            {
-                name = ReachSituation
-                type = ReachSituation
-
-                situation = ORBITING
-            }
-
-            PARAMETER
-            {
-                name = ReachDestination
-                type = ReachDestination
-
-                targetBody = Minmus
-            }
-        }
-    }
-
-<sub>[ [[Top|Parameters]] ] [ [[Set Parameters|Parameters#set-parameters]] / [[SequenceNode|Parameters#sequencenode]] ]</sub>
-
 ### Planetary Parameters
 
 Parameters specific to doing something related to a planetary body.
@@ -1583,3 +1412,4 @@ The TargetDestroyed indicates that a specific target vessel (or vessels) must be
     }
 
 <sub>[ [[Top|Parameters]] ] [ [[Miscellaneous Parameters|Parameters#miscellaneous-parameters]] / [[TargetDestroyed|Parameters#targetdestroyed]] ]</sub>
+
