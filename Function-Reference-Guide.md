@@ -8,8 +8,9 @@
     * [[List Types|Function-Reference-Guide#list-types]]
   * [[KSP Classes|Function-Reference-Guide#ksp-classes]]
     * [[CelestialBody|Function-Reference-Guide#celestialbody]]
-    * [[Vessel|Function-Reference-Guide#vessel]]
     * [[Kerbal|Function-Reference-Guide#kerbal]]
+    * [[Resource|Function-Reference-Guide#resource]]
+    * [[Vessel|Function-Reference-Guide#vessel]]
   * [[Contract Configurator Objects|Function-Reference-Guide#contract-configurator-objects]]
     * [[WaypointGenerator Behaviour|Function-Reference-Guide#waypointgenerator-behaviour]]
     * [[SpawnKerbal Behaviour|Function-Reference-Guide#spawnkerbal-behaviour]]
@@ -116,35 +117,6 @@ The CelestialBody class represents a planet, moon or start in KSP.
 
 <sub>[ [[Top|Function-Reference-Guide]] ] [ [[KSP Classes|Function-Reference-Guide#ksp-classes]] / [[CelestialBody|Function-Reference-Guide#celestialbody]] ]</sub>
 
-#### Vessel
-
-The Vessel class represents anything that is made up of parts (which includes ships, satellites, stations, bases, and asteroids).
-
-**Methods**
-
-| Method Signature | Description |
-| :--- | :--- |
-| `bool IsLanded()` | Indicates whether the given vessel is landed. |
-| `bool IsSplashed()` | Indicates whether the given vessel is splashed down. |
-| `bool IsOrbiting()` | Indicates whether the given vessel is in orbit. |
-| `CelestialBody CelestialBody()` | Gets the body whose sphere of influence the vessel is in. |
-| `VesselType VesselType()` | Gets the type of vessel (Base, Station, Ship, Lander, Rover, Probe, Debris, SpaceObject , Unknown). |
-| `double Altitude()` | Gets the altitude of the vessel. |
-| `int CrewCount()` | Gets the number of crew on board the vessel. |
-| `int CrewCapacity()` | Gets the number of spots for crew on the vessel. |
-| `int EmptyCrewSpace()` | Gets the number of spots for crew on the vessel that are currently empty. |
-| `int FreeDockingPorts()` | Gets the number of docking ports that are currently free. |
-| `List<Kerbal> Crew()` | Gets a list containing all the crew on board the vessel. |
-
-**Global Functions**
-
-| Function Signature| Description |
-| :--- | :--- |
-| `List<Vessel> AllVessels()` | Returns a list of all vessels. |
-| **_COMING SOON!_** `Vessel Vessel(string identifier)` | Returns the vessel for the given identifier. |
-
-<sub>[ [[Top|Function-Reference-Guide]] ] [ [[KSP Classes|Function-Reference-Guide#ksp-classes]] / [[Vessel|Function-Reference-Guide#vessel]] ]</sub>
-
 #### Kerbal
 
 The Kerbal class (ProtoCrewMember in actualituality) represents a Kerbal in the game.  This includes ship crew, Kerbals at the astronaut complex and applicants.
@@ -167,6 +139,50 @@ The Kerbal class (ProtoCrewMember in actualituality) represents a Kerbal in the 
 | **_COMING SOON!_** `Kerbal Kerbal(string identifier)` | Returns the Kerbal for the given identifier. |
 
 <sub>[ [[Top|Function-Reference-Guide]] ] [ [[KSP Classes|Function-Reference-Guide#ksp-classes]] / [[Kerbal|Function-Reference-Guide#kerbal]] ]</sub>
+
+#### Resource
+
+**_COMING SOON!_** `
+The Resource class represents a resource in KSP (eg. ElectricCharge, LiquidFuel, etc.).
+
+**Global Functions**
+
+| Function Signature| Description |
+| :--- | :--- |
+| Resource Resource(string identifier)` | Returns the resource for the given identifier. |
+
+<sub>[ [[Top|Function-Reference-Guide]] ] [ [[KSP Classes|Function-Reference-Guide#ksp-classes]] / [[Resource|Function-Reference-Guide#resource]] ]</sub>
+
+#### Vessel
+
+The Vessel class represents anything that is made up of parts (which includes ships, satellites, stations, bases, and asteroids).
+
+**Methods**
+
+| Method Signature | Description |
+| :--- | :--- |
+| `bool IsLanded()` | Indicates whether the given vessel is landed. |
+| `bool IsSplashed()` | Indicates whether the given vessel is splashed down. |
+| `bool IsOrbiting()` | Indicates whether the given vessel is in orbit. |
+| `CelestialBody CelestialBody()` | Gets the body whose sphere of influence the vessel is in. |
+| `VesselType VesselType()` | Gets the type of vessel (Base, Station, Ship, Lander, Rover, Probe, Debris, SpaceObject , Unknown). |
+| `double Altitude()` | Gets the altitude of the vessel. |
+| `int CrewCount()` | Gets the number of crew on board the vessel. |
+| `int CrewCapacity()` | Gets the number of spots for crew on the vessel. |
+| `int EmptyCrewSpace()` | Gets the number of spots for crew on the vessel that are currently empty. |
+| `int FreeDockingPorts()` | Gets the number of docking ports that are currently free. |
+| `double ResourceQuantity(Resource r)` | Gets the amount of the given resource that is on board. |
+| **_COMING SOON!_** `List<Kerbal> Crew()` | Gets a list containing all the crew on board the vessel. |
+
+**Global Functions**
+
+| Function Signature| Description |
+| :--- | :--- |
+| `List<Vessel> AllVessels()` | Returns a list of all vessels. |
+| **_COMING SOON!_** `Vessel Vessel(string identifier)` | Returns the vessel for the given identifier. |
+
+
+<sub>[ [[Top|Function-Reference-Guide]] ] [ [[KSP Classes|Function-Reference-Guide#ksp-classes]] / [[Vessel|Function-Reference-Guide#vessel]] ]</sub>
 
 ### Contract Configurator Objects
 
