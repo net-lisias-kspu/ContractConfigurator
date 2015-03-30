@@ -1281,6 +1281,11 @@ The Sequence parameter is one of two ways to define parameters that need to be c
         // the list to be completed.  Can be specified multiple times.
         hiddenParameter = OrbitMinmus
 
+        // By default, parameters that are prevented from completing if they
+        // are out of order.  To cause a failure instead, set this to true.
+        // Default = false
+        failWhenCompleteOutOfOrder = true
+
         // The title to display
         // Default: Complete the following in order
         //title =
@@ -1578,4 +1583,3 @@ The TargetDestroyed indicates that a specific target vessel (or vessels) must be
     }
 
 <sub>[ [[Top|Parameters]] ] [ [[Miscellaneous Parameters|Parameters#miscellaneous-parameters]] / [[TargetDestroyed|Parameters#targetdestroyed]] ]</sub>
-
