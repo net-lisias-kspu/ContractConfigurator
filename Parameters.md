@@ -443,10 +443,10 @@ The IsNotVessel parameter is used to create mutually exclusive groups within a c
         // The key of the vessel that cannot complete this parameter.  This should
         // be a printable name, as it can be displayed to players if the key does
         // not yet point to a real craft.
-        vesselKey = Vessel Key
+        vessel = Vessel Key
 
         // Text for the contract parameter.
-        // Default = Vessel: Not <vesselKey>
+        // Default = Vessel: Not <vessel>
         //title =
     }
 
@@ -989,14 +989,14 @@ The VesselConnectivity parameter requires that the vessel has direct connectivit
         type = VesselConnectivity
 
         // The vessel to check connectivity against.
-        vesselKey = CommSat I
+        vessel = CommSat I
 
         // Whether to check for connectivity or the lack of connectivity.
         // Default = true
         hasConnectivity = true
 
         // Text to use for the parameter's title.
-        // Default = Direct connection to: <vesselKey>
+        // Default = Direct connection to: <vessel>
         //title =
     }	
 
