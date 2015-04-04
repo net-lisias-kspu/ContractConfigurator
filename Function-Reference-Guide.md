@@ -90,7 +90,7 @@ This section contains the supported classes of common objects in KSP.
 
 #### AvailablePart
 
-**_COMING SOON!_** 
+**_NEW!_** 
 The AvailablePart class represents the definition of a part.
 
 **Methods**
