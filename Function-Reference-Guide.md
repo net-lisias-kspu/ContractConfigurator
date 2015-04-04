@@ -7,6 +7,7 @@
     * [[Enumeration Types|Function-Reference-Guide#enumeration-types]]
     * [[List Types|Function-Reference-Guide#list-types]]
   * [[KSP Classes|Function-Reference-Guide#ksp-classes]]
+    * [[AvailablePart|Function-Reference-Guide#availablepart]]
     * [[CelestialBody|Function-Reference-Guide#celestialbody]]
     * [[Kerbal|Function-Reference-Guide#kerbal]]
     * [[Resource|Function-Reference-Guide#resource]]
@@ -87,6 +88,31 @@ This section contains the supported classes of common objects in KSP.
 
 <sub>[ [[Top|Function-Reference-Guide]] ] [ [[KSP Classes|Function-Reference-Guide#ksp-classes]] ]</sub>
 
+#### AvailablePart
+
+**_COMING SOON!_** 
+The AvailablePart class represents the definition of a part.
+
+**Methods**
+
+| Method Signature | Description |
+| :--- | :--- |
+| `PartCategories Category()` | Returns the category of part (corresponds to the listings in the VAB). |
+| `float Cost()` | The cost of the part in funds. |
+| `string Description()` | The textual description of the part. |
+| `string Manufacturer()` | The manufacturer of the part. |
+| `float Size()` | The size of the part. |
+| `string TechRequired()` | The name of the technology that is required to unlock this part. |
+
+**Global Functions**
+
+| Function Signature| Description |
+| :--- | :--- |
+| `List<AvailablePart> AllParts()` | Returns a list of all parts. |
+| AvailablePart AvailablePart(string identifier)` | Returns the AvailablePart for the given identifier. |
+
+<sub>[ [[Top|Function-Reference-Guide]] ] [ [[KSP Classes|Function-Reference-Guide#ksp-classes]] / [[AvailablePart|Function-Reference-Guide#availablepart]] ]</sub>
+
 #### CelestialBody
 
 The CelestialBody class represents a planet, moon or start in KSP.
@@ -164,6 +190,8 @@ The Vessel class represents anything that is made up of parts (which includes sh
 | `bool IsLanded()` | Indicates whether the given vessel is landed. |
 | `bool IsSplashed()` | Indicates whether the given vessel is splashed down. |
 | `bool IsOrbiting()` | Indicates whether the given vessel is in orbit. |
+| `List<Kerbal> Crew()` | Gets all the Kerbals that are on board the vessel. |
+| `List<AvailablePart> Parts()` | Gets a listing of all the parts that make up the vessel. |
 | `CelestialBody CelestialBody()` | Gets the body whose sphere of influence the vessel is in. |
 | `VesselType VesselType()` | Gets the type of vessel (Base, Station, Ship, Lander, Rover, Probe, Debris, SpaceObject , Unknown). |
 | `double Altitude()` | Gets the altitude of the vessel. |

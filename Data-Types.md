@@ -27,6 +27,7 @@ The following list the basic data types that are supported in the Contract Confi
 
 | Type | Description |
 | :--- | :--- |
+| `AvailablePart` | An available part (ie. the definition of a part). |
 | `CelestialBody` | Represents a celestial body in the game (sun, planet or moon). |
 | `Duration` | A duration in time.  Can be specified with units of y, d, h, m, s.  Example: `2d 4h` is 2 days and 4 hours. |
 | `Kerbal` | A Kerbal.  This actually represents a `ProtoCrewMember` in game. |
