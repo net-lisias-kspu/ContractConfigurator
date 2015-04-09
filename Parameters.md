@@ -634,7 +634,8 @@ Checks that the vessel is in a specific state.  Use any combination of the attri
         // The name of the biome to reach.
         biome = Shores
 
-        // Defaulted from the contract
+        // (Optional) Target body.  Note that this is not defaulted
+        // from the contract.
         targetBody = Duna
 
         // The situation.  Valid values from Vessel.Situations:
