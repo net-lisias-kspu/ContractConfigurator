@@ -356,7 +356,8 @@ Requirement for having a certain part unlocked from the tech tree.
         name = PartUnlocked
         type = PartUnlocked
 
-        // Part name that needs to be unlocked.
+        // Part name that needs to be unlocked.  May be specified multiple
+        // times.
         part = SmallGearBay
     }
 
@@ -370,7 +371,8 @@ Requirement for having any part with the given PartModule unlocked from the tech
         name = PartModuleUnlocked
         type = PartModuleUnlocked
 
-        // PartModule that needs to be unlocked.
+        // PartModule that needs to be unlocked.  May be specified multiple
+        // times.
         partModule = ModuleReactionWheel
     }
 
@@ -406,10 +408,17 @@ Requirement for having researched a technology.
         name = TechResearched
         type = TechResearched
 
-        // The technology that needs to have been researched.  Take special note that
-        // this does not get validated - if you make a typo, the requirement will
-        // always return false.
+        // The technology that needs to have been researched.  Take special
+        // note that this does not get validated - if you make a typo, the
+        // requirement will always return false.  May be specified multiple
+        // times.
         tech = basicRocketry
+
+        // A part that needs to have its technology unlocked.  Note that if the
+        // player is playing with part unlocking, that that is only checking for
+        // the tech being unlocked  (the player may have the technology, but not
+        // the part).  May be specified multiple times.
+        part = SmallGearBay
     }
 
 <sub>[ [[Top|Requirements]] ] [ [[Research Based Requirements|Requirements#research-based-requirements]] / [[TechResearched|Requirements#techresearched]] ]</sub>
