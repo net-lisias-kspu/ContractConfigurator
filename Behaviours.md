@@ -390,6 +390,11 @@ Behaviour for generating waypoints.
             // is always visible.
             parameter = SomeParameterName
 
+            // (Optional) Specifies that the given waypoint should be secret.
+            // If this flag is used, then the icon is not required.
+            // Default = false
+            hidden = true
+
             // Body for the waypoint - defaulted from the contract if not
             // supplied.
             targetBody = Kerbin
@@ -419,6 +424,11 @@ Behaviour for generating waypoints.
             // waypoint becomes visible.  If not specific, the waypoint
             // is always visible.
             parameter = SomeParameterName
+
+            // (Optional) Specifies that the given waypoint should be secret.
+            // If this flag is used, then the icon is not required.
+            // Default = false
+            hidden = true
 
             // Body for the waypoint - defaulted from the contract if not
             // supplied.
@@ -459,6 +469,11 @@ Behaviour for generating waypoints.
             // waypoint becomes visible.  If not specific, the waypoint
             // is always visible.
             parameter = SomeParameterName
+
+            // (Optional) Specifies that the given waypoint should be secret.
+            // If this flag is used, then the icon is not required.
+            // Default = false
+            hidden = true
 
             // Body for the waypoint - defaulted from the contract if not
             // supplied.
@@ -507,6 +522,11 @@ Behaviour for generating waypoints.
             // waypoint becomes visible.  If not specific, the waypoint
             // is always visible.
             parameter = SomeParameterName
+
+            // (Optional) Specifies that the given waypoint should be secret.
+            // If this flag is used, then the icon is not required.
+            // Default = false
+            hidden = true
 
             // Body for the waypoint - defaulted from the contract if not
             // supplied.
