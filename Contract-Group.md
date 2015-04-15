@@ -25,4 +25,17 @@ The CONTRACT_GROUP node provides grouping for multiple Contract Configurator con
         // that can be active at one time (0 being unlimited).
         // Default = 0
         maxSimultaneous = 1
+
+        // Contract groups may also be nested - all the same attributes can be
+        // used in the child groups.  Values like maxCompletions and
+        // maxSimultaneous apply to all contracts in the group and all child
+        // groups.
+        CONTRACT_GROUP
+        {
+            // Name of the contract group
+            name = ChildGroup
+
+            // A child group with fewer completions allowed than the parent.
+            maxCompletions = 1
+        }
     }
