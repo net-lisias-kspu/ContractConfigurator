@@ -325,6 +325,8 @@ Behaviour for spawning one or more Vessels on land or in orbit.
             //
             // Note that REF represents the reference body - but will be
             // overriden by the targetBody.
+            // 
+            // The ORBIT node is not used for landed vessels.
             ORBIT
             {
                 SMA = 1449999.99996286
@@ -338,13 +340,13 @@ Behaviour for spawning one or more Vessels on land or in orbit.
             }
 
             // If you wish to specify a landed vessel, you must also 
-            // supply ALL of the following values from the persistant.sfs
-            // file, AS WELL AS including the ORBIT node above.  In a
-            // future release, I may try to look at ways to do it using
-            // only lat-lon, but it's much more complicated, so it's not
-            // a high priority...
-			lat = -0.096992729723051
+            // supply the following values from the persistant.sfs
+            // file.
+            lat = -0.096992729723051
 			lon = 285.425467968966
+
+            // Only applies to landed vessels, use to override the altitude.
+            // If not supplied, defaults to the terrain altitude.
 			alt = 67.6843734193826
 
             // A CREW node indicates one or more crew members to add to the
