@@ -769,8 +769,8 @@ The VesselNotDestroyed parameter is a negative parameter - it will cause the con
         // and no vessel is provided, *and* the VesselParameterGroup does have
         // vessels specified, then the list of vessels that cannot be destroyed
         // is automatically derived from the parent parameter.
-        vessel = First Vessel to Dock
-        vessel = Second Vessel to Dock
+        vessel = Vessel not to be destroyed
+        vessel = Another vessel that should not be destroyed
 
         // Text for the contract parameter.
         // Default varies depending on the situation.
