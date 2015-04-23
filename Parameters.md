@@ -129,6 +129,7 @@ The following parameters are natively supported by ContractConfigurator:
   * [[All|Parameters#all]]
   * [[AtLeast|Parameters#atleast]]
   * [[AtMost|Parameters#atmost]]
+  * [[None|Parameters#none]]
   * [[Sequence|Parameters#sequence]]
 * [[Planetary Parameters|Parameters#planetary-parameters]]
   * [[PlantFlag|Parameters#plantflag]]
@@ -1213,7 +1214,7 @@ The AtLeast parameter is completed if a specified number of its child parameters
         // parameter was about).
         //
         // Default - Complete at least <count> of the following
-        //title = 
+        //title =
 
         PARAMETER
         {
@@ -1253,7 +1254,7 @@ The AtMost parameter will fail if more than the specified number of its child pa
         // parameter was about).
         //
         // Default - Allow no more than <count> of the following
-        //title = 
+        //title =
 
         // Generally need completeInSequence set to true for this.
         completeInSequence = true
@@ -1275,6 +1276,43 @@ The AtMost parameter will fail if more than the specified number of its child pa
     }
 
 <sub>[ [[Top|Parameters]] ] [ [[Set Parameters|Parameters#set-parameters]] / [[AtMost|Parameters#atmost]] ]</sub>
+
+#### None
+**_COMING SOON!_**
+The None parameter will fail if any of its child parameters are completed.  Note that the correct way to use this is to set the completeInSequence to true and to place this parameter at the bottom of the appropriate group of parameters.  Otherwise, the parameter will get marked as completed almost immediately, which hides the child parameters.
+
+    PARAMETER
+    {
+        name = None
+        type = None
+
+        // The text to display.  Highly recommended that you do not use the default -
+        // when the parameter is complete the text of the children disappears (and
+        // the default text doesn't give the player a very good idea what the
+        // parameter was about).
+        //
+        // Default - Prevent ALL of the following
+        //title =
+
+        // Generally need completeInSequence set to true for this.
+        completeInSequence = true
+
+        PARAMETER
+        {
+            name = ReachSpace
+            type = ReachSpace
+        }
+
+        PARAMETER
+        {
+            name = ReachState
+            type = ReachState
+
+            minSpeed = 1000
+            maxSpeed = 5000
+        }
+    }
+<sub>[ [[Top|Parameters]] ] [ [[Set Parameters|Parameters#set-parameters]] / [[None|Parameters#none]] ]</sub>
 
 #### Sequence
 The Sequence parameter is one of two ways to define parameters that need to be completed in sequence.  For this variant, use Sequence as a parent node for all nodes that must be completed in order.  If any parameter completes out of order, this parameter will fail - causing the contract to fail.
@@ -1428,7 +1466,7 @@ PartTest is for testing parts (or just activating them, for staged parts).  This
         // Additional notes to display (in the Squad PartTest contract, this is where
         // they say "Activate through the staging system", etc.
         // Default = Test this part anywhere, no other requirements!
-        // notes = 
+        // notes =
     }
 
 <sub>[ [[Top|Parameters]] ] [ [[Miscellaneous Parameters|Parameters#miscellaneous-parameters]] / [[PartTest|Parameters#parttest]] ]</sub>
