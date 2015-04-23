@@ -127,6 +127,8 @@ The following parameters are natively supported by ContractConfigurator:
 * [[Set Parameters|Parameters#set-parameters]]
   * [[Any|Parameters#any]]
   * [[All|Parameters#all]]
+  * [[AtLeast|Parameters#atleast]]
+  * [[AtMost|Parameters#atmost]]
   * [[Sequence|Parameters#sequence]]
 * [[Planetary Parameters|Parameters#planetary-parameters]]
   * [[PlantFlag|Parameters#plantflag]]
@@ -1119,7 +1121,7 @@ Set parameters are special - they do not typically do anything on their own, but
 <sub>[ [[Top|Parameters]] ] [ [[Set Parameters|Parameters#set-parameters]] ]</sub>
 
 #### Any
-The Any parameter is be completed if any one of its child parameters are completed.
+The Any parameter is completed if any one of its child parameters are completed.
 
     PARAMETER
     {
@@ -1192,6 +1194,87 @@ The All parameter is completed once all its child parameters are completed.
     }
 
 <sub>[ [[Top|Parameters]] ] [ [[Set Parameters|Parameters#set-parameters]] / [[All|Parameters#all]] ]</sub>
+
+#### AtLeast
+**_COMING SOON!_**
+The AtLeast parameter is completed if a specified number of its child parameters are completed.
+
+    PARAMETER
+    {
+        name = AtLeast
+        type = AtLeast
+
+        // The minimum number that must be completed.
+        count = 1
+
+        // The text to display.  Highly recommended that you do not use the default -
+        // when the parameter is complete the text of the children disappears (and
+        // the default text doesn't give the player a very good idea what the
+        // parameter was about).
+        //
+        // Default - Complete at least <count> of the following
+        //title = 
+
+        PARAMETER
+        {
+            name = ReachSpace
+            type = ReachSpace
+        }
+
+        PARAMETER
+        {
+            name = ReachState
+            type = ReachState
+
+            minSpeed = 1000
+            maxSpeed = 5000
+        }
+    }
+
+
+<sub>[ [[Top|Parameters]] ] [ [[Set Parameters|Parameters#set-parameters]] / [[AtLeast|Parameters#atleast]] ]</sub>
+
+#### AtMost
+**_COMING SOON!_**
+The AtMost parameter will fail if more than the specified number of its child parameters are completed.  Note that the correct way to use this is to set the completeInSequence to true and to place this parameter at the bottom of the appropriate group of parameters.  Otherwise, the parameter will get marked as completed almost immediately, which hides the child parameters.
+
+    PARAMETER
+    {
+        name = AtMost
+        type = AtMost
+
+        // The maximum number that can be completed.  Any more than this and
+        // the contract fails.
+        count = 1
+
+        // The text to display.  Highly recommended that you do not use the default -
+        // when the parameter is complete the text of the children disappears (and
+        // the default text doesn't give the player a very good idea what the
+        // parameter was about).
+        //
+        // Default - Allow no more than <count> of the following
+        //title = 
+
+        // Generally need completeInSequence set to true for this.
+        completeInSequence = true
+
+        PARAMETER
+        {
+            name = ReachSpace
+            type = ReachSpace
+        }
+
+        PARAMETER
+        {
+            name = ReachState
+            type = ReachState
+
+            minSpeed = 1000
+            maxSpeed = 5000
+        }
+    }
+
+<sub>[ [[Top|Parameters]] ] [ [[Set Parameters|Parameters#set-parameters]] / [[AtMost|Parameters#atmost]] ]</sub>
 
 #### Sequence
 The Sequence parameter is one of two ways to define parameters that need to be completed in sequence.  For this variant, use Sequence as a parent node for all nodes that must be completed in order.  If any parameter completes out of order, this parameter will fail - causing the contract to fail.
