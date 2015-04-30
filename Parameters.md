@@ -12,7 +12,7 @@ Parameters all follow the same general structure - the following attributes are 
 
         // The type defines the type of Parameter.  See below for all supported
         // ContractConfigurator parameters.
-        type = AltitudeRecord
+        type = ReachState
 
         // Target celestial body.  Defaults to the targetBody of the contract.
         // For most  parameters this only has an impact on the reward/failure
@@ -116,11 +116,8 @@ The following parameters are natively supported by ContractConfigurator:
     * [[SignalDelay|Parameters#signaldelay]]
     * [[VesselConnectivity|Parameters#vesselconnectivity]]
 * [[Kerbal Parameters|Parameters#kerbal-parameters]]
-  * [[BoardAnyVessel|Parameters#boardanyvessel]]
   * [[RecoverKerbal|Parameters#recoverkerbal]]
 * [[Progression Parameters|Parameters#progression-parameters]]
-  * [[LaunchVessel|Parameters#launchvessel]]
-  * [[AltitudeRecord|Parameters#altituderecord]]
   * [[ReachSpace|Parameters#reachspace]]
 * [[Negative Parameters|Parameters#negative-parameters]]
   * [[KerbalDeaths|Parameters#kerbaldeaths]]
@@ -1011,28 +1008,6 @@ These are parameters that operate on Kerbals.
 
 <sub>[ [[Top|Parameters]] ] [ [[Kerbal Parameters|Parameters#kerbal-parameters]] ]</sub>
 
-#### BoardAnyVessel
-The BoardAnyVessel parameter is met when the named Kerbal boards a vessel (this one is from the Squad "rescue" contracts and is a little bit less useful on its own.
-
-    PARAMETER
-    {
-        name = BoardAnyVessel
-        type = BoardAnyVessel
-
-        // The Kerbal that needs to board a vessel
-        kerbal = Jebediah Kermin
-
-        // Alternate method of identifying the Kerbal - zero based index of the
-        // entry in a SpawnKerbal or SpawnVessel BEHAVIOUR node.
-        //index = 0
-
-        // Text to use for the parameter
-        // Default = <kerbal>: Board a vessel
-        //title =
-    }
-
-<sub>[ [[Top|Parameters]] ] [ [[Kerbal Parameters|Parameters#kerbal-parameters]] / [[BoardAnyVessel|Parameters#boardanyvessel]] ]</sub>
-
 #### RecoverKerbal
 The RecoverKerbal parameter is met when the named Kerbal is "recovered" (ie. goes back in to the available list at the astronaut complex).  This is from the Squad "rescue" contracts.
 
@@ -1059,29 +1034,6 @@ The RecoverKerbal parameter is met when the named Kerbal is "recovered" (ie. goe
 Although not tied directly to the achievement/progression system, these are parameters that are typically used for progression type rewards (do something for the first time).  Note that some of these parameters are very similar to the [[vessel parameters|Parameters#vessel-parameters]], but work differently.  The progreession parameters only require you to have done the thing once before, rather than doing it with a specific vessel.
 
 <sub>[ [[Top|Parameters]] ] [ [[Progression Parameters|Parameters#progression-parameters]] ]</sub>
-
-#### LaunchVessel
-To meet this parameter, the player simply needs to launch a vessel.
-
-    PARAMETER
-    {
-        name = LaunchVessel
-        type = LaunchVessel
-    }
-
-<sub>[ [[Top|Parameters]] ] [ [[Progression Parameters|Parameters#progression-parameters]] / [[LaunchVessel|Parameters#launchvessel]] ]</sub>
-
-#### AltitudeRecord
-The AltituteRecord parameter is met when a craft reaches the given altitude on Kerbin.
-
-    PARAMETER
-    {
-        name = AltitudeRecord
-        type = AltitudeRecord
-        altitude = 55000
-    }
-
-<sub>[ [[Top|Parameters]] ] [ [[Progression Parameters|Parameters#progression-parameters]] / [[AltitudeRecord|Parameters#altituderecord]] ]</sub>
 
 #### ReachSpace
 Go to space.
