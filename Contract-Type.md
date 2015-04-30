@@ -78,6 +78,12 @@ _Sample CONTRACT_TYPE (can be downloaded [here](https://raw.githubusercontent.co
         cancellable = true
         declinable = true
 
+        // When set to true, this contract is automatically accepted when
+        // offered.  Use it to make a contract like the stock World-Firsts
+        // Record contracts.
+        // Default = false
+        autoAccept = false
+
         // Prestige.  If not specified, this contract type will be available at
         // any prestige level.  Otherwise, locked to the level specified.  Can
         // be specified multiple times.
