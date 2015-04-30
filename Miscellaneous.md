@@ -6,20 +6,19 @@ The following example disables all of the stock contract types.
 
     CONTRACT_CONFIGURATOR
     {
-        disabledContractType = AltitudeRecord
         disabledContractType = ARMContract
         disabledContractType = BaseContract
         disabledContractType = CollectScience
         disabledContractType = ExploreBody
-        disabledContractType = FirstLaunch
         disabledContractType = GrandTour
         disabledContractType = ISRUContract
-        disabledContractType = OrbitKerbin
+        disabledContractType = RecordTrackContract
         disabledContractType = PartTest
         disabledContractType = PlantFlag
-        disabledContractType = ReachSpace
-        disabledContractType = RescueKerbal
+        disabledContractType = RecoverAsset
         disabledContractType = SatelliteContract
         disabledContractType = StationContract
         disabledContractType = SurveyContract
+        disabledContractType = TourismContract
+        disabledContractType = WorldFirstContract
     }
