@@ -156,6 +156,7 @@ The Kerbal class (ProtoCrewMember in actualituality) represents a Kerbal in the 
 | `ExperienceTrait ExperienceTrait()` | Gets the Kerbal's experience trait.  Valid values in stock KSP are Pilot, Engineer and Scientist. |
 | `RosterStatus RosterStatus()` | Get's the Kerbal's status on the roster.  Valid values are Available, Assigned, Dead, and Missing. |
 | `KerbalType Type()` | Gets the Kerbal's type.  Valid values are Crew, Applicant, Unowned, Tourist. |
+| `Gender Gender()` | Gets the Kerbal's gender.  Valid values are Male and Female. |
 
 **Global Functions**
 
