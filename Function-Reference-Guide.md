@@ -37,7 +37,7 @@ The numeric data types include types such as `int`, `short`, `float` and `double
 
 | Function Signature | Description |
 | :--- | :--- |
-| `numeric Random()` | *none* | `numeric` | Returns a random number that is greater than or equal to 0.0, but less than 1.0.  Note for integer types this will *always* return 0 - use the second interface instead. |
+| `numeric Random()` | Returns a random number that is greater than or equal to 0.0, but less than 1.0.  Note for integer types this will *always* return 0 - use the second interface instead. |
 | `numeric Random(numeric min, numeric max)` | Returns a random number that is greater than or equal to *min*, but less than *max*. |
 | `numeric Min(numeric a, numeric b)` | Returns whichever is smallest out of `a` and `b`. |
 | `numeric Max(numeric a, numeric b)` | Returns whichever is largest out of `a` and `b`. |
