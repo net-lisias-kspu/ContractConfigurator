@@ -310,6 +310,15 @@ BEHAVIOUR
     name = SpawnVessel
     type = SpawnVessel
 
+    // (Optional) Use this to defer the creation of the vessel until the flight scene is loaded.
+    // This works around the issue that the vessel is initially loaded in the actual VAB building,
+    // and if the vessel is too big will be visible as it clips outside the VAB.  However, vessels
+    // with many parts (the RTG for sure) fail on a resource exception when loaded - loading them
+    // earlier works around the issue slightly.  This is a stock bug that will hopefully be fixed
+    // in the near future (it exists in 1.0.2 for sure).
+    // Default = false
+    deferVesselCreation = false
+
     // The VESSEL node indicates a vessel to spawn and can be specified
     // multiple times.
     VESSEL
