@@ -139,6 +139,8 @@ The CelestialBody class represents a planet, moon or start in KSP.
 | :--- | :--- |
 | `CelestialBody HomeWorld()` | Returns the home world (ie. Kerbin). |
 | `List<CelestialBody> AllBodies()` | Returns a list of all celestial bodies. |
+| **_NEW!_** `List<CelestialBody> OrbitedBodies()` | Returns a list of all celestial bodies that the player has orbited. |
+| **_NEW!_** `List<CelestialBody> LandedBodies()` | Returns a list of all celestial bodies that the player has landed on. |
 | **_NEW!_** `CelestialBody CelestialBody(string identifier)` | Returns the CelestialBody for the given identifier. |
 
 <sub>[ [[Top|Function-Reference-Guide]] ] [ [[KSP Classes|Function-Reference-Guide#ksp-classes]] / [[CelestialBody|Function-Reference-Guide#celestialbody]] ]</sub>
