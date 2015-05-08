@@ -142,6 +142,7 @@ The CelestialBody class represents a planet, moon or start in KSP.
 | **_NEW!_** `List<CelestialBody> OrbitedBodies()` | Returns a list of all celestial bodies that the player has orbited. |
 | **_NEW!_** `List<CelestialBody> LandedBodies()` | Returns a list of all celestial bodies that the player has landed on. |
 | **_NEW!_** `CelestialBody CelestialBody(string identifier)` | Returns the CelestialBody for the given identifier. |
+| **_NEW!_** `double UniversalTime()` | Gets the universal time (number of game seconds since the game started). |
 
 <sub>[ [[Top|Function-Reference-Guide]] ] [ [[KSP Classes|Function-Reference-Guide#ksp-classes]] / [[CelestialBody|Function-Reference-Guide#celestialbody]] ]</sub>
 
