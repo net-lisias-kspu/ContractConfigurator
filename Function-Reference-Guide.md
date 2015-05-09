@@ -9,6 +9,7 @@
   * [[KSP Classes|Function-Reference-Guide#ksp-classes]]
     * [[AvailablePart|Function-Reference-Guide#availablepart]]
     * [[CelestialBody|Function-Reference-Guide#celestialbody]]
+    * [[Biome|Function-Reference-Guide#biome]]
     * [[Kerbal|Function-Reference-Guide#kerbal]]
     * [[Resource|Function-Reference-Guide#resource]]
     * [[Vessel|Function-Reference-Guide#vessel]]
@@ -90,7 +91,6 @@ This section contains the supported classes of common objects in KSP.
 
 #### AvailablePart
 
-**_NEW!_** 
 The AvailablePart class represents the definition of a part.
 
 **Methods**
@@ -115,7 +115,7 @@ The AvailablePart class represents the definition of a part.
 
 #### CelestialBody
 
-The CelestialBody class represents a planet, moon or start in KSP.
+The CelestialBody class represents a planet, moon or star in KSP.
 
 **Methods**
 
@@ -132,6 +132,7 @@ The CelestialBody class represents a planet, moon or start in KSP.
 | `double Radius()` | Returns the planet's radius (in meters). |
 | `float AtmosphereAltitude()` | Returns the altitude of planet's atmosphere (in meters). |
 | `double SphereOfInfluence()` | Returns the radius of the planet's sphere of influence (in meters). |
+| **_NEW!_** `List<Biome> Biomes()` | Returns all the biomes for the given celestial body. |
 
 **Global Functions**
 
@@ -139,12 +140,24 @@ The CelestialBody class represents a planet, moon or start in KSP.
 | :--- | :--- |
 | `CelestialBody HomeWorld()` | Returns the home world (ie. Kerbin). |
 | `List<CelestialBody> AllBodies()` | Returns a list of all celestial bodies. |
-| **_NEW!_** `List<CelestialBody> OrbitedBodies()` | Returns a list of all celestial bodies that the player has orbited. |
-| **_NEW!_** `List<CelestialBody> LandedBodies()` | Returns a list of all celestial bodies that the player has landed on. |
-| **_NEW!_** `CelestialBody CelestialBody(string identifier)` | Returns the CelestialBody for the given identifier. |
-| **_NEW!_** `double UniversalTime()` | Gets the universal time (number of game seconds since the game started). |
+| `List<CelestialBody> OrbitedBodies()` | Returns a list of all celestial bodies that the player has orbited. |
+| `List<CelestialBody> LandedBodies()` | Returns a list of all celestial bodies that the player has landed on. |
+| `CelestialBody CelestialBody(string identifier)` | Returns the CelestialBody for the given identifier. |
+| `double UniversalTime()` | Gets the universal time (number of game seconds since the game started). |
 
 <sub>[ [[Top|Function-Reference-Guide]] ] [ [[KSP Classes|Function-Reference-Guide#ksp-classes]] / [[CelestialBody|Function-Reference-Guide#celestialbody]] ]</sub>
+
+#### Biome
+
+The Biome class represents a biome for a planet or moon.
+
+**Methods**
+
+| Method Signature | Description |
+| :--- | :--- |
+
+
+<sub>[ [[Top|Function-Reference-Guide]] ] [ [[KSP Classes|Function-Reference-Guide#ksp-classes]] / [[Biome|Function-Reference-Guide#biome]] ]</sub>
 
 #### Kerbal
 
@@ -166,13 +179,12 @@ The Kerbal class (ProtoCrewMember in actualituality) represents a Kerbal in the 
 | Function Signature| Description |
 | :--- | :--- |
 | `List<Kerbal> AllKerbals()` | Returns a list of all Kerbals in the game. |
-| **_NEW!_** `Kerbal Kerbal(string identifier)` | Returns the Kerbal for the given identifier. |
+| `Kerbal Kerbal(string identifier)` | Returns the Kerbal for the given identifier. |
 
 <sub>[ [[Top|Function-Reference-Guide]] ] [ [[KSP Classes|Function-Reference-Guide#ksp-classes]] / [[Kerbal|Function-Reference-Guide#kerbal]] ]</sub>
 
 #### Resource
 
-**_NEW!_** `
 The Resource class represents a resource in KSP (eg. ElectricCharge, LiquidFuel, etc.).
 
 **Global Functions**
@@ -204,14 +216,14 @@ The Vessel class represents anything that is made up of parts (which includes sh
 | `int EmptyCrewSpace()` | Gets the number of spots for crew on the vessel that are currently empty. |
 | `int FreeDockingPorts()` | Gets the number of docking ports that are currently free. |
 | `double ResourceQuantity(Resource r)` | Gets the amount of the given resource that is on board. |
-| **_NEW!_** `List<Kerbal> Crew()` | Gets a list containing all the crew on board the vessel. |
+| `List<Kerbal> Crew()` | Gets a list containing all the crew on board the vessel. |
 
 **Global Functions**
 
 | Function Signature| Description |
 | :--- | :--- |
 | `List<Vessel> AllVessels()` | Returns a list of all vessels. |
-| **_NEW!_** `Vessel Vessel(string identifier)` | Returns the vessel for the given identifier. |
+| `Vessel Vessel(string identifier)` | Returns the vessel for the given identifier. |
 
 
 <sub>[ [[Top|Function-Reference-Guide]] ] [ [[KSP Classes|Function-Reference-Guide#ksp-classes]] / [[Vessel|Function-Reference-Guide#vessel]] ]</sub>
@@ -242,7 +254,6 @@ CONTRACT_TYPE
 <sub>[ [[Top|Function-Reference-Guide]] ] [ [[Contract Configurator Objects|Function-Reference-Guide#contract-configurator-objects]] ]</sub>
 
 #### WaypointGenerator Behaviour
-**_NEW!_**
 
 **Methods**
 
@@ -253,7 +264,6 @@ CONTRACT_TYPE
 <sub>[ [[Top|Function-Reference-Guide]] ] [ [[Contract Configurator Objects|Function-Reference-Guide#contract-configurator-objects]] / [[WaypointGenerator Behaviour|Function-Reference-Guide#waypointgenerator-behaviour]] ]</sub>
 
 #### SpawnKerbal Behaviour
-**_NEW!_**
 
 **Methods**
 
@@ -270,7 +280,6 @@ All other classes fall into this section.
 <sub>[ [[Top|Function-Reference-Guide]] ] [ [[Other|Function-Reference-Guide#other]] ]</sub>
 
 #### Duration
-**_NEW!_**
 The duration data type is used anywhere that a contract parameter requests a duration in the form "1d 2h 5s".
 
 **Local Functions**

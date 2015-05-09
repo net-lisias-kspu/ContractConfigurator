@@ -264,7 +264,6 @@ Behaviour for spawning one or more Kerbals on land or in orbit.
 <sub>[ [[Top|Behaviours]] ] [ [[SpawnKerbal|Behaviours#spawnkerbal]] ]</sub>
 
 ### SpawnPassengers
-**_NEW!_**
 Behaviour for spawning passengers on board vessels.
 
     BEHAVIOUR

@@ -1,5 +1,3 @@
-**_NEW!_**
-
 ## Table of Contents
 
 * [[Table of Contents|Data-Types#table-of-contents]]

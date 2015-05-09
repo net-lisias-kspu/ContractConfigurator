@@ -241,7 +241,6 @@ Parameter to indicate that the Vessel in question must have a certain number of 
 <sub>[ [[Top|Parameters]] ] [ [[Vessel Parameters|Parameters#vessel-parameters]] / [[Vessel Attributes|Parameters#vessel-attributes]] / [[HasCrew|Parameters#hascrew]] ]</sub>
 
 ##### HasCrewCapacity
-**_NEW!_**
 Parameter to require that the Vessel in question must have a certain crew capacity.
 
     PARAMETER
@@ -729,7 +728,6 @@ The ReturnHome parameter requires a player to return home (ideally after meeting
 <sub>[ [[Top|Parameters]] ] [ [[Vessel Parameters|Parameters#vessel-parameters]] / [[Vessel State|Parameters#vessel-state]] / [[ReturnHome|Parameters#returnhome]] ]</sub>
 
 ##### VesselDestroyed
-**_NEW!_**
 The VesselDestroyed parameter requires that the player destroys their vessel!  Khaaaaan!
 
     PARAMETER
@@ -785,7 +783,6 @@ These parameters pertain to the history of a vessel.
 <sub>[ [[Top|Parameters]] ] [ [[Vessel Parameters|Parameters#vessel-parameters]] / [[Vessel History|Parameters#vessel-history]] ]</sub>
 
 ##### CollectScience
-**_NEW!_**
 The CollectScience parameter is used to require a player to collect science under specific circumstances.  It also supports settings to require the player to either transmit or recover the data.
 
     PARAMETER
@@ -1149,7 +1146,6 @@ The All parameter is completed once all its child parameters are completed.
 <sub>[ [[Top|Parameters]] ] [ [[Set Parameters|Parameters#set-parameters]] / [[All|Parameters#all]] ]</sub>
 
 #### AtLeast
-**_NEW!_**
 The AtLeast parameter is completed if a specified number of its child parameters are completed.
 
     PARAMETER
@@ -1188,7 +1184,6 @@ The AtLeast parameter is completed if a specified number of its child parameters
 <sub>[ [[Top|Parameters]] ] [ [[Set Parameters|Parameters#set-parameters]] / [[AtLeast|Parameters#atleast]] ]</sub>
 
 #### AtMost
-**_NEW!_**
 The AtMost parameter will fail if more than the specified number of its child parameters are completed.  Note that the correct way to use this is to set the completeInSequence to true and to place this parameter at the bottom of the appropriate group of parameters.  Otherwise, the parameter will get marked as completed almost immediately, which hides the child parameters.
 
     PARAMETER
@@ -1230,7 +1225,6 @@ The AtMost parameter will fail if more than the specified number of its child pa
 <sub>[ [[Top|Parameters]] ] [ [[Set Parameters|Parameters#set-parameters]] / [[AtMost|Parameters#atmost]] ]</sub>
 
 #### None
-**_NEW!_**
 The None parameter will fail if any of its child parameters are completed.  Note that the correct way to use this is to set the completeInSequence to true and to place this parameter at the bottom of the appropriate group of parameters.  Otherwise, the parameter will get marked as completed almost immediately, which hides the child parameters.
 
     PARAMETER
