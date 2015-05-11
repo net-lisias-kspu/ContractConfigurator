@@ -81,6 +81,8 @@ List types are a list of another type (which can be any of the supported types).
 | `int Count()` | Returns the number of items in the list. |
 | `List<T> Concat(List<T> list)` | Adds the elements in `list` to the current list and returns it. |
 | `List<T> Add(T item)` | Adds the given item to the current list and returns it. |
+| `List<T> Exclude(T item)` | Removes the given item from the current list and returns it. |
+| `List<T> Exclude(List<T> item)` | Removes all the given item from the current list and returns it. |
 
 <sub>[ [[Top|Function-Reference-Guide]] ] [ [[General Data Types|Function-Reference-Guide#general-data-types]] / [[List Types|Function-Reference-Guide#list-types]] ]</sub>
 
