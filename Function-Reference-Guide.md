@@ -13,6 +13,7 @@
     * [[Kerbal|Function-Reference-Guide#kerbal]]
     * [[Resource|Function-Reference-Guide#resource]]
     * [[Vessel|Function-Reference-Guide#vessel]]
+    * [[Waypoint Class|Function-Reference-Guide#waypoint-class]]
   * [[Contract Configurator Objects|Function-Reference-Guide#contract-configurator-objects]]
     * [[WaypointGenerator Behaviour|Function-Reference-Guide#waypointgenerator-behaviour]]
     * [[SpawnKerbal Behaviour|Function-Reference-Guide#spawnkerbal-behaviour]]
@@ -225,8 +226,20 @@ The Vessel class represents anything that is made up of parts (which includes sh
 | `List<Vessel> AllVessels()` | Returns a list of all vessels. |
 | `Vessel Vessel(string identifier)` | Returns the vessel for the given identifier. |
 
-
 <sub>[ [[Top|Function-Reference-Guide]] ] [ [[KSP Classes|Function-Reference-Guide#ksp-classes]] / [[Vessel|Function-Reference-Guide#vessel]] ]</sub>
+
+#### Waypoint Class
+
+**Methods**
+
+| Method Signature | Description |
+| :--- | :--- |
+| `string Name()` | The name of the waypoint. |
+| `double Longitude()` | The longitude of the waypoint. |
+| `double Latitude()` | The latitude of the waypoint. |
+| `double Altitude()` | The altitude of the waypoint. |
+
+<sub>[ [[Top|Function-Reference-Guide]] ] [ [[KSP Classes|Function-Reference-Guide#ksp-classes]] / [[Waypoint Class|Function-Reference-Guide#waypoint-class]] ]</sub>
 
 ### Contract Configurator Objects
 
