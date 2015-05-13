@@ -63,7 +63,7 @@ The following requirements are natively supported by ContractConfigurator:
   * [[ActiveVesselRange|Requirements#activevesselrange]]
   * [[CelestialBodyCoverage|Requirements#celestialbodycoverage]]
 * [[Space Program Requirements|Requirements#space-program-requirements]]
-  * [[HasCrew|Requirements#hascrew]]
+  * [[HasKerbalnaut|Requirements#haskerbalnaut]]
   * [[Facility|Requirements#facility]]
   * [[Funds|Requirements#funds]]
   * [[Reputation|Requirements#reputation]]
@@ -471,13 +471,13 @@ The CelestialBodyCoverage requirement checks that the given celestial body has a
 
 <sub>[ [[Top|Requirements]] ] [ [[Space Program Requirements|Requirements#space-program-requirements]] ]</sub>
 
-#### HasCrew
-Requirement that checks whether the player has Kerbals in their crew matching the given criteria.
+#### HasKerbalnaut
+Requirement that checks whether the player has Kerbals in their space program matching the given criteria.
 
     REQUIREMENT
     {
-        name = HasCrew
-        type = HasCrew
+        name = HasKerbalnaut
+        type = HasKerbalnaut
 
         // (Optional) The type of trait required.  Valid values are:
         //    Pilot
@@ -496,7 +496,7 @@ Requirement that checks whether the player has Kerbals in their crew matching th
         maxCount = 5
     }
 
-<sub>[ [[Top|Requirements]] ] [ [[Space Program Requirements|Requirements#space-program-requirements]] / [[HasCrew|Requirements#hascrew]] ]</sub>
+<sub>[ [[Top|Requirements]] ] [ [[Space Program Requirements|Requirements#space-program-requirements]] / [[HasKerbalnaut|Requirements#haskerbalnaut]] ]</sub>
 
 #### Facility
 Requirement that checks whether the player has the given facility upgraded (or not upgraded) to the specified level.
