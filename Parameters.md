@@ -116,6 +116,7 @@ The following parameters are natively supported by ContractConfigurator:
     * [[SignalDelay|Parameters#signaldelay]]
     * [[VesselConnectivity|Parameters#vesselconnectivity]]
 * [[Kerbal Parameters|Parameters#kerbal-parameters]]
+    * [[HasAstronaut|Parameters#hasastronaut]]
   * [[RecoverKerbal|Parameters#recoverkerbal]]
 * [[Progression Parameters|Parameters#progression-parameters]]
   * [[ReachSpace|Parameters#reachspace]]
@@ -1004,6 +1005,41 @@ The VesselConnectivity parameter requires that the vessel has direct connectivit
 These are parameters that operate on Kerbals.
 
 <sub>[ [[Top|Parameters]] ] [ [[Kerbal Parameters|Parameters#kerbal-parameters]] ]</sub>
+
+##### HasAstronaut
+Parameter to require a certain number/type of hired astronauts.
+
+    PARAMETER
+    {
+        name = HasAstronaut
+        type = HasAstronaut
+
+        // (Optional) The type of trait required.  Valid values are:
+        //    Pilot
+        //    Engineer
+        //    Scientist
+        trait = Pilot
+
+        // (Optional) Minimum and maximum experience level.  Default values are
+        // 0 and 5 (for min/max).
+        minExperience = 1
+        maxExperience = 2
+
+        // (Optional) Minimum and maximum count.  Default values are 1 and
+        // int.MaxValue (for min/max).
+        minCount = 1
+        maxCount = 10
+
+        // Text to use for the parameter
+        // Default (maxCrew = int.MAXVALUE) = Astronauts: At least <minCrew>
+        // Default (minCrew = 0) = Astronauts: At most <maxCrew>
+        // Default (minCrew = maxCrew) = Astronauts: Exactly <minCrew>
+        // Default (else) = Astronauts: Between <minCrew> and <maxCrew>
+        //title =
+    }
+
+
+<sub>[ [[Top|Parameters]] ] [ [[Kerbal Parameters|Parameters#kerbal-parameters]] / [[|Parameters#]] / [[HasAstronaut|Parameters#hasastronaut]] ]</sub>
 
 #### RecoverKerbal
 The RecoverKerbal parameter is met when the named Kerbal is "recovered" (ie. goes back in to the available list at the astronaut complex).  This is from the Squad "rescue" contracts.
