@@ -3,6 +3,7 @@
 * [[Table of Contents|Expression-Syntax#table-of-contents]]
 * [[Overview|Expression-Syntax#overview]]
 * [[Syntax|Expression-Syntax#syntax]]
+  * [[Strings|Expression-Syntax#strings]]
   * [[Operations|Expression-Syntax#operations]]
   * [[Operator Precedence|Expression-Syntax#operator-precedence]]
 * [[Identifiers|Expression-Syntax#identifiers]]
@@ -37,6 +38,20 @@ This section documents the various syntax elements that are available.  The foll
 1. All expressions have a data type that is inferred by context (the start context being inferred from the type for the config node attribute).   For example, `targetBody` is of type CelestialBody, and `rewardFunds` is of type Double.  This is important to understand when using methods/functions that are only availble for a certain data type.
 
 <sub>[ [[Top|Expression-Syntax]] ] [ [[Syntax|Expression-Syntax#syntax]] ]</sub>
+
+### Strings
+
+String fields can be populated without any special encoding and they will be read as is.  However, strings also support automatic replacement of inline special identifiers or function calls.  Strings may also optionally be encased within double quotes (").  This is important when trying to create a list of strings, such as the following:
+```
+DATA
+{
+    type = List<string>
+    theListOfStrings = [ "The first string", "The second string", "Another string" ]
+}
+```
+Failing to use double quotes in the example above causes the above to be treated as a one element list with a single string comprising of the full text given in the variable.
+
+<sub>[ [[Top|Expression-Syntax]] ] [ [[Syntax|Expression-Syntax#syntax]] / [[Strings|Expression-Syntax#strings]] ]</sub>
 
 ### Operations
 The following operators can be used:
