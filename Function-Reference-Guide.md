@@ -219,6 +219,7 @@ The Vessel class represents anything that is made up of parts (which includes sh
 | `int EmptyCrewSpace()` | Gets the number of spots for crew on the vessel that are currently empty. |
 | `int FreeDockingPorts()` | Gets the number of docking ports that are currently free. |
 | `double ResourceQuantity(Resource r)` | Gets the amount of the given resource that is on board. |
+| `double ResourceCapacity(Resource r)` | Gets the capacity for the given resource that is on board. |
 | `List<Kerbal> Crew()` | Gets a list containing all the crew on board the vessel. |
 
 **Global Functions**
