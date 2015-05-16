@@ -112,7 +112,7 @@ The AvailablePart class represents the definition of a part.
 | Function Signature| Description |
 | :--- | :--- |
 | `List<AvailablePart> AllParts()` | Returns a list of all parts. |
-| AvailablePart AvailablePart(string identifier)` | Returns the AvailablePart for the given identifier. |
+| `AvailablePart AvailablePart(string identifier)` | Returns the AvailablePart for the given identifier. |
 
 <sub>[ [[Top|Function-Reference-Guide]] ] [ [[KSP Classes|Function-Reference-Guide#ksp-classes]] / [[AvailablePart|Function-Reference-Guide#availablepart]] ]</sub>
 
