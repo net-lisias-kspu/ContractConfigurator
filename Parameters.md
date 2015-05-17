@@ -554,11 +554,13 @@ Orbital parameter to specify required orbital details.
         //     SUB_ORBITAL
         situation = SUB_ORBITAL
 
-        // Minimum orbit altitude in meters.
+        // Minimum orbit altitude in meters.  The vessel's apoapsis and
+        // periapsis must both be above this number.
         // Default = 0
         minAltitude = 100000
 
-        // Maximum orbit altitude in meters.
+        // Maximum orbit altitude in meters.  The vessel's apoapsis and
+        // periapsis must both be below this number.
         // Default = double.MaxValue
         maxAltitude = 250000
 
