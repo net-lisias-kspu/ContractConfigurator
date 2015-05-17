@@ -130,6 +130,7 @@ The CelestialBody class represents a planet, moon or star in KSP.
 | `bool IsHomeWorld()` | Indicates whether the given body is the home world (ie. Kerbin). |
 | `bool IsPlanet()` | Indicates whether the given body is a planet (not a moon or star). |
 | `bool IsMoon()` | Indicates whether the given body is a moon. |
+| `bool IsOrbitalSurveyComplete()` | Indicates whether an orbital survey has been complete for the body. |
 | `CelestialBody Parent()` | Returns the body's parent body (ex. The Mun's parent body is Kerbin). |
 | `List<CelestialBody> Children()` | Returns the body's child bodies (ex. Kerbin's child bodies are the Mun and Minmus). |
 | `double Radius()` | Returns the planet's radius (in meters). |
