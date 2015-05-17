@@ -71,6 +71,7 @@ The following requirements are natively supported by ContractConfigurator:
 * [[Contract Based Requirements|Requirements#contract-based-requirements]]
   * [[CompleteContract|Requirements#completecontract]]
 * [[Planetary Requirements|Requirements#planetary-requirements]]
+  * [[PerformOrbitalSurvey|Requirements#performorbitalsurvey]]
   * [[SCANsatCoverage|Requirements#scansatcoverage]]
   * [[SCANsatLocationCoverage|Requirements#scansatlocationcoverage]]
 * [[Miscellaneous Requirements|Requirements#miscellaneous-requirements]]
@@ -627,6 +628,20 @@ Requirement for having a certain number of contracts completed of the given type
 ### Planetary Requirements
 
 <sub>[ [[Top|Requirements]] ] [ [[Planetary Requirements|Requirements#planetary-requirements]] ]</sub>
+
+#### PerformOrbitalSurvey
+Requirement for having completed an orbital resource survey of the given body.
+
+    REQUIREMENT
+    {
+        name = PerformOrbitalSurvey
+        type = PerformOrbitalSurvey
+
+        // Target body - if not supplied will be defaulted from the contract.
+        targetBody = Kerbin
+    }
+
+<sub>[ [[Top|Requirements]] ] [ [[Planetary Requirements|Requirements#planetary-requirements]] / [[PerformOrbitalSurvey|Requirements#performorbitalsurvey]] ]</sub>
 
 #### SCANsatCoverage
 Requirement for having a certain level of SCANsat coverage for the given scan type/planet.

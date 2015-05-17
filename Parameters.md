@@ -130,6 +130,7 @@ The following parameters are natively supported by ContractConfigurator:
   * [[None|Parameters#none]]
   * [[Sequence|Parameters#sequence]]
 * [[Planetary Parameters|Parameters#planetary-parameters]]
+  * [[PerformOrbitalSurvey|Parameters#performorbitalsurvey]]
   * [[PlantFlag|Parameters#plantflag]]
   * [[SCANsatCoverage|Parameters#scansatcoverage]]
 * [[Miscellaneous Parameters|Parameters#miscellaneous-parameters]]
@@ -1379,6 +1380,20 @@ The Sequence parameter is one of two ways to define parameters that need to be c
 Parameters specific to doing something related to a planetary body.
 
 <sub>[ [[Top|Parameters]] ] [ [[Planetary Parameters|Parameters#planetary-parameters]] ]</sub>
+
+#### PerformOrbitalSurvey
+The PerformOrbitalSurvey parameter is met when an orbital scan of the given body is performed.
+
+    PARAMETER
+    {
+        name = PerformOrbitalSurvey
+        type = PerformOrbitalSurvey
+
+        // This can be inherited from the the contract type if necessary
+        targetBody = Duna
+    }
+
+<sub>[ [[Top|Parameters]] ] [ [[Planetary Parameters|Parameters#planetary-parameters]] / [[PerformOrbitalSurvey|Parameters#performorbitalsurvey]] ]</sub>
 
 #### PlantFlag
 The PlantFlag parameter is met when planting a flag on the given body.
