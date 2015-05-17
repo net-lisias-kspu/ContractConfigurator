@@ -469,6 +469,7 @@ Checks the VesselType of the given vessel
         //   Rover
         //   Ship
         //   Station
+        //   SpaceObject
         vesselType = EVA
     }
 
