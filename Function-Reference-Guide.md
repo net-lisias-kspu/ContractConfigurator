@@ -9,11 +9,14 @@
   * [[KSP Classes|Function-Reference-Guide#ksp-classes]]
     * [[AvailablePart|Function-Reference-Guide#availablepart]]
     * [[CelestialBody|Function-Reference-Guide#celestialbody]]
-    * [[Biome|Function-Reference-Guide#biome]]
     * [[Kerbal|Function-Reference-Guide#kerbal]]
+    * [[Location|Function-Reference-Guide#location]]
     * [[Resource|Function-Reference-Guide#resource]]
     * [[Vessel|Function-Reference-Guide#vessel]]
     * [[Waypoint Class|Function-Reference-Guide#waypoint-class]]
+    * [[Science|Function-Reference-Guide#science]]
+      * [[Biome|Function-Reference-Guide#biome]]
+      * [[ScienceSubject|Function-Reference-Guide#sciencesubject]]
   * [[Contract Configurator Objects|Function-Reference-Guide#contract-configurator-objects]]
     * [[WaypointGenerator Behaviour|Function-Reference-Guide#waypointgenerator-behaviour]]
     * [[SpawnKerbal Behaviour|Function-Reference-Guide#spawnkerbal-behaviour]]
@@ -151,18 +154,6 @@ The CelestialBody class represents a planet, moon or star in KSP.
 
 <sub>[ [[Top|Function-Reference-Guide]] ] [ [[KSP Classes|Function-Reference-Guide#ksp-classes]] / [[CelestialBody|Function-Reference-Guide#celestialbody]] ]</sub>
 
-#### Biome
-
-The Biome class represents a biome for a planet or moon.
-
-**Methods**
-
-| Method Signature | Description |
-| :--- | :--- |
-
-
-<sub>[ [[Top|Function-Reference-Guide]] ] [ [[KSP Classes|Function-Reference-Guide#ksp-classes]] / [[Biome|Function-Reference-Guide#biome]] ]</sub>
-
 #### Kerbal
 
 The Kerbal class (ProtoCrewMember in actualituality) represents a Kerbal in the game.  This includes ship crew, Kerbals at the astronaut complex and applicants.
@@ -186,6 +177,19 @@ The Kerbal class (ProtoCrewMember in actualituality) represents a Kerbal in the 
 | `Kerbal Kerbal(string identifier)` | Returns the Kerbal for the given identifier. |
 
 <sub>[ [[Top|Function-Reference-Guide]] ] [ [[KSP Classes|Function-Reference-Guide#ksp-classes]] / [[Kerbal|Function-Reference-Guide#kerbal]] ]</sub>
+
+#### Location
+
+The Location class represents a set of latitude/longitude coordinates.
+
+**Methods**
+
+| Method Signature | Description |
+| :--- | :--- |
+| `double Latitude()` | The latitude of the given location. |
+| `double Longitude()` | The longitude of the given location. |
+
+<sub>[ [[Top|Function-Reference-Guide]] ] [ [[KSP Classes|Function-Reference-Guide#ksp-classes]] / [[Location|Function-Reference-Guide#location]] ]</sub>
 
 #### Resource
 
@@ -244,6 +248,57 @@ The Vessel class represents anything that is made up of parts (which includes sh
 | `double Altitude()` | The altitude of the waypoint. |
 
 <sub>[ [[Top|Function-Reference-Guide]] ] [ [[KSP Classes|Function-Reference-Guide#ksp-classes]] / [[Waypoint Class|Function-Reference-Guide#waypoint-class]] ]</sub>
+
+#### Science
+
+The following category contains science related classes.
+
+<sub>[ [[Top|Function-Reference-Guide]] ] [ [[KSP Classes|Function-Reference-Guide#ksp-classes]] / [[Science|Function-Reference-Guide#science]] ]</sub>
+
+##### Biome
+
+The Biome class represents a biome for a planet or moon.
+
+**Methods**
+
+| Method Signature | Description |
+| :--- | :--- |
+| `CelestialBody CelestialBody()` | The CelestialBody that the given biome belongs to. |
+| `bool IsKSC()` | Whether the given biome is one of the special KSC biomes. |
+| `List<Location> DifficultLocations()` | A list containing a number of "difficult" locations for the biome (eg. splashed down in the mountains). |
+
+<sub>[ [[Top|Function-Reference-Guide]] ] [ [[KSP Classes|Function-Reference-Guide#ksp-classes]] / [[Science|Function-Reference-Guide#science]] / [[Biome|Function-Reference-Guide#biome]] ]</sub>
+
+##### ScienceSubject
+
+The ScienceSubject class represents a subject for which science can be performed.  It is made up of a celestial body, an experiment, a situation (landed/splashed/flying low/etc.) and possibly a biome (if applicable for the given combination).
+
+**Methods**
+
+| Method Signature | Description |
+| :--- | :--- |
+| `ScienceExperiment Experiment()` | The experiment the given subject is applicable to. |
+| `ExperimentSituations Situation()` | The situation the given subject is applicable to. |
+| `CelestialBody CelestialBody()` | The celestial body the given subject is applicable to. |
+| `Biome Biome()` | The biome the given subject is applicable to (null if not applicable). |
+| `float CollectedScience()` | The amount of science collected for the given subject. |
+| `float RemainingScience()` | The amount of science remaining for the given subject. |
+| `float TotalScience()` | The total amount of science available for the given subject. |
+| `float NextScienceReportValue()` | The value of the next science report for the given subject. |
+
+**Global Functions**
+
+| Function Signature| Description |
+| :--- | :--- |
+| `List<ScienceSubject> AllScienceSubjects()` | The list of all currently available science subjects (except "difficult" ones). |
+| `List<ScienceSubject> AllScienceSubjectsByBody(List<CelestialBody>)` | Same as AllScienceSubjects, but filtered by CelestialBody. |
+| `List<ScienceSubject> AllScienceSubjectsByExperiment(List<ScienceExperiment>)` | Same as AllScienceSubjects, but filtered by ScienceExperiment. |
+| `List<ScienceSubject> AllScienceSubjectsByBiome(List<Biome>)` | Same as AllScienceSubjects, but filtered by Biome. |
+| `List<ScienceSubject> AllScienceSubjectsByBodyExperiment(List<CelestialBody>, List<ScienceExperiment>)` | Same as AllScienceSubjects, but filtered by CelestialBody and ScienceExperiment. |
+| `List<ScienceSubject> AllScienceSubjectsByBiomeExperiment(List<Biome>, List<ScienceExperiment>)` | Same as AllScienceSubjects, but filtered by Biome and ScienceExperiment. |
+| `List<ScienceSubject> DifficultScienceSubjects()` | The list of all "difficult" subjects (such as "splashed down in the mountains"). |
+
+<sub>[ [[Top|Function-Reference-Guide]] ] [ [[KSP Classes|Function-Reference-Guide#ksp-classes]] / [[Science|Function-Reference-Guide#science]] / [[ScienceSubject|Function-Reference-Guide#sciencesubject]] ]</sub>
 
 ### Contract Configurator Objects
 
