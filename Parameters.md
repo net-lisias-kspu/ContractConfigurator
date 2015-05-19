@@ -834,12 +834,16 @@ The CollectScience parameter is used to require a player to collect science unde
         experiment = evaReport
 
         // (Optional) The method for which the science must be recovered.
-        // Defaults to None if not specified.
+        // Defaults to None if not specified.  Note the Ideal recovery method
+        // is special - it will automatically change to either Recover or
+        // RecoverOrTransmit, depending whether the experiment can have all its
+        // science recovered through transmission.
         // Valid values are:
         //    None
         //    Recover
         //    Transmit
         //    RecoverOrTransmit
+        //    Ideal
         recoveryMethod = Recover
     }
 
