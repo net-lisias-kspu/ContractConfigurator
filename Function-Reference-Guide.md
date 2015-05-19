@@ -16,6 +16,7 @@
     * [[Waypoint Class|Function-Reference-Guide#waypoint-class]]
     * [[Science|Function-Reference-Guide#science]]
       * [[Biome|Function-Reference-Guide#biome]]
+      * [[ScienceExperiment|Function-Reference-Guide#scienceexperiment]]
       * [[ScienceSubject|Function-Reference-Guide#sciencesubject]]
   * [[Contract Configurator Objects|Function-Reference-Guide#contract-configurator-objects]]
     * [[WaypointGenerator Behaviour|Function-Reference-Guide#waypointgenerator-behaviour]]
@@ -85,7 +86,7 @@ List types are a list of another type (which can be any of the supported types).
 | `List<T> Concat(List<T> list)` | Adds the elements in `list` to the current list and returns it. |
 | `List<T> Add(T item)` | Adds the given item to the current list and returns it. |
 | `List<T> Exclude(T item)` | Removes the given item from the current list and returns it. |
-| `List<T> Exclude(List<T> item)` | Removes all the given item from the current list and returns it. |
+| `List<T> ExcludeAll(List<T> item)` | Removes all the given item from the current list and returns it. |
 
 <sub>[ [[Top|Function-Reference-Guide]] ] [ [[General Data Types|Function-Reference-Guide#general-data-types]] / [[List Types|Function-Reference-Guide#list-types]] ]</sub>
 
@@ -268,6 +269,18 @@ The Biome class represents a biome for a planet or moon.
 | `List<Location> DifficultLocations()` | A list containing a number of "difficult" locations for the biome (eg. splashed down in the mountains). |
 
 <sub>[ [[Top|Function-Reference-Guide]] ] [ [[KSP Classes|Function-Reference-Guide#ksp-classes]] / [[Science|Function-Reference-Guide#science]] / [[Biome|Function-Reference-Guide#biome]] ]</sub>
+
+##### ScienceExperiment
+
+The ScienceExperiment class represents a science experiment that can be run.
+
+**Methods**
+
+| Method Signature | Description |
+| :--- | :--- |
+| `List<ScienceExperiment> AllExperiments()` | Returns a list of all science experiments. |
+
+<sub>[ [[Top|Function-Reference-Guide]] ] [ [[KSP Classes|Function-Reference-Guide#ksp-classes]] / [[Science|Function-Reference-Guide#science]] / [[ScienceExperiment|Function-Reference-Guide#scienceexperiment]] ]</sub>
 
 ##### ScienceSubject
 
