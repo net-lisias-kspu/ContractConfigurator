@@ -267,6 +267,7 @@ The Biome class represents a biome for a planet or moon.
 | `CelestialBody CelestialBody()` | The CelestialBody that the given biome belongs to. |
 | `bool IsKSC()` | Whether the given biome is one of the special KSC biomes. |
 | `List<Location> DifficultLocations()` | A list containing a number of "difficult" locations for the biome (eg. splashed down in the mountains). |
+| `List<Biome> KSCBiomes()` | A list containing all the KSC biomes. |
 
 <sub>[ [[Top|Function-Reference-Guide]] ] [ [[KSP Classes|Function-Reference-Guide#ksp-classes]] / [[Science|Function-Reference-Guide#science]] / [[Biome|Function-Reference-Guide#biome]] ]</sub>
 
