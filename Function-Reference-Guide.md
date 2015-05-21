@@ -128,6 +128,7 @@ The CelestialBody class represents a planet, moon or star in KSP.
 
 | Method Signature | Description |
 | :--- | :--- |
+| `string Name()` | The name of the celestial body. |
 | `bool HasAtmosphere()` | Indicates whether the given body has an atmosphere. |
 | `bool HasOcean()` | Indicates whether the given body has an ocean. |
 | `bool HasSurface()` | Indicates whether the given body has a surface (ie. isn't a gas giant). |
