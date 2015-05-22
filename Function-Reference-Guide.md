@@ -265,6 +265,8 @@ The Biome class represents a biome for a planet or moon.
 
 | Method Signature | Description |
 | :--- | :--- |
+| `string Name()` | The short name of the biome (eg. Highlands). |
+| `string FullName()` | The full name of the biome (eg. Kerbin's Highlands). |
 | `CelestialBody CelestialBody()` | The CelestialBody that the given biome belongs to. |
 | `bool IsKSC()` | Whether the given biome is one of the special KSC biomes. |
 | `float RemainingScience()` | The remaining science in the biome across all subjects. |
