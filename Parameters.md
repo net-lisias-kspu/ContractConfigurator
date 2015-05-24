@@ -819,7 +819,8 @@ The CollectScience parameter is used to require a player to collect science unde
         location = Space
 
         // (Optional) Specifies the experiment to be run, can be any valid
-        // experiment in stock KSP or added by mods.  The stock list is:
+        // experiment in stock KSP or added by mods.  This can be specified
+        // multiple times.  The stock list is:
         //    asteroidSample
         //    crewReport
         //    evaReport
