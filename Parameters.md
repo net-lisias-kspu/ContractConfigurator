@@ -834,6 +834,14 @@ The CollectScience parameter is used to require a player to collect science unde
         //    atmosphereAnalysis
         experiment = evaReport
 
+        // (Optional) Specifies the subject that should be run.  This can be
+        // used in place of the biome/situation/experiment (it contains the
+        // same information).  It is recommened to only use this with
+        // expressions, rather than adding the subject manually.  This can be
+        // specified multiple times.
+        subject = evaReport@MunSrfLandedCraters
+
+
         // (Optional) The method for which the science must be recovered.
         // Defaults to None if not specified.  Note the Ideal recovery method
         // is special - it will automatically change to either Recover or
