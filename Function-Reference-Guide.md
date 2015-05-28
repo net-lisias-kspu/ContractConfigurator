@@ -56,6 +56,16 @@ The numeric data types include types such as `int`, `short`, `float` and `double
 
 <sub>[ [[Top|Function-Reference-Guide]] ] [ [[General Data Types|Function-Reference-Guide#general-data-types]] / [[Numeric Data Types|Function-Reference-Guide#numeric-data-types]] ]</sub>
 
+#### Strings
+
+**Methods**
+
+| Method Signature | Description |
+| :--- | :--- |
+| `string ToUpper()` | Uppercase version of the string. |
+| `string ToLower()` | Lowercase version of the string. |
+| `string FirstCap()` | Returns the string with the first letter capitalized. |
+
 #### Enumeration Types
 
 Enumerations include all types that have a list of values (typically, the full list of values is documented in the appropriate Contract Configurator parameter.  The type will vary based on the type of enumeration, but is generically referred to as `enum` in this section.
