@@ -11,6 +11,7 @@ The following behaviours are natively supported by ContractConfigurator:
 * [[SpawnKerbal|Behaviours#spawnkerbal]]
 * [[SpawnPassengers|Behaviours#spawnpassengers]]
 * [[SpawnVessel|Behaviours#spawnvessel]]
+* [[UnlockTech|Behaviours#unlocktech]]
 * [[WaypointGenerator|Behaviours#waypointgenerator]]
 
 ### ExperimentalPart
@@ -409,6 +410,21 @@ BEHAVIOUR
 }
 ```
 <sub>[ [[Top|Behaviours]] ] [ [[SpawnVessel|Behaviours#spawnvessel]] ]</sub>
+
+### UnlockTech
+Behaviour for unlocking technology
+
+    BEHAVIOUR
+    {
+        name = UnlockTech
+        type = UnlockTech
+
+        // The ID of the technology to unlock on completion of the contract
+        // this behaviour is tied to.  Can be specified multiple times.
+        techId = engineering101
+    }
+
+<sub>[ [[Top|Behaviours]] ] [ [[UnlockTech|Behaviours#unlocktech]] ]</sub>
 
 ### WaypointGenerator
 Behaviour for generating waypoints.
