@@ -4,6 +4,7 @@
 * [[Functions & Methods|Function-Reference-Guide#functions-&-methods]]
   * [[General Data Types|Function-Reference-Guide#general-data-types]]
     * [[Numeric Data Types|Function-Reference-Guide#numeric-data-types]]
+    * [[Strings|Function-Reference-Guide#strings]]
     * [[Enumeration Types|Function-Reference-Guide#enumeration-types]]
     * [[List Types|Function-Reference-Guide#list-types]]
   * [[KSP Classes|Function-Reference-Guide#ksp-classes]]
@@ -65,6 +66,8 @@ The numeric data types include types such as `int`, `short`, `float` and `double
 | `string ToUpper()` | Uppercase version of the string. |
 | `string ToLower()` | Lowercase version of the string. |
 | `string FirstCap()` | Returns the string with the first letter capitalized. |
+
+<sub>[ [[Top|Function-Reference-Guide]] ] [ [[General Data Types|Function-Reference-Guide#general-data-types]] / [[Strings|Function-Reference-Guide#strings]] ]</sub>
 
 #### Enumeration Types
 
@@ -297,6 +300,12 @@ The ScienceExperiment class represents a science experiment that can be run.
 **Methods**
 
 | Method Signature | Description |
+| :--- | :--- |
+| `string Name()` | Returns the name of the experiment. |
+
+**Global Functions**
+
+| Function Signature| Description |
 | :--- | :--- |
 | `List<ScienceExperiment> AllExperiments()` | Returns a list of all science experiments. |
 
