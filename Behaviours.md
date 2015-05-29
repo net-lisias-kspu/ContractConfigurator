@@ -460,7 +460,8 @@ Behaviour for generating waypoints.
             // assumed.  Otherwise, the path must be from GameData/
             icon = thermometer
 
-            // The altitude of the waypoint.
+            // The altitude above the terraint of the waypoint.  Note that an
+            // altitude of 0.0 means "on the ground".
             // Default: A random value between 0.0 and the atmosphere ceiling.
             // If there's no atmosphere, then always 0.0
             altitude = 0.0
