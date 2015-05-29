@@ -442,7 +442,7 @@ Behaviour for generating waypoints.
             name = Kerbal Space Center
 
             // (Optional) The parameter that must be completed before the
-            // waypoint becomes visible.  If not specific, the waypoint
+            // waypoint becomes visible.  If not specified, the waypoint
             // is always visible.
             parameter = SomeParameterName
 
