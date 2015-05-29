@@ -413,6 +413,7 @@ The duration data type is used anywhere that a contract parameter requests a dur
 | Function Signature| Description |
 | :--- | :--- |
 | `ContractPrestige Prestige()` | Gets the prestige value of the current contract (Trivial, Significant, Exceptional). |
+| `string RandomKerbalName(Gender)` | Generates a random Kerbal name for the given gender. |
 
 <sub>[ [[Top|Function-Reference-Guide]] ] [ [[Other|Function-Reference-Guide#other]] / [[Miscellaneous |Function-Reference-Guide#miscellaneous-]] ]</sub>
 
