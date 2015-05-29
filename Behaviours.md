@@ -202,6 +202,14 @@ Behaviour for spawning one or more Kerbals on land or in orbit.
             //    Unowned
             kerbalType = Unowned
 
+            // (Optional) Experience trait to assign to the Kerbal.  Note that
+            // this only applies for certain kerbalType values.  Valid values
+            // for stock KSP are:
+            //    Pilot
+            //    Engineer
+            //    Scientist
+            experienceTrait = Pilot
+
             // (Optional) Gender of the kerbal.  If not specified, will be
             // assigned a random gender.  Valid values are Male and Female.
             gender = Female
