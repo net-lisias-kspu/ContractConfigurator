@@ -203,6 +203,7 @@ The Location class represents a set of latitude/longitude coordinates.
 | :--- | :--- |
 | `double Latitude()` | The latitude of the given location. |
 | `double Longitude()` | The longitude of the given location. |
+| `Biome Biome()` | The biome at the given location. |
 
 <sub>[ [[Top|Function-Reference-Guide]] ] [ [[KSP Classes|Function-Reference-Guide#ksp-classes]] / [[Location|Function-Reference-Guide#location]] ]</sub>
 
@@ -261,6 +262,7 @@ The Vessel class represents anything that is made up of parts (which includes sh
 | `double Longitude()` | The longitude of the waypoint. |
 | `double Latitude()` | The latitude of the waypoint. |
 | `double Altitude()` | The altitude of the waypoint. |
+| `Location Location()` | The location of the waypoint as an object. |
 
 <sub>[ [[Top|Function-Reference-Guide]] ] [ [[KSP Classes|Function-Reference-Guide#ksp-classes]] / [[Waypoint Class|Function-Reference-Guide#waypoint-class]] ]</sub>
 
