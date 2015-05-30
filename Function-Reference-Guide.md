@@ -325,6 +325,7 @@ The ScienceSubject class represents a subject for which science can be performed
 | `ExperimentSituations Situation()` | The situation the given subject is applicable to. |
 | `CelestialBody CelestialBody()` | The celestial body the given subject is applicable to. |
 | `Biome Biome()` | The biome the given subject is applicable to (null if not applicable). |
+| `string SitutationString()` | The situation portion of the subject tile ("while high over Jool"). |
 | `float CollectedScience()` | The amount of science collected for the given subject. |
 | `float RemainingScience()` | The amount of science remaining for the given subject. |
 | `float TotalScience()` | The total amount of science available for the given subject. |
