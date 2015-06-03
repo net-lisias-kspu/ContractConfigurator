@@ -292,6 +292,7 @@ The Biome class represents a biome for a planet or moon.
 | Function Signature| Description |
 | :--- | :--- |
 | `List<Biome> KSCBiomes()` | A list containing all the KSC biomes. |
+| `List<Biome> MainKSCBiomes()` | A list containing all the "main" KSC biomes. |
 
 <sub>[ [[Top|Function-Reference-Guide]] ] [ [[KSP Classes|Function-Reference-Guide#ksp-classes]] / [[Science|Function-Reference-Guide#science]] / [[Biome|Function-Reference-Guide#biome]] ]</sub>
 
