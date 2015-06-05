@@ -134,11 +134,6 @@ Behaviour for generating orbits.
             //    SYNCHRONOUS
             //    TUNDRA
             type = KOLNIYA
-
-            // Difficulty multiplier - generally makes the orbits harder to
-            // reach if you increase it.
-            // Default = 1.0
-            difficulty = 10.0
         }
     }
 
