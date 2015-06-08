@@ -241,6 +241,12 @@ The Vessel class represents anything that is made up of parts (which includes sh
 | `int FreeDockingPorts()` | Gets the number of docking ports that are currently free. |
 | `double ResourceQuantity(Resource r)` | Gets the amount of the given resource that is on board. |
 | `double ResourceCapacity(Resource r)` | Gets the capacity for the given resource that is on board. |
+| `float Mass()` | The mass of the vessel in tons. |
+| `double XDimension()` | The approximate size (estimated) of the vessel along the x dimension. |
+| `double YDimension()` | The approximate size (estimated) of the vessel along the y dimension. |
+| `double ZDimension()` | The approximate size (estimated) of the vessel along the z dimension. |
+| `double SmallestDimension()` | The approximate size (estimated) of the vessel along its smallest dimension. |
+| `double LargestDimension()` | The approximate size (estimated) of the vessel along its largest dimension. |
 | `List<Kerbal> Crew()` | Gets a list containing all the crew on board the vessel. |
 
 **Global Functions**
