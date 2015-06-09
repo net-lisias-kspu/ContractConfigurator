@@ -247,6 +247,7 @@ The Vessel class represents anything that is made up of parts (which includes sh
 | `double ZDimension()` | The approximate size (estimated) of the vessel along the z dimension. |
 | `double SmallestDimension()` | The approximate size (estimated) of the vessel along its smallest dimension. |
 | `double LargestDimension()` | The approximate size (estimated) of the vessel along its largest dimension. |
+| `Location Location()` | The location of the vessel as an object. |
 | `List<Kerbal> Crew()` | Gets a list containing all the crew on board the vessel. |
 
 **Global Functions**
