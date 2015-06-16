@@ -39,6 +39,10 @@ Parameters all follow the same general structure - the following attributes are 
         // Parameter level notes that may be supplied.
         notes = These are the notes.
 
+        // The completedMessage is the message that is displayed when the
+        // parameter completes.
+        completedMessage = You have done the thing.
+
         // Optional parameters do not need to be completed (mainly for use with
         // composite parameters)
         optional = true
