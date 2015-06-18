@@ -391,6 +391,18 @@ BEHAVIOUR
         // If not supplied, defaults to the terrain altitude.
         alt = 67.6843734193826
 
+        // Specifies the heading of the vessel in degrees (0 = N, 90 = E...).
+        // Default = 0
+        heading = 180
+
+        // Specifies the roll of the vessel in degrees (positive = roll right).
+        // Default = 0
+        roll = 45
+
+        // Specifies the pitch of the vessel in degrees (positive is nose up)
+        // Default = 0.
+        pitch = 30
+
         // A CREW node indicates one or more crew members to add to the
         // vessel.  The CREW node may be specified multiple times.
         CREW
