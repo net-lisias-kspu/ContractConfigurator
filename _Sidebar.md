@@ -1,8 +1,9 @@
+[[Home]]
 
-How To
+**How To**
 * [[How To|How-To]]
 
-Configuration File Syntax
+**Configuration File Syntax**
 * [[Contract Group|Contract-Group]]
 * [[Contract Type|Contract-Type]]
  * [[Parameters|Parameters]]
@@ -10,11 +11,11 @@ Configuration File Syntax
  * [[Behaviours|Behaviours]]
 * [[Miscellaneous|Miscellaneous]]
 
-Expressions
+**Expressions**
 * [[Expression Syntax|Expression-Syntax]]
 * [[Function Reference Guide|Function-Reference-Guide]]
 
-Extending Contract Configurator
+**Extending Contract Configurator**
 * [[Extending|Extending]]
  * [[Extending Parameters|Extending#extending-parameters]]
  * [[Extending Requirements|Extending#extending-requirements]]
