@@ -398,6 +398,14 @@ CONTRACT_TYPE
 
 <sub>[ [[Top|Function-Reference-Guide]] ] [ [[Contract Configurator Objects|Function-Reference-Guide#contract-configurator-objects]] / [[SpawnKerbal Behaviour|Function-Reference-Guide#spawnkerbal-behaviour]] ]</sub>
 
+#### SpawnVessel Behaviour
+
+**Methods**
+
+| Method Signature | Description |
+| :--- | :--- |
+| `List<Vessel> Vessels()` | Retrieves a list of all vessels spawned by this behaviour. |
+
 ### Other
 
 All other classes fall into this section.
