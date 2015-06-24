@@ -18,7 +18,7 @@ Details on how to create new contracts, debugging contracts and more.
 * [[Data Types|Data-Types]]
 * [[Function Reference Guide|Function-Reference-Guide]]
 
-### Extending ContractConfigurator
+### Extending Contract Configurator
 * [[Extending|Extending]]
  * [[Extending Parameters|Extending#extending-parameters]]
  * [[Extending Requirements|Extending#extending-requirements]]
