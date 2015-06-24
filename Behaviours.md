@@ -134,6 +134,31 @@ Behaviour for generating orbits.
             //    SYNCHRONOUS
             //    TUNDRA
             type = KOLNIYA
+
+            // A factor between 0.0 and 1.0 which indicates how high the orbit
+            // can be.  A value of 1.0 indicates the orbit may go as far out as
+            // the body's sphere of influence, whereas a value of 0.0
+            // represents the minimum altitude possible.
+            // Default = 0.8
+            altitudeFactor = 0.8
+
+            // A factor between 0.0 which indicates the maximum possible
+            // inclination for the generated orbit.  A value of 0.0 means the
+            // orbit must always be equatorial.  A value of 1.0 means the orbit
+            // can be anywhere between 0 and 90 degrees inclined.  This is
+            // ignored for EQUATORIAL, POLAR and STATIONARY.
+            // Default = 0.8
+            inclinationFactor = 0.8
+
+            // The eccentricity of the orbit.  Ignored for all but SYNCHRONOUS.
+            // Default = 0.0
+            eccentricity = 0.0
+
+            // The amount the player is allowed to deviate from this orbit in
+            // the ReachSpecificOrbit parameter.  Lower numbers are more
+            // difficult.
+            // Default = 10.0
+            deviationWindow = 10.0
         }
     }
 
