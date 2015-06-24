@@ -1,3 +1,4 @@
+**Contract Configurator**
 * [[Home]]
 * [[How To|How-To]]
 
