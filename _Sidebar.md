@@ -5,6 +5,7 @@
 **Configuration File Syntax**
 * [[Contract Group|Contract-Group]]
 * [[Contract Type|Contract-Type]]
+ * [[Data Node|Data-Node]]
  * [[Parameters|Parameters]]
  * [[Requirements|Requirements]]
  * [[Behaviours|Behaviours]]
