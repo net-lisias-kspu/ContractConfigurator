@@ -38,6 +38,7 @@ sub CleanFileName($)
 {
     my $fname = shift;
     $fname =~ s/^\d+-//g;
+    $fname =~ s/\/$//g;
     return $fname;
 }
 
@@ -93,7 +94,16 @@ foreach $rootDir (@ARGV)
 {
     my $outfile = ">$rootDir/_Sidebar.md";
     open $outfh, $outfile;
-    HandleDir($rootDir, $rootDir);
+    HandleDir($rootDir, CleanFileName($rootDir));
+
+    print $outfh "\n---\n\n";
+    open IFILE, "<_Sidebar.md";
+    while (my $line = <IFILE>)
+    {
+        print $outfh $line;
+    }
+    close IFILE;
+
     close $outfh;
 }
 
