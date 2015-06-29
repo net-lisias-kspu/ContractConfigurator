@@ -35,6 +35,12 @@ foreach my $file (@ARGV)
     }
     close IFILE;
 
+    # Nothing to do
+    if (scalar(@lines) == 0)
+    {
+        next;
+    }
+
     if ($countAtLevel <= 1)
     {
         $minCount += 1;

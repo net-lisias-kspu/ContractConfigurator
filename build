@@ -3,3 +3,4 @@
 # lazy filter for Home.md
 perl toc.pl ?????*.md
 perl breadcrumbs.pl ?????*.md
+perl sidebar.pl ?-*
