@@ -3,6 +3,9 @@
 use strict;
 use File::Copy qw(move);
 
+my $rootDir;
+my $outfh;
+
 sub MakeName($)
 {
     my $name = shift;
@@ -31,14 +34,14 @@ sub MakeTag($)
     return $tag;
 }
 
-sub cleanFileName($)
+sub CleanFileName($)
 {
     my $fname = shift;
     $fname =~ s/^\d+-//g;
     return $fname;
 }
 
-sub handleDir($$)
+sub HandleDir($$)
 {
     my $dir = shift;
     my $prefix = shift;
@@ -48,11 +51,11 @@ sub handleDir($$)
     my $spaces = ($count-1) * 4;
     if ($count == 1)
     {
-        print "**$prefixes[-1]**\n"
+        print $outfh "**$prefixes[-1]**\n"
     }
     else
     {
-        print ((' ' x ($spaces-4)), "* ", $prefixes[-1], "\n");
+        print ($outfh (' ' x ($spaces-4)), "* ", $prefixes[-1], "\n");
     }
     
     my $dh;
@@ -73,20 +76,27 @@ sub handleDir($$)
         }
         elsif (-d "$dir/$file")
         {
-            handleDir("$dir/$file", "$prefix$;" . cleanFileName($file));
+            HandleDir("$dir/$file", "$prefix$;" . CleanFileName($file));
         }
         elsif ($file =~ /\.md$/)
         {
             my $name = MakeName($file);
             my $tag = MakeTag($file);
 
-            print((' ' x $spaces) . "* [[$name|$tag]]\n");
+            print($outfh (' ' x $spaces) . "* [[$name|$tag]]\n");
         }
     }
     closedir $dh; 
 }
 
-handleDir(".", "Parameters");
+foreach $rootDir (@ARGV)
+{
+    my $outfile = ">$rootDir/_Sidebar.md";
+    open $outfh, $outfile;
+    HandleDir($rootDir, $rootDir);
+    close $outfh;
+}
+
 exit 1;
 
 sub stuff {
