@@ -1,4 +1,3 @@
-#### Duration
 The Duration parameter sets up a timer that starts when all sibling parameters are completed.  Once the timer expires, the parameter is completed.
 
     PARAMETER
@@ -25,5 +24,3 @@ The Duration parameter sets up a timer that starts when all sibling parameters a
         // Default = Wait time over
         //completionText =
     }
-
-<sub>[ [[Top|Parameters]] ] [ [[Miscellaneous Parameters|Parameters#miscellaneous-parameters]] / [[Duration|Parameters#duration]] ]</sub>

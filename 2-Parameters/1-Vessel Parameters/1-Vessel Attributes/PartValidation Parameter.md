@@ -1,4 +1,3 @@
-##### PartValidation
 Parameter to provide validation over a vessel's parts.  The PartValidation module can be used in two different modes - simple and extende.  In the simple mode, simply provide the parameters to filter on, as in the following example:
 
     PARAMETER

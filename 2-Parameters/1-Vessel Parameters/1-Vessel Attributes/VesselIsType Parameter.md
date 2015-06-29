@@ -1,4 +1,3 @@
-##### VesselIsType
 Checks the VesselType of the given vessel
 
     PARAMETER

@@ -1,4 +1,3 @@
-##### HasCrewCapacity
 Parameter to require that the Vessel in question must have a certain crew capacity.
 
     PARAMETER

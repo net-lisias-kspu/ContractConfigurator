@@ -1,4 +1,3 @@
-##### VesselMass
 The VesselMass parameter requires a player's vessel to be within the specified mass range.
 
     PARAMETER
