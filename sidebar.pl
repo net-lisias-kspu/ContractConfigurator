@@ -52,7 +52,7 @@ sub HandleDir($$)
     my $spaces = ($count-1) * 4;
     if ($count == 1)
     {
-        print $outfh "**$prefixes[-1]**\n"
+        print $outfh "**[[$prefixes[-1]]]**\n"
     }
     else
     {
