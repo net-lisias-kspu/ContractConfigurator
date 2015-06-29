@@ -108,7 +108,7 @@ Identifiers are barewords (combinations of letters, numbers and underscores) tha
 | boolean | The true and false constants are available for use | `true`, `false` | `true` |
 | Enumerations | The constants for a given enumeration can be specified.  Most attributes that use an enumeration list the valid values in the appropriate [[Parameter|Parameters]], [[Requirement|Requirements]] or [[Behaviour|Behaviours]] page.  The valid values are dependent on the enumeration.  For example, the situation enumeration includes `FLYING`, `ORBITING` and others. | Enumeration-dependent | `FLYING` |
 | CelestialBody | The name of any planet loaded in the game.  Note that this can include planets added by mods that add planets.  Also, mods that change/rename planets will have different constants.  For example, in RSS the specifying the value `Kerbin` will result in an error (it will not get translated to `Earth`) | Any valid celestial body | `Kerbin`, `Mun`, `Duna` |
-| Vessel | The identifier for any vessel saved via a [[VesselParameterGroup|Parameters#vesselparametergroup]] parameter. | Dependent on contract configurator | `CommSat I` ([RemoteTech Contract Pack](https://github.com/jrossignol/ContractPack-RemoteTech)) |
+| Vessel | The identifier for any vessel saved via a [[VesselParameterGroup|VesselParameterGroup Parameter]] parameter. | Dependent on contract configurator | `CommSat I` ([RemoteTech Contract Pack](https://github.com/jrossignol/ContractPack-RemoteTech)) |
 
 <sub>[ [[Top|Expression-Syntax]] ] [ [[Identifiers|Expression-Syntax#identifiers]] ]</sub>
 
