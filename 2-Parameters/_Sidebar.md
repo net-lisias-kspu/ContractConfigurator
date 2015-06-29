@@ -1,4 +1,4 @@
-**Parameters**
+**[[Parameters]]**
 * Vessel Parameters
     * [[VesselParameterGroup|VesselParameterGroup-Parameter]]
     * Vessel Attributes
@@ -48,9 +48,9 @@
     * [[SCANsatCoverage|SCANsatCoverage-Parameter]]
 * Miscellaneous Parameters
     * [[Duration|Duration-Parameter]]
-    * [[PartTest|PartTest]]
-    * [[TargetDestroyed|TargetDestroyed]]
-    * [[Timer|Timer]]
+    * [[PartTest|PartTest-Parameter]]
+    * [[TargetDestroyed|TargetDestroyed-Parameter]]
+    * [[Timer|Timer-Parameter]]
 
 ---
 
