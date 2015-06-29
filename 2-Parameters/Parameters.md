@@ -88,4 +88,4 @@ All parameters can have child requirements.  Child requirements control whether 
         }
     }
 
-The naviation bar on the right contains all the parameters natively supported by ContractConfigurator.
+The navigation bar on the right contains all the parameters natively supported by ContractConfigurator.

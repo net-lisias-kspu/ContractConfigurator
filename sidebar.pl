@@ -71,7 +71,7 @@ sub HandleDir($$)
 
     foreach my $file (@sorted_dir)
     {
-        if ($file eq '.' || $file eq '..' || $file =~ /^_/)
+        if ($file eq '.' || $file eq '..' || $file =~ /^_/ || $file eq "$prefixes[0].md")
         {
             next;
         }
