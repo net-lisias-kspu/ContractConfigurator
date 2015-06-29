@@ -1,4 +1,4 @@
-The ReachSpecificOrbit parameter is used with the [[OrbitGenerator|Behaviours#orbitgenerator]] behaviour to indicate that a generated orbit must be reached by a vessel.
+The ReachSpecificOrbit parameter is used with the [[OrbitGenerator|OrbitGenerator-Behaviour]] behaviour to indicate that a generated orbit must be reached by a vessel.
 
     PARAMETER
     {

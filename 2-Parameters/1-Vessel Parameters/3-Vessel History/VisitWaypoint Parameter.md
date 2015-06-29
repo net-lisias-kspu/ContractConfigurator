@@ -1,4 +1,4 @@
-The VisitWaypoint parameter is used with the [[WaypointGenerator|Behaviours#waypointgenerator]] behaviour to indicate that a generated waypoint must be visited by a vessel.
+The VisitWaypoint parameter is used with the [[WaypointGenerator|WaypointGenerator-Behaviour]] behaviour to indicate that a generated waypoint must be visited by a vessel.
 
     PARAMETER
     {
