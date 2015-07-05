@@ -54,8 +54,7 @@ Parameters all follow the same general structure - the following attributes are 
         // Default = false
         completeInSequence = true
 
-        // Causes children of the parameter to be hidden (only works for
-        // parameters with "automatic" children such as ReachState).
+        // Causes children of the parameter to be hidden.
         // Use with caution - as hiding the child parameters may in some
         // cases make it more difficult for players to know what to do.
         hideChildren = true
