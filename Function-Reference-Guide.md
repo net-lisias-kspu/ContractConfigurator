@@ -22,7 +22,6 @@
   * [[Contract Configurator Objects|Function-Reference-Guide#contract-configurator-objects]]
     * [[WaypointGenerator Behaviour|Function-Reference-Guide#waypointgenerator-behaviour]]
     * [[SpawnKerbal Behaviour|Function-Reference-Guide#spawnkerbal-behaviour]]
-    * [[SpawnVessel Behaviour|Function-Reference-Guide#spawnvessel-behaviour]]
   * [[Other|Function-Reference-Guide#other]]
     * [[Duration|Function-Reference-Guide#duration]]
     * [[Miscellaneous |Function-Reference-Guide#miscellaneous-]]
@@ -398,16 +397,6 @@ CONTRACT_TYPE
 | `List<Kerbal> Kerbals()` | Retrieves a list of all Kerbals spawned by this behaviour. |
 
 <sub>[ [[Top|Function-Reference-Guide]] ] [ [[Contract Configurator Objects|Function-Reference-Guide#contract-configurator-objects]] / [[SpawnKerbal Behaviour|Function-Reference-Guide#spawnkerbal-behaviour]] ]</sub>
-
-#### SpawnVessel Behaviour
-
-**Methods**
-
-| Method Signature | Description |
-| :--- | :--- |
-| `List<Vessel> Vessels()` | Retrieves a list of all vessels spawned by this behaviour. |
-
-<sub>[ [[Top|Function-Reference-Guide]] ] [ [[Contract Configurator Objects|Function-Reference-Guide#contract-configurator-objects]] / [[SpawnVessel Behaviour|Function-Reference-Guide#spawnvessel-behaviour]] ]</sub>
 
 ### Other
 
