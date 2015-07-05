@@ -2,8 +2,8 @@ Behaviour for spawning one or more Vessels on land or in orbit.  Note that one n
 
 * Be careful what parts are used in the construction of the vessel.  Using a part from an add-on effectively means that the contract will be dependent on the player having that add-on.
 * Be careful of other add-ons that are installed that add part modules to parts you are using.  A couple specific examples:
-** The mod MechJeb and Engineer for all adds the MechJeb/KER PartModule to all probe cores and command modules.  This will make your mod incompatible for players not using MechJeb/KER.
-** RemoteTech replaces the stock antenna PartModule with its own.  Unfortunately, this is a two way street - building a craft without RemoteTech means that the resulting craft won't have the correct antenna modules if the player is using RemoteTech.
+ * The mod MechJeb and Engineer for all adds the MechJeb/KER PartModule to all probe cores and command modules.  This will make your mod incompatible for players not using MechJeb/KER.
+ * RemoteTech replaces the stock antenna PartModule with its own.  Unfortunately, this is a two way street - building a craft without RemoteTech means that the resulting craft won't have the correct antenna modules if the player is using RemoteTech.
 ```
 BEHAVIOUR
 {
