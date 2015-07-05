@@ -1,11 +1,11 @@
 **[[Behaviours]]**
+* [[ChangeVesselOwnership|ChangeVesselOwnership-Behaviour]]
 * [[ExperimentalPart|ExperimentalPart-Behaviour]]
 * [[Expression|Expression-Behaviour]]
 * [[Message|Message-Behaviour]]
 * [[OrbitGenerator|OrbitGenerator-Behaviour]]
 * [[SpawnKerbal|SpawnKerbal-Behaviour]]
 * [[SpawnPassengers|SpawnPassengers-Behaviour]]
-* [[SpawnVessel|SpawnVessel-Behaviour]]
 * [[UnlockTech|UnlockTech-Behaviour]]
 * [[WaypointGenerator|WaypointGenerator-Behaviour]]
 
