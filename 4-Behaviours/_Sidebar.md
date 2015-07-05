@@ -5,7 +5,6 @@
 * [[OrbitGenerator|OrbitGenerator-Behaviour]]
 * [[SpawnKerbal|SpawnKerbal-Behaviour]]
 * [[SpawnPassengers|SpawnPassengers-Behaviour]]
-* [[SpawnVessel|SpawnVessel-Behaviour]]
 * [[UnlockTech|UnlockTech-Behaviour]]
 * [[WaypointGenerator|WaypointGenerator-Behaviour]]
 
