@@ -66,6 +66,7 @@ foreach my $file (@ARGV)
     # Write new TOC
     my $identifier = $file;
     $identifier =~ s/\.md$//;
+    $identifier =~ s/^(.*\/)+//;
     foreach my $line (@lines)
     {
         # How many spaces to prepend

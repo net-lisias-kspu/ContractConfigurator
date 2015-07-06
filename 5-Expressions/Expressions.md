@@ -1,18 +1,18 @@
 ## Table of Contents
 
-* [[Table of Contents|5-Expressions/Expressions#table-of-contents]]
-* [[Overview|5-Expressions/Expressions#overview]]
-* [[Syntax|5-Expressions/Expressions#syntax]]
-  * [[Strings|5-Expressions/Expressions#strings]]
-  * [[Operations|5-Expressions/Expressions#operations]]
-  * [[Operator Precedence|5-Expressions/Expressions#operator-precedence]]
-* [[Identifiers|5-Expressions/Expressions#identifiers]]
-* [[Special Identifiers|5-Expressions/Expressions#special-identifiers]]
-* [[Functions/Methods|5-Expressions/Expressions#functionsmethods]]
-  * [[Functions|5-Expressions/Expressions#functions]]
-  * [[Methods|5-Expressions/Expressions#methods]]
-* [[Lists of values|5-Expressions/Expressions#lists-of-values]]
-  * [[The Where() Method|5-Expressions/Expressions#the-where-method]]
+* [[Table of Contents|Expressions#table-of-contents]]
+* [[Overview|Expressions#overview]]
+* [[Syntax|Expressions#syntax]]
+  * [[Strings|Expressions#strings]]
+  * [[Operations|Expressions#operations]]
+  * [[Operator Precedence|Expressions#operator-precedence]]
+* [[Identifiers|Expressions#identifiers]]
+* [[Special Identifiers|Expressions#special-identifiers]]
+* [[Functions/Methods|Expressions#functionsmethods]]
+  * [[Functions|Expressions#functions]]
+  * [[Methods|Expressions#methods]]
+* [[Lists of values|Expressions#lists-of-values]]
+  * [[The Where() Method|Expressions#the-where-method]]
 
 ## Overview
 Contract Configurator has its own rich expression language.  This can be used to customize the behaviour of contracts in a number of different ways, and is the main mechanism to create "random" contracts (to create contracts like the stock part test or satellite contracts).
