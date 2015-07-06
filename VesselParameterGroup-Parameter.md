@@ -11,6 +11,7 @@ The VesselParameterGroup parameter is used to group several child vessel paramet
         // any combination of those.
         //
         // <Duration>, optional
+        //
         duration = 10d 2h
 
         // Define the name of the craft that will complete this parameter group.
@@ -20,6 +21,7 @@ The VesselParameterGroup parameter is used to group several child vessel paramet
         // contracts.
         //
         // <string>, optional
+        //
         define = Vessel Key
 
         // Lock this parameter so that it can only be accomplished by the
@@ -30,6 +32,7 @@ The VesselParameterGroup parameter is used to group several child vessel paramet
         // to be available to complete the parameter.
         //
         // <VesselIdentifier>, optional, list
+        //
         vessel = Vessel Key
         vessel = Some other vessel
 
@@ -37,6 +40,7 @@ The VesselParameterGroup parameter is used to group several child vessel paramet
         //
         // <string>, optional
         // Default = Vessel: Any; Duration: <duration>
+        //
         //title =
 
         // Examples of typical child parameters used with VesselParameterGroup
