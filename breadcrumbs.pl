@@ -38,6 +38,7 @@ foreach my $file (@ARGV)
 {
     $identifier = $file;
     $identifier =~ s/\.md$//;
+    $identifier =~ s/^(.*\/)+//;
 
     my %data;
     my $currentCount = 0;
