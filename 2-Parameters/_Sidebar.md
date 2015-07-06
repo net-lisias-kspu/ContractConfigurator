@@ -21,6 +21,7 @@
         * [[VesselNotDestroyed|VesselNotDestroyed-Parameter]]
     * Vessel History
         * [[CollectScience|CollectScience-Parameter]]
+        * [[NewVessel|NewVessel-Parameter]]
         * [[VisitWaypoint|VisitWaypoint-Parameter]]
     * RemoteTech
         * [[CelestialBodyCoverage|CelestialBodyCoverage-Parameter]]
