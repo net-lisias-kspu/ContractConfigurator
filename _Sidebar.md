@@ -12,7 +12,7 @@
 * [[Miscellaneous|Miscellaneous]]
 
 **Expressions**
-* [[Expression|Expression]]
+* [[Expressions|Expressions]]
 * [[Data Types|Data-Types]]
 * [[Function Reference Guide|Function-Reference-Guide]]
 
