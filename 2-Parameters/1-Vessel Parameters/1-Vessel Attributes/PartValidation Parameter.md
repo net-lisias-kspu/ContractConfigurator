@@ -1,4 +1,4 @@
-Parameter to provide validation over a vessel's parts.  The PartValidation module can be used in two different modes - simple and extende.  In the simple mode, simply provide the parameters to filter on, as in the following example:
+Parameter to provide validation over a vessel's parts.  The PartValidation module can be used in two different modes - simple and extended.  In the simple mode, simply provide the parameters to filter on, as in the following example:
 
 <pre>
 PARAMETER
@@ -68,13 +68,13 @@ PARAMETER
 }
 </pre>
 
-For the extended mode, parameters may be group into three types of nodes FILTER, VALIDATE_ALL and NONE.  The blocks are applied in order.  Typically, the FILTER blocks should be placed first.
+For the extended mode, parameters may be grouped into found types of nodes: FILTER, VALIDATE_ALL, VALIDATE and NONE.  The blocks are applied in order.  Typically, the FILTER blocks should be placed first.
 * FILTER - This will filter the list of parts down to the ones that match the given criteria.
 * VALIDATE_ALL - All remaining parts (after filtering) must match the given criteria.
 * NONE - None of the remaining parts (after filtering) should match the given criteria.
 * VALIDATE - Some of the remaining parts must match (only supports part, minCount and maxCount)
 
-The blocks can contain any of the attributes listed in the simple model, **except** minCount, maxCount and title.
+The FILTER, VALIDATE_ALL and NONE blocks can contain any of the attributes listed in the simple model, **except** minCount, maxCount and title.  THe VALIDATE block can only contain part, minCount and maxCount.
 
 *Examples:*
 
