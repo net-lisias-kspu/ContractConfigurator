@@ -15,7 +15,7 @@ PARAMETER
 
     // Minimum and maximum quantity of the resource required.
     //
-    // Type:      int
+    // Type:      double
     // Required:  No (defaulted)
     // Default:   0.01 (minQuantity)
     //            double.MaxValue (maxQuantity)
