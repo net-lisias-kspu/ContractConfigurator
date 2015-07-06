@@ -2,5 +2,5 @@
 
 # lazy filter for Home.md
 perl toc.pl ?????*.md 5-Expressions/Expressions.md
-perl breadcrumbs.pl ?????*.md
+perl breadcrumbs.pl ?????*.md 5-Expressions/Expressions.md
 perl sidebar.pl ?-*
