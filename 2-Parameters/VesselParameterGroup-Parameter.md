@@ -1,7 +1,7 @@
 #### VesselParameterGroup
 The VesselParameterGroup parameter is used to group several child vessel parameters together.  It can also be used to specify a duration for which the parameters must be true, and will track across non-active vessels.  Note that when used without a VesselParameterGroup parent parameter, vessel parameters will only track the current active vessel.
 
-```java
+<pre>
 PARAMETER
 {
     name = VesselParameterGroup
@@ -11,8 +11,8 @@ PARAMETER
     // values in years (y), days (d), hours (h), minutes (m), seconds (s) or
     // any combination of those.
     //
-    // <Duration>
-    // Optional
+    // Type:      Duration
+    // Required:  No
     //
     duration = 10d 2h
 
@@ -22,8 +22,8 @@ PARAMETER
     // Vessel <=> key association is persistent, and can be used in future
     // contracts.
     //
-    // <string>
-    // Optional
+    // Type:      string
+    // Required:  No
     //
     define = Vessel Key
 
@@ -34,18 +34,17 @@ PARAMETER
     // attribute can be specified multiple times to allow multiple vessel
     // to be available to complete the parameter.
     //
-    // <VesselIdentifier>
-    // Optional
-    // Multiple allowed
+    // Type:      VesselIdentifier
+    // Required:  No (Multiples allowed)
     //
     vessel = Vessel Key
     vessel = Some other vessel
 
     // The title text to display.
     //
-    // <string>
-    // Optional
-    // Default: Vessel: Any; Duration: <duration>
+    // Type:      string
+    // Required:  No (Defaulted)
+    // Default:   Vessel: Any; Duration: <duration>
     //
     //title =
 
