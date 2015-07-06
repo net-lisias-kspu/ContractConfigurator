@@ -35,7 +35,7 @@ PARAMETER
     // to be available to complete the parameter.
     //
     // Type:      VesselIdentifier
-    // Required:  No (Multiples allowed)
+    // Required:  No (multiples allowed)
     //
     vessel = Vessel Key
     vessel = Some other vessel
@@ -43,7 +43,7 @@ PARAMETER
     // The title text to display.
     //
     // Type:      string
-    // Required:  No (Defaulted)
+    // Required:  No (defaulted)
     // Default:   Vessel: Any; Duration: <duration>
     //
     //title =
