@@ -1,5 +1,5 @@
 **[[Expressions]]**
-* [[Data-Types|Data-Types]]
+* [[Data Types|Data-Types]]
 * General Types
     * [[Enumeration|Enumeration-Type]]
     * [[List|List-Type]]
@@ -18,12 +18,12 @@
         * [[ScienceExperiment|ScienceExperiment-Type]]
         * [[ScienceSubject|ScienceSubject-Type]]
 * Contract Configurator Objects
-    * [[SpawnKerbal-Behaviour|SpawnKerbal-Behaviour-Type]]
-    * [[WaypointGenerator-Behaviour|WaypointGenerator-Behaviour-Type]]
+    * [[SpawnKerbal Behaviour|SpawnKerbal-Behaviour-Type]]
+    * [[WaypointGenerator Behaviour|WaypointGenerator-Behaviour-Type]]
 * Other
     * [[Duration|Duration-Type]]
 * Global Functions
-    * [[Global-Functions|Global-Functions]]
+    * [[Global Functions|Global-Functions]]
 
 ---
 
