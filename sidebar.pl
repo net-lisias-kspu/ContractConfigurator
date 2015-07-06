@@ -13,9 +13,9 @@ sub MakeName($)
     # Get the tag
     my $tag = $name;
     $tag =~ s/\.md$//g;
-    $tag =~ s/ *Parameter$//g;
-    $tag =~ s/ *Requirement$//g;
-    $tag =~ s/ *Behaviour$//g;
+    $tag =~ s/[ -]*Parameter$//g;
+    $tag =~ s/[ -]*Requirement$//g;
+    $tag =~ s/[ -]*Behaviour$//g;
     $tag =~ s/[\/\(\)]//g;
 
     return $tag;
