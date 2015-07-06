@@ -45,7 +45,7 @@ String fields can be populated without any special encoding and they will be rea
 DATA
 {
     type = List<string>
-    theListOfStrings = [ "The first string", "The second string", "Another string" ]
+    theListOfStrings = [ "First string", "Second string", "Another string" ]
 }
 ```
 Failing to use double quotes in the example above causes the above to be treated as a one element list with a single string comprising of the full text given in the variable.
