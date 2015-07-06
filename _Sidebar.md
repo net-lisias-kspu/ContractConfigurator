@@ -12,7 +12,8 @@
 * [[Miscellaneous|Miscellaneous]]
 
 **Expressions**
-* [[Expression Syntax|Expression-Syntax]]
+* [[Expression|Expression]]
+* [[Data Types|Data-Types]]
 * [[Function Reference Guide|Function-Reference-Guide]]
 
 **Extending Contract Configurator**
