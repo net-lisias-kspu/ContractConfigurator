@@ -11,12 +11,8 @@ Details on how to create new contracts, debugging contracts and more.
  * [[Parameters|Parameters]]
  * [[Requirements|Requirements]]
  * [[Behaviours|Behaviours]]
-* [[Miscellaneous|Miscellaneous]]
-
-### Expressions
 * [[Expressions|Expressions]]
-* [[Data Types|Data-Types]]
-* [[Function Reference Guide|Function-Reference-Guide]]
+* [[Miscellaneous|Miscellaneous]]
 
 ### Extending Contract Configurator
 * [[Extending|Extending]]
