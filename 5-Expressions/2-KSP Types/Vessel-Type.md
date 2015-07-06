@@ -1,4 +1,4 @@
-The Vessel class represents anything that is made up of parts (which includes ships, satellites, stations, bases, and asteroids).
+The Vessel class represents anything that is made up of parts (which includes ships, satellites, stations, bases, EVA kerbals, and asteroids).
 
 **Methods**
 

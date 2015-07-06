@@ -1,4 +1,4 @@
-The string data type represents all textual strings.
+The string data type represents all textual strings.  This data type is parsed differently than other data types - the expression syntax is limited to a "search and replace" of special identifiers and function calls.
 
 **Methods**
 

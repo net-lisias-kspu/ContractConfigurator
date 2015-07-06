@@ -1,4 +1,6 @@
-The duration data type is used anywhere that a contract parameter requests a duration in the form "1d 2h 5s".
+The duration data type is used anywhere that a contract parameter requests a duration of time.  Can be specified with units of y, d, h, m, s.
+
+Example: `2d 4h` is 2 days and 4 hours.
 
 **Local Functions**
 

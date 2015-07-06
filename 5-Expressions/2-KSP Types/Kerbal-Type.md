@@ -1,4 +1,4 @@
-The Kerbal class (ProtoCrewMember in actualituality) represents a Kerbal in the game.  This includes ship crew, Kerbals at the astronaut complex and applicants.
+The Kerbal class (ProtoCrewMember in actuality) represents a Kerbal in the game.  This includes ship crew, Kerbals at the astronaut complex and applicants.
 
 **Methods**
 

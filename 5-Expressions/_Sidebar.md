@@ -1,5 +1,4 @@
 **[[Expressions]]**
-* [[Data Types|Data-Types]]
 * General Types
     * [[Boolean|Boolean-Type]]
     * [[Enumeration|Enumeration-Type]]
