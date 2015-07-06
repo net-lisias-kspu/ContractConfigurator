@@ -11,7 +11,7 @@ PARAMETER
     // values in years (y), days (d), hours (h), minutes (m), seconds (s) or
     // any combination of those.
     //
-    // Type:      <a href="Function-Reference-Guide#duration">Duration</a>
+    // Type:      <a href="Duration-Type">Duration</a>
     // Required:  No
     //
     duration = 10d 2h
