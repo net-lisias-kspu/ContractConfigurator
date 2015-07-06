@@ -10,7 +10,8 @@ The VesselParameterGroup parameter is used to group several child vessel paramet
         // values in years (y), days (d), hours (h), minutes (m), seconds (s) or
         // any combination of those.
         //
-        // <Duration>, optional
+        // <Duration>
+        // Optional
         //
         duration = 10d 2h
 
@@ -20,7 +21,8 @@ The VesselParameterGroup parameter is used to group several child vessel paramet
         // Vessel <=> key association is persistent, and can be used in future
         // contracts.
         //
-        // <string>, optional
+        // <string>
+        // Optional
         //
         define = Vessel Key
 
@@ -31,15 +33,18 @@ The VesselParameterGroup parameter is used to group several child vessel paramet
         // attribute can be specified multiple times to allow multiple vessel
         // to be available to complete the parameter.
         //
-        // <VesselIdentifier>, optional, list
+        // <VesselIdentifier>
+        // Optional
+        // Multiple allowed
         //
         vessel = Vessel Key
         vessel = Some other vessel
 
         // The title text to display.
         //
-        // <string>, optional
-        // Default = Vessel: Any; Duration: <duration>
+        // <string>
+        // Optional
+        // Default: Vessel: Any; Duration: <duration>
         //
         //title =
 
