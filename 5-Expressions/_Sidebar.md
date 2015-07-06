@@ -1,6 +1,5 @@
 **[[Expressions]]**
 * [[Data-Types|Data-Types]]
-* [[Function-Reference-Guide|Function-Reference-Guide]]
 * General Types
     * [[Enumeration|Enumeration-Type]]
     * [[List|List-Type]]
