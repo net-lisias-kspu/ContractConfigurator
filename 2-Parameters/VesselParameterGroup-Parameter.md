@@ -1,5 +1,5 @@
 #### VesselParameterGroup
-The VesselParameterGroup parameter is used to group several child vessel parameters together.  It can also be used to specify a duration for which the parameters must be true, and will track across non-active vessels.  Note that when not used with a VesselParameterGroup parent parameter, the other vessel parameters on this page will only work with the active vessel.
+The VesselParameterGroup parameter is used to group several child vessel parameters together.  It can also be used to specify a duration for which the parameters must be true, and will track across non-active vessels.  Note that when used without a VesselParameterGroup parent parameter, vessel parameters will only track the current active vessel.
 
 ```java
 PARAMETER
