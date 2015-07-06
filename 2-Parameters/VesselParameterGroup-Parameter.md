@@ -11,7 +11,7 @@ PARAMETER
     // values in years (y), days (d), hours (h), minutes (m), seconds (s) or
     // any combination of those.
     //
-    // Type:      Duration
+    // Type:      <a href="Function-Reference-Guide#duration">Duration</a>
     // Required:  No
     //
     duration = 10d 2h
@@ -34,7 +34,7 @@ PARAMETER
     // attribute can be specified multiple times to allow multiple vessel
     // to be available to complete the parameter.
     //
-    // Type:      VesselIdentifier
+    // Type:      <a href="Function-Reference-Guide#vesselidentifier">VesselIdentifier</a>
     // Required:  No (Multiples allowed)
     //
     vessel = Vessel Key
