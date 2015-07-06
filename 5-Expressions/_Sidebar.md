@@ -13,7 +13,7 @@
     * [[Resource|Resource-Type]]
     * [[Vessel|Vessel-Type]]
     * [[Waypoint|Waypoint-Type]]
-    * Science-Types
+    * Science Types
         * [[Biome|Biome-Type]]
         * [[ScienceExperiment|ScienceExperiment-Type]]
         * [[ScienceSubject|ScienceSubject-Type]]
