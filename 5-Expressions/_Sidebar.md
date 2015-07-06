@@ -1,5 +1,5 @@
 **[[Expressions]]**
-* [[Expression-Syntax|Expression-Syntax]]
+* [[Data-Types|Data-Types]]
 * [[Function-Reference-Guide|Function-Reference-Guide]]
 
 ---

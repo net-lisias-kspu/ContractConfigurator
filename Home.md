@@ -14,7 +14,7 @@ Details on how to create new contracts, debugging contracts and more.
 * [[Miscellaneous|Miscellaneous]]
 
 ### Expressions
-* [[Expression Syntax|Expression-Syntax]]
+* [[Expressions|Expressions]]
 * [[Data Types|Data-Types]]
 * [[Function Reference Guide|Function-Reference-Guide]]
 
