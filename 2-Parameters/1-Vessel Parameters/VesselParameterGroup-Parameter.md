@@ -34,7 +34,7 @@ PARAMETER
     // attribute can be specified multiple times to allow multiple vessel
     // to be available to complete the parameter.
     //
-    // Type:      <a href="Function-Reference-Guide#vesselidentifier">VesselIdentifier</a>
+    // Type:      VesselIdentifier
     // Required:  No (Multiples allowed)
     //
     vessel = Vessel Key
