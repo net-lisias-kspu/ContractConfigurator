@@ -1,20 +1,33 @@
 Parameter to indicate that the Vessel in question must have a certain quantity of a certain resource (or must have fewer than a certain number).
 
-    PARAMETER
-    {
-        name = HasResource
-        type = HasResource
+<pre>
+PARAMETER
+{
+    name = HasResource
+    type = HasResource
 
-        // The name of the resource to check for
-        resource = LiquidFuel
+    // The name of the resource to check for.
+    //
+    // Type:      Resource
+    // Required:  Yes
+    //
+    resource = LiquidFuel
 
-        // Minimum quantity, default = 0.01
-        minQuantity = 10.0
+    // Minimum and maximum quantity of the resource required.
+    //
+    // Type:      int
+    // Required:  No (defaulted)
+    // Default:   0.01 (minQuantity)
+    //            double.MaxValue (maxQuantity)
+    //
+    minQuantity = 10.0
+    maxQuantity = 1000.0
 
-        // Maximum quantity, default = double.MAXVALUE
-        maxQuantity = 1000.0
-
-        // Text to use for the parameter
-        // Default Resource: <resource>: <quantity_description>
-        //title =
-    }
+    // Text to use for the parameter
+    //
+    // Type:      string
+    // Required:  No (defaulted)
+    // Default:   Resource: <resource>: <quantity_description>
+    //title =
+}
+</pre>

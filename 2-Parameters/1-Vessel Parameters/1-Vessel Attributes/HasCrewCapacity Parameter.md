@@ -1,16 +1,26 @@
 Parameter to require that the Vessel in question must have a certain crew capacity.
 
-    PARAMETER
-    {
-        name = HasCrewCapacity
-        type = HasCrewCapacity
+<pre>
+PARAMETER
+{
+    name = HasCrewCapacity
+    type = HasCrewCapacity
 
-        // Minimum/maximum capacity required.  Defaults are 1 and int.MaxValue,
-        // respectively
-        minCapacity = 1
-        maxCapacity = 10
+    // Minimum and maximum crew capacity required.
+    //
+    // Type:      int
+    // Required:  No
+    // Default:   0 (minCapacity)
+    //            int.MaxValue (maxCapacity)
+    //
+    minCapacity = 1
+    maxCapacity = 10
 
-        // Text to use for the parameter.
-        // Default: Crew Capacity: Between <min> and <max>
-        //title =
-    }
+    // Text to use for the parameter
+    //
+    // Type:      string
+    // Required:  No (defaulted)
+    // Default:   Crew Capacity: Between <min> and <max>
+    //title =
+}
+</pre>

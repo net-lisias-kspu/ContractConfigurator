@@ -20,7 +20,7 @@ PARAMETER
     // Minimum and maximum experience level required.
     //
     // Type:      int
-    // Required:  No
+    // Required:  No (defaulted)
     // Default:   0 (minExperience)
     //            5 (maxExperience)
     //
@@ -30,7 +30,7 @@ PARAMETER
     // Minimum and maximum count of matching crew required.
     //
     // Type:      int
-    // Required:  No
+    // Required:  No (defaulted)
     // Default:   0 (minCrew)
     //            int.MaxValue (maxCrew)
     //
