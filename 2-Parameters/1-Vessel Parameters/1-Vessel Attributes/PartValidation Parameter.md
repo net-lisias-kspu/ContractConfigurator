@@ -6,14 +6,17 @@ PARAMETER
     name = PartValidation
     type = PartValidation
 
-    // The name of the part to check for.
+    // The name of the part to check for.  If multiple are specified, will
+    // match on <strong>ANY</strong> of the parts listed.
     //
     // Type:      AvailablePart
-    // Required:  No
+    // Required:  No (multiples allowed)
     //
     part = mk1pod
+    part = mk1-2pod
 
-    // PartModule(s) to check for.
+    // PartModule(s) to check for.  If multiple are specified, requires that
+    // the given parts have <strong>ALL</strong> the partModules listed.
     //
     // Type:      string
     // Required:  No (multiples allowed)
