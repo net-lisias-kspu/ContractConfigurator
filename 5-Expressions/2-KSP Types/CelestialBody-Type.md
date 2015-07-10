@@ -18,6 +18,7 @@ The CelestialBody class represents a planet, moon or star in KSP.
 | `float AtmosphereAltitude()` | Returns the altitude of planet's atmosphere (in meters). |
 | `double SphereOfInfluence()` | Returns the radius of the planet's sphere of influence (in meters). |
 | `List<Biome> Biomes()` | Returns all the biomes for the given celestial body. |
+| `double RemoteTechCoverage()` | (RemoteTech only) Indicates the commsat coverage percentage of the given body. |
 
 **Global Functions**
 
