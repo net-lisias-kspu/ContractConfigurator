@@ -1,4 +1,4 @@
-Behaviour for generating orbits.
+Behaviour for generating orbits.  Note that this only generates the orbits, and is not responsible for creating the contract parameter to ask a player to hit that orbit.  That needs to be done with the [[ReachSpecificOrbit parameter|ReachSpecificOrbit-Parameter]].
 
     BEHAVIOUR
     {
