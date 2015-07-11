@@ -15,6 +15,7 @@ The CelestialBody class represents a planet, moon or star in KSP.
 | `CelestialBody Parent()` | Returns the body's parent body (ex. The Mun's parent body is Kerbin). |
 | `List<CelestialBody> Children()` | Returns the body's child bodies (ex. Kerbin's child bodies are the Mun and Minmus). |
 | `double Radius()` | Returns the planet's radius (in meters). |
+| `double SemiMajorAxis()` | Returns the semi-major axis of the planet (in meters). |
 | `float AtmosphereAltitude()` | Returns the altitude of planet's atmosphere (in meters). |
 | `double SphereOfInfluence()` | Returns the radius of the planet's sphere of influence (in meters). |
 | `List<Biome> Biomes()` | Returns all the biomes for the given celestial body. |
