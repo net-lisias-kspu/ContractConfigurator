@@ -82,6 +82,7 @@ PARAMETER
     //     PRELAUNCH
     //     SPLASHED
     //     SUB_ORBITAL
+    //
     situation = FLYING
 
     // Text to use for the parameter

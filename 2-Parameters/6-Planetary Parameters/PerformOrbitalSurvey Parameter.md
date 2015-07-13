@@ -1,10 +1,24 @@
 The PerformOrbitalSurvey parameter is met when an orbital scan of the given body is performed.
 
-    PARAMETER
-    {
-        name = PerformOrbitalSurvey
-        type = PerformOrbitalSurvey
+<pre>
+PARAMETER
+{
+    name = PerformOrbitalSurvey
+    type = PerformOrbitalSurvey
 
-        // This can be inherited from the the contract type if necessary
-        targetBody = Duna
-    }
+    // Target body, defaulted from the contract if not supplied.
+    //
+    // Type:      CelestialBody
+    // Required:  No (defaulted)
+    //
+    targetBody = Kerbin
+
+    // Text to use for the parameter
+    //
+    // Type:      string
+    // Required:  No (defaulted)
+    // Default:   Perform an orbital resource survey of &lt;targetBody&gt;
+    //
+    //title =
+}
+</pre>

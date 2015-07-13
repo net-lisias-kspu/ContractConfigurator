@@ -1,10 +1,24 @@
 The PlantFlag parameter is met when planting a flag on the given body.
 
-    PARAMETER
-    {
-        name = PlantFlag
-        type = PlantFlag
+<pre>
+PARAMETER
+{
+    name = PlantFlag
+    type = PlantFlag
 
-        // This can be inherited from the the contract type if necessary
-        targetBody = Duna
-    }
+    // Target body, defaulted from the contract if not supplied.
+    //
+    // Type:      CelestialBody
+    // Required:  No (defaulted)
+    //
+    targetBody = Kerbin
+
+    // Text to use for the parameter
+    //
+    // Type:      string
+    // Required:  No (defaulted)
+    // Default:   Plant a flag on &lt;targetBody&gt;
+    //
+    //title =
+}
+</pre>

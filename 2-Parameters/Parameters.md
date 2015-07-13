@@ -4,61 +4,97 @@ The PARAMETER node defines a contract parameter - what needs to be accomplished 
 
 Parameters all follow the same general structure - the following attributes are available for all parameters:
 
-    PARAMETER
-    {
-        // The parameter name is not used, but should be provided to allow for
-        // the possibility of other mods modifying contracts via ModuleManager.
-        name = Param1
+<pre>
+PARAMETER
+{
+    // The parameter name is not used, but should be provided to allow for
+    // the possibility of other mods modifying contracts via ModuleManager.
+    name = Param1
 
-        // The type defines the type of Parameter.  See below for all supported
-        // ContractConfigurator parameters.
-        type = ReachState
+    // The type defines the type of Parameter.  See below for all supported
+    // ContractConfigurator parameters.
+    type = ReachState
 
-        // Target celestial body.  Defaults to the targetBody of the contract.
-        // For most  parameters this only has an impact on the reward/failure
-        // amounts.
-        targetBody = Kerbin
+    // Target body, defaulted from the contract if not supplied.  Many
+    // parameters use this in some way, but even if not explicitly used it will
+    // add multipliers for the reward amounts below.
+    //
+    // Type:      CelestialBody
+    // Required:  No (defaulted)
+    //
+    targetBody = Kerbin
 
-        // Parameter rewards
-        rewardScience = 100.0
-        rewardReputation = 20.0
-        rewardFunds = 100000.0
-        failureReputation = 10.0
-        failureFunds = 10000.0
+    // The various parameter-level rewards and penalties.
+    //
+    // Type:      float
+    // Required:  No
+    //
+    rewardScience = 100.0
+    rewardReputation = 20.0
+    rewardFunds = 100000.0
+    failureReputation = 10.0
+    failureFunds = 10000.0
 
-        // When the parameter's state changes to completed or failed, disable
-        // the parameter.  Use a value of false if you are trying to make
-        // something behave like the Squad part test contract.  Example, if the
-        // parameter says you need to be between 1000 and 2000 meters altitude
-        // then setting this to false will make the parameter go back to
-        // incomplete if you enter and leave the altitude window.
-        //
-        // Default = <differs per parameter, see detailed documentation below>
-        disableOnStateChange = true
+    // When the parameter's state changes to completed or failed, disable
+    // the parameter.  Use a value of false if you are trying to make
+    // something behave like the Squad part test contract.  Example, if the
+    // parameter says you need to be between 1000 and 2000 meters altitude
+    // then setting this to false will make the parameter go back to
+    // incomplete if you enter and leave the altitude window.
+    //
+    // Type:      bool
+    // Required:  No
+    // Default:   (differs per parameter)
+    //
+    disableOnStateChange = true
 
-        // Parameter level notes that may be supplied.
-        notes = These are the notes.
+    // Parameter level notes that may be supplied.
+    //
+    // Type:      string
+    // Required:  No
+    //
+    notes = These are the notes.
 
-        // The completedMessage is the message that is displayed when the
-        // parameter completes.
-        completedMessage = You have done the thing.
+    // The completedMessage is the message that is displayed when the
+    // parameter completes.
+    //
+    // Type:      string
+    // Required:  No
+    //
+    completedMessage = You have done the thing.
 
-        // Optional parameters do not need to be completed (mainly for use with
-        // composite parameters)
-        optional = true
+    // Optional parameters do not need to be completed.  This can be used to
+    // set up bonus rewards for doing extra things beyond the main goal of the
+    // contract.
+    //
+    // Type:      bool
+    // Required:  No (defaulted)
+    // Default:   false
+    //
+    optional = true
 
-        // Indicates that this parameter needs to be complete "in sequence".
-        // All parameters that are before this parameter in the list (and at
-        // the same level) must be completed before this parameter is allowed
-        // to complete.
-        // Default = false
-        completeInSequence = true
+    // Indicates that this parameter needs to be complete "in sequence".
+    // All parameters that are before this parameter in the list (and at
+    // the same level) must be completed before this parameter is allowed
+    // to complete.
+    //
+    // Type:      bool
+    // Required:  No (defaulted)
+    // Default:   false
+    //
+    completeInSequence = true
 
-        // Causes children of the parameter to be hidden.
-        // Use with caution - as hiding the child parameters may in some
-        // cases make it more difficult for players to know what to do.
-        hideChildren = true
-    }
+    // Causes children of the parameter to be hidden.
+    // Use with caution - as hiding the child parameters may in some
+    // cases make it more difficult for players to know what to do.
+    //
+    // Type:      bool
+    // Required:  No (defaulted)
+    // Default:   false
+    //
+    hideChildren = true
+}
+</pre>
 
 Some parameters can have child parameters.  This is only supported for certain parameters, and the details of what the child parameters do is documented on those parameters:
 
