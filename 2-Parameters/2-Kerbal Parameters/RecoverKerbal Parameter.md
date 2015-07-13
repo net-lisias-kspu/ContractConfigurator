@@ -1,19 +1,34 @@
-#### RecoverKerbal
 The RecoverKerbal parameter is met when the named Kerbal is "recovered" (ie. goes back in to the available list at the astronaut complex).  This is from the Squad "rescue" contracts.
 
-    PARAMETER
-    {
-        name = RecoverKerbal
-        type = RecoverKerbal
+<pre>
+PARAMETER
+{
+    name = RecoverKerbal
+    type = RecoverKerbal
 
-        // The Kerbal to be recovered
-        kerbal = Jebediah Kermin
+    // The Kerbal(s) to be recovered.
+    //
+    // Type:      Kerbal
+    // Required:  No (multiples allowed)
+    //
+    kerbal = Jebediah Kermin
 
-        // Alternate method of identifying the Kerbal - zero based index of the
-        // entry in a SpawnKerbal or SpawnVessel BEHAVIOUR node.
-        //index = 0
+    // Alternate method of identifying the Kerbal - zero based index of the
+    // entry in a <a href="SpawnKerbal-Behaviour">SpawnKerbal</a> or <a href="SpawnVessel-Behaviour">SpawnVessel</a> BEHAVIOUR node.
+    //
+    // Type:      int
+    // Required:  No (defaulted)
+    // Default:   0
+    //
+    //index = 0
 
-        // Text to use for the parameter
-        // Default = <kerbal>: Recovered
-        //title =
-    }
+    // Text to use for the parameter
+    // Default = 
+    //
+    // Type:      string
+    // Required:  No (defaulted)
+    // Default:   <kerbal>: Recovered
+    //
+    //title =
+}
+</pre>

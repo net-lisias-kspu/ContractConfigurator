@@ -1,30 +1,58 @@
 Parameter to require a certain number/type of hired astronauts.
+<pre>
+PARAMETER
+{
+    name = HasAstronaut
+    type = HasAstronaut
 
-    PARAMETER
-    {
-        name = HasAstronaut
-        type = HasAstronaut
+    // The type of trait required.
+    //
+    // Type:      string
+    // Required:  No
+    // Values (for stock KSP):
+    //     Pilot
+    //     Engineer
+    //     Scientist
+    trait = Pilot
 
-        // (Optional) The type of trait required.  Valid values are:
-        //    Pilot
-        //    Engineer
-        //    Scientist
-        trait = Pilot
+    // Minimum experience level.
+    //
+    // Type:      int
+    // Required:  No (defaulted)
+    // Default:   0
+    //
+    minExperience = 1
 
-        // (Optional) Minimum and maximum experience level.  Default values are
-        // 0 and 5 (for min/max).
-        minExperience = 1
-        maxExperience = 2
+    // Maximum experience level.
+    //
+    // Type:      int
+    // Required:  No (defaulted)
+    // Default:   5
+    //
+    maxExperience = 2
 
-        // (Optional) Minimum and maximum count.  Default values are 1 and
-        // int.MaxValue (for min/max).
-        minCount = 1
-        maxCount = 10
+    // Minimum count of astronauts that must match the attributes above.
+    //
+    // Type:      int
+    // Required:  No (defaulted)
+    // Default:   1
+    //
+    minCount = 1
 
-        // Text to use for the parameter
-        // Default (maxCrew = int.MAXVALUE) = Astronauts: At least <minCrew>
-        // Default (minCrew = 0) = Astronauts: At most <maxCrew>
-        // Default (minCrew = maxCrew) = Astronauts: Exactly <minCrew>
-        // Default (else) = Astronauts: Between <minCrew> and <maxCrew>
-        //title =
-    }
+    // Maximum count of astronauts that must match the attributes above.
+    //
+    // Type:      int
+    // Required:  No (defaulted)
+    // Default:   int.MaxValue
+    //
+    maxCount = 10
+
+    // Text to use for the parameter
+    //
+    // Type:      string
+    // Required:  No (defaulted)
+    // Default:   (differs based on scenario)
+    // 
+    //title =
+}
+</pre>
