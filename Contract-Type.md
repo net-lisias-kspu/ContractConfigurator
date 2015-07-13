@@ -139,16 +139,15 @@ _Sample CONTRACT_TYPE (can be downloaded [here](https://raw.githubusercontent.co
         // all supported parameters.
         PARAMETER
         {
-            name = AltitudeRecord1
+            name = ReachState1
 
             // The type defines the type of Parameter.  See the Parameters page
-            // for a list of all supported Contract Configurator parameters
-            type = AltitudeRecord
+            // for a list of all supported Contract Configurator parameters.
+            type = ReachState
 
-            // This is a parameter specific to the AltituteRecord parameter
-            // type.  Each parameter type can have include its own custom
-            // fields.
-            altitude = 45000
+            // This is a parameter specific to the ReachState parameter type.
+            // Each parameter type can have include its own custom fields.
+            minAltitude = 45000
         }
 
         // The PARAMETER node defines a contract requirement - a prerequisite
