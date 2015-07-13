@@ -6,7 +6,7 @@ PARAMETER
     name = VisitWaypoint
     type = VisitWaypoint
 
-    // The index (0-based) in the WaypointGenerator behaviour of the waypoint we
+    // The index (0-based) in the <a href="WaypointGenerator-Behaviour">WaypointGenerator</a> behaviour of the waypoint we
     // wish to reference.
     //
     // Type:      int
