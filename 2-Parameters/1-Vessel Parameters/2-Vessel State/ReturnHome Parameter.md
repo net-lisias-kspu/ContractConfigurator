@@ -1,11 +1,17 @@
 The ReturnHome parameter requires a player to return home (ideally after meeting their other contract objectives).
 
-    PARAMETER
-    {
-        name = ReturnHome
-        type = ReturnHome
+<pre>
+PARAMETER
+{
+    name = ReturnHome
+    type = ReturnHome
 
-        // Text for the contract parameter.
-        // Default = Return home.
-        //title =
-    }
+    // Text for the contract parameter.
+    //
+    // Type:      string
+    // Required:  No (defaulted)
+    // Default:   Return home.
+    //
+    //title =
+}
+</pre>

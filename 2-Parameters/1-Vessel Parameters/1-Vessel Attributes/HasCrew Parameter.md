@@ -11,9 +11,9 @@ PARAMETER
     // Type:      string
     // Required:  No
     // Values (for stock KSP):
-    //    Pilot
-    //    Engineer
-    //    Scientist
+    //     Pilot
+    //     Engineer
+    //     Scientist
     //
     trait = Pilot
 

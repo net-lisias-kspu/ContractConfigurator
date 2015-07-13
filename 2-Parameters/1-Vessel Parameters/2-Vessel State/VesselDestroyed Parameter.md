@@ -1,16 +1,26 @@
 The VesselDestroyed parameter requires that the player destroys their vessel!  Khaaaaan!
 
-    PARAMETER
-    {
-        name = VesselDestroyed
-        type = VesselDestroyed
+<pre>
+PARAMETER
+{
+    name = VesselDestroyed
+    type = VesselDestroyed
 
-        // (Optional) Set to true if this vessel must be destroyed by impacting into
-        // terrain (and not another vessel or a building).
-        // Default = false
-        mustImpactTerrain = true
+    // Set to true if this vessel must be destroyed by impacting into terrain
+    // (and not another vessel or a building).
+    //
+    // Type:      bool
+    // Required:  No (defaulted)
+    // Default:   false
+    //
+    mustImpactTerrain = true
 
-        // Text for the contract parameter.
-        // Default varies depending on the situation.
-        //title =
-    }
+    // Text for the contract parameter.
+    //
+    // Type:      string
+    // Required:  No (defaulted)
+    // Default:   Vessel Destroyed
+    //
+    //title =
+}
+</pre>
