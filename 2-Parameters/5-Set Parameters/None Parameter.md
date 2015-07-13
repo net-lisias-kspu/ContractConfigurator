@@ -16,8 +16,8 @@ PARAMETER
     // Default:   Prevent ALL of the following
     //title =
 
-    // Generally need completeInSequence set to true for this see the <a href=Parameters>Parameters</a>
-    // page for more details.
+    // Generally need completeInSequence set to true for the None parameter.
+    // See the <a href=Parameters>Parameters</a> page for more details.
     completeInSequence = true
 
     PARAMETER
