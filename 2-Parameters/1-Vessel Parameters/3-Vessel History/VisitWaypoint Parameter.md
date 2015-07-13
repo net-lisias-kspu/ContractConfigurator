@@ -1,21 +1,44 @@
 The VisitWaypoint parameter is used with the [[WaypointGenerator|WaypointGenerator-Behaviour]] behaviour to indicate that a generated waypoint must be visited by a vessel.
 
-    PARAMETER
-    {
-        name = VisitWaypoint
-        type = VisitWaypoint
+<pre>
+PARAMETER
+{
+    name = VisitWaypoint
+    type = VisitWaypoint
 
-        // Index of the waypoint in the WaypointGenerator behaviour.
-        // Default = 0
-        index = 0
+    // The index (0-based) in the WaypointGenerator behaviour of the waypoint we
+    // wish to reference.
+    //
+    // Type:      int
+    // Required:  No (defaulted)
+    // Default:   0
+    //
+    index = 0
 
-        // Distance tolerance to be considered at the waypoint.
-        // Default = 500.0 (if on the surface).
-        //         = <waypoint altitude> / 5.0 (if in the air).
-        distance = 500.0
+    // Distance tolerance to be considered at the waypoint.
+    //
+    // Type:      double
+    // Required:  No (defaulted)
+    // Default:   500.0 (if on the surface).
+    //            <waypoint altitude> / 5.0 (if not on the surface).
+    //
+    distance = 500.0
 
-        
-        // Text to use for the parameter
-        // Default = Location: <waypoint>
-        //title =
-    }
+    // Whether the waypoint should get automatically hidden after completing
+    // the contract objective.
+    //
+    // Type:      bool
+    // Required:  No (defaulted)
+    // Default:   true
+    //
+    hideOnCompletion = true
+    
+    // Text to use for the parameter
+    //
+    // Type:      string
+    // Required:  No (defaulted)
+    // Default:   Location: <waypoint>
+    // 
+    //title =
+}
+</pre>
