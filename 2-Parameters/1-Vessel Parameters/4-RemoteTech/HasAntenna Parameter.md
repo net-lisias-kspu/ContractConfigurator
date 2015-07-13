@@ -69,7 +69,7 @@ PARAMETER:NEEDS[RemoteTech]
     //
     // Type:      string
     // Required:  No (defaulted)
-    // Default:   Active vessel antenna range: <range>
+    // Default:   Active vessel antenna range: &lt;range&gt;
     //
     //title =
 }

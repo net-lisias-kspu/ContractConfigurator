@@ -129,7 +129,7 @@ PARAMETER
     //
     // Type:      string
     // Required:  No (defaulted)
-    // Default:   Orbit: <orbit details>
+    // Default:   Orbit: &lt;orbit details&gt;
     //
     //title =
 }

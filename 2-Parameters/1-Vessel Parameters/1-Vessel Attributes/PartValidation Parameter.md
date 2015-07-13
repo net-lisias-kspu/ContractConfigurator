@@ -61,11 +61,11 @@ PARAMETER
     //
     // Type:      string
     // Required:  No (defaulted)
-    // Default (maxCount: 0) = Part: <attributes>: None
-    // Default (maxCount: int.MAXVALUE) = Part: <attributes>: At least <minCount>
-    // Default (minCount: 0) = Part: <attributes>: At most <maxCount>
-    // Default (minCount: maxCount ) = Part: <attributes>: Exactly <minCount>
-    // Default (else): Part: <attributes>: Between <minCount> and <maxCount>
+    // Default (maxCount: 0) = Part: &lt;attributes&gt;: None
+    // Default (maxCount: int.MAXVALUE) = Part: &lt;attributes&gt;: At least &lt;minCount&gt;
+    // Default (minCount: 0) = Part: &lt;attributes&gt;: At most &lt;maxCount&gt;
+    // Default (minCount: maxCount ) = Part: &lt;attributes&gt;: Exactly &lt;minCount&gt;
+    // Default (else): Part: &lt;attributes&gt;: Between &lt;minCount&gt; and &lt;maxCount&gt;
     //
     //title =
 }

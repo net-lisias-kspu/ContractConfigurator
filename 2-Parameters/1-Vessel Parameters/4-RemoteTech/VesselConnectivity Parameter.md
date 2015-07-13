@@ -25,7 +25,7 @@ PARAMETER:NEEDS[RemoteTech]
     //
     // Type:      string
     // Required:  No (defaulted)
-    // Default:   Direct connection to: <vessel>
+    // Default:   Direct connection to: &lt;vessel&gt;
     //
     //title =
 }

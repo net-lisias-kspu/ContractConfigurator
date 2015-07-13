@@ -52,10 +52,10 @@ PARAMETER
     // Type:      string
     // Required:  No (defaulted)
     // Default (maxCrew = 0): Crew: Unmanned
-    // Default (maxCrew: int.MAXVALUE) = Crew: At least <minCrew> Kerbals
-    // Default (minCrew: 0) = Crew: At most <maxCrew> Kerbals
-    // Default (minCrew: maxCrew) = Crew: Exactly <minCrew> Kerbals
-    // Default (else): Crew: Between <minCrew> and <maxCrew> Kerbals
+    // Default (maxCrew: int.MAXVALUE) = Crew: At least &lt;minCrew&gt; Kerbals
+    // Default (minCrew: 0) = Crew: At most &lt;maxCrew&gt; Kerbals
+    // Default (minCrew: maxCrew) = Crew: Exactly &lt;minCrew&gt; Kerbals
+    // Default (else): Crew: Between &lt;minCrew&gt; and &lt;maxCrew&gt; Kerbals
     //
     //title =
 }

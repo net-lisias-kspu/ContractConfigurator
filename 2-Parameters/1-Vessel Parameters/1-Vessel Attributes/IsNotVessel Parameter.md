@@ -19,7 +19,7 @@ PARAMETER
     //
     // Type:      string
     // Required:  No (defaulted)
-    // Default:   Vessel: Not <vessel>
+    // Default:   Vessel: Not &lt;vessel&gt;
     //
     //title =
 }

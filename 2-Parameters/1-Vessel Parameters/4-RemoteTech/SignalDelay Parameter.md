@@ -26,7 +26,7 @@ PARAMETER:NEEDS[RemoteTech]
     //
     // Type:      string
     // Required:  No (defaulted)
-    // Default:   Signal delay: Between <min> and <max>.
+    // Default:   Signal delay: Between &lt;min&gt; and &lt;max&gt;.
     //
     //title =
 }

@@ -27,7 +27,7 @@ PARAMETER
     //
     // Type:      string
     // Required:  No (defaulted)
-    // Default:   Resource: <resource>: <quantity_description>
+    // Default:   Resource: &lt;resource&gt;: &lt;quantity_description&gt;
     //title =
 }
 </pre>

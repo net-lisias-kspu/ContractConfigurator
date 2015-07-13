@@ -44,7 +44,7 @@ PARAMETER
     //
     // Type:      string
     // Required:  No (defaulted)
-    // Default:   Vessel: Any; Duration: <duration>
+    // Default:   Vessel: Any; Duration: &lt;duration&gt;
     //
     //title =
 

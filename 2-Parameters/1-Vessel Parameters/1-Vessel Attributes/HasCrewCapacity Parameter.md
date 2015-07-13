@@ -20,7 +20,7 @@ PARAMETER
     //
     // Type:      string
     // Required:  No (defaulted)
-    // Default:   Crew Capacity: Between <min> and <max>
+    // Default:   Crew Capacity: Between &lt;min&gt; and &lt;max&gt;
     //title =
 }
 </pre>

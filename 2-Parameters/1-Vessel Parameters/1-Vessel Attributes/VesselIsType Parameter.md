@@ -26,7 +26,7 @@ PARAMETER
     //
     // Type:      string
     // Required:  No (defaulted)
-    // Default:   Vessel type: <vesselType>
+    // Default:   Vessel type: &lt;vesselType&gt;
     //title =
 }
 </pre>

@@ -27,7 +27,7 @@ PARAMETER
     //
     // Type:      string
     // Required:  No (defaulted)
-    // Default:   <kerbal>: Recovered
+    // Default:   &lt;kerbal&gt;: Recovered
     //
     //title =
 }

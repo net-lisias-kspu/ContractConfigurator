@@ -20,7 +20,7 @@ PARAMETER
     //
     // Type:      string
     // Required:  No (defaulted)
-    // Default:   Vessel mass: <mass>
+    // Default:   Vessel mass: &lt;mass&gt;
     //title =
 }
 </pre>

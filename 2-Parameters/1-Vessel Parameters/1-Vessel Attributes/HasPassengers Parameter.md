@@ -23,7 +23,7 @@ PARAMETER
     index = 0
 
     // Text to use for the parameter
-    // Default Passengers loaded : <count>
+    // Default Passengers loaded : &lt;count&gt;
     //title =
 }
 </pre>

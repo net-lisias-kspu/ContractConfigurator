@@ -37,7 +37,7 @@ PARAMETER
     //
     // Type:      string
     // Required:  No (defaulted)
-    // Default:   Location: <waypoint>
+    // Default:   Location: &lt;waypoint&gt;
     // 
     //title =
 }

@@ -88,7 +88,7 @@ PARAMETER
     //
     // Type:      string
     // Required:  No (defaulted)
-    // Default:   Vessel State: <state details>
+    // Default:   Vessel State: &lt;state details&gt;
     //
     //title =
 }

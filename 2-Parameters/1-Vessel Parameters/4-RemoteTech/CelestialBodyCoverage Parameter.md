@@ -25,7 +25,7 @@ PARAMETER:NEEDS[RemoteTech]
     //
     // Type:      string
     // Required:  No (defaulted)
-    // Default:   <body>: Communication coverage: <coverage> %
+    // Default:   &lt;body&gt;: Communication coverage: &lt;coverage&gt; %
     //
     //title =
 }
