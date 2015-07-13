@@ -1,70 +1,87 @@
 The Sequence parameter is one of two ways to define parameters that need to be completed in sequence.  For this variant, use Sequence as a parent node for all nodes that must be completed in order.  If any parameter completes out of order, this parameter will fail - causing the contract to fail.
 
-    // In this example of the Sequence parameter, the player must orbit the Mun,
-    // then orbit Minmus.  If the player orbits Minmus first, the parameter fails.
+<pre>
+// In this example of the Sequence parameter, the player must orbit the Mun,
+// then orbit Minmus.  If the player orbits Minmus first, the parameter fails.
+PARAMETER
+{
+    name = Sequence
+    type = Sequence
+
+    // Hide the parameter(s) with the given name until it is the next one in
+    // the list to be completed.
+    //
+    // Type:      bool
+    // Required:  No (multiples allowed)
+    //
+    hiddenParameter = OrbitMinmus
+
+    // By default, parameters that are prevented from completing if they
+    // are out of order.  To cause a failure instead, set this to true.
+    //
+    // Type:      bool
+    // Required:  No (defaulted)
+    // Default:   false
+    //
+    failWhenCompleteOutOfOrder = true
+
+    // The text to display.  Highly recommended not to use the default text, as
+    // when the parameter is complete the text of the children disappears (and
+    // the default text doesn't give the player a very good idea what the
+    // parameter was about).
+    //
+    // Type:      string
+    // Required:  No (defaulted)
+    // Default:   Complete the following in order
+    //
+    //title =
+
     PARAMETER
     {
-        name = Sequence
-        type = Sequence
+        name = OrbitMun
+        type = VesselParameterGroup
 
-        // Hide the parameter with the given name until it is the next one in
-        // the list to be completed.  Can be specified multiple times.
-        hiddenParameter = OrbitMinmus
-
-        // By default, parameters that are prevented from completing if they
-        // are out of order.  To cause a failure instead, set this to true.
-        // Default = false
-        failWhenCompleteOutOfOrder = true
-
-        // The title to display
-        // Default: Complete the following in order
-        //title =
+        title = Orbit the Mun
 
         PARAMETER
         {
-            name = OrbitMun
-            type = VesselParameterGroup
+            name = ReachState
+            type = ReachState
 
-            title = Orbit the Mun
-
-            PARAMETER
-            {
-                name = ReachState
-                type = ReachState
-
-                situation = ORBITING
-            }
-
-            PARAMETER
-            {
-                name = ReachState
-                type = ReachState
-
-                targetBody = Mun
-            }
+            situation = ORBITING
         }
 
         PARAMETER
         {
-            name = OrbitMinmus
-            type = VesselParameterGroup
+            name = ReachState
+            type = ReachState
 
-            title = Orbit Minmus
-
-            PARAMETER
-            {
-                name = ReachSituation
-                type = ReachSituation
-
-                situation = ORBITING
-            }
-
-            PARAMETER
-            {
-                name = ReachDestination
-                type = ReachDestination
-
-                targetBody = Minmus
-            }
+            targetBody = Mun
         }
     }
+
+    PARAMETER
+    {
+        name = OrbitMinmus
+        type = VesselParameterGroup
+
+        title = Orbit Minmus
+
+        PARAMETER
+        {
+            name = ReachSituation
+            type = ReachSituation
+
+            situation = ORBITING
+        }
+
+        PARAMETER
+        {
+            name = ReachDestination
+            type = ReachDestination
+
+            targetBody = Minmus
+        }
+    }
+}
+</pre>

@@ -8,14 +8,21 @@ PARAMETER
 
     // The maximum number that can be completed.  Any more than this and
     // the contract fails.
+    //
+    // Type:      int
+    // Required:  Yes
+    //
     count = 1
 
-    // The text to display.  Highly recommended that you do not use the default -
+    // The text to display.  Highly recommended not to use the default text, as
     // when the parameter is complete the text of the children disappears (and
     // the default text doesn't give the player a very good idea what the
     // parameter was about).
     //
-    // Default - Allow no more than &lt;count&gt; of the following
+    // Type:      string
+    // Required:  No (defaulted)
+    // Default:   Allow no more than &lt;count&gt; of the following
+    // 
     //title =
 
     // Generally need completeInSequence set to true for this.
