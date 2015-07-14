@@ -74,10 +74,7 @@ sub HandleDir($)
 
     foreach my $file (readdir($dh))
     {
-        if ($file =~ /^[\._]/ ||
-            $file eq 'Expressions.md' ||
-            $file eq 'Global-Functions.md' ||
-            $file =~ /-Behaviour/)
+        if ($file =~ /^[\._]/)
         {
             next;
         }
