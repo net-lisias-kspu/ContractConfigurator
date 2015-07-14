@@ -12,22 +12,27 @@ my %IGNORED_TYPES = (
 );
 
 my %TYPE_MAP = qw(
-    bool Boolean-Type
-    string String-Type
-    uint Numeric-Type
-    int Numeric-Type
-    long Numeric-Type
-    float Numeric-Type
-    double Numeric-Type
     BodyLocation Enumeration-Type
+    ChangeVesselOwnership.State Enumeration-Type
     ExperimentSituations Enumeration-Type
+    FinePrint.Utilities.OrbitType Enumeration-Type
     HasAntennaParameter.AntennaType Enumeration-Type
+    Message.Condition Enumeration-Type
     PartCategories Enumeration-Type
+    ProtoCrewMember.Gender Enumeration-Type
+    ProtoCrewMember.KerbalType Enumeration-Type
     SCANdata.SCANtype Enumeration-Type
     ScienceRecoveryMethod Enumeration-Type
     Timer.TimerType Enumeration-Type
     Vessel.Situations Enumeration-Type
     VesselType Enumeration-Type
+    bool Boolean-Type
+    double Numeric-Type
+    float Numeric-Type
+    int Numeric-Type
+    long Numeric-Type
+    string String-Type
+    uint Numeric-Type
 );
 
 my %unhandledTypes;
