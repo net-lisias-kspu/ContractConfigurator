@@ -170,5 +170,8 @@ foreach my $rootDir (@ARGV)
 
 foreach my $type (sort keys %unhandledTypes)
 {
-    print "Unhandled type: $type\n";
+    if ($type ne "Vector3d")
+    {
+        print "Unhandled type: $type\n";
+    }
 }
