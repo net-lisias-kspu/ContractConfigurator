@@ -17,7 +17,7 @@ BEHAVIOUR
     // as it clips outside the VAB.  However, vessels with certain parts (the
     // RTG for sure) fail on a resource exception when loaded - loading them
     // earlier works around the issue slightly.  This is a stock bug that will
-    // hopefully be fixed in the near future (the probelm exists in KSP 1.0.4
+    // hopefully be fixed in the near future (the problem exists in KSP 1.0.4
     // for sure).
     //
     // Type:      bool
