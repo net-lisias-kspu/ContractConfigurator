@@ -9,7 +9,7 @@ REQUIREMENT
     // The type of contract being checked.  This can either be a
     // ContractConfigurator contract type or a standard contract type (class).
     //
-    // Type:      string
+    // Type:      <a href="String-Type">string</a>
     // Required:  Yes
     //
     contractType = SimpleTestContract
@@ -17,7 +17,7 @@ REQUIREMENT
     // The minimum number of times the given contract type must have been
     // completed before the requirement is met.
     //
-    // Type:      int
+    // Type:      <a href="Numeric-Type">int</a>
     // Required:  No (defaulted)
     // Default:   1
     //
@@ -26,7 +26,7 @@ REQUIREMENT
     // The maximum number of times the given contract type can be completed
     // before the requirement will no longer be met.
     //
-    // Type:      int
+    // Type:      <a href="Numeric-Type">int</a>
     // Required:  No (defaulted)
     // Default:   int.MaxValue
     //
@@ -37,7 +37,7 @@ REQUIREMENT
     // values in years (y), days (d), hours (h), minutes (m), seconds (s)
     // or any combination of those.
     //
-    // Type:      Duration
+    // Type:      <a href="Duration-Type">Duration</a>
     // Required:  No
     //
     cooldownDuration = 10d

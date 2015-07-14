@@ -8,7 +8,7 @@ REQUIREMENT
 
     // The facility.
     //
-    // Type:      string
+    // Type:      <a href="String-Type">string</a>
     // Required:  Yes
     // Values:
     //     LaunchPad
@@ -24,7 +24,7 @@ REQUIREMENT
 
     // Minimum facility level required.
     //
-    // Type:      int
+    // Type:      <a href="Numeric-Type">int</a>
     // Required:  No (defaulted)
     // Default:   0
     //
@@ -32,7 +32,7 @@ REQUIREMENT
 
     // Maximum facility level allowed.
     //
-    // Type:      int
+    // Type:      <a href="Numeric-Type">int</a>
     // Required:  No (defaulted)
     // Default:   2
     //

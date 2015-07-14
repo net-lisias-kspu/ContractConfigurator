@@ -8,7 +8,7 @@ REQUIREMENT
 
     // Part name that needs to be unlocked.
     //
-    // Type:      AvailablePart
+    // Type:      <a href="AvailablePart-Type">AvailablePart</a>
     // Required:  Yes (multiples allowed)
     //
     part = SmallGearBay

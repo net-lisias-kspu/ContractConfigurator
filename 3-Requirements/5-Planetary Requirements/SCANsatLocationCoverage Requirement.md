@@ -15,7 +15,7 @@ REQUIREMENT:NEEDS[SCANsat]
 
     // Define the location via latitude/longitude...
     //
-    // Type:      double
+    // Type:      <a href="Numeric-Type">double</a>
     // Required:  No
     //
     latitude = -0.102668048654
@@ -23,14 +23,14 @@ REQUIREMENT:NEEDS[SCANsat]
 
     // ...OR via a PQSCity location (but not both)
     //
-    // Type:      string
+    // Type:      <a href="String-Type">string</a>
     // Required:  No
     //
     pqsCity = Monolith00
 
     // The type of scan to perform.
     //
-    // Type:      SCANdata.SCANtype
+    // Type:      <a href="Enumeration-Type">SCANdata.SCANtype</a>
     // Required:  Yes
     // Values:
     //     AltimetryLoRes

@@ -16,7 +16,7 @@ REQUIREMENT:NEEDS[SCANsat]
     // Minimum coverage percentage that must be reached before the contract is
     // valid.
     //
-    // Type:      double
+    // Type:      <a href="Numeric-Type">double</a>
     // Required:  No (defaulted)
     // Default:   0.0
     //
@@ -26,7 +26,7 @@ REQUIREMENT:NEEDS[SCANsat]
     // no longer valid.
     // Default = 100.0
     //
-    // Type:      double
+    // Type:      <a href="Numeric-Type">double</a>
     // Required:  No (defaulted)
     // Default:   100.0
     //
@@ -34,7 +34,7 @@ REQUIREMENT:NEEDS[SCANsat]
 
     // The type of scan to perform.
     //
-    // Type:      SCANdata.SCANtype
+    // Type:      <a href="Enumeration-Type">SCANdata.SCANtype</a>
     // Required:  Yes
     // Values:
     //     AltimetryLoRes

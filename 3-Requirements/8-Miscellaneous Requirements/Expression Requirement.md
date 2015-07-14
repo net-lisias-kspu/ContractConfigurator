@@ -11,7 +11,7 @@ REQUIREMENT
     // comparisons (<, <=, ==, !=, >=, >) and parenthesis.  It is able to
     // access data in the persistent data store.
     //
-    // Type:      string
+    // Type:      <a href="String-Type">string</a>
     // Required:  Yes
     //
     expression = CC_EXPTEST_Success == 1 || !CC_TestVal

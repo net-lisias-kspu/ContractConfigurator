@@ -15,7 +15,7 @@ REQUIREMENT:NEEDS[RemoteTech]
 
     // The range that is required, in meters.
     //
-    // Type:      double
+    // Type:      <a href="Numeric-Type">double</a>
     // Required:  Yes
     //
     range = 48000000

@@ -15,7 +15,7 @@ REQUIREMENT:NEEDS[RemoteTech]
 
     // Minimum coverage that is required (between 0.0 and 1.0).
     //
-    // Type:      double
+    // Type:      <a href="Numeric-Type">double</a>
     // Required:  No (defaulted)
     // Default:   1.0
     //
@@ -23,7 +23,7 @@ REQUIREMENT:NEEDS[RemoteTech]
 
     // Maximum coverage before requirement no longer met (between 0.0 and 1.0).
     //
-    // Type:      double
+    // Type:      <a href="Numeric-Type">double</a>
     // Required:  No (defaulted)
     // Default:   1.0
     //

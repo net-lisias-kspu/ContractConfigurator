@@ -10,7 +10,7 @@ REQUIREMENT
     // note that this does not get validated - if you make a typo, the
     // requirement will always return false.
     //
-    // Type:      string
+    // Type:      <a href="String-Type">string</a>
     // Required:  No (multiples allowed)
     //
     tech = basicRocketry
@@ -20,7 +20,7 @@ REQUIREMENT
     // the tech being unlocked  (the player may have the technology, but not
     // the part).  Use <a href=PartUnlocked-Requirement>PartUnlocked</a> to check for part unlocking.
     //
-    // Type:      AvailablePart
+    // Type:      <a href="AvailablePart-Type">AvailablePart</a>
     // Required:  No (multiples allowed)
     //
     part = SmallGearBay

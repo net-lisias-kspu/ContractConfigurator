@@ -19,7 +19,7 @@ REQUIREMENT
 
     // Minimum experience level required.
     //
-    // Type:      int
+    // Type:      <a href="Numeric-Type">int</a>
     // Required:  No (defaulted)
     // Default:   0
     //
@@ -27,7 +27,7 @@ REQUIREMENT
 
     // Maximum experience level allowed.
     //
-    // Type:      int
+    // Type:      <a href="Numeric-Type">int</a>
     // Required:  No (defaulted)
     // Default:   5
     //
@@ -35,7 +35,7 @@ REQUIREMENT
 
     // Minimum count.
     //
-    // Type:      int
+    // Type:      <a href="Numeric-Type">int</a>
     // Required:  No (defaulted)
     // Default:   1
     //
@@ -43,7 +43,7 @@ REQUIREMENT
 
     // Maximum count.
     //
-    // Type:      int
+    // Type:      <a href="Numeric-Type">int</a>
     // Required:  No (defaulted)
     // Default:   int.MaxValue
     //
