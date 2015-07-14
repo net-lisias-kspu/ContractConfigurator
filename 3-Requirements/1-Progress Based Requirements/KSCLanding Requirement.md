@@ -1,7 +1,9 @@
 Requirement for having landed at the KSC.
 
-    REQUIREMENT
-    {
-        name = KSCLanding
-        type = KSCLanding
-    }
+<pre>
+REQUIREMENT
+{
+    name = KSCLanding
+    type = KSCLanding
+}
+</pre>

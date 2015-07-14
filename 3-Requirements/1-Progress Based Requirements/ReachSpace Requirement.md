@@ -1,7 +1,9 @@
 Requirement for having reached space.
 
-    REQUIREMENT
-    {
-        name = ReachSpace
-        type = ReachSpace
-    }
+<pre>
+REQUIREMENT
+{
+    name = ReachSpace
+    type = ReachSpace
+}
+</pre>

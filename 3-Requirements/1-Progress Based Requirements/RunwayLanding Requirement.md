@@ -1,7 +1,9 @@
 Requirement for having landed on the runway.
 
-    REQUIREMENT
-    {
-        name = RunwayLanding
-        type = RunwayLanding
-    }
+<pre>
+REQUIREMENT
+{
+    name = RunwayLanding
+    type = RunwayLanding
+}
+</pre>

@@ -1,10 +1,17 @@
 Requirement for having reached a minimum launch altitude.
 
-    REQUIREMENT
-    {
-        name = AltitudeRecord
-        type = AltitudeRecord
+<pre>
+REQUIREMENT
+{
+    name = AltitudeRecord
+    type = AltitudeRecord
 
-        // Minimum altitude that must have been reached
-        minAltitude = 30000
-    }
+    // Minimum altitude that must have been reached
+    //
+    // Type:      <a href="Numeric-Type">double</a>
+    // Required:  No (defaulted)
+    // Default:   0.0
+    //
+    minAltitude = 30000
+}
+</pre>

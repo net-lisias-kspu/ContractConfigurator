@@ -1,10 +1,16 @@
 Requirement for landing on the specified celestial body.
 
-    REQUIREMENT
-    {
-        name = Landing
-        type = Landing
+<pre>
+REQUIREMENT
+{
+    name = Landing
+    type = Landing
 
-        // Target celestial body.  Defaults to the targetBody of the contract.
-        targetBody = Kerbin
-    }
+    // Target body, defaulted from the contract if not supplied.
+    //
+    // Type:      <a href="CelestialBody-Type">CelestialBody</a>
+    // Required:  No (defaulted)
+    //
+    targetBody = Kerbin
+}
+</pre>

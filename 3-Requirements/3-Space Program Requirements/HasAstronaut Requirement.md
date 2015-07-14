@@ -1,23 +1,52 @@
 Requirement that checks whether the player has Kerbals in their space program matching the given criteria.
 
-    REQUIREMENT
-    {
-        name = HasAstronaut
-        type = HasAstronaut
+<pre>
+REQUIREMENT
+{
+    name = HasAstronaut
+    type = HasAstronaut
 
-        // (Optional) The type of trait required.  Valid values are:
-        //    Pilot
-        //    Engineer
-        //    Scientist
-        trait = Engineer
+    // The type of trait required.
+    //
+    // Type:      <a href="String-Type">string</a>
+    // Required:  No
+    // Values (for stock KSP):
+    //     Pilot
+    //     Engineer
+    //     Scientist
+    //
+    trait = Engineer
 
-        // (Optional) Minimum and maximum experience level.  Default values are
-        // 0 and 5 (for min/max).
-        minExperience = 2
-        maxExperience = 5
+    // Minimum experience level required.
+    //
+    // Type:      int
+    // Required:  No (defaulted)
+    // Default:   0
+    //
+    minExperience = 2
 
-        // (Optional) Minimum and maximum count.  Default values are 1 and
-        // int.MaxValue (for min/max).
-        minCount = 1
-        maxCount = 5
-    }
+    // Maximum experience level allowed.
+    //
+    // Type:      int
+    // Required:  No (defaulted)
+    // Default:   5
+    //
+    maxExperience = 5
+
+    // Minimum count.
+    //
+    // Type:      int
+    // Required:  No (defaulted)
+    // Default:   1
+    //
+    minCount = 1
+
+    // Maximum count.
+    //
+    // Type:      int
+    // Required:  No (defaulted)
+    // Default:   int.MaxValue
+    //
+    maxCount = 5
+}
+</pre>

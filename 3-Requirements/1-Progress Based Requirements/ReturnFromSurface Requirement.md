@@ -1,10 +1,16 @@
 Requirement for returning from orbit of the specified celestial body.
 
-    REQUIREMENT
-    {
-        name = ReturnFromSurface
-        type = ReturnFromSurface
+<pre>
+REQUIREMENT
+{
+    name = ReturnFromSurface
+    type = ReturnFromSurface
 
-        // Target celestial body.  Defaults to the targetBody of the contract.
-        targetBody = Duna
-    }
+    // Target body, defaulted from the contract if not supplied.
+    //
+    // Type:      <a href="CelestialBody-Type">CelestialBody</a>
+    // Required:  No (defaulted)
+    //
+    targetBody = Kerbin
+}
+</pre>

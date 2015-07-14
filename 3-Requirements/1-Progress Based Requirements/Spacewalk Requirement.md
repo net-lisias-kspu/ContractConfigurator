@@ -1,7 +1,9 @@
 Requirement for having done a spacewalk.
 
-    REQUIREMENT
-    {
-        name = Spacewalk
-        type = Spacewalk
-    }
+<pre>
+REQUIREMENT
+{
+    name = Spacewalk
+    type = Spacewalk
+}
+</pre>
