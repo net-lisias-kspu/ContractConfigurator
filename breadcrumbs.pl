@@ -24,10 +24,10 @@ sub PrintCrumbs
     foreach my $val (split "$;", $key)
     {
         if (!$first)
-	{
-	    print $fh "/ ";
-	}
-	$first = 0;
+    {
+        print $fh "/ ";
+    }
+    $first = 0;
 
         print $fh "[[$backRef{$val}|$identifier#$val]] ";
     }
@@ -73,17 +73,17 @@ foreach my $file (@ARGV)
                 {
                     $currentCount = $count;
                 }
-		elsif ($count < $currentCount)
-		{
-		    @currentKey = @currentKey[0..$count-1];
-		}
+                elsif ($count < $currentCount)
+                {
+                    @currentKey = @currentKey[0..$count-1];
+                }
 
                 my $tag = Util::MakeTag($line);
-		$currentKey[$count-1] = $tag;
+                $currentKey[$count-1] = $tag;
 
                 my $key = MakeKey(@currentKey);
-		$data{$line} = $key;
-		$backRef{$tag} = Util::MakeName($line);
+                $data{$line} = $key;
+                $backRef{$tag} = Util::MakeName($line);
             }
         }
     }
@@ -114,42 +114,42 @@ foreach my $file (@ARGV)
     {
         # Key line
         if (exists($data{$line}))
-	{
-	    # Existing key, print the breadcrumbs
-	    if ($currentKey ne "")
-	    {
-	        PrintCrumbs(*OFILE, $currentKey);
-	    }
+        {
+            # Existing key, print the breadcrumbs
+            if ($currentKey ne "")
+            {
+                PrintCrumbs(*OFILE, $currentKey);
+            }
 
             $currentKey = $data{$line};
-	}
-	# Existing breadcrumb line
-	elsif($line =~ /^<sub>\[ \[\[Top/)
-	{
+        }
+        # Existing breadcrumb line
+        elsif($line =~ /^<sub>\[ \[\[Top/)
+        {
             # Remove line and the one after
-	    <IFILE>;
-	    next;
-	}
+            <IFILE>;
+            next;
+        }
 
         # Add newline at EOF
         if ($line !~ /\n$/)
-	{
-	    $line .= "\n";
-	}
-	$lineIsEmpty = ($line eq "\n" || $line eq "\r\n");
+        {
+            $line .= "\n";
+        }
+        $lineIsEmpty = ($line eq "\n" || $line eq "\r\n");
 
-	print OFILE $line;
+        print OFILE $line;
     }
 
     # Last one, print crumbs
     if ($currentKey ne "")
     {
         if (!$lineIsEmpty)
-	{
-	    print OFILE "\n";
-	}
+        {
+            print OFILE "\n";
+        }
 
-	PrintCrumbs(*OFILE, $currentKey);
+        PrintCrumbs(*OFILE, $currentKey);
     }
 
     close IFILE;
