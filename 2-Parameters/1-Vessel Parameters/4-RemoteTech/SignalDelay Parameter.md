@@ -8,7 +8,7 @@ PARAMETER:NEEDS[RemoteTech]
 
     // Minimum signal delay in seconds.
     //
-    // Type:      dboule
+    // Type:      double
     // Required:  No (defaulted)
     // Default:   1.0
     //
@@ -16,7 +16,7 @@ PARAMETER:NEEDS[RemoteTech]
 
     // Maximum signal delay in seconds.
     //
-    // Type:      dboule
+    // Type:      double
     // Required:  No (defaulted)
     // Default:   double.MaxValue
     //
