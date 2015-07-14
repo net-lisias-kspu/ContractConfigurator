@@ -4,4 +4,4 @@
 perl toc.pl ?????*.md 5-Expressions/Expressions.md
 perl breadcrumbs.pl ?????*.md 5-Expressions/Expressions.md
 perl sidebar.pl ?-*
-perl types.pl 2-Parameters 3-Requirements
+perl types.pl 2-Parameters 3-Requirements 4-Behaviours
