@@ -12,7 +12,7 @@ BEHAVIOUR
         // The name of the waypoint - displayed on the marker.  If not
         // supplied a random one is generated.
         //
-        // Type:      string
+        // Type:      <a href="String-Type">string</a>
         // Required:  Yes
         //
         name = Kerbal Space Center
@@ -20,7 +20,7 @@ BEHAVIOUR
         // The parameter that must be completed before the waypoint becomes
         // visible.  If not specified, the waypoint is always visible.
         //
-        // Type:      string
+        // Type:      <a href="String-Type">string</a>
         // Required:  No
         //
         parameter = SomeParameterName
@@ -28,7 +28,7 @@ BEHAVIOUR
         // Specifies that the given waypoint should be secret.  If this flag is
         // used, then the icon is not required.
         //
-        // Type:      bool
+        // Type:      <a href="Boolean-Type">bool</a>
         // Required:  No (defaulted)
         // Default:   false
         //
@@ -46,7 +46,7 @@ BEHAVIOUR
         // is not specified, the Squad/Contracts/Icons directory is
         // assumed.  Otherwise, the path must be from GameData/
         //
-        // Type:      string
+        // Type:      <a href="String-Type">string</a>
         // Required:  Yes
         //
         icon = thermometer
@@ -56,14 +56,14 @@ BEHAVIOUR
         // A random value between 0.0 and the atmosphere ceiling (which is zero
         // if there's no atmosphere).
         //
-        // Type:      double
+        // Type:      <a href="Numeric-Type">double</a>
         // Required:  No (defaulted)
         //
         altitude = 0.0
 
         // The coordinates.
         //
-        // Type:      double
+        // Type:      <a href="Numeric-Type">double</a>
         // Required:  Yes
         //
         latitude = -0.102668048654
@@ -75,7 +75,7 @@ BEHAVIOUR
     {
         // The name of the waypoint - displayed on the marker
         //
-        // Type:      string
+        // Type:      <a href="String-Type">string</a>
         // Required:  Yes
         //
         name = A waypoint on Kerbin
@@ -83,7 +83,7 @@ BEHAVIOUR
         // The parameter that must be completed before the waypoint becomes
         // visible.  If not specified, the waypoint is always visible.
         //
-        // Type:      string
+        // Type:      <a href="String-Type">string</a>
         // Required:  No
         //
         parameter = SomeParameterName
@@ -91,7 +91,7 @@ BEHAVIOUR
         // Specifies that the given waypoint should be secret.  If this flag is
         // used, then the icon is not required.
         //
-        // Type:      bool
+        // Type:      <a href="Boolean-Type">bool</a>
         // Required:  No (defaulted)
         // Default:   false
         //
@@ -107,7 +107,7 @@ BEHAVIOUR
 
         // The number of waypoints to generate.
         //
-        // Type:      int
+        // Type:      <a href="Numeric-Type">int</a>
         // Required:  No (defaulted)
         // Default:   1
         //
@@ -117,7 +117,7 @@ BEHAVIOUR
         // is not specified, the Squad/Contracts/Icons directory is
         // assumed.  Otherwise, the path must be from GameData/
         //
-        // Type:      string
+        // Type:      <a href="String-Type">string</a>
         // Required:  Yes
         //
         icon = thermometer
@@ -127,14 +127,14 @@ BEHAVIOUR
         // A random value between 0.0 and the atmosphere ceiling (which is zero
         // if there's no atmosphere).
         //
-        // Type:      double
+        // Type:      <a href="Numeric-Type">double</a>
         // Required:  No (defaulted)
         //
         altitude = 0.0
 
         // Whether the waypoint generated can be on water
         //
-        // Type:      bool
+        // Type:      <a href="Boolean-Type">bool</a>
         // Required:  No (defaulted)
         // Default:   true
         //
@@ -143,7 +143,7 @@ BEHAVIOUR
         // Force the waypoint to fall along the equator.  For boring
         // contracts.
         //
-        // Type:      bool
+        // Type:      <a href="Boolean-Type">bool</a>
         // Required:  No (defaulted)
         // Default:   false
         //
@@ -156,7 +156,7 @@ BEHAVIOUR
     {
         // The name of the waypoint - displayed on the marker
         //
-        // Type:      string
+        // Type:      <a href="String-Type">string</a>
         // Required:  Yes
         //
         name = A waypoint near something
@@ -164,7 +164,7 @@ BEHAVIOUR
         // The parameter that must be completed before the waypoint becomes
         // visible.  If not specified, the waypoint is always visible.
         //
-        // Type:      string
+        // Type:      <a href="String-Type">string</a>
         // Required:  No
         //
         parameter = SomeParameterName
@@ -172,7 +172,7 @@ BEHAVIOUR
         // Specifies that the given waypoint should be secret.  If this flag is
         // used, then the icon is not required.
         //
-        // Type:      bool
+        // Type:      <a href="Boolean-Type">bool</a>
         // Required:  No (defaulted)
         // Default:   false
         //
@@ -188,7 +188,7 @@ BEHAVIOUR
 
         // The number of waypoints to generate.
         //
-        // Type:      int
+        // Type:      <a href="Numeric-Type">int</a>
         // Required:  No (defaulted)
         // Default:   1
         //
@@ -198,7 +198,7 @@ BEHAVIOUR
         // is not specified, the Squad/Contracts/Icons directory is
         // assumed.  Otherwise, the path must be from GameData/
         //
-        // Type:      string
+        // Type:      <a href="String-Type">string</a>
         // Required:  Yes
         //
         icon = thermometer
@@ -208,14 +208,14 @@ BEHAVIOUR
         // A random value between 0.0 and the atmosphere ceiling (which is zero
         // if there's no atmosphere).
         //
-        // Type:      double
+        // Type:      <a href="Numeric-Type">double</a>
         // Required:  No (defaulted)
         //
         altitude = 0.0
 
         // Whether the waypoint generated can be on water
         //
-        // Type:      bool
+        // Type:      <a href="Boolean-Type">bool</a>
         // Required:  No (defaulted)
         // Default:   true
         //
@@ -226,14 +226,14 @@ BEHAVIOUR
         // first waypoint in the BEHAVIOUR, and count 1 for each value of
         // the count parameter (if it exists).
         //
-        // Type:      int
+        // Type:      <a href="Numeric-Type">int</a>
         // Required:  Yes
         //
         nearIndex = 1
 
         // Minimum distance in meters from the 'near' waypoint.
         //
-        // Type:      double
+        // Type:      <a href="Numeric-Type">double</a>
         // Required:  No
         // Default:   0.0
         //
@@ -241,7 +241,7 @@ BEHAVIOUR
 
         // Maximum distance in meters from the 'near' waypoint.
         //
-        // Type:      double
+        // Type:      <a href="Numeric-Type">double</a>
         // Required:  Yes
         //
         maxDistance = 25000.0
@@ -253,7 +253,7 @@ BEHAVIOUR
     {
         // The name of the waypoint - displayed on the marker
         //
-        // Type:      string
+        // Type:      <a href="String-Type">string</a>
         // Required:  Yes
         //
         name = Monolith
@@ -261,7 +261,7 @@ BEHAVIOUR
         // The parameter that must be completed before the waypoint becomes
         // visible.  If not specified, the waypoint is always visible.
         //
-        // Type:      string
+        // Type:      <a href="String-Type">string</a>
         // Required:  No
         //
         parameter = SomeParameterName
@@ -269,7 +269,7 @@ BEHAVIOUR
         // Specifies that the given waypoint should be secret.  If this flag is
         // used, then the icon is not required.
         //
-        // Type:      bool
+        // Type:      <a href="Boolean-Type">bool</a>
         // Required:  No (defaulted)
         // Default:   false
         //
@@ -287,14 +287,14 @@ BEHAVIOUR
         // is not specified, the Squad/Contracts/Icons directory is
         // assumed.  Otherwise, the path must be from GameData/
         //
-        // Type:      string
+        // Type:      <a href="String-Type">string</a>
         // Required:  Yes
         //
         icon = thermometer
 
         // The location name.
         //
-        // Type:      string
+        // Type:      <a href="String-Type">string</a>
         // Required:  Yes
         //
         pqsCity = KSC

@@ -8,7 +8,7 @@ BEHAVIOUR
 
     // Count of passengers to spawn.
     //
-    // Type:      int
+    // Type:      <a href="Numeric-Type">int</a>
     // Required:  No (defaulted)
     // Default:   1
     //
@@ -17,14 +17,14 @@ BEHAVIOUR
     // Names of passengers to spawn (use instead of count to spawn
     // passengers with specific names.
     //
-    // Type:      string
+    // Type:      <a href="String-Type">string</a>
     // Required:  No (multiples allowed)
     //
     passengerName = Kerman Kerman
 
     // Type of the passenger(s).
     //
-    // Type:      ProtoCrewMember.KerbalType
+    // Type:      <a href="Enumeration-Type">ProtoCrewMember.KerbalType</a>
     // Required:  No (defaulted)
     // Values:
     //     Applicant
@@ -37,7 +37,7 @@ BEHAVIOUR
     // Gender of the passenger(s).  If not specified each passenger is
     // assigned a random gender.
     //
-    // Type:      ProtoCrewMember.Gender
+    // Type:      <a href="Enumeration-Type">ProtoCrewMember.Gender</a>
     // Required:  No
     // Values:
     //     Male

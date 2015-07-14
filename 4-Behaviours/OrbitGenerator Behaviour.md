@@ -43,7 +43,7 @@ BEHAVIOUR
 
         // Type of orbit to generate.
         //
-        // Type:      FinePrint.Utilities.OrbitType
+        // Type:      <a href="Enumeration-Type">FinePrint.Utilities.OrbitType</a>
         // Required:  Yes
         // Values:
         //     EQUATORIAL

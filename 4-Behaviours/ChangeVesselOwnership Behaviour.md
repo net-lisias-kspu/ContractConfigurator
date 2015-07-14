@@ -8,7 +8,7 @@ BEHAVIOUR
 
     // Indicates the state where the vessel ownership should be changed.
     //
-    // Type:      ChangeVesselOwnership.State
+    // Type:      <a href="Enumeration-Type">ChangeVesselOwnership.State</a>
     // Required:  Yes
     // Values:
     //     ContractAccepted
@@ -23,7 +23,7 @@ BEHAVIOUR
     // of the parameter that we are checking for completion.  This can be
     // specified multiple times.
     //
-    // Type:      string
+    // Type:      <a href="String-Type">string</a>
     // Required:  See above
     //
     parameter = TheParameterName
@@ -32,14 +32,14 @@ BEHAVIOUR
     // should either be derived via an expression, or match the define
     // name of a previous <a hrefVesselParameterGroup-Parameter>VesselParameterGroup</A> parameter.
     //
-    // Type:      VesselIdentifier
+    // Type:      <a href="VesselIdentifier-Type">VesselIdentifier</a>
     // Required:  Yes (multiples allowed)
     //
     vessel = TheVesselName
 
     // Whether to make the vessel owned or unowned.
     //
-    // Type:      bool
+    // Type:      <a href="Boolean-Type">bool</a>
     // Required:  No (defaulted)
     // Default:   true
     //

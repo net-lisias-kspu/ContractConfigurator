@@ -19,7 +19,7 @@ BEHAVIOUR
     {
         // The type of condition.
         //
-        // Type:      Message.Condition
+        // Type:      <a href="Enumeration-Type">Message.Condition</a>
         // Required:  Yes
         // Values:
         //     CONTRACT_COMPLETED
@@ -32,7 +32,7 @@ BEHAVIOUR
         // The *name* of the parameter to which this condition applies.
         // Required if the condition is one of the PARAMETER_ ones.
         //
-        // Type:      string
+        // Type:      <a href="String-Type">string</a>
         // Required:  See above
         //
         parameter = MyParameterName

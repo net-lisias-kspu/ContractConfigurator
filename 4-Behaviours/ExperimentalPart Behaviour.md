@@ -18,7 +18,7 @@ BEHAVIOUR
     // contract is accepted).  Also controls whether the part is removed
     // if the contract fails or is withdrawn.
     //
-    // Type:      bool
+    // Type:      <a href="Boolean-Type">bool</a>
     // Required:  No (defaulted)
     // Default:   true
     //
@@ -27,7 +27,7 @@ BEHAVIOUR
     // Whether the part should be removed as an experimental part (when the
     // contract completes successfully).
     //
-    // Type:      bool
+    // Type:      <a href="Boolean-Type">bool</a>
     // Required:  No (defaulted)
     // Default:   true
     //
