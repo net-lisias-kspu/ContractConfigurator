@@ -20,7 +20,7 @@ BEHAVIOUR
     // hopefully be fixed in the near future (the problem exists in KSP 1.0.4
     // for sure).
     //
-    // Type:      bool
+    // Type:      <a href="Boolean-Type">bool</a>
     // Required:  No (defaulted)
     // Default:   false
     //
@@ -36,14 +36,14 @@ BEHAVIOUR
         // refer back to this vessel by this name in <a href=VesselParameterGroup-Parameter>VesselParameterGroup</a>
         // parameters.
         //
-        // Type:      string
+        // Type:      <a href="String-Type">string</a>
         // Required:  No (defaulted)
         //
         name = A vessel
 
         // Path to the .craft file (relative to the GameData/ directory)
         //
-        // Type:      string
+        // Type:      <a href="String-Type">string</a>
         // Required:  Yes
         //
         craftURL = ContractConfigurator/Little Rocket.craft
@@ -51,14 +51,14 @@ BEHAVIOUR
         // Location of the flag to use.  Uses the players flag for the current
         // game if not specified.
         //
-        // Type:      string
+        // Type:      <a href="String-Type">string</a>
         // Required:  No (defaulted)
         //
         flagURL = Squad/Flags/satellite
 
         // The type of vessel (affects display in the tracking station).
         //
-        // Type:      VesselType
+        // Type:      <a href="Enumeration-Type">VesselType</a>
         // Required:  No (defaulted)
         // Values:
         //     Base
@@ -74,7 +74,7 @@ BEHAVIOUR
         // Whether the vessel should show up as owned or unowned.  If it is
         // owned, then it will be immediately selectable.
         //
-        // Type:      bool
+        // Type:      <a href="Boolean-Type">bool</a>
         // Required:  No (defaulted)
         // Default:   false
         //
@@ -114,7 +114,7 @@ BEHAVIOUR
         // supply the following values from the persistant.sfs
         // file.
         //
-        // Type:      double
+        // Type:      <a href="Numeric-Type">double</a>
         // Required:  See above
         //
         lat = -0.096992729723051
@@ -123,14 +123,14 @@ BEHAVIOUR
         // Only applies to landed vessels, use to override the altitude.
         // If not supplied, defaults to the terrain altitude.
         //
-        // Type:      double
+        // Type:      <a href="Numeric-Type">double</a>
         // Required:  See above
         //
         alt = 67.6843734193826
 
         // Specifies the heading of the vessel in degrees (0 = N, 90 = E...).
         //
-        // Type:      float
+        // Type:      <a href="Numeric-Type">float</a>
         // Required:  No (defaulted)
         // Default:   0.0
         //
@@ -138,7 +138,7 @@ BEHAVIOUR
 
         // Specifies the roll of the vessel in degrees (positive = roll right).
         //
-        // Type:      float
+        // Type:      <a href="Numeric-Type">float</a>
         // Required:  No (defaulted)
         // Default:   0.0
         //
@@ -146,7 +146,7 @@ BEHAVIOUR
 
         // Specifies the pitch of the vessel in degrees (positive is nose up)
         //
-        // Type:      float
+        // Type:      <a href="Numeric-Type">float</a>
         // Required:  No (defaulted)
         // Default:   0.0
         //
@@ -159,7 +159,7 @@ BEHAVIOUR
             // Name for the crew member - if not provided, one is
             // auto-generated.
             //
-            // Type:      string
+            // Type:      <a href="String-Type">string</a>
             // Required:  No
             //
             name = Patrick R. Kerman
@@ -167,7 +167,7 @@ BEHAVIOUR
             // Whether or not the Kerbal should be added to the roster on 
             // recovery.
             //
-            // Type:      bool
+            // Type:      <a href="Boolean-Type">bool</a>
             // Required:  No (defaulted)
             // Default:   true
             //
@@ -176,7 +176,7 @@ BEHAVIOUR
             // Number of crew to generate from this node.  Shouldn't be
             // supplied if name is supplied.
             //
-            // Type:      int
+            // Type:      <a href="Numeric-Type">int</a>
             // Required:  No (defaulted)
             // Default:   1
             //
