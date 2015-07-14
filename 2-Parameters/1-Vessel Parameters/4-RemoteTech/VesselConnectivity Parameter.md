@@ -8,14 +8,14 @@ PARAMETER:NEEDS[RemoteTech]
 
     // The vessel to check connectivity against.
     //
-    // Type:      VesselIdentifier
+    // Type:      <a href="VesselIdentifier-Type">VesselIdentifier</a>
     // Required:  Yes
     //
     vessel = CommSat I
 
     // Whether to check for connectivity or the lack of connectivity.
     //
-    // Type:      bool
+    // Type:      <a href="Boolean-Type">bool</a>
     // Required:  No (defaulted)
     // Default:   true
     //
@@ -23,7 +23,7 @@ PARAMETER:NEEDS[RemoteTech]
 
     // Text to use for the parameter's title.
     //
-    // Type:      string
+    // Type:      <a href="String-Type">string</a>
     // Required:  No (defaulted)
     // Default:   Direct connection to: &lt;vessel&gt;
     //

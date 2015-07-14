@@ -8,7 +8,7 @@ PARAMETER
 
     // Minimum and maximum crew capacity required.
     //
-    // Type:      int
+    // Type:      <a href="Numeric-Type">int</a>
     // Required:  No
     // Default:   0 (minCapacity)
     //            int.MaxValue (maxCapacity)
@@ -18,7 +18,7 @@ PARAMETER
 
     // Text to use for the parameter
     //
-    // Type:      string
+    // Type:      <a href="String-Type">string</a>
     // Required:  No (defaulted)
     // Default:   Crew Capacity: Between &lt;min&gt; and &lt;max&gt;
     //title =

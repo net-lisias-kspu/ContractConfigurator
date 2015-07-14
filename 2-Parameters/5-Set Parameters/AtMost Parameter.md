@@ -9,7 +9,7 @@ PARAMETER
     // The maximum number that can be completed.  Any more than this and
     // the contract fails.
     //
-    // Type:      int
+    // Type:      <a href="Numeric-Type">int</a>
     // Required:  Yes
     //
     count = 1
@@ -19,7 +19,7 @@ PARAMETER
     // the default text doesn't give the player a very good idea what the
     // parameter was about).
     //
-    // Type:      string
+    // Type:      <a href="String-Type">string</a>
     // Required:  No (defaulted)
     // Default:   Allow no more than &lt;count&gt; of the following
     // 

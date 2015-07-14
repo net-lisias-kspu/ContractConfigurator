@@ -8,7 +8,7 @@ PARAMETER
 
     // Target body, defaulted from the contract if not supplied.
     //
-    // Type:      CelestialBody
+    // Type:      <a href="CelestialBody-Type">CelestialBody</a>
     // Required:  No (defaulted)
     //
     targetBody = Duna
@@ -17,14 +17,14 @@ PARAMETER
     // biome that is valid for the target body, but note that it is not 
     // validated due to KSP limitations (so make sure not to make a typo!).
     //
-    // Type:      Biome
+    // Type:      <a href="Biome-Type">Biome</a>
     // Required:  No
     //
     biome = Craters
 
     // Specifies the situation under which science should be collected.
     //
-    // Type:      ExperimentSituations
+    // Type:      <a href="Enumeration-Type">ExperimentSituations</a>
     // Required:  No
     // Values:
     //     SrfLanded
@@ -37,7 +37,7 @@ PARAMETER
 
     // Specifies where the experiment should take place.
     //
-    // Type:      BodyLocation
+    // Type:      <a href="Enumeration-Type">BodyLocation</a>
     // Required:  No
     // Values:
     //     Surface
@@ -48,7 +48,7 @@ PARAMETER
     // Specifies the experiment to be run, can be any valid experiment in stock
     // KSP or added by mods.
     //
-    // Type:      ScienceExperiment
+    // Type:      <a href="ScienceExperiment-Type">ScienceExperiment</a>
     // Required:  No (multiples allowed)
     // Values (for stock KSP):
     //     asteroidSample
@@ -70,7 +70,7 @@ PARAMETER
     // It is recommened to only use this with expressions, rather than adding
     // the subject manually.
     //
-    // Type:      ScienceSubject
+    // Type:      <a href="ScienceSubject-Type">ScienceSubject</a>
     // Required:  No (multiples allowed)
     //
     subject = evaReport@MunSrfLandedCraters
@@ -80,7 +80,7 @@ PARAMETER
     // Recover or RecoverOrTransmit, depending whether the experiment can have
     // all its science recovered through transmission.
     //
-    // Type:      ScienceRecoveryMethod
+    // Type:      <a href="Enumeration-Type">ScienceRecoveryMethod</a>
     // Required:  No
     // Values:
     //     None

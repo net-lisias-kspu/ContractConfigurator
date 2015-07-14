@@ -8,7 +8,7 @@ PARAMETER
 
     // Number of passengers to load onto the ship.
     //
-    // Type:      int
+    // Type:      <a href="Numeric-Type">int</a>
     // Required:  No (defaulted)
     // Default:   0 (all passengers)
     //
@@ -16,7 +16,7 @@ PARAMETER
 
     // Start index in the SpawnPassengers behaviour
     //
-    // Type:      int
+    // Type:      <a href="Numeric-Type">int</a>
     // Required:  No (defaulted)
     // Default:   0
     //

@@ -8,7 +8,7 @@ PARAMETER:NEEDS[RemoteTech]
 
     // Target body, defaulted from the contract if not supplied.
     //
-    // Type:      CelestialBody
+    // Type:      <a href="CelestialBody-Type">CelestialBody</a>
     // Required:  No (defaulted)
     //
     targetBody = Duna
@@ -16,14 +16,14 @@ PARAMETER:NEEDS[RemoteTech]
     // The percentage (0.0 to 1.0) of communication coverage that is
     // needed to meet the contract parameter.
     //
-    // Type:      double
+    // Type:      <a href="Numeric-Type">double</a>
     // Required:  Yes
     //
     coverage = 0.80
 
     // Text to use for the parameter's title.
     //
-    // Type:      string
+    // Type:      <a href="String-Type">string</a>
     // Required:  No (defaulted)
     // Default:   &lt;body&gt;: Communication coverage: &lt;coverage&gt; %
     //

@@ -8,7 +8,7 @@ PARAMETER
 
     // Type of vessel to check for.
     //
-    // Type:      VesselType
+    // Type:      <a href="Enumeration-Type">VesselType</a>
     // Required:  Yes
     // Values:
     //   Base
@@ -24,7 +24,7 @@ PARAMETER
 
     // Text for the contract parameter.
     //
-    // Type:      string
+    // Type:      <a href="String-Type">string</a>
     // Required:  No (defaulted)
     // Default:   Vessel type: &lt;vesselType&gt;
     //title =

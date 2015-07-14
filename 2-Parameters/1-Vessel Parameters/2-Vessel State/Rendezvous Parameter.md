@@ -21,7 +21,7 @@ PARAMETER
     // then *at least one* vessel must be provided.  If only one vessel is
     // provided, then the second vessel will match any vessel.
     //
-    // Type:      VesselIdentifier
+    // Type:      <a href="VesselIdentifier-Type">VesselIdentifier</a>
     // Required:  See above (multiples allowed)
     //
     vessel = First Vessel to Rendezvous
@@ -29,7 +29,7 @@ PARAMETER
 
     // Distance in meters that defines a rendezvous as having occurred.
     //
-    // Type:      double
+    // Type:      <a href="Numeric-Type">double</a>
     // Required:  No (defaulted)
     // Default:   2000.0
     //
@@ -37,7 +37,7 @@ PARAMETER
 
     // Text for the contract parameter.
     //
-    // Type:      string
+    // Type:      <a href="String-Type">string</a>
     // Required:  No (defaulted)
     // Default:   (differs based on scenario)
     //

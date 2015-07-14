@@ -8,7 +8,7 @@ PARAMETER
 
     // The Kerbal(s) to be recovered.
     //
-    // Type:      Kerbal
+    // Type:      <a href="Kerbal-Type">Kerbal</a>
     // Required:  No (multiples allowed)
     //
     kerbal = Jebediah Kermin
@@ -16,7 +16,7 @@ PARAMETER
     // Alternate method of identifying the Kerbal - zero based index of the
     // entry in a <a href="SpawnKerbal-Behaviour">SpawnKerbal</a> or <a href="SpawnVessel-Behaviour">SpawnVessel</a> BEHAVIOUR node.
     //
-    // Type:      int
+    // Type:      <a href="Numeric-Type">int</a>
     // Required:  No (defaulted)
     // Default:   0
     //
@@ -25,7 +25,7 @@ PARAMETER
     // Text to use for the parameter
     // Default = 
     //
-    // Type:      string
+    // Type:      <a href="String-Type">string</a>
     // Required:  No (defaulted)
     // Default:   &lt;kerbal&gt;: Recovered
     //

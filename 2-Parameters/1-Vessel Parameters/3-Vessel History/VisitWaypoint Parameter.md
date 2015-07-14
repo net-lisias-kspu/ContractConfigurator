@@ -9,7 +9,7 @@ PARAMETER
     // The index (0-based) in the <a href="WaypointGenerator-Behaviour">WaypointGenerator</a> behaviour of the waypoint we
     // wish to reference.
     //
-    // Type:      int
+    // Type:      <a href="Numeric-Type">int</a>
     // Required:  No (defaulted)
     // Default:   0
     //
@@ -17,7 +17,7 @@ PARAMETER
 
     // Distance tolerance to be considered at the waypoint.
     //
-    // Type:      double
+    // Type:      <a href="Numeric-Type">double</a>
     // Required:  No (defaulted)
     // Default:   500.0 (if on the surface).
     //            <waypoint altitude> / 5.0 (if not on the surface).
@@ -27,7 +27,7 @@ PARAMETER
     // Whether the waypoint should get automatically hidden after completing
     // the contract objective.
     //
-    // Type:      bool
+    // Type:      <a href="Boolean-Type">bool</a>
     // Required:  No (defaulted)
     // Default:   true
     //
@@ -35,7 +35,7 @@ PARAMETER
     
     // Text to use for the parameter
     //
-    // Type:      string
+    // Type:      <a href="String-Type">string</a>
     // Required:  No (defaulted)
     // Default:   Location: &lt;waypoint&gt;
     // 

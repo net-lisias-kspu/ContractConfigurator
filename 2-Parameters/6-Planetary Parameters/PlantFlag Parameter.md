@@ -8,14 +8,14 @@ PARAMETER
 
     // Target body, defaulted from the contract if not supplied.
     //
-    // Type:      CelestialBody
+    // Type:      <a href="CelestialBody-Type">CelestialBody</a>
     // Required:  No (defaulted)
     //
     targetBody = Kerbin
 
     // Text to use for the parameter
     //
-    // Type:      string
+    // Type:      <a href="String-Type">string</a>
     // Required:  No (defaulted)
     // Default:   Plant a flag on &lt;targetBody&gt;
     //

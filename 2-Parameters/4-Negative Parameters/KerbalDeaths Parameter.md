@@ -9,7 +9,7 @@ PARAMETER
     // Maximum Number of Kerbals that can die before this contract is considered
     // failed.
     //
-    // Type:      int
+    // Type:      <a href="Numeric-Type">int</a>
     // Required:  No (defaulted)
     // Default:   1
     //

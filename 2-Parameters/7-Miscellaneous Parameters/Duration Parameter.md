@@ -18,7 +18,7 @@ PARAMETER
     // The preWaitText overrides the text that is displayed when waiting
     // for the other parameters to complete.
     //
-    // Type:      string
+    // Type:      <a href="String-Type">string</a>
     // Required:  No (defaulted)
     // Default:   Waiting time required
     //
@@ -27,7 +27,7 @@ PARAMETER
     // The waitingText overrides the text that is displayed when waiting
     // for the timer to expire.
     //
-    // Type:      string
+    // Type:      <a href="String-Type">string</a>
     // Required:  No (defaulted)
     // Default:   Time to completion
     //
@@ -35,7 +35,7 @@ PARAMETER
 
     // The completionText is displayed when the timer completes.
     //
-    // Type:      string
+    // Type:      <a href="String-Type">string</a>
     // Required:  No (defaulted)
     // Default:   Wait time over
     //

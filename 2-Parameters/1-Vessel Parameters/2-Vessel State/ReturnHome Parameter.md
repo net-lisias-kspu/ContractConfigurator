@@ -8,7 +8,7 @@ PARAMETER
 
     // Text for the contract parameter.
     //
-    // Type:      string
+    // Type:      <a href="String-Type">string</a>
     // Required:  No (defaulted)
     // Default:   Return home.
     //

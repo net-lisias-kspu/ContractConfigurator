@@ -11,7 +11,7 @@ PARAMETER
     // Hide the parameter(s) with the given name until it is the next one in
     // the list to be completed.
     //
-    // Type:      bool
+    // Type:      <a href="Boolean-Type">bool</a>
     // Required:  No (multiples allowed)
     //
     hiddenParameter = OrbitMinmus
@@ -19,7 +19,7 @@ PARAMETER
     // By default, parameters that are prevented from completing if they
     // are out of order.  To cause a failure instead, set this to true.
     //
-    // Type:      bool
+    // Type:      <a href="Boolean-Type">bool</a>
     // Required:  No (defaulted)
     // Default:   false
     //
@@ -30,7 +30,7 @@ PARAMETER
     // the default text doesn't give the player a very good idea what the
     // parameter was about).
     //
-    // Type:      string
+    // Type:      <a href="String-Type">string</a>
     // Required:  No (defaulted)
     // Default:   Complete the following in order
     //

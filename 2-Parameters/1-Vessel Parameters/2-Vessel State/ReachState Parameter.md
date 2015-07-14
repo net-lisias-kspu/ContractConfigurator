@@ -8,7 +8,7 @@ PARAMETER
 
     // Target body, defaulted from the contract if not supplied.
     //
-    // Type:      CelestialBody
+    // Type:      <a href="CelestialBody-Type">CelestialBody</a>
     // Required:  No (defaulted)
     //
     targetBody = Duna
@@ -16,7 +16,7 @@ PARAMETER
     // Minimum altitude above the reference altitude (sea-level or the lowest
     // point on the body).
     //
-    // Type:      float
+    // Type:      <a href="Numeric-Type">float</a>
     // Required:  No (defaulted)
     // Default:   0.0
     //
@@ -25,7 +25,7 @@ PARAMETER
     // Maximum altitude above the reference altitude (sea-level or the lowest
     // point on the body).
     //
-    // Type:      float
+    // Type:      <a href="Numeric-Type">float</a>
     // Required:  No (defaulted)
     // Default:   float.MaxValue
     //
@@ -33,7 +33,7 @@ PARAMETER
 
     // Minimum altitude above terrain.
     //
-    // Type:      float
+    // Type:      <a href="Numeric-Type">float</a>
     // Required:  No (defaulted)
     // Default:   0.0
     //
@@ -41,7 +41,7 @@ PARAMETER
 
     // Maximum altitude above terrain.
     //
-    // Type:      float
+    // Type:      <a href="Numeric-Type">float</a>
     // Required:  No (defaulted)
     // Default:   0.0
     //
@@ -49,7 +49,7 @@ PARAMETER
 
     // Minimum speed (surface speed if flying/landed, orbital speed ortherwise).
     //
-    // Type:      float
+    // Type:      <a href="Numeric-Type">float</a>
     // Required:  No (defaulted)
     // Default:   0.0
     //
@@ -57,7 +57,7 @@ PARAMETER
 
     // Maximum speed (surface speed if flying/landed, orbital speed ortherwise).
     //
-    // Type:      float
+    // Type:      <a href="Numeric-Type">float</a>
     // Required:  No (defaulted)
     // Default:   float.MaxValue
     //
@@ -65,14 +65,14 @@ PARAMETER
 
     // The name of the biome to reach.
     //
-    // Type:      Biome
+    // Type:      <a href="Biome-Type">Biome</a>
     // Required:  No
     //
     biome = Shores
 
     // The situation to check for.
     //
-    // Type:      Vessel.Situations
+    // Type:      <a href="Enumeration-Type">Vessel.Situations</a>
     // Required:  No
     // Values:
     //     ESCAPING
@@ -87,7 +87,7 @@ PARAMETER
 
     // Text to use for the parameter
     //
-    // Type:      string
+    // Type:      <a href="String-Type">string</a>
     // Required:  No (defaulted)
     // Default:   Vessel State: &lt;state details&gt;
     //

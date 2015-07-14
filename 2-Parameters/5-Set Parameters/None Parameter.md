@@ -11,7 +11,7 @@ PARAMETER
     // the default text doesn't give the player a very good idea what the
     // parameter was about).
     //
-    // Type:      string
+    // Type:      <a href="String-Type">string</a>
     // Required:  No (defaulted)
     // Default:   Prevent ALL of the following
     //title =

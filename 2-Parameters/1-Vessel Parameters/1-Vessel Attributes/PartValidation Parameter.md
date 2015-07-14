@@ -9,7 +9,7 @@ PARAMETER
     // The name of the part to check for.  If multiple are specified, will
     // match on <strong>ANY</strong> of the parts listed.
     //
-    // Type:      AvailablePart
+    // Type:      <a href="AvailablePart-Type">AvailablePart</a>
     // Required:  No (multiples allowed)
     //
     part = mk1pod
@@ -18,7 +18,7 @@ PARAMETER
     // PartModule(s) to check for.  If multiple are specified, requires that
     // the given parts have <strong>ALL</strong> the partModules listed.
     //
-    // Type:      string
+    // Type:      <a href="String-Type">string</a>
     // Required:  No (multiples allowed)
     //
     partModule = ModuleReactionWheel
@@ -26,14 +26,14 @@ PARAMETER
 
     // Part manufacturer to check for.
     //
-    // Type:      string
+    // Type:      <a href="String-Type">string</a>
     // Required:  No
     //
     manufacturer = Kerbodyne
 
     // Part category to check for.
     //
-    // Type:      PartCategories
+    // Type:      <a href="Enumeration-Type">PartCategories</a>
     // Required:  No
     // Values:
     //   Aero
@@ -49,7 +49,7 @@ PARAMETER
 
     // Minimum and maximum count of matching parts.
     //
-    // Type:      int
+    // Type:      <a href="Numeric-Type">int</a>
     // Required:  No (defaulted)
     // Default:   1 (minCount)
     //            int.MaxValue (maxCount)
@@ -59,7 +59,7 @@ PARAMETER
 
     // Text to use for the parameter
     //
-    // Type:      string
+    // Type:      <a href="String-Type">string</a>
     // Required:  No (defaulted)
     // Default (maxCount: 0) = Part: &lt;attributes&gt;: None
     // Default (maxCount: int.MAXVALUE) = Part: &lt;attributes&gt;: At least &lt;minCount&gt;

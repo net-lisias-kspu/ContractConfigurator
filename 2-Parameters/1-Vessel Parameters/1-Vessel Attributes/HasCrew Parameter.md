@@ -8,7 +8,7 @@ PARAMETER
 
     // The type of trait required.  Valid values are:
     //
-    // Type:      string
+    // Type:      <a href="String-Type">string</a>
     // Required:  No
     // Values (for stock KSP):
     //     Pilot
@@ -19,7 +19,7 @@ PARAMETER
 
     // Minimum and maximum experience level required.
     //
-    // Type:      int
+    // Type:      <a href="Numeric-Type">int</a>
     // Required:  No (defaulted)
     // Default:   0 (minExperience)
     //            5 (maxExperience)
@@ -29,7 +29,7 @@ PARAMETER
 
     // Minimum and maximum count of matching crew required.
     //
-    // Type:      int
+    // Type:      <a href="Numeric-Type">int</a>
     // Required:  No (defaulted)
     // Default:   0 (minCrew)
     //            int.MaxValue (maxCrew)
@@ -41,7 +41,7 @@ PARAMETER
     // specified multiple times, but cannot be used with the other
     // attributes on this parameter.
     //
-    // Type:      string
+    // Type:      <a href="String-Type">string</a>
     // Required:  No (multiples allowed)
     //
     kerbal = Jebediah Kerman
@@ -49,7 +49,7 @@ PARAMETER
 
     // Text to use for the parameter
     //
-    // Type:      string
+    // Type:      <a href="String-Type">string</a>
     // Required:  No (defaulted)
     // Default (maxCrew = 0): Crew: Unmanned
     // Default (maxCrew: int.MAXVALUE) = Crew: At least &lt;minCrew&gt; Kerbals

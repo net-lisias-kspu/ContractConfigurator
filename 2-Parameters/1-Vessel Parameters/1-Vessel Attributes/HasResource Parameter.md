@@ -8,14 +8,14 @@ PARAMETER
 
     // The name of the resource to check for.
     //
-    // Type:      Resource
+    // Type:      <a href="Resource-Type">Resource</a>
     // Required:  Yes
     //
     resource = LiquidFuel
 
     // Minimum and maximum quantity of the resource required.
     //
-    // Type:      double
+    // Type:      <a href="Numeric-Type">double</a>
     // Required:  No (defaulted)
     // Default:   0.01 (minQuantity)
     //            double.MaxValue (maxQuantity)
@@ -25,7 +25,7 @@ PARAMETER
 
     // Text to use for the parameter
     //
-    // Type:      string
+    // Type:      <a href="String-Type">string</a>
     // Required:  No (defaulted)
     // Default:   Resource: &lt;resource&gt;: &lt;quantity_description&gt;
     //title =

@@ -8,7 +8,7 @@ PARAMETER
 
     // The part to be tested.
     //
-    // Type:      AvailablePart
+    // Type:      <a href="AvailablePart-Type">AvailablePart</a>
     // Required:  Yes
     //
     part = SmallGearBay

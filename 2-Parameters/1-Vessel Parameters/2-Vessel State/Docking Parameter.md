@@ -21,7 +21,7 @@ PARAMETER
     // then *at least one* vessel must be provided.  If only one vessel is
     // provided, then the second vessel will match any vessel.
     //
-    // Type:      VesselIdentifier
+    // Type:      <a href="VesselIdentifier-Type">VesselIdentifier</a>
     // Required:  Yes (multiples allowed)
     //
     vessel = First Vessel to Dock
@@ -31,14 +31,14 @@ PARAMETER
     // to chain docking parameters, but require them to be done in a certain
     // order.  Generally this name will never be displayed to the player.
     //
-    // Type:      string
+    // Type:      <a href="String-Type">string</a>
     // Required:  No
     //
     defineDockedVessel = My New Vessel
 
     // Text for the contract parameter.
     //
-    // Type:      string
+    // Type:      <a href="String-Type">string</a>
     // Required:  No (defaulted)
     // Default:   (differs based on scenario)
     // 

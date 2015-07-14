@@ -7,14 +7,14 @@ PARAMETER
 
     // Target body, defaulted from the contract if not supplied.
     //
-    // Type:      CelestialBody
+    // Type:      <a href="CelestialBody-Type">CelestialBody</a>
     // Required:  No (defaulted)
     //
     targetBody = Kerbin
 
     // Situation to check for.
     //
-    // Type:      Vessel.Situations
+    // Type:      <a href="Enumeration-Type">Vessel.Situations</a>
     // Required:  No (defaulted)
     // Values:
     //     ESCAPING
@@ -26,7 +26,7 @@ PARAMETER
     // Minimum orbit altitude in meters.  The vessel's apoapsis and
     // periapsis must both be above this number.
     //
-    // Type:      double
+    // Type:      <a href="Numeric-Type">double</a>
     // Required:  No (defaulted)
     // Default:   0.0
     //
@@ -35,7 +35,7 @@ PARAMETER
     // Maximum orbit altitude in meters.  The vessel's apoapsis and
     // periapsis must both be below this number.
     //
-    // Type:      double
+    // Type:      <a href="Numeric-Type">double</a>
     // Required:  No (defaulted)
     // Default:   double.MaxValue
     //
@@ -43,7 +43,7 @@ PARAMETER
 
     // Minimum apoapsis in meters.
     //
-    // Type:      double
+    // Type:      <a href="Numeric-Type">double</a>
     // Required:  No (defaulted)
     // Default:   0.0
     //
@@ -51,7 +51,7 @@ PARAMETER
 
     // Maximum apoapsis in meters.
     //
-    // Type:      double
+    // Type:      <a href="Numeric-Type">double</a>
     // Required:  No (defaulted)
     // Default:   double.MaxValue
     //
@@ -59,7 +59,7 @@ PARAMETER
 
     // Minimum periapsis in meters.
     //
-    // Type:      double
+    // Type:      <a href="Numeric-Type">double</a>
     // Required:  No (defaulted)
     // Default:   0.0
     //
@@ -67,7 +67,7 @@ PARAMETER
 
     // Maximum periapsis in meters.
     //
-    // Type:      double
+    // Type:      <a href="Numeric-Type">double</a>
     // Required:  No (defaulted)
     // Default:   double.MaxValue
     //
@@ -75,7 +75,7 @@ PARAMETER
 
     // Minimum eccentricity.
     //
-    // Type:      double
+    // Type:      <a href="Numeric-Type">double</a>
     // Required:  No (defaulted)
     // Default:   0.0
     //
@@ -83,7 +83,7 @@ PARAMETER
 
     // Maximum eccentricity.
     //
-    // Type:      double
+    // Type:      <a href="Numeric-Type">double</a>
     // Required:  No (defaulted)
     // Default:   double.MaxValue
     //
@@ -91,7 +91,7 @@ PARAMETER
 
     // Minimum inclination in degrees
     //
-    // Type:      double
+    // Type:      <a href="Numeric-Type">double</a>
     // Required:  No (defaulted)
     // Default:   0.0
     //
@@ -99,7 +99,7 @@ PARAMETER
 
     // Maximum inclination in degrees
     //
-    // Type:      double
+    // Type:      <a href="Numeric-Type">double</a>
     // Required:  No (defaulted)
     // Default:   180.0
     //
@@ -127,7 +127,7 @@ PARAMETER
 
     // Text to use for the parameter
     //
-    // Type:      string
+    // Type:      <a href="String-Type">string</a>
     // Required:  No (defaulted)
     // Default:   Orbit: &lt;orbit details&gt;
     //

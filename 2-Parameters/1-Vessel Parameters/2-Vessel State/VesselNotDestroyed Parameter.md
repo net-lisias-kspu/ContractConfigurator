@@ -19,7 +19,7 @@ PARAMETER
     // vessels specified, then the list of vessels that cannot be destroyed
     // is automatically derived from the parent parameter.
     //
-    // Type:      VesselIdentifier
+    // Type:      <a href="VesselIdentifier-Type">VesselIdentifier</a>
     // Required:  No (multiples allowed)
     //
     vessel = Vessel not to be destroyed
@@ -27,7 +27,7 @@ PARAMETER
 
     // Text for the contract parameter.
     //
-    // Type:      string
+    // Type:      <a href="String-Type">string</a>
     // Required:  No (defaulted)
     // Default:   (differs based on scenario)
     // 

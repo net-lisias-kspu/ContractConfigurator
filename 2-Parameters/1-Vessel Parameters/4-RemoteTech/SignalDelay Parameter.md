@@ -8,7 +8,7 @@ PARAMETER:NEEDS[RemoteTech]
 
     // Minimum signal delay in seconds.
     //
-    // Type:      double
+    // Type:      <a href="Numeric-Type">double</a>
     // Required:  No (defaulted)
     // Default:   1.0
     //
@@ -16,7 +16,7 @@ PARAMETER:NEEDS[RemoteTech]
 
     // Maximum signal delay in seconds.
     //
-    // Type:      double
+    // Type:      <a href="Numeric-Type">double</a>
     // Required:  No (defaulted)
     // Default:   double.MaxValue
     //
@@ -24,7 +24,7 @@ PARAMETER:NEEDS[RemoteTech]
 
     // Text to use for the parameter's title.
     //
-    // Type:      string
+    // Type:      <a href="String-Type">string</a>
     // Required:  No (defaulted)
     // Default:   Signal delay: Between &lt;min&gt; and &lt;max&gt;.
     //

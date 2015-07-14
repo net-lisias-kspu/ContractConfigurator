@@ -9,7 +9,7 @@ PARAMETER
     // Set to true if this vessel must be destroyed by impacting into terrain
     // (and not another vessel or a building).
     //
-    // Type:      bool
+    // Type:      <a href="Boolean-Type">bool</a>
     // Required:  No (defaulted)
     // Default:   false
     //
@@ -17,7 +17,7 @@ PARAMETER
 
     // Text for the contract parameter.
     //
-    // Type:      string
+    // Type:      <a href="String-Type">string</a>
     // Required:  No (defaulted)
     // Default:   Vessel Destroyed
     //

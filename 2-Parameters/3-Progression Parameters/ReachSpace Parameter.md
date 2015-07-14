@@ -8,7 +8,7 @@ PARAMETER
 
     // The title text to display.
     //
-    // Type:      string
+    // Type:      <a href="String-Type">string</a>
     // Required:  No (defaulted)
     // Default:   Reach space
     //

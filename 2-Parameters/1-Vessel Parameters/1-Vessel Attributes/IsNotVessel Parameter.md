@@ -10,14 +10,14 @@ PARAMETER
     // be a printable name, as it can be displayed to players if the key does
     // not yet point to a real craft.
     //
-    // Type:      VesselIdentifier
+    // Type:      <a href="VesselIdentifier-Type">VesselIdentifier</a>
     // Required:  Yes
     //
     vessel = Vessel Key
 
     // Text for the contract parameter.
     //
-    // Type:      string
+    // Type:      <a href="String-Type">string</a>
     // Required:  No (defaulted)
     // Default:   Vessel: Not &lt;vessel&gt;
     //

@@ -8,7 +8,7 @@ PARAMETER
 
     // Minimum and maximum mass.
     //
-    // Type:      float
+    // Type:      <a href="Numeric-Type">float</a>
     // Required:  No (defaulted)
     // Default:   0.0 (minMass)
     //            float.MaxValue (maxMass)
@@ -18,7 +18,7 @@ PARAMETER
 
     // Text for the contract parameter.
     //
-    // Type:      string
+    // Type:      <a href="String-Type">string</a>
     // Required:  No (defaulted)
     // Default:   Vessel mass: &lt;mass&gt;
     //title =

@@ -17,7 +17,7 @@ PARAMETER
 
     // The type of timer (indicates what will trigger the timer to start).
     //
-    // Type:      Timer.TimerType
+    // Type:      <a href="Enumeration-Type">Timer.TimerType</a>
     // Required:  No (defaulted)
     // Values:
     //     CONTRACT_ACCEPTANCE (default)
@@ -29,7 +29,7 @@ PARAMETER
     // If the timerType is set to PARAMETER_COMPLETION, the name of the
     // parameter that must be completed to trigger the timer start.
     //
-    // Type:      string
+    // Type:      <a href="String-Type">string</a>
     // Required:  See above
     //
     parameter = TheParameter
@@ -37,7 +37,7 @@ PARAMETER
     // Whether the entire contract should fail or just the parameter when
     // the timer reaches zero.
     //
-    // Type:      bool
+    // Type:      <a href="Boolean-Type">bool</a>
     // Required:  No (defaulted)
     // Default:   true
     //

@@ -8,21 +8,21 @@ PARAMETER:NEEDS[SCANsat]
 
     // Target body, defaulted from the contract if not supplied.
     //
-    // Type:      CelestialBody
+    // Type:      <a href="CelestialBody-Type">CelestialBody</a>
     // Required:  No (defaulted)
     //
     targetBody = Kerbin
 
     // Coverage percentage that must be reached
     //
-    // Type:      double
+    // Type:      <a href="Numeric-Type">double</a>
     // Required:  Yes
     //
     coverage = 65.0
 
     // The type of scan to perform.
     //
-    // Type:      SCANdata.SCANtype
+    // Type:      <a href="Enumeration-Type">SCANdata.SCANtype</a>
     // Required:  Yes
     // Values:
     //     AltimetryLoRes

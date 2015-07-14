@@ -7,7 +7,7 @@ PARAMETER
 
     // The type of trait required.
     //
-    // Type:      string
+    // Type:      <a href="String-Type">string</a>
     // Required:  No
     // Values (for stock KSP):
     //     Pilot
@@ -17,7 +17,7 @@ PARAMETER
 
     // Minimum experience level.
     //
-    // Type:      int
+    // Type:      <a href="Numeric-Type">int</a>
     // Required:  No (defaulted)
     // Default:   0
     //
@@ -25,7 +25,7 @@ PARAMETER
 
     // Maximum experience level.
     //
-    // Type:      int
+    // Type:      <a href="Numeric-Type">int</a>
     // Required:  No (defaulted)
     // Default:   5
     //
@@ -33,7 +33,7 @@ PARAMETER
 
     // Minimum count of astronauts that must match the attributes above.
     //
-    // Type:      int
+    // Type:      <a href="Numeric-Type">int</a>
     // Required:  No (defaulted)
     // Default:   1
     //
@@ -41,7 +41,7 @@ PARAMETER
 
     // Maximum count of astronauts that must match the attributes above.
     //
-    // Type:      int
+    // Type:      <a href="Numeric-Type">int</a>
     // Required:  No (defaulted)
     // Default:   int.MaxValue
     //
@@ -49,7 +49,7 @@ PARAMETER
 
     // Text to use for the parameter
     //
-    // Type:      string
+    // Type:      <a href="String-Type">string</a>
     // Required:  No (defaulted)
     // Default:   (differs based on scenario)
     // 

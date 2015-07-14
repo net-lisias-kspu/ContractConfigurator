@@ -11,7 +11,7 @@ PARAMETER
     // the define attribute of a <a href=VesselParameterGroup-Parameter>VesselParameterGroup</a> parameter, or via the
     // <a href=SpawnVessel-Behaviour>SpawnVessel</a> behaviour.
     //
-    // Type:      VesselIdentifier
+    // Type:      <a href="VesselIdentifier-Type">VesselIdentifier</a>
     // Required:  Yes (multiples allowed)
     //
     vessel = First Target
@@ -19,7 +19,7 @@ PARAMETER
 
     // Text for the contract parameter.
     //
-    // Type:      string
+    // Type:      <a href="String-Type">string</a>
     // Required:  No (defaulted)
     // Default:   Target destroyed
     //

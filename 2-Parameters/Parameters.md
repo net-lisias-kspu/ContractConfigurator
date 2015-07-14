@@ -19,14 +19,14 @@ PARAMETER
     // parameters use this in some way, but even if not explicitly used it will
     // add multipliers for the reward amounts below.
     //
-    // Type:      CelestialBody
+    // Type:      <a href="CelestialBody-Type">CelestialBody</a>
     // Required:  No (defaulted)
     //
     targetBody = Kerbin
 
     // The various parameter-level rewards and penalties.
     //
-    // Type:      float
+    // Type:      <a href="Numeric-Type">float</a>
     // Required:  No
     //
     rewardScience = 100.0
@@ -42,7 +42,7 @@ PARAMETER
     // then setting this to false will make the parameter go back to
     // incomplete if you enter and leave the altitude window.
     //
-    // Type:      bool
+    // Type:      <a href="Boolean-Type">bool</a>
     // Required:  No
     // Default:   (differs per parameter)
     //
@@ -50,7 +50,7 @@ PARAMETER
 
     // Parameter level notes that may be supplied.
     //
-    // Type:      string
+    // Type:      <a href="String-Type">string</a>
     // Required:  No
     //
     notes = These are the notes.
@@ -58,7 +58,7 @@ PARAMETER
     // The completedMessage is the message that is displayed when the
     // parameter completes.
     //
-    // Type:      string
+    // Type:      <a href="String-Type">string</a>
     // Required:  No
     //
     completedMessage = You have done the thing.
@@ -67,7 +67,7 @@ PARAMETER
     // set up bonus rewards for doing extra things beyond the main goal of the
     // contract.
     //
-    // Type:      bool
+    // Type:      <a href="Boolean-Type">bool</a>
     // Required:  No (defaulted)
     // Default:   false
     //
@@ -78,7 +78,7 @@ PARAMETER
     // the same level) must be completed before this parameter is allowed
     // to complete.
     //
-    // Type:      bool
+    // Type:      <a href="Boolean-Type">bool</a>
     // Required:  No (defaulted)
     // Default:   false
     //
@@ -88,7 +88,7 @@ PARAMETER
     // Use with caution - as hiding the child parameters may in some
     // cases make it more difficult for players to know what to do.
     //
-    // Type:      bool
+    // Type:      <a href="Boolean-Type">bool</a>
     // Required:  No (defaulted)
     // Default:   false
     //

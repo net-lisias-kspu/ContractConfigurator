@@ -9,7 +9,7 @@ PARAMETER
     // The index (0-based) in the <a href="OrbitGenerator-Behaviour">OrbitGenerator</a> behaviour of the orbit we
     // wish to reference.
     //
-    // Type:      int
+    // Type:      <a href="Numeric-Type">int</a>
     // Required:  No (defaulted)
     // Default:   0
     //
@@ -19,7 +19,7 @@ PARAMETER
     // wish to reference.  Higher values give more room for error.  Note: More
     // testing is required to better document the realistic range of values.
     //
-    // Type:      double
+    // Type:      <a href="Numeric-Type">double</a>
     // Required:  No (defaulted)
     // Default:   3.0
     //

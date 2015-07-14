@@ -22,7 +22,7 @@ PARAMETER
     // Vessel <=> key association is persistent, and can be used in future
     // contracts.
     //
-    // Type:      string
+    // Type:      <a href="String-Type">string</a>
     // Required:  No
     //
     define = Vessel Key
@@ -34,7 +34,7 @@ PARAMETER
     // attribute can be specified multiple times to allow multiple vessel
     // to be available to complete the parameter.
     //
-    // Type:      VesselIdentifier
+    // Type:      <a href="VesselIdentifier-Type">VesselIdentifier</a>
     // Required:  No (multiples allowed)
     //
     vessel = Vessel Key
@@ -42,7 +42,7 @@ PARAMETER
 
     // The title text to display.
     //
-    // Type:      string
+    // Type:      <a href="String-Type">string</a>
     // Required:  No (defaulted)
     // Default:   Vessel: Any; Duration: &lt;duration&gt;
     //
