@@ -1,5 +1,4 @@
 **[[Expressions]]**
-* [[SpawnVessel|SpawnVessel-Behaviour]]
 * General Types
     * [[Boolean|Boolean-Type]]
     * [[Enumeration|Enumeration-Type]]
