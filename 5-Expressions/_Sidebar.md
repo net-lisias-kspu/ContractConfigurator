@@ -12,6 +12,7 @@
     * [[Location|Location-Type]]
     * [[Resource|Resource-Type]]
     * [[Vessel|Vessel-Type]]
+    * [[VesselIdentifier|VesselIdentifier-Type]]
     * [[Waypoint|Waypoint-Type]]
     * Science Types
         * [[Biome|Biome-Type]]
