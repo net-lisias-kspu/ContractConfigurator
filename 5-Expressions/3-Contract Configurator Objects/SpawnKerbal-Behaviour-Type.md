@@ -1,4 +1,4 @@
-The SpawnKerbal behaviour can be accessed by referencing it by name in an expression:
+The [[SpawnKerbal behaviour|SpawnKerbal-Behaviour]] can be accessed by referencing it by name in an expression:
 ```
 CONTRACT_TYPE
 {

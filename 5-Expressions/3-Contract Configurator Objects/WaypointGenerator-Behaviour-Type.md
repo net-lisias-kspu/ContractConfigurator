@@ -1,4 +1,4 @@
-The WaypointGenerator behaviour can be accessed by referencing it by name in an expression:
+The [[WaypointGenerator behaviour|WaypointGenerator-Behaviour]] can be accessed by referencing it by name in an expression:
 ```
 CONTRACT_TYPE
 {
