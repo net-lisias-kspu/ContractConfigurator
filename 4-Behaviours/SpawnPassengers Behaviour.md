@@ -1,28 +1,48 @@
 Behaviour for spawning passengers on board vessels.
 
-    BEHAVIOUR
-    {
-        name = SpawnPassengers
-        type = SpawnPassengers
+<pre>
+BEHAVIOUR
+{
+    name = SpawnPassengers
+    type = SpawnPassengers
 
-        // Count of passengers to spawn.
-        // Default = 1
-        count = 10
-        
-        // Names of passengers to spawn (use instead of count to spawn
-        // passengers with specific names.
-        passengerName = Kerman Kerman
+    // Count of passengers to spawn.
+    //
+    // Type:      int
+    // Required:  No (defaulted)
+    // Default:   1
+    //
+    count = 10
+    
+    // Names of passengers to spawn (use instead of count to spawn
+    // passengers with specific names.
+    //
+    // Type:      string
+    // Required:  No (multiples allowed)
+    //
+    passengerName = Kerman Kerman
 
-        // (Optional) Type of the passenger(s).  Defaults to Tourist.  Valid
-        // values from ProtoCrewMember.KerbalType:
-        //    Applicant
-        //    Crew
-        //    Tourist
-        //    Unowned.
-        kerbalType = Tourist
+    // Type of the passenger(s).
+    //
+    // Type:      ProtoCrewMember.KerbalType
+    // Required:  No (defaulted)
+    // Values:
+    //     Applicant
+    //     Crew
+    //     Tourist (Default)
+    //     Unowned
+    //
+    kerbalType = Tourist
 
-        // (Optional) Gender of the passenger(s).  If not specified each
-        // passenger is assigned a random gender.  Valid values are Male and
-        // Female.
-        gender = Female
-    }
+    // Gender of the passenger(s).  If not specified each passenger is
+    // assigned a random gender.
+    //
+    // Type:      ProtoCrewMember.Gender
+    // Required:  No
+    // Values:
+    //     Male
+    //     Female
+    //
+    gender = Female
+}
+</pre>
