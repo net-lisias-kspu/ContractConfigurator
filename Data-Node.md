@@ -32,7 +32,7 @@ Within the DATA node, there are a number of fields that can be specified:
 
 | Field | Description |
 | :--- | :--- |
-| `type` | The data type for elements within the DATA node.  Supports any data type listed on the [[Data Types|Data-Types]] page. |
+| `type` | The data type for elements within the DATA node.  Supports any data type listed on the [[Expressions|Expressions]] page. |
 | `requiredValue` | (Optional, default = true) If true, the expression needs to return a valid (non-null) value for the contract to be offered.  If false, the contract will be offered even if the expression returns null. |
 | `uniqueValue` | (Optional, default = false) If true, this value must be unique across all contracts.  If a new contract were to be offered with a duplicate value, it will not be generated. |
 | `activeUniqueValue` | (Optional, default = false) If true, this value must be unique across active/offered contracts.  If a new contract were to be offered with a duplicate value, it will not be generated. |
