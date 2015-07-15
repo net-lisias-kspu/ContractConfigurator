@@ -10,6 +10,8 @@ The AvailablePart class represents the definition of a part.
 | `string Manufacturer()` | The manufacturer of the part. |
 | `float Size()` | The size of the part. |
 | `string TechRequired()` | The name of the technology that is required to unlock this part. |
+| `bool IsUnlocked()` | Whether the player has unlocked this part or not. |
+| `int CrewCapacity()` | The crew capacity of the given part. |
 
 **Global Functions**
 
