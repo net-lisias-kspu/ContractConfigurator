@@ -9,6 +9,7 @@ The numeric data types include types such as `int`, `short`, `float` and `double
 | `numeric Min(numeric a, numeric b)` | Returns whichever is smallest out of `a` and `b`. |
 | `numeric Max(numeric a, numeric b)` | Returns whichever is largest out of `a` and `b`. |
 | `numeric Pow(numeric a, numeric b)` | Returns a to the power of b. |
+| `numeric Log(numeric a, numeric b)` | Returns the logarithm of a in base b. |
 
 **Methods**
 
