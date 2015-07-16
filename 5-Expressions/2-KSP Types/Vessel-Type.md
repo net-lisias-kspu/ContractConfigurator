@@ -7,8 +7,8 @@ The Vessel class represents anything that is made up of parts (which includes sh
 | [`bool`](Boolean-Type) `IsLanded()` | Indicates whether the given vessel is landed. |
 | [`bool`](Boolean-Type) `IsSplashed()` | Indicates whether the given vessel is splashed down. |
 | [`bool`](Boolean-Type) `IsOrbiting()` | Indicates whether the given vessel is in orbit. |
-| [`List`](List-Type)`<Kerbal> Crew()` | Gets all the Kerbals that are on board the vessel. |
-| [`List`](List-Type)`<AvailablePart> Parts()` | Gets a listing of all the parts that make up the vessel. |
+| [`List`](List-Type)`<`[`Kerbal`](Kerbal-Type)`> Crew()` | Gets all the Kerbals that are on board the vessel. |
+| [`List`](List-Type)`<`[`AvailablePart`](AvailablePart-Type)`> Parts()` | Gets a listing of all the parts that make up the vessel. |
 | [`CelestialBody`](CelestialBody-Type) `CelestialBody()` | Gets the body whose sphere of influence the vessel is in. |
 | [`VesselType`](Enumeration-Type) `VesselType()` | Gets the type of vessel (Base, Station, Ship, Lander, Rover, Probe, Debris, SpaceObject , Unknown). |
 | [`double`](Numeric-Type) `Altitude()` | Gets the altitude of the vessel. |
@@ -25,11 +25,11 @@ The Vessel class represents anything that is made up of parts (which includes sh
 | [`double`](Numeric-Type) `SmallestDimension()` | The approximate size (estimated) of the vessel along its smallest dimension. |
 | [`double`](Numeric-Type) `LargestDimension()` | The approximate size (estimated) of the vessel along its largest dimension. |
 | [`Location`](Location-Type) `Location()` | The location of the vessel as an object. |
-| [`List`](List-Type)`<Kerbal> Crew()` | Gets a list containing all the crew on board the vessel. |
+| [`List`](List-Type)`<`[`Kerbal`](Kerbal-Type)`> Crew()` | Gets a list containing all the crew on board the vessel. |
 
 **Global Functions**
 
 | Function Signature| Description |
 | :--- | :--- |
-| [`List`](List-Type)`<Vessel> AllVessels()` | Returns a list of all vessels. |
+| [`List`](List-Type)`<`[`Vessel`](Vessel-Type)`> AllVessels()` | Returns a list of all vessels. |
 | [`Vessel`](Vessel-Type) `Vessel(`[`string`](String-Type)` identifier)` | Returns the vessel for the given identifier. |

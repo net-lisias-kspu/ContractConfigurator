@@ -23,4 +23,4 @@ CONTRACT_TYPE
 
 | Method Signature | Description |
 | :--- | :--- |
-| [`List`](List-Type)`<Kerbal> Kerbals()` | Retrieves a list of all Kerbals spawned by this behaviour. |
+| [`List`](List-Type)`<`[`Kerbal`](Kerbal-Type)`> Kerbals()` | Retrieves a list of all Kerbals spawned by this behaviour. |

@@ -15,5 +15,5 @@ The Kerbal class (ProtoCrewMember in actuality) represents a Kerbal in the game.
 
 | Function Signature| Description |
 | :--- | :--- |
-| [`List`](List-Type)`<Kerbal> AllKerbals()` | Returns a list of all Kerbals in the game. |
+| [`List`](List-Type)`<`[`Kerbal`](Kerbal-Type)`> AllKerbals()` | Returns a list of all Kerbals in the game. |
 | [`Kerbal`](Kerbal-Type) `Kerbal(`[`string`](String-Type)` identifier)` | Returns the Kerbal for the given identifier. |

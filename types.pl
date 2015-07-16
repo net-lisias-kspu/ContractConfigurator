@@ -158,6 +158,20 @@ sub HandleFile($)
             }
         }
 
+        while ($line =~ /^\| [^\|]+<([\w]+)>/)
+        {
+            my $type = $1;
+            if (exists $TYPE_MAP{$type})
+            {
+                $line =~ s/<$type>/<`[`$type`]($TYPE_MAP{$type})`>/;
+            }
+            else
+            {
+                $unhandledTypes{$type} = 1;
+                last;
+            }
+        }
+
         print OFILE $line, "\n";
     }
 

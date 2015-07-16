@@ -5,4 +5,4 @@ Enumerations include all types that have a list of values (typically, the full l
 | Function Signature | Description |
 | :--- | :--- |
 | [`enum`](Enumeration-Type) `Random()` | Returns a random value from the enumeration. |
-| [`List`](List-Type)`<enum> AllEnumValues()` | Returns all the valid values for the enumeration. |
+| [`List`](List-Type)`<`[`enum`](Enumeration-Type)`> AllEnumValues()` | Returns all the valid values for the enumeration. |

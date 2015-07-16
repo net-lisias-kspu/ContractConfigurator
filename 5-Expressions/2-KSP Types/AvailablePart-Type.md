@@ -17,5 +17,5 @@ The AvailablePart class represents the definition of a part.
 
 | Function Signature| Description |
 | :--- | :--- |
-| [`List`](List-Type)`<AvailablePart> AllParts()` | Returns a list of all parts. |
+| [`List`](List-Type)`<`[`AvailablePart`](AvailablePart-Type)`> AllParts()` | Returns a list of all parts. |
 | [`AvailablePart`](AvailablePart-Type) `AvailablePart(`[`string`](String-Type)` identifier)` | Returns the AvailablePart for the given identifier. |
