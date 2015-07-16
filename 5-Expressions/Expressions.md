@@ -146,7 +146,7 @@ CONTRACT_TYPE
             name = CapacityCheck
             type = HasCrewCapacity
 
-            minCapacity = @../CrewCheck/minCrew
+            minCapacity = @CrewCheck/minCrew
         }
     }
 }

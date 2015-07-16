@@ -4,4 +4,4 @@ The VesselIdentifier is a special wrapper representing an identifier for a vesse
 
 | Function Signature| Description |
 | :--- | :--- |
-| [`VesselIdentifier`](../VesselIdentifier-Type) `VesselIdentifier(string identifier)` | Creates a VesselIdenfier. |
+| [`VesselIdentifier`](VesselIdentifier-Type) `VesselIdentifier(string identifier)` | Creates a VesselIdenfier. |

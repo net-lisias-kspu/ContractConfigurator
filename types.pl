@@ -118,7 +118,7 @@ sub HandleFile($)
             my $type = $1;
             if (exists $TYPE_MAP{$type})
             {
-                $line =~ s/`$type /[`$type`](..\/$TYPE_MAP{$type}) `/;
+                $line =~ s/`$type /[`$type`]($TYPE_MAP{$type}) `/;
             }
             else
             {
