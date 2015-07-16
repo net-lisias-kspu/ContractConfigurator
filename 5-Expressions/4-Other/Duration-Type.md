@@ -6,6 +6,6 @@ Example: `2d 4h` is 2 days and 4 hours.
 
 | Function Signature | Description |
 | :--- | :--- |
-| `Duration Random(Duration min, Duration max)` | Returns a random `Duration` that is greater than or equal to *min*, but less than *max*. |
+| [`Duration`](../Duration-Type) `Random(Duration min, Duration max)` | Returns a random `Duration` that is greater than or equal to *min*, but less than *max*. |
 
 <sub>[ [[Top|Function-Reference-Guide]] ] [ [[Other|Function-Reference-Guide#other]] / [[Duration|Function-Reference-Guide#duration]] ]</sub>

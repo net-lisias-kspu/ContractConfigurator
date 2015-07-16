@@ -5,4 +5,4 @@ The following is a listing of global functions that is not directly tied to a ty
 | Function Signature| Description |
 | :--- | :--- |
 | `ContractPrestige Prestige()` | Gets the prestige value of the current contract (Trivial, Significant, Exceptional). |
-| `string RandomKerbalName(Gender)` | Generates a random Kerbal name for the given gender. |
+| [`string`](../String-Type) `RandomKerbalName(Gender)` | Generates a random Kerbal name for the given gender. |

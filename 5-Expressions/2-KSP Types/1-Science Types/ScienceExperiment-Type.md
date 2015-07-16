@@ -4,7 +4,7 @@ The ScienceExperiment class represents a science experiment that can be run.
 
 | Method Signature | Description |
 | :--- | :--- |
-| `string Name()` | Returns the name of the experiment. |
+| [`string`](../String-Type) `Name()` | Returns the name of the experiment. |
 
 **Global Functions**
 

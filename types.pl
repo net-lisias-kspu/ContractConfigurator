@@ -37,7 +37,6 @@ my %TYPE_MAP = qw(
 
 my %unhandledTypes;
 
-
 sub MakeName($)
 {
     my $name = shift;
@@ -74,7 +73,8 @@ sub HandleDir($)
 
     foreach my $file (readdir($dh))
     {
-        if ($file =~ /^[\._]/)
+        if ($file =~ /^[\._]/ ||
+            $file eq 'Expressions.md')
         {
             next;
         }
@@ -107,6 +107,18 @@ sub HandleFile($)
             if (exists $TYPE_MAP{$type})
             {
                 $line =~ s/$type/<a href="$TYPE_MAP{$type}">$type<\/a>/;
+            }
+            else
+            {
+                $unhandledTypes{$type} = 1;
+            }
+        }
+        elsif ($line =~ /\| +`([^< ]+)/)
+        {
+            my $type = $1;
+            if (exists $TYPE_MAP{$type})
+            {
+                $line =~ s/`$type /[`$type`](..\/$TYPE_MAP{$type}) `/;
             }
             else
             {
