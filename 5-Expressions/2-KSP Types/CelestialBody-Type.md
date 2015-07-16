@@ -31,5 +31,5 @@ The CelestialBody class represents a planet, moon or star in KSP.
 | `List<CelestialBody> AllBodies()` | Returns a list of all celestial bodies. |
 | `List<CelestialBody> OrbitedBodies()` | Returns a list of all celestial bodies that the player has orbited. |
 | `List<CelestialBody> LandedBodies()` | Returns a list of all celestial bodies that the player has landed on. |
-| [`CelestialBody`](CelestialBody-Type) `CelestialBody(string identifier)` | Returns the CelestialBody for the given identifier. |
+| [`CelestialBody`](CelestialBody-Type) `CelestialBody(`[`string`](String-Type)` identifier)` | Returns the CelestialBody for the given identifier. |
 | [`double`](Numeric-Type) `UniversalTime()` | Gets the universal time (number of game seconds since the game started). |

@@ -4,12 +4,12 @@ The numeric data types include types such as `int`, `short`, `float` and `double
 
 | Function Signature | Description |
 | :--- | :--- |
-| `numeric Random()` | Returns a random number that is greater than or equal to 0.0, but less than 1.0.  Note for integer types this will *always* return 0 - use the second interface instead. |
-| `numeric Random(numeric min, numeric max)` | Returns a random number that is greater than or equal to *min*, but less than *max*. |
-| `numeric Min(numeric a, numeric b)` | Returns whichever is smallest out of `a` and `b`. |
-| `numeric Max(numeric a, numeric b)` | Returns whichever is largest out of `a` and `b`. |
-| `numeric Pow(numeric a, numeric b)` | Returns a to the power of b. |
-| `numeric Log(numeric a, numeric b)` | Returns the logarithm of a in base b. |
+| [`numeric`](Numeric-Type) `Random()` | Returns a random number that is greater than or equal to 0.0, but less than 1.0.  Note for integer types this will *always* return 0 - use the second interface instead. |
+| [`numeric`](Numeric-Type) `Random(`[`numeric`](Numeric-Type)` min, `[`numeric`](Numeric-Type)` max)` | Returns a random number that is greater than or equal to *min*, but less than *max*. |
+| [`numeric`](Numeric-Type) `Min(`[`numeric`](Numeric-Type)` a, `[`numeric`](Numeric-Type)` b)` | Returns whichever is smallest out of `a` and `b`. |
+| [`numeric`](Numeric-Type) `Max(`[`numeric`](Numeric-Type)` a, `[`numeric`](Numeric-Type)` b)` | Returns whichever is largest out of `a` and `b`. |
+| [`numeric`](Numeric-Type) `Pow(`[`numeric`](Numeric-Type)` a, `[`numeric`](Numeric-Type)` b)` | Returns a to the power of b. |
+| [`numeric`](Numeric-Type) `Log(`[`numeric`](Numeric-Type)` a, `[`numeric`](Numeric-Type)` b)` | Returns the logarithm of a in base b. |
 
 **Methods**
 

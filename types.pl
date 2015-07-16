@@ -14,18 +14,23 @@ my %IGNORED_TYPES = (
 my %TYPE_MAP = qw(
     BodyLocation Enumeration-Type
     ChangeVesselOwnership.State Enumeration-Type
+    ContractPrestige Enumeration-Type
     ExperimentSituations Enumeration-Type
     FinePrint.Utilities.OrbitType Enumeration-Type
+    Gender Enumeration-Type
     HasAntennaParameter.AntennaType Enumeration-Type
+    KerbalType Enumeration-Type
     Message.Condition Enumeration-Type
     PartCategories Enumeration-Type
     ProtoCrewMember.Gender Enumeration-Type
     ProtoCrewMember.KerbalType Enumeration-Type
+    RosterStatus Enumeration-Type
     SCANdata.SCANtype Enumeration-Type
     ScienceRecoveryMethod Enumeration-Type
     Timer.TimerType Enumeration-Type
     Vessel.Situations Enumeration-Type
     VesselType Enumeration-Type
+    enum Enumeration-Type
     bool Boolean-Type
     double Numeric-Type
     float Numeric-Type
@@ -33,6 +38,7 @@ my %TYPE_MAP = qw(
     long Numeric-Type
     string String-Type
     uint Numeric-Type
+    numeric Numeric-Type
 );
 
 my %unhandledTypes;
@@ -113,7 +119,7 @@ sub HandleFile($)
                 $unhandledTypes{$type} = 1;
             }
         }
-        elsif ($line =~ /\| +`([^< ]+)/)
+        elsif ($line =~ /\| +`([^ ]+)/)
         {
             my $type = $1;
             if (exists $TYPE_MAP{$type})
@@ -123,6 +129,33 @@ sub HandleFile($)
             else
             {
                 $unhandledTypes{$type} = 1;
+            }
+        }
+
+        if ($line =~ /^\| [^\|]+[^\]]\(([^) ,`]+)/)
+        {
+            my $type = $1;
+            if (exists $TYPE_MAP{$type})
+            {
+                $line =~ s/\($type/(`[`$type`]($TYPE_MAP{$type})`/;
+            }
+            else
+            {
+                $unhandledTypes{$type} = 1;
+            }
+        }
+
+        while ($line =~ /^\| [^\|]+, +([^) ,\[`]+)/)
+        {
+            my $type = $1;
+            if (exists $TYPE_MAP{$type})
+            {
+                $line =~ s/, $type/, `[`$type`]($TYPE_MAP{$type})`/;
+            }
+            else
+            {
+                $unhandledTypes{$type} = 1;
+                last;
             }
         }
 
@@ -182,7 +215,7 @@ foreach my $rootDir (@ARGV)
 
 foreach my $type (sort keys %unhandledTypes)
 {
-    if ($type ne "Vector3d")
+    if ($type ne "Vector3d" && $type ne "T")
     {
         print "Unhandled type: $type\n";
     }

@@ -16,8 +16,8 @@ The Vessel class represents anything that is made up of parts (which includes sh
 | [`int`](Numeric-Type) `CrewCapacity()` | Gets the number of spots for crew on the vessel. |
 | [`int`](Numeric-Type) `EmptyCrewSpace()` | Gets the number of spots for crew on the vessel that are currently empty. |
 | [`int`](Numeric-Type) `FreeDockingPorts()` | Gets the number of docking ports that are currently free. |
-| [`double`](Numeric-Type) `ResourceQuantity(Resource r)` | Gets the amount of the given resource that is on board. |
-| [`double`](Numeric-Type) `ResourceCapacity(Resource r)` | Gets the capacity for the given resource that is on board. |
+| [`double`](Numeric-Type) `ResourceQuantity(`[`Resource`](Resource-Type)` r)` | Gets the amount of the given resource that is on board. |
+| [`double`](Numeric-Type) `ResourceCapacity(`[`Resource`](Resource-Type)` r)` | Gets the capacity for the given resource that is on board. |
 | [`float`](Numeric-Type) `Mass()` | The mass of the vessel in tons. |
 | [`double`](Numeric-Type) `XDimension()` | The approximate size (estimated) of the vessel along the x dimension. |
 | [`double`](Numeric-Type) `YDimension()` | The approximate size (estimated) of the vessel along the y dimension. |
@@ -32,4 +32,4 @@ The Vessel class represents anything that is made up of parts (which includes sh
 | Function Signature| Description |
 | :--- | :--- |
 | `List<Vessel> AllVessels()` | Returns a list of all vessels. |
-| [`Vessel`](Vessel-Type) `Vessel(string identifier)` | Returns the vessel for the given identifier. |
+| [`Vessel`](Vessel-Type) `Vessel(`[`string`](String-Type)` identifier)` | Returns the vessel for the given identifier. |
