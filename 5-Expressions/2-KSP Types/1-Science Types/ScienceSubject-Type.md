@@ -18,10 +18,10 @@ The ScienceSubject class represents a subject for which science can be performed
 
 | Function Signature| Description |
 | :--- | :--- |
-| `List<ScienceSubject> AllScienceSubjects()` | The list of all currently available science subjects (except "difficult" ones). |
-| `List<ScienceSubject> AllScienceSubjectsByBody(List<CelestialBody>)` | Same as AllScienceSubjects, but filtered by CelestialBody. |
-| `List<ScienceSubject> AllScienceSubjectsByExperiment(List<ScienceExperiment>)` | Same as AllScienceSubjects, but filtered by ScienceExperiment. |
-| `List<ScienceSubject> AllScienceSubjectsByBiome(List<Biome>)` | Same as AllScienceSubjects, but filtered by Biome. |
-| `List<ScienceSubject> AllScienceSubjectsByBodyExperiment(List<CelestialBody>, List<ScienceExperiment>)` | Same as AllScienceSubjects, but filtered by CelestialBody and ScienceExperiment. |
-| `List<ScienceSubject> AllScienceSubjectsByBiomeExperiment(List<Biome>, List<ScienceExperiment>)` | Same as AllScienceSubjects, but filtered by Biome and ScienceExperiment. |
-| `List<ScienceSubject> DifficultScienceSubjects()` | The list of all "difficult" subjects (such as "splashed down in the mountains"). |
+| [`List`](List-Type)`<ScienceSubject> AllScienceSubjects()` | The list of all currently available science subjects (except "difficult" ones). |
+| [`List`](List-Type)`<ScienceSubject> AllScienceSubjectsByBody(`[`List`](List-Type)`<CelestialBody>)` | Same as AllScienceSubjects, but filtered by CelestialBody. |
+| [`List`](List-Type)`<ScienceSubject> AllScienceSubjectsByExperiment(`[`List`](List-Type)`<ScienceExperiment>)` | Same as AllScienceSubjects, but filtered by ScienceExperiment. |
+| [`List`](List-Type)`<ScienceSubject> AllScienceSubjectsByBiome(`[`List`](List-Type)`<Biome>)` | Same as AllScienceSubjects, but filtered by Biome. |
+| [`List`](List-Type)`<ScienceSubject> AllScienceSubjectsByBodyExperiment(`[`List`](List-Type)`<CelestialBody>, `[`List`](List-Type)`<ScienceExperiment>)` | Same as AllScienceSubjects, but filtered by CelestialBody and ScienceExperiment. |
+| [`List`](List-Type)`<ScienceSubject> AllScienceSubjectsByBiomeExperiment(`[`List`](List-Type)`<Biome>, `[`List`](List-Type)`<ScienceExperiment>)` | Same as AllScienceSubjects, but filtered by Biome and ScienceExperiment. |
+| [`List`](List-Type)`<ScienceSubject> DifficultScienceSubjects()` | The list of all "difficult" subjects (such as "splashed down in the mountains"). |

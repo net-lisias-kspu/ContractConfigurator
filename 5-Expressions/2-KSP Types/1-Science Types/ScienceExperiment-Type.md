@@ -10,4 +10,4 @@ The ScienceExperiment class represents a science experiment that can be run.
 
 | Function Signature| Description |
 | :--- | :--- |
-| `List<ScienceExperiment> AllExperiments()` | Returns a list of all science experiments. |
+| [`List`](List-Type)`<ScienceExperiment> AllExperiments()` | Returns a list of all science experiments. |

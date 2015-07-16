@@ -1,4 +1,4 @@
-#!/usr/bin/env perl
+#<!/usr/bin/env perl
 
 use strict;
 use File::Copy qw(move);
@@ -6,7 +6,6 @@ use File::Copy qw(move);
 my %IGNORED_TYPES = (
     Boolean => 1,
     Enumeration => 1,
-    List => 1,
     Numeric => 1,
     String => 1,
 );
@@ -119,12 +118,12 @@ sub HandleFile($)
                 $unhandledTypes{$type} = 1;
             }
         }
-        elsif ($line =~ /\| +`([^ ]+)/)
+        elsif ($line =~ /\| +`([^ <]+)/)
         {
             my $type = $1;
             if (exists $TYPE_MAP{$type})
             {
-                $line =~ s/`$type /[`$type`]($TYPE_MAP{$type}) `/;
+                $line =~ s/`$type/[`$type`]($TYPE_MAP{$type})`/;
             }
             else
             {
@@ -132,12 +131,12 @@ sub HandleFile($)
             }
         }
 
-        if ($line =~ /^\| [^\|]+[^\]]\(([^) ,`]+)/)
+        if ($line =~ /^\| [^\|]+[^\]]\(([^) ,`<]+)/)
         {
             my $type = $1;
             if (exists $TYPE_MAP{$type})
             {
-                $line =~ s/\($type/(`[`$type`]($TYPE_MAP{$type})`/;
+                $line =~ s/([^\]])\($type/$1(`[`$type`]($TYPE_MAP{$type})`/;
             }
             else
             {
@@ -145,7 +144,7 @@ sub HandleFile($)
             }
         }
 
-        while ($line =~ /^\| [^\|]+, +([^) ,\[`]+)/)
+        while ($line =~ /^\| [^\|]+, +([^) ,\[`<]+)/)
         {
             my $type = $1;
             if (exists $TYPE_MAP{$type})

@@ -11,7 +11,7 @@ List types are a list of another type (which can be any of the supported types).
 | `T ElementAt(`[`int`](Numeric-Type)` index)` | Returns the element at the given index (or null if the index is out of range). |
 | [`bool`](Boolean-Type) `Contains(T value)` | Returns true if the requested value is in the list, false otherwise. |
 | [`int`](Numeric-Type) `Count()` | Returns the number of items in the list. |
-| `List<T> Concat(List<T> list)` | Adds the elements in `list` to the current list and returns it. |
-| `List<T> Add(T item)` | Adds the given item to the current list and returns it. |
-| `List<T> Exclude(T item)` | Removes the given item from the current list and returns it. |
-| `List<T> ExcludeAll(List<T> item)` | Removes all the given item from the current list and returns it. |
+| [`List`](List-Type)`<T> Concat(`[`List`](List-Type)`<T> list)` | Adds the elements in `list` to the current list and returns it. |
+| [`List`](List-Type)`<T> Add(T item)` | Adds the given item to the current list and returns it. |
+| [`List`](List-Type)`<T> Exclude(T item)` | Removes the given item from the current list and returns it. |
+| [`List`](List-Type)`<T> ExcludeAll(`[`List`](List-Type)`<T> item)` | Removes all the given item from the current list and returns it. |
