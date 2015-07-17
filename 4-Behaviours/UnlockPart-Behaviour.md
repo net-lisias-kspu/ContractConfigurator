@@ -6,13 +6,12 @@ BEHAVIOUR
     name = UnlockPart
     type = UnlockPart
 
-    // The ID of the technology to unlock on completion of the contract
-    // this behaviour is tied to.
+    // The name of the part to unlock on completion of the contract.
     //
-    // Type:      <a href="String-Type">string</a>
+    // Type:      <a href="AvailablePart-Type">AvailablePart</a>
     // Required:  Yes (multiples allowed)
     //
-    techId = engineering101
+    part = mk1pod
 
     // Whether to also unlock the technology for this part.  Note that if the
     // technology is not already unlocked and this is set to false, the part
