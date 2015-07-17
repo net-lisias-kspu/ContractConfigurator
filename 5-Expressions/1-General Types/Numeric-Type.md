@@ -11,6 +11,17 @@ The numeric data types include types such as `int`, `short`, `float` and `double
 | [`numeric`](Numeric-Type) `Pow(`[`numeric`](Numeric-Type)` a, `[`numeric`](Numeric-Type)` b)` | Returns a to the power of b. |
 | [`numeric`](Numeric-Type) `Log(`[`numeric`](Numeric-Type)` a, `[`numeric`](Numeric-Type)` b)` | Returns the logarithm of a in base b. |
 
+**Global Functions**
+
+| Function Signature | Description |
+| :--- | :--- |
+| [`int`](Numeric-Type)` int(`[`numeric`](Numeric-Type)` val)` | Converts the value to an integer representation. |
+| [`long`](Numeric-Type)` long(`[`numeric`](Numeric-Type)` val)` | Converts the value to a long integer representation. |
+| [`uint`](Numeric-Type)` uint(`[`numeric`](Numeric-Type)` val)` | Converts the value to an unsigned integer representation. |
+| [`ulong`](Numeric-Type)` ulong(`[`numeric`](Numeric-Type)` val)` | Converts the value to an unsigned long integer representation. |
+| [`float`](Numeric-Type)` float(`[`numeric`](Numeric-Type)` val)` | Converts the value to a float (single precision) representation. |
+| [`double`](Numeric-Type)` double(`[`numeric`](Numeric-Type)` val)` | Converts the value to a float (double precision) representation. |
+
 **Methods**
 
 | Method Signature | Description |

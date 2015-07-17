@@ -37,6 +37,7 @@ my %TYPE_MAP = qw(
     long Numeric-Type
     string String-Type
     uint Numeric-Type
+    ulong Numeric-Type
     numeric Numeric-Type
 );
 
