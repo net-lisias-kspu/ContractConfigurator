@@ -6,6 +6,8 @@ REQUIREMENT
     name = TechResearched
     type = TechResearched
 
+    // Use one of the two following methods to identifier the tech(s).
+
     // The technology that needs to have been researched.  Take special
     // note that this does not get validated - if you make a typo, the
     // requirement will always return false.

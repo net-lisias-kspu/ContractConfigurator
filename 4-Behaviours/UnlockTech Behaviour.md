@@ -1,4 +1,4 @@
-Behaviour for unlocking technology
+Behaviour for unlocking a technology.  Note that this does not respect the ordering in the tech tree (it can unlock a node that doesn't have its prerequisites unlocked).  Use the [[CanResearchTech|CanResearchTech-Requirement]] requirement to guard against that condition.
 
 <pre>
 BEHAVIOUR

@@ -21,6 +21,7 @@
     * [[SplashDown|SplashDown-Requirement]]
     * [[SurfaceEVA|SurfaceEVA-Requirement]]
 * Research Based Requirements
+    * [[CanResearchTech|CanResearchTech-Requirement]]
     * [[PartModuleTypeUnlocked|PartModuleTypeUnlocked-Requirement]]
     * [[PartModuleUnlocked|PartModuleUnlocked-Requirement]]
     * [[PartUnlocked|PartUnlocked-Requirement]]
