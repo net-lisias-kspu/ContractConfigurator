@@ -18,7 +18,7 @@ PARAMETER
     // Required:  No (defaulted)
     // Values:
     //     ESCAPING
-    //     ORBITAL (default)
+    //     ORBITING (default)
     //     SUB_ORBITAL
     //
     situation = SUB_ORBITAL
