@@ -24,6 +24,18 @@ PARAMETER
     partModule = ModuleReactionWheel
     partModule = ModuleSAS
 
+    // Extended PartModule check.  This is used to look for very specific part
+    // module attributes.  The MODULE node may contain any attribute, and those
+    // attributes will be matched against the part modules in the parts.
+    //
+    // Required:  No (multiples allowed)
+    //
+    MODULE
+    {
+        name = ModuleScienceExperiment
+        experimentID = mysteryGoo
+    }
+
     // Part manufacturer to check for.
     //
     // Type:      <a href="String-Type">string</a>
@@ -150,5 +162,26 @@ PARAMETER
         minCount = 2
         maxCount = 2
     }
+}
+</pre>
+
+The makes sure that the vessel has at least one part that has the mystery goo experiment module (which could be through the stock mystery goo canister or a modded part adding the mystery goo experiment.
+
+<pre>
+PARAMETER
+{
+    name = PartValidation8
+    type = PartValidation
+
+    FILTER
+    {
+        MODULE
+        {
+            name = ModuleScienceExperiment
+            experimentID = mysteryGoo
+        }
+    }
+
+    minCount = 1
 }
 </pre>
