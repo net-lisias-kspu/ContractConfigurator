@@ -22,8 +22,8 @@
     * [[SpawnKerbal Behaviour|SpawnKerbal-Behaviour-Type]]
     * [[WaypointGenerator Behaviour|WaypointGenerator-Behaviour-Type]]
 * Other
+    * [[ContractPrestige|ContractPrestige-Type]]
     * [[Duration|Duration-Type]]
-    * [[Prestige|Prestige-Type]]
 * Global Functions
     * [[Global Functions|Global-Functions]]
 
