@@ -49,6 +49,7 @@
     * [[SCANsatCoverage|SCANsatCoverage-Parameter]]
 * Miscellaneous Parameters
     * [[Duration|Duration-Parameter]]
+    * [[MissionTimer|MissionTimer-Parameter]]
     * [[PartTest|PartTest-Parameter]]
     * [[TargetDestroyed|TargetDestroyed-Parameter]]
     * [[Timer|Timer-Parameter]]

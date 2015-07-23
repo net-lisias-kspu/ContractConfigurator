@@ -20,6 +20,8 @@ my %TYPE_MAP = qw(
     HasAntennaParameter.AntennaType Enumeration-Type
     KerbalType Enumeration-Type
     Message.Condition Enumeration-Type
+    MissionTimer.StartCriteria Enumeration-Type
+    MissionTimer.EndCriteria Enumeration-Type
     PartCategories Enumeration-Type
     ProtoCrewMember.Gender Enumeration-Type
     ProtoCrewMember.KerbalType Enumeration-Type
