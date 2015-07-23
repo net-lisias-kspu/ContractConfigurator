@@ -14,3 +14,4 @@ The ContractPrestige type is an [[enumeration|Enumeration-Type]] with the follow
 | Function Signature| Description |
 | :--- | :--- |
 | [`ContractPrestige`](ContractPrestige-Type)` Prestige()` | Gets the prestige value of the current contract. |
+| [`ContractPrestige`](ContractPrestige-Type)` ContractPrestige(`[`string`](String-Type)` identifier)` | Returns the ContractPrestige for the given identifier. |
