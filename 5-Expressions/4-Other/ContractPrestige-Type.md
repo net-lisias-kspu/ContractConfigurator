@@ -1,4 +1,4 @@
-The ContractPrestige type is an [enumeration|Enumeration-Type] with the following valid values:
+The ContractPrestige type is an [[enumeration|Enumeration-Type]] with the following valid values:
 * Trivial
 * Significant
 * Exceptional
@@ -13,4 +13,4 @@ The ContractPrestige type is an [enumeration|Enumeration-Type] with the followin
 
 | Function Signature| Description |
 | :--- | :--- |
-| [`ContractPrestige`](Enumeration-Type) `Prestige()` | Gets the prestige value of the current contract. |
+| [`ContractPrestige`](ContractPrestige-Type)` Prestige()` | Gets the prestige value of the current contract. |

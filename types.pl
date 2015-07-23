@@ -13,7 +13,6 @@ my %IGNORED_TYPES = (
 my %TYPE_MAP = qw(
     BodyLocation Enumeration-Type
     ChangeVesselOwnership.State Enumeration-Type
-    ContractPrestige Enumeration-Type
     ExperimentSituations Enumeration-Type
     FinePrint.Utilities.OrbitType Enumeration-Type
     Gender Enumeration-Type
