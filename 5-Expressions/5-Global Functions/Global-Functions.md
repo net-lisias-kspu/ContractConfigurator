@@ -4,5 +4,5 @@ The following is a listing of global functions that is not directly tied to a ty
 
 | Function Signature| Description |
 | :--- | :--- |
-| [`ContractPrestige`](Enumeration-Type) `Prestige()` | Gets the prestige value of the current contract (Trivial, Significant, Exceptional). |
+| [`double`](Numeric-Type)` ContractMultiplier()` | Gets the contract multiplier (equivalent to ContractPrestige().Multiplier() * @/targetBody.Multiplier()). |
 | [`string`](String-Type) `RandomKerbalName(`[`Gender`](Enumeration-Type)`)` | Generates a random Kerbal name for the given gender. |

@@ -23,6 +23,7 @@
     * [[WaypointGenerator Behaviour|WaypointGenerator-Behaviour-Type]]
 * Other
     * [[Duration|Duration-Type]]
+    * [[Prestige|Prestige-Type]]
 * Global Functions
     * [[Global Functions|Global-Functions]]
 

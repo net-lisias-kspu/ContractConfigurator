@@ -22,6 +22,7 @@ The CelestialBody class represents a planet, moon or star in KSP.
 | [`double`](Numeric-Type) `SphereOfInfluence()` | Returns the radius of the planet's sphere of influence (in meters). |
 | [`List`](List-Type)`<`[`Biome`](Biome-Type)`> Biomes()` | Returns all the biomes for the given celestial body. |
 | [`double`](Numeric-Type) `RemoteTechCoverage()` | (RemoteTech only) Indicates the commsat coverage percentage of the given body. |
+| [`double`](Numeric-Type) `Multiplier()` | Gets the science/contract reward multiplier for this body. |
 
 **Global Functions**
 
