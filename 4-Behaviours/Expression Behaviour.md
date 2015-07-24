@@ -25,7 +25,7 @@ BEHAVIOUR
     }
 
     // The CONTRACT_COMPLETED_FAILURE node gets executed when the
-    // contract fails, is withdrawn or the deadline expires.
+    // contract fails or the deadline expires.
     CONTRACT_COMPLETED_FAILURE
     {
         CC_TestVal = CC_TestVal / 2
