@@ -40,6 +40,26 @@ PARAMETER
     vessel = Vessel Key
     vessel = Some other vessel
 
+    // If the contract completes successfully, whether to remove any associated
+    // vessels set via the define attribute.  Use this for contracts where you
+    // don't want the vessel tracked into other contracts (especially true if
+    // you want the contract to be repeatable).
+    //
+    // Type:      <a href="Boolean-Type">bool</a>
+    // Required:  No (defauled)
+    // Default:   false
+    //
+    dissassociateVesselsOnContractCompletion = false
+
+    // If the contract fails, whether to remove any associated vessels
+    // set via the define attribute.
+    //
+    // Type:      <a href="Boolean-Type">bool</a>
+    // Required:  No (defauled)
+    // Default:   true
+    //
+    dissassociateVesselsOnContractFailure = true
+
     // The title text to display.
     //
     // Type:      <a href="String-Type">string</a>
