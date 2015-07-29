@@ -27,6 +27,7 @@ CONTRACT_TYPE
     }
 }
 ```
+Data nodes may existing within [[CONTRACT_TYPE|Contract-Type]] and [[CONTRACT_GROUP|Contract-Group]] nodes.
 
 Within the DATA node, there are a number of fields that can be specified:
 

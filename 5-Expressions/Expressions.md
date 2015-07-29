@@ -11,6 +11,7 @@
 * [[Functions/Methods|Expressions#functionsmethods]]
   * [[Functions|Expressions#functions]]
   * [[Methods|Expressions#methods]]
+  * [[List Handling|Expressions#list-handling]]
 * [[Lists of values|Expressions#lists-of-values]]
   * [[The Where() Method|Expressions#the-where-method]]
 
@@ -156,6 +157,10 @@ One detail that can be seen in the above example is that the referenced values c
 rewardFunds = @rewardScience
 rewardScience = @rewardFunds
 ```
+Within a CONTRACT_TYPE (or its child elements), it is also important to note that a reference can be made to attributes of the CONTRACT_GROUP that the CONTRACT_TYPE is a part of.  This is done by using the name of the contract group as a namespace, followed by a colon:
+```
+rewardFunds = 10000.0 * @MyContractGroup:groupFundsMultiplier
+```
 
 <sub>[ [[Top|Expressions]] ] [ [[Special Identifiers|Expressions#special-identifiers]] ]</sub>
 
@@ -191,13 +196,19 @@ See the sidebar for a full list of classes with methods.
 
 <sub>[ [[Top|Expressions]] ] [ [[Functions/Methods|Expressions#functionsmethods]] / [[Methods|Expressions#methods]] ]</sub>
 
+### List Handling
+
+There are some special consideration for handling lists in expressions.
+
+<sub>[ [[Top|Expressions]] ] [ [[Functions/Methods|Expressions#functionsmethods]] / [[List Handling|Expressions#list-handling]] ]</sub>
+
 ## Lists of values
 
 Lists of values may be specified using the `[` and `]` array operators and separating the values with `,`.  For example:
 ```
 targetBody = [ Mun, Minmus ].Random()
 ```
-Note that fields do not directly support assigning from a list of values, but there are two very common uses of lists: the `Random()` method call returns a random value from the list, and the `Where()` method call that can filter the list of values.
+There are two very common uses of lists: the `Random()` method call returns a random value from the list, and the `Where()` method call that can filter the list of values.
 
 <sub>[ [[Top|Expressions]] ] [ [[Lists of values|Expressions#lists-of-values]] ]</sub>
 

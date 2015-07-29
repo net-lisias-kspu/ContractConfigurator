@@ -38,4 +38,18 @@ The CONTRACT_GROUP node provides grouping for multiple Contract Configurator con
             // A child group with fewer completions allowed than the parent.
             maxCompletions = 1
         }
+
+        // The DATA node is a special node that is not used by contracts
+        // or parameters directly, but provide storage for generic values
+        // that can be used as part of expressions.
+        DATA
+        {
+            type = CelestialBody
+
+            // This would be accessiable to any contracts in the ContractGroup
+            // or ChildGroup groups by using:
+            // @ContractGroup:orbitedBodyWithSurface
+            orbitedBodyWithSurface = OrbitedBodies().Where(cb => cb.HasSurface())
+        }
+
     }
