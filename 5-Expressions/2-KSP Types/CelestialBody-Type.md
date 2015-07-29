@@ -18,7 +18,9 @@ The CelestialBody class represents a planet, moon or star in KSP.
 | [`double`](Numeric-Type) `RotationalPeriod()` | Returns the planet's rotational period (in s). |
 | [`double`](Numeric-Type) `Radius()` | Returns the planet's radius (in meters). |
 | [`double`](Numeric-Type) `SemiMajorAxis()` | Returns the semi-major axis of the planet (in meters). |
+| [`float`](Numeric-Type) `FlyingAltitudeThreshold()` | The altitude threshold between 'flying low' and 'flying high'. |
 | [`float`](Numeric-Type) `AtmosphereAltitude()` | Returns the altitude of planet's atmosphere (in meters). |
+| [`float`](Numeric-Type) `SpaceAltitudeThreshold()` | The altitude threshold between 'low in space' and 'high in space'. |
 | [`double`](Numeric-Type) `SphereOfInfluence()` | Returns the radius of the planet's sphere of influence (in meters). |
 | [`List`](List-Type)`<`[`Biome`](Biome-Type)`> Biomes()` | Returns all the biomes for the given celestial body. |
 | [`double`](Numeric-Type) `RemoteTechCoverage()` | (RemoteTech only) Indicates the commsat coverage percentage of the given body. |
