@@ -9,7 +9,7 @@ The AvailablePart class represents the definition of a part.
 | [`string`](String-Type) `Description()` | The textual description of the part. |
 | [`string`](String-Type) `Manufacturer()` | The manufacturer of the part. |
 | [`float`](Numeric-Type) `Size()` | The size of the part. |
-| [`string`](String-Type) `TechRequired()` | The name of the technology that is required to unlock this part. |
+| [`Tech`](Tech-Type)` TechRequired()` | The technology that is required to unlock this part. |
 | [`bool`](Boolean-Type) `IsUnlocked()` | Whether the player has unlocked this part or not. |
 | [`int`](Numeric-Type) `CrewCapacity()` | The crew capacity of the given part. |
 | [`float`](Numeric-Type) `EngineVacuumThrust()` | The thrust in vacuum for this part.  Returns 0.0 if the part isn't an engine. |

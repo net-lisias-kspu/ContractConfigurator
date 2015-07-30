@@ -11,6 +11,7 @@
     * [[Kerbal|Kerbal-Type]]
     * [[Location|Location-Type]]
     * [[Resource|Resource-Type]]
+    * [[Tech|Tech-Type]]
     * [[Vessel|Vessel-Type]]
     * [[VesselIdentifier|VesselIdentifier-Type]]
     * [[Waypoint|Waypoint-Type]]
