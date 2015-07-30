@@ -12,6 +12,10 @@ The CONTRACT_GROUP node provides grouping for multiple Contract Configurator con
         // Name of the contract group
         name = ContractGroup
 
+        // Name that is displayed in the settings window (if not supplied,
+        // defaulted to the name).
+        displayName = The Contract Group
+
         // Use this to specify the minimum version of Contract Configurator
         // That is required to run contracts in this group.
         minVersion = 0.7.0
