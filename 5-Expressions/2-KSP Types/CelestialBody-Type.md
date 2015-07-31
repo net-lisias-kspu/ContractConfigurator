@@ -11,6 +11,11 @@ The CelestialBody class represents a planet, moon or star in KSP.
 | [`bool`](Boolean-Type) `IsHomeWorld()` | Indicates whether the given body is the home world (ie. Kerbin). |
 | [`bool`](Boolean-Type) `IsPlanet()` | Indicates whether the given body is a planet (not a moon or star). |
 | [`bool`](Boolean-Type) `IsMoon()` | Indicates whether the given body is a moon. |
+| [`bool`](Boolean-Type) `HaveReached()` | Whether the player has reached the given celestial body. |
+| [`bool`](Boolean-Type) `HaveOrbited()` | Whether the player has orbited the given celestial body. |
+| [`bool`](Boolean-Type) `HaveLanded()` | Whether the player has landed on the given celestial body. |
+| [`bool`](Boolean-Type) `HaveEscaped()` | Whether the player has escaped from the given celestial body. |
+| [`bool`](Boolean-Type) `HaveReturnedFrom()` | Whether the player has returned from the given celestial body. |
 | [`bool`](Boolean-Type) `IsOrbitalSurveyComplete()` | Indicates whether an orbital survey has been complete for the body. |
 | [`CelestialBody`](CelestialBody-Type) `Parent()` | Returns the body's parent body (ex. The Mun's parent body is Kerbin). |
 | [`List`](List-Type)`<`[`CelestialBody`](CelestialBody-Type)`> Children()` | Returns the body's child bodies (ex. Kerbin's child bodies are the Mun and Minmus). |
@@ -32,7 +37,10 @@ The CelestialBody class represents a planet, moon or star in KSP.
 | :--- | :--- |
 | [`CelestialBody`](CelestialBody-Type) `HomeWorld()` | Returns the home world (ie. Kerbin). |
 | [`List`](List-Type)`<`[`CelestialBody`](CelestialBody-Type)`> AllBodies()` | Returns a list of all celestial bodies. |
+| [`List`](List-Type)`<`[`CelestialBody`](CelestialBody-Type)`> ReachedBodies()` | Returns a list of all celestial bodies that the player has reached. |
 | [`List`](List-Type)`<`[`CelestialBody`](CelestialBody-Type)`> OrbitedBodies()` | Returns a list of all celestial bodies that the player has orbited. |
 | [`List`](List-Type)`<`[`CelestialBody`](CelestialBody-Type)`> LandedBodies()` | Returns a list of all celestial bodies that the player has landed on. |
+| [`List`](List-Type)`<`[`CelestialBody`](CelestialBody-Type)`> EscapedBodies()` | Returns a list of all celestial bodies that the player has escaped from. |
+| [`List`](List-Type)`<`[`CelestialBody`](CelestialBody-Type)`> ReturnedFromBodies()` | Returns a list of all celestial bodies that the player has returned from. |
 | [`CelestialBody`](CelestialBody-Type) `CelestialBody(`[`string`](String-Type)` identifier)` | Returns the CelestialBody for the given identifier. |
 | [`double`](Numeric-Type) `UniversalTime()` | Gets the universal time (number of game seconds since the game started). |
