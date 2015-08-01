@@ -8,7 +8,9 @@ The Tech class represents a technology that can be researched.
 | [`bool`](Boolean-Type) `IsUnlocked()` | Whether the player has unlocked this tech or not. |
 | [`string`](String-Type) `Description()` | The textual description of the tech. |
 | [`int`](Numeric-Type) `Level()` | What level in the tree this tech is at (the start node is considered level 0). |
+| [`bool`](Boolean-Type) `AnyToUnlock()` | Whether any parent node can be used to unlock this node. |
 | [`List`](List-Type)`<`[`Tech`](Tech-Type)`> Children()` | A list of all children of this node in the tech tree. |
+| [`List`](List-Type)`<`[`Tech`](Tech-Type)`> Parents()` | A list of all parents of this node in the tech tree. |
 
 **Global Functions**
 
