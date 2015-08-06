@@ -39,8 +39,8 @@ BEHAVIOUR
     // Required:  No (defaulted)
     // Values:
     //     DO_NOT_LOCK
-    //     CONTRACT_ACCEPTANCE (default)
-    //     CONTRACT_COMPLETION
+    //     CONTRACT_ACCEPTANCE
+    //     CONTRACT_COMPLETION (default)
     //     PARAMETER_COMPLETION
     //
     lockCriteria = CONTRACT_ACCEPTANCE
