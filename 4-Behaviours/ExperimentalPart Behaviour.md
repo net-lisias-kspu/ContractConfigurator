@@ -1,5 +1,4 @@
-Behaviour for adding and removing experimental parts.
-
+Behaviour for adding and removing experimental parts.  Note that if a part is added using this behaviour, it will also be removed on contract failure/cancellation.  It will only be removed on normal contract completion if requested using the lockCriteria (see below).
 <pre>
 BEHAVIOUR
 {
@@ -14,23 +13,44 @@ BEHAVIOUR
     part = largeSolarPanel
     part = cupola
 
-    // Whether the part should be added as an experimental part (when the
-    // contract is accepted).  Also controls whether the part is removed
-    // if the contract fails or is withdrawn.
+    // When (or if) the part should be added as an experimental part.
     //
-    // Type:      <a href="Boolean-Type">bool</a>
+    // Type:      <a href="Enumeration-Type">ExperimentalPart.UnlockCriteria</a>
     // Required:  No (defaulted)
-    // Default:   true
+    // Values:
+    //     DO_NOT_UNLOCK
+    //     CONTRACT_ACCEPTANCE (default)
+    //     CONTRACT_COMPLETION
+    //     PARAMETER_COMPLETION
     //
-    add = True
+    unlockCriteria = CONTRACT_ACCEPTANCE
 
-    // Whether the part should be removed as an experimental part (when the
-    // contract completes successfully).
+    // If the unlockCriteria is set to PARAMETER_COMPLETION, the name of the
+    // parameter that must be completed to trigger the part unlock.
     //
-    // Type:      <a href="Boolean-Type">bool</a>
+    // Type:      <a href="String-Type">string</a>
+    // Required:  See above
+    //
+    unlockParameter = TheParameter
+
+    // When (or if) the part should be removed as an experimental part.
+    //
+    // Type:      <a href="Enumeration-Type">ExperimentalPart.LockCriteria</a>
     // Required:  No (defaulted)
-    // Default:   true
+    // Values:
+    //     DO_NOT_LOCK
+    //     CONTRACT_ACCEPTANCE (default)
+    //     CONTRACT_COMPLETION
+    //     PARAMETER_COMPLETION
     //
-    remove = True
+    lockCriteria = CONTRACT_ACCEPTANCE
+
+    // If the lockCriteria is set to PARAMETER_COMPLETION, the name of the
+    // parameter that must be completed to trigger the part lock.
+    //
+    // Type:      <a href="String-Type">string</a>
+    // Required:  See above
+    //
+    lockParameter = TheParameter
 }
 </pre>
