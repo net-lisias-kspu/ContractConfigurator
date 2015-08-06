@@ -13,7 +13,7 @@ The CelestialBody class represents a planet, moon or star in KSP.
 | [`bool`](Boolean-Type) `IsMoon()` | Indicates whether the given body is a moon. |
 | [`bool`](Boolean-Type) `HaveReached()` | Whether the player has reached the given celestial body. |
 | [`bool`](Boolean-Type) `HaveOrbited()` | Whether the player has orbited the given celestial body. |
-| [`bool`](Boolean-Type) `HaveLanded()` | Whether the player has landed on the given celestial body. |
+| [`bool`](Boolean-Type) `HaveLandedOn()` | Whether the player has landed on the given celestial body. |
 | [`bool`](Boolean-Type) `HaveEscaped()` | Whether the player has escaped from the given celestial body. |
 | [`bool`](Boolean-Type) `HaveReturnedFrom()` | Whether the player has returned from the given celestial body. |
 | [`bool`](Boolean-Type) `IsOrbitalSurveyComplete()` | Indicates whether an orbital survey has been complete for the body. |
