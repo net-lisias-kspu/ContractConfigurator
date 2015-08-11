@@ -4,6 +4,7 @@ Behaviour for spawning one or more Vessels on land or in orbit.  Note that one n
 * Be careful of other add-ons that are installed that add part modules to parts you are using.  A couple specific examples:
  * The mod MechJeb and Engineer for all adds the MechJeb/KER PartModule to all probe cores and command modules.  This will make your mod incompatible for players not using MechJeb/KER.
  * RemoteTech replaces the stock antenna PartModule with its own.  Unfortunately, this is a two way street - building a craft without RemoteTech means that the resulting craft won't have the correct antenna modules if the player is using RemoteTech.
+ * AntennaRange does the same thing as RemoteTech.
 
 <pre>
 BEHAVIOUR
@@ -41,10 +42,19 @@ BEHAVIOUR
         //
         name = A vessel
 
-        // Path to the .craft file (relative to the GameData/ directory)
+        // Path to the .craft file (relative to the GameData/ directory).
         //
         // Type:      <a href="String-Type">string</a>
-        // Required:  Yes
+        // Required:  Yes (unless craftPart is supplied)
+        //
+        craftURL = ContractConfigurator/Little Rocket.craft
+
+        // The name of a single part build the craft from.  Note that spawning
+        // height does not get properly detected when using this method, so a
+        // manual height may need to be supplied (using the height attribute.
+        //
+        // Type:      <a href="AvailablePart-Type">AvailablePart</a>
+        // Required:  Yes (unless craftURL is supplied)
         //
         craftURL = ContractConfigurator/Little Rocket.craft
 
@@ -111,8 +121,9 @@ BEHAVIOUR
         }
 
         // If you wish to specify a landed vessel, you must also 
-        // supply the following values from the persistant.sfs
-        // file.
+        // supply the following values:
+
+        // Specifies the location of the spawn point via lat/lon.
         //
         // Type:      <a href="Numeric-Type">double</a>
         // Required:  See above
@@ -127,6 +138,17 @@ BEHAVIOUR
         // Required:  See above
         //
         alt = 67.6843734193826
+
+        // Additional height that should be added to the vessel when spawning.
+        // Use this when the location chosen doesn't seem to have the right
+        // auto-calculated terrain height, or when using craftPart with larger
+        // parts.
+        //
+        // Type:      <a href="Numeric-Type">float</a>
+        // Required:  No, defaulted
+        // Default:   2.5
+        //
+        height = 5.0
 
         // Specifies the heading of the vessel in degrees (0 = N, 90 = E...).
         //
