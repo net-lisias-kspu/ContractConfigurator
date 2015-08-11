@@ -56,7 +56,7 @@ BEHAVIOUR
         // Type:      <a href="AvailablePart-Type">AvailablePart</a>
         // Required:  Yes (unless craftURL is supplied)
         //
-        craftURL = ContractConfigurator/Little Rocket.craft
+        craftPart = fuelTank_long
 
         // Location of the flag to use.  Uses the players flag for the current
         // game if not specified.
