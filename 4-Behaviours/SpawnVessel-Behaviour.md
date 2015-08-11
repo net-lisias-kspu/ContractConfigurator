@@ -146,7 +146,8 @@ BEHAVIOUR
         //
         // Type:      <a href="Numeric-Type">float</a>
         // Required:  No, defaulted
-        // Default:   2.5
+        // Default:   0.0 (if craftURL is used)
+        //            2.5 (if craftPart is used)
         //
         height = 5.0
 
