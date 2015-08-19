@@ -1,4 +1,4 @@
-Behaviour for creating a dialog box that supports images, rich text and animated Kerbal heads.  For details on the tags supported in the text, see the [[Unity Documentation|http://docs.unity3d.com/Manual/StyledText.html]].
+Behaviour for creating a dialog box that supports images, rich text and animated Kerbal heads.  For details on the tags supported in the text, see the [Unity Documentation](http://docs.unity3d.com/Manual/StyledText.html).
 
 <pre>
 BEHAVIOUR
