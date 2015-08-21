@@ -69,7 +69,9 @@ BEHAVIOUR
         // easiest way to get this information is to create the orbit
         // you want in KSP (using HyperEdit or good old fashioned
         // rocket science), and save your game.  In the persistant.sfs
-        // file, search for your craft, and find the ORBIT node.
+        // file, search for your craft, and find the ORBIT node.  Note
+        // that this information does not need to be provided for a landed
+        // Kerbal
         //
         // Note that REF represents the reference body - but will be
         // overriden by the targetBody.
@@ -86,9 +88,8 @@ BEHAVIOUR
         }
 
         // If you wish to specify a landed Kerbal, you must also 
-        // supply ALL of the following values from the persistant.sfs
-        // file.  The orbit information is not needed for landed
-        // Kerbals.
+        // supply the following values.  If the altitude is not specified
+        // the Kerbal will be spawned on the ground (based on terrain height).
         //
         // Type:      <a href="Numeric-Type">double</a>
         // Required:  See above
