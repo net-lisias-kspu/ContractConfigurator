@@ -41,6 +41,9 @@ PARAMETER:NEEDS[SCANsat]
     //     Minerals
     //     Substrate
     //     Karbonite
+    //     KEEZO
+    //     FuzzyResources
+    //
     scanType = Biome
 }
 </pre>
