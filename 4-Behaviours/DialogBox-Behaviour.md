@@ -61,7 +61,7 @@ BEHAVIOUR
         // Required:  No (defaulted)
         // Default:   0.8
         //
-        width = 0.3
+        width = 1.0
 
         // Height as a percentage (between 0.0 and 1.0) of the screen height.
         // If the content requires more room, this will automatically grow to
