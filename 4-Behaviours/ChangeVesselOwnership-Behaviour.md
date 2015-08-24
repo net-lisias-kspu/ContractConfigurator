@@ -11,12 +11,13 @@ BEHAVIOUR
     // Type:      <a href="Enumeration-Type">ChangeVesselOwnership.State</a>
     // Required:  Yes
     // Values:
-    //     ContractAccepted
-    //     ContractCompletedFailure
-    //     ContractCompletedSuccess
-    //     ParameterCompleted
+    //     CONTRACT_ACCEPTED
+    //     CONTRACT_FAILED
+    //     CONTRACT_SUCCESS
+    //     CONTRACT_COMPLETED
+    //     PARAMETER_COMPLETED
     //
-    onState = ContractCompletedSuccess
+    onState = CONTRACT_SUCCESS
 
     // When the onState attribute is set to ParameterCompleted, a value
     // must also be supplied for the parameter attribute.  This is the name
