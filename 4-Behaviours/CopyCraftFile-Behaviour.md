@@ -26,7 +26,7 @@ BEHAVIOUR
 
     // The condition under which the craft file is copied.
     //
-    // Type:      <a href="Enumeration-Type">CopyCraftFile.Condition</a>
+    // Type:      <a href="Enumeration-Type">TriggeredBehaviour.State</a>
     // Required:  No (defaulted)
     // Values:
     //     CONTRACT_ACCEPTED
