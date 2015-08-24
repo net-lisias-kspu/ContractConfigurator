@@ -34,6 +34,19 @@ BEHAVIOUR
         //
         hidden = true
 
+        // Use this to specify that the waypoint is underwater.  This will
+        // force randomly generated waypoints to be at a water location, and
+        // change the range of random altitudes to be between the sea-floor and
+        // surface.  Also, the minimum altitude is clamped to the sea-floor, so
+        // to have a waypoint on the sea-floor, give a very large negative
+        // value to the altitude attribute.
+        //
+        // Type:      <a href="Boolean-Type">bool</a>
+        // Required:  No (defaulted)
+        // Default:   false
+        //
+        underwater = false
+
         // Body for the waypoint - defaulted from the contract if not
         // supplied.
         //
