@@ -19,13 +19,13 @@ BEHAVIOUR
     //
     onState = CONTRACT_SUCCESS
 
-    // When the onState attribute is set to ParameterCompleted, a value
+    // When the onState attribute is set to PARAMETER_COMPLETED, a value
     // must also be supplied for the parameter attribute.  This is the name
     // of the parameter that we are checking for completion.  This can be
     // specified multiple times.
     //
     // Type:      <a href="String-Type">string</a>
-    // Required:  See above
+    // Required:  Sometimes (multiples allowed)
     //
     parameter = TheParameterName
 

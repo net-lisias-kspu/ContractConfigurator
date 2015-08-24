@@ -38,11 +38,13 @@ BEHAVIOUR
     //
     onState = PARAMETER_COMPLETED
 
-    // The *name* of the parameter to which this condition applies.
-    // Required if the condition is one of the PARAMETER_ ones.
+    // When the onState attribute is set to PARAMETER_COMPLETED, a value
+    // must also be supplied for the parameter attribute.  This is the name
+    // of the parameter that we are checking for completion.  This can be
+    // specified multiple times.
     //
     // Type:      <a href="String-Type">string</a>
-    // Required:  See above
+    // Required:  Sometimes (multiples allowed)
     //
     parameter = MyParameterName
 }
