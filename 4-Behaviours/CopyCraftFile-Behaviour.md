@@ -29,12 +29,14 @@ BEHAVIOUR
     // Type:      <a href="Enumeration-Type">CopyCraftFile.Condition</a>
     // Required:  No (defaulted)
     // Values:
-    //     CONTRACT_COMPLETED (default)
+    //     CONTRACT_ACCEPTED
     //     CONTRACT_FAILED
+    //     CONTRACT_SUCCESS (default)
+    //     CONTRACT_COMPLETED
     //     PARAMETER_COMPLETED
     //     PARAMETER_FAILED
     //
-    condition = PARAMETER_COMPLETED
+    onState = PARAMETER_COMPLETED
 
     // The *name* of the parameter to which this condition applies.
     // Required if the condition is one of the PARAMETER_ ones.
