@@ -26,7 +26,7 @@ BEHAVIOUR
         // Required:  Yes
         // Values:
         //     CONTRACT_ACCEPTED
-        //     CONTRACT_COMPLETED
+        //     CONTRACT_SUCCESS
         //     CONTRACT_FAILED
         //     VESSEL_PRELAUNCH
         //     PARAMETER_COMPLETED
