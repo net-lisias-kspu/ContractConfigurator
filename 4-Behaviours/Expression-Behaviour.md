@@ -10,6 +10,15 @@ BEHAVIOUR
     // accepted.
     CONTRACT_ACCEPTED
     {
+        // The type of value to load can be any KSP or Contract Configurator
+        // supported type.
+        //
+        // Type:      Type
+        // Required:  No (defaulted)
+        // Default:   double
+        //
+        type = double
+
         // Expressions can use arithmatic operators (+, -, *, /)
         // and parenthesis.
         CC_TestVal = 10 * 2 - 3 * 4
