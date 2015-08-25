@@ -1,5 +1,4 @@
-The Duration parameter sets up a timer that starts when all sibling parameters are completed.  Once the timer expires, the parameter is completed.
-
+The Duration parameter sets up a timer.  Once the timer expires, the parameter is completed.  The timer will start when all sibling parameters that are *higher* than the Duration parameter in the contract are completed.  The Duration parameter can also be used as a child parameter to prevent a parent parameter from completing until the duration is reached.
 <pre>
 PARAMETER
 {
