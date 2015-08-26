@@ -6,9 +6,9 @@ BEHAVIOUR
     name = Expression
     type = Expression
 
-    // The CONTRACT_ACCEPTED node gets executed when the contract is
-    // accepted.
-    CONTRACT_ACCEPTED
+    // The CONTRACT_OFFERED node gets executed when the contract is
+    // offered.
+    CONTRACT_OFFERED
     {
         // The type of value to load can be any KSP or Contract Configurator
         // supported type.
@@ -17,8 +17,16 @@ BEHAVIOUR
         // Required:  No (defaulted)
         // Default:   double
         //
-        type = double
+        type = CelestialBody
 
+        // Uses the <a href="Expressions">Expression Syntax</a>
+        CC_SomeBody = Duna
+    }
+
+    // The CONTRACT_ACCEPTED node gets executed when the contract is
+    // accepted.
+    CONTRACT_ACCEPTED
+    {
         // Expressions can use arithmatic operators (+, -, *, /)
         // and parenthesis.
         CC_TestVal = 10 * 2 - 3 * 4
