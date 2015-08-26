@@ -1,6 +1,9 @@
 **[[Behaviours]]**
 * [[AwardExperience|AwardExperience-Behaviour]]
 * [[ChangeVesselOwnership|ChangeVesselOwnership-Behaviour]]
+* [[CopyCraftFile|CopyCraftFile-Behaviour]]
+* [[DestroyVessel|DestroyVessel-Behaviour]]
+* [[DialogBox|DialogBox-Behaviour]]
 * [[ExperimentalPart|ExperimentalPart-Behaviour]]
 * [[Expression|Expression-Behaviour]]
 * [[Message|Message-Behaviour]]

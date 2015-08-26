@@ -23,6 +23,7 @@
     * [[SpawnKerbal Behaviour|SpawnKerbal-Behaviour-Type]]
     * [[WaypointGenerator Behaviour|WaypointGenerator-Behaviour-Type]]
 * Other
+    * [[Color|Color-Type]]
     * [[ContractPrestige|ContractPrestige-Type]]
     * [[Duration|Duration-Type]]
 * Global Functions

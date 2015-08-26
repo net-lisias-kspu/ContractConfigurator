@@ -15,6 +15,7 @@
         * [[Orbit|Orbit-Parameter]]
         * [[ReachSpecificOrbit|ReachSpecificOrbit-Parameter]]
         * [[ReachState|ReachState-Parameter]]
+        * [[RecoverVessel|RecoverVessel-Parameter]]
         * [[Rendezvous|Rendezvous-Parameter]]
         * [[ReturnHome|ReturnHome-Parameter]]
         * [[VesselDestroyed|VesselDestroyed-Parameter]]
