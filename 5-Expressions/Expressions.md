@@ -8,6 +8,7 @@
   * [[Operator Precedence|Expressions#operator-precedence]]
 * [[Identifiers|Expressions#identifiers]]
 * [[Special Identifiers|Expressions#special-identifiers]]
+* [[Data Store Identifiers|Expressions#data-store-identifiers]]
 * [[Functions/Methods|Expressions#functionsmethods]]
   * [[Functions|Expressions#functions]]
   * [[Methods|Expressions#methods]]
@@ -163,6 +164,36 @@ rewardFunds = 10000.0 * @MyContractGroup:groupFundsMultiplier
 ```
 
 <sub>[ [[Top|Expressions]] ] [ [[Special Identifiers|Expressions#special-identifiers]] ]</sub>
+
+## Data Store Identifiers
+
+A data store identifier is similar to special identifiers.  They start with the `$` symbol, and refer to a value stored in the persistent data store (typically using the [[Expression Behaviour|Expression-Behaviour]]).
+
+For example:
+```
+// Values can be stored in one contract
+CONTRACT_TYPE
+{
+    BEHAVIOUR
+    {
+        type = Expression
+
+        CONTRACT_COMPLETED_SUCCESS
+        {
+            type = CelestialBody
+            theBody = Duna
+        }
+    }
+}
+
+// ... and referenced in another contract
+CONTRACT_TYPE
+{
+    targetBody = $theBody
+}
+```
+
+<sub>[ [[Top|Expressions]] ] [ [[Data Store Identifiers|Expressions#data-store-identifiers]] ]</sub>
 
 ## Functions/Methods
 

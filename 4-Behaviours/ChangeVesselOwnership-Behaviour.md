@@ -8,29 +8,30 @@ BEHAVIOUR
 
     // Indicates the state where the vessel ownership should be changed.
     //
-    // Type:      <a href="Enumeration-Type">ChangeVesselOwnership.State</a>
+    // Type:      <a href="Enumeration-Type">TriggeredBehaviour.State</a>
     // Required:  Yes
     // Values:
-    //     ContractAccepted
-    //     ContractCompletedFailure
-    //     ContractCompletedSuccess
-    //     ParameterCompleted
+    //     CONTRACT_ACCEPTED
+    //     CONTRACT_FAILED
+    //     CONTRACT_SUCCESS
+    //     CONTRACT_COMPLETED
+    //     PARAMETER_COMPLETED
     //
-    onState = ContractCompletedSuccess
+    onState = CONTRACT_SUCCESS
 
-    // When the onState attribute is set to ParameterCompleted, a value
+    // When the onState attribute is set to PARAMETER_COMPLETED, a value
     // must also be supplied for the parameter attribute.  This is the name
     // of the parameter that we are checking for completion.  This can be
     // specified multiple times.
     //
     // Type:      <a href="String-Type">string</a>
-    // Required:  See above
+    // Required:  Sometimes (multiples allowed)
     //
     parameter = TheParameterName
 
     // The vessel for which we will be changing the ownership of.  This
     // should either be derived via an expression, or match the define
-    // name of a previous <a hrefVesselParameterGroup-Parameter>VesselParameterGroup</A> parameter.
+    // name of a previous <a href="VesselParameterGroup-Parameter">VesselParameterGroup</a> parameter.
     //
     // Type:      <a href="VesselIdentifier-Type">VesselIdentifier</a>
     // Required:  Yes (multiples allowed)
