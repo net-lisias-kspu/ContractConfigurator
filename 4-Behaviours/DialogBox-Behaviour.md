@@ -76,7 +76,7 @@ BEHAVIOUR
         // Color of the title text.  This can be specified as an HTML color
         // value.
         //
-        // Type:      Color
+        // Type:      <a href="Color-Type">Color</a>
         // Required:  No (defaulted)
         // Default:   #FFFFFF (white)
         //
@@ -110,7 +110,7 @@ BEHAVIOUR
             // Color of the text.  This can be specified as an HTML color
             // value.
             //
-            // Type:      Color
+            // Type:      <a href="Color-Type">Color</a>
             // Required:  No (defaulted)
             // Default:   #CCCCCC (grey)
             //
@@ -141,7 +141,7 @@ BEHAVIOUR
             // Color of the character text (if being used).  This can be
             // specified as an HTML color value.
             //
-            // Type:      Color
+            // Type:      <a href="Color-Type">Color</a>
             // Required:  No (defaulted)
             // Default:   #BADA55 (badass green)
             //
@@ -186,7 +186,7 @@ BEHAVIOUR
             // Color of the character text (if being used).  This can be
             // specified as an HTML color value.
             //
-            // Type:      Color
+            // Type:      <a href="Color-Type">Color</a>
             // Required:  No (defaulted)
             // Default:   #BADA55 (badass green)
             //
@@ -285,7 +285,7 @@ BEHAVIOUR
             // Color of the character text (if being used).  This can be
             // specified as an HTML color value.
             //
-            // Type:      Color
+            // Type:      <a href="Color-Type">Color</a>
             // Required:  No (defaulted)
             // Default:   #BADA55 (badass green)
             //

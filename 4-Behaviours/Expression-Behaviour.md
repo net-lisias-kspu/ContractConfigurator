@@ -1,4 +1,4 @@
-Behaviour for executing one or more expressions and storing the results in the persistent data store.
+Behaviour for executing one or more expressions and storing the results in the persistent data store.  Results can later be retrieved in expressions by referencing them with the $ symbol.
 
 <pre>
 BEHAVIOUR
@@ -29,7 +29,7 @@ BEHAVIOUR
     CONTRACT_COMPLETED_SUCCESS
     {
         // Multiple expressions may be supplied in one node
-        CC_TestVal = CC_TestVal * 2
+        CC_TestVal = $CC_TestVal * 2
         CC_EXPTEST_Success = 1
     }
 
@@ -37,7 +37,7 @@ BEHAVIOUR
     // contract fails or the deadline expires.
     CONTRACT_COMPLETED_FAILURE
     {
-        CC_TestVal = CC_TestVal / 2
+        CC_TestVal = $CC_TestVal / 2
         CC_EXPTEST_Success = 0
     }
 
