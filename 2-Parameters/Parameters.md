@@ -84,6 +84,16 @@ PARAMETER
     //
     completeInSequence = true
 
+    // Causes the parameter to be hidden.  Typically used for a parameter
+    // that isn't meant to be part of the contract but is instead used to
+    // trigger a behaviour.
+    //
+    // Type:      <a href="Boolean-Type">bool</a>
+    // Required:  No (defaulted)
+    // Default:   false
+    //
+    hidden = true
+
     // Causes children of the parameter to be hidden.
     // Use with caution - as hiding the child parameters may in some
     // cases make it more difficult for players to know what to do.
