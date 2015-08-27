@@ -291,6 +291,13 @@ BEHAVIOUR
             //
             textColor = #BADA55
         }
+
+        // The BREAK section inserts a vertical break.  Sections appearing
+        // after this one will be on a new line.  This section has no
+        // attributes.
+        BREAK
+        {
+        }
     }
 }
 </pre>
