@@ -92,7 +92,14 @@ BEHAVIOUR
         {
             // Text to appear in the dialog box.  It can have embedded newlines
             // using \n, as well as rich text using the HTML tags supported by
-            // Unity's <a href="http://docs.unity3d.com/Manual/StyledText.html">rich text</a>.
+            // Unity's <a href="http://docs.unity3d.com/Manual/StyledText.html">rich text</a> system.
+            //
+            // The text also supports a subset of expressions, which unlike
+            // other expressions will be executed at the time the dialog box
+            // is shown, rather than at load time.  However, this means that
+            // special identifiers (that start with an @) cannot be used.
+            // Data store identifier (that start wtih a $) and function calls
+            // can be used.
             //
             // Type:      <a href="String-Type">string</a>
             // Required:  Yes
@@ -121,8 +128,20 @@ BEHAVIOUR
         IMAGE
         {
             // The URL of the image (path relative to the GameData directory).
-            // This can be any type of image that KSP can load, although DDS is
-            // generally recommended.
+            // If specified without any file extensions, it will be loaded
+            // through KSP GameDatabase loading system.  This can be any type
+            // of image that KSP can load, although DDS is generally
+            // recommended for performance reasons.  Using this method means
+            // that the image will always be loaded in memory (even if not
+            // needed).
+            //
+            // For the more memory friendly option, the file should be renamed
+            // with an additional extension (example: myImage.dds.noload). 
+            // This will prevent KSP's loading system from loading it.  The
+            // full file name (including all extensions) should be included
+            // here.  Note that only PNG and DDS are supported, and the
+            // original extension must be a part of the file name for the file
+            // type to be auto-detected.
             //
             // Type:      <a href="String-Type">string</a>
             // Required:  Yes
