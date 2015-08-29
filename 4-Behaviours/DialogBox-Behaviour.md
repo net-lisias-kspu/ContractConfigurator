@@ -110,7 +110,7 @@ BEHAVIOUR
             //
             // Type:      <a href="Numeric-Type">int</a>
             // Required:  No (defaulted)
-            // Default:   16
+            // Default:   20
             //
             fontSize = 20
 
