@@ -212,7 +212,8 @@ BEHAVIOUR
             textColor = #BADA55
 
             // The animation that should be played.  If not supplied, the
-            // character's default idle animation is played
+            // character's default idle animation is played.  A test of the
+            // various animations can be seen in this <a href="https://www.youtube.com/watch?v=TkHtDXA1uRM">youtube video</a>.
             //
             // Type:      <a href="Enumeration-Type">DialogBox.InstructorSection.Animation</a>
             // Required:  No
