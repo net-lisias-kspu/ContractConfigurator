@@ -10,6 +10,8 @@ The numeric data types include types such as `int`, `short`, `float` and `double
 | [`numeric`](Numeric-Type) `Max(`[`numeric`](Numeric-Type)` a, `[`numeric`](Numeric-Type)` b)` | Returns whichever is largest out of `a` and `b`. |
 | [`numeric`](Numeric-Type) `Pow(`[`numeric`](Numeric-Type)` a, `[`numeric`](Numeric-Type)` b)` | Returns a to the power of b. |
 | [`numeric`](Numeric-Type) `Log(`[`numeric`](Numeric-Type)` a, `[`numeric`](Numeric-Type)` b)` | Returns the logarithm of a in base b. |
+| [`numeric`](Numeric-Type) `Round(`[`numeric`](Numeric-Type)` value)` | Rounds the number to the nearest full integer value (uses bankers rounding). |
+| [`numeric`](Numeric-Type) `Round(`[`numeric`](Numeric-Type)` value, `[`numeric`](Numeric-Type)` precision)` | Rounds the number to the nearest multiple of `precision`.  For example `Round(113.0, 5.0)` would return `115.0`. |
 
 **Global Functions**
 
