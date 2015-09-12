@@ -22,6 +22,8 @@ BEHAVIOUR
         // Type:      <a href="Enumeration-Type">Message.Condition</a>
         // Required:  Yes
         // Values:
+        //     CONTRACT_ACCEPTED
+        //     CONTRACT_SUCCESS
         //     CONTRACT_COMPLETED
         //     CONTRACT_FAILED
         //     PARAMETER_COMPLETED
