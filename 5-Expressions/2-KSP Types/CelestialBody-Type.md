@@ -9,6 +9,7 @@ The CelestialBody class represents a planet, moon or star in KSP.
 | [`bool`](Boolean-Type) `HasOcean()` | Indicates whether the given body has an ocean. |
 | [`bool`](Boolean-Type) `HasSurface()` | Indicates whether the given body has a surface (ie. isn't a gas giant). |
 | [`bool`](Boolean-Type) `IsHomeWorld()` | Indicates whether the given body is the home world (ie. Kerbin). |
+| [`bool`](Boolean-Type) `IsSun()` | Indicates whether the given body is the Sun. |
 | [`bool`](Boolean-Type) `IsPlanet()` | Indicates whether the given body is a planet (not a moon or star). |
 | [`bool`](Boolean-Type) `IsMoon()` | Indicates whether the given body is a moon. |
 | [`bool`](Boolean-Type) `HaveReached()` | Whether the player has reached the given celestial body. |
