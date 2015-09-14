@@ -8,7 +8,7 @@ REQUIREMENT
 
     // The facility.
     //
-    // Type:      <a href="String-Type">string</a>
+    // Type:      <a href="Enumeration-Type">SpaceCenterFacility</a>
     // Required:  Yes
     // Values:
     //     LaunchPad
