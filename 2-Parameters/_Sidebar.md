@@ -6,6 +6,7 @@
         * [[HasCrewCapacity|HasCrewCapacity-Parameter]]
         * [[HasPassengers|HasPassengers-Parameter]]
         * [[HasResource|HasResource-Parameter]]
+        * [[HasResourceCapacity|HasResourceCapacity-Parameter]]
         * [[IsNotVessel|IsNotVessel-Parameter]]
         * [[PartValidation|PartValidation-Parameter]]
         * [[VesselIsType|VesselIsType-Parameter]]
