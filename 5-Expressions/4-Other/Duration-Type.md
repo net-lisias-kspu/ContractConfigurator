@@ -7,4 +7,4 @@ Example: `2d 4h` is 2 days and 4 hours.
 | Function Signature | Description |
 | :--- | :--- |
 | [`Duration`](Duration-Type) `Random(`[`Duration`](Duration-Type)` min, `[`Duration`](Duration-Type)` max)` | Returns a random `Duration` that is greater than or equal to *min*, but less than *max*. |
-| [`Duration`](Duration-Type) `Round(`[`Duration`](Duration-Type)` value, `[`Duration`](Duration-Type)` precision)` | Rounds the duration to the nearest multiple of `precision`.  For example `Round(5d 2m, 1d)` would return `5d`. |
+| [`Duration`](Duration) `Round(`[`Duration`](Duration)` value, `[`Duration`](Duration)` precision)` | Rounds the number to the nearest multiple of `precision`.  For example `Round(4d 2h, 1d)` would return `4d`. |
