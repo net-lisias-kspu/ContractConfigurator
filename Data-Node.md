@@ -35,8 +35,8 @@ Within the DATA node, there are a number of fields that can be specified:
 | :--- | :--- |
 | `type` | The data type for elements within the DATA node.  Supports any data type listed on the [[Expressions|Expressions]] page. |
 | `requiredValue` | (Optional, default = true) If true, the expression needs to return a valid (non-null) value for the contract to be offered.  If false, the contract will be offered even if the expression returns null. |
-| `uniqueValue` | (Optional, default = false) If true, this value must be unique across all contracts.  If a new contract were to be offered with a duplicate value, it will not be generated. |
-| `activeUniqueValue` | (Optional, default = false) If true, this value must be unique across active/offered contracts.  If a new contract were to be offered with a duplicate value, it will not be generated. |
+| `uniqueValue` | (Optional, default = false) If true, this value must be unique across all contracts (active/offered/completed).  If a new contract were to be offered with a duplicate value, it will not be generated.  Use this if you want the contract to only be completeable once for each unique value. |
+| `activeUniqueValue` | (Optional, default = false) If true, this value must be unique across active/offered contracts.  If a new contract were to be offered with a duplicate value, it will not be generated. Use this if you want the contract to only be simultaneously available once for each unique value. |
 | `<identifier>` | An identifier that contains the expression.  Can be any valid identifier (characters, numbers and underscores), except for names already used by the CONTRACT_TYPE node. |
 
 Identifiers created in a DATA node are accessed as if they were a part of the CONTRACT_TYPE node (by referencing them in as `@/<identifier>`.
