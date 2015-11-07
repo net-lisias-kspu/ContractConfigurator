@@ -16,7 +16,6 @@
     * [[ReturnFromOrbit|ReturnFromOrbit-Requirement]]
     * [[ReturnFromSurface|ReturnFromSurface-Requirement]]
     * [[RunwayLanding|RunwayLanding-Requirement]]
-    * [[SpaceCrewTransfer|SpaceCrewTransfer-Requirement]]
     * [[Spacewalk|Spacewalk-Requirement]]
     * [[SplashDown|SplashDown-Requirement]]
     * [[SurfaceEVA|SurfaceEVA-Requirement]]
