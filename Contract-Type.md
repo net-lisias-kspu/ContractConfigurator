@@ -121,6 +121,7 @@ _Sample CONTRACT_TYPE (can be downloaded [here](https://raw.githubusercontent.co
         // The weight is used in the contract generation process.  Each contract
         // type that is available to be offered is added to a weighted list.
         // Contract types with a higher value are more likely to be chosen.
+        // Note that the weight is applied per contract group.
         //
         // Default = 1.0
         weight = 10.0
