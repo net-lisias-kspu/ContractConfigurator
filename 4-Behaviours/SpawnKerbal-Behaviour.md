@@ -98,6 +98,14 @@ BEHAVIOUR
         lon = 239.804476675472
         alt = 387.929475510377
 
+        // Specifies the heading of the kerbal in degrees (0 = N, 90 = E...).
+        //
+        // Type:      <a href="Numeric-Type">float</a>
+        // Required:  No (defaulted)
+        // Default:   0.0
+        //
+        heading = 180.0
+
         // The location name.  Use this instead of lat/long coordinates
         // to specify coordinates based on the location of a PQS city.
         //
