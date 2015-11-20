@@ -1,4 +1,4 @@
-The ReturnHome parameter requires a player to return home (ideally after meeting their other contract objectives).
+The ReturnHome parameter requires a player to return home (ideally after meeting their other contract objectives).  Specifically, this checks that the player is landed or splashed down on Kerbin (or whatever the homeworld is).
 
 <pre>
 PARAMETER
