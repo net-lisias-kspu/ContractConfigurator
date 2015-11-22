@@ -32,6 +32,15 @@ PARAMETER
     // Default:   true
     //
     hideOnCompletion = true
+
+    // Whether to show the "Entering/Leaving $waypointName." messages when a player gets within the
+    // distance tolerance of the waypoint.
+    //
+    // Type:      <a href="Boolean-Type">bool</a>
+    // Required:  No (defaulted)
+    // Default:   false
+    //
+    showMessages = false
     
     // Text to use for the parameter
     //
