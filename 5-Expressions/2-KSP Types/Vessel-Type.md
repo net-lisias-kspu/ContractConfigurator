@@ -19,6 +19,10 @@ The Vessel class represents anything that is made up of parts (which includes sh
 | [`double`](Numeric-Type) `ResourceQuantity(`[`Resource`](Resource-Type)` r)` | Gets the amount of the given resource that is on board. |
 | [`double`](Numeric-Type) `ResourceCapacity(`[`Resource`](Resource-Type)` r)` | Gets the capacity for the given resource that is on board. |
 | [`float`](Numeric-Type) `Mass()` | The mass of the vessel in tons. |
+| [`double`](Numeric-Type) `OrbitApoapsis()` | The apoapsis of the vessel's orbit. |
+| [`double`](Numeric-Type) `OrbitPeriapsis()` | The periapsis of the vessel's orbit. |
+| [`double`](Numeric-Type) `OrbitInclination()` | The inclination of the vessel's orbit. |
+| [`double`](Numeric-Type) `OrbitEccentricity()` | The eccentricity of the vessel's orbit. |
 | [`double`](Numeric-Type) `XDimension()` | The approximate size (estimated) of the vessel along the x dimension. |
 | [`double`](Numeric-Type) `YDimension()` | The approximate size (estimated) of the vessel along the y dimension. |
 | [`double`](Numeric-Type) `ZDimension()` | The approximate size (estimated) of the vessel along the z dimension. |
