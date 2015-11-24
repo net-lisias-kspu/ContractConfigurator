@@ -11,7 +11,7 @@ PARAMETER
     // Type:      <a href="Kerbal-Type">Kerbal</a>
     // Required:  No (multiples allowed)
     //
-    kerbal = Jebediah Kermin
+    kerbal = Jebediah Kerman
 
     // Alternate method of identifying the Kerbal - zero based index of the
     // entry in a <a href="SpawnKerbal-Behaviour">SpawnKerbal</a> or <a href="SpawnVessel-Behaviour">SpawnVessel</a> BEHAVIOUR node.
