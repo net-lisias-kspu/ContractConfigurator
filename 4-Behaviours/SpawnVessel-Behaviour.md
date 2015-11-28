@@ -187,6 +187,17 @@ BEHAVIOUR
             //
             name = Patrick R. Kerman
 
+            // Gender of the kerbal.  If not specified, will be assigned a random
+            // gender.
+            //
+            // Type:      <a href="Enumeration-Type">ProtoCrewMember.Gender</a>
+            // Required:  No
+            // Values:
+            //     Male
+            //     Female
+            //
+            gender = Female
+
             // Whether or not the Kerbal should be added to the roster on 
             // recovery.
             //
