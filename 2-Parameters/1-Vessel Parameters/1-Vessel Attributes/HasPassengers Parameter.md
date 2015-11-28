@@ -22,6 +22,16 @@ PARAMETER
     //
     index = 0
 
+    // (Optional) Specific Kerbal(s) that must be on board.  Can be
+    // specified multiple times, but cannot be used with the other
+    // attributes on this parameter.
+    //
+    // Type:      <a href="String-Type">string</a>
+    // Required:  No (multiples allowed)
+    //
+    kerbal = Jebediah Kerman
+    kerbal = Bob Kerman
+
     // Text to use for the parameter
     // Default Passengers loaded : &lt;count&gt;
     //title =
