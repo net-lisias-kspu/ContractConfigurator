@@ -85,7 +85,7 @@ PARAMETER
     //
     situation = FLYING
 
-    // Minimum acceleration (in gee's) that the vessel must be at.
+    // Minimum acceleration (in gees) that the vessel must be at.
     //
     // Type:      <a href="Numeric-Type">float</a>
     // Required:  No (defaulted)
@@ -93,7 +93,7 @@ PARAMETER
     //
     minAcceleration = 0.0
 
-    // Maximum acceleration (in gee's) that the vessel must be at.
+    // Maximum acceleration (in gees) that the vessel must be at.
     //
     // Type:      <a href="Numeric-Type">float</a>
     // Required:  No (defaulted)
