@@ -85,6 +85,36 @@ PARAMETER
     //
     situation = FLYING
 
+    // Minimum acceleration (in gee's) that the vessel must be at.
+    //
+    // Type:      <a href="Numeric-Type">float</a>
+    // Required:  No (defaulted)
+    // Default:   0.0
+    //
+    minAcceleration = 0.0
+
+    // Maximum acceleration (in gee's) that the vessel must be at.
+    //
+    // Type:      <a href="Numeric-Type">float</a>
+    // Required:  No (defaulted)
+    // Default:   float.MaxValue
+    //
+    maxAcceleration = 5.0
+
+    // Set to true to fail the contract if the vessel doesn't meet the
+    // conditions.  Take care that the contract doesn't get written in such a
+    // way that the player's other vessels cause the contract to faile (for
+    // example, if you say "don't go above 10,000m, but the player has another
+    // vessel in orbit, make sure that there are other parameters that prevent
+    // the orbiting vessel from triggering the failure - the completeInSequence
+    // is useful for this).
+    //
+    // Type:      <a href="Boolean-Type">bool</a>
+    // Required:  No (defaulted)
+    // Default:   false
+    //
+    failWhenUnmet = false
+
     // Text to use for the parameter
     //
     // Type:      <a href="String-Type">string</a>
