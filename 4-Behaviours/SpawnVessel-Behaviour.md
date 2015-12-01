@@ -131,6 +131,27 @@ BEHAVIOUR
         lat = -0.096992729723051
         lon = 285.425467968966
 
+        // The location name.  Use this instead of lat/long coordinates
+        // to specify coordinates based on the location of a PQS city.
+        //
+        // Type:      <a href="String-Type">string</a>
+        // Required:  No
+        //
+        pqsCity = KSC
+
+        // An optional offset vector from the center of the PQS City.
+        // Use this to make your Kerbal relative to the PQS City,
+        // which will make it work even for RSS or other mods that may
+        // move the PQS city.  To get the offset coordinates, position
+        // your ship/kerbal at the desired location and go to the
+        // Location tab in the Contract Configurator debug window
+        // (alt-F10).
+        //
+        // Type:      Vector3d
+        // Required:  No
+        //
+        pqsOffset = 447.307865750742, 5.14341771520321E-05, 24.9700656982985
+
         // Only applies to landed vessels, use to override the altitude.
         // If not supplied, defaults to the terrain altitude.
         //
