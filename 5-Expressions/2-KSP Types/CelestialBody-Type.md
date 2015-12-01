@@ -44,4 +44,3 @@ The CelestialBody class represents a planet, moon or star in KSP.
 | [`List`](List-Type)`<`[`CelestialBody`](CelestialBody-Type)`> EscapedBodies()` | Returns a list of all celestial bodies that the player has escaped from. |
 | [`List`](List-Type)`<`[`CelestialBody`](CelestialBody-Type)`> ReturnedFromBodies()` | Returns a list of all celestial bodies that the player has returned from. |
 | [`CelestialBody`](CelestialBody-Type) `CelestialBody(`[`string`](String-Type)` identifier)` | Returns the CelestialBody for the given identifier. |
-| [`double`](Numeric-Type) `UniversalTime()` | Gets the universal time (number of game seconds since the game started). |
