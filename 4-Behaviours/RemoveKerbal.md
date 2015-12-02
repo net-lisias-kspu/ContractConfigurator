@@ -9,7 +9,7 @@ BEHAVIOUR
     // Kerbal to remove on contract completion.  Can be a simple kerbal name
     // or a reference to a Kerbal object.
     //
-    // Type:      Kerbal
+    // Type:      <a href="Kerbal-Type">Kerbal</a>
     // Required:  Yes (multiples allowed)
     //
     kerbal = SomeKerbal Kerman

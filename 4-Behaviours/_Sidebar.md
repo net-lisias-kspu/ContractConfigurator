@@ -8,6 +8,7 @@
 * [[Expression|Expression-Behaviour]]
 * [[Message|Message-Behaviour]]
 * [[OrbitGenerator|OrbitGenerator-Behaviour]]
+* [[RemoveKerbal|RemoveKerbal]]
 * [[SpawnKerbal|SpawnKerbal-Behaviour]]
 * [[SpawnPassengers|SpawnPassengers-Behaviour]]
 * [[SpawnVessel|SpawnVessel-Behaviour]]
