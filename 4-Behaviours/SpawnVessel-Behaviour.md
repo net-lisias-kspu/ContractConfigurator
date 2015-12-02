@@ -88,7 +88,7 @@ BEHAVIOUR
         // Required:  No (defaulted)
         // Default:   false
         //
-        owned = False
+        owned = false
 
         // Where the vessel should spawn - defaulted from the contract if
         // not supplied.
@@ -226,7 +226,7 @@ BEHAVIOUR
             // Required:  No (defaulted)
             // Default:   true
             //
-            addToRoster = True
+            addToRoster = true
 
             // Number of crew to generate from this node.  Shouldn't be
             // supplied if name is supplied.
