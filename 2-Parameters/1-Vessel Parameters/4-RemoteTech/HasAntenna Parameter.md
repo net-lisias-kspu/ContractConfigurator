@@ -63,7 +63,7 @@ PARAMETER:NEEDS[RemoteTech]
     // Required:  No (defaulted)
     // Default:   false
     //
-    activeVessel = True
+    activeVessel = true
 
     // Text to use for the parameter's title.
     //

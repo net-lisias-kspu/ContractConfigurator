@@ -88,7 +88,7 @@ BEHAVIOUR
         // Required:  No (defaulted)
         // Default:   false
         //
-        owned = False
+        owned = false
 
         // Where the vessel should spawn - defaulted from the contract if
         // not supplied.
@@ -130,6 +130,27 @@ BEHAVIOUR
         //
         lat = -0.096992729723051
         lon = 285.425467968966
+
+        // The location name.  Use this instead of lat/long coordinates
+        // to specify coordinates based on the location of a PQS city.
+        //
+        // Type:      <a href="String-Type">string</a>
+        // Required:  No
+        //
+        pqsCity = KSC
+
+        // An optional offset vector from the center of the PQS City.
+        // Use this to make your Kerbal relative to the PQS City,
+        // which will make it work even for RSS or other mods that may
+        // move the PQS city.  To get the offset coordinates, position
+        // your ship/kerbal at the desired location and go to the
+        // Location tab in the Contract Configurator debug window
+        // (alt-F10).
+        //
+        // Type:      Vector3d
+        // Required:  No
+        //
+        pqsOffset = 447.307865750742, 5.14341771520321E-05, 24.9700656982985
 
         // Only applies to landed vessels, use to override the altitude.
         // If not supplied, defaults to the terrain altitude.
@@ -187,6 +208,17 @@ BEHAVIOUR
             //
             name = Patrick R. Kerman
 
+            // Gender of the kerbal.  If not specified, will be assigned a random
+            // gender.
+            //
+            // Type:      <a href="Enumeration-Type">ProtoCrewMember.Gender</a>
+            // Required:  No
+            // Values:
+            //     Male
+            //     Female
+            //
+            gender = Female
+
             // Whether or not the Kerbal should be added to the roster on 
             // recovery.
             //
@@ -194,7 +226,7 @@ BEHAVIOUR
             // Required:  No (defaulted)
             // Default:   true
             //
-            addToRoster = True
+            addToRoster = true
 
             // Number of crew to generate from this node.  Shouldn't be
             // supplied if name is supplied.
