@@ -41,7 +41,7 @@ PARAMETER
     // specified multiple times, but cannot be used with the other
     // attributes on this parameter.
     //
-    // Type:      <a href="String-Type">string</a>
+    // Type:      <a href="Kerbal-Type">Kerbal</a>
     // Required:  No (multiples allowed)
     //
     kerbal = Jebediah Kerman

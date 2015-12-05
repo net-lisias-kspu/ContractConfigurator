@@ -14,13 +14,13 @@ BEHAVIOUR
     //
     count = 10
     
-    // Names of passengers to spawn (use instead of count to spawn
-    // passengers with specific names.
+    // Kerbal(s) to spawn (use instead of count to spawn passengers with
+    // specific names.
     //
-    // Type:      <a href="String-Type">string</a>
+    // Type:      <a href="Kerbal-Type">Kerbal</a>
     // Required:  No (multiples allowed)
     //
-    passengerName = Kerman Kerman
+    kerbal = Kerman Kerman
 
     // Type of the passenger(s).
     //
@@ -33,16 +33,5 @@ BEHAVIOUR
     //     Unowned
     //
     kerbalType = Tourist
-
-    // Gender of the passenger(s).  If not specified each passenger is
-    // assigned a random gender.
-    //
-    // Type:      <a href="Enumeration-Type">ProtoCrewMember.Gender</a>
-    // Required:  No
-    // Values:
-    //     Male
-    //     Female
-    //
-    gender = Female
 }
 </pre>
