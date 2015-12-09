@@ -27,8 +27,8 @@ my %TYPE_MAP = qw(
     RosterStatus Enumeration-Type
     SCANdata.SCANtype Enumeration-Type
     ScienceRecoveryMethod Enumeration-Type
+    Situations Enumeration-Type
     Timer.TimerType Enumeration-Type
-    Vessel.Situations Enumeration-Type
     VesselType Enumeration-Type
     enum Enumeration-Type
     bool Boolean-Type

@@ -10,6 +10,7 @@ The Biome class represents a biome for a planet or moon.
 | [`bool`](Boolean-Type) `IsKSC()` | Whether the given biome is one of the special KSC biomes. |
 | [`float`](Numeric-Type) `RemainingScience()` | The remaining science in the biome across all subjects. |
 | [`List`](List-Type)`<`[`Location`](Location-Type)`> DifficultLocations()` | A list containing a number of "difficult" locations for the biome (eg. splashed down in the mountains). |
+| [`Situations`](Enumeration-Type)` PrimarySituation()` | The primary landed situation for the biome (LANDED or SPLASHED). |
 
 **Global Functions**
 
