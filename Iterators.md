@@ -5,7 +5,7 @@
 
 ## The ITERATOR node
 
-The ITERATOR node is used to indicate that the parent node and all its children will be repeated for each value in the list defined by the iterator.  The syntax of an iterator node is as follows:
+The ITERATOR node is used to cause its parent node and all its children to be repeated for each value in the list defined by the iterator.  The syntax of an iterator node is as follows:
 ```
 PARAMETER
 {
@@ -18,6 +18,22 @@ PARAMETER
     }
 }
 ```
+The above is equivalent to manually writing out:
+```
+PARAMETER
+{
+    type = ReachState
+    targetBody = Moho
+}
+PARAMETER
+{
+    type = ReachState
+    targetBody = Eve
+}
+...
+```
+The main advantage of an iterator node is flexibility when dealing with dynamic data.  For example, the manual approach above would not support planets added by other add-ons.  It is also useful when the number of PARAMETER nodes required is unknown (example, a parameter for each of a planet's moons).
+
 Iterator nodes may existing within [[PARAMETER|Parameters]] nodes.
 
 Within the ITERATOR node, the following fields can be specified:
