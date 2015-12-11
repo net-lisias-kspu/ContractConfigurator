@@ -12,7 +12,6 @@ The following example disables all of the stock contract types.
         disabledContractType = ExploreBody
         disabledContractType = GrandTour
         disabledContractType = ISRUContract
-        disabledContractType = RecordTrackContract
         disabledContractType = PartTest
         disabledContractType = PlantFlag
         disabledContractType = RecoverAsset
