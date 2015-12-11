@@ -18,10 +18,12 @@ BEHAVIOUR
         name = Kerbal Space Center
 
         // The parameter that must be completed before the waypoint becomes
-        // visible.  If not specified, the waypoint is always visible.
+        // visible.  If not specified, the waypoint is always visible.  More
+        // than one can be specified when there are multiple waypoints
+        // generated. 
         //
         // Type:      <a href="String-Type">string</a>
-        // Required:  No
+        // Required:  No (multiples allowed)
         //
         parameter = SomeParameterName
 
@@ -94,10 +96,12 @@ BEHAVIOUR
         name = A waypoint on Kerbin
 
         // The parameter that must be completed before the waypoint becomes
-        // visible.  If not specified, the waypoint is always visible.
+        // visible.  If not specified, the waypoint is always visible.  More
+        // than one can be specified when there are multiple waypoints
+        // generated. 
         //
         // Type:      <a href="String-Type">string</a>
-        // Required:  No
+        // Required:  No (multiples allowed)
         //
         parameter = SomeParameterName
 
@@ -175,10 +179,12 @@ BEHAVIOUR
         name = A waypoint near something
 
         // The parameter that must be completed before the waypoint becomes
-        // visible.  If not specified, the waypoint is always visible.
+        // visible.  If not specified, the waypoint is always visible.  More
+        // than one can be specified when there are multiple waypoints
+        // generated. 
         //
         // Type:      <a href="String-Type">string</a>
-        // Required:  No
+        // Required:  No (multiples allowed)
         //
         parameter = SomeParameterName
 
@@ -272,10 +278,12 @@ BEHAVIOUR
         name = Monolith
 
         // The parameter that must be completed before the waypoint becomes
-        // visible.  If not specified, the waypoint is always visible.
+        // visible.  If not specified, the waypoint is always visible.  More
+        // than one can be specified when there are multiple waypoints
+        // generated. 
         //
         // Type:      <a href="String-Type">string</a>
-        // Required:  No
+        // Required:  No (multiples allowed)
         //
         parameter = SomeParameterName
 
