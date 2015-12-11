@@ -34,7 +34,7 @@ PARAMETER
 ```
 The main advantage of an iterator node is flexibility when dealing with dynamic data.  For example, the manual approach above would not support planets added by other add-ons.  It is also useful when the number of PARAMETER nodes required is unknown (example, a parameter for each of a planet's moons).
 
-Iterator nodes may existing within [[PARAMETER|Parameters]] nodes.
+Iterator nodes may exist within [[PARAMETER|Parameters]] nodes.
 
 Within the ITERATOR node, the following fields can be specified:
 
