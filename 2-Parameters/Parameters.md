@@ -133,4 +133,19 @@ All parameters can have child requirements.  Child requirements control whether 
         }
     }
 
+Parameters support the ITERATOR construct, which allows a parameter to get duplicated for every value in a list.
+
+    PARAMETER
+    {
+        type = ReachState
+
+        ITERATOR
+        {
+            type = Biome
+            biome = @/biomes
+        }
+    }
+
+For more details on the ITERATOR node, see the [[iterators|Iterators]] page.
+
 The navigation bar on the right contains all the parameters natively supported by ContractConfigurator.

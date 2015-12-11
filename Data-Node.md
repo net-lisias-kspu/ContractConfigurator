@@ -38,4 +38,4 @@ Within the DATA node, there are a number of fields that can be specified:
 | `uniquenessCheck` | (Optional, default = NONE) Whether (and how to check uniqueness of this value).  Use this to prevent duplicate contracts (eg. for the same Kerbal, Vessel, etc.).  This can check against contracts of the same type, or contracts in the same parent group.  It can also check only active contracts or all contracts (to make it so a contract can only ever be completed once for the given value).  The valid values are NONE, CONTRACT_ACTIVE, CONTRACT_ALL, GROUP_ACTIVE and GROUP_ALL. |
 | `<identifier>` | An identifier that contains the expression.  Can be any valid identifier (characters, numbers and underscores), except for names already used by the CONTRACT_TYPE node. |
 
-Identifiers created in a DATA node are accessed as if they were a part of the CONTRACT_TYPE node (by referencing them in as `@/<identifier>`.
+Identifiers created in a DATA node are accessed as if they were a part of the CONTRACT_TYPE node (by referencing them as `@/<identifier>`).
