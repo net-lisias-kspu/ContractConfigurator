@@ -36,6 +36,15 @@ BEHAVIOUR
         //
         hidden = true
 
+        // Use this to specify that the waypoint is part of a cluster.  Waypoints
+        // that are clustered get a roman numeral appended to the name.
+        //
+        // Type:      <a href="Boolean-Type">bool</a>
+        // Required:  No (defaulted)
+        // Default:   false
+        //
+        clustered = false
+
         // Use this to specify that the waypoint is underwater.  This will
         // force randomly generated waypoints to be at a water location, and
         // change the range of random altitudes to be between the sea-floor and
