@@ -70,10 +70,11 @@ PARAMETER
     //
     biome = Shores
 
-    // The situation to check for.
+    // The situation to check for.  If multiple situations are provided, will
+    // check for any of the situations listed.
     //
     // Type:      <a href="Enumeration-Type">Vessel.Situations</a>
-    // Required:  No
+    // Required:  No (multiples allowed)
     // Values:
     //     ESCAPING
     //     FLYING
