@@ -30,6 +30,12 @@ The CONTRACT_GROUP node provides grouping for multiple Contract Configurator con
         // Default = 0
         maxSimultaneous = 1
 
+        // List any contract types to disable as part of this contract group.
+        // Multiple values can be provided.  These can be a Contract Configurator
+        // CONTRAC_TYPE name, a stock contract type class name, or a mod contract
+        // type class name.
+        disabledContractType = ARMContract
+
         // Contract groups may also be nested - all the same attributes can be
         // used in the child groups.  Values like maxCompletions and
         // maxSimultaneous apply to all contracts in the group and all child
