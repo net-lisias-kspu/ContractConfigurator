@@ -49,7 +49,7 @@ PARAMETER
 
     // Minimum speed (surface speed if flying/landed, orbital speed ortherwise).
     //
-    // Type:      <a href="Numeric-Type">float</a>
+    // Type:      <a href="Numeric-Type">double</a>
     // Required:  No (defaulted)
     // Default:   0.0
     //
@@ -57,11 +57,27 @@ PARAMETER
 
     // Maximum speed (surface speed if flying/landed, orbital speed ortherwise).
     //
-    // Type:      <a href="Numeric-Type">float</a>
+    // Type:      <a href="Numeric-Type">double</a>
     // Required:  No (defaulted)
-    // Default:   float.MaxValue
+    // Default:   double.MaxValue
     //
     maxSpeed = 5000
+
+    // Minimum rate of climb (rate at which an aircraft is increasing its altitude).
+    //
+    // Type:      <a href="Numeric-Type">double</a>
+    // Required:  No (defaulted)
+    // Default:   0.0
+    //
+    minRateOfClimb = 1000
+
+    // Maximum rate of climb (rate at which an aircraft is increasing its altitude).
+    //
+    // Type:      <a href="Numeric-Type">double</a>
+    // Required:  No (defaulted)
+    // Default:   double.MaxValue
+    //
+    maxRateOfClimb = 5000
 
     // The name of the biome to reach.
     //
