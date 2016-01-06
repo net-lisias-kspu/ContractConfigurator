@@ -37,7 +37,7 @@ BEHAVIOUR
         hidden = true
 
         // Use this to specify that the waypoint is part of a cluster.  Waypoints
-        // that are clustered get a roman numeral appended to the name.
+        // that are clustered get a roman numeral appended to the name (based on the index).
         //
         // Type:      <a href="Boolean-Type">bool</a>
         // Required:  No (defaulted)
@@ -123,6 +123,15 @@ BEHAVIOUR
         //
         hidden = true
 
+        // Use this to specify that the waypoint is part of a cluster.  Waypoints
+        // that are clustered get a roman numeral appended to the name (based on the index).
+        //
+        // Type:      <a href="Boolean-Type">bool</a>
+        // Required:  No (defaulted)
+        // Default:   false
+        //
+        clustered = false
+
         // Body for the waypoint - defaulted from the contract if not
         // supplied.
         //
@@ -205,6 +214,15 @@ BEHAVIOUR
         // Default:   false
         //
         hidden = true
+
+        // Use this to specify that the waypoint is part of a cluster.  Waypoints
+        // that are clustered get a roman numeral appended to the name (based on the index).
+        //
+        // Type:      <a href="Boolean-Type">bool</a>
+        // Required:  No (defaulted)
+        // Default:   false
+        //
+        clustered = false
 
         // Body for the waypoint - defaulted from the contract if not
         // supplied.
@@ -304,6 +322,15 @@ BEHAVIOUR
         // Default:   false
         //
         hidden = true
+
+        // Use this to specify that the waypoint is part of a cluster.  Waypoints
+        // that are clustered get a roman numeral appended to the name (based on the index).
+        //
+        // Type:      <a href="Boolean-Type">bool</a>
+        // Required:  No (defaulted)
+        // Default:   false
+        //
+        clustered = false
 
         // Body for the waypoint - defaulted from the contract if not
         // supplied.
