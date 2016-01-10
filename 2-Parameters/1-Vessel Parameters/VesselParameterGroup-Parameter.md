@@ -40,6 +40,16 @@ PARAMETER
     vessel = Vessel Key
     vessel = Some other vessel
 
+    // By default if one or more vessels have been specified via the vessel
+    // attribute, a child parameter will be created to indicate the vessel to
+    // the player.  Set this attribute to true to hide that parameter.
+    //
+    // Type:      <a href="Boolean-Type">bool</a>
+    // Required:  No (defauled)
+    // Default:   false
+    //
+    hideVesselName = false
+
     // If the contract completes successfully, whether to remove any associated
     // vessels set via the define attribute.  Use this for contracts where you
     // don't want the vessel tracked into other contracts (especially true if
