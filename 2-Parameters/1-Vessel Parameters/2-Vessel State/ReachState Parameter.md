@@ -67,7 +67,7 @@ PARAMETER
     //
     // Type:      <a href="Numeric-Type">double</a>
     // Required:  No (defaulted)
-    // Default:   0.0
+    // Default:   double.MinValue
     //
     minRateOfClimb = 1000
 
