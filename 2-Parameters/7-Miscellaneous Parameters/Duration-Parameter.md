@@ -36,5 +36,30 @@ PARAMETER
     // Required:  Yes
     //
     completionText = Wait time over
+
+    // The starting condition before the duration starts counting down.  If
+    // PARAMETER_COMPLETION or PARAMETER_FAILURE are used, then the usual
+    // behaviour of waiting for sibling parameters to be completed is
+    // ignored.
+    //
+    // Type:      <a href="Enumeration-Type">Duration.StartCriteria</a>
+    // Required:  No (defaulted)
+    // Values:
+    //     CONTRACT_ACCEPTANCE (default)
+    //     NEXT_LAUNCH
+    //     PARAMETER_COMPLETION
+    //     PARAMETER_FAILURE
+    //
+    startCriteria = CONTRACT_ACCEPTANCE
+
+    // If the startCriteria is set to PARAMETER_COMPLETION or PARAMETER_FAILURE,
+    // the name of the parameter that must be completed to trigger the duration
+    // countdown to start.
+    //
+    // Type:      <a href="String-Type">string</a>
+    // Required:  See above (multiples allowed)
+    //
+    parameter = TheParameter
+
 }
 </pre>
