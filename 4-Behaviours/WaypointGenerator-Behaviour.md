@@ -13,7 +13,8 @@ BEHAVIOUR
         // supplied a random one is generated.
         //
         // Type:      <a href="String-Type">string</a>
-        // Required:  Yes
+        // Required:  No (multiples allowed)
+        // Default:   A random waypoint name
         //
         name = Kerbal Space Center
 
@@ -100,7 +101,8 @@ BEHAVIOUR
         // The name of the waypoint - displayed on the marker
         //
         // Type:      <a href="String-Type">string</a>
-        // Required:  Yes
+        // Required:  No (multiples allowed)
+        // Default:   A random waypoint name
         //
         name = A waypoint on Kerbin
 
@@ -192,7 +194,8 @@ BEHAVIOUR
         // The name of the waypoint - displayed on the marker
         //
         // Type:      <a href="String-Type">string</a>
-        // Required:  Yes
+        // Required:  No (multiples allowed)
+        // Default:   A random waypoint name
         //
         name = A waypoint near something
 
@@ -300,7 +303,8 @@ BEHAVIOUR
         // The name of the waypoint - displayed on the marker
         //
         // Type:      <a href="String-Type">string</a>
-        // Required:  Yes
+        // Required:  No (multiples allowed)
+        // Default:   A random waypoint name
         //
         name = Monolith
 
