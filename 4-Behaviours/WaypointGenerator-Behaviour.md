@@ -280,6 +280,18 @@ BEHAVIOUR
         //
         nearIndex = 1
 
+        // Whether the waypoint generation should be in chained mode or normal.
+        // In normal mode, all waypoints will be near waypoint specified by
+        // nearIndex.  In chained mode, the first waypoint is near the nearIndex
+        // waypoint, but all others are generated near the previously generated
+        // waypoint.
+        //
+        // Type:      <a href="Boolean-Type">bool</a>
+        // Required:  No
+        // Default:   false
+        //
+        chained = false
+
         // Minimum distance in meters from the 'near' waypoint.
         //
         // Type:      <a href="Numeric-Type">double</a>
