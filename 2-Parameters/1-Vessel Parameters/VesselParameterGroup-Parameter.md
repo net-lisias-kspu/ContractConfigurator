@@ -27,6 +27,16 @@ PARAMETER
     //
     define = Vessel Key
 
+    // The name of a list (stored in the persistent data store) to add the
+    // vessel to.  This can then be referenced later using the name as a global
+    // variable.  For example, the vessel list below can be identified as a
+    // List<VesselIdentifer> name $MyVesselList.
+    //
+    // Type:      <a href="String-Type">string</a>
+    // Required:  No
+    //
+    defineList = MyVesselList
+
     // Lock this parameter so that it can only be accomplished by the
     // specified craft.  Note that the name is a "define" name set via
     // the define key in a *different* VesselParameterGroup parameter
