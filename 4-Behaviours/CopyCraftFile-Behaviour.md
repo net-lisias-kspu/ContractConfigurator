@@ -16,11 +16,12 @@ BEHAVIOUR
     // The type of craft file.  This will determine whether the craft is
     // available to the player under the VAB or SPH tabs.
     //
-    // Type:      <a href="Enumeration-Type">EditorFacility</a>
+    // Type:      <a href="Enumeration-Type">CopyCraftFile.CraftType</a>
     // Required:  Yes
     // Values:
     //     VAB
     //     SPH
+    //     Subassembly
     //
     craftType = VAB
 
