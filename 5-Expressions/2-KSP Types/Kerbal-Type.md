@@ -22,3 +22,5 @@ The Kerbal class represents a Kerbal in the game.  This includes ship crew, EVA 
 | [`Kerbal`](Kerbal-Type) `NewKerbal(`[`Gender`](Enumeration-Type)` gender, `[`string`](String-Type)` name)` | Generates a new random Kerbal with the given name and gender. |
 | [`Kerbal`](Kerbal-Type) `NewKerbalWithTrait(`[`string`](String-Type)` trait)` | Generates a new random Kerbal with the given trait. |
 | [`Kerbal`](Kerbal-Type) `NewKerbal(`[`Gender`](Enumeration-Type)` gender, `[`string`](String-Type)` name, `[`string`](String-Type)` trait)` | Generates a new Kerbal with the given name, gender and trait. |
+| [`List`](List-Type)`<`[`Kerbal`](Kerbal-Type)`> NewKerbals(`[`int`](Numeric-Type)` count )` | Generates `count` new Kerbals. |
+| [`List`](List-Type)`<`[`Kerbal`](Kerbal-Type)`> NewKerbals(`[`int`](Numeric-Type)` count, `[`string`](String-Type)` trait)` | Generates `count` new Kerbals of the given experience trait. |
