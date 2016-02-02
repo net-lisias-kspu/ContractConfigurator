@@ -1,4 +1,4 @@
-The AwardExperience contract behaviour awards a crew of a vessel (determined via a [[VesselParameterGroup-Parameter|VesselParameterGroup]] parameter) a set amount of experience after the contract completes.
+The AwardExperience contract behaviour awards a crew of a vessel (determined via a [[VesselParameterGroup|VesselParameterGroup-Parameter]] parameter) a set amount of experience after the contract completes.
 
 Note that there are some caveats due to the limitations of KSP's experience system:
  1. The experience will show up in the flight log as "Special experience from Kerbin" (or Earth in RSS).  This is regardless of whether the experience actually occured on another celestial both.  It must be done this way because other bodies have higher multipliers that we do not want applied to this experience.
