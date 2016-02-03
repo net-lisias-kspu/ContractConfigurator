@@ -33,5 +33,15 @@ BEHAVIOUR
     //     Unowned
     //
     kerbalType = Tourist
+
+    // Whether the passengers should be removed when the contract completes.
+    // Set this to false when changing passengers to Kerbals (via
+    // ChangeKerbalType) or when setting up multi-contract scenarios.
+    //
+    // Type:      <a href="Boolean-Type">bool</a>
+    // Required:  No (defaulted)
+    // Default:   true
+    //
+    removePassengers = true
 }
 </pre>
