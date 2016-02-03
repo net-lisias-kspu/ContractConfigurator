@@ -13,7 +13,7 @@ BEHAVIOUR
         // Use this instead of name/gender to use an expression that returns
         // a Kerbal object.
         //
-        // Type:      <a href="String-Type">string</a>
+        // Type:      <a href="Kerbal-Type">Kerbal</a>
         // Required:  No
         //
         kerbal = NewKerbal("Engineer")

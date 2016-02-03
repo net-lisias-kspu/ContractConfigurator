@@ -1,5 +1,6 @@
 **[[Behaviours]]**
 * [[AwardExperience|AwardExperience-Behaviour]]
+* [[ChangeKerbalType|ChangeKerbalType]]
 * [[ChangeVesselOwnership|ChangeVesselOwnership-Behaviour]]
 * [[CopyCraftFile|CopyCraftFile-Behaviour]]
 * [[DestroyVessel|DestroyVessel-Behaviour]]
