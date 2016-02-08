@@ -14,5 +14,24 @@ PARAMETER
     // Default:   1
     //
     countMax = 1
+
+    // Specific Kerbal(s) that must not be killed.  If used, overrides the count
+    // and only these specific Kerbals will trigger the contract failure.
+    //
+    // Type:      <a href="Kerbal-Type">Kerbal</a>
+    // Required:  No (multiples allowed)
+    //
+    kerbal = Jebediah Kerman
+    kerbal = Bob Kerman
+
+    // Text to use for the parameter
+    //
+    // Type:      <a href="String-Type">string</a>
+    // Required:  No (defaulted)
+    // Default (countMax = 1): Kill no Kerbals
+    // Default (countMax != 1) = Kill no more than &lt;countMax&gt; Kerbals
+    // Default (kerbal) = Do not kill: <kerbal>
+    //
+    //title =
 }
 </pre>
