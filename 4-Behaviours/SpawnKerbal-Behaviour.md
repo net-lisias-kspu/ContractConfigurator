@@ -96,8 +96,9 @@ BEHAVIOUR
         }
 
         // If you wish to specify a landed Kerbal, you must also 
-        // supply the following values.  If the altitude is not specified
-        // the Kerbal will be spawned on the ground (based on terrain height).
+        // supply the following values.  The alt value represents the altitude
+        // above seal level.  If it is not specified, the Kerbal will be spawned
+        // on the ground (based on terrain height).
         //
         // Type:      <a href="Numeric-Type">double</a>
         // Required:  See above

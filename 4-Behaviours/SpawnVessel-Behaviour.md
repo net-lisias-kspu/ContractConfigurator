@@ -153,7 +153,8 @@ BEHAVIOUR
         pqsOffset = 447.307865750742, 5.14341771520321E-05, 24.9700656982985
 
         // Only applies to landed vessels, use to override the altitude.
-        // If not supplied, defaults to the terrain altitude.
+        // If not supplied, defaults to the terrain altitude.  Note that this
+        // is the altitude above sea level.
         //
         // Type:      <a href="Numeric-Type">double</a>
         // Required:  See above
