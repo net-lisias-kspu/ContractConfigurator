@@ -10,6 +10,7 @@
     * [[CelestialBody|CelestialBody-Type]]
     * [[Kerbal|Kerbal-Type]]
     * [[Location|Location-Type]]
+    * [[Orbit|Orbit-Type]]
     * [[Resource|Resource-Type]]
     * [[Tech|Tech-Type]]
     * [[Vessel|Vessel-Type]]
