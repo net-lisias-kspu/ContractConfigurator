@@ -10,7 +10,7 @@ PARAMETER
     //
     // Type:      <a href="Numeric-Type">int</a>
     // Required:  No
-    // Default:   0 (minCapacity)
+    // Default:   1 (minCapacity)
     //            int.MaxValue (maxCapacity)
     //
     minCapacity = 1
