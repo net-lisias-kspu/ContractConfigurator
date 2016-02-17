@@ -21,7 +21,7 @@ BEHAVIOUR
     // Values:
     //     VAB
     //     SPH
-    //     Subassembly
+    //     SubAssembly
     //
     craftType = VAB
 
