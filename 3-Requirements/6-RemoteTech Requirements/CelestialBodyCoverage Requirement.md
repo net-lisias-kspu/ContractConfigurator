@@ -17,7 +17,7 @@ REQUIREMENT:NEEDS[RemoteTech]
     //
     // Type:      <a href="Numeric-Type">double</a>
     // Required:  No (defaulted)
-    // Default:   1.0
+    // Default:   0.0
     //
     minCoverage = 0.8
 
