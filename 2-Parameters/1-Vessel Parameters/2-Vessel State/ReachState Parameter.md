@@ -9,7 +9,7 @@ PARAMETER
     // Target body, defaulted from the contract if not supplied.
     //
     // Type:      <a href="CelestialBody-Type">CelestialBody</a>
-    // Required:  No (defaulted)
+    // Required:  No (defaulted, multiples allowed)
     //
     targetBody = Duna
 
