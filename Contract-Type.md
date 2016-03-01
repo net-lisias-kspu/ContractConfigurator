@@ -110,7 +110,8 @@ _Sample CONTRACT_TYPE (can be downloaded [here](https://raw.githubusercontent.co
         // Default = 0
         maxSimultaneous = 1
 
-        // Contract rewards
+        // Contract rewards.  Note that advanceFunds are automatically added to the
+        // failureFunds.
         rewardScience = 100.0
         rewardReputation = 20.0
         rewardFunds = 100000.0
