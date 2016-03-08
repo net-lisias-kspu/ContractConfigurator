@@ -24,6 +24,15 @@ PARAMETER
     kerbal = Jebediah Kerman
     kerbal = Bob Kerman
 
+    // The vessel to check for Kerbals.  If specified, then only Kerbals who
+    // have been on this vessel at one point count towards the check.  If
+    // Kerbals that have never been on this vessel die, we don't care.
+    //
+    // Type:      <a href="VesselIdentifier-Type">VesselIdentifier</a>
+    // Required:  No
+    //
+    vessel = Vessel Key
+
     // Text to use for the parameter
     //
     // Type:      <a href="String-Type">string</a>
