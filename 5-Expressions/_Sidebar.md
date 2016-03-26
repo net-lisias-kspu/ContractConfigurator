@@ -11,6 +11,7 @@
     * [[Kerbal|Kerbal-Type]]
     * [[Location|Location-Type]]
     * [[Orbit|Orbit-Type]]
+    * [[PQSCity|PQSCity-Type]]
     * [[Resource|Resource-Type]]
     * [[Tech|Tech-Type]]
     * [[Vessel|Vessel-Type]]

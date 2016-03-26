@@ -20,6 +20,7 @@ The CelestialBody class represents a planet, moon or star in KSP.
 | [`bool`](Boolean-Type) `IsOrbitalSurveyComplete()` | Indicates whether an orbital survey has been complete for the body. |
 | [`CelestialBody`](CelestialBody-Type) `Parent()` | Returns the body's parent body (ex. The Mun's parent body is Kerbin). |
 | [`List`](List-Type)`<`[`CelestialBody`](CelestialBody-Type)`> Children()` | Returns the body's child bodies (ex. Kerbin's child bodies are the Mun and Minmus). |
+| [`List`](List-Type)`<`[`PQSCity`](PQSCity-Type)`> PQSCities()` | Returns the body's PQSCity objects (things like KSC, monoliths, etc.). |
 | [`double`](Numeric-Type) `Mass()` | Returns the planet's mass (in kg). |
 | [`double`](Numeric-Type) `RotationalPeriod()` | Returns the planet's rotational period (in s). |
 | [`double`](Numeric-Type) `Radius()` | Returns the planet's radius (in meters). |
