@@ -4,9 +4,9 @@
 * [[Creating a New Contract|How-To#creating-a-new-contract]]
 * [[Turning On Debug|How-To#turning-on-debug]]
 * [[Testing a Contract|How-To#testing-a-contract]]
-* [[Miscellaneous|How-To#miscellaneous]]
-  * [[Creating an Agency|How-To#creating-an-agency]]
-  * [[Using TextGen|How-To#using-textgen]]
+* [[Creating an Agency|How-To#creating-an-agency]]
+  * [[Preventing other contracts from using your Agency|How-To#preventing-other-contracts-from-using-your-agency]]
+* [[Using TextGen|How-To#using-textgen]]
 
 ## Creating a New Contract
 
@@ -44,11 +44,7 @@ Within this menu, the following operations can be performed:
 
 <sub>[ [[Top|How-To]] ] [ [[Testing a Contract|How-To#testing-a-contract]] ]</sub>
 
-## Miscellaneous
-
-<sub>[ [[Top|How-To]] ] [ [[Miscellaneous|How-To#miscellaneous]] ]</sub>
-
-### Creating an Agency
+## Creating an Agency
 
 If you wish to create your own agency, all it takes is one config file, and a couple images.  Within the config file (this can be the same as your Contract Configurator contracts), add the following node:
 
@@ -67,9 +63,22 @@ If you wish to create your own agency, all it takes is one config file, and a co
         logoScaledURL = ContractConfigurator/MyLogo_scaled
     }
 
-<sub>[ [[Top|How-To]] ] [ [[Miscellaneous|How-To#miscellaneous]] / [[Creating an Agency|How-To#creating-an-agency]] ]</sub>
+<sub>[ [[Top|How-To]] ] [ [[Creating an Agency|How-To#creating-an-agency]] ]</sub>
 
-### Using TextGen
+### Preventing other contracts from using your Agency
+
+Contracts in KSP are assigned an agency based on a parameters set by the contract (which aren't exposed by Contract Configurator).  These parameters don't have a high level of visibility to the player - so they end up seeming pretty random (with the exception of the hardcoding in the part test contracts to prefer the agency that makes the part).  To prevent other contracts from using your agency, use the NoRandomContractMentality provided by Contract Configurator in your AGENT config:
+
+AGENT
+{
+    <rest of your agent config goes here>
+
+    mentality = NoRandomContractMentality
+}
+
+<sub>[ [[Top|How-To]] ] [ [[Creating an Agency|How-To#creating-an-agency]] / [[Preventing other contracts from using your Agency|How-To#preventing-other-contracts-from-using-your-agency]] ]</sub>
+
+## Using TextGen
 
 TextGen is the Squad system for generating contract descriptions.  If you would like to use this, I highly recommend making use of the [Coherent Contracts](http://forum.kerbalspaceprogram.com/threads/100098-0-25-Coherent-Contracts-v1-01-%28Nov-14%29) mod.
 
@@ -122,5 +131,5 @@ Values for motivation (note there are also generic strings that get used if blan
 * rescue
 * test
 
-<sub>[ [[Top|How-To]] ] [ [[Miscellaneous|How-To#miscellaneous]] / [[Using TextGen|How-To#using-textgen]] ]</sub>
+<sub>[ [[Top|How-To]] ] [ [[Using TextGen|How-To#using-textgen]] ]</sub>
 
