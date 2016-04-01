@@ -69,12 +69,14 @@ If you wish to create your own agency, all it takes is one config file, and a co
 
 Contracts in KSP are assigned an agency based on a parameters set by the contract (which aren't exposed by Contract Configurator).  These parameters don't have a high level of visibility to the player - so they end up seeming pretty random (with the exception of the hardcoding in the part test contracts to prefer the agency that makes the part).  To prevent other contracts from using your agency, use the NoRandomContractMentality provided by Contract Configurator in your AGENT config:
 
+```
 AGENT
 {
     <rest of your agent config goes here>
 
     mentality = NoRandomContractMentality
 }
+```
 
 <sub>[ [[Top|How-To]] ] [ [[Creating an Agency|How-To#creating-an-agency]] / [[Preventing other contracts from using your Agency|How-To#preventing-other-contracts-from-using-your-agency]] ]</sub>
 
