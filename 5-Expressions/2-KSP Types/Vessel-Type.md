@@ -27,6 +27,7 @@ The Vessel class represents anything that is made up of parts (which includes sh
 | [`double`](Numeric-Type) `LargestDimension()` | The approximate size (estimated) of the vessel along its largest dimension. |
 | [`Location`](Location-Type) `Location()` | The location of the vessel as an object. |
 | [`List`](List-Type)`<`[`Kerbal`](Kerbal-Type)`> Crew()` | Gets a list containing all the crew on board the vessel. |
+| [`Duration`](Duration-Type) `MET()` | The Mission Elapsed Time as a Duration. |
 
 **Global Functions**
 
