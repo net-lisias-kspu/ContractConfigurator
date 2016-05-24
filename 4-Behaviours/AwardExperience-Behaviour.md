@@ -11,7 +11,7 @@ BEHAVIOUR
     type = AwardExperience
 
     // The name of the <a href="VesselParameterGroup-Parameter">VesselParameterGroup</a> parameter that defines the vessel
-    // who's crew we will be awarding experience to.  The list of crew members
+    // whose crew we will be awarding experience to.  The list of crew members
     // is saved at the time of the parameter's completion.  When the contract
     // completes, these crew members will be awarded the experience.
     //
