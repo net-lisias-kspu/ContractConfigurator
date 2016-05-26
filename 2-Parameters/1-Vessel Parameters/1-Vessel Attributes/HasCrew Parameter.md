@@ -46,6 +46,13 @@ PARAMETER
     kerbal = Jebediah Kerman
     kerbal = Bob Kerman
 
+    // Kerbals that are excluded from the count.
+    //
+    // Type:      <a href="Kerbal-Type">Kerbal</a>
+    // Required:  No (multiples allowed)
+    //
+    excludeKerbal = Bill Kerman
+
     // Text to use for the parameter
     //
     // Type:      <a href="String-Type">string</a>
