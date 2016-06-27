@@ -24,6 +24,20 @@ PARAMETER
     partModule = ModuleReactionWheel
     partModule = ModuleSAS
 
+    // Type of PartModule to check for.  Similar to partModule, but more
+    // generic.
+    //
+    // Type:      <a href="String-Type">string</a>
+    // Required:  No (multiples allowed)
+    // Values (defined in Squad/Contracts/Contracts.cfg under
+    // MODULE_DEFINITIONS):
+    //     Antenna
+    //     Dock
+    //     Grapple
+    //     Power
+    //     Wheel
+    partModuleType = Antenna
+
     // Extended PartModule check.  This is used to look for very specific part
     // module attributes.  The MODULE node may contain any attribute, and those
     // attributes will be matched against the part modules in the parts.
