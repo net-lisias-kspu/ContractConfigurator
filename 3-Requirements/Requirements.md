@@ -16,6 +16,14 @@ REQUIREMENT
     // all supported ContractConfigurator requirements.
     type = ReachSpace
 
+    // Title to use for the requirement when displaying it in Mission Control.
+    // In most cases, a default title is provided.
+    //
+    // Type:      <a href="String-Type">string</a>
+    // Required:  No (defaulted)
+    //
+    //title =
+
     // The invertRequirement is a logical NOT.  In this example, the
     // requirement becomes that the player must not yet have reached space.
     //
@@ -36,6 +44,15 @@ REQUIREMENT
     // Default:   (dependent on requirement)
     //
     checkOnActiveContract = true
+
+    // Causes children of the requirement to be hidden when displaying
+    // in Mission Control.
+    //
+    // Type:      <a href="Boolean-Type">bool</a>
+    // Required:  No (defaulted)
+    // Default:   false
+    //
+    hideChildren = true
 }
 </pre>
 

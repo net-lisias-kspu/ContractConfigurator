@@ -21,9 +21,24 @@ _Sample CONTRACT_TYPE (can be downloaded [here](https://raw.githubusercontent.co
         // Unique name of the contract type (required)
         name = SimpleTestContract
 
-        // Contract title is displayed in the window in the corner, should be
-        // short and descritive
+        // The title of the contract, which is displayed in Mission Control
+        // when a player is selecting a mission.  Also gets displayed in the
+        // contract app.
+        //
+        // Type:      <a href="String-Type">string</a>
+        // Required:  Yes
+        //
         title = Simple Test Contract
+
+        // Generic version of the contract title that is displayed in Mission
+        // Control when no contract is currently generated.  This defaults to
+        // the title, but only if it is deterministic (ie. the value can be
+        // determined at parse time).
+        //
+        // Type:      <a href="String-Type">string</a>
+        // Required:  Yes (unless can be defauled from title).
+        //
+        genericTitle = Simple Test Contract
 
         // Reference to a CONTRACT_GROUP node which supplies additional rules
         // for limiting the number of contracts within a given group.
@@ -46,6 +61,16 @@ _Sample CONTRACT_TYPE (can be downloaded [here](https://raw.githubusercontent.co
                                       // contract.  See CoherentContracts for
                                       // some possible values.  Some values
                                       // used are: flags, test, rescue.
+
+        // Generic version of the contract description that is displayed in
+        // Mission Control when no contract is currently generated.  This
+        // defaults to the description, but only if it is deterministic (ie.
+        // the value can be determined at parse time).
+        //
+        // Type:      <a href="String-Type">string</a>
+        // Required:  Yes (unless can be defauled from description).
+        //
+        genericDescription = This is the generic description.
 
         // Contract notes are displayed in mission control.  Use it to give 
         // any special instructions.
