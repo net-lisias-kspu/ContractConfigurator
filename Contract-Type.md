@@ -131,8 +131,8 @@ _Sample CONTRACT_TYPE (can be downloaded [here](https://raw.githubusercontent.co
         maxCompletions = 3
 
         // The maximum instances of this contract that can be active at one
-        // time (0 being unlimited).
-        // Default = 0
+        // time.
+        // Default = 4 (unless maxCompletions is set).
         maxSimultaneous = 1
 
         // Contract rewards.  Note that advanceFunds are automatically added to the
