@@ -86,7 +86,9 @@ _Sample CONTRACT_TYPE (can be downloaded [here](https://raw.githubusercontent.co
         // contract completes.
         completedMessage = You have done the thing.
 
-        // Agent (agency).  If not populated, a random agent will be selected.
+        // Agent (agency).  If not populated, the agent from the contract group
+        // will be used.  If there is no group or no agent on the group, a
+        // random agent will be selected.
         agent = Integrated Integrals
 
         // Contract min/max expiry in days.  If both are set to 0.0, it will
