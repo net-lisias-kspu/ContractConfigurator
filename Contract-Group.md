@@ -16,6 +16,11 @@ The CONTRACT_GROUP node provides grouping for multiple Contract Configurator con
         // defaulted to the name).
         displayName = The Contract Group
 
+        // Agent (agency).  It is highly recommended to create and provide a
+        // custom agent, as it is used to group and display contracts in
+        // Mission Control.
+        agent = Integrated Integrals
+
         // Use this to specify the minimum version of Contract Configurator
         // That is required to run contracts in this group.
         minVersion = 0.7.0
