@@ -35,6 +35,8 @@ Within the DATA node, there are a number of fields that can be specified:
 | Field | Description |
 | :--- | :--- |
 | `type` | The data type for elements within the DATA node.  Supports any data type listed on the [[Expressions|Expressions]] page. |
+| `title` | (Optional) When the value is a required value, the requirement title to display in mission control (usually of the form "Must X").  This is required for anything that can prevent the contract from generating.  |
+| `hidden` | (Optional, defualt = false) Use this to hide the requirement line in mission control for entries in this data node.  This should only be used when the value can't actually prevent the contract from generating, so it doesn't need to be communicated to the player.  |
 | `requiredValue` | (Optional, default = true) If true, the expression needs to return a valid (non-null) value for the contract to be offered.  If false, the contract will be offered even if the expression returns null. |
 | `uniquenessCheck` | (Optional, default = NONE) Whether (and how to check uniqueness of this value).  Use this to prevent duplicate contracts (eg. for the same Kerbal, Vessel, etc.).  This can check against contracts of the same type, or contracts in the same parent group.  It can also check only active contracts or all contracts (to make it so a contract can only ever be completed once for the given value).  The valid values are NONE, CONTRACT_ACTIVE, CONTRACT_ALL, GROUP_ACTIVE and GROUP_ALL. |
 | `<identifier>` | An identifier that contains the expression.  Can be any valid identifier (characters, numbers and underscores), except for names already used by the CONTRACT_TYPE node. |
