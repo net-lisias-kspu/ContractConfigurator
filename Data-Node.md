@@ -2,6 +2,7 @@
 
 * [[Table of Contents|Data-Node#table-of-contents]]
 * [[The DATA node|Data-Node#the-data-node]]
+* [[The DATA_EXPAND node|Data-Node#the-data_expand-node]]
 
 ## The DATA node
 
@@ -39,3 +40,57 @@ Within the DATA node, there are a number of fields that can be specified:
 | `<identifier>` | An identifier that contains the expression.  Can be any valid identifier (characters, numbers and underscores), except for names already used by the CONTRACT_TYPE node. |
 
 Identifiers created in a DATA node are accessed as if they were a part of the CONTRACT_TYPE node (by referencing them as `@/<identifier>`).
+
+<sub>[ [[Top|Data-Node]] ] [ [[The DATA node|Data-Node#the-data-node]] ]</sub>
+
+## The DATA_EXPAND node
+
+The DATA_EXPAND node is a variant on the DATA node.  It's purpose is to give a list of values that will expand into multiple duplicated contract types.  In this way, it's possible to do something like creating a duplicate contract for each Celestial Body and have the players able to see the different variants in mission control (instead of representing them as a single contract when not yet available).  Because each copy is treated as a unique contract type, it can also be used to create more complex contract dependencies (eg. "Need to complete the starter contract on *Minmus* before the advanced Minmus contract is offered").
+
+When a DATA_EXPAND node is expanded, the duplicated contracts have a period and the value of the DATA_EXPAND node appended to the contract title.  So a CONTRACT_TYPE of "MyContractType" with values of [Mun, Minmus] would expand to "MyContractType.Mun" and "MyContractType.Minmus".
+
+The structure of the DATA_EXPAND node is a simplified version of the DATA node.  Only a type and a value expression can be provided.  Take the following contract as an example:
+```
+CONTRACT_TYPE
+{
+    type = MyContractType
+    ...
+
+    DATA
+    {
+        type = int
+        someIntValue = [ 0, 1 ]
+    }
+}
+```
+This becomes equivalent to the following configuration:
+```
+CONTRACT_TYPE
+{
+    type = MyContractType.0
+    ...
+
+    DATA
+    {
+        type = int
+        someIntValue = 0
+    }
+}
+
+
+CONTRACT_TYPE
+{
+    type = MyContractType.1
+    ...
+
+    DATA
+    {
+        type = int
+        someIntValue = 1
+    }
+}
+```
+Note in the example above that the type is defined as an 'int', but the actual type provided must be 'List<int>'.  DATA_EXPAND nodes can use expressions of arbitrary complexity.  The only restriction is that the expression must be *deterministic* - it must be possible to determine the list of values at game start.  So `HomeWorld().Children()` is a valid expression that gets all the homeworld's moons (Mun and Minmus in a stock game), whereas `AllVessels()` is not valid, because there are no vessels before a save game is loaded.
+
+<sub>[ [[Top|Data-Node]] ] [ [[The DATA_EXPAND node|Data-Node#the-data_expand-node]] ]</sub>
+
