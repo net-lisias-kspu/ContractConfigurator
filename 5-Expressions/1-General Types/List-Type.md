@@ -16,3 +16,4 @@ List types are a list of another type (which can be any of the supported types).
 | [`List`](List-Type)`<T> Add(T item)` | Adds the given item to the current list and returns it. |
 | [`List`](List-Type)`<T> Exclude(T item)` | Removes the given item from the current list and returns it. |
 | [`List`](List-Type)`<T> ExcludeAll(`[`List`](List-Type)`<T> item)` | Removes all the given item from the current list and returns it. |
+| `T SelectUnique()` | Use this within a [`DATA`](Data-Node) node with the uniquenessCheck attribute set to select a value from the list that meets the uniqueness check criteria.  This is preferred over simply selecting a random value, as the latter may cause the contract to fail generation. |
