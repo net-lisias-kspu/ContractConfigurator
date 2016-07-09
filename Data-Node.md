@@ -92,7 +92,7 @@ CONTRACT_TYPE
     }
 }
 ```
-Note in the example above that the type is defined as an 'int', but the actual type provided must be 'List<int>'.  DATA_EXPAND nodes can use expressions of arbitrary complexity.  The only restriction is that the expression must be *deterministic* - it must be possible to determine the list of values at game start.  So `HomeWorld().Children()` is a valid expression that gets all the homeworld's moons (Mun and Minmus in a stock game), whereas `AllVessels()` is not valid, because there are no vessels before a save game is loaded.
+Note in the example above that the type is defined as an `int`, but the actual type provided must be `List<int>`.  DATA_EXPAND nodes can use expressions of arbitrary complexity.  The only restriction is that the expression must be *deterministic* - it must be possible to determine the list of values at game start.  So `HomeWorld().Children()` is a valid expression that gets all the homeworld's moons (Mun and Minmus in a stock game), whereas `AllVessels()` is not valid, because there are no vessels before a save game is loaded.
 
 <sub>[ [[Top|Data-Node]] ] [ [[The DATA_EXPAND node|Data-Node#the-data_expand-node]] ]</sub>
 
