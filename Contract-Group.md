@@ -16,6 +16,16 @@ The CONTRACT_GROUP node provides grouping for multiple Contract Configurator con
         // defaulted to the name).
         displayName = The Contract Group
 
+        // Key to use when sorting child groups in mission control.  Use this
+        // if you want your contract groupss to appear in a different order.
+        // Because this defaults to the displayName, the default sort is
+        // alphabetical.
+        //
+        // Type:      <a href="String-Type">string</a>
+        // Required:  No (defaults to the displayName)
+        //
+        sortKey = A string to give an alternate sort order
+
         // Agent (agency).  It is highly recommended to create and provide a
         // custom agent, as it is used to group and display contracts in
         // Mission Control.

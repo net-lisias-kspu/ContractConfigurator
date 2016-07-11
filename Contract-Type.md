@@ -72,6 +72,17 @@ _Sample CONTRACT_TYPE (can be downloaded [here](https://raw.githubusercontent.co
         //
         genericDescription = This is the generic description.
 
+        // Key to use when sorting contracts within a group in mission control.
+        // Use this if you want your contracts to appear in a different order,
+        // such as the order they need to be completed in.  Because this
+        // defaults to the genericTitle, the default sort is alphabetical by
+        // title.
+        //
+        // Type:      <a href="String-Type">string</a>
+        // Required:  No (defaults to the genericTitle)
+        //
+        sortKey = A string to give an alternate sort order
+
         // Contract notes are displayed in mission control.  Use it to give 
         // any special instructions.
         //
