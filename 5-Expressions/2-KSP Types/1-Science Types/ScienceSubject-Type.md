@@ -18,10 +18,10 @@ The ScienceSubject class represents a subject for which science can be performed
 
 | Function Signature | Description |
 | :--- | :--- |
-| [`List`](List-Type)`<`[`ScienceSubject`](ScienceSubject-Type)`> AllScienceSubjects()` | The list of all currently available science subjects (except "difficult" ones). |
-| [`List`](List-Type)`<`[`ScienceSubject`](ScienceSubject-Type)`> AllScienceSubjectsByBody(`[`List`](List-Type)`<`[`CelestialBody`](CelestialBody-Type)`>)` | Same as AllScienceSubjects, but filtered by CelestialBody. |
-| [`List`](List-Type)`<`[`ScienceSubject`](ScienceSubject-Type)`> AllScienceSubjectsByExperiment(`[`List`](List-Type)`<`[`ScienceExperiment`](ScienceExperiment-Type)`>)` | Same as AllScienceSubjects, but filtered by ScienceExperiment. |
-| [`List`](List-Type)`<`[`ScienceSubject`](ScienceSubject-Type)`> AllScienceSubjectsByBiome(`[`List`](List-Type)`<`[`Biome`](Biome-Type)`>)` | Same as AllScienceSubjects, but filtered by Biome. |
+| [`List`](List-Type)`<`[`ScienceSubject`](ScienceSubject-Type)`>` `AllScienceSubjects()` | The list of all currently available science subjects (except "difficult" ones). |
+| [`List`](List-Type)`<`[`ScienceSubject`](ScienceSubject-Type)`>` `AllScienceSubjectsByBody(`[`List`](List-Type)`<`[`CelestialBody`](CelestialBody-Type)`>)` | Same as AllScienceSubjects, but filtered by CelestialBody. |
+| [`List`](List-Type)`<`[`ScienceSubject`](ScienceSubject-Type)`>` `AllScienceSubjectsByExperiment(`[`List`](List-Type)`<`[`ScienceExperiment`](ScienceExperiment-Type)`>)` | Same as AllScienceSubjects, but filtered by ScienceExperiment. |
+| [`List`](List-Type)`<`[`ScienceSubject`](ScienceSubject-Type)`>` `AllScienceSubjectsByBiome(`[`List`](List-Type)`<`[`Biome`](Biome-Type)`>)` | Same as AllScienceSubjects, but filtered by Biome. |
 | [`List`](List-Type)`<`[`ScienceSubject`](ScienceSubject-Type)`> AllScienceSubjectsByBodyExperiment(`[`List`](List-Type)`<`[`CelestialBody`](CelestialBody-Type)`>, `[`List`](List-Type)`<`[`ScienceExperiment`](ScienceExperiment-Type)`>)` | Same as AllScienceSubjects, but filtered by CelestialBody and ScienceExperiment. |
-| [`List`](List-Type)`<`[`ScienceSubject`](ScienceSubject-Type)`> AllScienceSubjectsByBiomeExperiment(`[`List`](List-Type)`<`[`Biome`](Biome-Type)`>, `[`List`](List-Type)`<`[`ScienceExperiment`](ScienceExperiment-Type)`>)` | Same as AllScienceSubjects, but filtered by Biome and ScienceExperiment. |
-| [`List`](List-Type)`<`[`ScienceSubject`](ScienceSubject-Type)`> DifficultScienceSubjects()` | The list of all "difficult" subjects (such as "splashed down in the mountains"). |
+| [`List`](List-Type)`<`[`ScienceSubject`](ScienceSubject-Type)`>` `AllScienceSubjectsByBiomeExperiment(`[`List`](List-Type)`<`[`Biome`](Biome-Type)`>, `[`List`](List-Type)`<`[`ScienceExperiment`](ScienceExperiment-Type)`>)` | Same as AllScienceSubjects, but filtered by Biome and ScienceExperiment. |
+| [`List`](List-Type)`<`[`ScienceSubject`](ScienceSubject-Type)`>` `DifficultScienceSubjects()` | The list of all "difficult" subjects (such as "splashed down in the mountains"). |
