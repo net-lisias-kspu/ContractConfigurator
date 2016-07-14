@@ -16,7 +16,7 @@ The ScienceSubject class represents a subject for which science can be performed
 
 **Global Functions**
 
-| Function Signature| Description |
+| Function Signature | Description |
 | :--- | :--- |
 | [`List`](List-Type)`<`[`ScienceSubject`](ScienceSubject-Type)`> AllScienceSubjects()` | The list of all currently available science subjects (except "difficult" ones). |
 | [`List`](List-Type)`<`[`ScienceSubject`](ScienceSubject-Type)`> AllScienceSubjectsByBody(`[`List`](List-Type)`<`[`CelestialBody`](CelestialBody-Type)`>)` | Same as AllScienceSubjects, but filtered by CelestialBody. |
