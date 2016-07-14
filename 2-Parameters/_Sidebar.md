@@ -18,6 +18,7 @@
         * [[ReachState|ReachState-Parameter]]
         * [[RecoverVessel|RecoverVessel-Parameter]]
         * [[Rendezvous|Rendezvous-Parameter]]
+        * [[ResourceConsumption|ResourceConsumption-Parameter]]
         * [[ReturnHome|ReturnHome-Parameter]]
         * [[VesselDestroyed|VesselDestroyed-Parameter]]
         * [[VesselNotDestroyed|VesselNotDestroyed-Parameter]]
