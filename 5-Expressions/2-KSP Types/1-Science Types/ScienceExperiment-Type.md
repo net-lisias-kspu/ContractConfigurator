@@ -11,4 +11,4 @@ The ScienceExperiment class represents a science experiment that can be run.
 | Function Signature| Description |
 | :--- | :--- |
 | [`List`](List-Type)`<`[`ScienceExperiment`](ScienceExperiment-Type)`> AllExperiments()` | Returns a list of all science experiments. |
-| [`List`](List-Type)`<`[`ScienceExperiment`](ScienceExperiment-Type)`> AvailableExperiments(CelestialBody body)` | Returns a list of all science experiments that are available (that have the appropriate tech unlocked) and can be run on the given celestial body. |
+| [`List`](List-Type)`<`[`ScienceExperiment`](ScienceExperiment-Type)`> AvailableExperiments(`[`CelestialBody`](CelestialBody-Type)` body)` | Returns a list of all science experiments that are available (that have the appropriate tech unlocked) and can be run on the given celestial body. |
