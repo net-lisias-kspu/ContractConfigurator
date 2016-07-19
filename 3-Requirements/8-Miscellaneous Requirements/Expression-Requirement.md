@@ -1,4 +1,4 @@
-Requirement that executes an expression to check whether the requirement is met.  Can access data in the [[Extending#using-the-persistent-data-store|persistent data store]].
+Requirement that executes an expression to check whether the requirement is met.  Can access data in the [[persistent data store|Extending#using-the-persistent-data-store]].
 
 <pre>
 REQUIREMENT
