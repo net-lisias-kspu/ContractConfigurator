@@ -58,7 +58,7 @@ CONTRACT_TYPE
     type = MyContractType
     ...
 
-    DATA
+    DATA_EXPAND
     {
         type = int
         someIntValue = [ 0, 1 ]
