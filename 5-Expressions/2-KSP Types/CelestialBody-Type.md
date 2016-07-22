@@ -5,6 +5,7 @@ The CelestialBody class represents a planet, moon or star in KSP.
 | Method Signature | Description |
 | :--- | :--- |
 | [`string`](String-Type) `Name()` | The name of the celestial body. |
+| [`int`](Numeric-Type) `Index()` | The index of the celestial body int he global list.  Useful for sorting. |
 | [`bool`](Boolean-Type) `HasAtmosphere()` | Indicates whether the given body has an atmosphere. |
 | [`bool`](Boolean-Type) `HasOcean()` | Indicates whether the given body has an ocean. |
 | [`bool`](Boolean-Type) `HasSurface()` | Indicates whether the given body has a surface (ie. isn't a gas giant). |
