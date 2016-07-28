@@ -104,7 +104,7 @@ _Sample CONTRACT_TYPE (can be downloaded [here](https://raw.githubusercontent.co
 
         // Contract min/max expiry in days.  If both are set to 0.0, it will
         // result in a contract that never expires.
-        // Default = 1.0 and 7.0 days, respectively
+        // Default = 5.0 and 100.0 days, respectively
         minExpiry = 500.0
         maxExpiry = 1000.0
 
