@@ -11,7 +11,7 @@ The CONTRACT_DEFINITION node is used to define additional details for a stock co
 <pre>
 CONTRACT_DEFINITION
 {
-    // The name of the contract type.  This needs to match the name of the C# class exactly.
+    // The name of the contract type.  This needs to match the name of the class exactly.
     name = StockContract
   
     // The name that will be used to group these contracts under in Mission Control.
