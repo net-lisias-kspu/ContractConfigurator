@@ -1,10 +1,10 @@
 The NoStaging parameter is used to either prevent a VesselParameterGroup from completing or to fail a contract outright when a vessel is staged.  Note that the following are considered staging events:
-1. Decoupling using a decoupler (either through the right click menu or a staging event).
-2. Undocking/decoupling two docking nodes.
+  1. Decoupling using a decoupler (either through the right click menu or a staging event).
+  2. Undocking/decoupling two docking nodes.
 
 The following are not considered staging events:
-1. A part breaking off
-2. Launch clamps releasing.
+  1. A part breaking off
+  2. Launch clamps releasing.
 
 <pre>
 PARAMETER
