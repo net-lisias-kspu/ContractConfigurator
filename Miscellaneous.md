@@ -18,8 +18,8 @@ CONTRACT_DEFINITION
     displayName = Stock Contracts
   
     // The name of the agency.  This is used for deriving the image to display.  As well,
-    // the agency details are displayed when clicking on the group line.  For more details
-    // on agents, see the <a href="wiki/How-To#creating-an-agency">agent</a> page.
+    // the agency details are displayed when clicking on the group line.  For more
+    // details on agents, see the <a href="wiki/How-To#creating-an-agency">agent</a> page.
     agent = Stock Contract Agency Inc.
 }
 </pre>
