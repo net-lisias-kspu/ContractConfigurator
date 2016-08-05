@@ -51,6 +51,11 @@ The CONTRACT_GROUP node provides grouping for multiple Contract Configurator con
         // type class name.
         disabledContractType = ARMContract
 
+        // Custom loading tip to add for the mod.  To match with the stock tips,
+        // should use camel case and be followed by an ellipsis.  Can be specified
+        // multiple times.
+        tip = Customizing Loading Tips...
+
         // Contract groups may also be nested - all the same attributes can be
         // used in the child groups.  Values like maxCompletions and
         // maxSimultaneous apply to all contracts in the group and all child
