@@ -19,6 +19,8 @@ The CelestialBody class represents a planet, moon or star in KSP.
 | [`bool`](Boolean-Type) `HaveEscaped()` | Whether the player has escaped from the given celestial body. |
 | [`bool`](Boolean-Type) `HaveReturnedFrom()` | Whether the player has returned from the given celestial body. |
 | [`bool`](Boolean-Type) `IsOrbitalSurveyComplete()` | Indicates whether an orbital survey has been complete for the body. |
+| [`bool`](Boolean-Type) `CanHaveKolniyaOrbit()` | Whether the body's size, SOI and orbital period allow for a Kolniya orbit. |
+| [`bool`](Boolean-Type) `CanHaveTundraOrbit()` | Whether the body's size, SOI and orbital period allow for a tundra orbit. |
 | [`CelestialBody`](CelestialBody-Type) `Parent()` | Returns the body's parent body (ex. The Mun's parent body is Kerbin). |
 | [`List`](List-Type)`<`[`CelestialBody`](CelestialBody-Type)`> Children()` | Returns the body's child bodies (ex. Kerbin's child bodies are the Mun and Minmus). |
 | [`List`](List-Type)`<`[`PQSCity`](PQSCity-Type)`> PQSCities()` | Returns the body's PQSCity objects (things like KSC, monoliths, etc.). |
