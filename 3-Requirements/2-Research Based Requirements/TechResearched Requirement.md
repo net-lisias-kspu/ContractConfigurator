@@ -26,5 +26,26 @@ REQUIREMENT
     // Required:  No (multiples allowed)
     //
     part = SmallGearBay
+
+    // PartModule that needs to have its tech unlocked.
+    //
+    // Type:      <a href="String-Type">string</a>
+    // Required:  No (multiples allowed)
+    //
+    partModule = ModuleReactionWheel
+
+    // Type of PartModule that needs to have its tech unlocked.
+    //
+    // Type:      <a href="String-Type">string</a>
+    // Required:  No (multiples allowed)
+    // Values (defined in Squad/Contracts/Contracts.cfg under
+    // MODULE_DEFINITIONS):
+    //     Antenna
+    //     Dock
+    //     Grapple
+    //     Power
+    //     Wheel
+    partModuleType = Antenna
+    partModuleType = Power
 }
 </pre>
