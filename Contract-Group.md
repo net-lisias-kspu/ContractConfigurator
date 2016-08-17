@@ -19,7 +19,8 @@ The CONTRACT_GROUP node provides grouping for multiple Contract Configurator con
         // Key to use when sorting child groups in mission control.  Use this
         // if you want your contract groupss to appear in a different order.
         // Because this defaults to the displayName, the default sort is
-        // alphabetical.
+        // alphabetical.  If you try to use numbers, they will sort alphabetically
+        // (10 will come before 2, 20 will come before 3, etc.).
         //
         // Type:      <a href="String-Type">string</a>
         // Required:  No (defaults to the displayName)

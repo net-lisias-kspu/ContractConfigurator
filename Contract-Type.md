@@ -76,7 +76,8 @@ _Sample CONTRACT_TYPE (can be downloaded [here](https://raw.githubusercontent.co
         // Use this if you want your contracts to appear in a different order,
         // such as the order they need to be completed in.  Because this
         // defaults to the genericTitle, the default sort is alphabetical by
-        // title.
+        // title.  If you try to use numbers, they will sort alphabetically
+        // (10 will come before 2, 20 will come before 3, etc.).
         //
         // Type:      <a href="String-Type">string</a>
         // Required:  No (defaults to the genericTitle)
