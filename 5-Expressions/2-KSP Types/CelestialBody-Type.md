@@ -50,4 +50,4 @@ The CelestialBody class represents a planet, moon or star in KSP.
 | [`List`](List-Type)`<`[`CelestialBody`](CelestialBody-Type)`> ReturnedFromBodies()` | Returns a list of all celestial bodies that the player has returned from. |
 | [`CelestialBody`](CelestialBody-Type) `CelestialBody(`[`string`](String-Type)` identifier)` | Returns the CelestialBody for the given identifier. |
 | [`CelestialBody`](CelestialBody-Type) `NextUnreachedBody()` | Returns the next unreached body in a logical progression. |
-| [`List`](List-Type)`<`[`CelestialBody`](CelestialBody-Type)`> NextUnreachedBodies([`int`](Numeric-Type) count)` | Returns the next `count` unreached bodies in the logical progression. |
+| [`List`](List-Type)`<`[`CelestialBody`](CelestialBody-Type)`> NextUnreachedBodies(`[`int`](Numeric-Type)` count)` | Returns the next `count` unreached bodies in the logical progression. |
