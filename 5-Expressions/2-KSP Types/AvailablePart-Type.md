@@ -19,6 +19,8 @@ The AvailablePart class represents the definition of a part.
 | [`float`](Numeric-Type) `EngineAtmosphereISP()` | The ISP in one atmosphere of pressure for this part.  Returns 0.0 if the part isn't an engine. |
 | [`List`](List-Type)`<`[`Resource`](Resource-Type)`> Resources()` | Returns a list of all resources that this part can hold. |
 | [`double`](Numeric-Type) `ResourceCapacity(`[`Resource`](Resource-Type)`)` | The part's capacity for holding the given type of resource. |
+| [`double`](Numeric-Type) `Mass()` | The part's dry mass. |
+| [`double`](Numeric-Type) `MassWet()` | The part's wet mass. |
 
 **Global Functions**
 
