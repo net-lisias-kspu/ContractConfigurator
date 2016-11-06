@@ -37,7 +37,7 @@ The following example disables all of the stock contract types.
         disabledContractType = ARMContract
         disabledContractType = BaseContract
         disabledContractType = CollectScience
-        disabledContractType = ExploreBody
+        disabledContractType = Exploration
         disabledContractType = GrandTour
         disabledContractType = ISRUContract
         disabledContractType = PartTest
@@ -47,7 +47,6 @@ The following example disables all of the stock contract types.
         disabledContractType = StationContract
         disabledContractType = SurveyContract
         disabledContractType = TourismContract
-        disabledContractType = WorldFirstContract
     }
 
 <sub>[ [[Top|Miscellaneous]] ] [ [[The CONTRACT_CONFIGURATOR node|Miscellaneous#the-contract_configurator-node]] ]</sub>
