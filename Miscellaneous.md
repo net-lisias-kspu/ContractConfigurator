@@ -37,7 +37,7 @@ The following example disables all of the stock contract types.
         disabledContractType = ARMContract
         disabledContractType = BaseContract
         disabledContractType = CollectScience
-        disabledContractType = Exploration
+        disabledContractType = ExplorationContract
         disabledContractType = GrandTour
         disabledContractType = ISRUContract
         disabledContractType = PartTest
