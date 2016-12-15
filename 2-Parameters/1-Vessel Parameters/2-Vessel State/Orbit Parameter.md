@@ -105,6 +105,22 @@ PARAMETER
     //
     maxInclination = 1
 
+    // Minimum argument of periapsis in degrees
+    //
+    // Type:      <a href="Numeric-Type">double</a>
+    // Required:  No (defaulted)
+    // Default:   0.0
+    //
+    minArgumentOfPeriapsis = 0
+
+    // Maximum argument of periapsis in degrees
+    //
+    // Type:      <a href="Numeric-Type">double</a>
+    // Required:  No (defaulted)
+    // Default:   360.0
+    //
+    maxArgumentOfPeriapsis = 360.0
+
     // Duration of the minimum orbital period.  Specify values in years (y),
     // days (d), hours (h), minutes (m), seconds (s) or any combination of
     // those.
