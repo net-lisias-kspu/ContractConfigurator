@@ -12,8 +12,8 @@ REQUIREMENT
     // Type:      <a href="Enumeration-Type">ProgressCelestialBodyRequirement.CheckType</a>
     // Required:  No
     // Values:
-    //     Manned
-    //     Unmanned
+    //     MANNED
+    //     UNMANNED
     //
     checkType = Manned
 
