@@ -43,6 +43,7 @@ The CelestialBody class represents a planet, moon or star in KSP.
 | Function Signature| Description |
 | :--- | :--- |
 | [`CelestialBody`](CelestialBody-Type) `HomeWorld()` | Returns the home world (ie. Kerbin). |
+| [`CelestialBody`](CelestialBody-Type) `Sun()` | Returns the sun.  Works even when it has a differen name than 'Sun'. |
 | [`List`](List-Type)`<`[`CelestialBody`](CelestialBody-Type)`> AllBodies()` | Returns a list of all celestial bodies. |
 | [`List`](List-Type)`<`[`CelestialBody`](CelestialBody-Type)`> ReachedBodies()` | Returns a list of all celestial bodies that the player has reached. |
 | [`List`](List-Type)`<`[`CelestialBody`](CelestialBody-Type)`> OrbitedBodies()` | Returns a list of all celestial bodies that the player has orbited. |
