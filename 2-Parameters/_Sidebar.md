@@ -2,6 +2,7 @@
 * Vessel Parameters
     * [[VesselParameterGroup|VesselParameterGroup-Parameter]]
     * Vessel Attributes
+        * [[HasAntenna|HasAntenna-Parameter]]
         * [[HasCrew|HasCrew-Parameter]]
         * [[HasCrewCapacity|HasCrewCapacity-Parameter]]
         * [[HasPassengers|HasPassengers-Parameter]]

@@ -18,6 +18,8 @@ The Vessel class represents anything that is made up of parts (which includes sh
 | [`int`](Numeric-Type) `FreeDockingPorts()` | Gets the number of docking ports that are currently free. |
 | [`double`](Numeric-Type) `ResourceQuantity(`[`Resource`](Resource-Type)` r)` | Gets the amount of the given resource that is on board. |
 | [`double`](Numeric-Type) `ResourceCapacity(`[`Resource`](Resource-Type)` r)` | Gets the capacity for the given resource that is on board. |
+| [`double`](Numeric-Type) `AntennaTransmitPower()` | Transmission power of the vessel (CommNet). |
+| [`double`](Numeric-Type) `AntennaRelayPower()` | Relay power of the vessel (CommNet). |
 | [`float`](Numeric-Type) `Mass()` | The mass of the vessel in tons. |
 | [`Orbit`](Orbit-Type)` Orbit()` | The vessel's orbit. |
 | [`double`](Numeric-Type) `XDimension()` | The approximate size (estimated) of the vessel along the x dimension. |
