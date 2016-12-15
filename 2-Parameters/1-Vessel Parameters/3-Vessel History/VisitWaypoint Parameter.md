@@ -21,8 +21,16 @@ PARAMETER
     // Required:  No (defaulted)
     // Default:   500.0 (if on the surface).
     //            <waypoint altitude> / 5.0 (if not on the surface).
+    // Notes:     Only defaulted if horizontalDistance isn't provided.
     //
     distance = 500.0
+
+    // Horizontal distance tolerance to be considered at the waypoint.
+    //
+    // Type:      <a href="Numeric-Type">double</a>
+    // Required:  No
+    //
+    horizontalDistance = 500.0
 
     // Whether the waypoint should get automatically hidden after completing
     // the contract objective.
