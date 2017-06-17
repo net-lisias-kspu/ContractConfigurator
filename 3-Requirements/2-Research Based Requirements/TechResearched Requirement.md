@@ -38,12 +38,12 @@ REQUIREMENT
     //
     // Type:      <a href="String-Type">string</a>
     // Required:  No (multiples allowed)
-    // Values (defined in Squad/Contracts/Contracts.cfg under
-    // MODULE_DEFINITIONS):
+    // Values (defined in <a href="https://kerbalspaceprogram.com/api/class_fine_print_1_1_contract_defs.html">ContractDefs</a>):
     //     Antenna
+    //     Battery
     //     Dock
+    //     Generator
     //     Grapple
-    //     Power
     //     Wheel
     partModuleType = Antenna
     partModuleType = Power
