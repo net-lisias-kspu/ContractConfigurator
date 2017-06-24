@@ -26,7 +26,7 @@ REQUIREMENT
     //
     // Type:      <a href="Numeric-Type">int</a>
     // Required:  No (defaulted)
-    // Default:   0
+    // Default:   1
     //
     minLevel = 2
 
@@ -34,7 +34,7 @@ REQUIREMENT
     //
     // Type:      <a href="Numeric-Type">int</a>
     // Required:  No (defaulted)
-    // Default:   2
+    // Default:   3
     //
     maxLevel = 2
 }
