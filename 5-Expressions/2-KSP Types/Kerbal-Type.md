@@ -6,7 +6,7 @@ The Kerbal class represents a Kerbal in the game.  This includes ship crew, EVA 
 | :--- | :--- |
 | [`float`](Numeric-Type) `Experience()` | Gets the Kerbal's experience. |
 | [`int`](Numeric-Type) `ExperienceLevel()` | Gets the Kerbal's experience level. |
-| [`string`](String-Type)` ExperienceTrait()` | Gets the Kerbal's experience trait.  Valid values in stock KSP are Pilot, Engineer and Scientist. |
+| [`ExperienceTrait`](ExperienceTrait-Type)` ExperienceTrait()` | Gets the Kerbal's experience trait.  Valid values in stock KSP are Pilot, Engineer, Scientist and Tourist. |
 | [`RosterStatus`](Enumeration-Type) `RosterStatus()` | Get's the Kerbal's status on the roster.  Valid values are Available, Assigned, Dead, and Missing. |
 | [`KerbalType`](Enumeration-Type) `Type()` | Gets the Kerbal's type.  Valid values are Crew, Applicant, Unowned, Tourist. |
 | [`Gender`](Enumeration-Type) `Gender()` | Gets the Kerbal's gender.  Valid values are Male and Female. |

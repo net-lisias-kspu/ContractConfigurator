@@ -8,6 +8,7 @@
 * KSP Types
     * [[AvailablePart|AvailablePart-Type]]
     * [[CelestialBody|CelestialBody-Type]]
+    * [[ExperienceTrait|ExperienceTrait-Type]]
     * [[Kerbal|Kerbal-Type]]
     * [[Location|Location-Type]]
     * [[Orbit|Orbit-Type]]
