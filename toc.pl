@@ -1,6 +1,9 @@
 #!/usr/bin/env perl
 
 use strict;
+
+use lib '.';
+
 use File::Copy qw(move);
 use Util;
 
