@@ -278,7 +278,7 @@
     <Compile Include="Requirement\CompleteContractRequirement.cs" />
     <Compile Include="Requirement\Any.cs" />
     <Compile Include="Requirement\TechResearchedRequirement.cs" />
-    <Compile Include="Requirement\SpacewalkRequirement.cs" />
+    <Compile Include="Requirement\SpaceWalkRequirement.cs" />
     <Compile Include="Requirement\RunwayLandingRequirement.cs" />
     <Compile Include="Requirement\ReachSpaceRequirement.cs" />
     <Compile Include="Requirement\KSCLandingRequirement.cs" />
