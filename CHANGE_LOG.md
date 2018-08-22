@@ -1,5 +1,13 @@
 # Contract Configurator :: Change Log
 
+* 2015-0617: 1.4.0 (jrossignol) for KSP 1.0.2
+	+ Move extra science experiment definition to configuration files.
+	+ Add support in science modules for Station Science.
+	+ Add support in science modules for Solar Science.
+	+ Add support in science modules for N3h3miah's science mods.
+	+ Add additional experiment validation.
+	+ Fix possible NRE in vessel expressions (thanks Mulbin).
+	+ De-support buggy Win64 hacked version until Unity5.
 * 2015-0616: 1.3.4 (jrossignol) for KSP 1.0.2
 	+ Added support in parameters for completedMessage.
 	+ Fixed NRE in ContractVesselTracker (thanks Morashtak).
