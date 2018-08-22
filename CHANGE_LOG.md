@@ -1,5 +1,14 @@
 # Contract Configurator :: Change Log
 
+* 2015-0624: 1.5.0 (jrossignol) for KSP 1.0.2
+	+ Added support for SpawnVessel in expressions.
+	+ Added support for altitudeFactor, inclinationFactor, eccentricity and deviationWindow in OrbitGenerator.
+	+ Change ordering of requirement check to improve contract pre-load performance.
+	+ Improved logic so child REQUIREMENT nodes can hide PARAMETER nodes even when they fail validation (thanks CosmoBro).
+	+ Fixed contracts that appear and disappear in mission control due to requirement issues (thanks dunadirect).
+	+ Fixed issue with WaypointGenerator incorrectly requesting forceEquatorial attribute for RANDOM_WAYPOINT_NEAR (thanks AlphaAsh).
+	+ Fixed an issue with stuttering in CollectScience (thanks _Zee and Yemo).
+	+ Fixed issue with list expressions not expanding correctly on first parse (thanks CosmoBro).
 * 2015-0619: 1.4.2 (jrossignol) for KSP 1.0.2
 	+ Fixed asteroid sample showing up in KSC contracts for Field Research (thanks maculator).
 	+ Fixed mirrored heading/roll/pitch in SpawnVessel (thanks Xephan).
