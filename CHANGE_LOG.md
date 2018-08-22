@@ -1,5 +1,8 @@
 # Contract Configurator :: Change Log
 
+* 2016-0506: 1.11.5 (jrossignol) for KSP 1.1.2.
+	+ Fixed exception when recovering vessel (thanks BluK).
+	+ Recompile to RemoteTech 1.7.0.
 * 2016-0505: 1.11.4 (jrossignol) for KSP 1.1.2.
 	+ Clean up some "Input is null" errors/warnings.
 	+ Deprecated VesselParameterDelegator.
