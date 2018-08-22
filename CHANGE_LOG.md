@@ -1,5 +1,7 @@
 # Contract Configurator :: Change Log
 
+* 2015-0331: 0.7.6 (jrossignol) for KSP 0.90
+	+ Fix a save load issue with the Sequence parameter in 0.7.5 (thanks superm18).
 * 2015-0331: 0.7.5 (jrossignol) for KSP 0.90
 	+ Possible fix for duration counters resetting (thanks dorin6565 and many others).
 	+ Fix for HasCrew with count > 0 (thanks Yemo).
