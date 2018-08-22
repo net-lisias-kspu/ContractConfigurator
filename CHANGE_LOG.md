@@ -1,5 +1,8 @@
 # Contract Configurator :: Change Log
 
+* 2015-0407: 0.7.11 (jrossignol) for KSP 0.90
+	+ Fixed possible NRE issue when loading VesselParameterGroup (thanks Monopropellant & FreakyHydra).
+	+ Fix to undocking issue where KSP physics goes nuts.
 * 2015-0405: 0.7.10 (jrossignol) for KSP 0.90
 	+ Fixes to vessel hashing to work with unloaded vessels.  Fixes some issues with duration timers resetting.
 	+ Fix SCANsat issue where number instead of name of scan gets displayed.
