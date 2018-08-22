@@ -1,5 +1,16 @@
 # Contract Configurator :: Change Log
 
+* 2016-0809: 1.17.0 (jrossignol) for KSP 1.1.3
+	+ Mission Control remembers the last visited tab when you open it, and takes you there.
+	+ Added Tracking Station buttons for filtering orbits/waypoints from contracts.
+	+ Added support for adding loading tool tips.
+	+ Better support for Kolniya/Tundra orbits - will error if the orbit would exit the SOI.  Also added CelestialBody methods to determine if the body is allowed to have Kolniya/Tundra orbits.
+	+ Fix for contracts not being offered on a brand new save until at least one stock contract is offered (thanks to all the RP-0 users who reported this).
+	+ Fixed issue where parameter completion data wasn't correctly copied to newly created vessel on undock/decouple (thanks linuxgurugamer).
+	+ Fixed DraftTwitchViewers support.
+	+ Fixed issue with using Enter button to go to Mission Control (thanks Deimos Rast).
+	+ Fixed agent for stock satellite contracts.
+	+ Fixed issue with sortKey in child contract groups (thanks pap1723).
 * 2016-0730: 1.16.2 (jrossignol) for KSP 1.1.3
 	+ Fix exception error messaging.
 * 2016-0730: 1.16.1 (jrossignol) for KSP 1.1.3
