@@ -1,5 +1,14 @@
 # Contract Configurator :: Change Log
 
+* 2016-0308: 1.9.7 (jrossignol) for KSP 1.0.5
+	+ KerbalDeaths now supports a vessel identifier to only check for Kerbal deaths on a specific vessel.
+	+ Added support for AlbertKermin's Surface Experiments Pack to science subsystem.
+	+ Allow multiple targetBody values in ReachState.
+	+ Added new Orbit class with methods.
+	+ Fixed default values for RemoteTech CelestialBodyCoverage requirement (thanks severedsolo).
+	+ Fixed minor bug in Sigma Binary support.
+	+ Fixed possible exception when saving in ContractVesselTracker (thanks apocriva).
+	+ Minor bug fixes.
 * 2016-0217: 1.9.6 (jrossignol) for KSP 1.0.5
 	+ Added kerbal attribute to KerbalDeaths.
 	+ Added Vessel.Orbit() method.
