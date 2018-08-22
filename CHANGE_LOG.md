@@ -1,5 +1,7 @@
 # Contract Configurator :: Change Log
 
+* 2016-0527: 1.12.1 (jrossignol) for KSP 1.1.2.
+	+ Fixed backwards compatibility for Wheel PartModuleType (thanks TheReadPanda).
 * 2016-0527: 1.12.0 (jrossignol) for KSP 1.1.2.
 	+ Added support for NextKerbalHireCost() expression function.
 	+ Added HasCrew.excludeKerbal.
