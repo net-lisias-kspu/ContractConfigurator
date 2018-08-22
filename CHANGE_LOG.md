@@ -1,5 +1,10 @@
 # Contract Configurator :: Change Log
 
+* 2015-0322: 0.7.3 (jrossignol) for KSP 0.90
+	+ Fix problems with VesselDestroyed (big thanks to linuxgurugamer for his patience on this one).
+	+ Fix HasCrew for unmanned check.  Improved parameter text slightly.
+	+ Fix exceptions when planting flag (thanks Zach9236).
+	+ Removing contracts (ie. uninstalling a contract pack) no longer causes exceptions in existing save games.
 * 2015-0321: 0.7.2 (jrossignol) for KSP 0.90
 	+ Fix zero orbit period bug (thanks SpaceNomad).
 * 2015-0321: 0.7.1 (jrossignol) for KSP 0.90
