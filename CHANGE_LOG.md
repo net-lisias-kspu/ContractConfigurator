@@ -1,5 +1,13 @@
 # Contract Configurator :: Change Log
 
+* 2015-0813: 1.6.5 (jrossignol) for KSP 1.0.2
+	+ Fix some parsing issues with the Duration class (thanks Nori).
+	+ Re-did fix to exception in ContractVesselTracker.
+	+ Fixed rare exception when removing a planet pack (thanks AlonzoTG).
+	+ Added support in SpawnVessel for spawning a vessel from a single part (a bit buggy, read caveats in documentation).
+	+ Improved SpawnVessel validation (thanks 5thHorseman).
+	+ Fixed issues with parsing identifiers with trailing spaces (thanks 5thHorseman).
+	+ Minor bug fixes.
 * 2015-0807: 1.6.4 (jrossignol) for KSP 1.0.2
 	+ Workaround for crash issue when parsing some ternary expressions in contracts.
 	+ ContractPreLoader improvements, better handling of autoAccept contracts (thanks NathanKell).
