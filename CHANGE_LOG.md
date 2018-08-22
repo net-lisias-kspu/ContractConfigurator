@@ -1,5 +1,14 @@
 # Contract Configurator :: Change Log
 
+* 2016-0726: 1.15.4 (jrossignol) for KSP 1.1.3
+	+ Increased base contract limits.
+	+ Increased contract limits based on building level.
+	+ Increased contract limits even more based on building level.
+	+ Fixed issue where contract limits could be exceeded in the Available tab of Mission Control (thanks severedsolo).
+	+ Fixed possible exception in HasCrew (thanks cpottinger).
+	+ Fixed issue with "ghost" contracts showing up as offered (thanks vardicd & severedsolo).
+	+ Fixed issue with MaxTechLevelUnlocked function (thanks hargn).
+	+ Removed MiniAVC.
 * 2016-0723: 1.15.3 (jrossignol) for KSP 1.1.3
 	+ New Mission Control layout. Now all contracts that are eligible are available all the time (players are no longer at the mercy of the RNG to get the contracts they want).  Also, can view the details of what contracts are _not yet_ available, and what it takes to make them available.
 	+ New contract art (special thanks to Enceos)!
