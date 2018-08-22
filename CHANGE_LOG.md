@@ -1,5 +1,21 @@
 # Contract Configurator :: Change Log
 
+* 2014-1223: 0.4.0 (jrossignol) for KSP 0.90
+	+ Added WaypointGenerator behaviour.  Allows creation of waypoints.
+	+ Added VisitWaypoint parameter (for use with WaypointGenerator behaviour).
+	+ Added OrbitGenerator behaviour.  Allows creation of orbits.
+	+ Added ReachSpecificOrbit parameter (for use with OrbitGenerator behaviour).
+	+ Added HasCrew requirement.  Allows filtering on trait, experience level and count.
+	+ Updated HasCrew parameter to support trait and experience level filtering.
+	+ Added VesselMass parameter.
+	+ Added Facility requirement - requires that a player has a facility upgraded to a specified level.
+	+ Added SCANsatCoverage parameter and requirement (big thanks @tattagreis on the SCANsat integration).
+	+ Added support for turning up log levels through the ContractConfigurator.cfg file (thanks tattagreis).
+	+ Fixed a bug in the HasPart parameter for parts with an underscore in the name (thanks tattagreis).
+	+ HasCrew now errors if minCrew > maxCrew (thanks tattagreis).
+	+ Most requirements are no longer checked on active contracts.  Exposed attribute to override default behaviour through config file (thanks scerion).
+	+ Added ability to reload all CONTRACT_TYPE nodes on demand (via Alt-F9).
+	+ Various minor bug-fixes.
 * 2014-1221: 0.3.4 (jrossignol) for KSP 0.90
 	+ Fixed incompatibility with Tweakscale.
 * 2014-1216: 0.3.3 (jrossignol) for KSP 0.90
