@@ -1,5 +1,16 @@
 # Contract Configurator :: Change Log
 
+* 2016-0905: 1.19.0 (jrossignol) for KSP 1.1.3
+	+ Added Part.UnlockCost().
+	+ Added Part.Resources().
+	+ Added Part.ResourceCapacity().
+	+ Reworked ParameterDelegate - worst source of in-flight LINQ (ie. garbage).
+	+ Check contract requirements before displaying them in mission control in case something has changed.
+	+ Fixed issues with part parser (thanks 5thHorseman).
+	+ Fixed exception in Mission Control (thanks Conventia & AccidentalDisassembly).
+	+ Fixed a NullReferenceException in PartValidation.
+	+ Fixed an incorrect condition on the ReseachBodies check which caused heaps of garbage to be created (thanks xEvilReeperx).
+	+ Fixed issue with Duration parameter not kicking off correctly in some circumstances (thanks 5thHorseman).
 * 2016-0827: 1.18.1 (jrossignol) for KSP 1.1.3
 	+ Fixed NRE on contract save (thanks CecilFF4).
 * 2016-0826: 1.18.0 (jrossignol) for KSP 1.1.3
