@@ -1,5 +1,16 @@
 # Contract Configurator :: Change Log
 
+* 2015-1124: 1.8.2 (jrossignol) for KSP 1.0.5
+	+ Added vessel highlighting (from contextual contracts) to TargetDestroyed, Docking, Rendezvous and VesselParameterGroup.
+	+ Added Vessel.VesselName() method.
+	+ Added support for title in KerbalDeaths parameter.
+	+ Improvements to contract generation process (prevents some issues with a contract not showing up due to prestige levels).
+	+ New orbit methods for Vessel (OrbitApoapsis(), OrbitPeriapsis(), OrbitInclination(), OrbitEccentricity()).
+	+ Support for showMessages attribute in VisitWaypoint.
+	+ Fixed issue with FacilityRequirement always thinking the player's facilities were maxed out.
+	+ Fixed exception in WaypointGenerator for BaseConstruction (thanks dakakeisalie).
+	+ Fixed issue where Duration timer would reset under some very specific scenarios (thanks severedsolo).
+	+ Fixed some issues with facility level checks not working correctly.
 * 2015-1116: 1.8.1 (jrossignol) for KSP 1.0.5
 	+ Added new Not parameter.
 	+ Can now specify heading in SpawnKerbal.
