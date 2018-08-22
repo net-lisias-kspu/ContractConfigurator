@@ -1,5 +1,11 @@
 # Contract Configurator :: Change Log
 
+* 2015-1022: 1.7.7 (jrossignol) for KSP 1.0.2
+	+ Fixed issues with PartTest parameter not making the "Run Test" option show up on parts to be tested (thanks Sticky32).
+	+ Fixed issue with double() and other cast functions not working when casting from a non-numeric type (thanks chrisl).
+	+ Fixed issue with disabled contracts not actually staying disabled (thanks DeCi & Svm420).
+	+ Additional fixes to Duration reset issues (thanks chrisl).
+	+ Additional error handling in string parsing for expressions.
 * 2015-1010: 1.7.6 (jrossignol) for KSP 1.0.2
 	+ Added Reputation() function to get the player's current reputation.
 	+ Fixed issue with Duration parameter possibly resetting state incorrectly when switching scenes/vessels (thanks chrisl).
