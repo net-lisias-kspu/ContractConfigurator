@@ -1,5 +1,34 @@
 # Contract Configurator :: Change Log
 
+* 2015-0518: 1.1.0 (jrossignol) for KSP 1.0.2
+	+ Lots of support in expression language for science stuff (big thanks to xEvilReeperx and DMagic for support and sample code)
+		- Added Biome as a valid expression class.
+		- Added ScienceExperiment as a valid expression class.
+		- Added ScienceSubject as a valid expression class.
+		- Added new method for getting all biomes of a celestial body.
+		- Tracking of difficult biome/situation combinations (eg. Splashed down in the mountains).
+	+ Reduce amount of Contract Configurator contracts offered so to not overwhelm stock contracts quite so much.
+	+ Added HasAstronaut contract parameter.
+	+ Renamed HasCrew requirement to HasAstronaut.
+	+ Improvements to vessel tracking for TargetDestroyed (thanks chlue).
+	+ Lots of fixes/improvements to CollectScience parameter.
+	+ Orbital scanning
+		- Added PerformOrbitalSurvey parameter.
+		- Added PerformOrbitalSurvey requirement.
+		- Added IsOrbitalSurvey() method for CelestialBody.
+	+ Misc expression changes
+		- Added Exclude method for List.
+		- Added Latitude and Longitude methods for Waypoint.
+		- Added ResourceCapacity method for Vessel.
+		- DATA nodes can now use the shorthand type (eg. int) instead of the full system types (eg. Int32).
+		- DATA nodes support the uniqueValue attribute to prevent duplicate values/contracts.
+		- Fixes to WaypointGenerator and SpawnKerbal to improve expression support (thanks AlphaAsh).
+		- Fixed a bug in the expression parser that caused issues with some ternary statements.
+		- Support for quoted strings in expression parser.
+		- Various expression parser bug fixes.
+	+ Fixed issue with TargetDestroyed state getting reset (thanks Niarro).
+	+ Fixed issue where dynamic parameter text in the stock window sometimes gets leftover characters from the previous value - most noticeable when using roman numerals (thanks Munitions).
+	+ Fixed issue with vessel tracking where a tracked vessel isn't disassociated properly causing major problems in the RemoteTech contract pack (thanks TheDog, Munitions and marioluigi653).
 * 2015-0508: 1.0.4 (jrossignol) for KSP 1.0.2
 	+ Fixed requirements that were throwing errors when expressions used in targetBody.
 	+ Fixed up some invalid warnings about not loading child CONTRACT_GROUP nodes.
