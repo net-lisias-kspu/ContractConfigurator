@@ -1,5 +1,7 @@
 # Contract Configurator :: Change Log
 
+* 2016-0103: 1.9.2.1 (jrossignol) for KSP 1.0.5
+	+ Fixed problem with loading waypoints from older versions of Contract Configurator (thanks SpaceNomad).
 * 2016-0103: 1.9.2 (jrossignol) for KSP 1.0.5
 	+ Added minRateOfClimb and maxRateOfClimb to ReachState.
 	+ Support negative latitudes in ReachState.
