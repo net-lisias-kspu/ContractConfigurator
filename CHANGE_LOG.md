@@ -1,5 +1,9 @@
 # Contract Configurator :: Change Log
 
+* 2016-0505: 1.11.4 (jrossignol) for KSP 1.1.2.
+	+ Clean up some "Input is null" errors/warnings.
+	+ Deprecated VesselParameterDelegator.
+	+ Remove support for ancient versions of Module Manager.
 * 2016-0430: 1.11.3 (jrossignol) for KSP 1.1.2.
 	+ Revert additional check added in 1.11.0 that broke PartModuleTypeUnlocked (thanks KnotaiG).
 	+ Work around upgrade issue with ReachSpecificOrbit (thansk Tossy64).
