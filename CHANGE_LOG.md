@@ -1,5 +1,7 @@
 # Contract Configurator :: Change Log
 
+* 2016-0330: 1.10.1 (jrossignol) for KSP 1.1)
+	+ Fixed exception on requirement load of FundsRequirement (thanks EldrinFal).
 * 2016-0330: 1.10.0 (jrossignol) for KSP 1.1)
 	+ Support for KSP 1.1.
 	+ Contract requirements are now saved to persistence file (fixes issues with "flickering" contracts in mission control).
