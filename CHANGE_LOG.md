@@ -1,5 +1,9 @@
 # Contract Configurator :: Change Log
 
+* 2015-0519: 1.1.2 (jrossignol) for KSP 1.0.2
+	+ Fix major issue with uniqueValue in DATA nodes - again (fixes issues in ScanSat Lite).
+	+ Minor fixes to ExpressionParser.
+	+ Minor fixes to CollectScience.
 * 2015-0519: 1.1.1 (jrossignol) for KSP 1.0.2 PRE-RELEASE
 	+ Add NoRandomContractMentality to use when creating Agents to prevent them from being assigned to random contracts (thanks amorymeltzer).
 	+ Fix major issue with uniqueValue in DATA nodes (fixes issues in ScanSat Lite).
