@@ -1,5 +1,16 @@
 # Contract Configurator :: Change Log
 
+* 2015-0914: 1.7.4 (jrossignol) for KSP 1.0.2
+	+ Improved Sigma Binary support (contracts won't get offered for barycenters unless they've been specifically written with that in mind).
+	+ Changed triggers for Message behaviour to make consistent with other similar behaviours.
+	+ Fixed issue with loading settings when a contract pack is removed (thanks hyper1on).
+	+ Fixed duplication issue with settings app launcher icon (thanks ObsessedWithKSP).
+	+ Fixed issues with hidden parameters being a little to aggressive in hiding children.
+	+ Fixed completely broken Exclude and ExcludeAll methods (whoops).
+	+ Fixed FacilityRequirement to actually work outside the space center.
+	+ Fixed rare contract load exception from part modules without a name field.
+	+ Fixed issue with conversions from Vessel to VesselIdentifier (thanks severedsolo).
+	+ Fixed errors in log from loading using legacy values on ChangeVesselOwnership and other behaviours.  Now correctly outputs a warning.
 * 2015-0905: 1.7.3 (jrossignol) for KSP 1.0.2
 	+ Added Round() function for rounding numeric values.
 	+ Contracts will now expire out of the pre-loader after a few Kerbin days.  Help prevent contracts that may no longer be valid from being generated.
