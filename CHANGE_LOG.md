@@ -1,5 +1,7 @@
 # Contract Configurator :: Change Log
 
+* 2015-0502: 1.0.2 (jrossignol) for KSP 1.0.2
+	+ Fix for exception in SpawnPassengers (thanks Jed).
 * 2015-0502: 1.0.1 (jrossignol) for KSP 1.0.2
 	+ KSP 1.0.2 fixes (CollectScience was broken by the update).
 	+ SpawnKerbal and SpawnPassenger now support setting the Kerbal type and gender.
