@@ -1,5 +1,10 @@
 # Contract Configurator :: Change Log
 
+* 2015-0603: 1.2.5 (jrossignol) for KSP 1.0.2
+	+ Fixed NullReferenceException in CompleteContractRequirement (thanks severedsolo).
+	+ ImpactSeismometer and ImpactSpectrometer only available for airless bodies (thanks tomf).
+	+ Asteroid sample experiments are now classified as difficult (thanks tomf).
+	+ Added MainKSCBiomes() function to fix Field Research KSC contract.
 * 2015-0602: 1.2.4 (jrossignol) for KSP 1.0.2
 	+ Support for DMagic's Orbital Science and tomf's Impact! in science stuff (Field Research Contract Pack).
 	+ Fixed exception loading ContractVesselTracker (thanks GFBones).
