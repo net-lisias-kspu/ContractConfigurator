@@ -1,5 +1,11 @@
 # Contract Configurator :: Change Log
 
+* 2017-1006: 1.23.3 (jrossignol) for KSP 1.3.1
+	+ Recompile for KSP 1.3.1
+	+ Improved display of HasAntenna parameter ratings (thanks Kerbas-ad-astra).
+	+ Fixed logic for determining contract prestige (thanks sopindm).
+	+ Fixed previously unlocked parts being re-locked if player tries to buy a science node they don't have sufficient funds for (thanks inigma).
+	+ Fixed issue using DATA_EXPAND with values that had special characters in them.  Fixes interop issues between CatEye and Other Worlds Planet pack (thanks Chemox).
 * 2017-0804: 1.23.2 (jrossignol) for KSP 1.3.0
 	+ Clarified wording of ActiveVesselRangeRequirement for RemoteTech (thanks Alshain).
 	+ Added check for old usage of partModuleType=Power (thanks muppet9876).
