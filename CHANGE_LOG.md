@@ -1,5 +1,7 @@
 # Contract Configurator :: Change Log
 
+* 2015-0321: 0.7.2 (jrossignol) for KSP 0.90
+	+ Fix zero orbit period bug (thanks SpaceNomad).
 * 2015-0321: 0.7.1 (jrossignol) for KSP 0.90
 	+ Better support for spawning landed Kerbals in SpawnKerbal.
 	+ SpawnKerbal now supports PQS offsets.
