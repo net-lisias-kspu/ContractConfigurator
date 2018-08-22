@@ -1,5 +1,10 @@
 # Contract Configurator :: Change Log
 
+* 2015-0405: 0.7.10 (jrossignol) for KSP 0.90
+	+ Fixes to vessel hashing to work with unloaded vessels.  Fixes some issues with duration timers resetting.
+	+ Fix SCANsat issue where number instead of name of scan gets displayed.
+	+ Expressions support 'null' as a value.
+	+ PlantFlag no longer uses the stock parameter and is now a VesselParameter.  Closes silly exploits.
 * 2015-0404: 0.7.9 (jrossignol) for KSP 0.90
 	+ Add support for Part (AvailablePart) in expressions.
 	+ Fix to passengers not being seated when the capsule crew capacity is bigger than the number of seats in the IVA (thanks SpaceNomand).
