@@ -1,5 +1,15 @@
 # Contract Configurator :: Change Log
 
+* 2015-0530: 1.2.3 (jrossignol) for KSP 1.0.2
+	+ Added Waypoint.Location() expression method.
+	+ Added Location.Biome() expression method.
+	+ Added RandomKerbalName() global expression function.
+	+ Added experienceTrait to SpawnPassenger.
+	+ Fixed some issues with recovering from tracking station in CollectScience.
+	+ Fixed null reference issue in dead contract types (thanks DMagic).
+	+ Fixed issues with biome detection for KSC biomes in CollectScience.
+	+ More fixes related to contracts failing unique check in SCANsat Lite (thanks nobodyhasthis).
+	+ Minor bug fixes.
 * 2015-0528: 1.2.2 (jrossignol) for KSP 1.0.2
 	+ New UnlockTech behaviour (thanks Klefenz).
 	+ Added support for specifying science by subject in CollectScience.
