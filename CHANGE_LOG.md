@@ -1,5 +1,8 @@
 # Contract Configurator :: Change Log
 
+* 2016-0111: 1.9.3.1 (jrossignol) for KSP 1.0.5
+	+ Fixed MAJOR issue introduced in 1.9.3 that broke Tourism Plus (thanks Ryusho).
+	+ Fixed ReachState not working with timers (thanks SoTOP).
 * 2016-0111: 1.9.3 (jrossignol) for KSP 1.0.5 PRE-RELEASE
 	+ Added VesselParameterGroup.hideVesselName.
 	+ General improvements to behaviour of parameters with in-sequence completion (thanks inigma).
