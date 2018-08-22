@@ -1,5 +1,7 @@
 # Contract Configurator :: Change Log
 
+* 2018-0402: 1.24.3 (jrossignol) for KSP 1.4.
+	+ Proper fix for last release (thanks Warezcrawler).
 * 2018-0402: 1.24.2 (jrossignol) for KSP 1.4.
 	+ Workaround for stock bug #18267 (contract parameters creating extra messages on completion).
 * 2018-0330: 1.24.1 (jrossignol) for KSP 1.4.
