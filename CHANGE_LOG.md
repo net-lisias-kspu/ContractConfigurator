@@ -1,5 +1,13 @@
 # Contract Configurator :: Change Log
 
+* 2015-0717: 1.5.3 (jrossignol) for KSP 1.0.2
+	+ Added UnlockPart behaviour.
+	+ Added CanResearchTech requirement.
+	+ Added AvailablePart.IsUnlocked and AvailablePart.CrewCapacity.
+	+ Added Log() function for expressions.
+	+ Added new basic type-conversion functions for expressions (int(), float(), double(), etc.).
+	+ Fixed issue with Vessel.Parts() (thanks Whyren).
+	+ Minor bug fixes.
 * 2015-0714: 1.5.2 (jrossignol) for KSP 1.0.2
 	+ Allow multiple parts to be specified in the PartValidation parameter.
 	+ Added CelestialBody.RemoteTechCoverage() method for expressions.
