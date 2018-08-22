@@ -1,5 +1,10 @@
 # Contract Configurator :: Change Log
 
+* 2015-0818: 1.6.6 (jrossignol) for KSP 1.0.2
+	+ Fixed exception in Science sub-system (happens in latest FieldResearch release).
+	+ Added additional check conditions for ReturnHome (thanks Lewtz and Jirnsum).
+	+ Fixed another rare exception when removing a planet pack (thanks Hlaford).
+	+ Fixed exception when recovering a vessel completes a contract (thanks AccidentalDisassembly).
 * 2015-0813: 1.6.5 (jrossignol) for KSP 1.0.2
 	+ Fix some parsing issues with the Duration class (thanks Nori).
 	+ Re-did fix to exception in ContractVesselTracker.
