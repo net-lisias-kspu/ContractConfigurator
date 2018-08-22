@@ -1,5 +1,17 @@
 # Contract Configurator :: Change Log
 
+* 2017-0804: 1.23.2 (jrossignol) for KSP 1.3.0
+	+ Clarified wording of ActiveVesselRangeRequirement for RemoteTech (thanks Alshain).
+	+ Added check for old usage of partModuleType=Power (thanks muppet9876).
+	+ Prevent Rendezvous parameter from completing when doing an EVA (thanks pap1723).
+	+ Don't allow main menu to continue while still loading (prevents issues on slower systems).
+	+ Made RemoteTech distance function (for coverage system) more generous (thanks NathanKell).
+	+ Fixed issue with Kerbals spawned at KSC starting an extra ~60 meters in the air (thanks Keniamin).
+	+ Fixed error when cancelling a contract with spawned Kerbals.
+	+ Fixed exception with FlyBy and ReturnFromFlyBy requirements.
+	+ Properly fixed Facility requirement in the tracking station (thanks Kerbas_ad_astra).
+	+ Fixed NRE from struts breaking (thanks Alshain).
+	+ Fixed multiple exceptions when using Sigma Binary (thanks Rodger).
 * 2017-0611: 1.23.1 (jrossignol) for KSP 1.3.0
 	+ Fixed major bug with VisitWaypoint not properly setting waypoint distances (thanks Keniamin and others).
 	+ Fixed issue with FacilityRequirement in tracking station (thanks JPLRepo).
