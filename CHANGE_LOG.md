@@ -1,5 +1,16 @@
 # Contract Configurator :: Change Log
 
+* 2016-0622: 1.13.0 (jrossignol) for KSP 1.1.3
+	+ KSP 1.1.3 compatibility.
+	+ Integrated Wider Contracts App into Contract Configurator.
+	+ Fixed isuse with SpawnVessels spawning vessels with incorrect rotation (thanks severedsolo).
+	+ Prevent Rendenzvous parameter from triggering when a vessel performs a rendezvous with itself (thanks danielguo).
+	+ Fixed NRE on contract accept when using SpawnVessel's craftPart method of spawning.
+	+ Fixed PartModuleUnlocked and PartUnlocked requirements to check for part purchase and not just tech unlock (thanks inigma).
+	+ Always set the CollectScience targetBody to the one from the biome if a biome is used (thanks severedsolo & enceos).
+	+ Fixed exception in RecoverKerbal (thanks palleon).
+	+ Fixed incorrect handling of waypoints with negative altitude on non-ocean worlds in VisitWaypoint (thanks Galenmacil).
+	+ Removed extra ConfiguredContract entries from settings menu (thanks Deimos Rast).
 * 2016-0527: 1.12.1 (jrossignol) for KSP 1.1.2.
 	+ Fixed backwards compatibility for Wheel PartModuleType (thanks TheReadPanda).
 * 2016-0527: 1.12.0 (jrossignol) for KSP 1.1.2.
