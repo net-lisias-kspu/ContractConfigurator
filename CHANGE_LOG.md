@@ -1,5 +1,18 @@
 # Contract Configurator :: Change Log
 
+* 2016-0111: 1.9.3 (jrossignol) for KSP 1.0.5 PRE-RELEASE
+	+ Added VesselParameterGroup.hideVesselName.
+	+ General improvements to behaviour of parameters with in-sequence completion (thanks inigma).
+	+ Improved reliability of RemoteTech parameters.
+	+ Fixed issue with some expressions being parsed twice in the Expression behaviour (thanks linuxgurugamer).
+	+ Fixed problem with Duration timer contracts not working when used as a child parameter (thanks TrooperCooper & NathanKell).
+	+ Fixed issue that caused disabled stock contracts to re-enable themselves on occasion (thanks Rokker).
+	+ Fixed supposedly removed Kerbals going MIA (thanks inigma).
+	+ Fixed major issue with RemoveKerbal (thanks inigma).
+	+ Fixed issue with Sequence parameter not always firing (thanks Steven Mading).
+	+ Fixed issue where CollectScience wouldn't correctly check that it needed to be completed in sequence (thanks linuxgurugamer).
+	+ Fixed failWhenUnmet to actually fail contracts (thanks inigma).
+	+ Fixed issue with biomes with spaces in their names in CollectScience (like "Ice Caps").
 * 2016-0103: 1.9.2.1 (jrossignol) for KSP 1.0.5
 	+ Fixed problem with loading waypoints from older versions of Contract Configurator (thanks SpaceNomad).
 * 2016-0103: 1.9.2 (jrossignol) for KSP 1.0.5
