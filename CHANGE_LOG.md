@@ -1,5 +1,11 @@
 # Contract Configurator :: Change Log
 
+* 2015-0616: 1.3.4 (jrossignol) for KSP 1.0.2
+	+ Added support in parameters for completedMessage.
+	+ Fixed NRE in ContractVesselTracker (thanks Morashtak).
+	+ Fixed loading of duplicate Contract Types (thanks jakkarth).
+	+ Fixed issue where random orbits aren't so random (thanks KerbMav).
+	+ Fixed exception loading SpawnKerbal (thanks mega_newblar).
 * 2015-0613: 1.3.3 (jrossignol) for KSP 1.0.2
 	+ Fixed issue with some load errors getting thrown as an exception.
 	+ Fixed exception when docking with the claw (thanks SirJodelstein).
