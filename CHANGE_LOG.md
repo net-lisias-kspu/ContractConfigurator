@@ -1,5 +1,14 @@
 # Contract Configurator :: Change Log
 
+* 2015-0807: 1.6.4 (jrossignol) for KSP 1.0.2
+	+ Workaround for crash issue when parsing some ternary expressions in contracts.
+	+ ContractPreLoader improvements, better handling of autoAccept contracts (thanks NathanKell).
+	+ Check parameter state for some parameters on contract acceptance (fixes issues with CapCom and autoAccept contracts).
+	+ Contract Configurator now automatically reloaded when doing a module manager reload (thanks sarbian).
+	+ Enhancements to ExperimentalPart to allow finer control over when parts are locked/unlocked.
+	+ Fixes to some string expression parsing issues (thanks Nori).
+	+ Fixed exception in ContractVesselTracker (thanks glilienthal).
+	+ Minor bug fixes.
 * 2015-0802: 1.6.3 (jrossignol) for KSP 1.0.2
 	+ New Tech methods Parents() and IsReadyToUnlock().
 * 2015-0731: 1.6.2 (jrossignol) for KSP 1.0.2
