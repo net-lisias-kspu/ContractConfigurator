@@ -1,5 +1,14 @@
 # Contract Configurator :: Change Log
 
+* 2016-0330: 1.10.0 (jrossignol) for KSP 1.1)
+	+ Support for KSP 1.1.
+	+ Contract requirements are now saved to persistence file (fixes issues with "flickering" contracts in mission control).
+	+ Added VesselValidRequirement to check if a vessel identifier is valid throughout the life of a contract.
+	+ Added support for PQSCity in expressions.
+	+ Added CelestialBody.PQSCities().
+	+ Fixed backwards compatibility on uniqueness checks (thanks eberkain).
+	+ Fixed edge case for VesselParameterGroup and completeInSequence (thanks NathanKell and stratochief).
+	+ Fixed problem with loading pqsCity and targetBody out of order in WaypointGenerator (thanks severedsolo).
 * 2016-0330: 1.9.11_KSP1.0.5 (jrossignol) for KSP 1.0.5)
 	+ Added VesselValidRequirement to check if a vessel identifier is valid throughout the life of a contract.
 	+ Added support for PQSCity in expressions.
