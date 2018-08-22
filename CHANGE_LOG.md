@@ -1,5 +1,20 @@
 # Contract Configurator :: Change Log
 
+* 2016-0723: 1.15.3 (jrossignol) for KSP 1.1.3
+	+ New Mission Control layout. Now all contracts that are eligible are available all the time (players are no longer at the mercy of the RNG to get the contracts they want).  Also, can view the details of what contracts are _not yet_ available, and what it takes to make them available.
+	+ New contract art (special thanks to Enceos)!
+	+ Contract generation overhaul.  Overhaul to the contract generation system for massive performance improvements.  Contracts are no longer generated in-flight (no garbage, no stutters).
+	+ Added title and related attributes for REQUIREMENT nodes.
+	+ Added title and related attributes for DATA nodes.
+	+ Added sortKey for CONTRACT_TYPE and CONTRACT_GROUP nodes.
+	+ New List.SelectUnique() method for selecting unique values (replaces selecting a random value and hoping that it hasn't been used before).
+	+ New DATA_EXPAND node allows a CONTRACT_TYPE to be duplicated across a list of values (eg. duplicated for each Celestial Body).
+	+ New CelestialBody.Index() method to get the global index of a body (for sorting).
+	+ More warnings to steer contract authors towards more performant and more player-friendly ways of writing contracts.
+	+ New ResourceConsumption parameter.
+	+ Fixed issue where the state of some parameters wasn't immediately reset when switching vessels, allowing erroneous contract completion (thanks NathanKell & leudaimon).
+	+ Fixed bug in uniqueness checks when vessels are involved which caused the uniquness check not to work (thanks severedsolo).
+	+ Fixed issue where CollectScience parameters weren't always showing the checkmarks when partially completed (thanks jlcarneiro & severedsolo).
 * 2016-0720: 1.15.2 (jrossignol) for KSP 1.1.3 PRE-RELEASE
 	+ Pre-release with still more functionality and bugfixes. See forum thread for more details.
 * 2016-0711: 1.15.1 (jrossignol) for KSP 1.1.3 PRE-RELEASE
