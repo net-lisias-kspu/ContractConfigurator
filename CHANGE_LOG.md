@@ -1,5 +1,7 @@
 # Contract Configurator :: Change Log
 
+* 2016-0125: 1.9.4.1 (jrossignol) for KSP 1.0.5
+	+ Fixed a major issue where vessel spawning would sometimes fail to spawn vessels.
 * 2016-0125: 1.9.4 (jrossignol) for KSP 1.0.5
 	+ Added support for lists in persistent data store values.
 	+ Added checkType to all celestial body progress requirements to allow tracking back on manned/unmanned.
