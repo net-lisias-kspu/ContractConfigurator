@@ -1,5 +1,7 @@
 # Contract Configurator :: Change Log
 
+* 2015-0731: 1.6.2 (jrossignol) for KSP 1.0.2
+	+ Fixed issue with saving contract settings (thanks rasta013).
 * 2015-0731: 1.6.1 (jrossignol) for KSP 1.0.2
 	+ Fixed a major bug that prevented VesselParameterGroup parameters from completing in some circumstances (thanks ola).
 * 2015-0731: 1.6.0 (jrossignol) for KSP 1.0.2
