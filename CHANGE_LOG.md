@@ -1,5 +1,9 @@
 # Contract Configurator :: Change Log
 
+* 2015-0309: 0.6.7 (jrossignol) for KSP 0.90
+	+ Added support for completeInSequence attribute (all parameters).
+	+ The state of vessel parameters may now be "transferred" via EVA Kerbals.  This allows a ship to land on the Mun, have the Kerbal EVA from the ship to a new ship, and have the new ship still complete the "land on Mun" parameter.
+	+ Minor bug fixes.
 * 2015-0219: 0.6.6 (jrossignol) for KSP 0.90
 	+ Changed to MIT license.
 	+ Performance fixes for stock contracts app (mainly affects contracts with lots and lots of parameters.
