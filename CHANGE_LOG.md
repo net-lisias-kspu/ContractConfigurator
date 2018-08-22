@@ -1,5 +1,14 @@
 # Contract Configurator :: Change Log
 
+* 2015-0526: 1.2.1 (jrossignol) for KSP 1.0.2
+	+ CompleteContract requirement now checks on active contracts too.
+	+ Improved transfer of parameters from Kerbal => Vessel => Vessel, such as PlantFlag in an Apollo-style mission (thanks jordanjay29).
+	+ Fixed possible exception on contract save.
+	+ Fixed exception with WaypointGenerator for contracts using random waypoint names (thanks Galenmacil).
+	+ Fixed CollectScience NRE issue (thanks severedsolo).
+	+ Fixed orientation/height of spawned kerbals (thanks AlphaAsh).
+	+ Fixed orientation/height of vessels built in the SPH.
+	+ Fixed issue with HasCrew not checking traits properly when translation mods installed (thanks dureiken).
 * 2015-0525: 1.2.0 (jrossignol) for KSP 1.0.2
 	+ Reduced ratio of stock vs. contract configurator contracts further to favor non-contract configurator a little more.
 	+ Support in CollectScience for multiple experiments.
