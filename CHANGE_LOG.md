@@ -1,5 +1,8 @@
 # Contract Configurator :: Change Log
 
+* 2014-1216: 0.3.3 (jrossignol) for KSP 0.90
+	+ Persistant data store can now store config nodes.
+	+ Fixed an issue with maxCompletions not working correctly (thanks @tattagreis).
 * 2014-1216: 0.3.2 (jrossignol) for KSP 0.90
 	+ (0.90) Support for KSP 0.90
 	+ (0.90) Fixed VesselHasVisited (note the valid values for situation changed)
