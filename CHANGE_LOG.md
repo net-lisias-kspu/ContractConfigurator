@@ -1,5 +1,8 @@
 # Contract Configurator :: Change Log
 
+* 2016-0309: 1.9.8 (jrossignol) for KSP 1.0.5
+	+ Fixed problem with using multiple targetBody values via expression in ReachState (thanks NathanKell).
+	+ Fixed issue with KerbalDeaths not completing correctly (thanks vardicd).
 * 2016-0308: 1.9.7 (jrossignol) for KSP 1.0.5
 	+ KerbalDeaths now supports a vessel identifier to only check for Kerbal deaths on a specific vessel.
 	+ Added support for AlbertKermin's Surface Experiments Pack to science subsystem.
