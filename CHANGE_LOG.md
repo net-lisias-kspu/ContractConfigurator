@@ -1,5 +1,18 @@
 # Contract Configurator :: Change Log
 
+* 2015-0613: 1.3.2 (jrossignol) for KSP 1.0.2
+	+ Major rewrite of contract generation logic to improve performance and reduce latency on contract generation while in flight.
+	+ Contract pre-loader now allows pausing between attributes (reduces latency during contract generation).
+	+ Added Vessel.Location() method for expressions.
+	+ Fixed NRE in RecoverKerbal (thanks severedsolo).
+	+ Added AcceptContract requirement.
+	+ Now validates for empty values when parsing contracts.
+	+ Fixed issues with ContractVesselTracker logic for spawned vessels (thanks SirJodelstein).
+	+ Fixed support for grappling in ContractVesselTracker (thanks SirJodelstein).
+	+ Fixed incompatibility with KRPC (thanks OvermindDL1).
+	+ Fixed NRE issue with RecoverKerbal (thanks severedsolo).
+	+ Fixed exception in ReachSpecificOrbit (thanks KerbMav).
+	+ Fixed exception when generation contracts (thanks KerbMav).
 * 2015-0611: 1.3.1 (jrossignol) for KSP 1.0.2 PRE-RELEASE
 	+ Contract pre-loader now allows pausing between attributes (reduces latency during contract generation).
 * 2015-0610: 1.3.0 (jrossignol) for KSP 1.0.2 PRE-RELEASE
