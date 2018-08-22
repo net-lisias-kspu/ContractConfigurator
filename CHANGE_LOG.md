@@ -1,5 +1,13 @@
 # Contract Configurator :: Change Log
 
+* 2014-1230: 0.4.2 (jrossignol) for KSP 0.90
+	+ Improved validation when loading configuration.  More checking for invalid cases and better error messaging.
+	+ Added HasPassengers parameter.
+	+ Added Funds requirement.
+	+ Added Science requirement.
+	+ Added Repuration requirement.
+	+ Allow zero min speed for ReachSpeedEnvelope; improved titles.
+	+ Minor bug fixes.
 * 2014-1225: 0.4.1 (jrossignol) for KSP 0.90
 	+ Added OrbitalInclination parameter (thanks tattagreis).
 	+ Added OrbitalEccentricity parameter (thanks tattagreis).
