@@ -1,5 +1,7 @@
 # Contract Configurator :: Change Log
 
+* 2015-0611: 1.3.1 (jrossignol) for KSP 1.0.2 PRE-RELEASE
+	+ Contract pre-loader now allows pausing between attributes (reduces latency during contract generation).
 * 2015-0610: 1.3.0 (jrossignol) for KSP 1.0.2 PRE-RELEASE
 	+ Major rewrite of contract generation logic to improve performance and reduce latency on contract generation while in flight.
 	+ Added Vessel.Location() method for expressions.
