@@ -1,5 +1,10 @@
 # Contract Configurator :: Change Log
 
+* 2015-0205: 0.6.2 (jrossignol) for KSP 0.90 PRE-RELEASE
+	+ New exception handling for contract load/save prevents KSP from borking up the whole contract system.
+	+ Fixed issue where VisitWaypoint title didn't show up in mission control.
+	+ Fixed issue where doing a module manager reload can fail some active contracts (thanks Samapico).
+	+ Minor bug fixes.
 * 2015-0201: 0.6.1 (jrossignol) for KSP 0.90
 	+ Fix for loading 0.5.x saves killing all contracts.
 * 2015-0131: 0.6.0 (jrossignol) for KSP 0.90
