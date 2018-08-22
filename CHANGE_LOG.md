@@ -1,5 +1,10 @@
 # Contract Configurator :: Change Log
 
+* 2015-0618: 1.4.1 (jrossignol) for KSP 1.0.2
+	+ Add support for heading/roll/pitch in SpawnVessel.
+	+ Fixed ghost icons in OrbitGenerator (thanks KerbMav).
+	+ Remove warnings for Mkerb Inc. Science Instruments (worked just fine before, now is officially supported).
+	+ Re-add limited support for Win64.
 * 2015-0617: 1.4.0 (jrossignol) for KSP 1.0.2
 	+ Move extra science experiment definition to configuration files.
 	+ Add support in science modules for Station Science.
