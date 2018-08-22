@@ -1,5 +1,21 @@
 # Contract Configurator :: Change Log
 
+* 2015-0826: 1.7.0 (jrossignol) for KSP 1.0.2 PRE-RELEASE
+	+ New DialogBox behaviour for creating rich text dialog boxes with images.
+	+ New CopyCraftFile behaviour to reward a player with a craft file.
+	+ New DestroyVessel behaviour to destroy a vessel.
+	+ New RecoverVessel parameter.
+	+ Support in WaypointGenerator for underwater waypoints.
+	+ Duration parameter can now be used as a child of some parameters.
+	+ Duration parameter now respects the vessel filter in VesselParameterGroup.
+	+ Expression behaviour can now store data for types other than double.
+	+ Data can now be retrived from the persistent data store in expressions using the $ symbol.
+	+ Improved casting between string and VesselIdentifier (thanks Nori).
+	+ Made ChageVesselOwnership onState values consistent with other behaviours.
+	+ Added Crawlerway into list of KSC biomes for contracts (thanks Rokanov).
+	+ Fixed issue with grandparent contract groups not being recognized properly for expressions (thanks Rokanov).
+	+ Fixed issues spawning vessels with the deferredVesselCreation flag (thanks Enceos).
+	+ Fixed exception in HasCrew when referencing a Kerbal that hasn't yet been spawned (thanks severedsolo).
 * 2015-0818: 1.6.6 (jrossignol) for KSP 1.0.2
 	+ Fixed exception in Science sub-system (happens in latest FieldResearch release).
 	+ Added additional check conditions for ReturnHome (thanks Lewtz and Jirnsum).
