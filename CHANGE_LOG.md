@@ -1,5 +1,11 @@
 # Contract Configurator :: Change Log
 
+* 2015-0727: 1.5.5 (jrossignol) for KSP 1.0.2
+	+ New MissionTimer parameter for displaying a count-up timer (use it for challenges!).
+	+ New functions/methods related to contract multipliers - ContractMultiplier(), CelestialBody.Multiplier() ContractPrestige.Multiplier().
+	+ Made contract deadline independent of targetBody multiplier (thanks NathanKell).
+	+ Correctly update Contracts Window Plus when contract state + titles changes at the same time.
+	+ Improved error handling in parameter generation for unexpected scenarios - fixes New Horizons issues (thanks kp0llux & kingoftheinternet).
 * 2015-0720: 1.5.4 (jrossignol) for KSP 1.0.2
 	+ Added new extended PartModule mode to PartValidation parameter.
 	+ Added new methods for determining engine thrust and ISP in expressions.
