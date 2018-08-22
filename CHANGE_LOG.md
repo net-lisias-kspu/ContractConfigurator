@@ -1,5 +1,15 @@
 # Contract Configurator :: Change Log
 
+* 2015-0502: 1.0.1 (jrossignol) for KSP 1.0.2
+	+ KSP 1.0.2 fixes (CollectScience was broken by the update).
+	+ SpawnKerbal and SpawnPassenger now support setting the Kerbal type and gender.
+	+ Add Gender() method for expressions on Kerbals.
+	+ Added autoAccept attribute to CONTRACT_TYPE (behaves like the stock World-Firsts record contracts).
+	+ Added new ToLower and ToUpper string methods.
+	+ Fixed default value for waypoint proximity trigger for VisitWaypoint.
+	+ Fixed issues with expressions in WaypointGenerator behaviour.
+	+ Fixed issue with waypoint distance calculation when not on the surface.
+	+ Fixed boolean expressions to not try to convert values to a boolean early.
 * 2015-0429: 1.0.0 (jrossignol) for KSP 1.0.
 	+ Various fixes related to KSP 1.0.
 	+ Deprecated parameters removed from stock in KSP 1.0 (some may get replacements in a future version of Contract Configurator).
