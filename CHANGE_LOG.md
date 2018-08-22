@@ -1,5 +1,8 @@
 # Contract Configurator :: Change Log
 
+* 2015-0123: 0.5.9 (jrossignol) for KSP 0.90
+	+ Changes for SCANsat 9.0 (rc5)
+	+ Fix for disableOnStateChange when there is no VesselGroupParameter (thanks voidheart).
 * 2015-0121: 0.5.8 (jrossignol) for KSP 0.90
 	+ Recompile for RemoteTech 1.6.1
 	+ Fix so that failing to load a contract is less destructive.
