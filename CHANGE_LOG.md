@@ -1,5 +1,17 @@
 # Contract Configurator :: Change Log
 
+* 2016-1215: 1.22.0 (jrossignol) for KSP 1.2
+	+ Added HasAntenna parameter (thanks Kerbas-ad-astra).
+	+ Added Vessel.AntennaTransmitPower() and Vesse.AntennaRelayPower() (thanks Kerbas-ad-astra).
+	+ Contract weights for celestial bodies are now set by Contract Configurator (affecting the likelihood of stock contracts generating for the given body).
+	+ Added minArgumentOfPeriapsis and maxArgumentOfPeriapsis to Orbit parameter.
+	+ Added horizontalDistance to VisitWaypoint.
+	+ Make references to 'Sun' generic in SolarScience.cfg to fix Galileo compatibility (thanks SirBriguy).
+	+ Added Sun() function to get the Sun in a non-name specific way.  Assumes a single star.
+	+ Change enum parse to be case insensitive.
+	+ Change Vessel Identifier parsing to allow a wider range of characters.
+	+ Fixed format text for funding message in mission control (thanks JPLRepo).
+	+ Fixed issue with NextUnreachedBody() call caching results (thanks severedsolo).
 * 2016-1104: 1.21.0 (jrossignol) for KSP 1.2
 	+ Found new workaround for GetExportedTypes reflection issue (the "toolbar" issue).
 	+ Added NextUnreachedBody() and NextUnreachedBodies() methods.
