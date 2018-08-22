@@ -1,5 +1,7 @@
 # Contract Configurator :: Change Log
 
+* 2015-0111: 0.5.2 (jrossignol) for KSP 0.90
+	+ Fixed issue with HasAntenna using ActiveTarget (was breaking the RemoteTech contract pack).  Huge thanks to Bluemoon for pointing this one out.
 * 2015-0110: 0.5.1 (jrossignol) for KSP 0.90
 	+ Fixed to work with RemoteTech 1.6
 	+ Hide text for fake Parameters related to OrbitGenerator in mission control on active contracts.
