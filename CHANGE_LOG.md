@@ -1,5 +1,7 @@
 # Contract Configurator :: Change Log
 
+* 2015-0205: 0.6.3 (jrossignol) for KSP 0.90
+	+ Fixed bad exception on loading from previous broken release.
 * 2015-0205: 0.6.2 (jrossignol) for KSP 0.90 PRE-RELEASE
 	+ New exception handling for contract load/save prevents KSP from borking up the whole contract system.
 	+ Fixed issue where VisitWaypoint title didn't show up in mission control.
