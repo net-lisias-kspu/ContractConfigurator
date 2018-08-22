@@ -1,5 +1,19 @@
 # Contract Configurator :: Change Log
 
+* 2015-0508: 1.0.3 (jrossignol) for KSP 1.0.2
+	+ Waypoints now disappear once related contract requirements are met.
+	+ More warnings for unexpected values in configuration (helps authors catch bugs).
+	+ Add expression functions for selecting Celestial Bodies based on player progression.
+	+ TargetDestroyed checks for target being marked as debris (thanks chlue).
+	+ Can now use expressions in ORBIT nodes.
+	+ Verified and recompiled against RemoteTech 1.6.4
+	+ Fix PartModuleUnlockedRequirement that was always returning as met (thanks severedsolo).
+	+ Fix validation for targetBody on some behaviours (thanks rhoark).
+	+ Fix scenario where optional parameters weren't working as expected (thanks Valiant).
+	+ Fix for negative timer values being displayed for count-down parameters (thanks Enceos).
+	+ Fix/workaround for "ghost" issue from exceptions when spawning some vessels (thanks odin_spain).
+	+ Fix for reflection load issue in CompleteContractRequirement when bad assemblies present (thanks Szara).
+	+ Minor bug fixes.
 * 2015-0502: 1.0.2 (jrossignol) for KSP 1.0.2
 	+ Fix for exception in SpawnPassengers (thanks Jed).
 * 2015-0502: 1.0.1 (jrossignol) for KSP 1.0.2
