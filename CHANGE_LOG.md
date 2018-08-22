@@ -1,5 +1,12 @@
 # Contract Configurator :: Change Log
 
+* 2015-0827: 1.7.1 (jrossignol) for KSP 1.0.2 PRE-RELEASE
+	+ Fixed a backwards compatibility issue introduced in 1.7.0 (thanks Ald).
+	+ When title isn't overriden, prefix optional parameters with "(Optional)".
+	+ Added a hidden attribute for all parameters.
+	+ VesselParameterGroups now list out vessels that can complete the contract more clearly.
+	+ Fixed output text when converting a duration to a string in contracts.
+	+ Improved behaviour of Duration parameter when used under VesselParameterGroup.
 * 2015-0826: 1.7.0 (jrossignol) for KSP 1.0.2 PRE-RELEASE
 	+ New DialogBox behaviour for creating rich text dialog boxes with images.
 	+ New CopyCraftFile behaviour to reward a player with a craft file.
