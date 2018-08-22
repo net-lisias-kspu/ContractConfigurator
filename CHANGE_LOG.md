@@ -1,5 +1,26 @@
 # Contract Configurator :: Change Log
 
+* 2015-0108: 0.5.0 (jrossignol) for KSP 0.90
+	+ RemoteTech integration!
+		- KSCConnectivity parameter - indicates that a vessel must have connectivity back to mission control.
+		- HasAntenna parameter - indicates that a vessel must have one or more antenna that meet specific criteria.
+		- SignalDelay parameter - requires a min/max signal delay for a connection.
+		- VesselConnectivity parameter - checks for connectivity between two vessels.
+		- CelestialBodyCoverage parameter - verifies that there is communication coverage of a celestial body.
+		- ActiveVesselRange requirement - requires that a celestial body has a satellite with a minimum active vessel range (achievable via either an omni antenna or dish targetting active vessel).
+		- CelestialBodyCoverage requiremnt - requirement for having a dish pointed at the given celestial body.
+	+ Vessel tracking!
+		- New define attribute of VesselParameterGroup to associate the ship that completes the parameter to the given name.
+		- New vessel attribute of VesselParameterGroup to require a specific vessel (previously defined using define) to be the one to complete the parameter.
+		- IsNotVessel parameter for exclusion (eg. to have two VesselParameterGroup parameters in a contract that must be met by different vessels).
+	+ Added Duration parameter.
+	+ Added PartValidator parameter and deprecated HasPart and HasPartModule.
+	+ Merged all orbital parameters into Orbit parameter.  Thanks ttagreis for contributions on altitude and period.
+	+ Added PartModuleTypeUnlocked requirement.
+	+ Changed default values for disableOnStageChange in parameters to be more logical.
+	+ Added new validation to check for unexpected values in config nodes - helps when developing contract configuration.
+	+ Reloading contract types will also re-run module manager (which means you can now reload contract types that use module manager).
+	+ Minor bug fixes
 * 2015-0105: 0.4.5 (jrossignol) for KSP 0.90
 	+ Fixed NullRef issue when approaching another vessel (thanks Tellion).
 * 2015-0105: 0.4.4_fixed2 (jrossignol) for KSP 0.90 PRE-RELEASE
