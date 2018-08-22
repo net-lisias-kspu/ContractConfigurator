@@ -1,5 +1,17 @@
 # Contract Configurator :: Change Log
 
+* 2016-0428: 1.11.0 (jrossignol) for KSP 1.1)
+	+ Performance fixes and improved caching of biome data.
+	+ Duration values can now be used in arithmetic and comparisons in expressions.
+	+ Added Duration.ToDouble() and Duration().
+	+ Added Vessel.MET().
+	+ Fixed issue with vessel re-assignment on undock (thanks chrisl).
+	+ Improved contract window text when tracking vessels in a VesselParameterGroup.
+	+ Improved API for requirement saving/loading.
+	+ Add proper error handling to PartModuleTypeUnlocked.
+	+ Added ReachSpecificOrbit.displayNotes back in (thanks severedsolo).
+	+ Fixed so orbits for offered contract show up in the tracking station and NOT in flight.
+	+ Minor bug fixes.
 * 2016-0421: 1.10.4 (jrossignol) for KSP 1.1)
 	+ Fixed RemoteTech exceptions (thanks HaArLiNsH, Dtgnoome and Sidelia).
 * 2016-0421: 1.10.3 (jrossignol) for KSP 1.1)
