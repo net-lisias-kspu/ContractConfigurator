@@ -1,5 +1,24 @@
 # Contract Configurator :: Change Log
 
+* 2015-0131: 0.6.0 (jrossignol) for KSP 0.90
+	+ Added SpawnVessel behaviour.
+	+ Added ExperimentalPart behaviour.
+	+ Added Docking parameter.
+	+ Added TargetDestroyed parameter.
+	+ Added VesselNotDestroyed parameter.
+	+ Added VesselIsType parameter.
+	+ Added SCANsatLocationCoverage requirement.
+	+ Added Message behaviour.
+	+ Add situation filter to Orbit parameter.
+	+ Support for VALIDATION node in PartValidation to allow more terse validation for specific part recipes on a ship.
+	+ Added CONTRACT_GROUP and extra logic for limiting contracts based on group.
+	+ SCANsat coverage parameter now displays the current scan percentage.
+	+ Improvements to HasPassengers (loads real passengers!)
+	+ Fix to how contract expiry is handled - setting to 0.0 will now give a contract that never expires, similar to the way the deadline works.
+	+ New debugging window that shows the underlying configurator and allows selectively disabling parts of the contract for testing.
+	+ Can now add REQUIREMENT nodes as children to PARAMETER nodes.
+	+ Performance fixes for requirement checks.
+	+ Remove parameters that have been obsolete since Contract Configurator 0.5.0.
 * 2015-0129: 0.5.12 (jrossignol) for KSP 0.90
 	+ Fixed KSPAssemblyDepdency issue indirectly caused by SCANsat (but due to broken dependency checking logic in KSP).
 * 2015-0124: 0.5.11 (jrossignol) for KSP 0.90
