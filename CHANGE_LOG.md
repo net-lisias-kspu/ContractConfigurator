@@ -1,5 +1,17 @@
 # Contract Configurator :: Change Log
 
+* 2015-0321: 0.7.1 (jrossignol) for KSP 0.90
+	+ Better support for spawning landed Kerbals in SpawnKerbal.
+	+ SpawnKerbal now supports PQS offsets.
+	+ HasCrew improvements: moved to delegate system, add support for requiring a specific Kerbal.
+	+ Added support for Duration datatype in expressions.
+	+ Expression support for SpawnKerbal and WaypointGenerator behaviours.
+	+ Improvements to location debug window.
+	+ Support for notes in most contract parameters.
+	+ Weight in contract types now only applies within a contract group, and all contract groups are given equal preference.  This means that one contract group (or contract pack) can't cause contract starvation in another group.
+	+ Fix NullReferenceException when using TextGen without an agent specified (thanks AppoloFunghi).
+	+ Fix broken completeInSequence attribute.
+	+ Minor bug fixes.
 * 2015-0317: 0.7.0 (jrossignol) for KSP 0.90
 	+ Support for expressions in config nodes.
 		- All config node attributes can now contain expressions (see wiki for syntax details).
