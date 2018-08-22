@@ -1,5 +1,9 @@
 # Contract Configurator :: Change Log
 
+* 2015-0613: 1.3.3 (jrossignol) for KSP 1.0.2
+	+ Fixed issue with some load errors getting thrown as an exception.
+	+ Fixed exception when docking with the claw (thanks SirJodelstein).
+	+ Fixed experiment filtering logic for Field Research (thanks Aelfhe1m and HarlyKin).
 * 2015-0613: 1.3.2 (jrossignol) for KSP 1.0.2
 	+ Major rewrite of contract generation logic to improve performance and reduce latency on contract generation while in flight.
 	+ Contract pre-loader now allows pausing between attributes (reduces latency during contract generation).
