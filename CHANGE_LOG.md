@@ -1,5 +1,22 @@
 # Contract Configurator :: Change Log
 
+* 2015-0331: 0.7.5 (jrossignol) for KSP 0.90
+	+ Possible fix for duration counters resetting (thanks dorin6565 and many others).
+	+ Fix for HasCrew with count > 0 (thanks Yemo).
+	+ Fix for undefined vessels showing up in Tourism contracts (thanks Kaa253).
+	+ Improvements to tracking across docked vessels.
+	+ SpawnPassengers now only spawns passengers on Kerbin (closes EPL exploit).
+	+ Sequence parameter no longer fails if child parameters complete out of order.
+	+ Added hideChildren attribute to contract parameters to hide children.
+	+ Added requiredValue attribute to DATA nodes.
+	+ Added CelestialBody(), Kerbal() and Vessel() functions to expressions.
+	+ Added resources to expressions.
+	+ Debug window now highlights items with warnings in yellow.
+	+ Obsolete EnterOrbit.
+	+ Obsolete EnterSOI.
+	+ Obsolete LandOnBody.
+	+ Obsolete VesselHasVisited.
+	+ Minor bug fixes.
 * 2015-0327: 0.7.4 (jrossignol) for KSP 0.90
 	+ Fix for unmanned vessels in HasCrew.
 	+ Fix to check both vessels when undocking in HasCrew (thanks severedsolo).
