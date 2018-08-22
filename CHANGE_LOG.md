@@ -1,5 +1,10 @@
 # Contract Configurator :: Change Log
 
+* 2015-0207: 0.6.4 (jrossignol) for KSP 0.90
+	+ Replace buggy stock ReachSpace parameter with a custom one (thanks Yemo and SETI users).
+	+ Fix NullRef issue when using PartModule in PartValidation (thanks Yemo and SETI users).
+	+ Better reporting on RemoteTech version mismatch issues.
+	+ Fixed issues with dependency version check code.
 * 2015-0205: 0.6.3 (jrossignol) for KSP 0.90
 	+ Fixed bad exception on loading from previous broken release.
 * 2015-0205: 0.6.2 (jrossignol) for KSP 0.90 PRE-RELEASE
