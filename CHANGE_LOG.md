@@ -1,5 +1,12 @@
 # Contract Configurator :: Change Log
 
+* 2015-0829: 1.7.2 (jrossignol) for KSP 1.0.2
+	+ DialogBox behaviour now supports loading/unloading textures for images on the fly.
+	+ Fixed issue with dialog boxes that weren't getting positioned correctly.
+	+ Fixed issue with SpawnVessel when switching from editor to flight scene (introduced in 1.7.0).
+	+ Fixed parser issue with early data type conversions (thanks DMagic).
+	+ Fixed issue with hidden parameters in Sequence not working in Contracts Window + (thanks 5thHorseman).
+	+ Misc bug fixes.
 * 2015-0827: 1.7.1 (jrossignol) for KSP 1.0.2 PRE-RELEASE
 	+ Fixed a backwards compatibility issue introduced in 1.7.0 (thanks Ald).
 	+ When title isn't overriden, prefix optional parameters with "(Optional)".
