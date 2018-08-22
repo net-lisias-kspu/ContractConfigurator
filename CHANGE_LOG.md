@@ -1,5 +1,7 @@
 # Contract Configurator :: Change Log
 
+* 2015-1109: 1.8.0 (jrossignol) for KSP 1.0.5
+	+ Support for KSP 1.0.5
 * 2015-1107: 1.7.8 (jrossignol) for KSP 1.0.2
 	+ Fixed issue with timer parameter text not always updating (thanks mer & severedsolo).
 	+ Fixed issue with timer parameter not always starting up (thanks mer).
