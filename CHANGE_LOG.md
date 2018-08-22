@@ -1,5 +1,7 @@
 # Contract Configurator :: Change Log
 
+* 2015-0416: 0.7.13 (jrossignol) for KSP 0.90
+	+ Fix exception when loading types from assemblies that have been improperly compiled (thanks SpacedInvader).
 * 2015-0416: 0.7.12 (jrossignol) for KSP 0.90
 	+ Fix issue when loading part names with non-standard characters (thanks tattagreis).
 	+ Fix issue with using custom behaviours.
