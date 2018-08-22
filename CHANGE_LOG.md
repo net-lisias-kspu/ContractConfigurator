@@ -1,5 +1,8 @@
 # Contract Configurator :: Change Log
 
+* 2016-0429: 1.11.1 (jrossignol) for KSP 1.1.1
+	+ Update to KSP 1.1.1 (release to make CKAN happy).
+	+ Compile to latest _dev_ RemoteTech.
 * 2016-0428: 1.11.0 (jrossignol) for KSP 1.1)
 	+ Performance fixes and improved caching of biome data.
 	+ Duration values can now be used in arithmetic and comparisons in expressions.
