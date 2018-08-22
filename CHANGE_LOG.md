@@ -1,5 +1,10 @@
 # Contract Configurator :: Change Log
 
+* 2015-1010: 1.7.6 (jrossignol) for KSP 1.0.2
+	+ Added Reputation() function to get the player's current reputation.
+	+ Fixed issue with Duration parameter possibly resetting state incorrectly when switching scenes/vessels (thanks chrisl).
+	+ Minor cleanup of science experiment definitions.
+	+ Improved error handling for rare contract pre-loader load exceptions (thanks Laffe).
 * 2015-0926: 1.7.5 (jrossignol) for KSP 1.0.2
 	+ Added HasResourceCapacity parameter.
 	+ Added Round function for Duration class.
