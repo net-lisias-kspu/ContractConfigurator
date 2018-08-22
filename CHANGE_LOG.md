@@ -1,5 +1,10 @@
 # Contract Configurator :: Change Log
 
+* 2015-0520: 1.1.3 (jrossignol) for KSP 1.0.2
+	+ Fix additional case where uniqueValue can cause an exception (thanks MikeSalvatierra).
+	+ Add RemainingScience method to Biome class.
+	+ Various minor science changes.
+	+ Various minor bug fixes.
 * 2015-0519: 1.1.2 (jrossignol) for KSP 1.0.2
 	+ Fix major issue with uniqueValue in DATA nodes - again (fixes issues in ScanSat Lite).
 	+ Minor fixes to ExpressionParser.
