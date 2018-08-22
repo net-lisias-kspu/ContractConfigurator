@@ -1,5 +1,10 @@
 # Contract Configurator :: Change Log
 
+* 2016-0421: 1.10.3 (jrossignol) for KSP 1.1)
+	+ Fixed contract "flickering" on RemoteTech contracts (thanks Razorfang).
+	+ Fixed problems with SCANsat contracts (thanks Torih).
+	+ Fixed issues with child requirements not getting properly propagated to offered contracts.
+	+ Fixed disabling of contract requirements in debug menu (the contract would appear then immediately disappear).
 * 2016-0420: 1.10.2 (jrossignol) for KSP 1.1)
 	+ Re-enabled RemoteTech support.
 	+ Fixed exception on requirement load of SCANsatLocationCoverage (thanks wizisi2k).
