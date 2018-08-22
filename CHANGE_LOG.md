@@ -1,5 +1,8 @@
 # Contract Configurator :: Change Log
 
+* 2015-0113: 0.5.4 (jrossignol) for KSP 0.90
+	+ Workaround for stock contracts app lag issue (#3964 on Squad bugtracker).
+	+ Fixed NullReference issue in HasAntenna when loading a vessel with no antennas (thanks t0chas).
 * 2015-0112: 0.5.3 (jrossignol) for KSP 0.90
 	+ Extensions to PartValidation to handle more varied scenarios.
 	+ Added ReachState parameter.  Deprecated ReachAltitudeEnvelope, ReachBiome, ReachDestination, ReachSituation and ReachSpeedEnvelope.
