@@ -1,5 +1,7 @@
 # Contract Configurator :: Change Log
 
+* 2015-0419: 0.7.15 (jrossignol) for KSP 0.90
+	+ Fix for re-loading passengers in tourism contracts (thanks karki and others).
 * 2015-0418: 0.7.14 (jrossignol) for KSP 0.90
 	+ Expressions now work in child nodes (for WaypointGenerator and other behaviours that support it).
 	+ Fix issues with fairness when generating contracts (should now give appropriate consideration to all contract packs).
