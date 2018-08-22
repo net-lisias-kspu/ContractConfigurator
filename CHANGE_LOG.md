@@ -1,5 +1,10 @@
 # Contract Configurator :: Change Log
 
+* 2015-0112: 0.5.3 (jrossignol) for KSP 0.90
+	+ Extensions to PartValidation to handle more varied scenarios.
+	+ Added ReachState parameter.  Deprecated ReachAltitudeEnvelope, ReachBiome, ReachDestination, ReachSituation and ReachSpeedEnvelope.
+	+ Fixed to work with additional changes in RemoteTech 1.6.
+	+ Minor bug fixes.
 * 2015-0111: 0.5.2 (jrossignol) for KSP 0.90
 	+ Fixed issue with HasAntenna using ActiveTarget (was breaking the RemoteTech contract pack).  Huge thanks to Bluemoon for pointing this one out.
 * 2015-0110: 0.5.1 (jrossignol) for KSP 0.90
