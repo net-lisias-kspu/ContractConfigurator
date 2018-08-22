@@ -1,5 +1,7 @@
 # Contract Configurator :: Change Log
 
+* 2015-0802: 1.6.3 (jrossignol) for KSP 1.0.2
+	+ New Tech methods Parents() and IsReadyToUnlock().
 * 2015-0731: 1.6.2 (jrossignol) for KSP 1.0.2
 	+ Fixed issue with saving contract settings (thanks rasta013).
 * 2015-0731: 1.6.1 (jrossignol) for KSP 1.0.2
