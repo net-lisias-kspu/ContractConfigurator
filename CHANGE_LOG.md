@@ -1,5 +1,12 @@
 # Contract Configurator :: Change Log
 
+* 2016-1104: 1.21.0 (jrossignol) for KSP 1.2
+	+ Found new workaround for GetExportedTypes reflection issue (the "toolbar" issue).
+	+ Added NextUnreachedBody() and NextUnreachedBodies() methods.
+	+ Added Part.MassDry() and Part.MassWet() methods.
+	+ Added CelestialBody.CanHaveSynchronousOrbit() method.
+	+ Recompile Kerbal Konstructs integration.
+	+ Fixed contract window text not updating for dynamic text (duration timers, etc.).
 * 2016-1025: 1.20.3 (jrossignol) for KSP 1.2
 	+ Regenerate biome data for KSP 1.2 biomes (fixes Field Research "Rare Science" contracts, thanks FlatEric).
 	+ Added RemoteTech integration back in.
