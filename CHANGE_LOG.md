@@ -1,5 +1,7 @@
 # Contract Configurator :: Change Log
 
+* 2015-0731: 1.6.1 (jrossignol) for KSP 1.0.2
+	+ Fixed a major bug that prevented VesselParameterGroup parameters from completing in some circumstances (thanks ola).
 * 2015-0731: 1.6.0 (jrossignol) for KSP 1.0.2
 	+ New settings window (only available in space center) that allows contract packs to be enabled/disabled per save.  Also supports disabling of stock contract types.
 	+ Support for DATA nodes within CONTRACT_GROUP (allows defining an expression once and using it in multiple contracts).
