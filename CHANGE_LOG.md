@@ -1,5 +1,7 @@
 # Contract Configurator :: Change Log
 
+* 2014-1216: 0.3.1 (jrossignol) for KSP 0.90 PRE-RELEASE
+	+ Pre-release of 0.90 changes.
 * 2014-1215: 0.3.0 (jrossignol) for KSP 0.25
 	+ Support for ContractBehaviour - extensible behaviours at the contract level.
 	+ Support for a persistent data store.
