@@ -1,5 +1,8 @@
 # Contract Configurator :: Change Log
 
+* 2015-0508: 1.0.4 (jrossignol) for KSP 1.0.2
+	+ Fixed requirements that were throwing errors when expressions used in targetBody.
+	+ Fixed up some invalid warnings about not loading child CONTRACT_GROUP nodes.
 * 2015-0508: 1.0.3 (jrossignol) for KSP 1.0.2
 	+ Waypoints now disappear once related contract requirements are met.
 	+ More warnings for unexpected values in configuration (helps authors catch bugs).
