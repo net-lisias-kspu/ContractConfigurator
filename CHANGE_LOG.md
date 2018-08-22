@@ -1,5 +1,17 @@
 # Contract Configurator :: Change Log
 
+* 2015-0714: 1.5.2 (jrossignol) for KSP 1.0.2
+	+ Allow multiple parts to be specified in the PartValidation parameter.
+	+ Added CelestialBody.RemoteTechCoverage() method for expressions.
+	+ Added CelestialBody.Mass() and CelestialBody.RotationalPeriod() for expressions.
+	+ Added KSCLocation() function for expressions.
+	+ Enhancements to Timer parameter.
+	+ Fixed issue in BiomeTracker when uninstalling a previously installed planet pack (thanks herman and xEvilReeperx).
+	+ Fixed possible exception in VisitWaypoint (thanks AlphaAsh).
+	+ Fixed bug in PartValidation where using FILTER would prevent the parameter from completing.
+	+ Fixed ReachSpecificOrbit so it outputs the orbit details in a note (thanks FinnishGameBox).
+	+ Fixed VesselNotDestroyed firing for debris.
+	+ Minor bug fixes.
 * 2015-0706: 1.5.1 (jrossignol) for KSP 1.0.2
 	+ Added new ChangeVesselOwnership contract behaviour.
 	+ Added new NewVessel parameter.
