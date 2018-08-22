@@ -1,5 +1,9 @@
 # Contract Configurator :: Change Log
 
+* 2016-1025: 1.20.3 (jrossignol) for KSP 1.2
+	+ Regenerate biome data for KSP 1.2 biomes (fixes Field Research "Rare Science" contracts, thanks FlatEric).
+	+ Added RemoteTech integration back in.
+	+ Fixed issue with nested contract groups not working (thanks jeisen).
 * 2016-1022: 1.20.2 (jrossignol) for KSP 1.2
 	+ Support for KSP 1.2
 	+ Allow contract title in mission control to span two lines.
