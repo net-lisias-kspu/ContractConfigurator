@@ -1,5 +1,8 @@
 # Contract Configurator :: Change Log
 
+* 2016-0321: 1.9.10 (jrossignol) for KSP 1.0.5
+	+ Fixed exception on undock (thanks henrybauer).
+	+ Fixed KerbalDeaths to be checked off (completed) by default (thanks Inigma).
 * 2016-0319: 1.9.9 (jrossignol) for KSP 1.0.5
 	+ Fixed issue with SCANsat contract that keep recycling (thanks smjjames).
 	+ Fixed issue with ReachState not supporting the proper defaulting for targetBody (thanks Brigadier).
