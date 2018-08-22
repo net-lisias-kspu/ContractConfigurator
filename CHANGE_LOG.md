@@ -1,5 +1,11 @@
 # Contract Configurator :: Change Log
 
+* 2015-0609: 1.2.6 (jrossignol) for KSP 1.0.2
+	+ Added AvailableExperiments() expression to better filter experiments.
+	+ Added Mass, XDimension, YDimension, ZDimension, SmallestDimension and LargetDimension to Vessel expressions.
+	+ Fixed BioDrill experiments to only be offered where there's an atmosphere.
+	+ Fixed rare NullReferenceException in contract generation logic (thanks OakTree42).
+	+ Remove exploit that allows RecoverKerbal to be completed early in Tourism and other contracts (thanks veryinky).
 * 2015-0603: 1.2.5 (jrossignol) for KSP 1.0.2
 	+ Fixed NullReferenceException in CompleteContractRequirement (thanks severedsolo).
 	+ ImpactSeismometer and ImpactSpectrometer only available for airless bodies (thanks tomf).
