@@ -1,5 +1,7 @@
 # Contract Configurator :: Change Log
 
+* 2018-0405: 1.24.4 (jrossignol) for KSP 1.4.
+	+ Properly work around stock bug.
 * 2018-0402: 1.24.3 (jrossignol) for KSP 1.4.
 	+ Proper fix for last release (thanks Warezcrawler).
 * 2018-0402: 1.24.2 (jrossignol) for KSP 1.4.
