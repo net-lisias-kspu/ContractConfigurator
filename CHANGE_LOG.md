@@ -1,5 +1,7 @@
 # Contract Configurator :: Change Log
 
+* 2015-0124: 0.5.11 (jrossignol) for KSP 0.90
+	+ Recompile for RemoteTech 1.6.2
 * 2015-0124: 0.5.10 (jrossignol) for KSP 0.90
 	+ Fixed issue loading SCANsatCoverage parameter (thanks whiteout1911).
 * 2015-0123: 0.5.9 (jrossignol) for KSP 0.90
