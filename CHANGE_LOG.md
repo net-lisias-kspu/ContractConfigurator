@@ -1,5 +1,16 @@
 # Contract Configurator :: Change Log
 
+* 2016-0708: 1.15.0 (jrossignol) for KSP 1.1.3 PRE-RELEASE
+	+ Pre-release version of Contract Configurator 1.15.x changes to aid contract authors in making early changes to their contract packs.
+	+ See Contract Configurator thread for more details.
+	+ Changes
+		- New Mission Control layout. Now all contracts that are eligible are available all the time (players are no longer at the mercy of the RNG to get the contracts they want).  Also, can view the details of what contracts are _not yet_ available, and what it takes to make them available.
+		- Contract generation overhaul.  Overhaul to the contract generation system for massive performance improvements.  Contracts are no longer generated in-flight (no garbage, no stutters).
+		- Added title and related attributes for REQUIREMENT nodes.
+		- Added title and related attributes for DATA nodes.
+		- New List.SelectUnique() method for selecting unique values (replaces selecting a random value and hoping that it hasn't been used before).
+		- New DATA_EXPAND node allows a CONTRACT_TYPE to be duplicated across a list of values (eg. duplicated for each Celestial Body).
+		- More warnings to steer contract authors towards more performant and more player-friendly ways of writing contracts.
 * 2016-0701: 1.14.0 (jrossignol) for KSP 1.1.3
 	+ Added suppport for partModuleType in PartValidation.
 	+ Added AtMost and AtLeast set requirements.
