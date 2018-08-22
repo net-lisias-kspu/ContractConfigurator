@@ -1,5 +1,17 @@
 # Contract Configurator :: Change Log
 
+* 2015-0731: 1.6.0 (jrossignol) for KSP 1.0.2
+	+ New settings window (only available in space center) that allows contract packs to be enabled/disabled per save.  Also supports disabling of stock contract types.
+	+ Support for DATA nodes within CONTRACT_GROUP (allows defining an expression once and using it in multiple contracts).
+	+ Added displayName to CONTRACT_GROUP.
+	+ Added new extended mode to HasResource parameter.
+	+ New AwardExperience behaviour for giving extra experience to crew.
+	+ FlyingAltitudeThreshold and SpaceAltitudeThreshold methods added to CelestialBody.
+	+ Tweak weighting between stock contracts and Contract Configurator contracts towards Contract Configurator.
+	+ Duration portion of VesselParameterGroup parameters is now displayed as a child parameter (makes it harder to miss).
+	+ Added attributes to VesselParameterGroup to allow vessel definitions to elapse on contract completion/failure.
+	+ New CelestialBody methods for progression attributes (whether the player has reached, orbited, landed, escaped and returned from the body).
+	+ Added Tech class to expressions.
 * 2015-0727: 1.5.5 (jrossignol) for KSP 1.0.2
 	+ New MissionTimer parameter for displaying a count-up timer (use it for challenges!).
 	+ New functions/methods related to contract multipliers - ContractMultiplier(), CelestialBody.Multiplier() ContractPrestige.Multiplier().
