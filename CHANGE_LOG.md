@@ -1,5 +1,7 @@
 # Contract Configurator :: Change Log
 
+* 2015-0129: 0.5.12 (jrossignol) for KSP 0.90
+	+ Fixed KSPAssemblyDepdency issue indirectly caused by SCANsat (but due to broken dependency checking logic in KSP).
 * 2015-0124: 0.5.11 (jrossignol) for KSP 0.90
 	+ Recompile for RemoteTech 1.6.2
 * 2015-0124: 0.5.10 (jrossignol) for KSP 0.90
