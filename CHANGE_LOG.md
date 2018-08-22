@@ -1,5 +1,12 @@
 # Contract Configurator :: Change Log
 
+* 2015-0905: 1.7.3 (jrossignol) for KSP 1.0.2
+	+ Added Round() function for rounding numeric values.
+	+ Contracts will now expire out of the pre-loader after a few Kerbin days.  Help prevent contracts that may no longer be valid from being generated.
+	+ Fixed issue with hidden parameters not actually being hidden (thanks 5thHorseman).
+	+ Fixed issue with using subject with CollectScience (thanks severedsolo).
+	+ Fixed issue using Biome with uniqueValue in a DATA node (thanks severedsolo).
+	+ Fixed issue where disabling a contract pack doesn't save the fact that it is disabled (thanks Poodmund).
 * 2015-0829: 1.7.2 (jrossignol) for KSP 1.0.2
 	+ DialogBox behaviour now supports loading/unloading textures for images on the fly.
 	+ Fixed issue with dialog boxes that weren't getting positioned correctly.
