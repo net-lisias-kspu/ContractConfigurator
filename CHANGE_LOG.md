@@ -1,5 +1,14 @@
 # Contract Configurator :: Change Log
 
+* 2018-0330: 1.24.1 (jrossignol) for KSP 1.4.
+	+ Recompile against KSP 1.4.2
+	+ Re-enabled RemoteTech and Kerbal Konstructs integration for KSP 1.4.x.
+	+ Fix error message when despawning spawned Kerbals (thanks steve_v).
+	+ Added a warning message when validation errors prevent a DATA_EXPAND node from being parsed (thanks gyf1214).
+	+ Fixed NRE when checking progress nodes (thanks DocMop).
+	+ Fixed issue with duplicate assembly warning showing up when it shouldn't (thanks Gordon Dry).
+	+ Fixed some issues with handling of newlines in config nodes (thanks inigma).
+	+ Use case insensitive string comparison when loading celestial bodies in saved expressions (thanks gyf214).
 * 2018-0312: 1.24.0 (jrossignol) for KSP 1.4.0
 	+ Recompile for KSP 1.4.0
 	+ Added back MODULE checks in simple version of PartValidation (thanks chrisl).
