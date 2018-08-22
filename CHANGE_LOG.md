@@ -1,5 +1,12 @@
 # Contract Configurator :: Change Log
 
+* 2015-1107: 1.7.8 (jrossignol) for KSP 1.0.2
+	+ Fixed issue with timer parameter text not always updating (thanks mer & severedsolo).
+	+ Fixed issue with timer parameter not always starting up (thanks mer).
+	+ Fixed issue with contracts not being correctly disabled when requested (thanks severedsolo).
+	+ Fixed minTerrainAltitude and maxTerrainAltitude to check terrain altitude and not ASL (thanks space-is-hard).
+	+ Fixed issue with interaction between SpawnKerbal and RecoverKerbal causing exception that didn't clean up Kerbals (thanks arilm21).
+	+ Minor bug fixes.
 * 2015-1022: 1.7.7 (jrossignol) for KSP 1.0.2
 	+ Fixed issues with PartTest parameter not making the "Run Test" option show up on parts to be tested (thanks Sticky32).
 	+ Fixed issue with double() and other cast functions not working when casting from a non-numeric type (thanks chrisl).
