@@ -1,5 +1,7 @@
 # Contract Configurator :: Change Log
 
+* 2018-0402: 1.24.2 (jrossignol) for KSP 1.4.
+	+ Workaround for stock bug #18267 (contract parameters creating extra messages on completion).
 * 2018-0330: 1.24.1 (jrossignol) for KSP 1.4.
 	+ Recompile against KSP 1.4.2
 	+ Re-enabled RemoteTech and Kerbal Konstructs integration for KSP 1.4.x.
