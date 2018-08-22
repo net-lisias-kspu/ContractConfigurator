@@ -1,5 +1,13 @@
 # Contract Configurator :: Change Log
 
+* 2015-1116: 1.8.1 (jrossignol) for KSP 1.0.5
+	+ Added new Not parameter.
+	+ Can now specify heading in SpawnKerbal.
+	+ Fixed issue with index attribute not being recognized in HasPassengers (thanks inigmatus).
+	+ Fixed issue with speed in KSP never being zero for ReachState (thanks inigmatus).
+	+ Fixed exception in RecoverVessel when recovering via the VAB when another vessel is on the launchpad.
+	+ Fixed issue with timers getting reset in VAB/SPH (thanks chrisl).
+	+ Removed long-ago deprecated CC_SCANsat.dll (this does not remove SCANsat support).
 * 2015-1109: 1.8.0 (jrossignol) for KSP 1.0.5
 	+ Support for KSP 1.0.5
 * 2015-1107: 1.7.8 (jrossignol) for KSP 1.0.2
