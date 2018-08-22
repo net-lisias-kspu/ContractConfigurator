@@ -1,5 +1,10 @@
 # Contract Configurator :: Change Log
 
+* 2015-0219: 0.6.6 (jrossignol) for KSP 0.90
+	+ Changed to MIT license.
+	+ Performance fixes for stock contracts app (mainly affects contracts with lots and lots of parameters.
+	+ Bundled MiniAVC (1.0.3).
+	+ Minor bug fixes.
 * 2015-0209: 0.6.5 (jrossignol) for KSP 0.90
 	+ Fix rare NullReference exception on VesselParameter save (thanks cupe).
 	+ Fix Sun and Mun appearing as simply "the" in some parameters (thanks Invader Myk).
