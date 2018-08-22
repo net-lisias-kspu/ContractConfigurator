@@ -1,5 +1,15 @@
 # Contract Configurator :: Change Log
 
+* 2015-0528: 1.2.2 (jrossignol) for KSP 1.0.2
+	+ New UnlockTech behaviour (thanks Klefenz).
+	+ Added support for specifying science by subject in CollectScience.
+	+ Added CelestialBody.SemiMajorAxis() expression method.
+	+ Fixes to VesselDestroyed (thanks tito13kfm).
+	+ Fixes to contracts failing unexpectedly (thanks Recon777).  Affects RemoteTech Contract Pack.
+	+ Fixed issues with CollectScience location (thanks severedsolo).
+	+ Fixed issue with ContractGroup max checks not working correctly for parent contract groups.
+	+ Fixed CollectScience to display correct experiment name.
+	+ Minor bug fixes.
 * 2015-0526: 1.2.1 (jrossignol) for KSP 1.0.2
 	+ CompleteContract requirement now checks on active contracts too.
 	+ Improved transfer of parameters from Kerbal => Vessel => Vessel, such as PlantFlag in an Apollo-style mission (thanks jordanjay29).
