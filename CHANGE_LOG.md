@@ -1,5 +1,11 @@
 # Contract Configurator :: Change Log
 
+* 2015-0926: 1.7.5 (jrossignol) for KSP 1.0.2
+	+ Added HasResourceCapacity parameter.
+	+ Added Round function for Duration class.
+	+ Fixed issue with hidden parameters in a sequence not unhiding in Contracts Window +.
+	+ Fixed issue with Duration parameter when not used with VesselParameterGroup (thanks master18).
+	+ Fixed issue with handling of $ character in strings (thanks ManuxKerb).
 * 2015-0914: 1.7.4 (jrossignol) for KSP 1.0.2
 	+ Improved Sigma Binary support (contracts won't get offered for barycenters unless they've been specifically written with that in mind).
 	+ Changed triggers for Message behaviour to make consistent with other similar behaviours.
