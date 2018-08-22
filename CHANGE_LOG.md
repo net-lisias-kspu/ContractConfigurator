@@ -1,5 +1,8 @@
 # Contract Configurator :: Change Log
 
+* 2016-0430: 1.11.3 (jrossignol) for KSP 1.1.2.
+	+ Revert additional check added in 1.11.0 that broke PartModuleTypeUnlocked (thanks KnotaiG).
+	+ Work around upgrade issue with ReachSpecificOrbit (thansk Tossy64).
 * 2016-0430: 1.11.2 (jrossignol) for KSP 1.1.2.
 	+ Recompile against KSP 1.1.2.
 	+ Possible fix to PartModuleUnlockedRequirement (thanks AccidentalDisassembly).
