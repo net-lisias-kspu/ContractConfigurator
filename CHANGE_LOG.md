@@ -1,5 +1,11 @@
 # Contract Configurator :: Change Log
 
+* 2016-0726: 1.15.5 (jrossignol) for KSP 1.1.3
+	+ Updated agent icons from Enceos.
+	+ Fixed issue introduced in 1.15.x with Prestige() function that incorrectly treated all contracts as Trivial.
+	+ Fixed issue with text for Funds/Science/Reputation requirements.
+	+ Fixed issue with sorting in Available tab of Mission Control.
+	+ Fixed exception when declining/cancelling contracts in Mission Control.
 * 2016-0726: 1.15.4 (jrossignol) for KSP 1.1.3
 	+ Increased base contract limits.
 	+ Increased contract limits based on building level.
