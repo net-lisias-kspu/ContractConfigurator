@@ -1,5 +1,24 @@
 # Contract Configurator :: Change Log
 
+* 2015-1216: 1.9.1 (jrossignol) for KSP 1.0.5
+	+ Draft Twitch Viewers integration - when creating new random Kerbals for contracts will get names from Draft Twitch Viewers (thanks IRNifty for assisting on this one).
+	+ ITERATOR nodes for automatically duplicating PARAMETER nodes for every value in a list.
+	+ AutoAccept contracts now more likely get generated immediately when available.
+	+ Added Biome.PrimarySituation() method.
+	+ Added CelestialBody.SCANsatCoverage() method.
+	+ Allow multiple parameter identifiers in WaypointGenerator (for blocks with more than one waypoint).
+	+ Support for clustered waypoints in WaypoingGenerator.
+	+ ReachState supports multiple vessel situations.
+	+ Fixed VisitWaypoint support for contracts with multiple WaypointGenerator behaviours (thanks linuxgurugamer).
+	+ Fixed further issues requiring rouding when checking for a zero speed (thanks Aelfhe1m).
+	+ Fixed issue where ContractMultiplier() wasn't calculated correctly.
+	+ Fixed issue where failureFunds was not being set when the contract had an advance.
+	+ Fixed issue with load passenger dialog disappearing too early (thanks inigma).
+	+ Fixed parsing of CelestialBody in WaypointGenerator (thanks severedsolo).
+	+ Fixed some parser issues for exceptional cases (thanks inigma).
+	+ Fixed major issues with CopyCraftFile behaviour (thanks inigma).
+	+ Fixed default Kerbal type back to tourist in SpawnPassengers (thanks CovertJaguar).
+	+ Minor bug fixes.
 * 2015-1207: 1.9.0 (jrossignol) for KSP 1.0.5
 	+ Improved display of some parameters with only one redundant child parameter in contract window.
 	+ New functions for generating kerbals.
