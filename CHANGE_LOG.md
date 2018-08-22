@@ -1,5 +1,7 @@
 # Contract Configurator :: Change Log
 
+* 2016-0730: 1.16.2 (jrossignol) for KSP 1.1.3
+	+ Fix exception error messaging.
 * 2016-0730: 1.16.1 (jrossignol) for KSP 1.1.3
 	+ Silence Research Bodies error (thanks Liondrome).
 	+ Fixed problems with ResearchBodies support (it was offering some contracts that it shouldn't have).
