@@ -1,5 +1,8 @@
 # Contract Configurator :: Change Log
 
+* 2016-0730: 1.16.1 (jrossignol) for KSP 1.1.3
+	+ Silence Research Bodies error (thanks Liondrome).
+	+ Fixed problems with ResearchBodies support (it was offering some contracts that it shouldn't have).
 * 2016-0729: 1.16.0 (jrossignol) for KSP 1.1.3
 	+ Support for ResearchBodies - contracts won't be offered until the appropriate body has been researched (thanks JPLRepo).
 	+ Integrated support for Kerbal Konstructs directly into Contract Configurator.
