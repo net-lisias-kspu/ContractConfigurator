@@ -1,5 +1,10 @@
 # Contract Configurator :: Change Log
 
+* 2015-0602: 1.2.4 (jrossignol) for KSP 1.0.2
+	+ Support for DMagic's Orbital Science and tomf's Impact! in science stuff (Field Research Contract Pack).
+	+ Fixed exception loading ContractVesselTracker (thanks GFBones).
+	+ Fixed exception in BiomeTracker when generating some Field Research contracts (thanks DaniDE).
+	+ Fixed contract failure when renaming vessels in RemoteTech contracts (thanks Svannon).
 * 2015-0530: 1.2.3 (jrossignol) for KSP 1.0.2
 	+ Added Waypoint.Location() expression method.
 	+ Added Location.Biome() expression method.
