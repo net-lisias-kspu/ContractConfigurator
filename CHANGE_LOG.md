@@ -1,5 +1,9 @@
 # Contract Configurator :: Change Log
 
+* 2016-0430: 1.11.2 (jrossignol) for KSP 1.1.2.
+	+ Recompile against KSP 1.1.2.
+	+ Possible fix to PartModuleUnlockedRequirement (thanks AccidentalDisassembly).
+	+ Fixed exception when generating autoAccept contracts.
 * 2016-0429: 1.11.1 (jrossignol) for KSP 1.1.1
 	+ Update to KSP 1.1.1 (release to make CKAN happy).
 	+ Compile to latest _dev_ RemoteTech.
