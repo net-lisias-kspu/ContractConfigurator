@@ -1,5 +1,7 @@
 # Contract Configurator :: Change Log
 
+* 2015-0428: 0.8.1 (jrossignol) for KSP 1.0 PRE-RELEASE
+	+ Fix display of dynamic text (was broken by KSP 1.0).
 * 2015-0427: 0.8.0 (jrossignol) for KSP 1.0 PRE-RELEASE
 	+ Support for KSP 1.0
 	+ Deprecated parameters removed from stock (some will get replacements in a future version of Contract Configurator).
