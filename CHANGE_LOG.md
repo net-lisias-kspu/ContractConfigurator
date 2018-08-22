@@ -1,5 +1,28 @@
 # Contract Configurator :: Change Log
 
+* 2015-1207: 1.9.0 (jrossignol) for KSP 1.0.5
+	+ Improved display of some parameters with only one redundant child parameter in contract window.
+	+ New functions for generating kerbals.
+	+ HasCrew and RecoverKerbal will now automatically create kerbals in the astronaut complex when required.
+	+ Reworked logic for specifying unique values in DATA nodes.
+	+ SpawnVessel CREW nodes now support specifying a gender.
+	+ SpawnVessel supports specifying a location via PQS City now (like SpawnKerbal).
+	+ Added minAcceleration and maxAcceleration to ReachState.
+	+ Added RemoveKerbal behaviour.
+	+ Auto-close passenger loading dialog if vessel launches or scene changes (thanks inigma).
+	+ Added new Funds() and Science() expression functions to get player's funds/science.
+	+ Ignore USI Sounding Rocket experiments for science sub-system.
+	+ Fixed bugs with using expressions in DialogBox.
+	+ Fixed name duplication in RandomKerbalName() function (thanks inigma).
+	+ Fixed exception using UnlockPart without part unlocking set on the current game (thanks inigma).
+	+ Fixed issue with crew that aren't properly removed on contract completion (thanks inigma).
+	+ Fixed issue where experimental status of parts never goes away - even when a tech is researched (thanks inigma).
+	+ Fixed issue with VesselDestroy causing vessel markers to appear when invoked at KSC (thanks inigma).
+	+ Fixed issue where vessel rename doesn't trigger VesselIsType (thanks CompB).
+	+ Fixed issue where HasCrew counted tourists (thanks severedsolo).
+	+ Fixed problems with KSCLocation() returning the wrong value (thanks Rodger).
+	+ Fixed bug when despawning kerbals from vessels that are not currently loaded (thanks inigma).
+	+ Fixed so Kerbals recovered via StageRecovery no longer count as killed for contracts (thanks blu3wolf).
 * 2015-1124: 1.8.3 (jrossignol) for KSP 1.0.5
 	+ Fixed NullReferenceException in code introduced in 1.8.2 (thanks kunok).
 * 2015-1124: 1.8.2 (jrossignol) for KSP 1.0.5
