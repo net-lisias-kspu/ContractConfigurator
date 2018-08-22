@@ -1,5 +1,9 @@
 # Contract Configurator :: Change Log
 
+* 2015-0610: 1.3.0 (jrossignol) for KSP 1.0.2 PRE-RELEASE
+	+ Major rewrite of contract generation logic to improve performance and reduce latency on contract generation while in flight.
+	+ Added Vessel.Location() method for expressions.
+	+ Fixed NRE in RecoverKerbal (thanks severedsolo).
 * 2015-0609: 1.2.6 (jrossignol) for KSP 1.0.2
 	+ Added AvailableExperiments() expression to better filter experiments.
 	+ Added Mass, XDimension, YDimension, ZDimension, SmallestDimension and LargetDimension to Vessel expressions.
