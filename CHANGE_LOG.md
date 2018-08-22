@@ -1,5 +1,11 @@
 # Contract Configurator :: Change Log
 
+* 2015-0619: 1.4.2 (jrossignol) for KSP 1.0.2
+	+ Fixed asteroid sample showing up in KSC contracts for Field Research (thanks maculator).
+	+ Fixed mirrored heading/roll/pitch in SpawnVessel (thanks Xephan).
+	+ Fixed issue with RemoteTech vessel tracking (thanks johnpmayer).
+	+ Fixed OrbitGenerator NRE in tracking station (thanks HarlyKin).
+	+ Fixed extra orbits in tracking station (thanks KerbMav).
 * 2015-0618: 1.4.1 (jrossignol) for KSP 1.0.2
 	+ Add support for heading/roll/pitch in SpawnVessel.
 	+ Fixed ghost icons in OrbitGenerator (thanks KerbMav).
