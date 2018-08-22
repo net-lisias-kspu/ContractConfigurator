@@ -1,5 +1,7 @@
 # Contract Configurator :: Change Log
 
+* 2016-1215: 1.22.1 (jrossignol) for KSP 1.2
+	+ Fixed issue with vessel identifier parsing introduced in 1.22.0 (thanks Li0n).
 * 2016-1215: 1.22.0 (jrossignol) for KSP 1.2
 	+ Added HasAntenna parameter (thanks Kerbas-ad-astra).
 	+ Added Vessel.AntennaTransmitPower() and Vesse.AntennaRelayPower() (thanks Kerbas-ad-astra).
