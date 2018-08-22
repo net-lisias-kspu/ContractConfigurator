@@ -1,5 +1,8 @@
 # Contract Configurator :: Change Log
 
+* 2016-0914: 1.20.0 (jrossignol) for KSP 1.2 PRE-RELEASE
+	+ Support for KSP 1.2
+	+ Fixed NRE when vessel's Landed At string is null (thanks SamLex).
 * 2016-0905: 1.19.0 (jrossignol) for KSP 1.1.3
 	+ Added Part.UnlockCost().
 	+ Added Part.Resources().
