@@ -1,5 +1,17 @@
 # Contract Configurator :: Change Log
 
+* 2016-0103: 1.9.2 (jrossignol) for KSP 1.0.5
+	+ Added minRateOfClimb and maxRateOfClimb to ReachState.
+	+ Support negative latitudes in ReachState.
+	+ Fixed major contract pre-loader exception on startup (thanks smjjames).
+	+ Fixed error handling in expression parser (thanks severedsolo).
+	+ Fixed HasCrew incorrectly only handling kerbals of type 'Crew' (thanks bertibott).
+	+ Fixed exception in uniqueness checks that were done at the contract group level (thanks severedsolo).
+	+ Fixed issue with SpawnPassengers always spawning passengers instead of whatever the contract specified (thanks inigma).
+	+ Fixed issue with Vessel values not being properly saved in the VAB/SPH for uniqueness checks (thanks severedsolo).
+	+ Fixed issue with the GROUP_ALL and CONTRACT_ALL uniqueness checks not working as advertised (thanks severedsolo).
+	+ Fixed FacilityRequirement breaking down in the tracking station (thanks cordilon).
+	+ Fixed a number of WaypointGenerator issues (thanks linuxgurugamer).
 * 2015-1216: 1.9.1 (jrossignol) for KSP 1.0.5
 	+ Draft Twitch Viewers integration - when creating new random Kerbals for contracts will get names from Draft Twitch Viewers (thanks IRNifty for assisting on this one).
 	+ ITERATOR nodes for automatically duplicating PARAMETER nodes for every value in a list.
