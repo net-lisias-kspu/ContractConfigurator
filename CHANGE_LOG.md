@@ -1,5 +1,7 @@
 # Contract Configurator :: Change Log
 
+* 2015-0201: 0.6.1 (jrossignol) for KSP 0.90
+	+ Fix for loading 0.5.x saves killing all contracts.
 * 2015-0131: 0.6.0 (jrossignol) for KSP 0.90
 	+ Added SpawnVessel behaviour.
 	+ Added ExperimentalPart behaviour.
