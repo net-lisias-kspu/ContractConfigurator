@@ -1,5 +1,20 @@
 # Contract Configurator :: Change Log
 
+* 2016-0826: 1.18.0 (jrossignol) for KSP 1.1.3
+	+ New Base and ISRU agent icons from Enceos.
+	+ Added Resource.Density() method.
+	+ Added partModule and partModuleType to TechResearchedRequirement.
+	+ Fixed problem with requirement data for offered data not getting fixed until contract save (thanks severedsolo).
+	+ Fixed sorting of contract groups (thanks pap1723).
+	+ Fixed Resource parsing limitations (thanks hargn).
+	+ Fixed issue with DATA nodes and child contract groups (thanks hargn).
+	+ Disallow DMOS Seismic Impact Hammer at KSC in science subsystem (thanks BeafSalad).
+	+ Remove short-circuit in Any/All requirement texts for players aren't given incorrect information (thanks inigma).
+	+ Fixed an issue that prevented expressions from working in resource loading (thanks hargn).
+	+ Cycle through new contracts to generate in a random order to prevent certain contracts from getting preference.
+	+ Fixed issue where contract expiries were never getting set (thanks DarkonZ).
+	+ Fixed issue with some parameters combined with the All parameter causing incorrect contract failure (thanks tomf).
+	+ Fixed issue with selected contract in mission control getting unselected when a new contract is generated (thanks AccidentalDisassembly).
 * 2016-0809: 1.17.0 (jrossignol) for KSP 1.1.3
 	+ Mission Control remembers the last visited tab when you open it, and takes you there.
 	+ Added Tracking Station buttons for filtering orbits/waypoints from contracts.
