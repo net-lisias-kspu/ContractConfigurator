@@ -1,5 +1,7 @@
 # Contract Configurator :: Change Log
 
+* 2015-1124: 1.8.3 (jrossignol) for KSP 1.0.5
+	+ Fixed NullReferenceException in code introduced in 1.8.2 (thanks kunok).
 * 2015-1124: 1.8.2 (jrossignol) for KSP 1.0.5
 	+ Added vessel highlighting (from contextual contracts) to TargetDestroyed, Docking, Rendezvous and VesselParameterGroup.
 	+ Added Vessel.VesselName() method.
