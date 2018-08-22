@@ -1,5 +1,10 @@
 # Contract Configurator :: Change Log
 
+* 2015-0418: 0.7.14 (jrossignol) for KSP 0.90
+	+ Expressions now work in child nodes (for WaypointGenerator and other behaviours that support it).
+	+ Fix issues with fairness when generating contracts (should now give appropriate consideration to all contract packs).
+	+ Fix errors in Tourism contract pack introduced by 0.7.13.
+	+ Minor bug fixes.
 * 2015-0416: 0.7.13 (jrossignol) for KSP 0.90
 	+ Fix exception when loading types from assemblies that have been improperly compiled (thanks SpacedInvader).
 * 2015-0416: 0.7.12 (jrossignol) for KSP 0.90
