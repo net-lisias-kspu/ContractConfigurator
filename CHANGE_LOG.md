@@ -1,5 +1,17 @@
 # Contract Configurator :: Change Log
 
+* 2015-0416: 0.7.12 (jrossignol) for KSP 0.90
+	+ Fix issue when loading part names with non-standard characters (thanks tattagreis).
+	+ Fix issue with using custom behaviours.
+	+ Can now provide multiple techs, parts and part modules in PartModuleUnlocked, PartUnlocked and TechResearched requirements.
+	+ TechResearched requirement now supports selecting techs by specifying parts.
+	+ WaypointGenerator now supports a hidden attribute for waypoints.
+	+ Hash contract configuration details, and cancel offered contracts if the hashed values do not match.  This prevents old contracts from staying on offer when a contract pack is upgraded.
+	+ Improved handling of invalid vessel identifiers.
+	+ SpawnVessel now properly supports landed vessels.
+	+ Support for hierarchies of contract groups.
+	+ Fixes for Expression requirement.
+	+ Minor bug fixes.
 * 2015-0407: 0.7.11 (jrossignol) for KSP 0.90
 	+ Fixed possible NRE issue when loading VesselParameterGroup (thanks Monopropellant & FreakyHydra).
 	+ Fix to undocking issue where KSP physics goes nuts.
