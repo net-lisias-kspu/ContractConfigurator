@@ -1,5 +1,9 @@
 # Contract Configurator :: Change Log
 
+* 2016-0319: 1.9.9 (jrossignol) for KSP 1.0.5
+	+ Fixed issue with SCANsat contract that keep recycling (thanks smjjames).
+	+ Fixed issue with ReachState not supporting the proper defaulting for targetBody (thanks Brigadier).
+	+ Fixed issue with ReachState loading (thanks berkekrkn).
 * 2016-0309: 1.9.8 (jrossignol) for KSP 1.0.5
 	+ Fixed problem with using multiple targetBody values via expression in ReachState (thanks NathanKell).
 	+ Fixed issue with KerbalDeaths not completing correctly (thanks vardicd).
