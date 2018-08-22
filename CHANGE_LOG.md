@@ -1,5 +1,8 @@
 # Contract Configurator :: Change Log
 
+* 2015-0118: 0.5.6 (jrossignol) for KSP 0.90 PRE-RELEASE
+	+ Changes for SCANsat 9.0
+	+ Fix display of year/years and day/days in time based parameters (thanks DBT85).
 * 2015-0113: 0.5.5 (jrossignol) for KSP 0.90
 	+ Fixed issue in ReachState where empty situation caused issues (thanks tattagreis).
 	+ Fixed problems with KerbalSpawner.
