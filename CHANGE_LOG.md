@@ -1,5 +1,19 @@
 # Contract Configurator :: Change Log
 
+* 2016-0203: 1.9.5 (jrossignol) for KSP 1.0.5
+	+ Output additional log files when log level is debug or higher (thanks linuxgurugamer).
+	+ VesselParameterGroup now supports a defineList attribute to add a vessel to a list on contract completion.
+	+ PartValidation module checks now check the parent type.  This allows mod-introduced PartModules that inherit from stock ones to count for PartValidation checks that look for the stock module (eg. ModuleEnginesFX = ModulesEngines).
+	+ Added SubAssembly as a valid option for CopyCraftFile.craftType.
+	+ Added NewKerbals() methods to generate lists of Kerbals.
+	+ AwardExperience now supports awarding experience directly to Kerbals (instead of via a VesselParameterGroup).
+	+ Limited the impact of a problem where the final Anomaly Surveyor contract causes revert to editor to leave a vessel on the pad (thanks lodestar).
+	+ Fixed problem introduced in 1.9.4 where all waypoints without a name get called "site" (thanks smjjames).
+	+ Fixed issue where Kerbal spawning behaviours didn't clean up properly when the Kerbal was in a command chair (thanks inigma & nobodyhasthis2).
+	+ Fixed issue with Expression requirement bleeding through between different contracts (thanks Yemo, smjjames and nobodyhasthis2).
+	+ Added logic to prevent duplicate Kerbal names from coming up in the same (or recent) contracts.
+	+ Fixed issue with VesselParameterGroup where the vessel wasn't set correctly when loading a Kerbal into an EVA seat triggered the completion (thanks inigma).
+	+ Minor bug fixes.
 * 2016-0125: 1.9.4.1 (jrossignol) for KSP 1.0.5
 	+ Fixed a major issue where vessel spawning would sometimes fail to spawn vessels.
 * 2016-0125: 1.9.4 (jrossignol) for KSP 1.0.5
