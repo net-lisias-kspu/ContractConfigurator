@@ -1,5 +1,7 @@
 # Contract Configurator :: Change Log
 
+* 2016-0421: 1.10.4 (jrossignol) for KSP 1.1)
+	+ Fixed RemoteTech exceptions (thanks HaArLiNsH, Dtgnoome and Sidelia).
 * 2016-0421: 1.10.3 (jrossignol) for KSP 1.1)
 	+ Fixed contract "flickering" on RemoteTech contracts (thanks Razorfang).
 	+ Fixed problems with SCANsat contracts (thanks Torih).
