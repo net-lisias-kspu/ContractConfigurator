@@ -1,5 +1,16 @@
 # Contract Configurator :: Change Log
 
+* 2015-0720: 1.5.4 (jrossignol) for KSP 1.0.2
+	+ Added new extended PartModule mode to PartValidation parameter.
+	+ Added new methods for determining engine thrust and ISP in expressions.
+	+ Added additional validation to WaypointGenerator.RANDOM_WAYPOINT_NEAR (thanks Xaegr).
+	+ Minor changes to VesselSpawner.
+	+ Fixed issue with VesselNotDestroyed firing for EVA Kerbals boarding a vessel (thanks Cooper42).
+	+ Fixed Pow() and Log() expression functions to work correctly with types other than double (thanks NathanKell).
+	+ Fixed major issues with CanResearchTech requirement (thanks NathanKell).
+	+ Fixed holes where expressions could modify underlying KSP lists (thanks Whyren).
+	+ Experiments from unsupported science mods won't show up - preventing them from showing up before the right tech has been unlocked.
+	+ Added Asteroid Day experiment to experiment list (doesn't change behaviour, just quiets a warning).
 * 2015-0717: 1.5.3 (jrossignol) for KSP 1.0.2
 	+ Added UnlockPart behaviour.
 	+ Added CanResearchTech requirement.
