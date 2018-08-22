@@ -1,5 +1,7 @@
 # Contract Configurator :: Change Log
 
+* 2016-1217: 1.22.2 (jrossignol) for KSP 1.2
+	+ Fix possible argumentOfPeriapsis issue (thanks Intrepidrd).
 * 2016-1215: 1.22.1 (jrossignol) for KSP 1.2
 	+ Fixed issue with vessel identifier parsing introduced in 1.22.0 (thanks Li0n).
 * 2016-1215: 1.22.0 (jrossignol) for KSP 1.2
