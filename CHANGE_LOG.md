@@ -1,5 +1,18 @@
 # Contract Configurator :: Change Log
 
+* 2015-0327: 0.7.4 (jrossignol) for KSP 0.90
+	+ Fix for unmanned vessels in HasCrew.
+	+ Fix to check both vessels when undocking in HasCrew (thanks severedsolo).
+	+ Fix for Kerbals spawning at 0 latitude, 0 longitude (thanks Wiseman).
+	+ Support for new DATA node for storing arbitrary values for use in expressions.
+	+ Improvements to SpawnPassengers, including an upper limit to the number of Kerbals it will spawn before reusing them (to keep the crew roster manageable).
+	+ WaypointGenerator now supports both min and max values for RANDOM_WAYPOINT_NEAR.
+	+ Add parameter attribute to WaypointGenerator to make waypoints dependent on a parameter.
+	+ Improved output messages when reloading contracts through the debug menu.
+	+ Debug window now contains details of contract groups.
+	+ Reloading in debug window no longer causes duplicate contracts to be allowed.
+	+ Add close icon to debug menu.
+	+ Minor bug fixes.
 * 2015-0322: 0.7.3 (jrossignol) for KSP 0.90
 	+ Fix problems with VesselDestroyed (big thanks to linuxgurugamer for his patience on this one).
 	+ Fix HasCrew for unmanned check.  Improved parameter text slightly.
