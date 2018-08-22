@@ -1,5 +1,21 @@
 # Contract Configurator :: Change Log
 
+* 2015-0429: 1.0.0 (jrossignol) for KSP 1.0.
+	+ Various fixes related to KSP 1.0.
+	+ Deprecated parameters removed from stock in KSP 1.0 (some may get replacements in a future version of Contract Configurator).
+		- AltitudeRecord
+		- LaunchVessel
+		- BoardAnyVessel
+	+ Added new AtLeast and AtMost set parameters.
+	+ Added new None set parameter.
+	+ Improve validation rules for unknown attributes/child nodes (helps modders track down issues more easily).
+	+ Fix issue when reloading contracts within a hierarchy of contract groups.
+	+ Fix issue when loading a save game with RemoteTech when a previously installed planet pack is uninstalled (thanks Svm420 and magico13).
+	+ Pop up a warning dialog when a ScenarioModule fails to load (and prevent other ScenarioModules from also failing).
+	+ Improve error messaging when failing on loading types from assemblies (thanks Vladthemad).
+	+ Fix default value of index for VisitWaypoint parameter (thanks AlphaAsh).
+	+ Remove obsolete parameters and attributes.
+	+ Empty contract groups get highlighted yellow in debug window.
 * 2015-0428: 0.8.1 (jrossignol) for KSP 1.0 PRE-RELEASE
 	+ Fix display of dynamic text (was broken by KSP 1.0).
 * 2015-0427: 0.8.0 (jrossignol) for KSP 1.0 PRE-RELEASE
