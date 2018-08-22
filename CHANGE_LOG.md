@@ -1,5 +1,7 @@
 # Contract Configurator :: Change Log
 
+* 2015-0101: 0.4.3 (jrossignol) for KSP 0.90
+	+ Fixed issue where SCANsat reported 100% scanning during flight loading, causing SCANsat parameters to complete early.
 * 2014-1230: 0.4.2 (jrossignol) for KSP 0.90
 	+ Improved validation when loading configuration.  More checking for invalid cases and better error messaging.
 	+ Added HasPassengers parameter.
