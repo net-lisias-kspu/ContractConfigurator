@@ -77,7 +77,10 @@ namespace ContractConfigurator.RemoteTech
             public Vessel parentVessel { get { return null; } }
 
             public IEnumerable<IAntenna> Antennas { get { yield return antenna; } }
-            private FakeAntenna antenna = new FakeAntenna();
+
+			public bool PowerShutdownFlag { get { return false; } set {} }
+
+			private readonly FakeAntenna antenna = new FakeAntenna();
 
             public void OnConnectionRefresh(List<NetworkRoute<ISatellite>> routes) { }
 
