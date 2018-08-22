@@ -1,5 +1,8 @@
 # Contract Configurator :: Change Log
 
+* 2015-0209: 0.6.5 (jrossignol) for KSP 0.90
+	+ Fix rare NullReference exception on VesselParameter save (thanks cupe).
+	+ Fix Sun and Mun appearing as simply "the" in some parameters (thanks Invader Myk).
 * 2015-0207: 0.6.4 (jrossignol) for KSP 0.90
 	+ Replace buggy stock ReachSpace parameter with a custom one (thanks Yemo and SETI users).
 	+ Fix NullRef issue when using PartModule in PartValidation (thanks Yemo and SETI users).
