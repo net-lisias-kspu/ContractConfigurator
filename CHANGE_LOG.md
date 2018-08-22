@@ -1,5 +1,8 @@
 # Contract Configurator :: Change Log
 
+* 2015-0121: 0.5.8 (jrossignol) for KSP 0.90
+	+ Recompile for RemoteTech 1.6.1
+	+ Fix so that failing to load a contract is less destructive.
 * 2015-0119: 0.5.7 (jrossignol) for KSP 0.90
 	+ Fix display of year/years and day/days in time based parameters (thanks DBT85).
 	+ Fix obsolete error messages to display contract type.
