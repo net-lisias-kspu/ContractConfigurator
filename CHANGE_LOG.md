@@ -1,5 +1,12 @@
 # Contract Configurator :: Change Log
 
+* 2016-0701: 1.14.0 (jrossignol) for KSP 1.1.3
+	+ Added suppport for partModuleType in PartValidation.
+	+ Added AtMost and AtLeast set requirements.
+	+ Fixed issue where HasCrew was counting tourists.
+	+ Fixed issue where partModuleType = Wheel wasn't picking up the LY-01 fixed landing gear (or any wheel part without a motor).
+	+ Fixed issue with VisitWaypoing and WaypointGenerator not correctly update waypoint names when expressions are used.
+	+ Reduced LINQ and reflection calls in expression parser for performance/garbage collection improvements.
 * 2016-0622: 1.13.0 (jrossignol) for KSP 1.1.3
 	+ KSP 1.1.3 compatibility.
 	+ Integrated Wider Contracts App into Contract Configurator.
