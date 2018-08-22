@@ -1,5 +1,11 @@
 # Contract Configurator :: Change Log
 
+* 2017-0611: 1.23.1 (jrossignol) for KSP 1.3.0
+	+ Fixed major bug with VisitWaypoint not properly setting waypoint distances (thanks Keniamin and others).
+	+ Fixed issue with FacilityRequirement in tracking station (thanks JPLRepo).
+	+ Fixed issue where some requirement details weren't being saved in contracts.
+	+ Fixed localisation issue with character names in dialog boxes.
+	+ Fixed exception when pressing orbit buttons in tracking station (thanks doktorstick).
 * 2017-0604: 1.23.0 (jrossignol) for KSP 1.3.0
 	+ Support for KSP 1.3.0
 	+ Fix issue with contract item sizes not always being set correctly in mission control when switching tabs.
