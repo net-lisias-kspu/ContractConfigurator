@@ -1,5 +1,8 @@
 # Contract Configurator :: Change Log
 
+* 2015-0519: 1.1.1 (jrossignol) for KSP 1.0.2 PRE-RELEASE
+	+ Add NoRandomContractMentality to use when creating Agents to prevent them from being assigned to random contracts (thanks amorymeltzer).
+	+ Fix major issue with uniqueValue in DATA nodes (fixes issues in ScanSat Lite).
 * 2015-0518: 1.1.0 (jrossignol) for KSP 1.0.2
 	+ Lots of support in expression language for science stuff (big thanks to xEvilReeperx and DMagic for support and sample code)
 		- Added Biome as a valid expression class.
