@@ -1,5 +1,7 @@
 # Contract Configurator :: Change Log
 
+* 2016-0827: 1.18.1 (jrossignol) for KSP 1.1.3
+	+ Fixed NRE on contract save (thanks CecilFF4).
 * 2016-0826: 1.18.0 (jrossignol) for KSP 1.1.3
 	+ New Base and ISRU agent icons from Enceos.
 	+ Added Resource.Density() method.
