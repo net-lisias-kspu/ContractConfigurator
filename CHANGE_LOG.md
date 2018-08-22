@@ -1,5 +1,24 @@
 # Contract Configurator :: Change Log
 
+* 2015-0317: 0.7.0 (jrossignol) for KSP 0.90
+	+ Support for expressions in config nodes.
+		- All config node attributes can now contain expressions (see wiki for syntax details).
+		- Added special expression function/methods for Vessel
+		- Added special expression function/methods for CelestialBody
+		- Added special expression function/methods for Kerbal (ProtoCrewMember)
+		- Added special expression function/methods for Lists
+		- Added special expression function/methods for Enumerations
+	+ New debugging window feature - contract balancing mode.
+	+ Added HasCrewCapacity parameter.
+	+ Added VesseLDestroyed parameter.
+	+ Added SpawnPassenger behaviour.
+	+ Added version check to contract groups.
+	+ Major changes to CollectScience parameter.
+	+ WaypointGenerate now supports a PQS offset - allows setting waypoint using a special offset from the PQSCity location.
+	+ Added minTerrainAltitude and maxTerrainAltitude to ReachState.
+	+ Fixed HasAntenna to work with omnis without having activeVessel attribute set (thanks Eiktyrner).
+	+ Clean up "Input is null" warning messages from stock.
+	+ Lots and lots of minor bug fixes.
 * 2015-0313: 0.6.90 (jrossignol) for KSP 0.90 PRE-RELEASE
 	+ No changelog provided
 * 2015-0309: 0.6.7 (jrossignol) for KSP 0.90
