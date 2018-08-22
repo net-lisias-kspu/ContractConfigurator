@@ -1,5 +1,7 @@
 # Contract Configurator :: Change Log
 
+* 2015-0105: 0.4.5 (jrossignol) for KSP 0.90
+	+ Fixed NullRef issue when approaching another vessel (thanks Tellion).
 * 2015-0105: 0.4.4_fixed2 (jrossignol) for KSP 0.90 PRE-RELEASE
 	+ Fixed NullRef issue when approaching another vessel (thanks Tellion).
 * 2015-0101: 0.4.3 (jrossignol) for KSP 0.90
