@@ -1,5 +1,12 @@
 # Contract Configurator :: Change Log
 
+* 2016-1022: 1.20.2 (jrossignol) for KSP 1.2
+	+ Support for KSP 1.2
+	+ Allow contract title in mission control to span two lines.
+	+ Moved settings into stock settings screen.
+	+ Fixed NRE when vessel's Landed At string is null (thanks SamLex).
+	+ Check for sufficient funds when there are negative contract advances (thanks 5thHorseman).
+	+ Fixed display issue with partially complete CollectScience parameters.
 * 2016-0928: 1.20.1 (jrossignol) for KSP 1.2 PRE-RELEASE
 	+ Moved settings into stock settings screen.
 	+ Compatibility with latest KSP pre-releases
