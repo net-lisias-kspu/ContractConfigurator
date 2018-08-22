@@ -66,12 +66,21 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="KSCConnectivityParameter.cs" />
     <Compile Include="KSCConnectivityFactory.cs" />
+    <Compile Include="Properties\Version.cs">
+      <DependentUpon>Version.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ContractConfigurator\ContractConfigurator.csproj">
       <Project>{4082b9bc-243e-456d-a9c5-705f4428eb36}</Project>
       <Name>ContractConfigurator</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Version.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Version.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

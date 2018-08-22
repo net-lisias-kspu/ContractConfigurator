@@ -31,9 +31,9 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0")]
-[assembly: AssemblyFileVersion("1.25.0")]
-[assembly: AssemblyInformationalVersion("1.25.0")]
-[assembly: KSPAssembly("KerKonConConExt", 1, 0)]
-[assembly: KSPAssemblyDependency("ContractConfigurator", 1, 0)]
+[assembly: AssemblyVersion(KerKonConConExt.Version.Number)]
+[assembly: AssemblyFileVersion(KerKonConConExt.Version.Number)]
+[assembly: AssemblyInformationalVersion(KerKonConConExt.Version.Number)]
+[assembly: KSPAssembly("KerKonConConExt", KerKonConConExt.Version.major, KerKonConConExt.Version.minor)]
+[assembly: KSPAssemblyDependency("ContractConfigurator", KerKonConConExt.Version.major, KerKonConConExt.Version.minor)]
 [assembly: KSPAssemblyDependency("KerbalKonstructs", 0, 9)]

@@ -32,9 +32,9 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0")]
-[assembly: AssemblyFileVersion("1.25.0")]
-[assembly: AssemblyInformationalVersion("1.25.0")]
-[assembly: KSPAssembly("CC_RemoteTech", 1, 0)]
-[assembly: KSPAssemblyDependency("ContractConfigurator", 1, 0)]
-[assembly: KSPAssemblyDependency("RemoteTech", 1, 7)]
+[assembly: AssemblyVersion(ContractConfigurator.RemoteTech.Version.Number)]
+[assembly: AssemblyFileVersion(ContractConfigurator.RemoteTech.Version.Number)]
+[assembly: AssemblyInformationalVersion(ContractConfigurator.RemoteTech.Version.Number)]
+[assembly: KSPAssembly("CC_RemoteTech", ContractConfigurator.RemoteTech.Version.major, ContractConfigurator.RemoteTech.Version.minor)]
+[assembly: KSPAssemblyDependency("ContractConfigurator", ContractConfigurator.RemoteTech.Version.major, ContractConfigurator.RemoteTech.Version.minor)]
+[assembly: KSPAssemblyDependency("RemoteTech", 1, 9)]
