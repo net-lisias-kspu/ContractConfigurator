@@ -1,5 +1,14 @@
 # Contract Configurator :: Change Log
 
+* 2016-0729: 1.16.0 (jrossignol) for KSP 1.1.3
+	+ Support for ResearchBodies - contracts won't be offered until the appropriate body has been researched (thanks JPLRepo).
+	+ Integrated support for Kerbal Konstructs directly into Contract Configurator.
+	+ New NoStaging parameter.
+	+ Agent data for stock contracts is now defined in a cfg file, instead of hardcoded (see CONTRACT_DEFINITION in documentation).
+	+ Properly factor in autoAccept contracts when deciding whether to enable the accept button in Mission Control (thanks ETM, Nightside & Aelfhe1m).
+	+ Fixed issue with contract generation process starting up before the stock contract system was done loading.  This would cause contracts to be offered that weren't supposed to be offered, which could cause other issues (like a contract that can be accepted but is then removed, or an active contract that gets removed unexpectedly).  Thanks to everyone who's been very patient on this nasty & hard to track down bug.
+	+ Fixed contracts that didn't properly expire once the expiry date hit.
+	+ Increased default expiry dates (since long expiries no longer prevent other contracts from generating).
 * 2016-0726: 1.15.5 (jrossignol) for KSP 1.1.3
 	+ Updated agent icons from Enceos.
 	+ Fixed issue introduced in 1.15.x with Prestige() function that incorrectly treated all contracts as Trivial.
