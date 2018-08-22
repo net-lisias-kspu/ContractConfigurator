@@ -1,5 +1,16 @@
 # Contract Configurator :: Change Log
 
+* 2015-0706: 1.5.1 (jrossignol) for KSP 1.0.2
+	+ Added new ChangeVesselOwnership contract behaviour.
+	+ Added new NewVessel parameter.
+	+ Added support for Tarsier Space Technology in science subsystem - ChemCam only (thanks GrafZahl).
+	+ Added validation for CelestialBody name in WaypointGenerator (thanks Arctic Sesquipedalian).
+	+ Additional performance fixes for CollectScience (Field Research).
+	+ Fixed issue where activeUniqueValue and uniqueValue flags were not checked (thanks severedsolo).
+	+ Fixed asteroid science subject from being offered unless asteroid tracking is unlocked.
+	+ Fixed issue with "ghosting" vessels in SpawnVessel.
+	+ Fixed parameters that weren't being hidden by the hideChildren attribute (thanks CosmoBro).
+	+ Minor bug fixes.
 * 2015-0624: 1.5.0 (jrossignol) for KSP 1.0.2
 	+ Added support for SpawnVessel in expressions.
 	+ Added support for altitudeFactor, inclinationFactor, eccentricity and deviationWindow in OrbitGenerator.
