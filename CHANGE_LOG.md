@@ -1,5 +1,9 @@
 # Contract Configurator :: Change Log
 
+* 2015-0119: 0.5.7 (jrossignol) for KSP 0.90
+	+ Fix display of year/years and day/days in time based parameters (thanks DBT85).
+	+ Fix obsolete error messages to display contract type.
+	+ Fix for NullReference error when decoupling/undocking and the root part is a decoupler (thanks DaveTSG).
 * 2015-0118: 0.5.6 (jrossignol) for KSP 0.90 PRE-RELEASE
 	+ Changes for SCANsat 9.0
 	+ Fix display of year/years and day/days in time based parameters (thanks DBT85).
