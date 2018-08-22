@@ -1,5 +1,21 @@
 # Contract Configurator :: Change Log
 
+* 2016-0527: 1.12.0 (jrossignol) for KSP 1.1.2.
+	+ Added support for NextKerbalHireCost() expression function.
+	+ Added HasCrew.excludeKerbal.
+	+ Fixed exception in the Expression behaviour (thanks severedsolo).
+	+ Fixed deriving primary situation for biomes with a space in the name.
+	+ Fixed exception in science util functions (thanks Chippy the Space Dog).
+	+ Fixed exception when docking (thanks Lennartos and others).
+	+ Fixed logic for setting contract weights that was broken by 1.1.x changes (thanks severedsolo).
+	+ Removed some broken validation (thanks linuxgurugamer).
+	+ Fixed exception when removing certain contract packs (thanks rasta013).
+	+ Fixed edge case where AwardExperience was late awarding the experience (thanks severedsolo).
+	+ Fixed exception with Contracts Window + (thanks sidfu).
+	+ Improved accuracy of VesselNotDestroyed checks (thanks inigma).
+	+ Fixed bug in barycenter logic when using Sigma Binary (thanks sentania).
+	+ Improved backwards compatibility with contract packs using the old Wheel module name (thanks galenmacil).
+	+ Re-generate PQS offset coordinates when flight begins (workaround for Kopernicus waypoint offset issue).
 * 2016-0506: 1.11.5 (jrossignol) for KSP 1.1.2.
 	+ Fixed exception when recovering vessel (thanks BluK).
 	+ Recompile to RemoteTech 1.7.0.
