@@ -1,5 +1,20 @@
 # Contract Configurator :: Change Log
 
+* 2015-0525: 1.2.0 (jrossignol) for KSP 1.0.2
+	+ Reduced ratio of stock vs. contract configurator contracts further to favor non-contract configurator a little more.
+	+ Support in CollectScience for multiple experiments.
+	+ Added activeUniqueValue flag for DATA nodes to check unique values for active/offered contracts only.
+	+ Misc new functions for science expressions.
+	+ Lots of fixes to science expression internals.
+	+ Improved error handling for contract generation failures.
+	+ Fixed uniqueValue in DATA nodes to work with Vessels.
+	+ Fixed issue where ContractComplete throws errors if the related contract didn't load.
+	+ Fixed issue with defaulting of targetBody on behaviours when an expression was used for the main targetBody.
+	+ Fixed issue with WaypointGenerator behaviour getting inititalized twice (thanks AlphaAsh).
+	+ Fixed issue with SpawnKerbal/SpawnVessel not working at all for splashed Kerbals/vessels (thanks AlphaAsh).
+	+ Fixed HasAstronaut to check for changes to kerbals in more scenarios (thanks Athywren).
+	+ Fixed expression parser issue that prevented contract notes from showing up correctly in Tourism Plus investory contract (thanks khearn).
+	+ Minor bug fixes.
 * 2015-0520: 1.1.3 (jrossignol) for KSP 1.0.2
 	+ Fix additional case where uniqueValue can cause an exception (thanks MikeSalvatierra).
 	+ Add RemainingScience method to Biome class.
