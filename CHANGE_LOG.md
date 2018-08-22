@@ -1,5 +1,7 @@
 # Contract Configurator :: Change Log
 
+* 2016-0720: 1.15.2 (jrossignol) for KSP 1.1.3 PRE-RELEASE
+	+ Pre-release with still more functionality and bugfixes. See forum thread for more details.
 * 2016-0711: 1.15.1 (jrossignol) for KSP 1.1.3 PRE-RELEASE
 	+ Pre-release with more functionality and some bugfixes.  See [forum thread](http://forum.kerbalspaceprogram.com/index.php?/topic/91625-113-contract-configurator-v1140-2016-06-30/&page=125) for more details.
 * 2016-0708: 1.15.0 (jrossignol) for KSP 1.1.3 PRE-RELEASE
