@@ -1,5 +1,10 @@
 # Contract Configurator :: Change Log
 
+* 2018-0312: 1.24.0 (jrossignol) for KSP 1.4.0
+	+ Recompile for KSP 1.4.0
+	+ Added back MODULE checks in simple version of PartValidation (thanks chrisl).
+	+ Support RemoteTech 1.8.9 (thanks vader111).
+	+ Read date/time information from dateTimeFormatter (thanks Aelfhe1m).
 * 2017-1006: 1.23.3 (jrossignol) for KSP 1.3.1
 	+ Recompile for KSP 1.3.1
 	+ Improved display of HasAntenna parameter ratings (thanks Kerbas-ad-astra).
