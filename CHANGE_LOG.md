@@ -1,5 +1,9 @@
 # Contract Configurator :: Change Log
 
+* 2015-0110: 0.5.1 (jrossignol) for KSP 0.90
+	+ Fixed to work with RemoteTech 1.6
+	+ Hide text for fake Parameters related to OrbitGenerator in mission control on active contracts.
+	+ Removed ':' from the Duration parameter default text.
 * 2015-0108: 0.5.0 (jrossignol) for KSP 0.90
 	+ RemoteTech integration!
 		- KSCConnectivity parameter - indicates that a vessel must have connectivity back to mission control.
