@@ -1,5 +1,10 @@
 # Contract Configurator :: Change Log
 
+* 2015-0404: 0.7.9 (jrossignol) for KSP 0.90
+	+ Add support for Part (AvailablePart) in expressions.
+	+ Fix to passengers not being seated when the capsule crew capacity is bigger than the number of seats in the IVA (thanks SpaceNomand).
+	+ More fixes to vessel tracking (fixes issues with RemoteTech contract pack).  Thanks to Invader Myk.
+	+ Minor bug fixes.
 * 2015-0403: 0.7.8 (jrossignol) for KSP 0.90
 	+ More fixes for docking/undocking and vessel tracking (thanks metl).
 	+ Fixed problem where requirement status was no longer showing up in debug menu.
