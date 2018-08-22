@@ -1,5 +1,19 @@
 # Contract Configurator :: Change Log
 
+* 2016-0217: 1.9.6 (jrossignol) for KSP 1.0.5
+	+ Added kerbal attribute to KerbalDeaths.
+	+ Added Vessel.Orbit() method.
+	+ Moved Vessel.OrbitX() methods to the Orbit class, added a few new ones.
+	+ Added ReachSpecificOrbit.displayNotes to allow disabling of orbit notes.
+	+ Allow negative contract rewards.
+	+ Added StartinFunds(), StartingReputation() and StartingScience().
+	+ Changed HasCrew and HasCrewCapacity to reduce min values when it is larger than the max (thanks severedsolo).
+	+ Fixed problem in CollectScience that affected bathymeter experiment from DMagic Orbital Science (thanks smjjames).
+	+ Fixed warnings for newer DMagic Orbital Science experiments.
+	+ Fixed (Optional) text being output when it shouldn't (thanks Keniamin).
+	+ Fixed issue with passenger load dialog being shown with incorrect details (thanks smjjames).
+	+ Fixed issue with defineList when the vessel id haapens to start with a number (thanks severedsolo).
+	+ Fixed exception when using expressions in Rendezvous parameter (thanks severedsolo).
 * 2016-0203: 1.9.5 (jrossignol) for KSP 1.0.5
 	+ Output additional log files when log level is debug or higher (thanks linuxgurugamer).
 	+ VesselParameterGroup now supports a defineList attribute to add a vessel to a list on contract completion.
