@@ -1,5 +1,11 @@
 # Contract Configurator :: Change Log
 
+* 2017-0604: 1.23.0 (jrossignol) for KSP 1.3.0
+	+ Support for KSP 1.3.0
+	+ Fix issue with contract item sizes not always being set correctly in mission control when switching tabs.
+	+ Fixed "input is null" error in Docking parameter (thanks linuxgurugamer).
+	+ Fixed to not generate contracts without parameters (thanks severedsolo).
+	+ Fixed Sigma Dimensions compatibility issue with atmosphere height (thanks pap1723 and Sigma88).
 * 2016-1217: 1.22.2 (jrossignol) for KSP 1.2
 	+ Fix possible argumentOfPeriapsis issue (thanks Intrepidrd).
 * 2016-1215: 1.22.1 (jrossignol) for KSP 1.2
