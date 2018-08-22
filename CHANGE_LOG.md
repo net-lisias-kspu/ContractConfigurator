@@ -1,5 +1,14 @@
 # Contract Configurator :: Change Log
 
+* 2014-1225: 0.4.1 (jrossignol) for KSP 0.90
+	+ Added OrbitalInclination parameter (thanks tattagreis).
+	+ Added OrbitalEccentricity parameter (thanks tattagreis).
+	+ Added OrbitalApoapsis parameter (thanks tattagreis).
+	+ Added OrbitalPeriapsis parameter (thanks tattagreis).
+	+ Fixed defaults for SCANsatCoverage requirement.
+	+ Moved debug key from Alt-F9 to Alt-F10.
+	+ Added LICENSE.txt into download file.
+	+ Minor bug fixes.
 * 2014-1223: 0.4.0 (jrossignol) for KSP 0.90
 	+ Added WaypointGenerator behaviour.  Allows creation of waypoints.
 	+ Added VisitWaypoint parameter (for use with WaypointGenerator behaviour).
