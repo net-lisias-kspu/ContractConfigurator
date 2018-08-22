@@ -1,5 +1,19 @@
 # Contract Configurator :: Change Log
 
+* 2016-0125: 1.9.4 (jrossignol) for KSP 1.0.5
+	+ Added support for lists in persistent data store values.
+	+ Added checkType to all celestial body progress requirements to allow tracking back on manned/unmanned.
+	+ Added support for multiple waypoint names in WaypointGenerator (when generating multiple waypoints from one node).
+	+ Added support for waypoint chaining in WaypoingGenerator.RANDOM_WAYPOINT_NEAR.
+	+ Duration parameter now supports a startCriteria field for more fine-grained control of starting conditions.
+	+ Fixed defaulting of min/max count in PartValidation (thanks inigma).
+	+ Fixed rate of climb checking to default in a way to allow checking for negative values (thanks inigma).
+	+ Fixed issue with NONE and MODULE being combined in PartValidation (thanks inigma).
+	+ Fixed issue with VesselDestroyed not working for splashdown or overheat (thanks DBT85).
+	+ Fixed incorrect latitude/longitude when using PQS offset in SpawnVessel (thanks inigma).
+	+ Fixed a bug that prevented the requiredValue DATA node check from checking for non-empty lists.
+	+ Fixed WaypointGenerator not adding waypoints when a contract causes them to become visible (thanks smjjames).
+	+ Fixed issue where Flats biome would count for GreatFlats in CollectScience (thanks Spheniscine).
 * 2016-0111: 1.9.3.1 (jrossignol) for KSP 1.0.5
 	+ Fixed MAJOR issue introduced in 1.9.3 that broke Tourism Plus (thanks Ryusho).
 	+ Fixed ReachState not working with timers (thanks SoTOP).
