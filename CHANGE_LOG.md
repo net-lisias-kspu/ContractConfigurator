@@ -1,5 +1,7 @@
 # Contract Configurator :: Change Log
 
+* 2015-0331: 0.7.7 (jrossignol) for KSP 0.90
+	+ Hotfix for loading saves from 0.7.4 or older (thanks SpaceNomad).
 * 2015-0331: 0.7.6 (jrossignol) for KSP 0.90
 	+ Fix a save load issue with the Sequence parameter in 0.7.5 (thanks superm18).
 * 2015-0331: 0.7.5 (jrossignol) for KSP 0.90
