@@ -1,5 +1,8 @@
 # Contract Configurator :: Change Log
 
+* 2016-0928: 1.20.1 (jrossignol) for KSP 1.2 PRE-RELEASE
+	+ Moved settings into stock settings screen.
+	+ Compatibility with latest KSP pre-releases
 * 2016-0914: 1.20.0 (jrossignol) for KSP 1.2 PRE-RELEASE
 	+ Support for KSP 1.2
 	+ Fixed NRE when vessel's Landed At string is null (thanks SamLex).
