@@ -1,5 +1,9 @@
 # Contract Configurator :: Change Log
 
+* 2015-0113: 0.5.5 (jrossignol) for KSP 0.90
+	+ Fixed issue in ReachState where empty situation caused issues (thanks tattagreis).
+	+ Fixed problems with KerbalSpawner.
+	+ Added new attribute to KerbalSpawner to have the Kerbal added to the roster (thanks scerion).
 * 2015-0113: 0.5.4 (jrossignol) for KSP 0.90
 	+ Workaround for stock contracts app lag issue (#3964 on Squad bugtracker).
 	+ Fixed NullReference issue in HasAntenna when loading a vessel with no antennas (thanks t0chas).
