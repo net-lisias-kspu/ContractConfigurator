@@ -1,5 +1,7 @@
 # Contract Configurator :: Change Log
 
+* 2018-0826: 1.25.0.2 (Lisias) for KSP 1.4.x
+	+ A proper fix for the ISatellite Interface. See [forum](https://forum.kerbalspaceprogram.com/index.php?/topic/91625-142-contract-configurator-v1250-2018-04-15/&do=findComment&comment=3440424) for details. 
 * 2018-0826: 1.25.0.1 (Lisias) for KSP 1.4.x
 	+ Updating to RemoteTech 1.9 
 		+ New method on ISatellite Interface
