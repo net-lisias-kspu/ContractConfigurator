@@ -78,7 +78,7 @@ namespace ContractConfigurator.RemoteTech
 
             public IEnumerable<IAntenna> Antennas { get { yield return antenna; } }
 
-			public bool PowerShutdownFlag { get { return false; } set {} }
+			public bool PowerShutdownFlag { get; set; }
 
 			private readonly FakeAntenna antenna = new FakeAntenna();
 
