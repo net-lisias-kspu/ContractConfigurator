@@ -83,11 +83,8 @@ namespace ContractConfigurator.ExpressionParser
 
         public override bool EQ(ExperienceTrait a, ExperienceTrait b)
         {
-            if (base.EQ(a, b))
-            {
-                return true;
-            }
-
+			if (null == a || null == b) return false;
+			if (base.EQ(a, b)) return true;
             return a.TypeName == b.TypeName;
         }
 
