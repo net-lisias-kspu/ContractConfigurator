@@ -27,7 +27,7 @@ The user guide is hosted on the [GitHub wiki](https://github.com/net.lisias-kspu
 
 ## Installation
 
-In your KSP GameData folder, delete any existing EditorExtensions folder. Download the zip file to your KSP GameData folder and unzip.﻿
+In your KSP GameData folder, delete any existing `ContractConfigurator` folder. Download the zip file to your KSP GameData folder and unzip.﻿
 
 
 ### Dependencies
