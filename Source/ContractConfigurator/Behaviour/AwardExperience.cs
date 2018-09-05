@@ -86,7 +86,7 @@ namespace ContractConfigurator.Behaviour
             // Set the homeworld
             if (homeworld == null)
             {
-                homeworld = FlightGlobals.Bodies.Where(cb => cb.isHomeWorld).FirstOrDefault();
+                homeworld = FlightGlobals.Bodies.FirstOrDefault(cb => cb.isHomeWorld);
             }
 
             foreach (ProtoCrewMember pcm in awardees.Where(pcm => pcm != null))

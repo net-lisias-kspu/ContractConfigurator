@@ -491,7 +491,7 @@ namespace ContractConfigurator.Behaviour
                 if (!kerbal.addToRoster || !onlyUnowned)
                 {
                     LoggingUtil.LogVerbose(this, "    Removing " + kerbal.kerbal.name + "...");
-                    Vessel vessel = FlightGlobals.Vessels.Where(v => v.GetVesselCrew().Contains(kerbal.kerbal.pcm)).FirstOrDefault();
+                    Vessel vessel = FlightGlobals.Vessels.FirstOrDefault(v => v.GetVesselCrew().Contains(kerbal.kerbal.pcm));
                     if (vessel != null)
                     {
                         // If it's an EVA make them disappear...

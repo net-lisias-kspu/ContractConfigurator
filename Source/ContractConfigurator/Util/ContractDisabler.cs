@@ -37,7 +37,7 @@ namespace ContractConfigurator
 
         public static void SetContractToDisabled(string contract, ContractGroup group)
         {
-            Type contractType = contractTypes.Where(t => t.Name == contract).FirstOrDefault();
+            Type contractType = contractTypes.FirstOrDefault(t => t.Name == contract);
             if (contractType == null)
             {
                 LoggingUtil.LogWarning(typeof(ContractDisabler), "Couldn't find ContractType '" + contract + "' to disable.");

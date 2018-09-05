@@ -31,7 +31,7 @@ namespace ContractConfigurator.CutScene
         {
             get
             {
-                return HighLogic.CurrentGame.CrewRoster.AllKerbals().Where(cm => cm != null && cm.name == kerbalName).FirstOrDefault();
+                return HighLogic.CurrentGame.CrewRoster.AllKerbals().FirstOrDefault(cm => cm != null && cm.name == kerbalName);
             }
         }
 

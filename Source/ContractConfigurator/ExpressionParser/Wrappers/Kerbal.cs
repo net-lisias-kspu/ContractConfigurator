@@ -19,7 +19,7 @@ namespace ContractConfigurator
         {
             get
             {
-                return _pcm ?? (HighLogic.CurrentGame == null ? null : HighLogic.CurrentGame.CrewRoster.AllKerbals().Where(pcm => pcm.name == name).FirstOrDefault());
+                return _pcm ?? (HighLogic.CurrentGame == null ? null : HighLogic.CurrentGame.CrewRoster.AllKerbals().FirstOrDefault(pcm => pcm.name == name));
             }
         }
 
@@ -203,7 +203,7 @@ namespace ContractConfigurator
         public static Kerbal Load(ConfigNode node)
         {
             string name = ConfigNodeUtil.ParseValue<string>(node, "name");
-            ProtoCrewMember crew = HighLogic.CurrentGame.CrewRoster.AllKerbals().Where(pcm => pcm.name == name).FirstOrDefault();
+            ProtoCrewMember crew = HighLogic.CurrentGame.CrewRoster.AllKerbals().FirstOrDefault(pcm => pcm.name == name);
 
             if (crew != null)   return new Kerbal(crew);
 
@@ -230,7 +230,7 @@ namespace ContractConfigurator
         public static void RemoveKerbal(ProtoCrewMember pcm)
         {
             LoggingUtil.LogVerbose(typeof(Kerbal), "Removing kerbal " + pcm.name + "...");
-            Vessel vessel = FlightGlobals.Vessels.Where(v => v.GetVesselCrew().Contains(pcm)).FirstOrDefault();
+            Vessel vessel = FlightGlobals.Vessels.FirstOrDefault(v => v.GetVesselCrew().Contains(pcm));
             if (vessel != null)
             {
                 // If it's an EVA make them disappear...

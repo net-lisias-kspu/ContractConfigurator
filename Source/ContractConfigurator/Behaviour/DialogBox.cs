@@ -413,12 +413,12 @@ namespace ContractConfigurator.Behaviour
                     instructor.instructorCamera.ResetAspect();
 
                     // Remove the lights for Gene/Wernher
-                    Light mainlight = instructor.GetComponentsInChildren<Light>(true).Where(l => l.name == "mainlight").FirstOrDefault();
+                    Light mainlight = instructor.GetComponentsInChildren<Light>(true).FirstOrDefault(l => l.name == "mainlight");
                     if (mainlight != null)
                     {
                         UnityEngine.Object.Destroy(mainlight);
                     }
-                    Light backlight = instructor.GetComponentsInChildren<Light>(true).Where(l => l.name == "backlight").FirstOrDefault();
+                    Light backlight = instructor.GetComponentsInChildren<Light>(true).FirstOrDefault(l => l.name == "backlight");
                     if (backlight != null)
                     {
                         UnityEngine.Object.Destroy(backlight);
@@ -575,7 +575,7 @@ namespace ContractConfigurator.Behaviour
                 // First, try to get a Kerbal that matches the name
                 if (!string.IsNullOrEmpty(characterName))
                 {
-                    kerbal = HighLogic.CurrentGame.CrewRoster.AllKerbals().Where(pcm => pcm.name == characterName).FirstOrDefault();
+                    kerbal = HighLogic.CurrentGame.CrewRoster.AllKerbals().FirstOrDefault(pcm => pcm.name == characterName);
                 }
                 // Now grab from the active vessel
                 else if (kerbal == null && FlightGlobals.ActiveVessel != null)
@@ -632,7 +632,7 @@ namespace ContractConfigurator.Behaviour
                         Vessel kerbVessel = null;
                         if (kerbal.rosterStatus == ProtoCrewMember.RosterStatus.Assigned)
                         {
-                            kerbVessel = FlightGlobals.Vessels.Where(v => v.GetVesselCrew().Contains(kerbal)).FirstOrDefault();
+                            kerbVessel = FlightGlobals.Vessels.FirstOrDefault(v => v.GetVesselCrew().Contains(kerbal));
                         }
 
                         // No Kerbal, assume they're available
@@ -781,7 +781,7 @@ namespace ContractConfigurator.Behaviour
                 IEnumerable<Type> sectionTypes = ContractConfigurator.GetAllTypes<Section>();
                 foreach (ConfigNode sectionNode in configNode.GetNodes())
                 {
-                    Type type = sectionTypes.Where(t => t.Name == sectionNode.name).FirstOrDefault();
+                    Type type = sectionTypes.FirstOrDefault(t => t.Name == sectionNode.name);
                     if (type == null)
                     {
                         throw new ArgumentException("Couldn't find dialog box section of type " + sectionNode.name);

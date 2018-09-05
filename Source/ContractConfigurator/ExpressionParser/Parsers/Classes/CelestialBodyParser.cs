@@ -135,7 +135,7 @@ namespace ContractConfigurator.ExpressionParser
                 return false;
             }
 
-            CelestialBodySubtree tree = ProgressTracking.Instance.celestialBodyNodes.Where(node => node.Body == cb).FirstOrDefault();
+            CelestialBodySubtree tree = ProgressTracking.Instance.celestialBodyNodes.FirstOrDefault(node => node.Body == cb);
             return tree != null && CheckTree(tree, pi);
         }
 

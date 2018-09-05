@@ -274,7 +274,7 @@ namespace ContractConfigurator.Behaviour
                     foreach (string name in p.protoCrewNames)
                     {
                         // Find this crew member in our data and remove them
-                        ProtoCrewMember passenger = passengers.Keys.Where(pcm => pcm.name == name).FirstOrDefault();
+                        ProtoCrewMember passenger = passengers.Keys.FirstOrDefault(pcm => pcm.name == name);
                         if (passenger != null)
                         {
                             passengers[passenger] = false;
@@ -288,7 +288,7 @@ namespace ContractConfigurator.Behaviour
             foreach (ProtoCrewMember crewMember in v.GetVesselCrew())
             {
                 // Find this crew member in our data and remove them
-                ProtoCrewMember passenger = passengers.Keys.Where(pcm => pcm == crewMember).FirstOrDefault();
+                ProtoCrewMember passenger = passengers.Keys.FirstOrDefault(pcm => pcm == crewMember);
                 if (passenger != null)
                 {
                     passengers[passenger] = false;
@@ -351,7 +351,7 @@ namespace ContractConfigurator.Behaviour
                 // Try to get existing passenger
                 if (kerbals.Count > i)
                 {
-                    crewMember = HighLogic.CurrentGame.CrewRoster.AllKerbals().Where(pcm => pcm.name == kerbals[i].name).FirstOrDefault();
+                    crewMember = HighLogic.CurrentGame.CrewRoster.AllKerbals().FirstOrDefault(pcm => pcm.name == kerbals[i].name);
                     if (crewMember != null)
                     {
                         crewMember.hasToured = false;

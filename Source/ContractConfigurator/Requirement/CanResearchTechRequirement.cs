@@ -76,7 +76,7 @@ namespace ContractConfigurator
 
             foreach (string tech in techs)
             {
-                ConfigNode techNode = techTree.GetNodes("RDNode").Where(n => n.GetValue("id") == tech).FirstOrDefault();
+                ConfigNode techNode = techTree.GetNodes("RDNode").FirstOrDefault(n => n.GetValue("id") == tech);
 
                 if (techNode == null)
                 {

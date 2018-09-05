@@ -219,7 +219,7 @@ namespace ContractConfigurator
                         if (pm.moduleName == "ModuleGrappleNode")
                         {
                             ModuleGrappleNode grapple = pm.moduleRef as ModuleGrappleNode;
-                            ProtoPartSnapshot dockedPart = parts.Where(childPart => childPart.flightID == grapple.dockedPartUId).FirstOrDefault();
+                            ProtoPartSnapshot dockedPart = parts.FirstOrDefault(childPart => childPart.flightID == grapple.dockedPartUId);
                             if (dockedPart != null)
                             {
                                 otherVessel.Enqueue(dockedPart);

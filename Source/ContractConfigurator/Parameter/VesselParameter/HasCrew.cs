@@ -309,7 +309,7 @@ namespace ContractConfigurator.Parameters
 
         protected string TraitTitle(string traitName)
         {
-            ExperienceTraitConfig config = GameDatabase.Instance.ExperienceConfigs.Categories.Where(c => c.Name == traitName).FirstOrDefault();
+            ExperienceTraitConfig config = GameDatabase.Instance.ExperienceConfigs.Categories.FirstOrDefault(c => c.Name == traitName);
 
             return config != null ? config.Title : traitName;
         }

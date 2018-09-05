@@ -25,7 +25,7 @@ namespace ContractConfigurator
         {
             // Determine the type
             string typeName = configNode.GetValue("type");
-            Type type = ContractConfigurator.GetAllTypes<ContractBehaviour>().Where(t => t.FullName == typeName).FirstOrDefault();
+            Type type = ContractConfigurator.GetAllTypes<ContractBehaviour>().FirstOrDefault(t => t.FullName == typeName);
             if (type == null)
             {
                 throw new Exception("No ContractBehaviour with type = '" + typeName + "'.");

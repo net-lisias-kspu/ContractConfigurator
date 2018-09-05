@@ -108,12 +108,12 @@ namespace ContractConfigurator.CutScene
 
         public CutSceneCamera camera(string name)
         {
-            return cameras.Where(c => c.name == name).FirstOrDefault();
+            return cameras.FirstOrDefault(c => c.name == name);
         }
 
         public Actor actor(string name)
         {
-            return actors.Where(a => a.name == name).FirstOrDefault();
+            return actors.FirstOrDefault(a => a.name == name);
         }
     }
 }

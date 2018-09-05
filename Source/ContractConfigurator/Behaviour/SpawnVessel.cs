@@ -833,10 +833,10 @@ namespace ContractConfigurator.Behaviour
         {
             foreach (CrewData cd in vd.crew)
             {
-                ProtoCrewMember crewMember = HighLogic.CurrentGame.CrewRoster.AllKerbals().Where(pcm => pcm.name == cd.name).FirstOrDefault();
+                ProtoCrewMember crewMember = HighLogic.CurrentGame.CrewRoster.AllKerbals().FirstOrDefault(pcm => pcm.name == cd.name);
                 if (!cd.addToRoster && crewMember != null)
                 {
-                    Vessel otherVessel = FlightGlobals.Vessels.Where(v => v.GetVesselCrew().Contains(crewMember)).FirstOrDefault();
+                    Vessel otherVessel = FlightGlobals.Vessels.FirstOrDefault(v => v.GetVesselCrew().Contains(crewMember));
                     if (otherVessel != null)
                     {
                         // If it's an EVA make them disappear...

@@ -93,7 +93,7 @@ namespace ContractConfigurator.Util
                 // Fallback to trying to find the most appropriate agent
                 else
                 {
-                    ContractType contractType = ContractType.AllValidContractTypes.Where(ct => ct != null && ct.group == group).FirstOrDefault();
+                    ContractType contractType = ContractType.AllValidContractTypes.FirstOrDefault(ct => ct != null && ct.group == group);
                     agent = contractType != null ? contractType.agent : null;
 
                     // Final fallback is the Contract Configurator agency

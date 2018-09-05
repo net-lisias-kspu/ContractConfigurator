@@ -43,7 +43,7 @@ namespace ContractConfigurator
             }
             LoggingUtil.LogDebug(this, "Found DraftTwitchViewers assembly.");
 
-            Type draftManager = dtvAssembly.GetTypes().Where(t => t.Name.Contains("ScenarioDraftManager")).FirstOrDefault();
+            Type draftManager = dtvAssembly.GetTypes().FirstOrDefault(t => t.Name.Contains("ScenarioDraftManager"));
             if (draftManager == null)
             {
                 LoggingUtil.LogError(this, "Couldn't get ScenarioDraftManager from DraftTwitchViewers!");
@@ -51,8 +51,7 @@ namespace ContractConfigurator
                 return;
             }
 
-            draftMethod = draftManager.GetMethods(BindingFlags.Public | BindingFlags.Static).
-                Where(mi => mi.Name == "DraftKerbal").FirstOrDefault();
+            draftMethod = draftManager.GetMethods(BindingFlags.Public | BindingFlags.Static).FirstOrDefault(mi => mi.Name == "DraftKerbal");
             if (draftMethod == null)
             {
                 LoggingUtil.LogError(this, "Couldn't get DraftKerbal method from DraftTwitchViewers!");
@@ -60,8 +59,7 @@ namespace ContractConfigurator
                 return;
             }
 
-            saveMethod = draftManager.GetMethods(BindingFlags.Public | BindingFlags.Static).
-                Where(mi => mi.Name == "SaveSupressedDraft").FirstOrDefault();
+            saveMethod = draftManager.GetMethods(BindingFlags.Public | BindingFlags.Static).FirstOrDefault(mi => mi.Name == "SaveSupressedDraft");
             if (saveMethod == null)
             {
                 LoggingUtil.LogError(this, "Couldn't get SaveSupressedDraft method from DraftTwitchViewers!");
