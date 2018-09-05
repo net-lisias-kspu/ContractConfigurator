@@ -51,7 +51,7 @@ namespace ContractConfigurator.Parameters
         protected List<string> experiment { get; set; }
         protected ScienceRecoveryMethod recoveryMethod { get; set; }
 
-        private static Vessel.Situations[] landedSituations = new Vessel.Situations[] { Vessel.Situations.LANDED, Vessel.Situations.PRELAUNCH, Vessel.Situations.SPLASHED };
+        private static Vessel.Situations[] landedSituations = { Vessel.Situations.LANDED, Vessel.Situations.PRELAUNCH, Vessel.Situations.SPLASHED };
 
         private Dictionary<string, ScienceSubject> matchingSubjects = new Dictionary<string, ScienceSubject>();
         private Dictionary<string, bool> recoveryDone = new Dictionary<string, bool>();

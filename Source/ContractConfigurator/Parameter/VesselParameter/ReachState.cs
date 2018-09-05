@@ -31,7 +31,7 @@ namespace ContractConfigurator.Parameters
         private float lastUpdate = 0.0f;
         private const float UPDATE_FREQUENCY = 0.1f;
 
-        private static Vessel.Situations[] landedSituations = new Vessel.Situations[] { Vessel.Situations.LANDED, Vessel.Situations.PRELAUNCH, Vessel.Situations.SPLASHED };
+        private static Vessel.Situations[] landedSituations = { Vessel.Situations.LANDED, Vessel.Situations.PRELAUNCH, Vessel.Situations.SPLASHED };
 
         public ReachState()
             : base(null)

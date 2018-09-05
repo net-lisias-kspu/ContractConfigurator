@@ -25,7 +25,7 @@ namespace ContractConfigurator
         private class TitleTrackerHelper : MonoBehaviour
         {
             static TitleTrackerHelper Instance;
-            static GameScenes[] validScenes = new GameScenes[] {
+            static GameScenes[] validScenes = {
                 GameScenes.EDITOR,
                 GameScenes.FLIGHT,
                 GameScenes.SPACECENTER,

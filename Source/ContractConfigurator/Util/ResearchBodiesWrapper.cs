@@ -269,7 +269,7 @@ namespace ContractConfigurator
                 {
                     withParent = false;
                     parentBody = null;
-                    object[] args = new object[] { scienceReward, bodyFound, withParent, parentBody };
+                    object[] args = { scienceReward, bodyFound, withParent, parentBody };
                     bool result = (bool)FoundBodyMethod.Invoke(APIactualRBSC, args);
                     withParent = (bool)args[2];
                     parentBody = (CelestialBody)args[3];

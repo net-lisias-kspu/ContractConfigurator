@@ -15,7 +15,7 @@ namespace ContractConfigurator.ExpressionParser
     /// </summary>
     public class CelestialBodyParser : ClassExpressionParser<CelestialBody>, IExpressionParserRegistrer
     {
-        private static string[] emptyStrArr = new string[] { };
+        private static string[] emptyStrArr = { };
 
         private enum CelestialBodyType
         {

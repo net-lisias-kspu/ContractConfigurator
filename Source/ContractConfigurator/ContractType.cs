@@ -513,7 +513,7 @@ namespace ContractConfigurator
                 if (LoggingUtil.logLevel >= LoggingUtil.LogLevel.DEBUG)
                 {
                     // Get the contract configurator log file
-                    string[] dirComponents = new string[] { KSPUtil.ApplicationRootPath, "GameData", "ContractConfigurator", "log", (group == null ? "!NO_GROUP" : group.Root.name) };
+                    string[] dirComponents = { KSPUtil.ApplicationRootPath, "GameData", "ContractConfigurator", "log", (group == null ? "!NO_GROUP" : group.Root.name) };
                     string[] pathComponents = dirComponents.Union(new string[] { name + ".log" }).ToArray();
                     string dir = string.Join(Path.DirectorySeparatorChar.ToString(), dirComponents);
                     string path = string.Join(Path.DirectorySeparatorChar.ToString(), pathComponents);

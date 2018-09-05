@@ -331,7 +331,7 @@ namespace ContractConfigurator.Util
             {
                 maxActive = GameVariables.Instance.GetActiveContractsLimit(ScenarioUpgradeableFacilities.GetFacilityLevel(SpaceCenterFacility.MissionControl));
 
-                int[] widths = new int[] { 57, 92, 77, 89 };
+                int[] widths = { 57, 92, 77, 89 };
 
                 // Get the available/active/complete groups
                 GameObject sortGroup = MissionControl.Instance.gameObject.GetChild("Sorting Group");
