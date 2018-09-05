@@ -53,27 +53,21 @@ namespace ContractConfigurator.Parameters
 
         protected override string GetParameterTitle()
         {
-            string output = null;
-            if (string.IsNullOrEmpty(title))
+            if (!string.IsNullOrEmpty(title)) return title;
+
+            string output = "Parts";
+            if (state == ParameterState.Complete)
             {
-                output = "Parts";
-                if (state == ParameterState.Complete)
+                output += ": ";
+                if (maxCount == int.MaxValue && minCount != 1)
                 {
-                    output += ": ";
-                    if (maxCount == int.MaxValue && minCount != 1)
-                    {
-                        output += "At least " + minCount + " ";
-                    }
-                    else if (maxCount != int.MaxValue && minCount == 1)
-                    {
-                        output += "At most " + maxCount + " ";
-                    }
-                    output += ParameterDelegate<Part>.GetDelegateText(this);
+                    output += "At least " + minCount + " ";
                 }
-            }
-            else
-            {
-                output = title;
+                else if (maxCount != int.MaxValue && minCount == 1)
+                {
+                    output += "At most " + maxCount + " ";
+                }
+                output += ParameterDelegate<Part>.GetDelegateText(this);
             }
             return output;
         }

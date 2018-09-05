@@ -22,7 +22,6 @@ namespace ContractConfigurator
         protected override string RequirementText()
         {
             string output = "Must " + (invertRequirement ? "not " : "") + "have returned from  " + AnCheckTypeString() + "orbit of " + (targetBody == null ? "the target body" : targetBody.CleanDisplayName(true));
-
             return output;
         }
     }

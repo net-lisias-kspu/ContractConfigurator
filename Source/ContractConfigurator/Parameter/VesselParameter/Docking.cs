@@ -36,21 +36,20 @@ namespace ContractConfigurator.Parameters
 
         protected override string GetParameterTitle()
         {
-            if (string.IsNullOrEmpty(title))
+            if (!string.IsNullOrEmpty(title)) return title;
+
+            string output = "";
+            if (Parent is VesselParameterGroup)
             {
-                string output = "";
-                if (Parent is VesselParameterGroup)
-                {
-                    output = "Docked with: ";
-                    output += vessels.Count > 0 ? ContractVesselTracker.GetDisplayName(vessels[0]) : "Any vessel";
-                }
-                else
-                {
-                    output = "Docked: " + ContractVesselTracker.GetDisplayName(vessels[0]) + " and ";
-                    output += vessels.Count > 1 ? ContractVesselTracker.GetDisplayName(vessels[1]) : "any vessel";
-                }
+                output = "Docked with: ";
+                output += vessels.Count > 0 ? ContractVesselTracker.GetDisplayName(vessels[0]) : "Any vessel";
             }
-            return title;
+            else
+            {
+                output = "Docked: " + ContractVesselTracker.GetDisplayName(vessels[0]) + " and ";
+                output += vessels.Count > 1 ? ContractVesselTracker.GetDisplayName(vessels[1]) : "any vessel";
+            }
+            return output;
         }
 
         protected override void OnParameterSave(ConfigNode node)

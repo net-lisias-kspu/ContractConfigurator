@@ -300,43 +300,17 @@ namespace ContractConfigurator.Util
             // Get the experiment rules
             ExperimentRules rules = GetExperimentRules(exp.id);
 
-            if (rules.ignored)
-            {
-                return false;
-            }
-
-            if (rules.requireAtmosphere && !body.atmosphere)
-            {
-                return false;
-            }
-
-            if (rules.requireNoAtmosphere && body.atmosphere)
-            {
-                return false;
-            }
-
-            if (rules.requireSurface && body.pqsController == null)
-            {
-                return false;
-            }
-
-            if (rules.requireNoSurface && body.pqsController != null)
-            {
-                return false;
-            }
-
-            if (rules.sunOnly)
-            {
-                return body == FlightGlobals.Bodies[0];
-            }
+            if (rules.ignored)                                          return false;
+            if (rules.requireAtmosphere && !body.atmosphere)            return false;
+            if (rules.requireNoAtmosphere && body.atmosphere)           return false;
+            if (rules.requireSurface && body.pqsController == null)     return false;
+            if (rules.requireNoSurface && body.pqsController != null)   return false;
+            if (rules.sunOnly)                                          return body == FlightGlobals.Bodies[0];
 
             // Filter out asteroid samples if not unlocked
-            if (rules.requireAsteroidTracking)
+            if (rules.requireAsteroidTracking && !GameVariables.Instance.UnlockedSpaceObjectDiscovery(ScenarioUpgradeableFacilities.GetFacilityLevel(SpaceCenterFacility.TrackingStation)))
             {
-                if (!GameVariables.Instance.UnlockedSpaceObjectDiscovery(ScenarioUpgradeableFacilities.GetFacilityLevel(SpaceCenterFacility.TrackingStation)))
-                {
-                    return false;
-                }
+                return false;
             }
 
             return allSituations.Any(sit => exp.IsAvailableWhile(sit, body));
@@ -344,55 +318,34 @@ namespace ContractConfigurator.Util
 
         private static bool ExperimentAvailable(ScienceExperiment exp, ExperimentSituations sit, CelestialBody body)
         {
-            if (!ExperimentAvailable(exp, body))
-            {
-                return false;
-            }
-
-            if (!exp.IsAvailableWhile(sit, body))
-            {
-                return false;
-            }
+            if (!ExperimentAvailable(exp, body))            return false;
+            if (!exp.IsAvailableWhile(sit, body))           return false;
 
             // Get the experiment rules
             ExperimentRules rules = GetExperimentRules(exp.id);
-
-            // Check if surface samples have been unlocked
-            if (rules.requireSurfaceSample)
+            if (rules.requireSurfaceSample && ScenarioUpgradeableFacilities.GetFacilityLevel(SpaceCenterFacility.ResearchAndDevelopment) < 0.3f)
             {
-                if (ScenarioUpgradeableFacilities.GetFacilityLevel(SpaceCenterFacility.ResearchAndDevelopment) < 0.3f)
-                {
-                    return false;
-                }
+                return false;
             }
 
             // Check for EVA unlock
-            if (rules.requireEVA)
+            if (rules.requireEVA && (!body.isHomeWorld || (sit != ExperimentSituations.SrfLanded && sit != ExperimentSituations.SrfSplashed)))
             {
-                if (!body.isHomeWorld || (sit != ExperimentSituations.SrfLanded && sit != ExperimentSituations.SrfSplashed))
-                {
-                    bool evaUnlocked = GameVariables.Instance.UnlockedEVA(ScenarioUpgradeableFacilities.GetFacilityLevel(SpaceCenterFacility.AstronautComplex));
-                    if (!evaUnlocked)
-                    {
-                        return false;
-                    }
-                }
-            }
-
-            if (rules.disallowHomeSurface)
-            {
-                if (body.isHomeWorld && sit == ExperimentSituations.SrfLanded || sit == ExperimentSituations.SrfSplashed)
+                bool evaUnlocked = GameVariables.Instance.UnlockedEVA(ScenarioUpgradeableFacilities.GetFacilityLevel(SpaceCenterFacility.AstronautComplex));
+                if (!evaUnlocked)
                 {
                     return false;
                 }
             }
 
-            if (rules.disallowHomeFlying)
+            if (rules.disallowHomeSurface && (body.isHomeWorld && sit == ExperimentSituations.SrfLanded || sit == ExperimentSituations.SrfSplashed))
             {
-                if (body.isHomeWorld && sit == ExperimentSituations.FlyingLow || sit == ExperimentSituations.FlyingHigh)
-                {
-                    return false;
-                }
+                return false;
+            }
+
+            if (rules.disallowHomeFlying && (body.isHomeWorld && sit == ExperimentSituations.FlyingLow || sit == ExperimentSituations.FlyingHigh))
+            {
+                return false;
             }
 
             return true;

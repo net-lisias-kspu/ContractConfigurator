@@ -38,19 +38,13 @@ namespace ContractConfigurator.Parameters
 
         protected override string GetParameterTitle()
         {
+            if (!string.IsNullOrEmpty(title)) return title;
+
             string output = "";
-            if (string.IsNullOrEmpty(title))
+            if (Parent is VesselParameterGroup)
             {
-                if (Parent is VesselParameterGroup)
-                {
-                    output = "Rendezvous with: ";
-                    output += vessels.Count > 0 ? ContractVesselTracker.GetDisplayName(vessels[0]) : "Any vessel";
-                }
-                else
-                {
-                    output = "Rendezvous: " + ContractVesselTracker.GetDisplayName(vessels[0]) + " and ";
-                    output += vessels.Count > 1 ? ContractVesselTracker.GetDisplayName(vessels[1]) : "any vessel";
-                }
+                output = "Rendezvous with: ";
+                output += vessels.Count > 0 ? ContractVesselTracker.GetDisplayName(vessels[0]) : "Any vessel";
             }
             else
             {

@@ -96,18 +96,12 @@ namespace ContractConfigurator.Parameters
 
         protected override string GetParameterTitle()
         {
-            string output = null;
-            if (string.IsNullOrEmpty(title))
+            if (!string.IsNullOrEmpty(title)) return title;
+
+            string output = "Orbit";
+            if (state == ParameterState.Complete)
             {
-                output = "Orbit";
-                if (state == ParameterState.Complete)
-                {
-                    output += ": " + ParameterDelegate<Vessel>.GetDelegateText(this);
-                }
-            }
-            else
-            {
-                output = title;
+                output += ": " + ParameterDelegate<Vessel>.GetDelegateText(this);
             }
             return output;
         }

@@ -26,33 +26,25 @@ namespace ContractConfigurator.Parameters
 
         protected override string GetParameterTitle()
         {
-            string output = null;
-            if (string.IsNullOrEmpty(title))
-            {
-                output = "Complete ALL of the following: ";
+            if (!string.IsNullOrEmpty(title)) return title;
 
-                if (state == ParameterState.Complete)
+            string output = "Complete ALL of the following: ";
+            if (state == ParameterState.Complete)
+            {
+                bool first = true;
+                foreach (ContractParameter child in this.GetChildren())
                 {
-                    bool first = true;
-                    foreach (ContractParameter child in this.GetChildren())
+                    if (child.State == ParameterState.Complete)
                     {
-                        if (child.State == ParameterState.Complete)
+                        if (!first)
                         {
-                            if (!first)
-                            {
-                                output += ", ";
-                            }
-                            output += child.Title;
-                            first = false;
+                            output += ", ";
                         }
+                        output += child.Title;
+                        first = false;
                     }
                 }
             }
-            else
-            {
-                output = title;
-            }
-
             return output;
         }
 

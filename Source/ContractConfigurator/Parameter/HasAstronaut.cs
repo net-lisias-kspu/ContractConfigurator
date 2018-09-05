@@ -37,47 +37,28 @@ namespace ContractConfigurator.Parameters
 
         protected override string GetParameterTitle()
         {
-            string output = null;
-            if (string.IsNullOrEmpty(title))
-            {
-                string traitString = String.IsNullOrEmpty(trait) ? "Kerbal" : trait;
-                output = "Astronauts: ";
-                if (maxCount == int.MaxValue)
-                {
-                    output += "At least " + minCount + " " + traitString + (minCount != 1 ? "s" : "");
-                }
-                else if (minCount == 0)
-                {
-                    output += "At most " + maxCount + " " + traitString + (maxCount != 1 ? "s" : "");
-                }
-                else if (minCount == maxCount)
-                {
-                    output += minCount + " " + traitString + (minCount != 1 ? "s" : "");
-                }
-                else
-                {
-                    output += "Between " + minCount + " and " + maxCount + " " + traitString + "s";
-                }
+            if (!string.IsNullOrEmpty(title)) return title;
 
-                if (minExperience != 0 && maxExperience != 5)
-                {
-                    if (minExperience == 0)
-                    {
-                        output += " with experience level of at most " + maxExperience;
-                    }
-                    else if (maxExperience == 5)
-                    {
-                        output += " with experience level of at least " + minExperience;
-                    }
-                    else
-                    {
-                        output += " with experience level between " + minExperience + " and " + maxExperience;
-                    }
-                }
-            }
-            else
+            string traitString = String.IsNullOrEmpty(trait) ? "Kerbal" : trait;
+            string output = "Astronauts: ";
+            output += 
+                maxCount == int.MaxValue 
+                   ? "At least " + minCount + " " + traitString + (minCount != 1 ? "s" : "") 
+                : minCount == 0 
+                   ? "At most " + maxCount + " " + traitString + (maxCount != 1 ? "s" : "") 
+                : minCount == maxCount
+                   ? minCount + " " + traitString + (minCount != 1 ? "s" : "")
+                : "Between " + minCount + " and " + maxCount + " " + traitString + "s"
+                ;
+            if (minExperience != 0 && maxExperience != 5)
             {
-                output = title;
+                output += 
+                    minExperience == 0
+                        ? " with experience level of at most " + maxExperience
+                    : maxExperience == 5
+                        ? " with experience level of at least " + minExperience
+                    : " with experience level between " + minExperience + " and " + maxExperience
+                ;
             }
             return output;
         }

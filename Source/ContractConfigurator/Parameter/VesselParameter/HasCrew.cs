@@ -49,68 +49,49 @@ namespace ContractConfigurator.Parameters
 
         protected override string GetParameterTitle()
         {
-            string output = null;
-            if (string.IsNullOrEmpty(title))
+            if (!string.IsNullOrEmpty(title)) return title;
+
+            if (kerbals.Count == 0 && (state == ParameterState.Complete || ParameterCount == 1))
             {
-                if (kerbals.Count == 0 && (state == ParameterState.Complete || ParameterCount == 1))
+                hideChildren |= ParameterCount == 1;
+
+                string traitString = String.IsNullOrEmpty(trait) ? "Kerbal" : TraitTitle(trait);
+
+                string output = "Crew: ";
+                output += 
+                    maxCrew == 0 
+                        ? "Unmanned"
+                    : maxCrew == int.MaxValue
+                        ? "At least " + minCrew + " " + traitString + (minCrew != 1 ? "s" : "")
+                    : minCrew == 0
+                        ? "At most " + maxCrew + " " + traitString + (maxCrew != 1 ? "s" : "")
+                    : minCrew == maxCrew
+                        ? minCrew + " " + traitString + (minCrew != 1 ? "s" : "")
+                    : "Between " + minCrew + " and " + maxCrew + " " + traitString + "s"
+                ;
+                if (minExperience != 0 || maxExperience != 5)
+                {
+                    output += 
+                        minExperience == 0
+                            ? " with experience level of at most " + maxExperience
+                        : maxExperience == 5
+                            ? " with experience level of at least " + minExperience
+                        : " with experience level between " + minExperience + " and " + maxExperience
+                    ;
+                }
+                return output;
+            }
+
+            {
+                string output = "Crew";
+                if (state == ParameterState.Complete || ParameterCount == 1)
                 {
                     hideChildren |= ParameterCount == 1;
 
-                    string traitString = String.IsNullOrEmpty(trait) ? "Kerbal" : TraitTitle(trait);
-                    output = "Crew: ";
-                    if (maxCrew == 0)
-                    {
-                        output += "Unmanned";
-                    }
-                    else if (maxCrew == int.MaxValue)
-                    {
-                        output += "At least " + minCrew + " " + traitString + (minCrew != 1 ? "s" : "");
-                    }
-                    else if (minCrew == 0)
-                    {
-                        output += "At most " + maxCrew + " " + traitString + (maxCrew != 1 ? "s" : "");
-                    }
-                    else if (minCrew == maxCrew)
-                    {
-                        output += minCrew + " " + traitString + (minCrew != 1 ? "s" : "");
-                    }
-                    else
-                    {
-                        output += "Between " + minCrew + " and " + maxCrew + " " + traitString + "s";
-                    }
-
-                    if (minExperience != 0 || maxExperience != 5)
-                    {
-                        if (minExperience == 0)
-                        {
-                            output += " with experience level of at most " + maxExperience;
-                        }
-                        else if (maxExperience == 5)
-                        {
-                            output += " with experience level of at least " + minExperience;
-                        }
-                        else
-                        {
-                            output += " with experience level between " + minExperience + " and " + maxExperience;
-                        }
-                    }
+                    output += ": " + ParameterDelegate<ProtoCrewMember>.GetDelegateText(this);
                 }
-                else
-                {
-                    output = "Crew";
-                    if (state == ParameterState.Complete || ParameterCount == 1)
-                    {
-                        hideChildren |= ParameterCount == 1;
-
-                        output += ": " + ParameterDelegate<ProtoCrewMember>.GetDelegateText(this);
-                    }
-                }
+                return output;
             }
-            else
-            {
-                output = title;
-            }
-            return output;
         }
 
         protected void CreateDelegates()

@@ -45,19 +45,14 @@ namespace ContractConfigurator.Parameters
 
         protected override string GetParameterTitle()
         {
-            string output = null;
-            if (string.IsNullOrEmpty(title))
-            {
-                if (state == ParameterState.Complete || ParameterCount == 1)
-                {
-                    hideChildren |= ParameterCount == 1;
+            if (!string.IsNullOrEmpty(title)) return title;
 
-                    output = ParameterDelegate<Vessel>.GetDelegateText(this);
-                }
-            }
-            else
+            string output = null;
+            if (state == ParameterState.Complete || ParameterCount == 1)
             {
-                output = title;
+                hideChildren |= ParameterCount == 1;
+
+                output = ParameterDelegate<Vessel>.GetDelegateText(this);
             }
             return output;
         }

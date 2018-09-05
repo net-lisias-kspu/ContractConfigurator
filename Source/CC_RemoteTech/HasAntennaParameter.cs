@@ -52,18 +52,12 @@ namespace ContractConfigurator.RemoteTech
 
         protected override string GetParameterTitle()
         {
-            string output = null;
-            if (string.IsNullOrEmpty(title))
+            if (!string.IsNullOrEmpty(title)) return title;
+
+            string output = "Antenna";
+            if (state == ParameterState.Complete)
             {
-                output = "Antenna";
-                if (state == ParameterState.Complete)
-                {
-                    output += ": " + ParameterDelegate<IAntenna>.GetDelegateText(this);
-                }
-            }
-            else
-            {
-                output = title;
+                output += ": " + ParameterDelegate<IAntenna>.GetDelegateText(this);
             }
             return output;
         }

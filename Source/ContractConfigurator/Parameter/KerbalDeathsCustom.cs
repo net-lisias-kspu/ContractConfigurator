@@ -39,34 +39,28 @@ namespace ContractConfigurator.Parameters
 
         protected override string GetParameterTitle()
         {
-            string output = null;
-            if (string.IsNullOrEmpty(title))
-            {
-                if (vesselIdentifier != null)
-                {
-                    output = countMax == 1 ? "Kill no Kerbals" : "Kill no more than " + countMax + " Kerbals";
-                    output += " on vessel " + ContractVesselTracker.GetDisplayName(vesselIdentifier.identifier);
-                }
-                else if (!kerbals.Any())
-                {
-                    output = countMax == 1 ? "Kill no Kerbals" : "Kill no more than " + countMax + " Kerbals";
-                }
-                else
-                {
-                    output = "Do not kill";
-                    if (state != ParameterState.Incomplete || ParameterCount == 1)
-                    {
-                        hideChildren |= ParameterCount == 1;
+            if (!string.IsNullOrEmpty(title)) return title;
 
-                        output += ": " + ParameterDelegate<ProtoCrewMember>.GetDelegateText(this);
-                    }
-                }
+            string output = null;
+            if (vesselIdentifier != null)
+            {
+                output = countMax == 1 ? "Kill no Kerbals" : "Kill no more than " + countMax + " Kerbals";
+                output += " on vessel " + ContractVesselTracker.GetDisplayName(vesselIdentifier.identifier);
+            }
+            else if (!kerbals.Any())
+            {
+                output = countMax == 1 ? "Kill no Kerbals" : "Kill no more than " + countMax + " Kerbals";
             }
             else
             {
-                output = title;
-            }
+                output = "Do not kill";
+                if (state != ParameterState.Incomplete || ParameterCount == 1)
+                {
+                    hideChildren |= ParameterCount == 1;
 
+                    output += ": " + ParameterDelegate<ProtoCrewMember>.GetDelegateText(this);
+                }
+            }
             return output;
         }
 

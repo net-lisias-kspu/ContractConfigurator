@@ -37,37 +37,35 @@
 	{
 		foreach (var line in File.ReadAllLines(versionfile))
 		{
-			if (line != null)
+			if (line == null) continue;
+			if (!versionSection)
 			{
-				if (!versionSection)
+				if (line.Contains("\"VERSION\""))
+					versionSection = true;
+			}
+			else
+			{
+				if (line.Contains("}"))
+						versionSection = false;
+				i = line.IndexOf(":");
+				i2 = line.IndexOf(",");
+				if (i2 == -1)
+					i2 = line.Length;
+				if (i >= 0 && i2 >= 0)
 				{
-					if (line.Contains("\"VERSION\""))
-						versionSection = true;
-				}
-				else
-				{
-					if (line.Contains("}"))
-							versionSection = false;
-					i = line.IndexOf(":");
-					i2 = line.IndexOf(",");
-					if (i2 == -1)
-						i2 = line.Length;
-					if (i >= 0 && i2 >= 0)
-					{
-						s = line.Substring(i + 1, i2 - i - 1);
+					s = line.Substring(i + 1, i2 - i - 1);
 
-						if (line.Contains("MAJOR"))			
-							Int32.TryParse(s, out major);			
-			
-						if (line.Contains("MINOR"))			
-							Int32.TryParse(s, out minor);
-			
-						if (line.Contains("PATCH"))			
-							Int32.TryParse(s, out patch);
-			
-						if (line.Contains("BUILD"))			
-							Int32.TryParse(s, out build);
-					}
+					if (line.Contains("MAJOR"))			
+						Int32.TryParse(s, out major);			
+		
+					if (line.Contains("MINOR"))			
+						Int32.TryParse(s, out minor);
+		
+					if (line.Contains("PATCH"))			
+						Int32.TryParse(s, out patch);
+		
+					if (line.Contains("BUILD"))			
+						Int32.TryParse(s, out build);
 				}
 			}
 		}

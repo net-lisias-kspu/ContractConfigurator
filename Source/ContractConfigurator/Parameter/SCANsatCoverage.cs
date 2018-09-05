@@ -41,26 +41,20 @@ namespace ContractConfigurator
 
         protected override string GetParameterTitle()
         {
+            if (!string.IsNullOrEmpty(title)) return title;
+
             string output;
-            if (string.IsNullOrEmpty(title))
-            {
-                // Re-label a couple of scan names to make them nicer
-                nameRemap["AltimetryLoRes"] = "Low resolution altimetry";
-                nameRemap["AltimetryHiRes"] = "High resolution altimetry";
+            // Re-label a couple of scan names to make them nicer
+            nameRemap["AltimetryLoRes"] = "Low resolution altimetry";
+            nameRemap["AltimetryHiRes"] = "High resolution altimetry";
 
-                string scanTypeName = nameRemap.ContainsKey(scanName) ? nameRemap[scanName] : scanName;
-                output = scanTypeName + " scan of " + targetBody.CleanDisplayName(true) + ": ";
-                if (currentCoverage > 0.0 && state != ParameterState.Complete)
-                {
-                    output += currentCoverage.ToString("N0") + "% / ";
-                }
-                output += coverage.ToString("N0") + "%";
-            }
-            else
+            string scanTypeName = nameRemap.ContainsKey(scanName) ? nameRemap[scanName] : scanName;
+            output = scanTypeName + " scan of " + targetBody.CleanDisplayName(true) + ": ";
+            if (currentCoverage > 0.0 && state != ParameterState.Complete)
             {
-                output = title;
+                output += currentCoverage.ToString("N0") + "% / ";
             }
-
+            output += coverage.ToString("N0") + "%";
             return output;
         }
 

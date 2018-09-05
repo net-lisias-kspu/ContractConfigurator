@@ -34,18 +34,13 @@ namespace ContractConfigurator.RemoteTech
 
         protected override string GetParameterTitle()
         {
-            string output;
             if (string.IsNullOrEmpty(title))
             {
-                output = (hasConnectivity ? "Direct connection to: " : "No direct connection to: ");
+                string output = (hasConnectivity ? "Direct connection to: " : "No direct connection to: ");
                 output += ContractVesselTracker.GetDisplayName(vesselKey);
+                return output;
             }
-            else
-            {
-                output = title;
-            }
-
-            return output;
+            return title;
         }
 
         protected override void OnParameterSave(ConfigNode node)

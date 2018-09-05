@@ -22,7 +22,6 @@ namespace ContractConfigurator
         protected override string RequirementText()
         {
             string output = "Must " + (invertRequirement ? "not " : "") + "have built a " + CheckTypeString() + "base on " + (targetBody == null ? "the target body" : targetBody.CleanDisplayName(true));
-
             return output;
         }
     }

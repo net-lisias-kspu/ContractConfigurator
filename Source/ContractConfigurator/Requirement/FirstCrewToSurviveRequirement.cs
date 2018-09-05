@@ -24,7 +24,6 @@ namespace ContractConfigurator
         protected override string RequirementText()
         {
             string output = "Must " + (invertRequirement ? "not " : "") + "have recovered a crew from space";
-
             return output;
         }
     }

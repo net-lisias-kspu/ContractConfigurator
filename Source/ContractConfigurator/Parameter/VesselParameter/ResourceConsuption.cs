@@ -157,34 +157,29 @@ namespace ContractConfigurator.Parameters
 
         protected override string GetParameterTitle()
         {
+            if (!string.IsNullOrEmpty(title)) return title;
+
             string output = null;
-            if (string.IsNullOrEmpty(title))
+            output = "Resource " + (minRate >= 0 ? "Consumption: " : "Production: ") + resource.name + ": ";
+            if (maxRate == 0 && minRate == 0)
             {
-                output = "Resource " + (minRate >= 0 ? "Consumption: " : "Production: ") + resource.name + ": ";
-                if (maxRate == 0 && minRate == 0)
-                {
-                    output += "None";
-                }
-                else if (maxRate == double.MaxValue)
-                {
-                    output += "At least " + minRate.ToString("N1") + " units/s";
-                }
-                else if (minRate == double.MinValue)
-                {
-                    output += "At least " + (-maxRate).ToString("N1") + " units/s";
-                }
-                else if (minRate >= 0)
-                {
-                    output += "Between " + minRate.ToString("N1") + " and " + maxRate.ToString("N1") + " units/s";
-                }
-                else if (minRate < 0)
-                {
-                    output += "Between " + (-maxRate).ToString("N1") + " and " + (-minRate).ToString("N1") + " units/s";
-                }
+                output += "None";
             }
-            else
+            else if (maxRate == double.MaxValue)
             {
-                output = title;
+                output += "At least " + minRate.ToString("N1") + " units/s";
+            }
+            else if (minRate == double.MinValue)
+            {
+                output += "At least " + (-maxRate).ToString("N1") + " units/s";
+            }
+            else if (minRate >= 0)
+            {
+                output += "Between " + minRate.ToString("N1") + " and " + maxRate.ToString("N1") + " units/s";
+            }
+            else if (minRate < 0)
+            {
+                output += "Between " + (-maxRate).ToString("N1") + " and " + (-minRate).ToString("N1") + " units/s";
             }
             return output;
         }
@@ -251,16 +246,10 @@ namespace ContractConfigurator.Parameters
         {
             LoggingUtil.LogVerbose(this, "Checking VesselMeetsCondition: " + vessel.id);
 
-            double delta = 0.0;
-            if (ResourceConsumptionChecker.CanCheckVessel(vessel))
-            {
-                delta = ResourceConsumptionChecker.Instance.Consumption(resource);
-            }
-            else
-            {
+            if (!ResourceConsumptionChecker.CanCheckVessel(vessel))
                 return false;
-            }
 
+            double delta = ResourceConsumptionChecker.Instance.Consumption(resource);
             LoggingUtil.LogVerbose(this, "Delta for resource " + resource.name + " is: " + delta);
             return delta - minRate >= -0.001 && maxRate - delta >= -0.001;
         }

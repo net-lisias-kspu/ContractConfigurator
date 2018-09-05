@@ -43,26 +43,21 @@ namespace ContractConfigurator.Parameters
 
         protected override string GetParameterTitle()
         {
+            if (!string.IsNullOrEmpty(title)) return title;
+
             string output = "";
-            if (string.IsNullOrEmpty(title))
+            if (passengers.Count == 0)
             {
-                if (passengers.Count == 0)
-                {
-                    output = "Load " + (count == 0 ? "all" : count.ToString()) + " passenger" + (count != 1 ? "s" : "") + " while on the launchpad/runway";
-                }
-                else if (passengers.Count == 1)
-                {
-                    output = "Passenger " + ParameterDelegate<Vessel>.GetDelegateText(this);
-                    hideChildren = true;
-                }
-                else
-                {
-                    output = state == ParameterState.Complete ? "Passengers: " + passengers.Count : "Passengers";
-                }
+                output = "Load " + (count == 0 ? "all" : count.ToString()) + " passenger" + (count != 1 ? "s" : "") + " while on the launchpad/runway";
+            }
+            else if (passengers.Count == 1)
+            {
+                output = "Passenger " + ParameterDelegate<Vessel>.GetDelegateText(this);
+                hideChildren = true;
             }
             else
             {
-                output = title;
+                output = state == ParameterState.Complete ? "Passengers: " + passengers.Count : "Passengers";
             }
             return output;
         }

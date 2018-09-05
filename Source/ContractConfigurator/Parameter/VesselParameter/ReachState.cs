@@ -62,28 +62,22 @@ namespace ContractConfigurator.Parameters
 
         protected override string GetParameterTitle()
         {
-            string output = null;
-            if (string.IsNullOrEmpty(title))
-            {
-                output = "Vessel State";
-                if (state == ParameterState.Complete || ParameterCount == 1)
-                {
-                    if (ParameterCount == 1)
-                    {
-                        output = "";
-                        hideChildren = true;
-                    }
-                    else
-                    {
-                        output += ": ";
-                    }
+            if (!string.IsNullOrEmpty(title)) return title;
 
-                    output += ParameterDelegate<Vessel>.GetDelegateText(this);
-                }
-            }
-            else
+            string output = "Vessel State";
+            if (state == ParameterState.Complete || ParameterCount == 1)
             {
-                output = title;
+                if (ParameterCount == 1)
+                {
+                    output = "";
+                    hideChildren = true;
+                }
+                else
+                {
+                    output += ": ";
+                }
+
+                output += ParameterDelegate<Vessel>.GetDelegateText(this);
             }
             return output;
         }

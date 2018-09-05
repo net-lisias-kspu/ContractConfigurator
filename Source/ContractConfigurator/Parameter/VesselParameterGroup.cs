@@ -63,49 +63,42 @@ namespace ContractConfigurator.Parameters
 
         protected override string GetParameterTitle()
         {
-            // Set the first part of the output
-            string output;
-            if (!string.IsNullOrEmpty(title))
+            if (!string.IsNullOrEmpty(title)) return title;
+
+            // Set the vessel name
+            string output = "Vessel: ";
+            if ((waiting || state == ParameterState.Complete) && trackedVessel != null)
             {
-                output = title;
+                output += trackedVessel.vesselName;
+            }
+            else if (!string.IsNullOrEmpty(define))
+            {
+                output += define + " (new)";
+            }
+            else if (vesselList.Any())
+            {
+                bool first = true;
+                foreach (string vesselName in vesselList)
+                {
+                    if (!first)
+                    {
+                        output += " OR ";
+                    }
+                    if (ContractVesselTracker.Instance != null)
+                    {
+                        output += ContractVesselTracker.GetDisplayName(vesselName);
+                    }
+                    else
+                    {
+                        LoggingUtil.LogWarning(this, "Unable to get vessel display name for '" + vesselName + "' - ContractVesselTracker is null.  This is likely caused by another ScenarioModule crashing, preventing others from loading.");
+                        output += vesselName;
+                    }
+                    first = false;
+                }
             }
             else
             {
-                // Set the vessel name
-                output = "Vessel: ";
-                if ((waiting || state == ParameterState.Complete) && trackedVessel != null)
-                {
-                    output += trackedVessel.vesselName;
-                }
-                else if (!string.IsNullOrEmpty(define))
-                {
-                    output += define + " (new)";
-                }
-                else if (vesselList.Any())
-                {
-                    bool first = true;
-                    foreach (string vesselName in vesselList)
-                    {
-                        if (!first)
-                        {
-                            output += " OR ";
-                        }
-                        if (ContractVesselTracker.Instance != null)
-                        {
-                            output += ContractVesselTracker.GetDisplayName(vesselName);
-                        }
-                        else
-                        {
-                            LoggingUtil.LogWarning(this, "Unable to get vessel display name for '" + vesselName + "' - ContractVesselTracker is null.  This is likely caused by another ScenarioModule crashing, preventing others from loading.");
-                            output += vesselName;
-                        }
-                        first = false;
-                    }
-                }
-                else
-                {
-                    output += "Any";
-                }
+                output += "Any";
             }
 
             // If we're complete and a custom title hasn't been provided, try to get a better title

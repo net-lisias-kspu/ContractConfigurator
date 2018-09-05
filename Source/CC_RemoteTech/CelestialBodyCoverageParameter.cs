@@ -33,21 +33,14 @@ namespace ContractConfigurator.RemoteTech
 
         protected override string GetParameterTitle()
         {
-            string output;
-            if (string.IsNullOrEmpty(title))
-            {
-                output = targetBody.name + ": Communication coverage: ";
-                if (currentCoverage >= 0.0 && state != ParameterState.Complete)
-                {
-                    output += (currentCoverage * 100).ToString("F0") + "% / ";
-                }
-                output += (coverage * 100).ToString("F0") + "%";
-            }
-            else
-            {
-                output = title;
-            }
+            if (!string.IsNullOrEmpty(title)) return title;
 
+            string output = targetBody.name + ": Communication coverage: ";
+            if (currentCoverage >= 0.0 && state != ParameterState.Complete)
+            {
+                output += (currentCoverage * 100).ToString("F0") + "% / ";
+            }
+            output += (coverage * 100).ToString("F0") + "%";
             return output;
         }
 

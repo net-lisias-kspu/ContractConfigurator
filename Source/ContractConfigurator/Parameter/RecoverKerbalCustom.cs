@@ -47,22 +47,17 @@ namespace ContractConfigurator.Parameters
 
         protected override string GetParameterTitle()
         {
+            if (!string.IsNullOrEmpty(title)) return title;
+
             string output = "";
-            if (string.IsNullOrEmpty(title))
+            if (kerbals.Count == 1)
             {
-                if (kerbals.Count == 1)
-                {
-                    output = "Recover " + kerbals[0];
-                    hideChildren = true;
-                }
-                else
-                {
-                    output = "Recover Kerbals";
-                }
+                output = "Recover " + kerbals[0];
+                hideChildren = true;
             }
             else
             {
-                output = title;
+                output = "Recover Kerbals";
             }
             return output;
         }

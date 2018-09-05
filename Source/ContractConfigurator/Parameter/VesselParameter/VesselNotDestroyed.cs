@@ -35,51 +35,46 @@ namespace ContractConfigurator.Parameters
 
         protected override string GetParameterTitle()
         {
-            string output = "";
-            if (string.IsNullOrEmpty(title))
+            if (!string.IsNullOrEmpty(title)) return title;
+
+            if (vessels.Count == 1)
             {
-                if (vessels.Count == 1)
+                return ContractVesselTracker.GetDisplayName(vessels[0]) + ": Not destroyed";
+            }
+
+            if (vessels.Count != 0)
+            {
+                string output = "Vessels not destroyed: ";
+                bool first = true;
+                foreach (string vessel in vessels)
                 {
-                    output = ContractVesselTracker.GetDisplayName(vessels[0]) + ": Not destroyed";
+                    output += (first ? "" : ", ") + ContractVesselTracker.GetDisplayName(vessel);
+                    first = false;
                 }
-                else if (vessels.Count != 0)
+                return output;
+            }
+
+            if (Parent is VesselParameterGroup && ((VesselParameterGroup)Parent).VesselList.Any())
+            {
+                IEnumerable<string> vesselList = ((VesselParameterGroup)Parent).VesselList;
+                if (vesselList.Count() == 1)
                 {
-                    output = "Vessels not destroyed: ";
+                    return ContractVesselTracker.GetDisplayName(vesselList.First()) + ": Not destroyed";
+                }
+                else
+                {
+                    string output = "Vessels not destroyed: ";
                     bool first = true;
-                    foreach (string vessel in vessels)
+                    foreach (string vessel in vesselList)
                     {
                         output += (first ? "" : ", ") + ContractVesselTracker.GetDisplayName(vessel);
                         first = false;
                     }
-                }
-                else if (Parent is VesselParameterGroup && ((VesselParameterGroup)Parent).VesselList.Any())
-                {
-                    IEnumerable<string> vesselList = ((VesselParameterGroup)Parent).VesselList;
-                    if (vesselList.Count() == 1)
-                    {
-                        output = ContractVesselTracker.GetDisplayName(vesselList.First()) + ": Not destroyed";
-                    }
-                    else
-                    {
-                        output = "Vessels not destroyed: ";
-                        bool first = true;
-                        foreach (string vessel in vesselList)
-                        {
-                            output += (first ? "" : ", ") + ContractVesselTracker.GetDisplayName(vessel);
-                            first = false;
-                        }
-                    }
-                }
-                else
-                {
-                    output = "No vessels destroyed";
+                    return output;
                 }
             }
-            else
-            {
-                output = title;
-            }
-            return output;
+
+            return "No vessels destroyed";
         }
 
         protected override void OnParameterSave(ConfigNode node)

@@ -95,23 +95,17 @@ namespace ContractConfigurator.Parameters
 
         protected override string GetParameterTitle()
         {
-            string output = null;
-            if (string.IsNullOrEmpty(title))
-            {
-                output = "Collect science";
-                if (state == ParameterState.Complete)
-                {
-                    output += ": " + (experiment.Count > 1 ? "Various experiments" : ExperimentName(experiment[0])) + " from ";
+            if (!string.IsNullOrEmpty(title)) return title;
 
-                    output += !string.IsNullOrEmpty(biome) ? new Biome(targetBody, biome).ToString() : targetBody.CleanDisplayName(true);
-                    output += situation != null 
-                            ? (" while " + situation.Value.Print().ToLower()) 
-                            : (location.Value == BodyLocation.Surface ? " while on the surface" : " while in space");
-                }
-            }
-            else
+            string output = "Collect science";
+            if (state == ParameterState.Complete)
             {
-                output = title;
+                output += ": " + (experiment.Count > 1 ? "Various experiments" : ExperimentName(experiment[0])) + " from ";
+
+                output += !string.IsNullOrEmpty(biome) ? new Biome(targetBody, biome).ToString() : targetBody.CleanDisplayName(true);
+                output += situation != null 
+                        ? (" while " + situation.Value.Print().ToLower()) 
+                        : (location.Value == BodyLocation.Surface ? " while on the surface" : " while in space");
             }
             return output;
         }
