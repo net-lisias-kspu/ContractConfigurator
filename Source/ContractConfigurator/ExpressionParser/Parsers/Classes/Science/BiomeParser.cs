@@ -36,9 +36,9 @@ namespace ContractConfigurator.ExpressionParser
                 new List<Location>() : BiomeTracker.GetDifficultLocations(biome.body, biome.biome).Select(v => new Location(biome.body, v.y, v.x)).ToList()));
 
             RegisterGlobalFunction(new Function<List<Biome>>("KSCBiomes", () => Biome.KSCBiomes.Select(b =>
-                new Biome(FlightGlobals.Bodies.Where(cb => cb.isHomeWorld).Single(), b)).ToList(), false));
+                new Biome(FlightGlobals.Bodies.Single(cb => cb.isHomeWorld), b)).ToList(), false));
             RegisterGlobalFunction(new Function<List<Biome>>("MainKSCBiomes", () => Biome.MainKSCBiomes.Select(b =>
-                new Biome(FlightGlobals.Bodies.Where(cb => cb.isHomeWorld).Single(), b)).ToList(), false));
+                new Biome(FlightGlobals.Bodies.Single(cb => cb.isHomeWorld), b)).ToList(), false));
         }
 
         public BiomeParser()

@@ -26,8 +26,7 @@ namespace ContractConfigurator
     /// </summary>
     public class ContractType : IContractConfiguratorFactory
     {
-        static MethodInfo methodParseExpand = typeof(ContractType).GetMethods(BindingFlags.Instance | BindingFlags.NonPublic).
-            Where(m => m.Name == "ParseDataExpandString").Single();
+        static MethodInfo methodParseExpand = typeof(ContractType).GetMethods(BindingFlags.Instance | BindingFlags.NonPublic).Single(m => m.Name == "ParseDataExpandString");
 
         public class DataValueInfo
         {

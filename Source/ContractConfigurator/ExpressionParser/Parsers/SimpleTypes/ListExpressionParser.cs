@@ -14,8 +14,7 @@ namespace ContractConfigurator.ExpressionParser
     public class ListExpressionParser<T> : ClassExpressionParser<List<T>>
     {
         public override MethodInfo methodParseMethod { get { return _methodParseMethod; } }
-        static MethodInfo _methodParseMethod = typeof(ListExpressionParser<T>).GetMethods(BindingFlags.Public | BindingFlags.Instance).
-            Where(m => m.Name == "ParseMethod" && m.GetParameters().Count() == 3).Single();
+        static MethodInfo _methodParseMethod = typeof(ListExpressionParser<T>).GetMethods(BindingFlags.Public | BindingFlags.Instance).Single(m => m.Name == "ParseMethod" && m.GetParameters().Count() == 3);
 
         static Random r = new Random();
 

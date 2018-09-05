@@ -16,7 +16,7 @@ namespace ContractConfigurator
     /// </summary>
     public static class ConfigNodeUtil
     {
-        static MethodInfo methodParseSingleValue = typeof(ConfigNodeUtil).GetMethods().Where(m => m.Name == "ParseSingleValue").Single();
+        static MethodInfo methodParseSingleValue = typeof(ConfigNodeUtil).GetMethods().Single(m => m.Name == "ParseSingleValue");
         static MethodInfo methodExecuteLoad = typeof(DeferredLoadUtil).GetMethods().First(m => m.Name == "ExecuteLoad");
         static MethodInfo methodGetDependencies = typeof(DeferredLoadUtil).GetMethods().First(m => m.Name == "GetDependencies");
         static MethodInfo methodLogCircularDependencyError = typeof(DeferredLoadUtil).GetMethods().First(m => m.Name == "LogCircularDependencyError");

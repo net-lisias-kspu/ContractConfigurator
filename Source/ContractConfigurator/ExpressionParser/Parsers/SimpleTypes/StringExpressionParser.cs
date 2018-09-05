@@ -14,11 +14,9 @@ namespace ContractConfigurator.ExpressionParser
     public class StringExpressionParser : ClassExpressionParser<string>, IExpressionParserRegistrer
     {
         public override MethodInfo methodParseStatement { get { return _methodParseStatement; } }
-        static MethodInfo _methodParseStatement = typeof(StringExpressionParser).GetMethods(BindingFlags.Public | BindingFlags.Instance).
-            Where(m => m.Name == "ParseStatement" && !m.GetParameters().Any()).Single();
+        static MethodInfo _methodParseStatement = typeof(StringExpressionParser).GetMethods(BindingFlags.Public | BindingFlags.Instance).Single(m => m.Name == "ParseStatement" && !m.GetParameters().Any());
         public override MethodInfo methodParseMethod { get { return _methodParseMethod; } }
-        static MethodInfo _methodParseMethod = typeof(StringExpressionParser).GetMethods(BindingFlags.Public | BindingFlags.Instance).
-            Where(m => m.Name == "ParseMethod" && m.GetParameters().Count() == 3).Single();
+        static MethodInfo _methodParseMethod = typeof(StringExpressionParser).GetMethods(BindingFlags.Public | BindingFlags.Instance).Single(m => m.Name == "ParseMethod" && m.GetParameters().Count() == 3);
 
         static System.Random random = new System.Random();
 

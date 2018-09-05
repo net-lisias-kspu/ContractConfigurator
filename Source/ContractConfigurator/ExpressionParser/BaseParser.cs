@@ -339,9 +339,7 @@ namespace ContractConfigurator.ExpressionParser
         public abstract MethodInfo methodCompleteIdentifierParsing { get; }
         public abstract MethodInfo method_ConvertType { get; }
 
-        static MethodInfo methodGetParserPublic = typeof(BaseParser).GetMethods(BindingFlags.Static | BindingFlags.Public).
-            Where(m => m.Name == "GetParser" && !m.GetParameters().Any()).Single();
-        static MethodInfo methodGetParserProtected = typeof(BaseParser).GetMethods(BindingFlags.Static | BindingFlags.NonPublic | BindingFlags.FlattenHierarchy).
-            Where(m => m.Name == "GetParser").Single();
+        static MethodInfo methodGetParserPublic = typeof(BaseParser).GetMethods(BindingFlags.Static | BindingFlags.Public).Single(m => m.Name == "GetParser" && !m.GetParameters().Any());
+        static MethodInfo methodGetParserProtected = typeof(BaseParser).GetMethods(BindingFlags.Static | BindingFlags.NonPublic | BindingFlags.FlattenHierarchy).Single(m => m.Name == "GetParser");
     }
 }

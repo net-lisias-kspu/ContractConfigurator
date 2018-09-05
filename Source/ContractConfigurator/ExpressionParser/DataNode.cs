@@ -13,10 +13,8 @@ namespace ContractConfigurator.ExpressionParser
     /// </summary>
     public class DataNode
     {
-        static MethodInfo methodParseValue = typeof(ConfigNodeUtil).GetMethods(BindingFlags.Static | BindingFlags.Public).
-            Where(m => m.Name == "ParseValue" && m.GetParameters().Count() == 4).Single();
-        static MethodInfo methodParseValueLiteral = typeof(ConfigNodeUtil).GetMethods(BindingFlags.Static | BindingFlags.Public).
-            Where(m => m.Name == "ParseValue" && m.GetParameters().Count() == 3 && m.GetParameters()[2].ParameterType == typeof(bool)).Single();
+        static MethodInfo methodParseValue = typeof(ConfigNodeUtil).GetMethods(BindingFlags.Static | BindingFlags.Public).Single(m => m.Name == "ParseValue" && m.GetParameters().Count() == 4);
+        static MethodInfo methodParseValueLiteral = typeof(ConfigNodeUtil).GetMethods(BindingFlags.Static | BindingFlags.Public).Single(m => m.Name == "ParseValue" && m.GetParameters().Count() == 3 && m.GetParameters()[2].ParameterType == typeof(bool));
 
         public enum UniquenessCheck
         {
@@ -78,8 +76,7 @@ namespace ContractConfigurator.ExpressionParser
         private List<ConfigNodeUtil.DeferredLoadBase> deferredLoads = new List<ConfigNodeUtil.DeferredLoadBase>();
         public double lastModified = Time.fixedTime;
 
-        protected static MethodInfo parseMethodGeneric = typeof(ConfigNodeUtil).GetMethods(BindingFlags.Static | BindingFlags.Public).
-            Where(m => m.Name == "ParseValue" && m.GetParameters().Count() == 4).Single();
+        protected static MethodInfo parseMethodGeneric = typeof(ConfigNodeUtil).GetMethods(BindingFlags.Static | BindingFlags.Public).Single(m => m.Name == "ParseValue" && m.GetParameters().Count() == 4);
 
         public static int IteratorCurrentIndex = 0;
 

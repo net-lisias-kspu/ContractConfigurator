@@ -157,7 +157,7 @@ namespace ContractConfigurator
                         else
                         {
                             // Get the ParseValue method
-                            MethodInfo parseValueMethod = typeof(ConfigNodeUtil).GetMethods().Where(m => m.Name == "ParseSingleValue").Single();
+                            MethodInfo parseValueMethod = typeof(ConfigNodeUtil).GetMethods().Single(m => m.Name == "ParseSingleValue");
                             parseValueMethod = parseValueMethod.MakeGenericMethod(new Type[] { type });
 
                             // Invoke the ParseValue method
