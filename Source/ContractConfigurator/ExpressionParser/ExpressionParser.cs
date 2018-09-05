@@ -1142,12 +1142,7 @@ namespace ContractConfigurator.ExpressionParser
                             string currentIdentifier = identifier.Substring(0, index);
                             identifier = identifier.Substring(index + 1);
                             DataNode newNode = dataNode.GetChild(currentIdentifier);
-
-                            if (newNode == null)
-                            {
-                                throw new DataNode.ValueNotInitialized(dataNode.Path() + currentIdentifier + "/" + identifier);
-                            }
-                            dataNode = newNode;
+                            dataNode = newNode ?? throw new DataNode.ValueNotInitialized(dataNode.Path() + currentIdentifier + "/" + identifier);
                         }
                     }
 
