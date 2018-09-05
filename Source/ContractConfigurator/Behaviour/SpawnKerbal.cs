@@ -160,7 +160,7 @@ namespace ContractConfigurator.Behaviour
                             {
                                 try
                                 {
-                                    kd.pqsCity = kd.body.GetComponentsInChildren<PQSCity>(true).Where(pqs => pqs.name == pqsCityStr).First();
+                                    kd.pqsCity = kd.body.GetComponentsInChildren<PQSCity>(true).First(pqs => pqs.name == pqsCityStr);
                                 }
                                 catch (Exception e)
                                 {

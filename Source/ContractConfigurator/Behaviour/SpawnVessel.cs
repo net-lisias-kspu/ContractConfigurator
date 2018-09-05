@@ -186,7 +186,7 @@ namespace ContractConfigurator.Behaviour
                         {
                             try
                             {
-                                vessel.pqsCity = vessel.body.GetComponentsInChildren<PQSCity>(true).Where(pqs => pqs.name == pqsCityStr).First();
+                                vessel.pqsCity = vessel.body.GetComponentsInChildren<PQSCity>(true).First(pqs => pqs.name == pqsCityStr);
                             }
                             catch (Exception e)
                             {
@@ -730,7 +730,7 @@ namespace ContractConfigurator.Behaviour
                                     if (cd.name == name && cd.addToRoster)
                                     {
                                         // Add them to the roster
-                                        ProtoCrewMember pcm = HighLogic.CurrentGame.CrewRoster.AllKerbals().Where(cm => cm.name == cd.name).First();
+                                        ProtoCrewMember pcm = HighLogic.CurrentGame.CrewRoster.AllKerbals().First(cm => cm.name == cd.name);
                                         pcm.type = ProtoCrewMember.KerbalType.Crew;
                                     }
                                 }
@@ -752,7 +752,7 @@ namespace ContractConfigurator.Behaviour
                         if (cd.name == crewMember.name && cd.addToRoster)
                         {
                             // Add them to the roster
-                            ProtoCrewMember pcm = HighLogic.CurrentGame.CrewRoster.AllKerbals().Where(cm => cm.name == cd.name).First();
+                            ProtoCrewMember pcm = HighLogic.CurrentGame.CrewRoster.AllKerbals().First(cm => cm.name == cd.name);
                             pcm.type = ProtoCrewMember.KerbalType.Crew;
                         }
                     }
@@ -890,7 +890,7 @@ namespace ContractConfigurator.Behaviour
             {
                 if (current < vd.crew.Count)
                 {
-                    return new Kerbal(HighLogic.CurrentGame.CrewRoster.AllKerbals().Where(cm => cm.name == vd.crew[current].name).First());
+                    return new Kerbal(HighLogic.CurrentGame.CrewRoster.AllKerbals().First(cm => cm.name == vd.crew[current].name));
                 }
                 current -= vd.crew.Count;
             }

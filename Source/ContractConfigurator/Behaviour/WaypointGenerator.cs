@@ -381,8 +381,8 @@ namespace ContractConfigurator.Behaviour
                             {
                                 try
                                 {
-                                    CelestialBody body = FlightGlobals.Bodies.Where(b => b.name == wpData.waypoint.celestialName).First();
-                                    wpData.pqsCity = body.GetComponentsInChildren<PQSCity>(true).Where(pqs => pqs.name == x).First();
+                                    CelestialBody body = FlightGlobals.Bodies.First(b => b.name == wpData.waypoint.celestialName);
+                                    wpData.pqsCity = body.GetComponentsInChildren<PQSCity>(true).First(pqs => pqs.name == x);
                                 }
                                 catch (Exception e)
                                 {
@@ -513,7 +513,7 @@ namespace ContractConfigurator.Behaviour
                 {
                     LoggingUtil.LogDebug(this, "Adjusting PQS City offset coordinates for waypoint " + wpData.waypoint.name);
 
-                    CelestialBody body = FlightGlobals.Bodies.Where(b => b.name == wpData.waypoint.celestialName).First();
+                    CelestialBody body = FlightGlobals.Bodies.First(b => b.name == wpData.waypoint.celestialName);
                     GeneratePQSCityCoordinates(wpData, body);
                     SetAltitude(wpData, body);
                     wpData.pqsCity = null;
@@ -547,8 +547,8 @@ namespace ContractConfigurator.Behaviour
                 string pqsCityName = ConfigNodeUtil.ParseValue<string>(child, "pqsCity", null);
                 if (pqsCityName != null)
                 {
-                    CelestialBody body = FlightGlobals.Bodies.Where(b => b.name == wpData.waypoint.celestialName).First();
-                    wpData.pqsCity = body.GetComponentsInChildren<PQSCity>(true).Where(pqs => pqs.name == pqsCityName).First();
+                    CelestialBody body = FlightGlobals.Bodies.First(b => b.name == wpData.waypoint.celestialName);
+                    wpData.pqsCity = body.GetComponentsInChildren<PQSCity>(true).First(pqs => pqs.name == pqsCityName);
                     wpData.pqsOffset = ConfigNodeUtil.ParseValue<Vector3d>(child, "pqsOffset");
                 }
 

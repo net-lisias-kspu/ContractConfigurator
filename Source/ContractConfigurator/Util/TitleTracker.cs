@@ -32,7 +32,7 @@ namespace ContractConfigurator
                 GameScenes.TRACKSTATION
             };
 
-            static FieldInfo contractsField = typeof(ContractsApp).GetFields(BindingFlags.NonPublic | BindingFlags.Instance).Where(mi => mi.FieldType == typeof(Dictionary<Guid, UICascadingList.CascadingListItem>)).First();
+            static FieldInfo contractsField = typeof(ContractsApp).GetFields(BindingFlags.NonPublic | BindingFlags.Instance).First(mi => mi.FieldType == typeof(Dictionary<Guid, UICascadingList.CascadingListItem>));
             private Dictionary<Guid, UICascadingList.CascadingListItem> _uiListMap = null;
 
             public static Dictionary<Guid, UICascadingList.CascadingListItem> uiListMap

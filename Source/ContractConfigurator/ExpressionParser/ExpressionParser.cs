@@ -73,8 +73,7 @@ namespace ContractConfigurator.ExpressionParser
         }
 
         public override MethodInfo methodParseStatementInner { get { return _methodParseStatementInner; } }
-        static MethodInfo _methodParseStatementInner = typeof(ExpressionParser<T>).GetMethods(BindingFlags.Instance | BindingFlags.Public).
-                Where(m => m.Name == "ParseStatementInner").Single();
+        static MethodInfo _methodParseStatementInner = typeof(ExpressionParser<T>).GetMethods(BindingFlags.Instance | BindingFlags.Public).Single(m => m.Name == "ParseStatementInner");
         public override MethodInfo methodGetRval { get { return _methodGetRval; } }
         static MethodInfo _methodGetRval = typeof(ExpressionParser<T>).GetMethod("GetRval",
             BindingFlags.Public | BindingFlags.Instance);
@@ -88,8 +87,7 @@ namespace ContractConfigurator.ExpressionParser
         static MethodInfo _methodParseMethod = typeof(ExpressionParser<T>).GetMethods(BindingFlags.Public | BindingFlags.Instance).
             Where(m => m.Name == "ParseMethod" && m.GetParameters().Count() == 3).Single();
         public override MethodInfo methodCompleteIdentifierParsing { get { return _methodCompleteIdentifierParsing; } }
-        static MethodInfo _methodCompleteIdentifierParsing = typeof(ExpressionParser<T>).GetMethods(BindingFlags.Public | BindingFlags.Instance).
-            Where(mi => mi.Name == "CompleteIdentifierParsing").First();
+        static MethodInfo _methodCompleteIdentifierParsing = typeof(ExpressionParser<T>).GetMethods(BindingFlags.Public | BindingFlags.Instance).First(mi => mi.Name == "CompleteIdentifierParsing");
         public override MethodInfo method_ConvertType { get { return _method_ConvertType; } }
         static MethodInfo _method_ConvertType = typeof(ExpressionParser<T>).GetMethod("_ConvertType", BindingFlags.Public | BindingFlags.Instance);
 

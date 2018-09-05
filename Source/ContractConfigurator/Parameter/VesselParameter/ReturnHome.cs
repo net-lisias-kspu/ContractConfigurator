@@ -22,7 +22,7 @@ namespace ContractConfigurator.Parameters
         public ReturnHome(string title)
             : base(title)
         {
-            CelestialBody home = FlightGlobals.Bodies.Where(cb => cb.isHomeWorld).First();
+            CelestialBody home = FlightGlobals.Bodies.First(cb => cb.isHomeWorld);
             this.title = title != null ? title : "Land or splashdown on " + home.CleanDisplayName(true);
         }
 

@@ -22,8 +22,8 @@ namespace ContractConfigurator.Util
     [KSPAddon(KSPAddon.Startup.SpaceCentre, false)]
     public class MissionControlUI : MonoBehaviour
     {
-        static FieldInfo childUIListField = typeof(UIList).GetFields(BindingFlags.Instance | BindingFlags.NonPublic).Where(fi => fi.FieldType == typeof(UIList<KSP.UI.UIListItem>)).First();
-        static FieldInfo listDataField = typeof(UIList<KSP.UI.UIListItem>).GetFields(BindingFlags.Instance | BindingFlags.NonPublic).Where(fi => fi.FieldType == typeof(List<UIListData<KSP.UI.UIListItem>>)).First();
+        static FieldInfo childUIListField = typeof(UIList).GetFields(BindingFlags.Instance | BindingFlags.NonPublic).First(fi => fi.FieldType == typeof(UIList<KSP.UI.UIListItem>));
+        static FieldInfo listDataField = typeof(UIList<KSP.UI.UIListItem>).GetFields(BindingFlags.Instance | BindingFlags.NonPublic).First(fi => fi.FieldType == typeof(List<UIListData<KSP.UI.UIListItem>>));
         public static string RequirementHighlightColor = "F9F9F6";
 
         public class Container

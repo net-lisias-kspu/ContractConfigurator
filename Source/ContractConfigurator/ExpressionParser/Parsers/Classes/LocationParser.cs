@@ -49,8 +49,8 @@ namespace ContractConfigurator.ExpressionParser
 
         private static Location KSCLocation()
         {
-            CelestialBody home = FlightGlobals.Bodies.Where(cb => cb.isHomeWorld).First();
-            PQSCity ksc = home.GetComponentsInChildren<PQSCity>(true).Where(pqs => pqs.name == "KSC").First();
+            CelestialBody home = FlightGlobals.Bodies.First(cb => cb.isHomeWorld);
+            PQSCity ksc = home.GetComponentsInChildren<PQSCity>(true).First(pqs => pqs.name == "KSC");
 
             return new Location(home, home.GetLatitude(ksc.transform.position), home.GetLongitude(ksc.transform.position));
         }

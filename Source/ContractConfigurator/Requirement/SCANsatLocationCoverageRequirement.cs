@@ -46,7 +46,7 @@ namespace ContractConfigurator
             {
                 try
                 {
-                    pqsCity = targetBody.GetComponentsInChildren<PQSCity>(true).Where(pqs => pqs.name == pqsName).First();
+                    pqsCity = targetBody.GetComponentsInChildren<PQSCity>(true).First(pqs => pqs.name == pqsName);
                 }
                 catch (Exception e)
                 {
@@ -78,7 +78,7 @@ namespace ContractConfigurator
             string pqsCityName = ConfigNodeUtil.ParseValue<string>(configNode, "pqsCity", "");
             if (!string.IsNullOrEmpty(pqsCityName))
             {
-                pqsCity = targetBody.GetComponentsInChildren<PQSCity>(true).Where(pqs => pqs.name == pqsCityName).First();
+                pqsCity = targetBody.GetComponentsInChildren<PQSCity>(true).First(pqs => pqs.name == pqsCityName);
             }
         }
 
