@@ -9,7 +9,7 @@ using FinePrint;
 
 namespace ContractConfigurator
 {
-    public class Validation
+    public static class Validation
     {
         public static bool GT<T>(T val, T referenceValue) where T : IComparable
         {

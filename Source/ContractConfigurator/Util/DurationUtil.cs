@@ -12,7 +12,7 @@ namespace ContractConfigurator
     /// <summary>
     /// Class for handling duration related stuff.
     /// </summary>
-    public class DurationUtil
+    public static class DurationUtil
     {
         private static uint SecondsPerYear;
         private static uint SecondsPerDay;

@@ -179,7 +179,7 @@ namespace ContractConfigurator
         }
     }
 
-    public class SettingsBuilder
+    public static class SettingsBuilder
     {
         public static Type GroupParametersType = null;
         public static Type StockParametersType = null;

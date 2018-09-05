@@ -8,7 +8,7 @@ using ContractConfigurator.ExpressionParser;
 
 namespace ContractConfigurator
 {
-    public class LoggingUtil
+    public static class LoggingUtil
     {
         public enum LogLevel {
             VERBOSE = 0,

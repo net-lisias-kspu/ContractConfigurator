@@ -25,15 +25,15 @@ namespace ContractConfigurator
     /// <summary>
     /// The Wrapper class to access ResearchBodies
     /// </summary>
-    public class RBWrapper
+    public static class RBWrapper
     {
-        protected static Type RBAPIType;
-        protected static Type RBSCAPIType;
-        protected static Type RBDBAPIType;
-        protected static Type RBDBCelestialBodyType;
-        protected static MonoBehaviour actualRB;
-        protected static Object actualRBSC;
-        protected static Object actualRBDB;
+        private static Type RBAPIType;
+        private static Type RBSCAPIType;
+        private static Type RBDBAPIType;
+        private static Type RBDBCelestialBodyType;
+        private static MonoBehaviour actualRB;
+        private static Object actualRBSC;
+        private static Object actualRBDB;
 
         /// <summary>
         /// This is the ResearchBodies API object

@@ -8,7 +8,7 @@ using DDSHeaders;
 
 namespace ContractConfigurator.Util
 {
-    public class TextureUtil
+    public static class TextureUtil
     {
         public static Texture2D LoadTexture(string url)
         {
