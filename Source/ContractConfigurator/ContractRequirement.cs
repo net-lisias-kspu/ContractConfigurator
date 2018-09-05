@@ -143,7 +143,6 @@ namespace ContractConfigurator
         /// Loads a requirement from a ConfigNode.
         /// </summary>
         /// <param name="configNode"></param>
-        /// <param name="contract"></param>
         /// <returns></returns>
         public static ContractRequirement LoadRequirement(ConfigNode configNode)
         {

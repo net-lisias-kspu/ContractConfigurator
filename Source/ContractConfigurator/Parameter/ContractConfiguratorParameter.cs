@@ -137,7 +137,7 @@ namespace ContractConfigurator.Parameters
         /// <summary>
         /// Use this instead of OnSave.
         /// </summary>
-        /// <param name="configNode">The ConfigNode to save to.</param>
+        /// <param name="node">The ConfigNode to save to.</param>
         protected abstract void OnParameterSave(ConfigNode node);
 
         protected sealed override void OnLoad(ConfigNode node)
@@ -169,7 +169,7 @@ namespace ContractConfigurator.Parameters
         /// <summary>
         /// Use this instead of OnLoad.
         /// </summary>
-        /// <param name="configNode">The ConfigNode to laod from.</param>
+        /// <param name="node">The ConfigNode to laod from.</param>
         protected abstract void OnParameterLoad(ConfigNode node);
 
         /// <summary>

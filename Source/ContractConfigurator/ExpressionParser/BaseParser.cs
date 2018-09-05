@@ -254,7 +254,7 @@ namespace ContractConfigurator.ExpressionParser
         /// <summary>
         /// Registers a function that is available globally.
         /// </summary>
-        /// <param name="method">The callable function.</param>
+        /// <param name="function">The callable function.</param>
         protected static void RegisterGlobalFunction(Function function)
         {
             if (!globalFunctions.ContainsKey(function.Name))

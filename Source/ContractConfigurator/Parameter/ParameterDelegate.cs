@@ -336,7 +336,7 @@ namespace ContractConfigurator.Parameters
         /// Checks the child conditions for each child parameter delegate in the given parent.
         /// </summary>
         /// <param name="param">The contract parameter that we are called from.</param>
-        /// <param name="values">The values to enumerator over.</param>
+        /// <param name="value">The values to enumerator over.</param>
         /// <param name="checkOnly">Only perform a check, don't change values.</param>
         /// <returns></returns>
         public static bool CheckChildConditions(ContractParameter param, T value, bool checkOnly = false)

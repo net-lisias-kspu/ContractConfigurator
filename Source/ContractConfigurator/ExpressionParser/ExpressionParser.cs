@@ -39,7 +39,7 @@ namespace ContractConfigurator.ExpressionParser
         /// <summary>
         /// Registers a function that is only available in the contract of the given type.
         /// </summary>
-        /// <param name="method">The callable function.</param>
+        /// <param name="function">The callable function.</param>
         public static void RegisterLocalFunction(Function function)
         {
             if (!classFunctions.ContainsKey(function.Name))

@@ -11,7 +11,8 @@ namespace ContractConfigurator
         /// <summary>
         /// Gets the  distance in meters from the activeVessel to the given waypoint.
         /// </summary>
-        /// <param name="wpd">Activated waypoint</param>
+        /// <param name="waypoint">Activated waypoint</param>
+        /// <param name="height">Activated waypoint height</param>
         /// <returns>Distance in meters</returns>
         public static double GetDistanceToWaypoint(Vessel vessel, Waypoint waypoint, ref double height)
         {
