@@ -110,12 +110,9 @@ namespace ContractConfigurator.ExpressionParser
 
                     // Look for an end quote
                     int quoteIndex = quoted ? expression.IndexOf('"') : -1;
-                    if (quoteIndex > 0)
+                    if (quoteIndex > 0 && expression.Substring(quoteIndex - 1, 1) == "\\")
                     {
-                        if (expression.Substring(quoteIndex-1, 1) == "\\")
-                        {
-                            quoteIndex = -1;
-                        }
+                        quoteIndex = -1;
                     }
 
                     if (m.Success && (specialIdentifierIndex == -1 || functionIndex < specialIdentifierIndex) &&

@@ -76,16 +76,12 @@ namespace ContractConfigurator.Parameters
                 return;
             }
 
-            // Check if we hit the ground
-            if (mustImpactTerrain)
+            if (mustImpactTerrain && !(
+                                report.other.ToLower().Contains(string.Intern("surface")) ||
+                                report.other.ToLower().Contains(string.Intern("terrain")) ||
+                                report.other.ToLower().Contains(v.mainBody.name.ToLower())))
             {
-                if (!(
-                    report.other.ToLower().Contains(string.Intern("surface")) ||
-                    report.other.ToLower().Contains(string.Intern("terrain")) ||
-                    report.other.ToLower().Contains(v.mainBody.name.ToLower())))
-                {
-                    return;
-                }
+                return;
             }
 
             destroyedVessels[v] = true;

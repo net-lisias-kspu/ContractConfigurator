@@ -1142,13 +1142,8 @@ namespace ContractConfigurator.Util
 
         protected Contract.ContractPrestige? GetPrestige(ContractType contractType)
         {
-            if (contractType.dataNode.IsDeterministic("prestige"))
-            {
-                if (contractType.prestige.Count == 1)
-                {
-                    return contractType.prestige.First();
-                }
-            }
+            if (contractType.dataNode.IsDeterministic("prestige") && contractType.prestige.Count == 1)
+                return contractType.prestige.First();
             return null;
         }
 

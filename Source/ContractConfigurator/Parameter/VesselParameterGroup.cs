@@ -355,12 +355,9 @@ namespace ContractConfigurator.Parameters
                 node.AddValue("vessel", vesselName);
             }
             node.AddValue("duration", duration);
-            if (waiting || state == ParameterState.Complete)
+            if ((waiting || state == ParameterState.Complete) && waiting)
             {
-                if (waiting)
-                {
-                    node.AddValue("completionTime", completionTime);
-                }
+                node.AddValue("completionTime", completionTime);
             }
             if (trackedVessel != null)
             {
