@@ -116,10 +116,7 @@ namespace ContractConfigurator.Parameters
         {
             if (displayNotes)
             {
-                if (sop == null)
-                {
-                    sop = new SpecificOrbitParameter(OrbitType.POLAR, orbit.inclination, orbit.eccentricity, orbit.semiMajorAxis, orbit.LAN, orbit.argumentOfPeriapsis, orbit.meanAnomalyAtEpoch, orbit.epoch, targetBody, deviationWindow);
-                }
+                sop = sop ?? new SpecificOrbitParameter(OrbitType.POLAR, orbit.inclination, orbit.eccentricity, orbit.semiMajorAxis, orbit.LAN, orbit.argumentOfPeriapsis, orbit.meanAnomalyAtEpoch, orbit.epoch, targetBody, deviationWindow);
                 return sop.Notes;
             }
             return notes;

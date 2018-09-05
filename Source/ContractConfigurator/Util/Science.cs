@@ -133,10 +133,7 @@ namespace ContractConfigurator.Util
 
             // Set up the biome filter
             bool biomesFiltered = biomeFilter != null;
-            if (biomeFilter == null)
-            {
-                biomeFilter = new Func<string, bool>(x => true);
-            }
+            biomeFilter = biomeFilter ?? new Func<string, bool>(x => true);
 
             IEnumerable<string> biomes = body.BiomeMap == null ? Enumerable.Empty<string>() :
                 body.BiomeMap.Attributes.Select(attr => attr.name.Replace(" ", string.Empty)).
