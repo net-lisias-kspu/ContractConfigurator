@@ -38,7 +38,7 @@ namespace ContractConfigurator.ExpressionParser
             RegisterMethod(new Method<List<T>, T>("Last", l => l == null ? default(T) : l.LastOrDefault()));
             RegisterMethod(new Method<List<T>, int, T>("ElementAt", (l, i) => l == null ? default(T) : l.ElementAtOrDefault(i)));
 
-            RegisterMethod(new Method<List<T>, T, bool>("Contains", (l, o) => l == null ? false : l.Contains(o)));
+            RegisterMethod(new Method<List<T>, T, bool>("Contains", (l, o) => l != null && l.Contains(o)));
 
             RegisterMethod(new Method<List<T>, int>("Count", l => l == null ? 0 : l.Count));
 

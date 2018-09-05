@@ -24,7 +24,7 @@ namespace ContractConfigurator
             bool valid = base.LoadFromConfig(configNode);
 
             // Check on active contracts too
-            checkOnActiveContract = configNode.HasValue("checkOnActiveContract") ? checkOnActiveContract : true;
+            checkOnActiveContract = !configNode.HasValue("checkOnActiveContract") || checkOnActiveContract;
 
             valid &= ConfigNodeUtil.ParseValue<SpaceCenterFacility>(configNode, "facility", x => facility = x, this);
             valid &= ConfigNodeUtil.ParseValue<int>(configNode, "minLevel", x => minLevel = x, this, 1, x => Validation.Between(x, 1, 3));

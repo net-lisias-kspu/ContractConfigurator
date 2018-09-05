@@ -136,7 +136,7 @@ namespace ContractConfigurator.ExpressionParser
             }
 
             CelestialBodySubtree tree = ProgressTracking.Instance.celestialBodyNodes.Where(node => node.Body == cb).FirstOrDefault();
-            return tree == null ? false : CheckTree(tree, pi);
+            return tree != null && CheckTree(tree, pi);
         }
 
         private static bool CheckTree(CelestialBodySubtree tree, ProgressItem pi)

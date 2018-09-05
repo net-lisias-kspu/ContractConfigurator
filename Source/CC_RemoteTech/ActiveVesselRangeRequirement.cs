@@ -26,7 +26,7 @@ namespace ContractConfigurator.RemoteTech
             valid &= Util.Version.VerifyRemoteTechVersion();
 
             // Do not check on active contracts
-            checkOnActiveContract = configNode.HasValue("checkOnActiveContract") ? checkOnActiveContract : false;
+            checkOnActiveContract = configNode.HasValue("checkOnActiveContract") && checkOnActiveContract;
 
             valid &= ConfigNodeUtil.ParseValue<double>(configNode, "range", x => range = x, this);
             valid &= ValidateTargetBody(configNode);

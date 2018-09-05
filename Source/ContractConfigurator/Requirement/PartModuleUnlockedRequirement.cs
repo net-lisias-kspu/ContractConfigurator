@@ -21,7 +21,7 @@ namespace ContractConfigurator
             bool valid = base.LoadFromConfig(configNode);
 
             // Do not check on active contracts.
-            checkOnActiveContract = configNode.HasValue("checkOnActiveContract") ? checkOnActiveContract : false;
+            checkOnActiveContract = configNode.HasValue("checkOnActiveContract") && checkOnActiveContract;
 
             valid &= ConfigNodeUtil.ParseValue<List<string>>(configNode, "partModule", x => partModules = x, this, x => x.All(Validation.ValidatePartModule));
 

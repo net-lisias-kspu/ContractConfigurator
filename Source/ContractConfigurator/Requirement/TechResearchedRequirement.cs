@@ -23,7 +23,7 @@ namespace ContractConfigurator
             bool valid = base.LoadFromConfig(configNode);
 
             // Check on active contracts too
-            checkOnActiveContract = configNode.HasValue("checkOnActiveContract") ? checkOnActiveContract : true;
+            checkOnActiveContract = !configNode.HasValue("checkOnActiveContract") || checkOnActiveContract;
 
             valid &= ConfigNodeUtil.ParseValue<List<string>>(configNode, "tech", x => techs = x, this, new List<string>());
 
