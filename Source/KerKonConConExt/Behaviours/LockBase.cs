@@ -49,7 +49,7 @@ namespace KerKonConConExt
             {
                 return;
             }
-            LockABase(cond, param.ID, param.State == ParameterState.Complete ? basename : basename);
+            LockABase(cond, param.ID, basename);
         }
 
         protected override void OnAccepted()
