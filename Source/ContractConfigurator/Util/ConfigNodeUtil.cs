@@ -789,10 +789,7 @@ namespace ContractConfigurator
             bool group2Value = false;
             foreach (string value in group1)
             {
-                if (configNode.HasValue(value))
-                {
-                    group1Value = true;
-                }
+                group1Value |= configNode.HasValue(value);
 
                 if (value == group1.First())
                 {
@@ -805,10 +802,7 @@ namespace ContractConfigurator
             }
             foreach (string value in group2)
             {
-                if (configNode.HasValue(value))
-                {
-                    group2Value = true;
-                }
+                group2Value |= configNode.HasValue(value);
 
                 if (value == group2.First())
                 {

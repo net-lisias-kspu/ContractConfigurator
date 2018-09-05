@@ -424,10 +424,7 @@ namespace ContractConfigurator.ExpressionParser
                                     obj.ErrorPrefix() + ": " + name + ": The field 'title' is required in for data node values where 'requiredValue' is true.  Alternatively, the attribute 'hidden' can be set to true (but be careful - this can cause player confusion if all lines for the contract type show as 'Met' and the contract isn't generating).");
 
                                 // Error on newer versions of contract packs
-                                if (obj.minVersion >= ContractConfigurator.ENHANCED_UI_VERSION)
-                                {
-                                    valid = false;
-                                }
+                                valid &= obj.minVersion < ContractConfigurator.ENHANCED_UI_VERSION;
                             }
 
                         }

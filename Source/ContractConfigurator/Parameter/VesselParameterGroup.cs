@@ -607,10 +607,12 @@ namespace ContractConfigurator.Parameters
             if (waiting && Planetarium.GetUniversalTime() > completionTime)
             {
                 SetState(ParameterState.Complete);
-                if (state == ParameterState.Complete)
+#pragma warning disable RECS0093 // Convert 'if' to '&&' expression
+                if (state == ParameterState.Complete) // waiting is a property with getter
                 {
                     waiting = false;
                 }
+#pragma warning restore RECS0093 // Convert 'if' to '&&' expression
             }
             // Every time the clock ticks over, make an attempt to update the contract window
             // notes.  We do this because otherwise the window will only ever read the notes once,

@@ -966,10 +966,7 @@ namespace ContractConfigurator.Util
                     {
                         available++;
                     }
-                    if (contractContainer.contract.ContractViewed == Contract.Viewed.Unseen)
-                    {
-                        groupContainer.unread = true;
-                    }
+                    groupContainer.unread |= contractContainer.contract.ContractViewed == Contract.Viewed.Unseen;
                 }
             }
             foreach (GroupContainer childContainer in groupContainer.childGroups)

@@ -70,10 +70,7 @@ namespace ContractConfigurator.Parameters
                     output = "Do not kill";
                     if (state != ParameterState.Incomplete || ParameterCount == 1)
                     {
-                        if (ParameterCount == 1)
-                        {
-                            hideChildren = true;
-                        }
+                        hideChildren |= ParameterCount == 1;
 
                         output += ": " + ParameterDelegate<ProtoCrewMember>.GetDelegateText(this);
                     }

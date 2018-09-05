@@ -77,10 +77,7 @@ namespace ContractConfigurator
                     "Contract Configurator " + ainfoV.InformationalVersion);
 
                 // Add the close icon
-                if (GUI.Button(new Rect(windowPos.xMax - 18, windowPos.yMin + 2, 16, 16), closeIcon, GUI.skin.label))
-                {
-                    showGUI = false;
-                }
+                showGUI &= !GUI.Button(new Rect(windowPos.xMax - 18, windowPos.yMin + 2, 16, 16), closeIcon, GUI.skin.label);
 
                 GUI.depth = 0;
                 if (drawToolTip)

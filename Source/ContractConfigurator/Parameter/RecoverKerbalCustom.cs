@@ -40,10 +40,7 @@ namespace ContractConfigurator.Parameters
                 recovered[kerbal.name] = false;
             }
 
-            if (kerbals.Count() + count == 1)
-            {
-                hideChildren = true;
-            }
+            hideChildren |= kerbals.Count() + count == 1;
 
             CreateDelegates();
         }

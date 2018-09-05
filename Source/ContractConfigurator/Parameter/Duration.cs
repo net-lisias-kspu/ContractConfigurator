@@ -184,11 +184,11 @@ namespace ContractConfigurator.Parameters
 
             if (!triggered && parameter.Contains(param.ID))
             {
-                if (startCriteria == StartCriteria.PARAMETER_COMPLETION && param.State == ParameterState.Complete ||
-                    startCriteria == StartCriteria.PARAMETER_FAILURE && param.State == ParameterState.Failed)
-                {
-                    triggered = true;
-                }
+                triggered |= (
+                    startCriteria == StartCriteria.PARAMETER_COMPLETION && param.State == ParameterState.Complete
+                    ||
+                    startCriteria == StartCriteria.PARAMETER_FAILURE && param.State == ParameterState.Failed
+                );
             }
 
             // Queue up a check

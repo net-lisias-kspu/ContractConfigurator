@@ -461,10 +461,7 @@ namespace ContractConfigurator
                         ErrorPrefix() + ": The field 'genericTitle' is required when the title is not determistic (ie. when expressions are used).");
 
                     // Error on newer versions of contract packs
-                    if (minVersion >= ContractConfigurator.ENHANCED_UI_VERSION)
-                    {
-                        valid = false;
-                    }
+                    valid &= minVersion < ContractConfigurator.ENHANCED_UI_VERSION;
                 }
                 else if (!dataNode.IsDeterministic("genericTitle"))
                 {
@@ -480,10 +477,7 @@ namespace ContractConfigurator
                         ErrorPrefix() + ": The field 'genericDescription' is required when the description is not determistic (ie. when expressions are used).");
 
                     // Error on newer versions of contract packs
-                    if (minVersion >= ContractConfigurator.ENHANCED_UI_VERSION)
-                    {
-                        valid = false;
-                    }
+                    valid &= minVersion < ContractConfigurator.ENHANCED_UI_VERSION;
                 }
                 else if (!dataNode.IsDeterministic("genericDescription"))
                 {

@@ -149,10 +149,7 @@ namespace ContractConfigurator.Parameters
                 }
 
                 // Check on the state
-                if (child.State != ParameterState.Complete)
-                {
-                    foundIncomplete = true;
-                }
+                foundIncomplete |= child.State != ParameterState.Complete;
             }
         }
     }

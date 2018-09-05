@@ -150,10 +150,7 @@ namespace CutSceneConfigurator
                     "Cut Scene Configurator " + ainfoV.InformationalVersion);
 
                 // Add the close icon
-                if (GUI.Button(new Rect(windowPos.xMax - 18, windowPos.yMin + 2, 16, 16), closeIcon, GUI.skin.label))
-                {
-                    showGUI = false;
-                }
+                showGUI &= !GUI.Button(new Rect(windowPos.xMax - 18, windowPos.yMin + 2, 16, 16), closeIcon, GUI.skin.label);
 
                 // Show the delete confirmation dialog
                 if (deleteCurrent)
@@ -165,10 +162,7 @@ namespace CutSceneConfigurator
                         "Delete Cut Scene Action");
 
                     // Add the close icon
-                    if (GUI.Button(new Rect(rmWindowPos.xMax - 18, rmWindowPos.yMin + 2, 16, 16), closeIcon, GUI.skin.label))
-                    {
-                        deleteCurrent = false;
-                    }
+                    deleteCurrent &= !GUI.Button(new Rect(rmWindowPos.xMax - 18, rmWindowPos.yMin + 2, 16, 16), closeIcon, GUI.skin.label);
                 }
 
                 GUI.depth = 0;
@@ -334,10 +328,7 @@ namespace CutSceneConfigurator
                     currentCutScene.actions[currentIndex + 1] = currentAction;
                 }
             }
-            if (GUILayout.Button("Delete") && currentIndex != -1)
-            {
-                deleteCurrent = true;
-            }
+            deleteCurrent |= (GUILayout.Button("Delete") && currentIndex != -1);
             GUILayout.EndHorizontal();
             GUILayout.EndVertical();
 
@@ -396,10 +387,7 @@ namespace CutSceneConfigurator
                     currentItem = null;
                 }
             }
-            if (GUILayout.Button("No"))
-            {
-                deleteCurrent = false;
-            }
+            deleteCurrent &= !GUILayout.Button("No");
             GUILayout.EndHorizontal();
             GUILayout.EndVertical();
 

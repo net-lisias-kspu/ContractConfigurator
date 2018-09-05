@@ -54,10 +54,7 @@ namespace ContractConfigurator.Parameters
             {
                 if (kerbals.Count == 0 && (state == ParameterState.Complete || ParameterCount == 1))
                 {
-                    if (ParameterCount == 1)
-                    {
-                        hideChildren = true;
-                    }
+                    hideChildren |= ParameterCount == 1;
 
                     string traitString = String.IsNullOrEmpty(trait) ? "Kerbal" : TraitTitle(trait);
                     output = "Crew: ";
@@ -103,10 +100,7 @@ namespace ContractConfigurator.Parameters
                     output = "Crew";
                     if (state == ParameterState.Complete || ParameterCount == 1)
                     {
-                        if (ParameterCount == 1)
-                        {
-                            hideChildren = true;
-                        }
+                        hideChildren |= ParameterCount == 1;
 
                         output += ": " + ParameterDelegate<ProtoCrewMember>.GetDelegateText(this);
                     }

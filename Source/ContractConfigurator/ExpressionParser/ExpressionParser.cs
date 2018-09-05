@@ -1035,10 +1035,7 @@ namespace ContractConfigurator.ExpressionParser
                                 bool found = true;
                                 for (int j = 0; j < paramCount; j++)
                                 {
-                                    if (parameters[j].Value != method.ParameterType(j))
-                                    {
-                                        found = false;
-                                    }
+                                    found &= parameters[j].Value == method.ParameterType(j);
                                 }
 
                                 if (found)
