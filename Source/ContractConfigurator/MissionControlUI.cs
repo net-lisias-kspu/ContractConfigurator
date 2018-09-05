@@ -202,10 +202,7 @@ namespace ContractConfigurator.Util
 
                     return key;
                 }
-                else
-                {
-                    return DisplayName(c.GetType()) + "." + c.Title;
-                }
+                return DisplayName(c.GetType()) + "." + c.Title;
             }
         }
 
@@ -499,11 +496,9 @@ namespace ContractConfigurator.Util
 
                                 break;
                             }
+
                             // Keep track of the list item - we'll add immediately after it
-                            else
-                            {
-                                foundMatch = container;
-                            }
+                            foundMatch = container;
                         }
                         continue;
                     }
@@ -703,11 +698,9 @@ namespace ContractConfigurator.Util
                     {
                         break;
                     }
-                    else
-                    {
-                        // Remove from the list
-                        MissionControl.Instance.scrollListContracts.RemoveItem(parent.mcListItem.container);
-                    }
+
+                    // Remove from the list
+                    MissionControl.Instance.scrollListContracts.RemoveItem(parent.mcListItem.container);
                 }
             }
 

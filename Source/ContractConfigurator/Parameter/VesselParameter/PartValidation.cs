@@ -170,18 +170,9 @@ namespace ContractConfigurator.Parameters
             string output = partModule.Replace("Module", "").Replace("FX", "");
 
             // Hardcoded special values
-            if (output == "SAS")
-            {
-                return output;
-            }
-            else if (output == "RTAntenna")
-            {
-                return "Antenna";
-            }
-            else if (output.Contains("Wheel"))
-            {
-                return "Wheel";
-            }
+            if (output == "SAS")            return output;
+            if (output == "RTAntenna")      return "Antenna";
+            if (output.Contains("Wheel"))   return "Wheel";
 
             return Regex.Replace(output, "(\\B[A-Z])", " $1");
         }

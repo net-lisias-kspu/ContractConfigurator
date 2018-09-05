@@ -65,13 +65,8 @@ namespace ContractConfigurator
                     if (found)
                     {
                         if (ResearchAndDevelopment.PartModelPurchased(p))
-                        {
                             break;
-                        }
-                        else
-                        {
-                            found = false;
-                        }
+                        found = false;
                     }
                 }
 

@@ -194,7 +194,8 @@ namespace ContractConfigurator.ExpressionParser
             {
                 return (ExpressionParser<T>)Activator.CreateInstance(parserTypes[typeof(T)]);
             }
-            else if (typeof(T).IsEnum)
+
+            if (typeof(T).IsEnum)
             {
                 Type enumParser = typeof(EnumExpressionParser<>).MakeGenericType(new Type[] { typeof(T) });
                 return (ExpressionParser<T>)Activator.CreateInstance(enumParser);
@@ -271,7 +272,8 @@ namespace ContractConfigurator.ExpressionParser
                 WrongDataType ex = (WrongDataType)e;
                 return ex.expected;
             }
-            else if (e.GetType() == typeof(DataStoreCastException))
+
+            if (e.GetType() == typeof(DataStoreCastException))
             {
                 DataStoreCastException ex = (DataStoreCastException)e;
                 return ex.FromType;

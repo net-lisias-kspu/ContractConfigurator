@@ -69,11 +69,8 @@ namespace ContractConfigurator
                 return new CollectScienceCustom(b == null ? targetBody : b.body, b == null ? "" : b.biome, es, location,
                     subjects.Select<ScienceSubject, string>(s => Util.Science.GetExperiment(s).id).ToList(), recoveryMethod, title);
             }
-            else
-            {
-                return new CollectScienceCustom(biome == null ? targetBody : biome.body, biome == null ? "" : biome.biome, situation, location,
-                    experiment.Select<ScienceExperiment, string>(e => e.id).ToList(), recoveryMethod, title);
-            }
+            return new CollectScienceCustom(biome == null ? targetBody : biome.body, biome == null ? "" : biome.biome, situation, location,
+                experiment.Select<ScienceExperiment, string>(e => e.id).ToList(), recoveryMethod, title);
         }
     }
 }

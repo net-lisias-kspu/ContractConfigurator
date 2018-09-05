@@ -150,10 +150,7 @@ namespace ContractConfigurator
                 {
                     return ParseNode<T>(configNode, key, allowExpression);
                 }
-                else
-                {
-                    throw new ArgumentException("Missing required value '" + key + "'.");
-                }
+                throw new ArgumentException("Missing required value '" + key + "'.");
             }
 
             // Special cases
@@ -226,7 +223,8 @@ namespace ContractConfigurator
 
                 return list;
             }
-            else if (typeof(T).Name == "Nullable`1")
+
+            if (typeof(T).Name == "Nullable`1")
             {
                 // Create the generic method
                 MethodInfo parseValueMethod = typeof(ConfigNodeUtil).GetMethod("ParseValue",
@@ -242,9 +240,7 @@ namespace ContractConfigurator
                 {
                     Exception e = ExceptionUtil.UnwrapTargetInvokationException(tie);
                     if (e != null)
-                    {
                         throw e;
-                    }
                     throw;
                 }
             }
@@ -494,10 +490,7 @@ namespace ContractConfigurator
             {
                 return ParseValue<T>(configNode, key);
             }
-            else
-            {
-                return defaultValue;
-            }
+            return defaultValue;
         }
 
         /// <summary>
@@ -885,11 +878,8 @@ namespace ContractConfigurator
                         yield return null;
                         yield break;
                     }
-                    else
-                    {
-                        initialLoad = true;
-                        yield return loadObj.key;
-                    }
+                    initialLoad = true;
+                    yield return loadObj.key;
                 }
             }
             finally
@@ -969,40 +959,32 @@ namespace ContractConfigurator
                 Type listType = typeof(List<>);
                 return listType.MakeGenericType(ParseTypeValue(innerType));
             }
-            else if (name.Contains('.'))
-            {
-                return Type.GetType(name);
-            }
-            else
-            {
-                if (typeMap.ContainsKey(name))
-                {
-                    return typeMap[name];
-                }
 
-                // Get all assemblies, but look at the ContractConfigurator ones first
-                foreach (Assembly assembly in AppDomain.CurrentDomain.GetAssemblies().
-                    OrderBy(a => a.FullName.Contains("ContractConfigurator") ? 0 :
-                        a.FullName.Contains("Assembly-CSharp") ? 1 : 2))
+            if (name.Contains('.'))         return Type.GetType(name);
+            if (typeMap.ContainsKey(name))  return typeMap[name];
+
+            // Get all assemblies, but look at the ContractConfigurator ones first
+            foreach (Assembly assembly in AppDomain.CurrentDomain.GetAssemblies().
+                OrderBy(a => a.FullName.Contains("ContractConfigurator") ? 0 :
+                    a.FullName.Contains("Assembly-CSharp") ? 1 : 2))
+            {
+                try
                 {
-                    try
+                    Type type = assembly.GetTypes().Where(t => t.Name == name).OrderBy(t => t.FullName.Length).FirstOrDefault();
+                    if (type != null)
                     {
-                        Type type = assembly.GetTypes().Where(t => t.Name == name).OrderBy(t => t.FullName.Length).FirstOrDefault();
-                        if (type != null)
-                        {
-                            // Cache it
-                            typeMap[name] = type;
-                            return type;
-                        }
-                    }
-                    catch
-                    {
-                        // Ignore exception, as assembly type errors gets logged elsewhere
+                        // Cache it
+                        typeMap[name] = type;
+                        return type;
                     }
                 }
-
-                throw new ArgumentException("'" + name + "' is not a valid type.");
+                catch
+                {
+                    // Ignore exception, as assembly type errors gets logged elsewhere
+                }
             }
+
+            throw new ArgumentException("'" + name + "' is not a valid type.");
         }
 
         private static ProtoCrewMember ParseProtoCrewMemberValue(string name)

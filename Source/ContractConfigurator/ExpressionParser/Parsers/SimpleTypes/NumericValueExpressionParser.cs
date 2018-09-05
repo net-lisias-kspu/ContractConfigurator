@@ -190,7 +190,8 @@ namespace ContractConfigurator.ExpressionParser
                 if (ival == 9) return "nine";
                 return ival.ToString("N0");
             }
-            else if (typeof(T) == typeof(float) || typeof(T) == typeof(double))
+
+            if (typeof(T) == typeof(float) || typeof(T) == typeof(double))
             {
                 double dval = (double)(object)tval;
                 if (dval < 1.0)
@@ -199,6 +200,7 @@ namespace ContractConfigurator.ExpressionParser
                 }
                 return dval.ToString("N2");
             }
+
             return tval.ToString();
         }
 
@@ -209,11 +211,13 @@ namespace ContractConfigurator.ExpressionParser
                 int ival = (int)(object)tval;
                 return ival.ToString(format);
             }
-            else if (typeof(T) == typeof(float) || typeof(T) == typeof(double))
+
+            if (typeof(T) == typeof(float) || typeof(T) == typeof(double))
             {
                 double dval = (double)(object)tval;
                 return dval.ToString(format);
             }
+
             return tval.ToString();
         }
 
@@ -367,21 +371,18 @@ namespace ContractConfigurator.ExpressionParser
 
                     return default(T);
                 }
-                else if (PersistentDataStore.Instance != null)
+
+                if (PersistentDataStore.Instance != null)
                 {
                     double dval = PersistentDataStore.Instance.Retrieve<double>(token.sval);
                     return (T)Convert.ChangeType(dval, typeof(T));
                 }
-                else
-                {
-                    LoggingUtil.LogWarning(this, "Unable to retrieve value for '" + token.sval + "' - PersistentDataStore is null.  This is likely caused by another ScenarioModule crashing, preventing others from loading.");
-                    return default(T);
-                }
+
+                LoggingUtil.LogWarning(this, "Unable to retrieve value for '" + token.sval + "' - PersistentDataStore is null.  This is likely caused by another ScenarioModule crashing, preventing others from loading.");
+                return default(T);
             }
-            else
-            {
-                return base.ParseIdentifier(token);
-            }
+
+            return base.ParseIdentifier(token);
         }
     }
 }

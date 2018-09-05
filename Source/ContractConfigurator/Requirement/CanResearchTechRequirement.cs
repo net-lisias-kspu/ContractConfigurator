@@ -96,10 +96,8 @@ namespace ContractConfigurator
                 {
                     continue;
                 }
-                else
-                {
-                    return false;
-                }
+
+                return false;
             }
 
             return true;

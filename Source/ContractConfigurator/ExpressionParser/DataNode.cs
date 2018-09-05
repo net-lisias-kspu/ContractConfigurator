@@ -453,7 +453,8 @@ namespace ContractConfigurator.ExpressionParser
             {
                 return true;
             }
-            else if (iteratorNodes.Count() > 1)
+
+            if (iteratorNodes.Count() > 1)
             {
                 LoggingUtil.LogError(obj, "Multiple ITERATOR nodes found - only one iterator node allowed.");
                 return false;

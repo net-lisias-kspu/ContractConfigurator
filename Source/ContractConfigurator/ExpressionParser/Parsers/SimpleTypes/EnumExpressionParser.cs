@@ -42,16 +42,11 @@ namespace ContractConfigurator.ExpressionParser
         public override U ConvertType<U>(T value)
         {
             // Handle the basic case
-            if (typeof(U) == typeof(T))
-            {
-                return (U)(object)value;
-            }
+            if (typeof(U) == typeof(T))         return (U)(object)value;
+ 
             // Handle string
-            else if (typeof(U) == typeof(string))
-            {
-                return (U)(object)Enum.GetName(typeof(T), value);
-            }
-
+            if (typeof(U) == typeof(string))    return (U)(object)Enum.GetName(typeof(T), value);
+        
             throw new DataStoreCastException(typeof(T), typeof(U));
         }
 

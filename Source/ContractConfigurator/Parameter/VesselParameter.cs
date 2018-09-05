@@ -200,10 +200,7 @@ namespace ContractConfigurator.Parameters
                     vesselInfo[vessel.id].state = state;
                     return true;
                 }
-                else
-                {
-                    return false;
-                }
+                return false;
             }
 
             return false;
@@ -253,10 +250,7 @@ namespace ContractConfigurator.Parameters
             {
                 return vesselInfo[vessel.id].state;
             }
-            else
-            {
-                return ParameterState.Incomplete;
-            }
+            return ParameterState.Incomplete;
         }
 
         /// <summary>
@@ -271,10 +265,7 @@ namespace ContractConfigurator.Parameters
             {
                 return vesselInfo[vessel.id].completionTime;
             }
-            else
-            {
-                return 0.0;
-            }
+            return 0.0;
         }
 
         /// <summary>
@@ -491,7 +482,8 @@ namespace ContractConfigurator.Parameters
             {
                 return;
             }
-            else if (v1 == null)
+
+            if (v1 == null)
             {
                 VesselInfo v = new VesselInfo(e.host.vessel.id, e.host.vessel);
                 v1 = vesselInfo[e.host.vessel.id] = v;
@@ -507,8 +499,9 @@ namespace ContractConfigurator.Parameters
             {
                 return;
             }
+
             // Both are complete
-            else if (v1.state == v2.state)
+            if (v1.state == v2.state)
             {
                 // Save the subvessel info
                 SaveSubVesselInfo(v1.vessel, v1.strength == ParamStrength.STRONG ? ParamStrength.STRONG : ParamStrength.WEAK, v1.completionTime);
@@ -715,13 +708,15 @@ namespace ContractConfigurator.Parameters
                 for (int i = 0; i < Parent.ParameterCount; i++)
                 {
                     ContractParameter param = Parent.GetParameter(i);
+
                     // If we've made it all the way to us, we're ready
                     if (System.Object.ReferenceEquals(param, this))
                     {
                         // Passed our check
                         break;
                     }
-                    else if (param.State != ParameterState.Complete)
+
+                    if (param.State != ParameterState.Complete)
                     {
                         return false;
                     }

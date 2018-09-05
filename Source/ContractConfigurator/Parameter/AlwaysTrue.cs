@@ -52,10 +52,7 @@ namespace ContractConfigurator.Parameters
                 contract.AddParameter(alwaysTrue);
                 return alwaysTrue;
             }
-            else
-            {
-                return parameters.First() as AlwaysTrue;
-            }
+            return parameters.First() as AlwaysTrue;
         }
 
     }

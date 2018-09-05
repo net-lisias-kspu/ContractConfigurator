@@ -129,18 +129,10 @@ namespace ContractConfigurator.Parameters
         {
             if (duration > 0.0 && Root.ContractState == Contract.State.Active)
             {
-                if (trackedVessel == null)
-                {
-                    return "No vessel currently matching parameters.";
-                }
-                else if (!waiting)
-                {
-                    return "Active Vessel:";
-                }
-                else
-                {
-                    return "Waiting for completion time for " + trackedVessel.vesselName + ".";
-                }
+                if (trackedVessel == null)  return "No vessel currently matching parameters.";
+                if (!waiting)               return "Active Vessel:";
+
+                return "Waiting for completion time for " + trackedVessel.vesselName + ".";
             }
 
             return base.GetNotes();
@@ -692,8 +684,9 @@ namespace ContractConfigurator.Parameters
             {
                 return vesselList.Any(key => ContractVesselTracker.Instance.GetAssociatedVessel(key) == vessel);
             }
+
             // If the vessel is already in the define list, don't allow it to be considered again
-            else if (!string.IsNullOrEmpty(defineList))
+            if (!string.IsNullOrEmpty(defineList))
             {
                 List<VesselIdentifier> vesselStore = PersistentDataStore.Instance.Retrieve<List<VesselIdentifier>>(defineList);
                 if (vesselStore == null)

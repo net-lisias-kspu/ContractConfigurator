@@ -30,14 +30,10 @@ namespace ContractConfigurator.ExpressionParser
                 wgf =>
                 {
                     if (wgf.Current != null)
-                    {
                         return wgf.Current.Waypoints().ToList();
-                    }
-                    else
-                    {
-                        CheckInitialized(wgf);
-                        return new List<Waypoint>();
-                    }
+
+                    CheckInitialized(wgf);
+                    return new List<Waypoint>();
                 }, false));
         }
 

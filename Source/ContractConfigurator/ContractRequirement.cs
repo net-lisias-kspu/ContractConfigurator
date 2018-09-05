@@ -196,10 +196,7 @@ namespace ContractConfigurator
                 {
                     return RequirementText();
                 }
-                else
-                {
-                    return title;
-                }
+                return title;
             }
         }
 

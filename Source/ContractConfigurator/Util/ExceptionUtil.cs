@@ -21,17 +21,17 @@ namespace ContractConfigurator
                 DataStoreCastException orig = (DataStoreCastException)tie.InnerException;
                 return new DataStoreCastException(orig.FromType, orig.ToType, tie);
             }
-            else if (tie.InnerException.GetType() == typeof(DataNode.ValueNotInitialized))
+            if (tie.InnerException.GetType() == typeof(DataNode.ValueNotInitialized))
             {
                 DataNode.ValueNotInitialized orig = (DataNode.ValueNotInitialized)tie.InnerException;
                 throw new DataNode.ValueNotInitialized(orig.key, tie);
             }
-            else if (tie.InnerException.GetType() == typeof(NotSupportedException))
+            if (tie.InnerException.GetType() == typeof(NotSupportedException))
             {
                 NotSupportedException orig = (NotSupportedException)tie.InnerException;
                 throw new NotSupportedException(orig.Message, tie);
             }
-            return null;
+            return null;    // TODO: Are we really sure we want to return NULL on a public method?
         }
     }
 }

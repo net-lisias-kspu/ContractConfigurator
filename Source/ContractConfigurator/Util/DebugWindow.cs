@@ -241,7 +241,8 @@ namespace ContractConfigurator
                             style = redLabel;
                             break;
                         }
-                        else if (contractType.hasWarnings)
+
+                        if (contractType.hasWarnings)
                         {
                             style = yellowLabel;
                         }

@@ -205,12 +205,11 @@ namespace ContractConfigurator.Behaviour
                     LoggingUtil.LogError(factory, factory.ErrorPrefix() + ": " + error);
                     return false;
                 }
-                else
-                {
-                    throw new ArgumentException(error);
-                }
+
+                throw new ArgumentException(error);
             }
-            else if (obData.orbitType == OrbitType.TUNDRA && !CelestialUtilities.CanBodyBeTundra(obData.targetBody))
+
+            if (obData.orbitType == OrbitType.TUNDRA && !CelestialUtilities.CanBodyBeTundra(obData.targetBody))
             {
                 string error = string.Format("Cannot use a tundra orbit with {0}.", obData.targetBody.CleanDisplayName(true));
                 if (factory != null)
@@ -218,11 +217,10 @@ namespace ContractConfigurator.Behaviour
                     LoggingUtil.LogError(factory, factory.ErrorPrefix() + ": " + error);
                     return false;
                 }
-                else
-                {
-                    throw new ArgumentException(error);
-                }
+
+                throw new ArgumentException(error);
             }
+
             return true;
         }
 

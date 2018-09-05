@@ -87,18 +87,9 @@ namespace ContractConfigurator.ExpressionParser
 
         protected static List<T> Concat(List<T> l1, List<T> l2)
         {
-            if (l1 == null && l2 == null)
-            {
-                return new List<T>();
-            }
-            else if (l1 == null)
-            {
-                return l2.ToList();
-            }
-            else if (l2 == null)
-            {
-                return l1.ToList();
-            }
+            if (l1 == null && l2 == null)   return new List<T>();
+            if (l1 == null)                 return l2.ToList();
+            if (l2 == null)                 return l1.ToList();
 
             List<T> newList = l1.ToList();
             newList.AddRange(l2);

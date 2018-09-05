@@ -87,15 +87,7 @@ namespace ContractConfigurator.RemoteTech
             public IEnumerable<NetworkLink<ISatellite>> FindNeighbors(ISatellite s)
             {
                 // Special case for finding our own neighbours
-                if (s == this)
-                {
-                    return FindNeighbors();
-                }
-                // Pass through to the regular function
-                else
-                {
-                    return RTCore.Instance.Network.FindNeighbors(s);
-                }
+                return s == this ? FindNeighbors() : RTCore.Instance.Network.FindNeighbors(s);
             }
 
             private IEnumerable<NetworkLink<ISatellite>> FindNeighbors()

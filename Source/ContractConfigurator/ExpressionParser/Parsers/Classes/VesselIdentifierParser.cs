@@ -41,10 +41,12 @@ namespace ContractConfigurator.ExpressionParser
                 }
                 return (U)(object)null;
             }
-            else if (typeof(U) == typeof(string))
+
+            if (typeof(U) == typeof(string))
             {
                 return (U)(object)(value == null ? null : value.identifier);
             }
+
             return base.ConvertType<U>(value);
         }
         

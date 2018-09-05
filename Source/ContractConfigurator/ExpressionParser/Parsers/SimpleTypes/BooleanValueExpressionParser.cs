@@ -63,19 +63,11 @@ namespace ContractConfigurator.ExpressionParser
         /// <returns>Value of the identifier</returns>
         public override bool ParseIdentifier(Token token)
         {
-            if (string.Compare(token.sval, "true", true) == 0)
-            {
-                return true;
-            }
-            else if (string.Compare(token.sval, "false", true) == 0)
-            {
-                return false;
-            }
-            else
-            {
-                expression = token.sval + expression;
-                throw new WrongDataType(typeof(double), typeof(bool));
-            }
+            if (string.Compare(token.sval, "true", true) == 0)          return true;
+            if (string.Compare(token.sval, "false", true) == 0)         return false;
+
+            expression = token.sval + expression;
+            throw new WrongDataType(typeof(double), typeof(bool));
         }
     }
 }

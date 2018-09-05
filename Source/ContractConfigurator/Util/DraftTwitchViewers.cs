@@ -113,11 +113,7 @@ namespace ContractConfigurator
                 LoggingUtil.LogVerbose(typeof(DraftTwitchViewers), "    " + name);
                 return name;
             }
-            else
-            {
-                return defaultName;
-            }
-
+            return defaultName;
         }
 
         public static void OnSuccess(Dictionary<string, string> dict)

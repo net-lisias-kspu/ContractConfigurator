@@ -122,10 +122,7 @@ namespace ContractConfigurator.Parameters
                 }
                 return sop.Notes;
             }
-            else
-            {
-                return notes;
-            }
+            return notes;
         }
 
         protected void CreateDelegates()

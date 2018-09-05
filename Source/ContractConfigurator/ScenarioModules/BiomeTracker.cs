@@ -298,13 +298,8 @@ namespace ContractConfigurator
                     catch (ArgumentException e)
                     {
                         if (e.Message.Contains("not a valid CelestialBody"))
-                        {
                             continue;
-                        }
-                        else
-                        {
-                            throw;
-                        }
+                        throw;
                     }
                     Dictionary<string, BiomeData> biomeDetails = bodyInfo[body] = new Dictionary<string, BiomeData>();
 

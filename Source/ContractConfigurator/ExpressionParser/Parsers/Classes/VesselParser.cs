@@ -74,18 +74,9 @@ namespace ContractConfigurator.ExpressionParser
 
         static List<AvailablePart> PartList(Vessel v)
         {
-            if (v == null)
-            {
-                return new List<AvailablePart>();
-            }
-            else if (v.loaded)
-            {
-                return v.parts.Select<Part, AvailablePart>(p => p.protoPartSnapshot.partInfo).ToList();
-            }
-            else
-            {
-                return v.protoVessel.protoPartSnapshots.Select<ProtoPartSnapshot, AvailablePart>(pps => pps.partInfo).ToList();
-            }
+            if (v == null)  return new List<AvailablePart>();
+            if (v.loaded)   return v.parts.Select<Part, AvailablePart>(p => p.protoPartSnapshot.partInfo).ToList();
+            return v.protoVessel.protoPartSnapshots.Select<ProtoPartSnapshot, AvailablePart>(pps => pps.partInfo).ToList();
         }
 
         /// <summary>
@@ -284,7 +275,7 @@ namespace ContractConfigurator.ExpressionParser
                 }
                 return (U)(object)value.vesselName;
             }
-            else if (typeof(U) == typeof(VesselIdentifier))
+            if (typeof(U) == typeof(VesselIdentifier))
             {
                 if (value == null)
                 {

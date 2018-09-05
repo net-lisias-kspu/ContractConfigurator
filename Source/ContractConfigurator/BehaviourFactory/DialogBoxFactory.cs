@@ -128,14 +128,8 @@ namespace ContractConfigurator.Behaviour
 
         protected bool ValidateImageURL(string url)
         {
-            if (GameDatabase.Instance.ExistsTexture(url))
-            {
-                return true;
-            }
-            else if (File.Exists("GameData/" + url))
-            {
-                return true;
-            }
+            if (GameDatabase.Instance.ExistsTexture(url))   return true;
+            if (File.Exists("GameData/" + url))             return true;
 
             throw new ArgumentException("Couldn't find image in gamedatabase or on file system using URL '" + url + "'.");
         }

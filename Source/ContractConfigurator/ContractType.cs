@@ -933,10 +933,9 @@ namespace ContractConfigurator
 
             object o = dataNode[name];
             if (o == null)
-            {
                 throw new ContractRequirementException("'" + name + "' was null.");
-            }
-            else if (o.GetType().GetGenericArguments().Any() && o.GetType().GetGenericTypeDefinition() == typeof(List<>))
+
+            if (o.GetType().GetGenericArguments().Any() && o.GetType().GetGenericTypeDefinition() == typeof(List<>))
             {
                 PropertyInfo prop = o.GetType().GetProperty("Count");
                 int count = (int)prop.GetValue(o, null);

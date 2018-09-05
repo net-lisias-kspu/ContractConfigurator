@@ -169,19 +169,10 @@ namespace ContractConfigurator
 
         public bool IsReadyToUnlock()
         {
-            if (!SetupTech() || IsUnlocked())
-            {
-                return false;
-            }
+            if (!SetupTech() || IsUnlocked())   return false;
+            if (anyToUnlock)                    return ParentNodes().Any(p => p.IsUnlocked());
 
-            if (anyToUnlock)
-            {
-                return ParentNodes().Any(p => p.IsUnlocked());
-            }
-            else
-            {
-                return ParentNodes().All(p => p.IsUnlocked());
-            }
+            return ParentNodes().All(p => p.IsUnlocked());
         }
     }
 }

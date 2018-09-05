@@ -67,10 +67,6 @@ namespace ContractConfigurator.Parameters
                 {
                     SetState(ParameterState.Complete);
                 }
-                else
-                {
-
-                }
             }
 
             recovered[v.vesselRef] = true;

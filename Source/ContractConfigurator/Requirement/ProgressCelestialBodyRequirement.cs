@@ -74,15 +74,8 @@ namespace ContractConfigurator
                 return false;
             }
 
-            if (checkType == CheckType.MANNED)
-            {
-                return cbProgress.IsReached && cbProgress.IsCompleteManned;
-            }
-            else if (checkType == CheckType.UNMANNED)
-            {
-                return cbProgress.IsReached && cbProgress.IsCompleteUnmanned;
-            }
-
+            if (checkType == CheckType.MANNED)      return cbProgress.IsReached && cbProgress.IsCompleteManned;
+            if (checkType == CheckType.UNMANNED)    return cbProgress.IsReached && cbProgress.IsCompleteUnmanned;
             return true;
         }
 

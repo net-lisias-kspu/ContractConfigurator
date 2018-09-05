@@ -594,7 +594,8 @@ namespace ContractConfigurator
                 }
                 return meets;
             }
-            else if (ContractState == State.Withdrawn)
+
+            if (ContractState == State.Withdrawn)
             {
                 // Special case for pre-loader
                 return true;

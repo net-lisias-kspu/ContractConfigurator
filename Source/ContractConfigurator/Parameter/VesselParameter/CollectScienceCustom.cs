@@ -598,38 +598,30 @@ namespace ContractConfigurator.Parameters
 
         private ScienceRecoveryMethod RecoveryMethod(string exp)
         {
-            if (recoveryMethod != ScienceRecoveryMethod.Ideal)
+            if (recoveryMethod != ScienceRecoveryMethod.Ideal)          return recoveryMethod;
+            if (string.IsNullOrEmpty(exp) || exp == "surfaceSample")    return ScienceRecoveryMethod.Recover;
+
+            if (!idealRecoverMethodCache.ContainsKey(exp))
             {
-                return recoveryMethod;
-            }
-            else if (string.IsNullOrEmpty(exp) || exp == "surfaceSample")
-            {
-                return ScienceRecoveryMethod.Recover;
-            }
-            else
-            {
-                if (!idealRecoverMethodCache.ContainsKey(exp))
+                IEnumerable<ConfigNode> expNodes = PartLoader.Instance.loadedParts.
+                    Where(p => p.moduleInfos.Any(mod => mod.moduleName == "Science Experiment")).
+                    SelectMany(p =>
+                        p.partConfig.GetNodes("MODULE").
+                        Where(node => node.GetValue("name") == "ModuleScienceExperiment" && node.GetValue("experimentID") == exp)
+                    );
+
+                // Either has no parts or a full science transmitter
+                if (!expNodes.Any() || expNodes.Any(n => ConfigNodeUtil.ParseValue<float>(n, "xmitDataScalar", 0.0f) >= 0.999))
                 {
-                    IEnumerable<ConfigNode> expNodes = PartLoader.Instance.loadedParts.
-                        Where(p => p.moduleInfos.Any(mod => mod.moduleName == "Science Experiment")).
-                        SelectMany(p =>
-                            p.partConfig.GetNodes("MODULE").
-                            Where(node => node.GetValue("name") == "ModuleScienceExperiment" && node.GetValue("experimentID") == exp)
-                        );
-
-                    // Either has no parts or a full science transmitter
-                    if (!expNodes.Any() || expNodes.Any(n => ConfigNodeUtil.ParseValue<float>(n, "xmitDataScalar", 0.0f) >= 0.999))
-                    {
-                        idealRecoverMethodCache[exp] = ScienceRecoveryMethod.RecoverOrTransmit;
-                    }
-                    else
-                    {
-                        idealRecoverMethodCache[exp] = ScienceRecoveryMethod.Recover;
-                    }
+                    idealRecoverMethodCache[exp] = ScienceRecoveryMethod.RecoverOrTransmit;
                 }
-
-                return idealRecoverMethodCache[exp];
+                else
+                {
+                    idealRecoverMethodCache[exp] = ScienceRecoveryMethod.Recover;
+                }
             }
+
+            return idealRecoverMethodCache[exp];
         }
 
         public override bool IsIgnoredVesselType(VesselType vesselType)

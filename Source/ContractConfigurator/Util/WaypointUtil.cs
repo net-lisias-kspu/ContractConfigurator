@@ -43,18 +43,13 @@ namespace ContractConfigurator
                 Math.Asin(Math.Sqrt(sin1 * sin1 + cos1 * cos2 * sin2 * sin2));
             double heightDist = Math.Abs(waypoint.altitude + height - vessel.altitude);
 
-            if (heightDist <= lateralDist / 2.0)
-            {
-                return lateralDist;
-            }
-            else
-            {
-                // Get the ratio to use in our formula
-                double x = (heightDist - lateralDist / 2.0) / lateralDist;
+            if (heightDist <= lateralDist / 2.0)    return lateralDist;
 
-                // x / (x + 1) starts at 0 when x = 0, and increases to 1
-                return (x / (x + 1)) * heightDist + lateralDist;
-            }
+            // Get the ratio to use in our formula
+            double x = (heightDist - lateralDist / 2.0) / lateralDist;
+
+            // x / (x + 1) starts at 0 when x = 0, and increases to 1
+            return (x / (x + 1)) * heightDist + lateralDist;
         }
 
         /// <summary>

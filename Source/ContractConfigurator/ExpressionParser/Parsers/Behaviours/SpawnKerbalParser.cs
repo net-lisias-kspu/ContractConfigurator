@@ -28,14 +28,10 @@ namespace ContractConfigurator.ExpressionParser
             RegisterMethod(new Method<SpawnKerbalFactory, List<Kerbal>>("Kerbals",
                 skf => {
                     if (skf.Current != null)
-                    {
                         return skf.Current.Kerbals().ToList();
-                    }
-                    else
-                    {
-                        CheckInitialized(skf);
-                        return new List<Kerbal>();
-                    }
+
+                    CheckInitialized(skf);
+                    return new List<Kerbal>();
                 }, false));
         }
 

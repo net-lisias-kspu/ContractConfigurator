@@ -439,12 +439,9 @@ namespace ContractConfigurator.ExpressionParser
                                 verbose &= LogExitDebug<TResult>("ParseSimpleStatement", result);
                                 return result;
                             }
-                            else
-                            {
-                                resetExpression = false;
-                                expression = token.sval + expression;
-                                throw new DataStoreCastException(typeof(string), typeof(TResult));
-                            }
+                            resetExpression = false;
+                            expression = token.sval + expression;
+                            throw new DataStoreCastException(typeof(string), typeof(TResult));
                         default:
                             resetExpression = false;
                             expression = token.sval + expression;
@@ -501,11 +498,8 @@ namespace ContractConfigurator.ExpressionParser
                                 verbose &= LogExitDebug<TResult>("ParseOperation", result);
                                 return result;
                             }
-                            else
-                            {
-                                rval = ParseOperation<T>(rval, token.sval);
-                                token = ParseToken();
-                            }
+                            rval = ParseOperation<T>(rval, token.sval);
+                            token = ParseToken();
                             break;
                         default:
                             expression = token.sval + expression;
@@ -559,11 +553,13 @@ namespace ContractConfigurator.ExpressionParser
                 string savedExpression = expression;
                 token = ParseToken();
                 ExpressionParser<List<T>> parser = GetParser<List<T>>(this);
+
                 if (token == null)
                 {
                     return parser.ConvertType<TResult>(values);
                 }
-                else if (token.tokenType == TokenType.METHOD)
+
+                if (token.tokenType == TokenType.METHOD)
                 {
                     // Parse a method call
                     try
@@ -786,11 +782,9 @@ namespace ContractConfigurator.ExpressionParser
             {
                 return token;
             }
-            else
-            {
-                expression = savedExpression;
-                return null;
-            }
+
+            expression = savedExpression;
+            return null;
         }
 
         public void ParseToken(string expected)
@@ -1063,7 +1057,8 @@ namespace ContractConfigurator.ExpressionParser
                         // End bracket, but no matching method!
                         throw new MethodMismatch(methods);
                     }
-                    else if (endToken.tokenType == TokenType.COMMA)
+
+                    if (endToken.tokenType == TokenType.COMMA)
                     {
                         if (parameters.Count() == 0)
                         {
@@ -1155,7 +1150,8 @@ namespace ContractConfigurator.ExpressionParser
                             dataNode = dataNode.Root ?? dataNode;
                             continue;
                         }
-                        else if (identifier.StartsWith("../"))
+
+                        if (identifier.StartsWith("../"))
                         {
                             identifier = identifier.Substring(3);
                             dataNode = dataNode.Parent;
@@ -1223,10 +1219,8 @@ namespace ContractConfigurator.ExpressionParser
                     verbose &= LogExitDebug<T>("ParseSpecialIdentifier", result);
                     return result;
                 }
-                else
-                {
-                    throw new ArgumentException("Cannot get value for @" + token.sval + ": not available in this context.");
-                }
+
+                throw new ArgumentException("Cannot get value for @" + token.sval + ": not available in this context.");
             }
             catch
             {
@@ -1441,10 +1435,8 @@ namespace ContractConfigurator.ExpressionParser
                 expression = (expression.Length > op.Length ? expression.Substring(op.Length) : "");
                 return new Token(TokenType.OPERATOR, op);
             }
-            else
-            {
-                throw new ArgumentException("Expected '" + op + "', found: " + expression.Substring(0, op.Length));
-            }
+
+            throw new ArgumentException("Expected '" + op + "', found: " + expression.Substring(0, op.Length));
         }
 
         public TResult ApplyOperator<TResult>(T lval, string op, T rval)
@@ -1455,10 +1447,8 @@ namespace ContractConfigurator.ExpressionParser
                 {
                     return (TResult)(object)ApplyBooleanOperator(lval, op, rval);
                 }
-                else
-                {
-                    throw new DataStoreCastException(typeof(bool), typeof(T));
-                }
+
+                throw new DataStoreCastException(typeof(bool), typeof(T));
             }
 
             switch (op)
@@ -1611,18 +1601,17 @@ namespace ContractConfigurator.ExpressionParser
                         throw new DataStoreCastException(type, typeof(T));
                     }
                 }
-                else
-                {
-                    // Special case
-                    if (typeof(T) == typeof(string))
-                    {
-                        return (T)(object)"";
-                    }
 
-                    throw new DataStoreCastException(type, typeof(T));
+                // Special case
+                if (typeof(T) == typeof(string))
+                {
+                    return (T)(object)"";
                 }
+
+                throw new DataStoreCastException(type, typeof(T));
             }
-            else if (typeof(T).IsAssignableFrom(type))
+
+            if (typeof(T).IsAssignableFrom(type))
             {
                 return (T)(object)value;
             }
@@ -1651,26 +1640,21 @@ namespace ContractConfigurator.ExpressionParser
             {
                 return (T)(object)value;
             }
-            else
+
+            try
             {
-                try
+                ExpressionParser<U> parser = GetParser<U>(this);
+                return parser.ConvertType<T>(value);
+            }
+            catch (NotSupportedException)
+            {
+                if (typeof(U) != typeof(object))
                 {
-                    ExpressionParser<U> parser = GetParser<U>(this);
-                    return parser.ConvertType<T>(value);
+                    MethodInfo convertMethod = method_ConvertType.MakeGenericMethod(new Type[] { typeof(U).BaseType });
+                    T result = (T)convertMethod.Invoke(this, new object[] { value });
+                    return result;
                 }
-                catch (NotSupportedException)
-                {
-                    if (typeof(U) != typeof(object))
-                    {
-                        MethodInfo convertMethod = method_ConvertType.MakeGenericMethod(new Type[] { typeof(U).BaseType });
-                        T result = (T)convertMethod.Invoke(this, new object[] { value });
-                        return result;
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
+                throw;
             }
         }
 

@@ -286,14 +286,8 @@ namespace ContractConfigurator
         public void AssociateVessel(string key, Vessel vessel)
         {
             // Already associated!
-            if (vessel != null && vessels.ContainsKey(key) && vessels[key].id == vessel.id)
-            {
-                return;
-            }
-            else if (vessel == null && !vessels.ContainsKey(key))
-            {
-                return;
-            }
+            if (vessel != null && vessels.ContainsKey(key) && vessels[key].id == vessel.id) return;
+            if (vessel == null && !vessels.ContainsKey(key))                                return;
 
             if (vessel != null)
             {

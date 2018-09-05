@@ -205,20 +205,15 @@ namespace ContractConfigurator
             string name = ConfigNodeUtil.ParseValue<string>(node, "name");
             ProtoCrewMember crew = HighLogic.CurrentGame.CrewRoster.AllKerbals().Where(pcm => pcm.name == name).FirstOrDefault();
 
-            if (crew != null)
-            {
-                return new Kerbal(crew);
-            }
-            else
-            {
-                ProtoCrewMember.Gender gender = ConfigNodeUtil.ParseValue<ProtoCrewMember.Gender>(node, "gender", RandomGender());
-                string experienceTrait = ConfigNodeUtil.ParseValue<string>(node, "experienceTrait", RandomExperienceTrait());
-                ProtoCrewMember.KerbalType kerbalType = ConfigNodeUtil.ParseValue<ProtoCrewMember.KerbalType>(node, "kerbalType", ProtoCrewMember.KerbalType.Crew);
+            if (crew != null)   return new Kerbal(crew);
 
-                Kerbal k = new Kerbal(gender, name, experienceTrait);
-                k.kerbalType = kerbalType;
-                return k;
-            }
+            ProtoCrewMember.Gender gender = ConfigNodeUtil.ParseValue<ProtoCrewMember.Gender>(node, "gender", RandomGender());
+            string experienceTrait = ConfigNodeUtil.ParseValue<string>(node, "experienceTrait", RandomExperienceTrait());
+            ProtoCrewMember.KerbalType kerbalType = ConfigNodeUtil.ParseValue<ProtoCrewMember.KerbalType>(node, "kerbalType", ProtoCrewMember.KerbalType.Crew);
+
+            Kerbal k = new Kerbal(gender, name, experienceTrait);
+            k.kerbalType = kerbalType;
+            return k;
         }
 
         public static void RemoveKerbal(Kerbal kerbal)

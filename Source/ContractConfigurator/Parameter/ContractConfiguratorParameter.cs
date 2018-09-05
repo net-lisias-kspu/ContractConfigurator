@@ -191,10 +191,9 @@ namespace ContractConfigurator.Parameters
                         // Passed our check
                         break;
                     }
-                    else if (param.State != ParameterState.Complete)
-                    {
+
+                    if (param.State != ParameterState.Complete)
                         return false;
-                    }
                 }
             }
 
