@@ -93,6 +93,8 @@ namespace ContractConfigurator.ExpressionParser
                     yield return "pqsCity";
                     yield return "pqsOffset";
                     break;
+                default:
+                    throw new ArgumentException(type);
             }
 
         }

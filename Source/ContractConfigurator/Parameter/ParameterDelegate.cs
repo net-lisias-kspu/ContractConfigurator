@@ -42,6 +42,8 @@ namespace ContractConfigurator.Parameters
                     return "All have ";
                 case ParameterDelegateMatchType.NONE:
                     return "None have ";
+                default:
+                    break; // Making Code Analysis happy.
             }
             return null;
         }
@@ -321,6 +323,8 @@ namespace ContractConfigurator.Parameters
                         case ParameterDelegateMatchType.NONE:
                             conditionMet &= newCount == 0;
                             break;
+                        default:
+                            throw new ArgumentException(paramDelegate.matchType.ToString());
                     }
                 }
             }

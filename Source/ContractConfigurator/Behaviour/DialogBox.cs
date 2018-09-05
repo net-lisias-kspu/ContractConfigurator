@@ -483,6 +483,8 @@ namespace ContractConfigurator.Behaviour
                             case Animation.false_sadA:
                                 animState = instructor.anim_false_sadA;
                                 break;
+                            default:
+                                throw new ArgumentException(animation.Value.ToString());
                         }
 
                         // Give a short delay before playing the animation

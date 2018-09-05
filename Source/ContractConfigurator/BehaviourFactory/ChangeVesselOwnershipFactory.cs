@@ -44,6 +44,8 @@ namespace ContractConfigurator.Behaviour
                             case TriggeredBehaviour.LegacyState.ParameterCompleted:
                                 onState = TriggeredBehaviour.State.PARAMETER_COMPLETED;
                                 break;
+                            default:
+                                throw new ArgumentException(x.ToString());
                         }
                     }, this);
                 }

@@ -116,6 +116,8 @@ namespace ContractConfigurator
                         lastMessage = ScreenMessages.PostScreenMessage("Loading contract configuration (" + attemptedContracts + "/" + totalContracts + ")...", Time.deltaTime,
                             ScreenMessageStyle.UPPER_CENTER);
                         break;
+                    default:
+                        throw new ArgumentException(reloadStep.ToString());
                 }
             }
         }
@@ -568,6 +570,8 @@ namespace ContractConfigurator
                     return Math.Max(1, (int)Math.Round((rep + rep * level / 3) * mult / 250 + 4 + level));
                 case Contract.ContractPrestige.Exceptional:
                     return Math.Max(0, (int)Math.Round((rep + rep * level / 3) * mult / (1000/3.0) + 2 + level));
+                default:
+                    break; // Making Source Analysis happy.
             }
             return 0;
         }

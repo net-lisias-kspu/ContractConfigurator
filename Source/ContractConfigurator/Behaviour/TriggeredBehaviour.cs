@@ -126,6 +126,8 @@ namespace ContractConfigurator.Behaviour
                         case LegacyState.ParameterCompleted:
                             onState = State.PARAMETER_COMPLETED;
                             break;
+                        default:
+                            throw new ArgumentException(state.ToString());
                     }
                 }
                 catch

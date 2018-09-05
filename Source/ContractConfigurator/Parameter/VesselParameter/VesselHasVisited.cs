@@ -70,6 +70,8 @@ namespace ContractConfigurator.Parameters
                     case FlightLog.EntryType.Suborbit:
                         this.title += "a sub-orbital trajectory of ";
                         break;
+                    default:
+                        throw new ArgumentException(entryType.ToString());
                 }
                 if (destination != null)
                 {

@@ -435,6 +435,8 @@ namespace ContractConfigurator.Util
                         MissionControl.Instance.OnClickArchive(true);
                         OnClickArchive(true);
                         break;
+                    default:
+                        throw new ArgumentException(HighLogic.CurrentGame.Parameters.CustomParams<ContractConfiguratorParameters>().lastMCButton.ToString());
                 }
             }
         }
@@ -1307,6 +1309,8 @@ namespace ContractConfigurator.Util
                         case Contract.ContractPrestige.Exceptional:
                             exceptionalCount++;
                             break;
+                        default:
+                            throw new ArgumentException(c.Prestige.ToString());
                     }
                 }
             }

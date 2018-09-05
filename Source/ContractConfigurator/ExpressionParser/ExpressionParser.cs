@@ -726,14 +726,11 @@ namespace ContractConfigurator.ExpressionParser
                     return ParseDataStoreIdentifier();
                 case '.':
                     return ParseMethod();
+                default:
+                    // Try to parse an identifier
+                    if (c >= 'a' && c <= 'z' || c >= 'A' && c <= 'Z') return ParseIdentifier();
+                    break;
             }
-
-            // Try to parse an identifier
-            if (c >= 'a' && c <= 'z' || c >= 'A' && c <= 'Z')
-            {
-                return ParseIdentifier();
-            }
-
             throw new ArgumentException("Expected a valid expression, found: '" + c + "'");
         }
 
@@ -1430,6 +1427,8 @@ namespace ContractConfigurator.ExpressionParser
                     }
                 case '=':
                     return ParseOperator("==");
+                default:
+                    break; // Making Code Analysis happy.
             }
 
             throw new ArgumentException("Expected an operator, found: " + expression.Substring(0, 2));

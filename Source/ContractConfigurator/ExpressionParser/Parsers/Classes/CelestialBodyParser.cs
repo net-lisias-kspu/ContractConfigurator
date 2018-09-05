@@ -141,10 +141,7 @@ namespace ContractConfigurator.ExpressionParser
 
         private static bool CheckTree(CelestialBodySubtree tree, ProgressItem pi)
         {
-            if (tree == null)
-            {
-                return false;
-            }
+            if (tree == null)   return false;
 
             switch (pi)
             {
@@ -158,9 +155,9 @@ namespace ContractConfigurator.ExpressionParser
                     return tree.escape != null && tree.escape.IsComplete;
                 case ProgressItem.RETURNED_FROM:
                     return tree.returnFromFlyby != null && tree.returnFromFlyby.IsComplete;
+                default:
+                    throw new ArgumentException(pi.ToString());
             }
-
-            return false;
         }
 
         private static double SCANsatCoverage(CelestialBody cb, string scanType)

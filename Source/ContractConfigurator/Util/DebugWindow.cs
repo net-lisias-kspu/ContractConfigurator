@@ -507,6 +507,8 @@ namespace ContractConfigurator
                 case Currency.Science:
                     text += "6dcff6";
                     break;
+                default:
+                    throw new ArgumentException(currency.ToString());
             }
             text += ">" + adjustedValue.ToString("N0")  + "</color>";
 
