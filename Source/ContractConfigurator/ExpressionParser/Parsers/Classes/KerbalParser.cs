@@ -68,8 +68,10 @@ namespace ContractConfigurator.ExpressionParser
             List<Kerbal> kerbals = new List<Kerbal>();
             for (int i = 0; i < count; i++)
             {
-                Kerbal k = new Kerbal();
-                k.experienceTrait = trait;
+                Kerbal k = new Kerbal
+                {
+                    experienceTrait = trait
+                };
                 kerbals.Add(k);
             }
             return kerbals;
@@ -86,8 +88,10 @@ namespace ContractConfigurator.ExpressionParser
 
         static Kerbal NewKerbal(string trait)
         {
-            Kerbal k = new Kerbal();
-            k.experienceTrait = trait;
+            Kerbal k = new Kerbal
+            {
+                experienceTrait = trait
+            };
             return k;
         }
 

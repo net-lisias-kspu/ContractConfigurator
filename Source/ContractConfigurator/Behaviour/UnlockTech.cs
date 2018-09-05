@@ -37,10 +37,12 @@ namespace ContractConfigurator.Behaviour
 
         protected void UnlockTechnology(string techID)
         {
-            ProtoTechNode ptd = new ProtoTechNode();
-            ptd.state = RDTech.State.Available;
-            ptd.techID = techID;
-            ptd.scienceCost = 9999;
+            ProtoTechNode ptd = new ProtoTechNode
+            {
+                state = RDTech.State.Available,
+                techID = techID,
+                scienceCost = 9999
+            };
 
             if (HighLogic.CurrentGame.Parameters.Difficulty.BypassEntryPurchaseAfterResearch)
             {

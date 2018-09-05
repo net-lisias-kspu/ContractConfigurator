@@ -285,11 +285,13 @@ namespace ContractConfigurator.Behaviour
             foreach (ConfigNode child in configNode.GetNodes("ORBIT_DETAIL"))
             {
                 // Read all the orbit data
-                OrbitData obData = new OrbitData();
-                obData.type = child.GetValue("type");
+                OrbitData obData = new OrbitData
+                {
+                    type = child.GetValue("type"),
 
-                obData.contract = contract;
-                obData.orbit = new OrbitSnapshot(child.GetNode("ORBIT")).Load();
+                    contract = contract,
+                    orbit = new OrbitSnapshot(child.GetNode("ORBIT")).Load()
+                };
                 obData.SetupRenderer();
 
                 // Add to the global list

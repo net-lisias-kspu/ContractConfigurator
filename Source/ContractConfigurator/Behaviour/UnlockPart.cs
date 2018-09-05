@@ -43,10 +43,12 @@ namespace ContractConfigurator.Behaviour
             // The tech may be null - we need to create it
             if (ptn == null)
             {
-                ptn = new ProtoTechNode();
-                ptn.state = RDTech.State.Unavailable;
-                ptn.techID = part.TechRequired;
-                ptn.scienceCost = 9999; // ignored
+                ptn = new ProtoTechNode
+                {
+                    state = RDTech.State.Unavailable,
+                    techID = part.TechRequired,
+                    scienceCost = 9999 // ignored
+                };
             }
 
             if (unlockTech)

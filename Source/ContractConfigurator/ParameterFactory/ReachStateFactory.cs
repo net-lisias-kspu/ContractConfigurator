@@ -69,8 +69,10 @@ namespace ContractConfigurator
         public override ContractParameter Generate(Contract contract)
         {
             ReachState param = new ReachState(targetBodies, biome == null ? "" : biome.biome, situation, minAltitude, maxAltitude,
-                minTerrainAltitude, maxTerrainAltitude, minSpeed, maxSpeed, minRateOfClimb, maxRateOfClimb, minAcceleration, maxAcceleration, title);
-            param.FailWhenUnmet = failWhenUnmet;
+                minTerrainAltitude, maxTerrainAltitude, minSpeed, maxSpeed, minRateOfClimb, maxRateOfClimb, minAcceleration, maxAcceleration, title)
+            {
+                FailWhenUnmet = failWhenUnmet
+            };
             return param;
         }
     }

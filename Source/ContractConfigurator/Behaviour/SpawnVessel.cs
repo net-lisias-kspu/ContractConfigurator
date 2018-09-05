@@ -656,22 +656,24 @@ namespace ContractConfigurator.Behaviour
             foreach (ConfigNode child in configNode.GetNodes("VESSEL_DETAIL"))
             {
                 // Read all the orbit data
-                VesselData vd = new VesselData();
-                vd.name = child.GetValue("name");
-                vd.id = ConfigNodeUtil.ParseValue<Guid?>(child, "id", (Guid?)null);
-                vd.craftURL = child.GetValue("craftURL");
-                vd.craftPart = ConfigNodeUtil.ParseValue<AvailablePart>(child, "craftPart", null);
-                vd.flagURL = ConfigNodeUtil.ParseValue<string>(child, "flagURL", (string)null);
-                vd.vesselType = ConfigNodeUtil.ParseValue<VesselType>(child, "vesselType");
-                vd.body = ConfigNodeUtil.ParseValue<CelestialBody>(child, "body");
-                vd.latitude = ConfigNodeUtil.ParseValue<double>(child, "lat");
-                vd.longitude = ConfigNodeUtil.ParseValue<double>(child, "lon");
-                vd.altitude = ConfigNodeUtil.ParseValue<double?>(child, "alt", (double?)null);
-                vd.heading = ConfigNodeUtil.ParseValue<float>(child, "heading", 0.0f);
-                vd.pitch = ConfigNodeUtil.ParseValue<float>(child, "pitch", 0.0f);
-                vd.roll = ConfigNodeUtil.ParseValue<float>(child, "roll", 0.0f);
-                vd.orbiting = ConfigNodeUtil.ParseValue<bool?>(child, "orbiting", (bool?)child.HasNode("ORBIT")).Value;
-                vd.owned = ConfigNodeUtil.ParseValue<bool>(child, "owned");
+                VesselData vd = new VesselData
+                {
+                    name = child.GetValue("name"),
+                    id = ConfigNodeUtil.ParseValue<Guid?>(child, "id", (Guid?)null),
+                    craftURL = child.GetValue("craftURL"),
+                    craftPart = ConfigNodeUtil.ParseValue<AvailablePart>(child, "craftPart", null),
+                    flagURL = ConfigNodeUtil.ParseValue<string>(child, "flagURL", (string)null),
+                    vesselType = ConfigNodeUtil.ParseValue<VesselType>(child, "vesselType"),
+                    body = ConfigNodeUtil.ParseValue<CelestialBody>(child, "body"),
+                    latitude = ConfigNodeUtil.ParseValue<double>(child, "lat"),
+                    longitude = ConfigNodeUtil.ParseValue<double>(child, "lon"),
+                    altitude = ConfigNodeUtil.ParseValue<double?>(child, "alt", (double?)null),
+                    heading = ConfigNodeUtil.ParseValue<float>(child, "heading", 0.0f),
+                    pitch = ConfigNodeUtil.ParseValue<float>(child, "pitch", 0.0f),
+                    roll = ConfigNodeUtil.ParseValue<float>(child, "roll", 0.0f),
+                    orbiting = ConfigNodeUtil.ParseValue<bool?>(child, "orbiting", (bool?)child.HasNode("ORBIT")).Value,
+                    owned = ConfigNodeUtil.ParseValue<bool>(child, "owned")
+                };
 
                 if (child.HasNode("ORBIT"))
                 {
@@ -681,10 +683,11 @@ namespace ContractConfigurator.Behaviour
                 // Load crew data
                 foreach (ConfigNode crewNode in child.GetNodes("CREW"))
                 {
-                    CrewData cd = new CrewData();
-
-                    cd.name = ConfigNodeUtil.ParseValue<string>(crewNode, "name", (string)null);
-                    cd.addToRoster = ConfigNodeUtil.ParseValue<bool>(crewNode, "addToRoster");
+                    CrewData cd = new CrewData
+                    {
+                        name = ConfigNodeUtil.ParseValue<string>(crewNode, "name", (string)null),
+                        addToRoster = ConfigNodeUtil.ParseValue<bool>(crewNode, "addToRoster")
+                    };
 
                     vd.crew.Add(cd);
                 }

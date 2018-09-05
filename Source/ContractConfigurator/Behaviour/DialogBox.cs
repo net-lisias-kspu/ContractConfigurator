@@ -104,8 +104,10 @@ namespace ContractConfigurator.Behaviour
 
                 if (windowStyle == null)
                 {
-                    windowStyle = new GUIStyle(HighLogic.Skin.window);
-                    windowStyle.alignment = TextAnchor.UpperLeft;
+                    windowStyle = new GUIStyle(HighLogic.Skin.window)
+                    {
+                        alignment = TextAnchor.UpperLeft
+                    };
                     windowStyle.active.textColor = detail.titleColor;
                     windowStyle.focused.textColor = detail.titleColor;
                     windowStyle.hover.textColor = detail.titleColor;
@@ -208,9 +210,11 @@ namespace ContractConfigurator.Behaviour
             {
                 if (labelStyle == null)
                 {
-                    labelStyle = new GUIStyle(UnityEngine.GUI.skin.label);
-                    labelStyle.alignment = TextAnchor.UpperLeft;
-                    labelStyle.richText = true;
+                    labelStyle = new GUIStyle(UnityEngine.GUI.skin.label)
+                    {
+                        alignment = TextAnchor.UpperLeft,
+                        richText = true
+                    };
                     labelStyle.normal.textColor = textColor;
                     labelStyle.fontSize = fontSize;
                 }
@@ -260,8 +264,10 @@ namespace ContractConfigurator.Behaviour
             {
                 if (labelStyle == null)
                 {
-                    labelStyle = new GUIStyle(UnityEngine.GUI.skin.label);
-                    labelStyle.alignment = TextAnchor.UpperCenter;
+                    labelStyle = new GUIStyle(UnityEngine.GUI.skin.label)
+                    {
+                        alignment = TextAnchor.UpperCenter
+                    };
                     labelStyle.normal.textColor = textColor;
                     labelStyle.fontStyle = FontStyle.Bold;
                 }

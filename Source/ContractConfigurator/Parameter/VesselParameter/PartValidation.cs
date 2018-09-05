@@ -302,16 +302,18 @@ namespace ContractConfigurator.Parameters
 
                 foreach (ConfigNode child in node.GetNodes("FILTER"))
                 {
-                    Filter filter = new Filter();
-                    filter.type = ConfigNodeUtil.ParseValue<ParameterDelegateMatchType>(child, "type");
+                    Filter filter = new Filter
+                    {
+                        type = ConfigNodeUtil.ParseValue<ParameterDelegateMatchType>(child, "type"),
 
-                    filter.parts = ConfigNodeUtil.ParseValue<List<AvailablePart>>(child, "part", new List<AvailablePart>());
-                    filter.partModules = child.GetValues("partModule").ToList();
-                    filter.partModuleTypes = child.GetValues("partModuleType").ToList();
-                    filter.category = ConfigNodeUtil.ParseValue<PartCategories?>(child, "category", (PartCategories?)null);
-                    filter.manufacturer = ConfigNodeUtil.ParseValue<string>(child, "manufacturer", (string)null);
-                    filter.minCount = ConfigNodeUtil.ParseValue<int>(child, "minCount", 1);
-                    filter.maxCount = ConfigNodeUtil.ParseValue<int>(child, "maxCount", int.MaxValue);
+                        parts = ConfigNodeUtil.ParseValue<List<AvailablePart>>(child, "part", new List<AvailablePart>()),
+                        partModules = child.GetValues("partModule").ToList(),
+                        partModuleTypes = child.GetValues("partModuleType").ToList(),
+                        category = ConfigNodeUtil.ParseValue<PartCategories?>(child, "category", (PartCategories?)null),
+                        manufacturer = ConfigNodeUtil.ParseValue<string>(child, "manufacturer", (string)null),
+                        minCount = ConfigNodeUtil.ParseValue<int>(child, "minCount", 1),
+                        maxCount = ConfigNodeUtil.ParseValue<int>(child, "maxCount", int.MaxValue)
+                    };
 
                     foreach (ConfigNode moduleNode in child.GetNodes("MODULE"))
                     {

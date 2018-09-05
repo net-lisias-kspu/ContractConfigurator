@@ -89,15 +89,17 @@ namespace ContractConfigurator
 
             if (waypoint == null)
             {
-                waypoint = new Waypoint();
-                waypoint.seed = contract.MissionSeed;
-                waypoint.index = 0;
-                waypoint.landLocked = false;
-                waypoint.id = "vessel";
-                waypoint.isNavigatable = false;
-                waypoint.enableTooltip = false;
-                waypoint.enableMarker = false;
-                waypoint.contractReference = contract;
+                waypoint = new Waypoint
+                {
+                    seed = contract.MissionSeed,
+                    index = 0,
+                    landLocked = false,
+                    id = "vessel",
+                    isNavigatable = false,
+                    enableTooltip = false,
+                    enableMarker = false,
+                    contractReference = contract
+                };
                 WaypointManager.AddWaypoint(waypoint);
             }
 

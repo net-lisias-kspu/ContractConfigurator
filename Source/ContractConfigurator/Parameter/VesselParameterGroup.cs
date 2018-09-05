@@ -151,9 +151,11 @@ namespace ContractConfigurator.Parameters
             if (duration > 0.0)
             {
                 durationParameter = new ParameterDelegate<Vessel>("Duration: " + DurationUtil.StringValue(duration),
-                    v => false);
-                durationParameter.Optional = true;
-                durationParameter.fakeOptional = true;
+                    v => false)
+                {
+                    Optional = true,
+                    fakeOptional = true
+                };
 
                 AddParameter(durationParameter);
             }
@@ -173,9 +175,11 @@ namespace ContractConfigurator.Parameters
                             vesselListParam.SetTitle((FlightGlobals.ActiveVessel == v && trackedVessel != null ? "" : "Tracked ") + "Vessel: " + ContractVesselTracker.GetDisplayName(vesselList.First()));
                         }
                         return check;
-                    });
-                    vesselListParam.Optional = true;
-                    vesselListParam.fakeOptional = true;
+                    })
+                    {
+                        Optional = true,
+                        fakeOptional = true
+                    };
 
                     AddParameter(vesselListParam);
                 }
@@ -189,9 +193,11 @@ namespace ContractConfigurator.Parameters
                             vesselListParam.SetTitle("Vessel: Any of the following:" + (check ? " " + ParameterDelegate<Vessel>.GetDelegateText(vesselListParam) : ""));
                         }
                         return check;
-                    });
-                    vesselListParam.Optional = true;
-                    vesselListParam.fakeOptional = true;
+                    })
+                    {
+                        Optional = true,
+                        fakeOptional = true
+                    };
 
                     foreach (string vessel in vesselList)
                     {

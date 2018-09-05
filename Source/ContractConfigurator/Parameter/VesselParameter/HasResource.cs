@@ -129,11 +129,12 @@ namespace ContractConfigurator.Parameters
 
                 foreach (ConfigNode childNode in node.GetNodes("RESOURCE"))
                 {
-                    Filter filter = new Filter();
-
-                    filter.resource = ConfigNodeUtil.ParseValue<PartResourceDefinition>(childNode, "resource");
-                    filter.minQuantity = ConfigNodeUtil.ParseValue<double>(childNode, "minQuantity");
-                    filter.maxQuantity = ConfigNodeUtil.ParseValue<double>(childNode, "maxQuantity", double.MaxValue);
+                    Filter filter = new Filter
+                    {
+                        resource = ConfigNodeUtil.ParseValue<PartResourceDefinition>(childNode, "resource"),
+                        minQuantity = ConfigNodeUtil.ParseValue<double>(childNode, "minQuantity"),
+                        maxQuantity = ConfigNodeUtil.ParseValue<double>(childNode, "maxQuantity", double.MaxValue)
+                    };
 
                     filters.Add(filter);
                 }
@@ -141,11 +142,12 @@ namespace ContractConfigurator.Parameters
                 // Legacy
                 if (node.HasValue("resource"))
                 {
-                    Filter filter = new Filter();
-
-                    filter.resource = ConfigNodeUtil.ParseValue<PartResourceDefinition>(node, "resource");
-                    filter.minQuantity = ConfigNodeUtil.ParseValue<double>(node, "minQuantity");
-                    filter.maxQuantity = ConfigNodeUtil.ParseValue<double>(node, "maxQuantity", double.MaxValue);
+                    Filter filter = new Filter
+                    {
+                        resource = ConfigNodeUtil.ParseValue<PartResourceDefinition>(node, "resource"),
+                        minQuantity = ConfigNodeUtil.ParseValue<double>(node, "minQuantity"),
+                        maxQuantity = ConfigNodeUtil.ParseValue<double>(node, "maxQuantity", double.MaxValue)
+                    };
 
                     filters.Add(filter);
                 }

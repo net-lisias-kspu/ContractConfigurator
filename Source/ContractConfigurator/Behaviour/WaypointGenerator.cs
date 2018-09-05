@@ -528,10 +528,12 @@ namespace ContractConfigurator.Behaviour
             foreach (ConfigNode child in configNode.GetNodes("WAYPOINT"))
             {
                 // Read all the waypoint data
-                WaypointData wpData = new WaypointData();
-                wpData.type = child.GetValue("type");
-                wpData.parameter = ConfigNodeUtil.ParseValue<List<string>>(child, "parameter", new List<string>());
-                wpData.names = ConfigNodeUtil.ParseValue<List<string>>(child, "names", new List<string>());
+                WaypointData wpData = new WaypointData
+                {
+                    type = child.GetValue("type"),
+                    parameter = ConfigNodeUtil.ParseValue<List<string>>(child, "parameter", new List<string>()),
+                    names = ConfigNodeUtil.ParseValue<List<string>>(child, "names", new List<string>())
+                };
                 wpData.waypoint.celestialName = child.GetValue("celestialName");
                 wpData.waypoint.name = child.GetValue("name");
                 wpData.waypoint.id = child.GetValue("icon");

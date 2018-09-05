@@ -148,9 +148,11 @@ namespace ContractConfigurator.CutScene
             actorName = ConfigNodeUtil.ParseValue<string>(configNode, "actorName");
             foreach (ConfigNode node in configNode.GetNodes("WAYPOINT"))
             {
-                EVAWaypoint w = new EVAWaypoint();
-                w.latitude = ConfigNodeUtil.ParseValue<double>(node, "latitude");
-                w.longitude = ConfigNodeUtil.ParseValue<double>(node, "longitude");
+                EVAWaypoint w = new EVAWaypoint
+                {
+                    latitude = ConfigNodeUtil.ParseValue<double>(node, "latitude"),
+                    longitude = ConfigNodeUtil.ParseValue<double>(node, "longitude")
+                };
             }
         }
 

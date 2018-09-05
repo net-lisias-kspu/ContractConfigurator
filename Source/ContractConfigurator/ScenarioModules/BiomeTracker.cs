@@ -61,23 +61,29 @@ namespace ContractConfigurator
 
             public static BiomeData Load(ConfigNode node)
             {
-                BiomeData biomeData = new BiomeData(ConfigNodeUtil.ParseValue<string>(node, "name"));
-                biomeData.landCount = ConfigNodeUtil.ParseValue<int>(node, "landCount");
-                biomeData.waterCount = ConfigNodeUtil.ParseValue<int>(node, "waterCount");
+                BiomeData biomeData = new BiomeData(ConfigNodeUtil.ParseValue<string>(node, "name"))
+                {
+                    landCount = ConfigNodeUtil.ParseValue<int>(node, "landCount"),
+                    waterCount = ConfigNodeUtil.ParseValue<int>(node, "waterCount")
+                };
 
                 foreach (ConfigNode location in node.GetNodes("LAND_LOCATION"))
                 {
-                    Vector2d v = new Vector2d();
-                    v.y = ConfigNodeUtil.ParseValue<double>(location, "lat");
-                    v.x = ConfigNodeUtil.ParseValue<double>(location, "lon");
+                    Vector2d v = new Vector2d
+                    {
+                        y = ConfigNodeUtil.ParseValue<double>(location, "lat"),
+                        x = ConfigNodeUtil.ParseValue<double>(location, "lon")
+                    };
                     biomeData.landLocations.Add(v);
                 }
 
                 foreach (ConfigNode location in node.GetNodes("WATER_LOCATION"))
                 {
-                    Vector2d v = new Vector2d();
-                    v.y = ConfigNodeUtil.ParseValue<double>(location, "lat");
-                    v.x = ConfigNodeUtil.ParseValue<double>(location, "lon");
+                    Vector2d v = new Vector2d
+                    {
+                        y = ConfigNodeUtil.ParseValue<double>(location, "lat"),
+                        x = ConfigNodeUtil.ParseValue<double>(location, "lon")
+                    };
                     biomeData.waterLocations.Add(v);
                 }
 

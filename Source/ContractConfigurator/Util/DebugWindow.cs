@@ -98,41 +98,61 @@ namespace ContractConfigurator
                 redLabel.normal.textColor = Color.red;
                 yellowLabel = new GUIStyle(GUI.skin.label);
                 yellowLabel.normal.textColor = Color.yellow;
-                greenLegend = new GUIStyle(redLabel);
-                greenLegend.alignment = TextAnchor.UpperCenter;
-                redLegend = new GUIStyle(redLabel);
-                redLegend.alignment = TextAnchor.UpperCenter;
-                yellowLegend = new GUIStyle(yellowLabel);
-                yellowLegend.alignment = TextAnchor.UpperCenter;
+                greenLegend = new GUIStyle(redLabel)
+                {
+                    alignment = TextAnchor.UpperCenter
+                };
+                redLegend = new GUIStyle(redLabel)
+                {
+                    alignment = TextAnchor.UpperCenter
+                };
+                yellowLegend = new GUIStyle(yellowLabel)
+                {
+                    alignment = TextAnchor.UpperCenter
+                };
 
                 selectedButton = new GUIStyle(GUI.skin.button);
                 selectedButton.normal.textColor = new Color(1.0f, 0.65f, 0f);
 
-                clippedLabel = new GUIStyle(GUI.skin.label);
-                clippedLabel.clipping = TextClipping.Clip;
-                clippedLabel.wordWrap = false;
-                clippedLabel.richText = true;
+                clippedLabel = new GUIStyle(GUI.skin.label)
+                {
+                    clipping = TextClipping.Clip,
+                    wordWrap = false,
+                    richText = true
+                };
 
-                clippedLabelRight = new GUIStyle(clippedLabel);
-                clippedLabelRight.alignment = TextAnchor.UpperRight;
+                clippedLabelRight = new GUIStyle(clippedLabel)
+                {
+                    alignment = TextAnchor.UpperRight
+                };
 
-                headerLabel = new GUIStyle(GUI.skin.label);
-                headerLabel.fontStyle = FontStyle.Bold;
-                headerLabel.richText = true;
-                headerLabel.padding = new RectOffset(0, 0, 0, 0);
+                headerLabel = new GUIStyle(GUI.skin.label)
+                {
+                    fontStyle = FontStyle.Bold,
+                    richText = true,
+                    padding = new RectOffset(0, 0, 0, 0)
+                };
 
-                headerLabelCenter = new GUIStyle(headerLabel);
-                headerLabelCenter.alignment = TextAnchor.UpperCenter;
+                headerLabelCenter = new GUIStyle(headerLabel)
+                {
+                    alignment = TextAnchor.UpperCenter
+                };
 
-                headerLabelRight = new GUIStyle(headerLabel);
-                headerLabelRight.alignment = TextAnchor.UpperRight;
+                headerLabelRight = new GUIStyle(headerLabel)
+                {
+                    alignment = TextAnchor.UpperRight
+                };
 
-                bigTipStyle = new GUIStyle(GUI.skin.label);
-                bigTipStyle.richText = true;
+                bigTipStyle = new GUIStyle(GUI.skin.label)
+                {
+                    richText = true
+                };
 
-                tipStyle = new GUIStyle(GUI.skin.box);
-                tipStyle.wordWrap = true;
-                tipStyle.stretchHeight = true;
+                tipStyle = new GUIStyle(GUI.skin.box)
+                {
+                    wordWrap = true,
+                    stretchHeight = true
+                };
                 tipStyle.normal.textColor = Color.white;
             }
 

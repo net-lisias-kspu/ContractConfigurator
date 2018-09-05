@@ -370,14 +370,16 @@ namespace ContractConfigurator.Behaviour
             foreach (ConfigNode child in configNode.GetNodes("KERBAL_DETAIL"))
             {
                 // Read all the orbit data
-                KerbalData kd = new KerbalData();
-                kd.body = ConfigNodeUtil.ParseValue<CelestialBody>(child, "body");
-                kd.latitude = ConfigNodeUtil.ParseValue<double>(child, "lat");
-                kd.longitude = ConfigNodeUtil.ParseValue<double>(child, "lon");
-                kd.altitude = ConfigNodeUtil.ParseValue<double?>(child, "alt", (double?)null);
-                kd.landed = ConfigNodeUtil.ParseValue<bool>(child, "landed");
-                kd.owned = ConfigNodeUtil.ParseValue<bool>(child, "owned");
-                kd.addToRoster = ConfigNodeUtil.ParseValue<bool>(child, "addToRoster");
+                KerbalData kd = new KerbalData
+                {
+                    body = ConfigNodeUtil.ParseValue<CelestialBody>(child, "body"),
+                    latitude = ConfigNodeUtil.ParseValue<double>(child, "lat"),
+                    longitude = ConfigNodeUtil.ParseValue<double>(child, "lon"),
+                    altitude = ConfigNodeUtil.ParseValue<double?>(child, "alt", (double?)null),
+                    landed = ConfigNodeUtil.ParseValue<bool>(child, "landed"),
+                    owned = ConfigNodeUtil.ParseValue<bool>(child, "owned"),
+                    addToRoster = ConfigNodeUtil.ParseValue<bool>(child, "addToRoster")
+                };
 
                 if (child.HasNode("ORBIT"))
                 {

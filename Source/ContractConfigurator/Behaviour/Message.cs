@@ -133,10 +133,12 @@ namespace ContractConfigurator.Behaviour
         {
             foreach (ConfigNode child in configNode.GetNodes("CONDITION"))
             {
-                ConditionDetail cd = new ConditionDetail();
-                cd.condition = ConfigNodeUtil.ParseValue<ConditionDetail.Condition>(child, "condition");
-                cd.parameter = ConfigNodeUtil.ParseValue<string>(child, "parameter", (string)null);
-                cd.disabled = ConfigNodeUtil.ParseValue<bool>(child, "disabled");
+                ConditionDetail cd = new ConditionDetail
+                {
+                    condition = ConfigNodeUtil.ParseValue<ConditionDetail.Condition>(child, "condition"),
+                    parameter = ConfigNodeUtil.ParseValue<string>(child, "parameter", (string)null),
+                    disabled = ConfigNodeUtil.ParseValue<bool>(child, "disabled")
+                };
                 conditions.Add(cd);
             }
             message = ConfigNodeUtil.ParseValue<string>(configNode, "message");

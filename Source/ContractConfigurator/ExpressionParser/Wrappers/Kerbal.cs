@@ -211,8 +211,10 @@ namespace ContractConfigurator
             string experienceTrait = ConfigNodeUtil.ParseValue<string>(node, "experienceTrait", RandomExperienceTrait());
             ProtoCrewMember.KerbalType kerbalType = ConfigNodeUtil.ParseValue<ProtoCrewMember.KerbalType>(node, "kerbalType", ProtoCrewMember.KerbalType.Crew);
 
-            Kerbal k = new Kerbal(gender, name, experienceTrait);
-            k.kerbalType = kerbalType;
+            Kerbal k = new Kerbal(gender, name, experienceTrait)
+            {
+                kerbalType = kerbalType
+            };
             return k;
         }
 

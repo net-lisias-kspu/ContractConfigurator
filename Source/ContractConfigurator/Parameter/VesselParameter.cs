@@ -126,10 +126,12 @@ namespace ContractConfigurator.Parameters
 
                 if (vessel != null || HighLogic.LoadedScene == GameScenes.EDITOR)
                 {
-                    VesselInfo info = new VesselInfo(id, vessel);
-                    info.state = ConfigNodeUtil.ParseValue<ParameterState>(child, "state");
-                    info.strength = ConfigNodeUtil.ParseValue<ParamStrength>(child, "strength");
-                    info.completionTime = ConfigNodeUtil.ParseValue<double>(child, "completionTime", 0.0);
+                    VesselInfo info = new VesselInfo(id, vessel)
+                    {
+                        state = ConfigNodeUtil.ParseValue<ParameterState>(child, "state"),
+                        strength = ConfigNodeUtil.ParseValue<ParamStrength>(child, "strength"),
+                        completionTime = ConfigNodeUtil.ParseValue<double>(child, "completionTime", 0.0)
+                    };
                     vesselInfo[id] = info;
                 }
             }
@@ -330,10 +332,12 @@ namespace ContractConfigurator.Parameters
                 VesselInfo vi = vesselInfo[parent.id];
                 if (vi.state == ParameterState.Complete && vi.strength != ParamStrength.WEAK)
                 {
-                    VesselInfo viEVA = new VesselInfo(eva.id, eva);
-                    viEVA.completionTime = vi.completionTime;
-                    viEVA.state = vi.state;
-                    viEVA.strength = ParamStrength.WEAK;
+                    VesselInfo viEVA = new VesselInfo(eva.id, eva)
+                    {
+                        completionTime = vi.completionTime,
+                        state = vi.state,
+                        strength = ParamStrength.WEAK
+                    };
                     vesselInfo[eva.id] = viEVA;
                 }
             }
@@ -406,10 +410,12 @@ namespace ContractConfigurator.Parameters
             // Found one
             if (dockedInfo != null)
             {
-                VesselInfo v = new VesselInfo(vessel.id, vessel);
-                v.strength = dockedInfo.Value.Key;
-                v.completionTime = dockedInfo.Value.Value;
-                v.state = ParameterState.Complete;
+                VesselInfo v = new VesselInfo(vessel.id, vessel)
+                {
+                    strength = dockedInfo.Value.Key,
+                    completionTime = dockedInfo.Value.Value,
+                    state = ParameterState.Complete
+                };
                 vesselInfo[vessel.id] = v;
                 LoggingUtil.LogVerbose(this, "   set state to " + v.state + " and strength to " + v.strength);
             }

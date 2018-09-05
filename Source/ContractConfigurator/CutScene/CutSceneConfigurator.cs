@@ -59,16 +59,20 @@ namespace CutSceneConfigurator
 
             selectedItemStyle = new GUIStyle(HighLogic.Skin.button);
             selectedItemStyle.normal = selectedItemStyle.onActive;
-            toggleCenteredStyle = new GUIStyle(HighLogic.Skin.button);
-            toggleCenteredStyle.padding = new RectOffset(4, 4, 4, 4);
+            toggleCenteredStyle = new GUIStyle(HighLogic.Skin.button)
+            {
+                padding = new RectOffset(4, 4, 4, 4)
+            };
             toggleCenteredStyle.normal.textColor = Color.white;
             toggleCenteredStyle.hover.textColor = Color.white;
             toggleCenteredStyle.active.textColor = Color.white;
             toggleCenteredStyle.focused.textColor = Color.white;
 
-            toggleStyle = new GUIStyle(toggleCenteredStyle);
-            toggleStyle.alignment = TextAnchor.MiddleLeft;
-            toggleStyle.fontStyle = FontStyle.Normal;
+            toggleStyle = new GUIStyle(toggleCenteredStyle)
+            {
+                alignment = TextAnchor.MiddleLeft,
+                fontStyle = FontStyle.Normal
+            };
 
             // Tooltips
             tipStyle = new GUIStyle(GUI.skin.box);

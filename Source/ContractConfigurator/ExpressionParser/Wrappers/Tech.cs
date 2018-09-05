@@ -103,11 +103,13 @@ namespace ContractConfigurator
 
                 foreach (ConfigNode techNode in techTree.GetNodes("RDNode"))
                 {
-                    Tech current = new Tech(techNode.GetValue("id"));
-                    current.title = ConfigNodeUtil.ParseValue<string>(techNode, "title");
-                    current.description = ConfigNodeUtil.ParseValue<string>(techNode, "description");
-                    current.cost = ConfigNodeUtil.ParseValue<float>(techNode, "cost");
-                    current.anyToUnlock = ConfigNodeUtil.ParseValue<bool>(techNode, "anyToUnlock");
+                    Tech current = new Tech(techNode.GetValue("id"))
+                    {
+                        title = ConfigNodeUtil.ParseValue<string>(techNode, "title"),
+                        description = ConfigNodeUtil.ParseValue<string>(techNode, "description"),
+                        cost = ConfigNodeUtil.ParseValue<float>(techNode, "cost"),
+                        anyToUnlock = ConfigNodeUtil.ParseValue<bool>(techNode, "anyToUnlock")
+                    };
 
                     bool hasParent = false;
                     foreach (ConfigNode parentNode in techNode.GetNodes("Parent"))

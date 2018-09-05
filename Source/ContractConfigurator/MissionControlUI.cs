@@ -507,8 +507,10 @@ namespace ContractConfigurator.Util
                 // Got a match, do an addition
                 if (foundMatch != null)
                 {
-                    container = new ContractContainer(cc);
-                    container.parent = foundMatch.parent;
+                    container = new ContractContainer(cc)
+                    {
+                        parent = foundMatch.parent
+                    };
                     container.parent.childContracts.Add(container);
                     CreateContractItem(container, foundMatch.indent, foundMatch.mcListItem.container);
 
@@ -555,8 +557,10 @@ namespace ContractConfigurator.Util
                 // Add the new item to the end of the grouping
                 if (foundMatch != null)
                 {
-                    container = new ContractContainer(c);
-                    container.parent = foundMatch.parent;
+                    container = new ContractContainer(c)
+                    {
+                        parent = foundMatch.parent
+                    };
                     container.parent.childContracts.Add(container);
                     CreateContractItem(container, foundMatch.indent, foundMatch.mcListItem.container);
 

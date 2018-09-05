@@ -168,9 +168,11 @@ namespace ContractConfigurator.RemoteTech
                 {
                     if (!celestialBodies.ContainsKey(cb))
                     {
-                        CelestialBodyInfo cbi = new CelestialBodyInfo();
-                        cbi.body = cb;
-                        cbi.coverage = 0;
+                        CelestialBodyInfo cbi = new CelestialBodyInfo
+                        {
+                            body = cb,
+                            coverage = 0
+                        };
                         celestialBodies[cb] = cbi;
                     }
 
