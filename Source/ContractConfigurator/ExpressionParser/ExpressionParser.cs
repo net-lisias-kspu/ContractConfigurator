@@ -1233,16 +1233,7 @@ namespace ContractConfigurator.ExpressionParser
                 }
 
                 // No method, try type conversion or straight return
-                T result;
-                if (typeof(U) == typeof(T))
-                {
-                    result = (T)(object)value;
-                }
-                else
-                {
-                    result = ConvertType(value, typeof(U));
-                }
-
+                T result = typeof(U) == typeof(T) ? (T)(object)value : ConvertType(value, typeof(U));
                 verbose &= LogExitDebug<T>("CompleteIdentifierParsing", result);
                 return result;
             }

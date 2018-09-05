@@ -333,68 +333,65 @@ namespace ContractConfigurator.Behaviour
                         wpData.waypoint.altitude = altitude.Value;
                     }
 
-                    // Get settings that differ by type
-                    if (child.name == "WAYPOINT")
+                    switch (child.name)
                     {
-                        valid &= ConfigNodeUtil.ParseValue<double>(child, "latitude", x => wpData.waypoint.latitude = x, factory);
-                        valid &= ConfigNodeUtil.ParseValue<double>(child, "longitude", x => wpData.waypoint.longitude = x, factory);
-                    }
-                    else if (child.name == "RANDOM_WAYPOINT")
-                    {
-                        // Get settings for randomization
-                        valid &= ConfigNodeUtil.ParseValue<bool>(child, "waterAllowed", x => wpData.waterAllowed = x, factory, true);
-                        valid &= ConfigNodeUtil.ParseValue<bool>(child, "forceEquatorial", x => wpData.forceEquatorial = x, factory, false);
-                        valid &= ConfigNodeUtil.ParseValue<int>(child, "count", x => wpData.count = x, factory, 1, x => Validation.GE(x, 1));
-                    }
-                    else if (child.name == "RANDOM_WAYPOINT_NEAR")
-                    {
-                        // Get settings for randomization
-                        valid &= ConfigNodeUtil.ParseValue<bool>(child, "waterAllowed", x => wpData.waterAllowed = x, factory, true);
+                        case "WAYPOINT":
+                            valid &= ConfigNodeUtil.ParseValue<double>(child, "latitude", x => wpData.waypoint.latitude = x, factory);
+                            valid &= ConfigNodeUtil.ParseValue<double>(child, "longitude", x => wpData.waypoint.longitude = x, factory);
+                            break;
+                        case "RANDOM_WAYPOINT":
+                            // Get settings for randomization
+                            valid &= ConfigNodeUtil.ParseValue<bool>(child, "waterAllowed", x => wpData.waterAllowed = x, factory, true);
+                            valid &= ConfigNodeUtil.ParseValue<bool>(child, "forceEquatorial", x => wpData.forceEquatorial = x, factory, false);
+                            valid &= ConfigNodeUtil.ParseValue<int>(child, "count", x => wpData.count = x, factory, 1, x => Validation.GE(x, 1));
+                            break;
+                        case "RANDOM_WAYPOINT_NEAR":
+                            // Get settings for randomization
+                            valid &= ConfigNodeUtil.ParseValue<bool>(child, "waterAllowed", x => wpData.waterAllowed = x, factory, true);
 
-                        // Get near waypoint details
-                        valid &= ConfigNodeUtil.ParseValue<int>(child, "nearIndex", x => wpData.nearIndex = x, factory,
-                            x => Validation.GE(x, 0) && Validation.LT(x, wpGenerator.waypoints.Count));
-                        valid &= ConfigNodeUtil.ParseValue<bool>(child, "chained", x => wpData.chained = x, factory, false);
-                        valid &= ConfigNodeUtil.ParseValue<int>(child, "count", x => wpData.count = x, factory, 1, x => Validation.GE(x, 1));
+                            // Get near waypoint details
+                            valid &= ConfigNodeUtil.ParseValue<int>(child, "nearIndex", x => wpData.nearIndex = x, factory,
+                                x => Validation.GE(x, 0) && Validation.LT(x, wpGenerator.waypoints.Count));
+                            valid &= ConfigNodeUtil.ParseValue<bool>(child, "chained", x => wpData.chained = x, factory, false);
+                            valid &= ConfigNodeUtil.ParseValue<int>(child, "count", x => wpData.count = x, factory, 1, x => Validation.GE(x, 1));
 
-                        // Get distances
-                        valid &= ConfigNodeUtil.ParseValue<double>(child, "minDistance", x => wpData.minDistance = x, factory, 0.0, x => Validation.GE(x, 0.0));
-                        valid &= ConfigNodeUtil.ParseValue<double>(child, "maxDistance", x => wpData.maxDistance = x, factory, x => Validation.GT(x, 0.0));
-                    }
-                    else if (child.name == "PQS_CITY")
-                    {
-                        wpData.randomAltitude = false;
-                        string dummy = null;
-                        valid &= ConfigNodeUtil.ParseValue<string>(child, "pqsCity", x => dummy = x, factory, x =>
-                        {
-                            bool v = true;
-                            if (!string.IsNullOrEmpty(wpData.waypoint.celestialName))
+                            // Get distances
+                            valid &= ConfigNodeUtil.ParseValue<double>(child, "minDistance", x => wpData.minDistance = x, factory, 0.0, x => Validation.GE(x, 0.0));
+                            valid &= ConfigNodeUtil.ParseValue<double>(child, "maxDistance", x => wpData.maxDistance = x, factory, x => Validation.GT(x, 0.0));
+                            break;
+                        case "PQS_CITY":
+                            wpData.randomAltitude = false;
+                            string dummy = null;
+                            valid &= ConfigNodeUtil.ParseValue<string>(child, "pqsCity", x => dummy = x, factory, x =>
                             {
-                                try
+                                bool v = true;
+                                if (!string.IsNullOrEmpty(wpData.waypoint.celestialName))
                                 {
-                                    CelestialBody body = FlightGlobals.Bodies.First(b => b.name == wpData.waypoint.celestialName);
-                                    wpData.pqsCity = body.GetComponentsInChildren<PQSCity>(true).First(pqs => pqs.name == x);
+                                    try
+                                    {
+                                        CelestialBody body = FlightGlobals.Bodies.First(b => b.name == wpData.waypoint.celestialName);
+                                        wpData.pqsCity = body.GetComponentsInChildren<PQSCity>(true).First(pqs => pqs.name == x);
+                                    }
+                                    catch (Exception e)
+                                    {
+                                        LoggingUtil.LogError(typeof(WaypointGenerator), "Couldn't load PQSCity with name '" + x + "'");
+                                        LoggingUtil.LogException(e);
+                                        v = false;
+                                    }
                                 }
-                                catch (Exception e)
+                                else
                                 {
-                                    LoggingUtil.LogError(typeof(WaypointGenerator), "Couldn't load PQSCity with name '" + x + "'");
-                                    LoggingUtil.LogException(e);
-                                    v = false;
+                                    // Force this to get re-run when the targetBody is loaded
+                                    throw new DataNode.ValueNotInitialized("/targetBody");
                                 }
-                            }
-                            else
-                            {
-                                // Force this to get re-run when the targetBody is loaded
-                                throw new DataNode.ValueNotInitialized("/targetBody");
-                            }
-                            return v;
-                        });
-                        valid &= ConfigNodeUtil.ParseValue<Vector3d>(child, "pqsOffset", x => wpData.pqsOffset = x, factory, new Vector3d());
-                    }
-                    else
-                    {
-                        LoggingUtil.LogError(factory, "Unrecognized waypoint node: '" + child.name + "'");
-                        valid = false;
+                                return v;
+                            });
+                            valid &= ConfigNodeUtil.ParseValue<Vector3d>(child, "pqsOffset", x => wpData.pqsOffset = x, factory, new Vector3d());
+                            break;
+                        default:
+                            LoggingUtil.LogError(factory, "Unrecognized waypoint node: '" + child.name + "'");
+                            valid = false;
+                            break;
                     }
 
                     // Check for unexpected values

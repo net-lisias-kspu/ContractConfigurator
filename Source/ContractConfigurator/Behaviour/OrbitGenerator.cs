@@ -150,22 +150,21 @@ namespace ContractConfigurator.Behaviour
                     OrbitData obData = new OrbitData(child.name);
 
                     // Get settings that differ by type
-                    if (child.name == "FIXED_ORBIT")
+                    switch (child.name)
                     {
-                        valid &= ConfigNodeUtil.ParseValue<Orbit>(child, "ORBIT", x => obData.orbit = x, factory);
-                    }
-                    else if (child.name == "RANDOM_ORBIT")
-                    {
-                        valid &= ConfigNodeUtil.ParseValue<OrbitType>(child, "type", x => obData.orbitType = x, factory);
-                        valid &= ConfigNodeUtil.ParseValue<int>(child, "count", x => obData.count = x, factory, 1, x => Validation.GE(x, 1));
-                        valid &= ConfigNodeUtil.ParseValue<double>(child, "altitudeFactor", x => obData.altitudeFactor = x, factory, 0.8, x => Validation.Between(x, 0.0, 1.0));
-                        valid &= ConfigNodeUtil.ParseValue<double>(child, "inclinationFactor", x => obData.inclinationFactor = x, factory, 0.8, x => Validation.Between(x, 0.0, 1.0));
-                        valid &= ConfigNodeUtil.ParseValue<double>(child, "eccentricity", x => obData.eccentricity = x, factory, 0.0, x => Validation.GE(x, 0.0));
-                        valid &= ConfigNodeUtil.ParseValue<double>(child, "deviationWindow", x => obData.deviationWindow = x, factory, 10.0, x => Validation.GE(x, 0.0));
-                    }
-                    else
-                    {
-                        throw new ArgumentException("Unrecognized orbit node: '" + child.name + "'");
+                        case "FIXED_ORBIT":
+                            valid &= ConfigNodeUtil.ParseValue<Orbit>(child, "ORBIT", x => obData.orbit = x, factory);
+                            break;
+                        case "RANDOM_ORBIT":
+                            valid &= ConfigNodeUtil.ParseValue<OrbitType>(child, "type", x => obData.orbitType = x, factory);
+                            valid &= ConfigNodeUtil.ParseValue<int>(child, "count", x => obData.count = x, factory, 1, x => Validation.GE(x, 1));
+                            valid &= ConfigNodeUtil.ParseValue<double>(child, "altitudeFactor", x => obData.altitudeFactor = x, factory, 0.8, x => Validation.Between(x, 0.0, 1.0));
+                            valid &= ConfigNodeUtil.ParseValue<double>(child, "inclinationFactor", x => obData.inclinationFactor = x, factory, 0.8, x => Validation.Between(x, 0.0, 1.0));
+                            valid &= ConfigNodeUtil.ParseValue<double>(child, "eccentricity", x => obData.eccentricity = x, factory, 0.0, x => Validation.GE(x, 0.0));
+                            valid &= ConfigNodeUtil.ParseValue<double>(child, "deviationWindow", x => obData.deviationWindow = x, factory, 10.0, x => Validation.GE(x, 0.0));
+                            break;
+                        default:
+                            throw new ArgumentException("Unrecognized orbit node: '" + child.name + "'");
                     }
 
                     // Use an expression to default - then it'll work for dynamic contracts

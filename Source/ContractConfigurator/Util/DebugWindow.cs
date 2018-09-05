@@ -403,36 +403,41 @@ namespace ContractConfigurator
             }
             GUILayout.EndHorizontal();
 
-            if (selectedPane == SelectedPane.DEBUG_LOG)
+            switch (selectedPane)
             {
-                drawToolTip = false;
+                case SelectedPane.DEBUG_LOG:
+                    drawToolTip = false;
 
-                scrollPosition2 = GUILayout.BeginScrollView(scrollPosition2, GUILayout.Width(550), GUILayout.ExpandHeight(true));
-                // Tooltip
-                if (!string.IsNullOrEmpty(GUI.tooltip))
-                {
-                    tooltip = GUI.tooltip.Replace("\t", "    ");
-                }
-                GUILayout.Label(tooltip, bigTipStyle);
-                GUILayout.EndScrollView();
-            }
-            else if (selectedPane == SelectedPane.BALANCE_MODE)
-            {
-                if (Event.current.type == EventType.Repaint)
-                {
-                    drawToolTip = string.IsNullOrEmpty(GUI.tooltip);
-                }
+                    scrollPosition2 = GUILayout.BeginScrollView(scrollPosition2, GUILayout.Width(550), GUILayout.ExpandHeight(true));
+                    // Tooltip
+                    if (!string.IsNullOrEmpty(GUI.tooltip))
+                    {
+                        tooltip = GUI.tooltip.Replace("\t", "    ");
+                    }
+                    GUILayout.Label(tooltip, bigTipStyle);
+                    GUILayout.EndScrollView();
+                    break;
 
-                BalanceModeGUI();
-            }
-            else if (selectedPane == SelectedPane.LOCATION_MODE)
-            {
-                if (Event.current.type == EventType.Repaint)
-                {
-                    drawToolTip = string.IsNullOrEmpty(GUI.tooltip);
-                }
+                case SelectedPane.BALANCE_MODE:
+                    if (Event.current.type == EventType.Repaint)
+                    {
+                        drawToolTip = string.IsNullOrEmpty(GUI.tooltip);
+                    }
 
-                LocationModeGUI();
+                    BalanceModeGUI();
+                    break;
+
+                case SelectedPane.LOCATION_MODE:
+                    if (Event.current.type == EventType.Repaint)
+                    {
+                        drawToolTip = string.IsNullOrEmpty(GUI.tooltip);
+                    }
+
+                    LocationModeGUI();
+                    break;
+
+                default:
+                    throw new ArgumentException(selectedPane.ToString());
             }
 
             GUILayout.EndVertical();

@@ -41,14 +41,7 @@ namespace ContractConfigurator.Parameters
 
             if (title == null)
             {
-				if (antennaType == AntennaType.TRANSMIT)
-				{
-					this.title = "Transmit antenna rating (combined): ";
-				}
-				else
-				{
-					this.title = "Relay antenna rating (combined): ";
-				}
+				this.title = antennaType == AntennaType.TRANSMIT ? "Transmit antenna rating (combined): " : "Relay antenna rating (combined): ";
 
                 if (maxAntennaPower == double.MaxValue)
                 {
@@ -119,14 +112,7 @@ namespace ContractConfigurator.Parameters
             double antennaPower = 0.0f;
             if (vessel.connection != null)
             {
-				if (antennaType == AntennaType.RELAY)
-				{
-					antennaPower = vessel.connection.Comm.antennaRelay.power;
-				}
-				else
-				{
-					antennaPower = vessel.connection.Comm.antennaTransmit.power;
-				}
+				antennaPower = antennaType == AntennaType.RELAY ? vessel.connection.Comm.antennaRelay.power : vessel.connection.Comm.antennaTransmit.power;
             }
             return antennaPower >= minAntennaPower && antennaPower <= maxAntennaPower;
         }

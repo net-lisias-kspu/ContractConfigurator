@@ -68,17 +68,17 @@ namespace ContractConfigurator
         protected override string RequirementText()
         {
             string scanName;
-            if (scanType == "AltimetryLoRes")
+            switch (scanType)
             {
-                scanName = "low resolution altimetry";
-            }
-            else if (scanType == "AltimetryHiRes")
-            {
-                scanName = "high resolution altimetry";
-            }
-            else
-            {
-                scanName = scanType.ToLower();
+                case "AltimetryLoRes":
+                    scanName = "low resolution altimetry";
+                    break;
+                case "AltimetryHiRes":
+                    scanName = "high resolution altimetry";
+                    break;
+                default:
+                    scanName = scanType.ToLower();
+                    break;
             }
 
             return "Must " + (invertRequirement ? "not " : "") + "have between " + minCoverage.ToString("N0") + "% and " + maxCoverage.ToString("N0") + "% " + scanName + " coverage of " + (targetBody == null ? "the target body" : targetBody.CleanDisplayName(true));

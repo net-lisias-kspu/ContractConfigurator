@@ -198,17 +198,16 @@ namespace ContractConfigurator.Parameters
         {
             foreach (PartModule pm in p.Modules)
             {
-                if (v.name == "name")
+                switch (v.name)
                 {
-                    if (pm.moduleName == v.value)
-                    {
-                        return true;
-                    }
-                }
-                else if (v.name == "EngineType")
-                {
-                    ModuleEngines me = pm as ModuleEngines;
-                    return me != null && me.engineType.ToString() == v.value;
+                    case "name":
+                        if (pm.moduleName == v.value)
+                            return true;
+                        break;
+
+                    case "EngineType":
+                        ModuleEngines me = pm as ModuleEngines;
+                        return me != null && me.engineType.ToString() == v.value;
                 }
 
                 foreach (BaseField field in pm.Fields)

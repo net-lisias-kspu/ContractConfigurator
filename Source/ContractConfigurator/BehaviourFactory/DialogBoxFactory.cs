@@ -47,62 +47,67 @@ namespace ContractConfigurator.Behaviour
                     {
                         DataNode sectionDataNode = new DataNode(dialogBoxNode + "_" + sectionIndex++, childDataNode, this);
                         ConfigNodeUtil.SetCurrentDataNode(sectionDataNode);
-
-                        if (sectionNode.name == "TEXT")
+                        switch (sectionNode.name)
                         {
-                            DialogBox.TextSection section = new DialogBox.TextSection();
-                            detail.sections.Add(section);
+                            case "TEXT":
+                                {
+                                    DialogBox.TextSection section = new DialogBox.TextSection();
+                                    detail.sections.Add(section);
 
-                            // Parse the text twice, once to ensure parsability, the other to get the unexpanded text
-                            valid &= ConfigNodeUtil.ParseValue<string>(sectionNode, "text", x => { }, this);
-                            if (valid)
-                            {
-                                section.text = ConfigNodeUtil.ParseValue<string>(sectionNode, "text");
-                            }
+                                    // Parse the text twice, once to ensure parsability, the other to get the unexpanded text
+                                    valid &= ConfigNodeUtil.ParseValue<string>(sectionNode, "text", x => { }, this);
+                                    if (valid)
+                                    {
+                                        section.text = ConfigNodeUtil.ParseValue<string>(sectionNode, "text");
+                                    }
 
-                            valid &= ConfigNodeUtil.ParseValue<Color>(sectionNode, "textColor", x => section.textColor = x, this, new Color(0.8f, 0.8f, 0.8f));
-                            valid &= ConfigNodeUtil.ParseValue<int>(sectionNode, "fontSize", x => section.fontSize = x, this, 20);
-                        }
-                        else if (sectionNode.name == "IMAGE")
-                        {
-                            DialogBox.ImageSection section = new DialogBox.ImageSection();
-                            detail.sections.Add(section);
+                                    valid &= ConfigNodeUtil.ParseValue<Color>(sectionNode, "textColor", x => section.textColor = x, this, new Color(0.8f, 0.8f, 0.8f));
+                                    valid &= ConfigNodeUtil.ParseValue<int>(sectionNode, "fontSize", x => section.fontSize = x, this, 20);
+                                }
+                                break;
+                            case "IMAGE":
+                                {
+                                    DialogBox.ImageSection section = new DialogBox.ImageSection();
+                                    detail.sections.Add(section);
 
-                            valid &= ConfigNodeUtil.ParseValue<string>(sectionNode, "url", x => section.imageURL = x, this, ValidateImageURL);
-                            valid &= ConfigNodeUtil.ParseValue<string>(sectionNode, "characterName",
-                                x => { section.characterName = x; section.showName = !string.IsNullOrEmpty(x); }, this, "");
-                             
-                            valid &= ConfigNodeUtil.ParseValue<Color>(sectionNode, "textColor", x => section.textColor = x, this, new Color(0.729f, 0.855f, 0.333f));
-                        }
-                        else if (sectionNode.name == "INSTRUCTOR")
-                        {
-                            DialogBox.InstructorSection section = new DialogBox.InstructorSection();
-                            detail.sections.Add(section);
+                                    valid &= ConfigNodeUtil.ParseValue<string>(sectionNode, "url", x => section.imageURL = x, this, ValidateImageURL);
+                                    valid &= ConfigNodeUtil.ParseValue<string>(sectionNode, "characterName", x => { section.characterName = x; section.showName = !string.IsNullOrEmpty(x); }, this, "");
 
-                            valid &= ConfigNodeUtil.ParseValue<string>(sectionNode, "name", x => section.name = x, this);
-                            valid &= ConfigNodeUtil.ParseValue<bool>(sectionNode, "showName", x => section.showName = x, this, true);
-                            valid &= ConfigNodeUtil.ParseValue<string>(sectionNode, "characterName", x => section.characterName = x, this, "");
-                            valid &= ConfigNodeUtil.ParseValue<Color>(sectionNode, "textColor", x => section.textColor = x, this, new Color(0.729f, 0.855f, 0.333f));
-                            valid &= ConfigNodeUtil.ParseValue<DialogBox.InstructorSection.Animation?>(sectionNode, "animation", x => section.animation = x, this,
-                                (DialogBox.InstructorSection.Animation?)null);
-                        }
-                        else if (sectionNode.name == "KERBAL")
-                        {
-                            DialogBox.KerbalSection section = new DialogBox.KerbalSection();
-                            detail.sections.Add(section);
+                                    valid &= ConfigNodeUtil.ParseValue<Color>(sectionNode, "textColor", x => section.textColor = x, this, new Color(0.729f, 0.855f, 0.333f));
+                                }
+                                break;
+                            case "INSTRUCTOR":
+                                {
+                                    DialogBox.InstructorSection section = new DialogBox.InstructorSection();
+                                    detail.sections.Add(section);
 
-                            valid &= ConfigNodeUtil.ParseValue<bool>(sectionNode, "showName", x => section.showName = x, this, true);
-                            valid &= ConfigNodeUtil.ParseValue<string>(sectionNode, "characterName", x => section.characterName = x, this, "");
-                            valid &= ConfigNodeUtil.ParseValue<ProtoCrewMember.Gender>(sectionNode, "gender", x => section.gender = x, this, ProtoCrewMember.Gender.Male);
-                            valid &= ConfigNodeUtil.ParseValue<Color>(sectionNode, "textColor", x => section.textColor = x, this, new Color(0.729f, 0.855f, 0.333f));
+                                    valid &= ConfigNodeUtil.ParseValue<string>(sectionNode, "name", x => section.name = x, this);
+                                    valid &= ConfigNodeUtil.ParseValue<bool>(sectionNode, "showName", x => section.showName = x, this, true);
+                                    valid &= ConfigNodeUtil.ParseValue<string>(sectionNode, "characterName", x => section.characterName = x, this, "");
+                                    valid &= ConfigNodeUtil.ParseValue<Color>(sectionNode, "textColor", x => section.textColor = x, this, new Color(0.729f, 0.855f, 0.333f));
+                                    valid &= ConfigNodeUtil.ParseValue<DialogBox.InstructorSection.Animation?>(sectionNode, "animation", x => section.animation = x, this, (DialogBox.InstructorSection.Animation?)null);
+                                }
+                                break;
+                            case "KERBAL":
+                                {
+                                    DialogBox.KerbalSection section = new DialogBox.KerbalSection();
+                                    detail.sections.Add(section);
 
-                            valid &= ConfigNodeUtil.ParseValue<int>(sectionNode, "crewIndex", x => section.crewIndex = x, this, 0);
-                            valid &= ConfigNodeUtil.ParseValue<List<string>>(sectionNode, "excludeName", x => section.excludeName = x, this, new List<string>());
-                        }
-                        else if (sectionNode.name == "BREAK")
-                        {
-                            DialogBox.BreakSection section = new DialogBox.BreakSection();
-                            detail.sections.Add(section);
+                                    valid &= ConfigNodeUtil.ParseValue<bool>(sectionNode, "showName", x => section.showName = x, this, true);
+                                    valid &= ConfigNodeUtil.ParseValue<string>(sectionNode, "characterName", x => section.characterName = x, this, "");
+                                    valid &= ConfigNodeUtil.ParseValue<ProtoCrewMember.Gender>(sectionNode, "gender", x => section.gender = x, this, ProtoCrewMember.Gender.Male);
+                                    valid &= ConfigNodeUtil.ParseValue<Color>(sectionNode, "textColor", x => section.textColor = x, this, new Color(0.729f, 0.855f, 0.333f));
+
+                                    valid &= ConfigNodeUtil.ParseValue<int>(sectionNode, "crewIndex", x => section.crewIndex = x, this, 0);
+                                    valid &= ConfigNodeUtil.ParseValue<List<string>>(sectionNode, "excludeName", x => section.excludeName = x, this, new List<string>());
+                                }
+                                break;
+                            case "BREAK":
+                                {
+                                    DialogBox.BreakSection section = new DialogBox.BreakSection();
+                                    detail.sections.Add(section);
+                                }
+                                break;
                         }
                     }
                 }

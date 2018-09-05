@@ -56,38 +56,32 @@ namespace ContractConfigurator.ExpressionParser
             public Token(TokenType type)
             {
                 tokenType = type;
-
-                if (tokenType == TokenType.START_BRACKET)
+                switch (tokenType)
                 {
-                    sval = "(";
-                }
-                else if (tokenType == TokenType.END_BRACKET)
-                {
-                    sval = ")";
-                }
-                else if (tokenType == TokenType.COMMA)
-                {
-                    sval = ",";
-                }
-                else if (tokenType == TokenType.TERNARY_START)
-                {
-                    sval = "?";
-                }
-                else if (tokenType == TokenType.TERNARY_END)
-                {
-                    sval = ":";
-                }
-                else if (tokenType == TokenType.LIST_START)
-                {
-                    sval = "[";
-                }
-                else if (tokenType == TokenType.LIST_END)
-                {
-                    sval = "]";
-                }
-                else if (tokenType == TokenType.QUOTE)
-                {
-                    sval = "\"";
+                    case TokenType.START_BRACKET:
+                        sval = "(";
+                        break;
+                    case TokenType.END_BRACKET:
+                        sval = ")";
+                        break;
+                    case TokenType.COMMA:
+                        sval = ",";
+                        break;
+                    case TokenType.TERNARY_START:
+                        sval = "?";
+                        break;
+                    case TokenType.TERNARY_END:
+                        sval = ":";
+                        break;
+                    case TokenType.LIST_START:
+                        sval = "[";
+                        break;
+                    case TokenType.LIST_END:
+                        sval = "]";
+                        break;
+                    case TokenType.QUOTE:
+                        sval = "\"";
+                        break;
                 }
             }
 

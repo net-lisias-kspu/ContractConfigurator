@@ -64,27 +64,24 @@ namespace ContractConfigurator
             foreach (ConfigNode child in ConfigNodeUtil.GetChildNodes(configNode))
             {
                 ParameterDelegateMatchType matchType;
-                if (child.name == "FILTER")
+                switch (child.name)
                 {
-                    matchType = ParameterDelegateMatchType.FILTER;
-                }
-                else if (child.name == "VALIDATE")
-                {
-                    matchType = ParameterDelegateMatchType.VALIDATE;
-                }
-                else if (child.name == "VALIDATE_ALL")
-                {
-                    matchType = ParameterDelegateMatchType.VALIDATE_ALL;
-                }
-                else if (child.name == "NONE")
-                {
-                    matchType = ParameterDelegateMatchType.NONE;
-                }
-                else
-                {
-                    LoggingUtil.LogError(this, ErrorPrefix() + ": unexpected node '" + child.name + "'.");
-                    valid = false;
-                    continue;
+                    case "FILTER":
+                        matchType = ParameterDelegateMatchType.FILTER;
+                        break;
+                    case "VALIDATE":
+                        matchType = ParameterDelegateMatchType.VALIDATE;
+                        break;
+                    case "VALIDATE_ALL":
+                        matchType = ParameterDelegateMatchType.VALIDATE_ALL;
+                        break;
+                    case "NONE":
+                        matchType = ParameterDelegateMatchType.NONE;
+                        break;
+                    default:
+                        LoggingUtil.LogError(this, ErrorPrefix() + ": unexpected node '" + child.name + "'.");
+                        valid = false;
+                        continue;
                 }
 
                 if (defaultMatch == ParameterDelegateMatchType.NONE)

@@ -103,17 +103,17 @@ namespace ContractConfigurator
         protected override string RequirementText()
         {
             string scanName;
-            if (scanType == "AltimetryLoRes")
+            switch (scanType)
             {
-                scanName = "low resolution altimetry";
-            }
-            else if (scanType == "AltimetryHiRes")
-            {
-                scanName = "high resolution altimetry";
-            }
-            else
-            {
-                scanName = scanType.ToLower();
+                case "AltimetryLoRes":
+                    scanName = "low resolution altimetry";
+                    break;
+                case "AltimetryHiRes":
+                    scanName = "high resolution altimetry";
+                    break;
+                default:
+                    scanName = scanType.ToLower();
+                    break;
             }
 
             string output = "Must " + (invertRequirement ? "not " : "") + "have scanned location <color=#" + MissionControlUI.RequirementHighlightColor + ">" + latitude.ToString("N1") + ", " + longitude.ToString("N1") +

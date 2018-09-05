@@ -77,15 +77,18 @@ namespace ContractConfigurator.RemoteTech
             }
 
             // Filter by type
-            if (antennaType == AntennaType.Dish)
+            switch (antennaType)
             {
-                AddParameter(new ParameterDelegate<IAntenna>("Type: " + antennaType,
-                    a => a.CanTarget, matchType));
-            }
-            else if (antennaType == AntennaType.Omni)
-            {
-                AddParameter(new ParameterDelegate<IAntenna>("Type: " + antennaType,
-                    a => !a.CanTarget, matchType));
+                case AntennaType.Dish:
+                    AddParameter(new ParameterDelegate<IAntenna>("Type: " + antennaType, a => a.CanTarget, matchType));
+                    break;
+
+                case AntennaType.Omni:
+                    AddParameter(new ParameterDelegate<IAntenna>("Type: " + antennaType, a => !a.CanTarget, matchType));
+                    break;
+                
+                default:
+                    throw new ArgumentException(antennaType.ToString()); 
             }
 
             // Filter for active vessel

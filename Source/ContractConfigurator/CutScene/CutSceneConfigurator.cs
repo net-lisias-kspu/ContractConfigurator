@@ -225,111 +225,114 @@ namespace CutSceneConfigurator
             int i = 0;
             int listCount = 0;
 
-            // Display the listing of cameras
-            if (currentMode == Modes.Camera)
+            switch (currentMode) // Display the listing of cameras
             {
-                listCount = currentCutScene.cameras.Count;
-                foreach (CutSceneCamera camera in currentCutScene.cameras)
-                {
-                    if (currentCamera == camera)
+                case Modes.Camera:
+                    listCount = currentCutScene.cameras.Count;
+                    foreach (CutSceneCamera camera in currentCutScene.cameras)
                     {
-                        currentIndex = i;
-                    }
-                    i++;
+                        if (currentCamera == camera)
+                        {
+                            currentIndex = i;
+                        }
+                        i++;
 
-                    GUILayout.BeginHorizontal();
-                    if (GUILayout.Toggle(camera == currentCamera, camera.FullDescription(), toggleStyle, GUILayout.Width(LIST_WIDTH - 36)))
-                    {
-                        currentCamera = camera;
-                        currentItem = camera;
+                        GUILayout.BeginHorizontal();
+                        if (GUILayout.Toggle(camera == currentCamera, camera.FullDescription(), toggleStyle, GUILayout.Width(LIST_WIDTH - 36)))
+                        {
+                            currentCamera = camera;
+                            currentItem = camera;
+                        }
+                        GUILayout.EndHorizontal();
                     }
-                    GUILayout.EndHorizontal();
-                }
-            }
-            // Display the listing of actors
-            else if (currentMode == Modes.Actor)
-            {
-                listCount = currentCutScene.actors.Count;
-                foreach (Actor actor in currentCutScene.actors)
-                {
-                    if (currentActor == actor)
-                    {
-                        currentIndex = i;
-                    }
-                    i++;
+                    break;
 
-                    GUILayout.BeginHorizontal();
-                    if (GUILayout.Toggle(actor == currentActor, actor.FullDescription(), toggleStyle, GUILayout.Width(LIST_WIDTH - 36)))
+                case Modes.Actor:
+                    listCount = currentCutScene.actors.Count;
+                    foreach (Actor actor in currentCutScene.actors)
                     {
-                        currentActor = actor;
-                        currentItem = actor;
-                    }
-                    GUILayout.EndHorizontal();
-                }
-            }
-            // Display the listing of cut scene actions
-            else if (currentMode == Modes.Action)
-            {
-                listCount = currentCutScene.actions.Count;
-                foreach (CutSceneAction action in currentCutScene.actions)
-                {
-                    if (currentAction == action)
-                    {
-                        currentIndex = i;
-                    }
-                    i++;
+                        if (currentActor == actor)
+                        {
+                            currentIndex = i;
+                        }
+                        i++;
 
-                    GUILayout.BeginHorizontal();
-                    if (GUILayout.Toggle(action == currentAction, action.FullDescription(), toggleStyle, GUILayout.Width(LIST_WIDTH - 72)))
-                    {
-                        currentAction = action;
-                        currentItem = action;
+                        GUILayout.BeginHorizontal();
+                        if (GUILayout.Toggle(actor == currentActor, actor.FullDescription(), toggleStyle, GUILayout.Width(LIST_WIDTH - 36)))
+                        {
+                            currentActor = actor;
+                            currentItem = actor;
+                        }
+                        GUILayout.EndHorizontal();
                     }
-                    GUILayout.BeginVertical();
-                    GUILayout.Space(3);
-                    action.async = GUILayout.Toggle(action.async, new GUIContent("", "If checked, moves to the next action before waiting for this one to complete."));
-                    GUILayout.EndVertical();
-                    GUILayout.EndHorizontal();
-                }
+                    break;
+
+                case Modes.Action:
+                    listCount = currentCutScene.actions.Count;
+                    foreach (CutSceneAction action in currentCutScene.actions)
+                    {
+                        if (currentAction == action)
+                        {
+                            currentIndex = i;
+                        }
+                        i++;
+
+                        GUILayout.BeginHorizontal();
+                        if (GUILayout.Toggle(action == currentAction, action.FullDescription(), toggleStyle, GUILayout.Width(LIST_WIDTH - 72)))
+                        {
+                            currentAction = action;
+                            currentItem = action;
+                        }
+                        GUILayout.BeginVertical();
+                        GUILayout.Space(3);
+                        action.async = GUILayout.Toggle(action.async, new GUIContent("", "If checked, moves to the next action before waiting for this one to complete."));
+                        GUILayout.EndVertical();
+                        GUILayout.EndHorizontal();
+                    }
+                    break;
+
+                default:
+                    throw new ArgumentException(currentMode.ToString());
             }
+
             GUILayout.EndScrollView();
 
             GUILayout.BeginHorizontal();
             GUILayout.Button("New");
             if (GUILayout.Button("Up") && currentIndex > 0)
             {
-                if (currentMode == Modes.Actor)
+                switch (currentMode)
                 {
-                    currentCutScene.actors[currentIndex] = currentCutScene.actors[currentIndex - 1];
-                    currentCutScene.actors[currentIndex - 1] = currentActor;
-                }
-                else if (currentMode == Modes.Camera)
-                {
-                    currentCutScene.cameras[currentIndex] = currentCutScene.cameras[currentIndex - 1];
-                    currentCutScene.cameras[currentIndex - 1] = currentCamera;
-                }
-                else
-                {
-                    currentCutScene.actions[currentIndex] = currentCutScene.actions[currentIndex - 1];
-                    currentCutScene.actions[currentIndex - 1] = currentAction;
+                    case Modes.Actor:
+                        currentCutScene.actors[currentIndex] = currentCutScene.actors[currentIndex - 1];
+                        currentCutScene.actors[currentIndex - 1] = currentActor;
+                        break;
+                    case Modes.Camera:
+                        currentCutScene.cameras[currentIndex] = currentCutScene.cameras[currentIndex - 1];
+                        currentCutScene.cameras[currentIndex - 1] = currentCamera;
+                        break;
+                    default:
+                        currentCutScene.actions[currentIndex] = currentCutScene.actions[currentIndex - 1];
+                        currentCutScene.actions[currentIndex - 1] = currentAction;
+                        break;
                 }
             }
             if (GUILayout.Button("Down") && currentIndex != -1 && currentIndex != listCount - 1)
             {
-                if (currentMode == Modes.Actor)
+                switch (currentMode)
                 {
-                    currentCutScene.actors[currentIndex] = currentCutScene.actors[currentIndex + 1];
-                    currentCutScene.actors[currentIndex + 1] = currentActor;
-                }
-                else if (currentMode == Modes.Camera)
-                {
-                    currentCutScene.cameras[currentIndex] = currentCutScene.cameras[currentIndex + 1];
-                    currentCutScene.cameras[currentIndex + 1] = currentCamera;
-                }
-                else
-                {
-                    currentCutScene.actions[currentIndex] = currentCutScene.actions[currentIndex + 1];
-                    currentCutScene.actions[currentIndex + 1] = currentAction;
+                    case Modes.Actor:
+                        currentCutScene.actors[currentIndex] = currentCutScene.actors[currentIndex + 1];
+                        currentCutScene.actors[currentIndex + 1] = currentActor;
+                        break;
+                    case Modes.Camera:
+                        currentCutScene.cameras[currentIndex] = currentCutScene.cameras[currentIndex + 1];
+                        currentCutScene.cameras[currentIndex + 1] = currentCamera;
+                        break;
+                    default:
+                        currentCutScene.actions[currentIndex] = currentCutScene.actions[currentIndex + 1];
+                        currentCutScene.actions[currentIndex + 1] = currentAction;
+                        break;
                 }
             }
             deleteCurrent |= (GUILayout.Button("Delete") && currentIndex != -1);
@@ -372,23 +375,23 @@ namespace CutSceneConfigurator
             if (GUILayout.Button("Yes"))
             {
                 deleteCurrent = false;
-                if (currentMode == Modes.Actor)
+                switch (currentMode)
                 {
-                    currentCutScene.actors.Remove(currentActor);
-                    currentActor = null;
-                    currentItem = null;
-                }
-                else if (currentMode == Modes.Camera)
-                {
-                    currentCutScene.cameras.Remove(currentCamera);
-                    currentCamera = null;
-                    currentItem = null;
-                }
-                else
-                {
-                    currentCutScene.actions.Remove(currentAction);
-                    currentAction = null;
-                    currentItem = null;
+                    case Modes.Actor:
+                        currentCutScene.actors.Remove(currentActor);
+                        currentActor = null;
+                        currentItem = null;
+                        break;
+                    case Modes.Camera:
+                        currentCutScene.cameras.Remove(currentCamera);
+                        currentCamera = null;
+                        currentItem = null;
+                        break;
+                    default:
+                        currentCutScene.actions.Remove(currentAction);
+                        currentAction = null;
+                        currentItem = null;
+                        break;
                 }
             }
             deleteCurrent &= !GUILayout.Button("No");

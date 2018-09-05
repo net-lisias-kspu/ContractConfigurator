@@ -1263,17 +1263,17 @@ namespace ContractConfigurator.Util
                 prestige = GetPrestige(cc.contractType);
             }
 
-            if (prestige == Contracts.Contract.ContractPrestige.Exceptional)
+            switch (prestige)
             {
-                MissionControl.Instance.UpdateInstructor(MissionControl.Instance.avatarController.animTrigger_selectHard, MissionControl.Instance.avatarController.animLoop_excited);
-            }
-            else if (prestige == Contracts.Contract.ContractPrestige.Significant)
-            {
-                MissionControl.Instance.UpdateInstructor(MissionControl.Instance.avatarController.animTrigger_selectNormal, MissionControl.Instance.avatarController.animLoop_default);
-            }
-            else
-            {
-                MissionControl.Instance.UpdateInstructor(MissionControl.Instance.avatarController.animTrigger_selectEasy, MissionControl.Instance.avatarController.animLoop_default);
+                case Contracts.Contract.ContractPrestige.Exceptional:
+                    MissionControl.Instance.UpdateInstructor(MissionControl.Instance.avatarController.animTrigger_selectHard, MissionControl.Instance.avatarController.animLoop_excited);
+                    break;
+                case Contracts.Contract.ContractPrestige.Significant:
+                    MissionControl.Instance.UpdateInstructor(MissionControl.Instance.avatarController.animTrigger_selectNormal, MissionControl.Instance.avatarController.animLoop_default);
+                    break;
+                default:
+                    MissionControl.Instance.UpdateInstructor(MissionControl.Instance.avatarController.animTrigger_selectEasy, MissionControl.Instance.avatarController.animLoop_default);
+                    break;
             }
         }
 
