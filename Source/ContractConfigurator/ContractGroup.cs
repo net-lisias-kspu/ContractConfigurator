@@ -271,7 +271,7 @@ namespace ContractConfigurator
 
         public int CurrentContracts()
         {
-            return ConfiguredContract.CurrentContracts.Where(c => c.contractType != null && BelongsToGroup(c.contractType)).Count();
+            return ConfiguredContract.CurrentContracts.Count(c => c.contractType != null && BelongsToGroup(c.contractType));
         }
 
         /// <summary>

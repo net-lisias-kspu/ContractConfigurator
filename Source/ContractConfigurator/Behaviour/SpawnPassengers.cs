@@ -77,7 +77,7 @@ namespace ContractConfigurator.Behaviour
                     List<SpawnPassengers> passengerList = new List<SpawnPassengers>();
                     foreach (SpawnPassengers sp in contract.Behaviours.Where(x => x.GetType() == typeof(SpawnPassengers)))
                     {
-                        int count = sp.passengers.Where(pair => !pair.Value && pair.Key.rosterStatus == ProtoCrewMember.RosterStatus.Available).Count();
+                        int count = sp.passengers.Count(pair => !pair.Value && pair.Key.rosterStatus == ProtoCrewMember.RosterStatus.Available);
                         if (count != 0)
                         {
                             passengerCount += count;
