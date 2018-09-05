@@ -340,7 +340,7 @@ namespace ContractConfigurator.ExpressionParser
         public abstract MethodInfo method_ConvertType { get; }
 
         static MethodInfo methodGetParserPublic = typeof(BaseParser).GetMethods(BindingFlags.Static | BindingFlags.Public).
-            Where(m => m.Name == "GetParser" && m.GetParameters().Count() == 0).Single();
+            Where(m => m.Name == "GetParser" && !m.GetParameters().Any()).Single();
         static MethodInfo methodGetParserProtected = typeof(BaseParser).GetMethods(BindingFlags.Static | BindingFlags.NonPublic | BindingFlags.FlattenHierarchy).
             Where(m => m.Name == "GetParser").Single();
     }

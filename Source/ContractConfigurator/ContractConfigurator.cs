@@ -189,7 +189,7 @@ namespace ContractConfigurator
                            select loadedAssemblies;
 
             // Reload module manager
-            if (allMM.Count() > 0)
+            if (allMM.Any())
             {
                 Assembly mmAssembly = allMM.First().assembly;
                 LoggingUtil.LogVerbose(this, "Reloading config using ModuleManager: " + mmAssembly.FullName);

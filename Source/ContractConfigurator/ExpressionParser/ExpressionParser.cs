@@ -83,7 +83,7 @@ namespace ContractConfigurator.ExpressionParser
             BindingFlags.Public | BindingFlags.Instance);
         public override MethodInfo methodParseStatement { get { return _methodParseStatement; } }
         static MethodInfo _methodParseStatement = typeof(ExpressionParser<T>).GetMethods(BindingFlags.Public | BindingFlags.Instance).
-            Where(m => m.Name == "ParseStatement" && m.GetParameters().Count() == 0).Single();
+            Where(m => m.Name == "ParseStatement" && !m.GetParameters().Any()).Single();
         public override MethodInfo methodParseMethod { get { return _methodParseMethod; } }
         static MethodInfo _methodParseMethod = typeof(ExpressionParser<T>).GetMethods(BindingFlags.Public | BindingFlags.Instance).
             Where(m => m.Name == "ParseMethod" && m.GetParameters().Count() == 3).Single();
@@ -1057,7 +1057,7 @@ namespace ContractConfigurator.ExpressionParser
 
                     if (endToken.tokenType == TokenType.COMMA)
                     {
-                        if (parameters.Count() == 0)
+                        if (!parameters.Any())
                         {
                             throw new ArgumentException("Expected " + (minParam == 0 ? "')'" : "an expression") + ", got: ','.");
                         }
@@ -1067,7 +1067,7 @@ namespace ContractConfigurator.ExpressionParser
                         throw new ArgumentException("Expected ')', got: " + (endToken != null ? endToken.sval : "end of statement"));
                     }
                 }
-                else if (parameters.Count() != 0)
+                else if (parameters.Any())
                 {
                     Token token = ParseToken();
                     throw new ArgumentException("Expected ',' or ')', got: " + (token != null ? token.sval : "end of statement"));

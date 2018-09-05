@@ -46,7 +46,7 @@ namespace ContractConfigurator.Parameters
         {
             // Fetch the AlwaysTrue wrapper
             IEnumerable<ContractParameter> parameters = contract.AllParameters.Where<ContractParameter>(p => p.GetType() == typeof(AlwaysTrue));
-            if (parameters.Count() == 0)
+            if (!parameters.Any())
             {
                 AlwaysTrue alwaysTrue = new AlwaysTrue();
                 contract.AddParameter(alwaysTrue);

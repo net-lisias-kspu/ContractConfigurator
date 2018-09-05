@@ -33,7 +33,7 @@ namespace ContractConfigurator
 
         public override ContractParameter Generate(Contract contract)
         {
-            if (passengers.Count() > 0)
+            if (passengers.Any())
             {
                 return new HasPassengers(title, passengers);
             }

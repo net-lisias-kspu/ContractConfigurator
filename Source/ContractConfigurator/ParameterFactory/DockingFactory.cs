@@ -37,7 +37,7 @@ namespace ContractConfigurator
             }
             else
             {
-                if (configNode.GetValues("vessel").Count() == 0)
+                if (!configNode.GetValues("vessel").Any())
                 {
                     LoggingUtil.LogError(this, ErrorPrefix() + ": Need at least one vessel specified for the Docking parameter.");
                     valid = false;

@@ -15,7 +15,7 @@ namespace ContractConfigurator.ExpressionParser
     {
         public override MethodInfo methodParseStatement { get { return _methodParseStatement; } }
         static MethodInfo _methodParseStatement = typeof(StringExpressionParser).GetMethods(BindingFlags.Public | BindingFlags.Instance).
-            Where(m => m.Name == "ParseStatement" && m.GetParameters().Count() == 0).Single();
+            Where(m => m.Name == "ParseStatement" && !m.GetParameters().Any()).Single();
         public override MethodInfo methodParseMethod { get { return _methodParseMethod; } }
         static MethodInfo _methodParseMethod = typeof(StringExpressionParser).GetMethods(BindingFlags.Public | BindingFlags.Instance).
             Where(m => m.Name == "ParseMethod" && m.GetParameters().Count() == 3).Single();

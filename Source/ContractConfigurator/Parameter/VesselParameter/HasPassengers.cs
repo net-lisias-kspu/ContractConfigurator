@@ -164,7 +164,7 @@ namespace ContractConfigurator.Parameters
         {
             if (contract == Root)
             {
-                int count = this.count == 0 && passengers.Count() == 0 ? ((ConfiguredContract)contract).GetSpawnedKerbalCount() : this.count;
+                int count = this.count == 0 && !passengers.Any()? ((ConfiguredContract)contract).GetSpawnedKerbalCount() : this.count;
                 for (int i = passengers.Count(); i < count; i++)
                 {
                     ProtoCrewMember kerbal = ((ConfiguredContract)contract).GetSpawnedKerbal(index+i).pcm;

@@ -1062,7 +1062,7 @@ namespace ContractConfigurator
                         }
                     }
 
-                    if (dependencies[pair.Key].Count() == 0)
+                    if (!dependencies[pair.Key].Any())
                     {
                         count = localDependencies.Count();
                         key = pair.Key;

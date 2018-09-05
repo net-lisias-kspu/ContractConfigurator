@@ -361,7 +361,7 @@ namespace ContractConfigurator
                 LoggingUtil.CaptureLog = true;
 
                 // Check we have at least one valid parameter
-                if (paramFactories.Count() == 0)
+                if (!paramFactories.Any())
                 {
                     LoggingUtil.LogError(this, ErrorPrefix() + ": Need at least one parameter for a contract!");
                     valid = false;
