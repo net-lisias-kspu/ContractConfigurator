@@ -54,11 +54,7 @@ namespace ContractConfigurator.ExpressionParser
 
         public override U ConvertType<U>(ScienceSubject value)
         {
-            if (typeof(U) == typeof(string))
-            {
-                return (U)(object)value.title;
-            }
-            return base.ConvertType<U>(value);
+            return typeof(U) == typeof(string) ? (U)(object)value.title : base.ConvertType<U>(value);
         }
 
         private static string SituationString(ScienceSubject subject)

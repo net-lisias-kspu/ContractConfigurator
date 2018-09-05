@@ -156,18 +156,13 @@ namespace ContractConfigurator.Util
 
             public string DisplayName()
             {
-                if (stockContractType != null)
-                {
-                    return DisplayName(stockContractType);
-                }
-                else if (group != null)
-                {
-                    return group.displayName;
-                }
-                else
-                {
-                    return "Contract Configurator";
-                }
+                return 
+                    stockContractType != null 
+                        ? DisplayName(stockContractType) 
+                    : group != null 
+                        ? group.displayName 
+                    : "Contract Configurator"
+                ;
             }
 
             public static string DisplayName(Type type)
@@ -1637,14 +1632,7 @@ namespace ContractConfigurator.Util
         {
             string color = met ? "#8BED8B" : "#FFEA04";
             string output = "<b><color=#BEC2AE>" + text + ": </color></b><color=" + color + ">" + (met ? "Met" : "Unmet") + "</color>";
-            if (!string.IsNullOrEmpty(unmetReason) && !met)
-            {
-                output += " <color=#CCCCCC>(" + unmetReason + ")</color>\n";
-            }
-            else
-            {
-                output += "\n";
-            }
+            output += !string.IsNullOrEmpty(unmetReason) && !met ? " <color=#CCCCCC>(" + unmetReason + ")</color>\n" : "\n";
             return output;
         }
 

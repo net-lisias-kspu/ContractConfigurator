@@ -67,29 +67,17 @@ namespace ContractConfigurator.Parameters
             foreach (Filter filter in filters)
             {
                 string output = (capacity ? "Resource Capacity: " : "Resource: ") + filter.resource.name + ": ";
-                if (filter.maxQuantity == 0)
-                {
-                    output += "None";
-                }
-                else if (filter.maxQuantity == double.MaxValue && (filter.minQuantity > 0.0 && filter.minQuantity <= 0.01))
-                {
-                    output += "Not zero units";
-                }
-                else if (filter.maxQuantity == double.MaxValue)
-                {
-                    output += "At least " + filter.minQuantity + " units";
-                }
-                else if (filter.minQuantity == 0)
-                {
-                    output += "At most " + filter.maxQuantity + " units";
-                }
-                else
-                {
-                    output += "Between " + filter.minQuantity + " and " + filter.maxQuantity + " units";
-                }
-
-                AddParameter(new ParameterDelegate<Vessel>(output, v => VesselHasResource(v, filter.resource, capacity, filter.minQuantity, filter.maxQuantity),
-                    ParameterDelegateMatchType.VALIDATE));
+                output += 
+                    filter.maxQuantity == 0 
+                          ? "None" 
+                    : filter.maxQuantity == double.MaxValue && (filter.minQuantity > 0.0 && filter.minQuantity <= 0.01) 
+                          ? "Not zero units" 
+                    : filter.maxQuantity == double.MaxValue 
+                          ? "At least " + filter.minQuantity + " units" 
+                    : filter.minQuantity == 0 
+                          ? "At most " + filter.maxQuantity + " units" 
+                    : "Between " + filter.minQuantity + " and " + filter.maxQuantity + " units";
+                AddParameter(new ParameterDelegate<Vessel>(output, v => VesselHasResource(v, filter.resource, capacity, filter.minQuantity, filter.maxQuantity), ParameterDelegateMatchType.VALIDATE));
             }
         }
 

@@ -356,26 +356,16 @@ namespace ContractConfigurator.Behaviour
                     // Estimate an object class, numbers are based on the in game description of the
                     // size classes.
                     float size = shipConstruct.shipSize.magnitude / 2.0f;
-                    if (size < 4.0f)
-                    {
-                        sizeClass = UntrackedObjectClass.A;
-                    }
-                    else if (size < 7.0f)
-                    {
-                        sizeClass = UntrackedObjectClass.B;
-                    }
-                    else if (size < 12.0f)
-                    {
-                        sizeClass = UntrackedObjectClass.C;
-                    }
-                    else if (size < 18.0f)
-                    {
-                        sizeClass = UntrackedObjectClass.D;
-                    }
-                    else
-                    {
-                        sizeClass = UntrackedObjectClass.E;
-                    }
+                    sizeClass = 
+                        size < 4.0f
+                            ? UntrackedObjectClass.A
+                        : size < 7.0f
+                            ? UntrackedObjectClass.B
+                        : size < 12.0f 
+                            ? UntrackedObjectClass.C
+                        : size < 18.0f
+                            ? UntrackedObjectClass.D
+                        : UntrackedObjectClass.E;
 
                     foreach (CrewData cd in vesselData.crew)
                     {

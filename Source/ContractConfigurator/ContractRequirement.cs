@@ -192,11 +192,7 @@ namespace ContractConfigurator
         {
             get
             {
-                if (string.IsNullOrEmpty(title))
-                {
-                    return RequirementText();
-                }
-                return title;
+                return string.IsNullOrEmpty(title) ? RequirementText() : title;
             }
         }
 

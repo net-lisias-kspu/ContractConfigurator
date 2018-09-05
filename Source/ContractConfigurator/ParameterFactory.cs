@@ -236,14 +236,9 @@ namespace ContractConfigurator
                         }
 
                         ContractParameter parameter = paramFactory.Generate(contract, contractParamHost);
-
-                        // Get the child parameters
-                        if (parameter != null)
+                        if (!(parameter == null || GenerateParameters(contract, parameter, paramFactory.childNodes)))
                         {
-                            if (!GenerateParameters(contract, parameter, paramFactory.childNodes))
-                            {
-                                return false;
-                            }
+                            return false;
                         }
 
                         ContractConfiguratorParameter ccParam = parameter as ContractConfiguratorParameter;

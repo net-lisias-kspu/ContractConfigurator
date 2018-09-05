@@ -137,32 +137,20 @@ namespace ContractConfigurator.ExpressionParser
             contractList = contractList.Where(c => c.uniqueData.ContainsKey(key));
 
             // Check for contracts of the same type
-            if (uniquenessCheck == DataNode.UniquenessCheck.CONTRACT_ALL || uniquenessCheck == DataNode.UniquenessCheck.CONTRACT_ACTIVE)
-            {
-                contractList = contractList.Where(c => c.contractType.name == contractType.name);
-            }
-            // Check for a shared group
-            else if (contractType.group != null)
-            {
-                contractList = contractList.Where(c => c.contractType.group != null && c.contractType.group.name == contractType.group.name);
-            }
-            // Shared lack of group
-            else
-            {
-                contractList = contractList.Where(c => c.contractType.group == null);
-            }
+            contractList =
+                uniquenessCheck == DataNode.UniquenessCheck.CONTRACT_ALL || uniquenessCheck == DataNode.UniquenessCheck.CONTRACT_ACTIVE
+                    ? contractList.Where(c => c.contractType.name == contractType.name)
+                : contractType.group != null
+                    ? contractList.Where(c => c.contractType.group != null && c.contractType.group.name == contractType.group.name)
+                : contractList.Where(c => c.contractType.group == null);
 
             // Get the valid values
-            IEnumerable<T> values;
-            // Special case for vessels
-            if (typeof(T) == typeof(Vessel))
-            {
-                values = input.Where(t => !contractList.Any(c => c.uniqueData[key].Equals(((Vessel)(object)t).id)));
-            }
-            else
-            {
-                values = input.Where(t => !contractList.Any(c => c.uniqueData[key].Equals(t)));
-            }
+            IEnumerable<T> values = 
+                typeof(T) == typeof(Vessel)
+                    // Special case for vessels
+                    ? input.Where(t => !contractList.Any(c => c.uniqueData[key].Equals(((Vessel)(object)t).id)))
+
+                    : input.Where(t => !contractList.Any(c => c.uniqueData[key].Equals(t)));
 
             // Make a random selection from what's left
             return values.Skip(r.Next(values.Count())).FirstOrDefault();
@@ -175,14 +163,7 @@ namespace ContractConfigurator.ExpressionParser
 
         public override TResult ParseMethod<TResult>(Token token, List<T> obj, bool isFunction = false)
         {
-            if (token.sval == "Where")
-            {
-                return ParseWhereMethod<TResult>(obj);
-            }
-            else
-            {
-                return base.ParseMethod<TResult>(token, obj, isFunction);
-            }
+            return token.sval == "Where" ? ParseWhereMethod<TResult>(obj) : base.ParseMethod<TResult>(token, obj, isFunction);
         }
 
         public TResult ParseWhereMethod<TResult>(List<T> obj)
@@ -238,16 +219,12 @@ namespace ContractConfigurator.ExpressionParser
                 // Check for a method call before we return
                 Token methodToken = ParseMethodToken();
                 ExpressionParser<TResult> retValParser = GetParser<TResult>(this);
-                TResult result;
-                if (methodToken != null)
-                {
-                    result = ParseMethod<TResult>(methodToken, filteredList);
-                }
-                else
-                {
+                TResult result = methodToken != null 
+                    ? ParseMethod<TResult>(methodToken, filteredList)
+
                     // No method, attempt to convert - most likely fails
-                    result = retValParser.ConvertType(filteredList);
-                }
+                    : retValParser.ConvertType(filteredList)
+                ;
 
                 verbose &= LogExitDebug<TResult>("ParseWhereMethod", result);
                 return result;

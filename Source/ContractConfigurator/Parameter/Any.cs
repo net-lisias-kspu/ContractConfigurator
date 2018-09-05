@@ -81,14 +81,11 @@ namespace ContractConfigurator.Parameters
             if (contract == Root)
             {
                 LoggingUtil.LogVerbose(this, "OnAnyContractParameterChange");
-                if (this.GetChildren().Any(p => p.State == ParameterState.Complete))
-                {
-                    SetState(ParameterState.Complete);
-                }
-                else
-                {
-                    SetState(ParameterState.Incomplete);
-                }
+                SetState(
+                    this.GetChildren().Any(p => p.State == ParameterState.Complete)
+                        ? ParameterState.Complete
+                        : ParameterState.Incomplete
+                );
             }
         }
     }

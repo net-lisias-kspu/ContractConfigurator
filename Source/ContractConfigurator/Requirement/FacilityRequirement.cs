@@ -70,19 +70,12 @@ namespace ContractConfigurator
             }
 
             string output = "The " + facilityName + " must " + (invertRequirement ? "not " : "") + "be ";
-            if (minLevel == maxLevel)
-            {
-                output += "at level " + NumericValueExpressionParser<int>.PrintNumber(minLevel);
-            }
-            else if (minLevel >= 1)
-            {
-                output += "at least at level " + NumericValueExpressionParser<int>.PrintNumber(minLevel);
-            }
-            else
-            {
-                output += "at most at level " + NumericValueExpressionParser<int>.PrintNumber(maxLevel);
-            }
-
+            output += 
+                minLevel == maxLevel 
+                    ? "at level " + NumericValueExpressionParser<int>.PrintNumber(minLevel)
+                : minLevel >= 1
+                    ? "at least at level " + NumericValueExpressionParser<int>.PrintNumber(minLevel)
+                : "at most at level " + NumericValueExpressionParser<int>.PrintNumber(maxLevel);
             return output;
         }
     }

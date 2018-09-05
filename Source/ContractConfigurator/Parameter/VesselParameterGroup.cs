@@ -113,11 +113,7 @@ namespace ContractConfigurator.Parameters
             {
                 if (ParameterCount == 1)
                 {
-                    output = "";
-                    if (trackedVessel != null)
-                    {
-                        output += "Vessel: " + trackedVessel.vesselName + ": ";
-                    }
+                    output = trackedVessel == null ? "" : "Vessel: " + trackedVessel.vesselName + ": ";
                     output += GetParameter(0).Title;
                 }
             }

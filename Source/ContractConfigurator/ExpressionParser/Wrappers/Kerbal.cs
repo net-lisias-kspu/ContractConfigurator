@@ -106,14 +106,7 @@ namespace ContractConfigurator
                 _pcm = pcm;
             }
 
-            if (gender != null)
-            {
-                this.gender = gender.Value;
-            }
-            else
-            {
-                this.gender = RandomGender();
-            }
+            this.gender = gender != null ? gender.Value : RandomGender();
 
             if (_pcm != null)
             {

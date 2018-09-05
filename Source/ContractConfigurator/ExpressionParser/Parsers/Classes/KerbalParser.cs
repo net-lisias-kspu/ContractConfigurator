@@ -79,11 +79,7 @@ namespace ContractConfigurator.ExpressionParser
 
         public override U ConvertType<U>(Kerbal value)
         {
-            if (typeof(U) == typeof(string))
-            {
-                return (U)(object)(value == null ? "" : value.ToString());
-            }
-            return base.ConvertType<U>(value);
+            return typeof(U) == typeof(string) ? (U)(object)(value == null ? "" : value.ToString()) : base.ConvertType<U>(value);
         }
 
         static Kerbal NewKerbal(string trait)
@@ -115,12 +111,7 @@ namespace ContractConfigurator.ExpressionParser
             expression = (expression.Length > identifier.Length ? expression.Substring(identifier.Length) : "");
             identifier = token.sval + identifier;
 
-            if (identifier.Equals("null", StringComparison.CurrentCultureIgnoreCase))
-            {
-                return null;
-            }
-
-            return new Kerbal(identifier);
+            return identifier.Equals("null", StringComparison.CurrentCultureIgnoreCase) ? null : new Kerbal(identifier);
         }
     }
 }

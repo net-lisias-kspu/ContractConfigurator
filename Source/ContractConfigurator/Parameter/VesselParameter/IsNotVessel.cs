@@ -32,16 +32,7 @@ namespace ContractConfigurator.Parameters
 
         protected override string GetParameterTitle()
         {
-            string output;
-            if (string.IsNullOrEmpty(title))
-            {
-                output = "Vessel: Not " + ContractVesselTracker.GetDisplayName(vesselKey);
-            }
-            else
-            {
-                output = title;
-            }
-
+            string output = string.IsNullOrEmpty(title) ? "Vessel: Not " + ContractVesselTracker.GetDisplayName(vesselKey) : title;
             return output;
         }
 

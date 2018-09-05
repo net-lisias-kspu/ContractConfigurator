@@ -65,14 +65,9 @@ namespace ContractConfigurator.Parameters
                 currentVessel == null && endTime > 0.01)
             {
                 double time = currentVessel != null ? endTimes[currentVessel.id] : endTime;
-                if (time - Planetarium.GetUniversalTime() > 0.0)
-                {
-                    title = (waitingText ?? "Time to completion:") + " " + DurationUtil.StringValue(time - Planetarium.GetUniversalTime());
-                }
-                else
-                {
-                    title = completionText ?? "Wait time over";
-                }
+                title = time - Planetarium.GetUniversalTime() > 0.0
+                    ? (waitingText ?? "Time to completion:") + " " + DurationUtil.StringValue(time - Planetarium.GetUniversalTime())
+                    : completionText ?? "Wait time over";
             }
             else
             {

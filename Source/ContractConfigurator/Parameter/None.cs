@@ -26,16 +26,7 @@ namespace ContractConfigurator.Parameters
 
         protected override string GetParameterTitle()
         {
-            string output = null;
-            if (string.IsNullOrEmpty(title))
-            {
-                output = "Prevent ALL of the following";
-            }
-            else
-            {
-                output = title;
-            }
-
+            string output = string.IsNullOrEmpty(title) ? "Prevent ALL of the following" : title;
             return output;
         }
 
@@ -64,14 +55,7 @@ namespace ContractConfigurator.Parameters
             if (contract == Root)
             {
                 LoggingUtil.LogVerbose(this, "OnAnyContractParameterChange");
-                if (this.GetChildren().Any(p => p.State == ParameterState.Complete))
-                {
-                    SetState(ParameterState.Failed);
-                }
-                else
-                {
-                    SetState(ParameterState.Complete);
-                }
+                SetState(this.GetChildren().Any(p => p.State == ParameterState.Complete) ? ParameterState.Failed : ParameterState.Complete);
             }
         }
     }

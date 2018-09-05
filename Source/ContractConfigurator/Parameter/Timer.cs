@@ -46,18 +46,12 @@ namespace ContractConfigurator.Parameters
 
         protected override string GetParameterTitle()
         {
-            if (state == ParameterState.Failed)
-            {
-                return "Time expired!";
-            }
-            else if (endTime > 0.01)
-            {
-                return "Time remaining: " + DurationUtil.StringValue(endTime - Planetarium.GetUniversalTime());
-            }
-            else
-            {
-                return "Time limit: " + DurationUtil.StringValue(duration);
-            }
+            return 
+                state == ParameterState.Failed
+                    ? "Time expired!"
+                : endTime > 0.01
+                    ? "Time remaining: " + DurationUtil.StringValue(endTime - Planetarium.GetUniversalTime())
+                : "Time limit: " + DurationUtil.StringValue(duration);
         }
 
         protected override void OnParameterSave(ConfigNode node)

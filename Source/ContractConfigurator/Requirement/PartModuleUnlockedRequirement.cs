@@ -85,14 +85,7 @@ namespace ContractConfigurator
             {
                 if (i != 0)
                 {
-                    if (i == partModules.Count - 1)
-                    {
-                        partStr += " or ";
-                    }
-                    else
-                    {
-                        partStr += ", ";
-                    }
+                    partStr += i == partModules.Count - 1 ? " or " : ", ";
                 }
 
                 partStr += PartValidation.ModuleName(partModules[i]);

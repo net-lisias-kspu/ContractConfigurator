@@ -454,26 +454,13 @@ namespace ContractConfigurator.Parameters
             this.ignorePreviousFailures = ignorePreviousFailures;
 
             title = filterFunc == DefaultFilter ? "Count: " : "";
-            if (maxCount == 0)
-            {
-                title += filterFunc == DefaultFilter && string.IsNullOrEmpty(extraTitle) ? "None" : "No";
-            }
-            else if (maxCount == int.MaxValue)
-            {
-                title += "At least " + minCount;
-            }
-            else if (minCount == 0)
-            {
-                title += "At most " + maxCount;
-            }
-            else if (minCount == maxCount)
-            {
-                title += "Exactly " + minCount;
-            }
-            else
-            {
-                title += "Between " + minCount + " and " + maxCount;
-            }
+
+            if (maxCount == 0)                  title += filterFunc == DefaultFilter && string.IsNullOrEmpty(extraTitle) ? "None" : "No";
+            else if (maxCount == int.MaxValue)  title += "At least " + minCount;
+            else if (minCount == 0)             title += "At most " + maxCount;
+            else if (minCount == maxCount)      title += "Exactly " + minCount;
+            else                                title += "Between " + minCount + " and " + maxCount;
+
             title += " " + extraTitle;
         }
 

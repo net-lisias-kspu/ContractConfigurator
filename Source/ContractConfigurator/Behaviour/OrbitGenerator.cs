@@ -320,12 +320,7 @@ namespace ContractConfigurator.Behaviour
         public Orbit GetOrbit(int index)
         {
             OrbitData obData = orbits.ElementAtOrDefault(index);
-            if (obData != null)
-            {
-                return obData.orbit;
-            }
-
-            return null;
+            return obData != null ? obData.orbit : null;
         }
     }
 }

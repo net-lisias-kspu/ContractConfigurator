@@ -42,11 +42,7 @@ namespace ContractConfigurator.ExpressionParser
 
         public override U ConvertType<U>(ExperienceTrait value)
         {
-            if (typeof(U) == typeof(string))
-            {
-                return (U)(object)(value == null ? "" : value.Title);
-            }
-            return base.ConvertType<U>(value);
+            return typeof(U) == typeof(string) ? (U)(object)(value == null ? "" : value.Title) : base.ConvertType<U>(value);
         }
 
         public override bool ConvertableFrom(Type type)
@@ -84,8 +80,7 @@ namespace ContractConfigurator.ExpressionParser
         public override bool EQ(ExperienceTrait a, ExperienceTrait b)
         {
 			if (null == a || null == b) return false;
-			if (base.EQ(a, b)) return true;
-            return a.TypeName == b.TypeName;
+            return base.EQ(a, b) ? true : a.TypeName == b.TypeName;
         }
 
         public override ExperienceTrait ParseIdentifier(Token token)

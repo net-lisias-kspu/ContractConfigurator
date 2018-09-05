@@ -27,19 +27,13 @@ namespace ContractConfigurator.RemoteTech
             if (string.IsNullOrEmpty(title))
             {
                 this.title = "Signal Delay: ";
-
-                if (maxSignalDelay == double.MaxValue)
-                {
-                    this.title += "At least " + minSignalDelay.ToString("N1") + " seconds";
-                }
-                else if (minSignalDelay == 0.0)
-                {
-                    this.title += "At most " + maxSignalDelay.ToString("N1") + " seconds";
-                }
-                else
-                {
-                    this.title += "Between " + minSignalDelay.ToString("N1") + " and " + maxSignalDelay.ToString("N1") + " seconds";
-                }
+                this.title += 
+                    maxSignalDelay == double.MaxValue 
+                        ? "At least " + minSignalDelay.ToString("N1") + " seconds"
+                    : minSignalDelay == 0.0
+                        ? "At most " + maxSignalDelay.ToString("N1") + " seconds"
+                    : "Between " + minSignalDelay.ToString("N1") + " and " + maxSignalDelay.ToString("N1") + " seconds"
+                ;
             }
             else
             {

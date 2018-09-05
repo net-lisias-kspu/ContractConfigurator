@@ -18,11 +18,7 @@ namespace ContractConfigurator.Parameters
     {
         public static string Print(this ScienceRecoveryMethod recoveryMethod)
         {
-            if (recoveryMethod == ScienceRecoveryMethod.RecoverOrTransmit)
-            {
-                return "Recover or transmit";
-            }
-            return recoveryMethod.ToString();
+            return recoveryMethod == ScienceRecoveryMethod.RecoverOrTransmit ? "Recover or transmit" : recoveryMethod.ToString();
         }
     }
 
@@ -107,23 +103,10 @@ namespace ContractConfigurator.Parameters
                 {
                     output += ": " + (experiment.Count > 1 ? "Various experiments" : ExperimentName(experiment[0])) + " from ";
 
-                    if (!string.IsNullOrEmpty(biome))
-                    {
-                        output += new Biome(targetBody, biome).ToString();
-                    }
-                    else
-                    {
-                        output += targetBody.CleanDisplayName(true);
-                    }
-                    
-                    if (situation != null)
-                    {
-                        output += " while " + situation.Value.Print().ToLower();
-                    }
-                    else if (location != null)
-                    {
-                        output += location.Value == BodyLocation.Surface ? " while on the surface" : " while in space";
-                    }
+                    output += !string.IsNullOrEmpty(biome) ? new Biome(targetBody, biome).ToString() : targetBody.CleanDisplayName(true);
+                    output += situation != null 
+                            ? (" while " + situation.Value.Print().ToLower()) 
+                            : (location.Value == BodyLocation.Surface ? " while on the surface" : " while in space");
                 }
             }
             else
@@ -251,16 +234,9 @@ namespace ContractConfigurator.Parameters
                 return false;
             }
 
-            string vesselBiome = null;
-            if (landedSituations.Contains(vessel.situation) && !string.IsNullOrEmpty(vessel.landedAt))
-            {
-                // Fixes problems with special biomes like KSC buildings (total different naming)
-                vesselBiome = Vessel.GetLandedAtString(vessel.landedAt);
-            }
-            else
-            {
-                vesselBiome = ScienceUtil.GetExperimentBiome(vessel.mainBody, vessel.latitude, vessel.longitude);
-            }
+            string vesselBiome = landedSituations.Contains(vessel.situation) && !string.IsNullOrEmpty(vessel.landedAt)
+                ? Vessel.GetLandedAtString(vessel.landedAt) // Fixes problems with special biomes like KSC buildings (total different naming)
+                : ScienceUtil.GetExperimentBiome(vessel.mainBody, vessel.latitude, vessel.longitude);
 
             return vesselBiome.Replace(" ", "") == biome;
         }
@@ -344,16 +320,10 @@ namespace ContractConfigurator.Parameters
             if (UnityEngine.Time.fixedTime - lastUpdate > UPDATE_FREQUENCY)
             {
                 lastUpdate = UnityEngine.Time.fixedTime;
-                string biome;
-                if (landedSituations.Contains(v.situation) && !string.IsNullOrEmpty(v.landedAt))
-                {
-                    biome = Vessel.GetLandedAtString(v.landedAt).Replace(" ", "");
-                }
-                else
-                {
-                    biome = ScienceUtil.GetExperimentBiome(v.mainBody, v.latitude, v.longitude);
-                }
-                
+                string biome = landedSituations.Contains(v.situation) && !string.IsNullOrEmpty(v.landedAt)
+                    ? Vessel.GetLandedAtString(v.landedAt).Replace(" ", "")
+                    : ScienceUtil.GetExperimentBiome(v.mainBody, v.latitude, v.longitude);
+
                 // Run the OnVesselChange, this will pick up a kerbal that grabbed science,
                 // or science that was dumped from a pod.
                 if (updateTicks++ % 4 == 0)
@@ -611,14 +581,9 @@ namespace ContractConfigurator.Parameters
                     );
 
                 // Either has no parts or a full science transmitter
-                if (!expNodes.Any() || expNodes.Any(n => ConfigNodeUtil.ParseValue<float>(n, "xmitDataScalar", 0.0f) >= 0.999))
-                {
-                    idealRecoverMethodCache[exp] = ScienceRecoveryMethod.RecoverOrTransmit;
-                }
-                else
-                {
-                    idealRecoverMethodCache[exp] = ScienceRecoveryMethod.Recover;
-                }
+                idealRecoverMethodCache[exp] = !expNodes.Any() || expNodes.Any(n => ConfigNodeUtil.ParseValue<float>(n, "xmitDataScalar", 0.0f) >= 0.999)
+                    ? ScienceRecoveryMethod.RecoverOrTransmit
+                    : ScienceRecoveryMethod.Recover;
             }
 
             return idealRecoverMethodCache[exp];
@@ -626,11 +591,7 @@ namespace ContractConfigurator.Parameters
 
         public override bool IsIgnoredVesselType(VesselType vesselType)
         {
-            if (vesselType == VesselType.Debris)
-            {
-                return false;
-            }
-            return base.IsIgnoredVesselType(vesselType);
+            return vesselType == VesselType.Debris ? false : base.IsIgnoredVesselType(vesselType);
         }
 
         /// <summary>

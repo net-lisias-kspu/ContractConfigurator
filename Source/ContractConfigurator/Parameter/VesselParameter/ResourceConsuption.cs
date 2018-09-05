@@ -103,12 +103,9 @@ namespace ContractConfigurator.Parameters
 
         public static bool CanCheckVessel(Vessel vessel)
         {
-            if (Instance == null || !Instance.isActiveAndEnabled)
-            {
-                return false;
-            }
-
-            return vessel.id == Instance.currentVessel && Instance.checks >= CHECK_SIZE;
+            return Instance == null || !Instance.isActiveAndEnabled
+                ? false
+                : vessel.id == Instance.currentVessel && Instance.checks >= CHECK_SIZE;
         }
 
         public double Consumption(PartResourceDefinition resource)

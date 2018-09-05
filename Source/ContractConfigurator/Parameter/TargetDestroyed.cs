@@ -38,15 +38,7 @@ namespace ContractConfigurator.Parameters
 
         protected override string GetParameterTitle()
         {
-            string output = "";
-            if (string.IsNullOrEmpty(title))
-            {
-                output = "Target" + (vessels.Count > 1 ? "s" : "") + " destroyed";
-            }
-            else
-            {
-                output = title;
-            }
+            string output = string.IsNullOrEmpty(title) ? "Target" + (vessels.Count > 1 ? "s" : "") + " destroyed" : title;
             return output;
         }
 

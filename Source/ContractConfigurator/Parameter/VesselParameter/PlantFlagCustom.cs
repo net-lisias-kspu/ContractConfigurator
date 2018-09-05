@@ -28,15 +28,7 @@ namespace ContractConfigurator.Parameters
 
         protected override string GetParameterTitle()
         {
-            string output;
-            if (string.IsNullOrEmpty(title))
-            {
-                output = "Plant a flag on " + targetBody.CleanDisplayName(true);
-            }
-            else
-            {
-                output = title;
-            }
+            string output = string.IsNullOrEmpty(title) ? "Plant a flag on " + targetBody.CleanDisplayName(true) : title;
             return output;
         }
 

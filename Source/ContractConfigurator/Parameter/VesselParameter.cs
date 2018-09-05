@@ -215,12 +215,7 @@ namespace ContractConfigurator.Parameters
         /// <returns>The state for the vessel.</returns>
         protected virtual Contracts.ParameterState GetStateForVessel(Vessel vessel)
         {
-            if (!vesselInfo.ContainsKey(vessel.id))
-            {
-                return ParameterState.Incomplete;
-            }
-
-            return vesselInfo[vessel.id].state;
+            return !vesselInfo.ContainsKey(vessel.id) ? ParameterState.Incomplete : vesselInfo[vessel.id].state;
         }
 
         /// <summary>
@@ -231,14 +226,9 @@ namespace ContractConfigurator.Parameters
         {
             LoggingUtil.LogVerbose(this, "SetState to that of vessel " + (vessel != null ? vessel.id.ToString() : "null"));
 
-            if (vessel != null && vesselInfo.ContainsKey(vessel.id))
-            {
-                this.state = vesselInfo[vessel.id].state;
-            }
-            else
-            {
-                this.state = ParameterState.Incomplete;
-            }
+            this.state = vessel != null && vesselInfo.ContainsKey(vessel.id)
+                ? vesselInfo[vessel.id].state
+                : ParameterState.Incomplete;
         }
 
         /// <summary>
@@ -263,11 +253,7 @@ namespace ContractConfigurator.Parameters
         /// <returns>The time that the vessel completed the parameter</returns>
         public virtual double GetCompletionTime(Vessel vessel)
         {
-            if (vesselInfo.ContainsKey(vessel.id))
-            {
-                return vesselInfo[vessel.id].completionTime;
-            }
-            return 0.0;
+            return vesselInfo.ContainsKey(vessel.id) ? vesselInfo[vessel.id].completionTime : 0.0;
         }
 
         /// <summary>
@@ -396,14 +382,12 @@ namespace ContractConfigurator.Parameters
             {
                 if (dockedVesselInfo.ContainsKey(hash))
                 {
-                    if (dockedInfo == null)
-                    {
-                        dockedInfo = dockedVesselInfo[hash];
-                    }
-                    else
-                    {
-                        dockedInfo = dockedVesselInfo[hash].Key > dockedInfo.Value.Key ? dockedVesselInfo[hash] : dockedInfo;
-                    }
+                    dockedInfo =
+                        dockedInfo == null
+                            ? (KeyValuePair<ParamStrength, double>?)dockedVesselInfo[hash]
+                        : dockedVesselInfo[hash].Key > dockedInfo.Value.Key
+                            ? dockedVesselInfo[hash]
+                        : dockedInfo;
                 }
             }
 
@@ -631,14 +615,8 @@ namespace ContractConfigurator.Parameters
                             Disable();
                         }
                     }
-                    else if (failWhenUnmet)
-                    {
-                        SetState(ParameterState.Failed);
-                    }
                     else
-                    {
-                        SetState(ParameterState.Incomplete);
-                    }
+                        SetState(failWhenUnmet ? ParameterState.Failed : ParameterState.Incomplete);
                 }
 
                 // Special handling for parameter delegates

@@ -328,11 +328,7 @@ namespace ContractConfigurator
         /// <returns>The vessel that is associated to the given key or null if none.</returns>
         public Vessel GetAssociatedVessel(string key)
         {
-            if (vessels.ContainsKey(key))
-            {
-                return FlightGlobals.FindVessel(vessels[key].id);
-            }
-            return null;
+            return vessels.ContainsKey(key) ? FlightGlobals.FindVessel(vessels[key].id) : null;
         }
 
         /// <summary>

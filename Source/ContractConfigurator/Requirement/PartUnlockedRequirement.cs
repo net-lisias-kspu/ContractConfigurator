@@ -60,14 +60,7 @@ namespace ContractConfigurator
             {
                 if (i != 0)
                 {
-                    if (i == parts.Count - 1)
-                    {
-                        partStr += " and ";
-                    }
-                    else
-                    {
-                        partStr += ", ";
-                    }
+                    partStr += i == parts.Count - 1 ? " and " : ", ";
                 }
 
                 partStr += parts[i].title;

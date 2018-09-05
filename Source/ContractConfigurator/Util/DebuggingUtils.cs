@@ -42,14 +42,7 @@ namespace ContractConfigurator.Util
 
         public static void DumpDetails(this System.Object o, string text = null)
         {
-            if (!string.IsNullOrEmpty(text))
-            {
-                Debug.Log(text);
-            }
-            else
-            {
-                Debug.Log("Dumping object:");
-            }
+            Debug.Log(!string.IsNullOrEmpty(text) ? text : "Dumping object:");
 
             foreach (FieldInfo fi in o.GetType().GetFields(System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Instance | BindingFlags.FlattenHierarchy))
             {

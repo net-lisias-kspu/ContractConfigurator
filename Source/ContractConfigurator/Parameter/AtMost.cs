@@ -29,16 +29,7 @@ namespace ContractConfigurator.Parameters
 
         protected override string GetParameterTitle()
         {
-            string output = null;
-            if (string.IsNullOrEmpty(title))
-            {
-                output = string.Format("Allow no more than {0} of the following", count);
-            }
-            else
-            {
-                output = title;
-            }
-
+            string output = string.IsNullOrEmpty(title) ? string.Format("Allow no more than {0} of the following", count) : title;
             return output;
         }
 
@@ -69,14 +60,11 @@ namespace ContractConfigurator.Parameters
             if (contract == Root)
             {
                 LoggingUtil.LogVerbose(this, "OnAnyContractParameterChange");
-                if (this.GetChildren().Count(p => p.State == ParameterState.Complete) > count)
-                {
-                    SetState(ParameterState.Failed);
-                }
-                else
-                {
-                    SetState(ParameterState.Complete);
-                }
+                SetState(
+                    this.GetChildren().Count(p => p.State == ParameterState.Complete) > count
+                        ? ParameterState.Failed
+                        : ParameterState.Complete
+                );
             }
         }
     }

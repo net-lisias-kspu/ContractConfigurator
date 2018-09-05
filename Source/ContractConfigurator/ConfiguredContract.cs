@@ -149,33 +149,27 @@ namespace ContractConfigurator
         {
             get
             {
-                if (ContractSystem.Instance == null)
-                {
-                    return Enumerable.Empty<ConfiguredContract>();
-                }
-                return ContractSystem.Instance.Contracts.Where(c => c.ContractState == Contract.State.Active).OfType<ConfiguredContract>();
+                return ContractSystem.Instance == null
+                    ? Enumerable.Empty<ConfiguredContract>()
+                    : ContractSystem.Instance.Contracts.Where(c => c.ContractState == Contract.State.Active).OfType<ConfiguredContract>();
             }
         }
         public static IEnumerable<ConfiguredContract> CurrentContracts
         {
             get
             {
-                if (ContractSystem.Instance == null)
-                {
-                    return Enumerable.Empty<ConfiguredContract>();
-                }
-                return ActiveContracts.Union(ContractPreLoader.Instance.PendingContracts());
+                return ContractSystem.Instance == null
+                    ? Enumerable.Empty<ConfiguredContract>()
+                    : ActiveContracts.Union(ContractPreLoader.Instance.PendingContracts());
             }
         }
         public static IEnumerable<ConfiguredContract> CompletedContracts
         {
             get
             {
-                if (ContractSystem.Instance == null)
-                {
-                    return Enumerable.Empty<ConfiguredContract>();
-                }
-                return ContractSystem.Instance.ContractsFinished.Where(c => c.ContractState == Contract.State.Completed).OfType<ConfiguredContract>();
+                return ContractSystem.Instance == null
+                    ? Enumerable.Empty<ConfiguredContract>()
+                    : ContractSystem.Instance.ContractsFinished.Where(c => c.ContractState == Contract.State.Completed).OfType<ConfiguredContract>();
             }
         }
 
@@ -249,25 +243,15 @@ namespace ContractConfigurator
                 notes = contractType.notes;
 
                 // Set the agent
-                if (contractType.agent != null)
-                {
-                    agent = contractType.agent;
-                }
-                else
-                {
-                    agent = AgentList.Instance.GetSuitableAgentForContract(this);
-                }
+                agent = contractType.agent != null ? contractType.agent : AgentList.Instance.GetSuitableAgentForContract(this);
 
                 // Set description
-                if (string.IsNullOrEmpty(contractType.description) && agent != null)
-                {
-                    // Generate the contract description
-                    description = TextGen.GenerateBackStories("ConfiguredContract", agent.Name, contractType.topic, contractType.subject, random.Next(), true, true, true);
-                }
-                else
-                {
-                    description = contractType.description;
-                }
+                description = string.IsNullOrEmpty(contractType.description) && agent != null
+                        // Generate the contract description
+                        ? TextGen.GenerateBackStories("ConfiguredContract", agent.Name, contractType.topic, contractType.subject, random.Next(), true, true, true)
+                        
+                        : contractType.description
+                ;
 
                 // Generate behaviours
                 behaviours = new List<ContractBehaviour>();
@@ -330,14 +314,7 @@ namespace ContractConfigurator
 
             try
             {
-                if (contractType != null)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
+                return contractType != null;
             }
             catch (Exception e)
             {

@@ -55,13 +55,9 @@ namespace ContractConfigurator.Parameters
                     output = "Passenger " + ParameterDelegate<Vessel>.GetDelegateText(this);
                     hideChildren = true;
                 }
-                else if (state == ParameterState.Complete)
-                {
-                    output = "Passengers: " + passengers.Count;
-                }
                 else
                 {
-                    output = "Passengers";
+                    output = state == ParameterState.Complete ? "Passengers: " + passengers.Count : "Passengers";
                 }
             }
             else
@@ -84,16 +80,7 @@ namespace ContractConfigurator.Parameters
 
                 foreach (Kerbal passenger in passengers)
                 {
-                    if (passenger.pcm != null)
-                    {
-                        AddParameter(new ParameterDelegate<Vessel>("On Board: " + passenger.name,
-                            v => v.GetVesselCrew().Contains(passenger.pcm), ParameterDelegateMatchType.VALIDATE_ALL));
-                    }
-                    else
-                    {
-                        AddParameter(new ParameterDelegate<Vessel>("On Board: " + passenger.name, v => false,
-                            ParameterDelegateMatchType.VALIDATE_ALL));
-                    }
+                    AddParameter(new ParameterDelegate<Vessel>("On Board: " + passenger.name, v => passenger.pcm != null && v.GetVesselCrew().Contains(passenger.pcm), ParameterDelegateMatchType.VALIDATE_ALL));
                 }
             }
         }

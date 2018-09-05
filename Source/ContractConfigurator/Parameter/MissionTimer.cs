@@ -82,16 +82,10 @@ namespace ContractConfigurator.Parameters
             double end = endTime == 0.0 ? Planetarium.GetUniversalTime() : endTime;
             string prefix = string.IsNullOrEmpty(title) ? "Mission Timer:" : title;
 
-            string output;
-            if (startTime == 0.0)
-            {
-                output = prefix + " 00:00:00";
-            }
-            else
-            {
-                output = prefix + " " + DurationUtil.StringValue(end - startTime, true, (endTime != 0.0));
-            }
-
+            string output = startTime == 0.0 
+                    ? prefix + " 00:00:00" 
+                    : prefix + " " + DurationUtil.StringValue(end - startTime, true, (endTime != 0.0))
+                    ;
             return output;
         }
 

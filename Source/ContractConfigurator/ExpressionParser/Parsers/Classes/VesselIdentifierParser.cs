@@ -35,21 +35,16 @@ namespace ContractConfigurator.ExpressionParser
         {
             if (typeof(U) == typeof(Vessel))
             {
-                if (!parseMode && value != null)
-                {
-                    return (U)(object)ContractVesselTracker.Instance.GetAssociatedVessel(value.identifier);
-                }
-                return (U)(object)null;
+                return !parseMode && value != null
+                    ? (U)(object)ContractVesselTracker.Instance.GetAssociatedVessel(value.identifier)
+                    : (U)(object)null;
             }
 
-            if (typeof(U) == typeof(string))
-            {
-                return (U)(object)(value == null ? null : value.identifier);
-            }
-
-            return base.ConvertType<U>(value);
+            return typeof(U) == typeof(string)
+                ? (U)(object)(value == null ? null : value.identifier)
+                : base.ConvertType<U>(value);
         }
-        
+
         public override bool ConvertableFrom(Type type)
         {
             return type == typeof(string);

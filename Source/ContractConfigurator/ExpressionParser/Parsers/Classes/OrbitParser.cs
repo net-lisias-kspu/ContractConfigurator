@@ -58,62 +58,32 @@ namespace ContractConfigurator.ExpressionParser
 
         static double GetApA(Orbit orbit)
         {
-            if (orbit == null)
-            {
-                return 0.0;
-            }
-
-            return orbit.ApA;
+            return orbit == null ? 0.0 : orbit.ApA;
         }
 
         static double GetPeA(Orbit orbit)
         {
-            if (orbit == null)
-            {
-                return 0.0;
-            }
-
-            return orbit.PeA;
+            return orbit == null ? 0.0 : orbit.PeA;
         }
 
         static double GetInclination(Orbit orbit)
         {
-            if (orbit == null)
-            {
-                return 0.0;
-            }
-
-            return orbit.inclination;
+            return orbit == null ? 0.0 : orbit.inclination;
         }
 
         static double GetEccentricity(Orbit orbit)
         {
-            if (orbit == null)
-            {
-                return 0.0;
-            }
-
-            return orbit.eccentricity;
+            return orbit == null ? 0.0 : orbit.eccentricity;
         }
 
         static double GetLAN(Orbit orbit)
         {
-            if (orbit == null)
-            {
-                return 0.0;
-            }
-
-            return orbit.LAN;
+            return orbit == null ? 0.0 : orbit.LAN;
         }
 
         static double GetPeriod(Orbit orbit)
         {
-            if (orbit == null)
-            {
-                return 0.0;
-            }
-
-            return orbit.period;
+            return orbit == null ? 0.0 : orbit.period;
         }
     }
 }

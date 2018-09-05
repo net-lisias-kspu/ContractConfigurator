@@ -86,14 +86,11 @@ namespace ContractConfigurator.Parameters
             if (contract == Root)
             {
                 LoggingUtil.LogVerbose(this, "OnAnyContractParameterChange");
-                if (this.GetChildren().All(p => p.State == ParameterState.Complete))
-                {
-                    SetState(ParameterState.Complete);
-                }
-                else
-                {
-                    SetState(ParameterState.Incomplete);
-                }
+                SetState(
+                    this.GetChildren().All(p => p.State == ParameterState.Complete)
+                        ? ParameterState.Complete
+                        : ParameterState.Incomplete
+                );
             }
         }
 
@@ -101,14 +98,11 @@ namespace ContractConfigurator.Parameters
         {
             if (System.Object.ReferenceEquals(contractParameter.Parent, this))
             {
-                if (AllChildParametersComplete())
-                {
-                    SetState(ParameterState.Complete);
-                }
-                else if (AnyChildParametersFailed())
-                {
-                    SetState(ParameterState.Failed);
-                }
+                SetState(
+                    AllChildParametersComplete()
+                        ? ParameterState.Complete
+                        : ParameterState.Failed
+                );
             }
         }
     }

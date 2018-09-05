@@ -258,25 +258,15 @@ namespace ContractConfigurator
             // Handle nullable
             if (typeof(T).Name == "Nullable`1")
             {
-                if (typeof(T).GetGenericArguments()[0].IsEnum)
-                {
-                    value = (T)Enum.Parse(typeof(T).GetGenericArguments()[0], stringValue, true);
-                }
-                else
-                {
-                    value = (T)Convert.ChangeType(stringValue, typeof(T).GetGenericArguments()[0]);
-                }
+                value = typeof(T).GetGenericArguments()[0].IsEnum
+                    ? (T)Enum.Parse(typeof(T).GetGenericArguments()[0], stringValue, true)
+                    : (T)Convert.ChangeType(stringValue, typeof(T).GetGenericArguments()[0]);
             }
             else if (allowExpression && (parser = BaseParser.GetParser<T>()) != null)
             {
-                if (initialLoad)
-                {
-                    value = parser.ParseExpression(key, stringValue, currentDataNode);
-                }
-                else
-                {
-                    value = parser.ExecuteExpression(key, stringValue, currentDataNode);
-                }
+                value = initialLoad
+                    ? parser.ParseExpression(key, stringValue, currentDataNode)
+                    : parser.ExecuteExpression(key, stringValue, currentDataNode);
             }
             // Enum parsing logic
             else if (typeof(T).IsEnum)
@@ -458,14 +448,9 @@ namespace ContractConfigurator
                 string expression = "CreateOrbit([@" + key + "/SMA, @" + key + "/ECC, @" + key +
                     "/INC, @" + key + "/LPE, @" + key + "/LAN, @" + key + "/MNA, @" + key +
                     "/EPH ], @" + key + "/REF)";
-                if (initialLoad)
-                {
-                    value = parser.ParseExpression(key, expression, currentDataNode);
-                }
-                else
-                {
-                    value = parser.ExecuteExpression(key, expression, currentDataNode);
-                }
+                value = initialLoad
+                    ? parser.ParseExpression(key, expression, currentDataNode)
+                    : parser.ExecuteExpression(key, expression, currentDataNode);
             }
             else
             {
@@ -486,11 +471,7 @@ namespace ContractConfigurator
         /// <returns>The parsed value (or default value if not found)</returns>
         public static T ParseValue<T>(ConfigNode configNode, string key, T defaultValue)
         {
-            if (configNode.HasValue(key) || configNode.HasNode(key))
-            {
-                return ParseValue<T>(configNode, key);
-            }
-            return defaultValue;
+            return configNode.HasValue(key) || configNode.HasNode(key) ? ParseValue<T>(configNode, key) : defaultValue;
         }
 
         /// <summary>
@@ -762,14 +743,10 @@ namespace ContractConfigurator
                 }
             }
 
-            if (values.Count() == 2)
-            {
-                LoggingUtil.LogError(obj, obj.ErrorPrefix(configNode) + ": Either " + output + " is required.");
-            }
-            else
-            {
-                LoggingUtil.LogError(obj, obj.ErrorPrefix(configNode) + ": One of " + output + " is required.");
-            }
+            LoggingUtil.LogError(obj, obj.ErrorPrefix(configNode) 
+                                + ( 2 == values.Count() ? ": Either " : ": One of ")
+                                + output + " is required."
+            );
             return false;
         }
 

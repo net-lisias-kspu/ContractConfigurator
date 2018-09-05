@@ -27,12 +27,7 @@ namespace ContractConfigurator
 
         public static Tech GetTech(string techID)
         {
-            if (!SetupTech())
-            {
-                return null;
-            }
-
-            return allTech.ContainsKey(techID) ? allTech[techID] : null;
+            return !SetupTech() ? null : allTech.ContainsKey(techID) ? allTech[techID] : null;
         }
 
         public bool IsUnlocked()
@@ -43,12 +38,7 @@ namespace ContractConfigurator
             }
 
             ProtoTechNode ptn = ResearchAndDevelopment.Instance.GetTechState(techID);
-            if (ptn == null)
-            {
-                return false;
-            }
-
-            return ptn.state == RDTech.State.Available;
+            return ptn == null ? false : ptn.state == RDTech.State.Available;
         }
 
         public override string ToString()

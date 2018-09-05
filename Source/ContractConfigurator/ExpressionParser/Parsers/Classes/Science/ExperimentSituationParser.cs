@@ -24,11 +24,7 @@ namespace ContractConfigurator.ExpressionParser
 
         public override U ConvertType<U>(ExperimentSituations value)
         {
-            if (typeof(U) == typeof(string))
-            {
-                return (U)(object)value.Print();
-            }
-            return base.ConvertType<U>(value);
+            return typeof(U) == typeof(string) ? (U)(object)value.Print() : base.ConvertType<U>(value);
         }
     }
 }

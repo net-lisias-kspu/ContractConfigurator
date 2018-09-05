@@ -103,12 +103,9 @@ namespace ContractConfigurator.ExpressionParser
         /// <returns>The number of crew space</returns>
         static int GetCrewCapacity(Vessel v)
         {
-            if (v == null || v.protoVessel == null || v.protoVessel.protoPartSnapshots == null)
-            {
-                return 0;
-            }
-
-            return v.protoVessel.protoPartSnapshots.Sum(pps => pps.partInfo.partPrefab.CrewCapacity);
+            return v == null || v.protoVessel == null || v.protoVessel.protoPartSnapshots == null
+                ? 0
+                : v.protoVessel.protoPartSnapshots.Sum(pps => pps.partInfo.partPrefab.CrewCapacity);
         }
 
         /// <summary>
@@ -139,32 +136,23 @@ namespace ContractConfigurator.ExpressionParser
 
         static double GetXDimension(Vessel v)
         {
-            if (v == null || v.protoVessel == null || v.protoVessel.protoPartSnapshots == null)
-            {
-                return 0.0f;
-            }
-
-            return v.protoVessel.protoPartSnapshots.Max(p => p.position.x) - v.protoVessel.protoPartSnapshots.Min(p => p.position.x);
+            return v == null || v.protoVessel == null || v.protoVessel.protoPartSnapshots == null
+                ? 0.0f
+                : v.protoVessel.protoPartSnapshots.Max(p => p.position.x) - v.protoVessel.protoPartSnapshots.Min(p => p.position.x);
         }
 
         static double GetYDimension(Vessel v)
         {
-            if (v == null || v.protoVessel == null || v.protoVessel.protoPartSnapshots == null)
-            {
-                return 0.0f;
-            }
-
-            return v.protoVessel.protoPartSnapshots.Max(p => p.position.y) - v.protoVessel.protoPartSnapshots.Min(p => p.position.y);
+            return v == null || v.protoVessel == null || v.protoVessel.protoPartSnapshots == null
+                ? 0.0f
+                : v.protoVessel.protoPartSnapshots.Max(p => p.position.y) - v.protoVessel.protoPartSnapshots.Min(p => p.position.y);
         }
 
         static double GetZDimension(Vessel v)
         {
-            if (v == null || v.protoVessel == null || v.protoVessel.protoPartSnapshots == null)
-            {
-                return 0.0f;
-            }
-
-            return v.protoVessel.protoPartSnapshots.Max(p => p.position.z) - v.protoVessel.protoPartSnapshots.Min(p => p.position.z);
+            return v == null || v.protoVessel == null || v.protoVessel.protoPartSnapshots == null
+                ? 0.0f
+                : v.protoVessel.protoPartSnapshots.Max(p => p.position.z) - v.protoVessel.protoPartSnapshots.Min(p => p.position.z);
         }
 
         static double GetLargestDimension(Vessel v)
@@ -179,12 +167,7 @@ namespace ContractConfigurator.ExpressionParser
 
         static Orbit GetOrbit(Vessel vessel)
         {
-            if (vessel == null)
-            {
-                return null;
-            }
-
-            return vessel.loaded ? vessel.orbit : vessel.protoVessel.orbitSnapShot.Load();
+            return vessel == null ? null : vessel.loaded ? vessel.orbit : vessel.protoVessel.orbitSnapShot.Load();
         }
 
         static double GetApA(Vessel vessel)
@@ -242,12 +225,9 @@ namespace ContractConfigurator.ExpressionParser
                 return 0.0;
             }
 
-            if (vessel.connection == null)
-            {
-                return 0.0;
-            }
-
-            return vessel.connection.Comm.antennaTransmit.power;
+            return vessel.connection == null 
+                ? 0.0
+                : vessel.connection.Comm.antennaTransmit.power;
         }
 
         static double AntennaRelayPower(Vessel vessel)
@@ -257,12 +237,9 @@ namespace ContractConfigurator.ExpressionParser
                 return 0.0;
             }
 
-            if (vessel.connection == null)
-            {
-                return 0.0;
-            }
-
-            return vessel.connection.Comm.antennaRelay.power;
+            return vessel.connection == null
+                ? 0.0
+                : vessel.connection.Comm.antennaRelay.power;
         }
 
         public override U ConvertType<U>(Vessel value)
@@ -307,12 +284,9 @@ namespace ContractConfigurator.ExpressionParser
                 return null;
             }
 
-            if (identifier.Equals("null", StringComparison.CurrentCultureIgnoreCase))
-            {
-                return null;
-            }
-
-            return ContractVesselTracker.Instance.GetAssociatedVessel(identifier);
+            return identifier.Equals("null", StringComparison.CurrentCultureIgnoreCase)
+                ? null
+                : ContractVesselTracker.Instance.GetAssociatedVessel(identifier);
         }
     }
 }

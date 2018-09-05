@@ -50,11 +50,7 @@ namespace ContractConfigurator.ExpressionParser
 
         public override U ConvertType<U>(Duration value)
         {
-            if (typeof(U) == typeof(double))
-            {
-                return (U)(object)value.Value;
-            }
-            return base.ConvertType<U>(value);
+            return typeof(U) == typeof(double) ? (U)(object)value.Value : base.ConvertType<U>(value);
         }
 
         public override bool ConvertableFrom(Type type)

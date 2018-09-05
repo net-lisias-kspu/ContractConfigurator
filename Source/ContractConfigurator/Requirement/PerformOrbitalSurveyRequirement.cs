@@ -31,12 +31,9 @@ namespace ContractConfigurator
                 return false;
             }
 
-            if (ResourceScenario.Instance == null)
-            {
-                return false;
-            }
-
-            return ResourceScenario.Instance.gameSettings.GetPlanetScanInfo().Any(psd => psd.PlanetId == targetBody.flightGlobalsIndex);
+            return ResourceScenario.Instance == null
+                ? false
+                : ResourceScenario.Instance.gameSettings.GetPlanetScanInfo().Any(psd => psd.PlanetId == targetBody.flightGlobalsIndex);
         }
 
         public override void OnLoad(ConfigNode configNode) { }

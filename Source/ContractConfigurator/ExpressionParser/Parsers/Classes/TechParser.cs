@@ -46,20 +46,12 @@ namespace ContractConfigurator.ExpressionParser
         private static int MaxTechLevelUnlocked()
         {
             IEnumerable<Tech> tech = Tech.AllTech().Where(t => t.IsUnlocked());
-            if (!tech.Any())
-            {
-                return 0;
-            }
-            return tech.Select(t => t.level).Max();
+            return !tech.Any() ? 0 : tech.Select(t => t.level).Max();
         }
 
         public override U ConvertType<U>(Tech value)
         {
-            if (typeof(U) == typeof(string))
-            {
-                return (U)(object)(value == null ? "" : value.title);
-            }
-            return base.ConvertType<U>(value);
+            return typeof(U) == typeof(string) ? (U)(object)(value == null ? "" : value.title) : base.ConvertType<U>(value);
         }
 
         public override Tech ParseIdentifier(Token token)

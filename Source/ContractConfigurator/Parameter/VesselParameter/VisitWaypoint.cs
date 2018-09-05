@@ -80,19 +80,11 @@ namespace ContractConfigurator.Parameters
                 waypoint = FetchWaypoint(Root, true);
             }
 
-            string output = title;
-            if (string.IsNullOrEmpty(title) && waypoint != null)
-            {
-                if (waypoint.isOnSurface)
-                {
-                    output = "Location: " + waypoint.name;
-                }
-                else
-                {
-                    output = "Location: " + waypoint.altitude.ToString("N0") + "meters above " + waypoint.name;
-                }
-            }
-            return output;
+            return string.IsNullOrEmpty(title) && waypoint != null
+                ? waypoint.isOnSurface
+                    ? "Location: " + waypoint.name
+                    : "Location: " + waypoint.altitude.ToString("N0") + "meters above " + waypoint.name
+                : title;
         }
 
         protected override void OnParameterSave(ConfigNode node)
@@ -230,14 +222,9 @@ namespace ContractConfigurator.Parameters
             if (distance == 0.0 && horizontalDistance == 0.0)
             {
                 // Close to the surface
-                if (waypoint.altitude < 25.0)
-                {
-                    distance = 500.0;
-                }
-                else
-                {
-                    distance = Math.Max(1000.0, waypoint.altitude / 5.0);
-                }
+                distance = waypoint.altitude < 25.0 
+                    ? 500.0 
+                    : Math.Max(1000.0, waypoint.altitude / 5.0);
             }
 
             // Calculate the distance

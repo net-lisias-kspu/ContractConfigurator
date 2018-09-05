@@ -160,13 +160,11 @@ namespace ContractConfigurator.Util
                                         ScienceSubject(experiment, ExperimentSituations.SrfLanded, body, staticName))
                                         : Enumerable.Empty<ScienceSubject>());
                     }
-                    else if (!biomesFiltered && !difficult)
-                    {
-                        return new ScienceSubject[] { ScienceSubject(experiment, sit, body, "") };
-                    }
                     else
                     {
-                        return Enumerable.Empty<ScienceSubject>();
+                        return !(biomesFiltered || difficult)
+                            ? (new ScienceSubject[] { ScienceSubject(experiment, sit, body, "") })
+                            : Enumerable.Empty<ScienceSubject>();
                     }
                 });
         }
@@ -491,12 +489,9 @@ namespace ContractConfigurator.Util
         /// <returns></returns>
         public static IEnumerable<ScienceExperiment> AvailableExperiments(CelestialBody body)
         {
-            if (ResearchAndDevelopment.Instance == null)
-            {
-                return Enumerable.Empty<ScienceExperiment>();
-            }
-
-            return AvailableExperiments().Where(exp => ExperimentAvailable(exp, body));
+            return ResearchAndDevelopment.Instance == null
+                ? Enumerable.Empty<ScienceExperiment>()
+                : AvailableExperiments().Where(exp => ExperimentAvailable(exp, body));
         }
 
         private static ExperimentRules GetExperimentRules(string id)

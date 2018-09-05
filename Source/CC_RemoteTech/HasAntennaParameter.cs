@@ -109,19 +109,13 @@ namespace ContractConfigurator.RemoteTech
             if (minRange != 0.0 || maxRange != double.MaxValue)
             {
                 string output = "Range: ";
-                if (maxRange == double.MaxValue)
-                {
-                    output += "At least " + RemoteTechAssistant.RangeString(minRange);
-                }
-                else if (minRange == 0)
-                {
-                    output += "At most " + RemoteTechAssistant.RangeString(maxRange);
-                }
-                else
-                {
-                    output += "Between " + RemoteTechAssistant.RangeString(minRange) + " and " + RemoteTechAssistant.RangeString(maxRange);
-                }
-
+                output += 
+                    maxRange == double.MaxValue
+                        ? "At least " + RemoteTechAssistant.RangeString(minRange)
+                    : minRange == 0
+                        ? "At most " + RemoteTechAssistant.RangeString(maxRange)
+                    : "Between " + RemoteTechAssistant.RangeString(minRange) + " and " + RemoteTechAssistant.RangeString(maxRange)
+                ;
                 AddParameter(new ParameterDelegate<IAntenna>(output,
                     a => Math.Max(a.Omni, a.Dish) >= minRange && Math.Max(a.Omni, a.Dish) <= maxRange, matchType));
             }

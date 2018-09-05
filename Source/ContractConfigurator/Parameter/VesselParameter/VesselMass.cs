@@ -34,18 +34,13 @@ namespace ContractConfigurator.Parameters
             {
                 this.title = "Mass: ";
 
-                if (maxMass == float.MaxValue)
-                {
-                    this.title += "At least " + minMass + " tons";
-                }
-                else if (minMass == 0.0)
-                {
-                    this.title += "At most " + maxMass + " tons";
-                }
-                else
-                {
-                    this.title += "Between " + minMass + " and " + maxMass + " tons";
-                }
+                this.title += 
+                    maxMass == float.MaxValue
+                        ? "At least " + minMass + " tons"
+                    : minMass == 0.0
+                        ? "At most " + maxMass + " tons"
+                    : "Between " + minMass + " and " + maxMass + " tons"
+                ;
             }
             else
             {

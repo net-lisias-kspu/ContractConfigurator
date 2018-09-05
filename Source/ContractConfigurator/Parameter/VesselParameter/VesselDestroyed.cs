@@ -31,15 +31,7 @@ namespace ContractConfigurator.Parameters
 
         protected override string GetParameterTitle()
         {
-            string output = "";
-            if (string.IsNullOrEmpty(title))
-            {
-                output = "Vessel Destroyed";
-            }
-            else
-            {
-                output = title;
-            }
+            string output = string.IsNullOrEmpty(title) ? "Vessel Destroyed" : title;
             return output;
         }
 
@@ -113,11 +105,7 @@ namespace ContractConfigurator.Parameters
 
         public override bool IsIgnoredVesselType(VesselType vesselType)
         {
-            if (vesselType == VesselType.Debris)
-            {
-                return false;
-            }
-            return base.IsIgnoredVesselType(vesselType);
+            return vesselType == VesselType.Debris ? false : base.IsIgnoredVesselType(vesselType);
         }
 
         /// <summary>

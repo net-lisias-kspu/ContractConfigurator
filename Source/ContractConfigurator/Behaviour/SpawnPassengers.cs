@@ -121,16 +121,16 @@ namespace ContractConfigurator.Behaviour
                         visible = false;
                         stateChangeTime = double.MaxValue;
                     }
-                    else if (FlightGlobals.ActiveVessel.situation != Vessel.Situations.PRELAUNCH &&
-                        FlightGlobals.ActiveVessel.situation != Vessel.Situations.LANDED)
-                    {
-                        stateChangeTime = Time.fixedTime + 2.5;
-                    }
                     else
                     {
-                        stateChangeTime = double.MaxValue;
+                        stateChangeTime = 
+                            FlightGlobals.ActiveVessel.situation != Vessel.Situations.PRELAUNCH 
+                            &&
+                            FlightGlobals.ActiveVessel.situation != Vessel.Situations.LANDED
+                                ? Time.fixedTime + 2.5
+                                : double.MaxValue;
                     }
-                    
+
 
                     GUI.skin = HighLogic.Skin;
                     if (!stylesSetup)

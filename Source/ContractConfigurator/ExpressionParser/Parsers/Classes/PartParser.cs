@@ -59,11 +59,7 @@ namespace ContractConfigurator.ExpressionParser
 
         public override U ConvertType<U>(AvailablePart value)
         {
-            if (typeof(U) == typeof(string))
-            {
-                return (U)(object)(value == null ? "" : value.title);
-            }
-            return base.ConvertType<U>(value);
+            return typeof(U) == typeof(string) ? (U)(object)(value == null ? "" : value.title) : base.ConvertType<U>(value);
         }
 
         public override Token ParseNumericConstant()

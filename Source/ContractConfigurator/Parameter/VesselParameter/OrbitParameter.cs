@@ -145,19 +145,13 @@ namespace ContractConfigurator.Parameters
             if (minAltitude != 0.0 || maxAltitude != double.MaxValue)
             {
                 string output = "Altitude: ";
-                if (minAltitude == 0.0)
-                {
-                    output += "Below " + maxAltitude.ToString("N0") + " m";
-                }
-                else if (maxAltitude == double.MaxValue)
-                {
-                    output += "Above " + minAltitude.ToString("N0") + " m";
-                }
-                else
-                {
-                    output += "Between " + minAltitude.ToString("N0") + " m and " + maxAltitude.ToString("N0") + " m";
-                }
-
+                output += 
+                    minAltitude == 0.0 
+                        ? "Below " + maxAltitude.ToString("N0") + " m" 
+                    : maxAltitude == double.MaxValue 
+                        ? "Above " + minAltitude.ToString("N0") + " m" 
+                    : "Between " + minAltitude.ToString("N0") + " m and " + maxAltitude.ToString("N0") + " m"
+                    ;
                 AddParameter(new ParameterDelegate<Vessel>(output, v => v.orbit.PeA >= minAltitude && v.orbit.ApA <= maxAltitude));
             }
 
@@ -165,19 +159,13 @@ namespace ContractConfigurator.Parameters
             if (minApoapsis != 0.0 || maxApoapsis != double.MaxValue)
             {
                 string output = "Apoapsis: ";
-                if (minApoapsis == 0.0)
-                {
-                    output += "Below " + maxApoapsis.ToString("N0") + " m";
-                }
-                else if (maxApoapsis == double.MaxValue)
-                {
-                    output += "Above " + minApoapsis.ToString("N0") + " m";
-                }
-                else
-                {
-                    output += "Between " + minApoapsis.ToString("N0") + " m and " + maxApoapsis.ToString("N0") + " m";
-                }
-
+                output += 
+                    minApoapsis == 0.0 
+                        ? "Below " + maxApoapsis.ToString("N0") + " m"
+                    : maxApoapsis == double.MaxValue 
+                        ? "Above " + minApoapsis.ToString("N0") + " m"
+                    : "Between " + minApoapsis.ToString("N0") + " m and " + maxApoapsis.ToString("N0") + " m"
+                    ;
                 AddParameter(new ParameterDelegate<Vessel>(output, v => v.orbit.ApA >= minApoapsis && v.orbit.ApA <= maxApoapsis));
             }
 
@@ -185,19 +173,13 @@ namespace ContractConfigurator.Parameters
             if (minPeriapsis != 0.0 || maxPeriapsis != double.MaxValue)
             {
                 string output = "Periapsis: ";
-                if (minPeriapsis == 0.0)
-                {
-                    output += "Below " + maxPeriapsis.ToString("N0") + " m";
-                }
-                else if (maxPeriapsis == double.MaxValue)
-                {
-                    output += "Above " + minPeriapsis.ToString("N0") + " m";
-                }
-                else
-                {
-                    output += "Between " + minPeriapsis.ToString("N0") + " m and " + maxPeriapsis.ToString("N0") + " m";
-                }
-
+                output +=
+                    minPeriapsis == 0.0
+                        ? "Below " + maxPeriapsis.ToString("N0") + " m"
+                    : maxPeriapsis == double.MaxValue
+                        ? "Above " + minPeriapsis.ToString("N0") + " m"
+                    : "Between " + minPeriapsis.ToString("N0") + " m and " + maxPeriapsis.ToString("N0") + " m"
+                    ;
                 AddParameter(new ParameterDelegate<Vessel>(output, v => v.orbit.PeA >= minPeriapsis && v.orbit.PeA <= maxPeriapsis));
             }
 
@@ -205,19 +187,13 @@ namespace ContractConfigurator.Parameters
             if (minEccentricity != 0.0 || maxEccentricity != double.MaxValue)
             {
                 string output = "Eccentricity: ";
-                if (minEccentricity == 0.0)
-                {
-                    output += "Below " + maxEccentricity.ToString("F4");
-                }
-                else if (maxEccentricity == double.MaxValue)
-                {
-                    output += "Above " + minEccentricity.ToString("F4");
-                }
-                else
-                {
-                    output += "Between " + minEccentricity.ToString("F4") + " and " + maxEccentricity.ToString("F4");
-                }
-
+                output += 
+                    minEccentricity == 0.0
+                        ? "Below " + maxEccentricity.ToString("F4")
+                    : maxEccentricity == double.MaxValue
+                        ? "Above " + minEccentricity.ToString("F4")
+                    : "Between " + minEccentricity.ToString("F4") + " and " + maxEccentricity.ToString("F4")
+                    ;
                 AddParameter(new ParameterDelegate<Vessel>(output, v => v.orbit.eccentricity >= minEccentricity && v.orbit.eccentricity <= maxEccentricity));
             }
 
@@ -225,19 +201,13 @@ namespace ContractConfigurator.Parameters
             if (minInclination != 0.0 || maxInclination != 180.0)
             {
                 string output = "Inclination: ";
-                if (minInclination == 0.0)
-                {
-                    output += "Below " + maxInclination.ToString("F1") + "°";
-                }
-                else if (maxInclination == 180.0)
-                {
-                    output += "Above " + minInclination.ToString("F1") + "°";
-                }
-                else
-                {
-                    output += "Between " + minInclination.ToString("F1") + "° and " + maxInclination.ToString("F1") + "°";
-                }
-
+                output +=
+                    minInclination == 0.0
+                        ? "Below " + maxInclination.ToString("F1") + "°"
+                    : maxInclination == 180.0
+                        ? "Above " + minInclination.ToString("F1") + "°"
+                    : "Between " + minInclination.ToString("F1") + "° and " + maxInclination.ToString("F1") + "°"
+                    ;
                 AddParameter(new ParameterDelegate<Vessel>(output, CheckInclination));
             }
 
@@ -254,19 +224,13 @@ namespace ContractConfigurator.Parameters
             if (minPeriod != 0.0 || maxPeriod != double.MaxValue)
             {
                 string output = "Period: ";
-                if (minPeriod == 0.0)
-                {
-                    output += "Below " + DurationUtil.StringValue(maxPeriod, false);
-                }
-                else if (maxPeriod == double.MaxValue)
-                {
-                    output += "Above " + DurationUtil.StringValue(minPeriod, false);
-                }
-                else
-                {
-                    output += "Between " + DurationUtil.StringValue(minPeriod, false) + " and " + DurationUtil.StringValue(maxPeriod, false);
-                }
-
+                output +=
+                    minPeriod == 0.0
+                        ? "Below " + DurationUtil.StringValue(maxPeriod, false)
+                    : maxPeriod == double.MaxValue
+                        ? "Above " + DurationUtil.StringValue(minPeriod, false)
+                    : "Between " + DurationUtil.StringValue(minPeriod, false) + " and " + DurationUtil.StringValue(maxPeriod, false)
+                    ;
                 AddParameter(new ParameterDelegate<Vessel>(output, v => v.orbit.period >= minPeriod && v.orbit.period <= maxPeriod));
             }
 

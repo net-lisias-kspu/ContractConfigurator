@@ -30,15 +30,7 @@ namespace ContractConfigurator.Parameters
 
         protected override string GetParameterTitle()
         {
-            string output = "";
-            if (string.IsNullOrEmpty(title))
-            {
-                output = "Vessel type: " + vesselType;
-            }
-            else
-            {
-                output = title;
-            }
+            string output = string.IsNullOrEmpty(title) ? "Vessel type: " + vesselType : title;
             return output;
         }
 

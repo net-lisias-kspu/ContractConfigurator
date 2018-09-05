@@ -125,20 +125,12 @@ namespace ContractConfigurator.Parameters
             // Filter for experience
             if (minExperience != 0 || maxExperience != 5)
             {
-                string filterText;
-                if (minExperience == 0)
-                {
-                    filterText = "Experience Level: At most " + maxExperience;
-                }
-                else if (maxExperience == 5)
-                {
-                    filterText = "Experience Level: At least " + minExperience;
-                }
-                else
-                {
-                    filterText = "Experience Level: Between " + minExperience + " and " + maxExperience;
-                }
-
+                string filterText = 
+                    minExperience == 0
+                        ? "Experience Level: At most " + maxExperience
+                    : maxExperience == 5
+                        ? "Experience Level: At least " + minExperience
+                    : "Experience Level: Between " + minExperience + " and " + maxExperience;
                 AddParameter(new ParameterDelegate<ProtoCrewMember>(filterText,
                     cm => cm.experienceLevel >= minExperience && cm.experienceLevel <= maxExperience));
             }

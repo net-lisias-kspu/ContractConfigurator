@@ -28,16 +28,12 @@ namespace ContractConfigurator.ExpressionParser
 
         public override bool EQ(T a, T b)
         {
-            if (a == b)
-            {
-                return true;
-            }
-            if (a == null || b == null)
-            {
-                return false;
-            }
-
-            return a.Equals(b);
+            return
+                a == b 
+                    ? true 
+                : a == null || b == null 
+                    ? false 
+                : a.Equals(b);
         }
 
         public override bool NE(T a, T b)
@@ -85,11 +81,7 @@ namespace ContractConfigurator.ExpressionParser
 
         public override T ParseIdentifier(Token token)
         {
-            if (token.sval.Equals("null", StringComparison.CurrentCultureIgnoreCase))
-            {
-                return null;
-            }
-            return base.ParseIdentifier(token);
+            return token.sval.Equals("null", StringComparison.CurrentCultureIgnoreCase) ? null : base.ParseIdentifier(token);
         }
     }
 }

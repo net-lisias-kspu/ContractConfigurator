@@ -18,22 +18,19 @@ namespace ContractConfigurator
         {
             get
             {
-                if (HighLogic.CurrentGame == null)
-                {
-                    return Enumerable.Empty<string>();
-                }
-
-                return kscBiomes = kscBiomes ?? UnityEngine.Object.FindObjectsOfType<Collider>()
-                    .Where(x => x.gameObject.layer == 15)
-                    .Select(x => x.gameObject.tag)
-                    .Where(x => x != "Untagged")
-                    .Where(x => !x.Contains("KSC_Runway_Light"))
-                    .Where(x => !x.Contains("KSC_Pad_Flag_Pole"))
-                    .Where(x => !x.Contains("Ladder"))
-                    .Select(x => Vessel.GetLandedAtString(x))
-                    .Select(x => x.Replace(" ", ""))
-                    .Distinct()
-                    .ToList();
+                return HighLogic.CurrentGame == null
+                    ? Enumerable.Empty<string>()
+                    : (kscBiomes = kscBiomes ?? UnityEngine.Object.FindObjectsOfType<Collider>()
+                        .Where(x => x.gameObject.layer == 15)
+                        .Select(x => x.gameObject.tag)
+                        .Where(x => x != "Untagged")
+                        .Where(x => !x.Contains("KSC_Runway_Light"))
+                        .Where(x => !x.Contains("KSC_Pad_Flag_Pole"))
+                        .Where(x => !x.Contains("Ladder"))
+                        .Select(x => Vessel.GetLandedAtString(x))
+                        .Select(x => x.Replace(" ", ""))
+                        .Distinct()
+                        .ToList());
             }
         }
 
@@ -73,23 +70,15 @@ namespace ContractConfigurator
 
         public override string ToString()
         {
-            if (biome == "KSC")
-            {
-                return biome;
-            }
-
-            return (body == null ? "" : IsKSC() ? "KSC's " : (body.CleanDisplayName() + "'s ")) + PrintBiomeName(biome);
+            return biome == "KSC" 
+                ? biome 
+                : (body == null ? "" : IsKSC() ? "KSC's " : (body.CleanDisplayName() + "'s ")) + PrintBiomeName(biome);
         }
 
         public override bool Equals(object obj)
         {
             Biome b = obj as Biome;
-            if (b == null)
-            {
-                return false;
-            }
-
-            return body == b.body && biome == b.biome;
+            return b == null ? false : body == b.body && biome == b.biome;
         }
 
         public override int GetHashCode()
@@ -99,12 +88,9 @@ namespace ContractConfigurator
 
         public bool IsKSC()
         {
-            if (body == null || body.BiomeMap == null || !body.isHomeWorld)
-            {
-                return false;
-            }
-
-            return !body.BiomeMap.Attributes.Any(attr => attr.name.Replace(" ", string.Empty) == biome);
+            return body == null || body.BiomeMap == null || !body.isHomeWorld
+                ? false
+                : !body.BiomeMap.Attributes.Any(attr => attr.name.Replace(" ", string.Empty) == biome);
         }
 
         public static string PrintBiomeName(string biome)

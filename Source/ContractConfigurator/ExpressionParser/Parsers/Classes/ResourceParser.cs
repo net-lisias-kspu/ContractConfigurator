@@ -67,11 +67,7 @@ namespace ContractConfigurator.ExpressionParser
 
         public override U ConvertType<U>(Resource value)
         {
-            if (typeof(U) == typeof(string))
-            {
-                return (U)(object)(value == null ? "" : value.ToString());
-            }
-            return base.ConvertType<U>(value);
+            return typeof(U) == typeof(string) ? (U)(object)(value == null ? "" : value.ToString()) : base.ConvertType<U>(value);
         }
 
         public override Resource ParseIdentifier(Token token)

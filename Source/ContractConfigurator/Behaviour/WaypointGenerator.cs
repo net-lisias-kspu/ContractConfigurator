@@ -248,13 +248,9 @@ namespace ContractConfigurator.Behaviour
 
                     wpData.waypoint.altitude = random.NextDouble() * (oceanFloor);
                 }
-                else if (body.atmosphere)
-                {
-                    wpData.waypoint.altitude = random.NextDouble() * (body.atmosphereDepth);
-                }
                 else
                 {
-                    wpData.waypoint.altitude = 0.0;
+                    wpData.waypoint.altitude = body.atmosphere ? random.NextDouble() * (body.atmosphereDepth) : 0.0;
                 }
             }
             // Clamp underwater waypoints to sea-floor
@@ -316,15 +312,10 @@ namespace ContractConfigurator.Behaviour
                             onWaypointIconAdded.Fire(x);
                         }
                     };
-                    if (!wpData.waypoint.visible)
-                    {
-                        valid &= ConfigNodeUtil.ParseValue<string>(child, "icon", assignWaypoint, factory, "");
-                    }
-                    else
-                    {
-                        valid &= ConfigNodeUtil.ParseValue<string>(child, "icon", assignWaypoint, factory);
-                    }
-
+                    valid &= wpData.waypoint.visible 
+                            ? ConfigNodeUtil.ParseValue<string>(child, "icon", assignWaypoint, factory)
+                            : ConfigNodeUtil.ParseValue<string>(child, "icon", assignWaypoint, factory, "")
+                        ;
                     valid &= ConfigNodeUtil.ParseValue<bool>(child, "underwater", x => wpData.underwater = x, factory, false);
                     valid &= ConfigNodeUtil.ParseValue<bool>(child, "clustered", x => wpData.waypoint.isClustered = x, factory, false);
 

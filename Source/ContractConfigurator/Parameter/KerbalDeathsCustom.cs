@@ -44,26 +44,12 @@ namespace ContractConfigurator.Parameters
             {
                 if (vesselIdentifier != null)
                 {
-                    if (countMax == 1)
-                    {
-                        output = "Kill no Kerbals";
-                    }
-                    else
-                    {
-                        output = "Kill no more than " + countMax + " Kerbals";
-                    }
+                    output = countMax == 1 ? "Kill no Kerbals" : "Kill no more than " + countMax + " Kerbals";
                     output += " on vessel " + ContractVesselTracker.GetDisplayName(vesselIdentifier.identifier);
                 }
                 else if (!kerbals.Any())
                 {
-                    if (countMax == 1)
-                    {
-                        output = "Kill no Kerbals";
-                    }
-                    else
-                    {
-                        output = "Kill no more than " + countMax + " Kerbals";
-                    }
+                    output = countMax == 1 ? "Kill no Kerbals" : "Kill no more than " + countMax + " Kerbals";
                 }
                 else
                 {

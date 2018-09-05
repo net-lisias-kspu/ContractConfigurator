@@ -118,11 +118,7 @@ namespace ContractConfigurator
         /// <returns></returns>
         public ConfigNode Retrieve(string key)
         {
-            if (!configNodes.ContainsKey(key))
-            {
-                return new ConfigNode();
-            }
-            return configNodes[key];
+            return !configNodes.ContainsKey(key) ? new ConfigNode() : configNodes[key];
         }
 
         public override void OnLoad(ConfigNode node)
@@ -266,13 +262,10 @@ namespace ContractConfigurator
         public static string GetTypeName(Type type)
         {
             Type[] generics = type.GetGenericArguments();
-            if (!generics.Any())
-            {
-                return type.Name;
-            }
-
-            return type.Name.Replace("`1", "") + "<" +
-                generics.First().Name + ">";
+            return !generics.Any()
+                ? type.Name
+                : type.Name.Replace("`1", "") + "<" + generics.First().Name + ">"
+            ;
         }
     }
 }

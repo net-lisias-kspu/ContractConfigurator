@@ -110,22 +110,15 @@ namespace ContractConfigurator.ExpressionParser
 
         public override U ConvertType<U>(CelestialBody value)
         {
-            if (typeof(U) == typeof(string))
-            {
-                return (U)(object)value.CleanDisplayName(true);
-            }
-            return base.ConvertType<U>(value);
+            return typeof(U) == typeof(string) ? (U)(object)value.CleanDisplayName(true) : base.ConvertType<U>(value);
         }
 
         private static IEnumerable<CelestialBody> BodiesForItem(ProgressItem pi)
         {
-            if (ProgressTracking.Instance == null)
-            {
-                return Enumerable.Empty<CelestialBody>();
-            }
-
-            return ProgressTracking.Instance.celestialBodyNodes.Where(node => CheckTree(node, pi)).Select(node => node.Body).
-                Where(cb => cb.Radius >= BARYCENTER_THRESHOLD);
+            return ProgressTracking.Instance == null
+                ? Enumerable.Empty<CelestialBody>()
+                : ProgressTracking.Instance.celestialBodyNodes.Where(node => CheckTree(node, pi)).Select(node => node.Body).
+                    Where(cb => cb.Radius >= BARYCENTER_THRESHOLD);
         }
 
         private static bool IsReached(CelestialBody cb, ProgressItem pi)

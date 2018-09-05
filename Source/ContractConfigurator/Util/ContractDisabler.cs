@@ -102,12 +102,7 @@ namespace ContractConfigurator
 
         public static IEnumerable<ContractGroup> DisablingGroups(Type contract)
         {
-            if (!contractDetails.ContainsKey(contract))
-            {
-                return Enumerable.Empty<ContractGroup>();
-            }
-
-            return contractDetails[contract].disablingGroups;
+            return !contractDetails.ContainsKey(contract) ? Enumerable.Empty<ContractGroup>() : contractDetails[contract].disablingGroups;
         }
     }
 }

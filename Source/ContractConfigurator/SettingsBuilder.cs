@@ -22,11 +22,7 @@ namespace ContractConfigurator
         public bool IsEnabled(string name)
         {
             FieldInfo fi = GetType().GetField(SettingsBuilder.SanitizeName(name));
-            if (fi != null)
-            {
-                return (bool)fi.GetValue(this);
-            }
-            return false;
+            return fi != null ? (bool)fi.GetValue(this) : false;
         }
     }
 

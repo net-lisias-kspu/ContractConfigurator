@@ -194,11 +194,7 @@ namespace ContractConfigurator.ExpressionParser
             if (typeof(T) == typeof(float) || typeof(T) == typeof(double))
             {
                 double dval = (double)(object)tval;
-                if (dval < 1.0)
-                {
-                    return dval.ToString("N5");
-                }
-                return dval.ToString("N2");
+                return dval < 1.0 ? dval.ToString("N5") : dval.ToString("N2");
             }
 
             return tval.ToString();

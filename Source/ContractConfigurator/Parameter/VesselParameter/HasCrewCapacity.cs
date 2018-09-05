@@ -40,23 +40,14 @@ namespace ContractConfigurator.Parameters
             if (string.IsNullOrEmpty(title))
             {
                 this.title = "Crew Capacity: ";
-
-                if (maxCapacity == 0)
-                {
-                    this.title += "None";
-                }
-                else if (maxCapacity == int.MaxValue)
-                {
-                    this.title += "At least " + minCapacity;
-                }
-                else if (minCapacity == 0)
-                {
-                    this.title += "At most " + maxCapacity;
-                }
-                else
-                {
-                    this.title += "Between " + minCapacity + " and " + maxCapacity;
-                }
+                this.title += 
+                    maxCapacity == 0 
+                        ? "None" 
+                    : maxCapacity == int.MaxValue 
+                        ? "At least " + minCapacity 
+                    : minCapacity == 0 
+                        ? "At most " + maxCapacity 
+                    : "Between " + minCapacity + " and " + maxCapacity;
             }
             else
             {

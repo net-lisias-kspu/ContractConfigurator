@@ -114,19 +114,13 @@ namespace ContractConfigurator.Parameters
             if (minAltitude != float.MinValue || maxAltitude != float.MaxValue)
             {
                 string output = "Altitude: ";
-                if (minAltitude == float.MinValue)
-                {
-                    output += "Below " + maxAltitude.ToString("N0") + " m";
-                }
-                else if (maxAltitude == float.MaxValue)
-                {
-                    output += "Above " + minAltitude.ToString("N0") + " m";
-                }
-                else
-                {
-                    output += "Between " + minAltitude.ToString("N0") + " m and " + maxAltitude.ToString("N0") + " m";
-                }
-
+                output +=
+                    minAltitude == float.MinValue
+                        ? "Below " + maxAltitude.ToString("N0") + " m"
+                    : maxAltitude == float.MaxValue
+                        ? "Above " + minAltitude.ToString("N0") + " m"
+                    : "Between " + minAltitude.ToString("N0") + " m and " + maxAltitude.ToString("N0") + " m"
+                ;
                 AddParameter(new ParameterDelegate<Vessel>(output, CheckVesselAltitude));
             }
 
@@ -134,19 +128,13 @@ namespace ContractConfigurator.Parameters
             if (minTerrainAltitude != 0.0f || maxTerrainAltitude != float.MaxValue)
             {
                 string output = "Altitude (terrain): ";
-                if (minTerrainAltitude == 0.0f)
-                {
-                    output += "Below " + maxTerrainAltitude.ToString("N0") + " m";
-                }
-                else if (maxTerrainAltitude == float.MaxValue)
-                {
-                    output += "Above " + minTerrainAltitude.ToString("N0") + " m";
-                }
-                else
-                {
-                    output += "Between " + minTerrainAltitude.ToString("N0") + " m and " + maxTerrainAltitude.ToString("N0") + " m";
-                }
-
+                output +=
+                    minTerrainAltitude == 0.0f
+                        ? "Below " + maxTerrainAltitude.ToString("N0") + " m"
+                    : maxTerrainAltitude == float.MaxValue
+                        ? "Above " + minTerrainAltitude.ToString("N0") + " m"
+                    : "Between " + minTerrainAltitude.ToString("N0") + " m and " + maxTerrainAltitude.ToString("N0") + " m"
+                ;
                 AddParameter(new ParameterDelegate<Vessel>(output, v => v.heightFromTerrain >= minTerrainAltitude && v.heightFromTerrain <= maxTerrainAltitude));
             }
 
@@ -154,19 +142,13 @@ namespace ContractConfigurator.Parameters
             if (minSpeed != 0.0 || maxSpeed != double.MaxValue)
             {
                 string output = "Speed: ";
-                if (minSpeed == 0.0)
-                {
-                    output += "Less than " + maxSpeed.ToString("N0") + " m/s";
-                }
-                else if (maxSpeed == double.MaxValue)
-                {
-                    output += "Greater than " + minSpeed.ToString("N0") + " m/s";
-                }
-                else
-                {
-                    output += "Between " + minSpeed.ToString("N0") + " m/s and " + maxSpeed.ToString("N0") + " m/s";
-                }
-
+                output +=
+                    minSpeed == 0.0
+                        ? "Less than " + maxSpeed.ToString("N0") + " m/s"
+                    : maxSpeed == double.MaxValue
+                        ? "Greater than " + minSpeed.ToString("N0") + " m/s"
+                    : "Between " + minSpeed.ToString("N0") + " m/s and " + maxSpeed.ToString("N0") + " m/s"
+                ;
                 AddParameter(new ParameterDelegate<Vessel>(output, CheckVesselSpeed));
             }
 
@@ -174,19 +156,13 @@ namespace ContractConfigurator.Parameters
             if (minRateOfClimb != double.MinValue|| maxRateOfClimb != double.MaxValue)
             {
                 string output = "Rate of Climb: ";
-                if (minRateOfClimb == double.MinValue)
-                {
-                    output += "Less than " + maxRateOfClimb.ToString("N0") + " m/s";
-                }
-                else if (maxRateOfClimb == double.MaxValue)
-                {
-                    output += "Greater than " + minRateOfClimb.ToString("N0") + " m/s";
-                }
-                else
-                {
-                    output += "Between " + minRateOfClimb.ToString("N0") + " m/s and " + maxRateOfClimb.ToString("N0") + " m/s";
-                }
-
+                output += 
+                    minRateOfClimb == double.MinValue
+                        ? "Less than " + maxRateOfClimb.ToString("N0") + " m/s"
+                    : maxRateOfClimb == double.MaxValue
+                        ? "Greater than " + minRateOfClimb.ToString("N0") + " m/s"
+                    : "Between " + minRateOfClimb.ToString("N0") + " m/s and " + maxRateOfClimb.ToString("N0") + " m/s"
+                ;
                 AddParameter(new ParameterDelegate<Vessel>(output, CheckVesselRateOfClimb));
             }
 
@@ -194,19 +170,13 @@ namespace ContractConfigurator.Parameters
             if (minAcceleration != 0.0f || maxAcceleration != float.MaxValue)
             {
                 string output = "Acceleration: ";
-                if (minAcceleration == 0.0f)
-                {
-                    output += "Less than " + maxAcceleration.ToString("F1") + " gee" + (maxAcceleration == 1.0f ? "" : "s");
-                }
-                else if (maxAcceleration == float.MaxValue)
-                {
-                    output += "Greater than " + minAcceleration.ToString("F1") + " gee" + (maxAcceleration == 1.0f ? "" : "s");
-                }
-                else
-                {
-                    output += "Between " + minAcceleration.ToString("F1") + " and " + maxAcceleration.ToString("F1") + " gees";
-                }
-
+                output += 
+                    minAcceleration == 0.0f
+                        ? "Less than " + maxAcceleration.ToString("F1") + " gee" + (maxAcceleration == 1.0f ? "" : "s")
+                    : maxAcceleration == float.MaxValue 
+                        ? "Greater than " + minAcceleration.ToString("F1") + " gee" + (maxAcceleration == 1.0f ? "" : "s")
+                    : "Between " + minAcceleration.ToString("F1") + " and " + maxAcceleration.ToString("F1") + " gees"
+                ;
                 AddParameter(new ParameterDelegate<Vessel>(output, v => v.acceleration.magnitude / 9.81f >= minAcceleration &&
                     v.acceleration.magnitude / 9.81f <= maxAcceleration));
             }

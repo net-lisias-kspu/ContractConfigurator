@@ -37,11 +37,7 @@ namespace ContractConfigurator.ExpressionParser
 
         public override U ConvertType<U>(ScienceExperiment value)
         {
-            if (typeof(U) == typeof(string))
-            {
-                return (U)(object)value.experimentTitle;
-            }
-            return base.ConvertType<U>(value);
+            return typeof(U) == typeof(string) ? (U)(object)value.experimentTitle : base.ConvertType<U>(value);
         }
 
         public override ScienceExperiment ParseIdentifier(Token token)

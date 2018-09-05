@@ -47,23 +47,15 @@ namespace ContractConfigurator.ExpressionParser
 
         private static float RemainingScience(Biome biome)
         {
-            if (biome == null || HighLogic.CurrentGame == null)
-            {
-                return 0.0f;
-            }
-
-            return Science.GetSubjects(new CelestialBody[] { biome.body }, null, b => b == biome.biome).Sum(subj =>
-                subj.scienceCap * HighLogic.CurrentGame.Parameters.Career.ScienceGainMultiplier - subj.science);
+            return biome == null || HighLogic.CurrentGame == null
+                ? 0.0f
+                : Science.GetSubjects(new CelestialBody[] { biome.body }, null, b => b == biome.biome).Sum(subj =>
+                    subj.scienceCap * HighLogic.CurrentGame.Parameters.Career.ScienceGainMultiplier - subj.science);
         }
 
         private static Vessel.Situations GetPrimarySituation(Biome biome)
         {
-            if (biome == null)
-            {
-                return Vessel.Situations.LANDED;
-            }
-
-            return BiomeTracker.GetPrimarySituation(biome.body, biome.biome);
+            return biome == null ? Vessel.Situations.LANDED : BiomeTracker.GetPrimarySituation(biome.body, biome.biome);
         }
 
         public override Biome ParseIdentifier(Token token)
@@ -75,12 +67,7 @@ namespace ContractConfigurator.ExpressionParser
             identifier = token.sval + identifier;
 
             // Special case for null
-            if (identifier == "null")
-            {
-                return null;
-            }
-
-            return new Biome(null, identifier);
+            return identifier == "null" ? null : new Biome(null, identifier);
         }
     }
 }

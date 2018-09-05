@@ -121,12 +121,7 @@ namespace ContractConfigurator.ExpressionParser
         public bool IsDeterministic(string s)
         {
             DataNode node = NodeForKey(ref s);
-            if (!node.data.ContainsKey(s))
-            {
-                return true;
-            }
-
-            return node.data[s].deterministic;
+            return !node.data.ContainsKey(s) ? true : node.data[s].deterministic;
         }
 
         public void SetDeterministic(string s, bool value)
@@ -224,13 +219,9 @@ namespace ContractConfigurator.ExpressionParser
                 parent.children.Add(this);
                 root = parent.root;
             }
-            else if (factory != null && factory.GetType() != typeof(ContractGroup))
-            {
-                root = this;
-            }
             else
             {
-                root = null;
+                root = factory != null && factory.GetType() != typeof(ContractGroup) ? (this) : null;
             }
         }
 

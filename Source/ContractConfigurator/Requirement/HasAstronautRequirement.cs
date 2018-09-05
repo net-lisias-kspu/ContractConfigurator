@@ -80,14 +80,7 @@ namespace ContractConfigurator
 
             if (minCount == maxCount)
             {
-                if (minCount == 1)
-                {
-                    output += "an astronaut";
-                }
-                else
-                {
-                    output += "exactly " + minCount + " astronauts";
-                }
+                output += minCount == 1 ? "an astronaut" : "exactly " + minCount + " astronauts";
             }
             else if (minCount > 0 && maxCount < int.MaxValue)
             {

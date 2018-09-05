@@ -163,14 +163,7 @@ namespace ContractConfigurator.ExpressionParser
                         }
                         catch { }
 
-                        if (canParse)
-                        {
-                            value += ParseMethod<string>(t, null, true);
-                        }
-                        else
-                        {
-                            value += t.sval;
-                        }
+                        value += canParse ? ParseMethod<string>(t, null, true) : t.sval;
                     }
                     else if (specialIdentifierIndex >= 0)
                     {

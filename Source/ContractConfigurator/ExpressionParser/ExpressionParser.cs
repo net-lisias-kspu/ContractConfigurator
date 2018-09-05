@@ -283,14 +283,7 @@ namespace ContractConfigurator.ExpressionParser
                                 // Parse under the return type
                                 TResult val = ParseOperation<TResult>(lval, token.sval);
                                 parser.expression = expression;
-                                if (string.IsNullOrEmpty(expression))
-                                {
-                                    result = val;
-                                }
-                                else
-                                {
-                                    result = parser.ParseStatement<TResult>(val);
-                                }
+                                result = string.IsNullOrEmpty(expression) ? val : parser.ParseStatement<TResult>(val);
                                 verbose &= LogExitDebug<TResult>("ParseStatement", result);
                                 expression = parser.expression;
                                 return result;
@@ -974,14 +967,7 @@ namespace ContractConfigurator.ExpressionParser
             }
             else
             {
-                if (classMethods.ContainsKey(functionName))
-                {
-                    methods = classMethods[functionName].ToList();
-                }
-                else
-                {
-                    methods = Enumerable.Empty<Function>();
-                }
+                methods = classMethods.ContainsKey(functionName) ? classMethods[functionName].ToList() : Enumerable.Empty<Function>();
             }
 
             if (!methods.Any())

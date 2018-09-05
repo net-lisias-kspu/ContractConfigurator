@@ -26,15 +26,7 @@ namespace ContractConfigurator.Parameters
 
         protected override string GetParameterTitle()
         {
-            string output;
-            if (string.IsNullOrEmpty(title))
-            {
-                output = "Reach space";
-            }
-            else 
-            {
-                output = title;
-            }
+            string output = string.IsNullOrEmpty(title) ? "Reach space" : title;
             return output;
         }
 

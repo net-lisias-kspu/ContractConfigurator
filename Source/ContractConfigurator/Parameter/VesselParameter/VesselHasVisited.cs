@@ -73,14 +73,7 @@ namespace ContractConfigurator.Parameters
                     default:
                         throw new ArgumentException(entryType.ToString());
                 }
-                if (destination != null)
-                {
-                    this.title += destination.CleanDisplayName(true);
-                }
-                else
-                {
-                    this.title += "any body";
-                }
+                this.title += destination != null ? destination.CleanDisplayName(true) : "any body";
             }
             else
             {

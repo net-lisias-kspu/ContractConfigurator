@@ -31,15 +31,7 @@ namespace ContractConfigurator.Parameters
 
         protected override string GetParameterTitle()
         {
-            string output;
-            if (string.IsNullOrEmpty(title))
-            {
-                output = "Perform an orbital resource survey of " + targetBody.CleanDisplayName(true);
-            }
-            else 
-            {
-                output = title;
-            }
+            string output = string.IsNullOrEmpty(title) ? "Perform an orbital resource survey of " + targetBody.CleanDisplayName(true) : title;
             return output;
         }
 

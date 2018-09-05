@@ -80,11 +80,7 @@ namespace ContractConfigurator
         
         public static ContractType GetContractType(string name)
         {
-            if (name != null && contractTypes.ContainsKey(name))
-            {
-                return contractTypes[name];
-            }
-            return null;
+            return name != null && contractTypes.ContainsKey(name) ? contractTypes[name] : null;
         }
 
         public static void ClearContractTypes()
@@ -399,14 +395,11 @@ namespace ContractConfigurator
                                 // Stop at this point if we're invalid
                                 if (values == null || !valid)
                                 {
-                                    if (values == null)
-                                    {
-                                        LoggingUtil.LogWarning(this, ErrorPrefix() + ": Received an empty list of values when trying to do a DATA_EXPAND");
-                                    }
-                                    else
-                                    {
-                                        LoggingUtil.LogWarning(this, ErrorPrefix() + ": Not expanding DATA_EXPAND node as the contract had validation errors.");
-                                    }
+                                    LoggingUtil.LogWarning(this, ErrorPrefix() +
+                                        values == null
+                                                   ? ": Received an empty list of values when trying to do a DATA_EXPAND"
+                                                   : ": Not expanding DATA_EXPAND node as the contract had validation errors."
+                                    );
                                     valid = false;
                                     break;
                                 }

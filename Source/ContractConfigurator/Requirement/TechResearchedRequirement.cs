@@ -139,14 +139,7 @@ namespace ContractConfigurator
             {
                 if (i != 0)
                 {
-                    if (i == techs.Count - 1)
-                    {
-                        techStr += " and ";
-                    }
-                    else
-                    {
-                        techStr += ", ";
-                    }
+                    techStr += i == techs.Count - 1 ? " and " : ", ";
                 }
 
                 techStr += Tech.GetTech(techs[i]).title;
@@ -162,14 +155,7 @@ namespace ContractConfigurator
             {
                 if (i != 0)
                 {
-                    if (i == partModules.Count - 1)
-                    {
-                        pmStr += " and ";
-                    }
-                    else
-                    {
-                        pmStr += ", ";
-                    }
+                    pmStr += i == partModules.Count - 1 ? " and " : ", ";
                 }
 
                 pmStr += partModules[i];
@@ -189,14 +175,7 @@ namespace ContractConfigurator
             {
                 if (i != 0)
                 {
-                    if (i == partModuleTypes.Count - 1)
-                    {
-                        pmtStr += " and ";
-                    }
-                    else
-                    {
-                        pmtStr += ", ";
-                    }
+                    pmtStr += i == partModuleTypes.Count - 1 ? " and " : ", ";
                 }
 
                 pmtStr += partModuleTypes[i];

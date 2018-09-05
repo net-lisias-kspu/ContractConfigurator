@@ -95,14 +95,7 @@ namespace ContractConfigurator
             if (ccType != null)
             {
                 ContractType contractType = ContractType.AllValidContractTypes.FirstOrDefault(ct => ct.name == ccType);
-                if (contractType != null)
-                {
-                    contractTitle = contractType.genericTitle;
-                }
-                else
-                {
-                    contractTitle = ccType;
-                }
+                contractTitle = contractType != null ? contractType.genericTitle : ccType;
             }
             else
             {
