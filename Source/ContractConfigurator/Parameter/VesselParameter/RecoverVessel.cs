@@ -24,7 +24,7 @@ namespace ContractConfigurator.Parameters
         public RecoverVessel(string title)
             : base(title)
         {
-            this.title = title != null ? title : "Recover vessel";
+            this.title = title ?? "Recover vessel";
 
             disableOnStateChange = true;
         }

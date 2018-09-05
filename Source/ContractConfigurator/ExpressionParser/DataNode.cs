@@ -107,7 +107,7 @@ namespace ContractConfigurator.ExpressionParser
 
         public List<ConfigNodeUtil.DeferredLoadBase> DeferredLoads
         {
-            get { return (root != null ? root : this).deferredLoads; }
+            get { return (root ?? this).deferredLoads; }
         }
 
         public IContractConfiguratorFactory Factory
@@ -563,7 +563,7 @@ namespace ContractConfigurator.ExpressionParser
 
             string group = names[0];
 
-            for (DataNode node = (root != null ? root : this).parent; node != null; node = node.parent)
+            for (DataNode node = (root ?? this).parent; node != null; node = node.parent)
             {
                 if (node.name == group)
                 {

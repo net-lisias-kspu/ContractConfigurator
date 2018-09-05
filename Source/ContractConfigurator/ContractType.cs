@@ -822,7 +822,7 @@ namespace ContractConfigurator
                 }
 
                 // Check the captured requirements
-                if (!ContractRequirement.RequirementsMet(contract, this, contract.requirements != null ? contract.requirements : requirements))
+                if (!ContractRequirement.RequirementsMet(contract, this, contract.requirements ?? requirements))
                 {
                     throw new ContractRequirementException("Failed on contract requirement check.");
                 }

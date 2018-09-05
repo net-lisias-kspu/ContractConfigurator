@@ -438,7 +438,7 @@ namespace ContractConfigurator.Parameters
                 !subject.id.Contains("Low" + biome) &&
                 !subject.id.Contains("ed" + biome))
             {
-                LoggingUtil.LogVerbose(this, "    wrong situation (biome = " + (biome == null ? "null" : biome) + ")");
+                LoggingUtil.LogVerbose(this, "    wrong situation (biome = " + (biome ?? "null") + ")");
                 return false;
             }
 

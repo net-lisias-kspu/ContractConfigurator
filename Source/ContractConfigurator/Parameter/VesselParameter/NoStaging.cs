@@ -27,7 +27,7 @@ namespace ContractConfigurator.Parameters
         public NoStaging(bool failContract, string title)
             : base(title)
         {
-            this.title = title != null ? title : "Vessel not staged";
+            this.title = title ?? "Vessel not staged";
 
             failWhenUnmet = true;
             fakeFailures = !failContract;
