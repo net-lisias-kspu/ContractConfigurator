@@ -36,7 +36,7 @@ namespace ContractConfigurator
                 return false;
             }
 
-            return ResourceScenario.Instance.gameSettings.GetPlanetScanInfo().Where(psd => psd.PlanetId == targetBody.flightGlobalsIndex).Any();
+            return ResourceScenario.Instance.gameSettings.GetPlanetScanInfo().Any(psd => psd.PlanetId == targetBody.flightGlobalsIndex);
         }
 
         public override void OnLoad(ConfigNode configNode) { }

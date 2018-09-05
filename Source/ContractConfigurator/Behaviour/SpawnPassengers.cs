@@ -248,7 +248,7 @@ namespace ContractConfigurator.Behaviour
             IEnumerable<ProtoCrewMember> vesselCrew = v.GetVesselCrew();
             if (v != null && v.situation == Vessel.Situations.PRELAUNCH &&
                 v.mainBody.isHomeWorld &&
-                passengers.Where(pair => !pair.Value && pair.Key.rosterStatus == ProtoCrewMember.RosterStatus.Available).Any() &&
+                passengers.Any(pair => !pair.Value && pair.Key.rosterStatus == ProtoCrewMember.RosterStatus.Available) &&
                 v.GetCrewCapacity() - v.GetCrewCount() >= count)
             {
                 PassengerLoader loader = MapView.MapCamera.gameObject.GetComponent<PassengerLoader>();

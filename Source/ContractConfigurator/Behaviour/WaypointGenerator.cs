@@ -494,8 +494,7 @@ namespace ContractConfigurator.Behaviour
             foreach (WaypointData wpData in waypoints)
             {
                 string paramID = wpData.parameter.FirstOrDefault();
-                if (wpData.waypoint.visible && (!wpData.parameter.Any() || contract.AllParameters.
-                    Where(p => p.ID == paramID && p.State == ParameterState.Complete).Any()))
+                if (wpData.waypoint.visible && (!wpData.parameter.Any() || contract.AllParameters.Any(p => p.ID == paramID && p.State == ParameterState.Complete)))
                 {
                     AddWayPoint(wpData);
                 }
@@ -560,8 +559,7 @@ namespace ContractConfigurator.Behaviour
 
                 // Create additional waypoint details
                 string paramID = wpData.parameter.FirstOrDefault();
-                if (wpData.waypoint.visible && (!wpData.parameter.Any() || contract.AllParameters.
-                    Where(p => p.ID == paramID && p.State == ParameterState.Complete).Any()))
+                if (wpData.waypoint.visible && (!wpData.parameter.Any() || contract.AllParameters.Any(p => p.ID == paramID && p.State == ParameterState.Complete)))
                 {
                     AddWayPoint(wpData);
                 }

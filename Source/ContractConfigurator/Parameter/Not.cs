@@ -65,7 +65,7 @@ namespace ContractConfigurator.Parameters
             if (contract == Root)
             {
                 LoggingUtil.LogVerbose(this, "OnAnyContractParameterChange");
-                if (this.GetChildren().Where(p => p.State == ParameterState.Complete).Any())
+                if (this.GetChildren().Any(p => p.State == ParameterState.Complete))
                 {
                     SetState(ParameterState.Incomplete);
                 }

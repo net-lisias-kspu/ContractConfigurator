@@ -226,8 +226,7 @@ namespace ContractConfigurator.Parameters
                 VesselParameterGroup vpg = Parent as VesselParameterGroup;
                 if (vpg != null && vpg.VesselList.Any())
                 {
-                    completed &= ContractVesselTracker.Instance.GetAssociatedKeys(FlightGlobals.ActiveVessel).
-                        Where(key => vpg.VesselList.Contains(key)).Any();
+                    completed &= ContractVesselTracker.Instance.GetAssociatedKeys(FlightGlobals.ActiveVessel).Any(key => vpg.VesselList.Contains(key));
                 }
 
                 Vessel currentVessel = CurrentVessel();

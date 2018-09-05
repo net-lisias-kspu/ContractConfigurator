@@ -63,7 +63,7 @@ namespace ContractConfigurator.Parameters
                 lastUpdate = Planetarium.GetUniversalTime();
 
                 if (ResourceScenario.Instance != null &&
-                    ResourceScenario.Instance.gameSettings.GetPlanetScanInfo().Where(psd => psd.PlanetId == targetBody.flightGlobalsIndex).Any())
+                    ResourceScenario.Instance.gameSettings.GetPlanetScanInfo().Any(psd => psd.PlanetId == targetBody.flightGlobalsIndex))
                 {
                     SetState(ParameterState.Complete);
                 }

@@ -55,7 +55,7 @@ namespace ContractConfigurator.ExpressionParser
             RegisterMethod(new Method<CelestialBody, bool>("IsPlanet", cb => BodyType(cb) == CelestialBodyType.PLANET));
             RegisterMethod(new Method<CelestialBody, bool>("IsMoon", cb => BodyType(cb) == CelestialBodyType.MOON));
             RegisterMethod(new Method<CelestialBody, bool>("IsOrbitalSurveyComplete", cb => cb != null && ResourceScenario.Instance != null &&
-                ResourceScenario.Instance.gameSettings.GetPlanetScanInfo().Where(psd => psd.PlanetId == cb.flightGlobalsIndex).Any(), false));
+                ResourceScenario.Instance.gameSettings.GetPlanetScanInfo().Any(psd => psd.PlanetId == cb.flightGlobalsIndex), false));
 
             RegisterMethod(new Method<CelestialBody, bool>("HaveReached", cb => IsReached(cb, ProgressItem.REACHED), false));
             RegisterMethod(new Method<CelestialBody, bool>("HaveOrbited", cb => IsReached(cb, ProgressItem.ORBITED), false));

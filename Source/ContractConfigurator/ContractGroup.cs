@@ -256,7 +256,7 @@ namespace ContractConfigurator
             if (!atLeastOne)
             {
                 // Try for a child group
-                if (!ContractGroup.AllGroups.Where(g => g != null && g.parent != null && g.parent.name == name).Any())
+                if (!ContractGroup.AllGroups.Any(g => g != null && g.parent != null && g.parent.name == name))
                 {
                     LoggingUtil.CaptureLog = true;
                     LoggingUtil.LogWarning(this, "Contract group '" + name + "' contains no contract types or child groups!");
