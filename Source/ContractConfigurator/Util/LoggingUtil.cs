@@ -58,20 +58,23 @@ namespace ContractConfigurator
                     }
 
                     // Fetch specific loglevels for given types
-                    foreach (ConfigNode levelExceptionNode in debuggingConfig.GetNodes("ADD_LOGLEVEL_EXCEPTION"))
+                    for (int i = debuggingConfig.GetNodes("ADD_LOGLEVEL_EXCEPTION").Length - 1; i >= 0; i--)
                     {
+                        ConfigNode levelExceptionNode = debuggingConfig.GetNodes("ADD_LOGLEVEL_EXCEPTION")[i];
                         if (levelExceptionNode.HasValue("type") && levelExceptionNode.HasValue("logLevel"))
                         {
                             // Fetch full type name - just search and find the matching one while
                             // ignoring namespace
                             string typeName = levelExceptionNode.GetValue("type");
                             Type type = null;
-                            foreach (Assembly a in AppDomain.CurrentDomain.GetAssemblies())
+                            for (int j = AppDomain.CurrentDomain.GetAssemblies().Length - 1; j >= 0; j--)
                             {
+                                Assembly a = AppDomain.CurrentDomain.GetAssemblies()[j];
                                 try
                                 {
-                                    foreach (Type t in a.GetTypes())
+                                    for (int k = a.GetTypes().Length - 1; k >= 0; k--)
                                     {
+                                        Type t = a.GetTypes()[k];
                                         if (t.Name == typeName || t.Name.StartsWith(typeName + '`'))
                                         {
                                             type = t;

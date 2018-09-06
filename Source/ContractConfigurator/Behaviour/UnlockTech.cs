@@ -29,8 +29,9 @@ namespace ContractConfigurator.Behaviour
 
         protected override void OnCompleted()
         {
-            foreach (string tech in techID)
+            for (int i = techID.Count - 1; i >= 0; i--)
             {
+                string tech = techID[i];
                 UnlockTechnology(tech);
             }
         }
@@ -58,8 +59,9 @@ namespace ContractConfigurator.Behaviour
 
         protected override void OnSave(ConfigNode configNode)
         {
-            foreach (string tech in techID)
+            for (int i = techID.Count - 1; i >= 0; i--)
             {
+                string tech = techID[i];
                 configNode.AddValue("techID", tech);
             }
         }

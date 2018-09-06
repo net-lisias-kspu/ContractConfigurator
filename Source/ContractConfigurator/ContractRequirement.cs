@@ -114,8 +114,9 @@ namespace ContractConfigurator
             configNode.AddValue("invertRequirement", invertRequirement);
             configNode.AddValue("checkOnActiveContract", checkOnActiveContract);
 
-            foreach (ContractRequirement requirement in childNodes)
+            for (int i = childNodes.Count - 1; i >= 0; i--)
             {
+                ContractRequirement requirement = childNodes[i];
                 ConfigNode child = new ConfigNode("REQUIREMENT");
                 configNode.AddNode(child);
                 requirement.Save(child);
@@ -350,8 +351,9 @@ namespace ContractConfigurator
             }
 
             // Load child nodes
-            foreach (ConfigNode childNode in ConfigNodeUtil.GetChildNodes(configNode, "REQUIREMENT"))
+            for (int i = ConfigNodeUtil.GetChildNodes(configNode, "REQUIREMENT").Length - 1; i >= 0; i--)
             {
+                ConfigNode childNode = ConfigNodeUtil.GetChildNodes(configNode, "REQUIREMENT")[i];
                 ContractRequirement child = null;
                 valid &= ContractRequirement.GenerateRequirement(childNode, contractType, out child, requirement);
                 if (child != null)

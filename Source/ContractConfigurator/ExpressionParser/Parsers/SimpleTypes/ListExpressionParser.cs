@@ -66,8 +66,9 @@ namespace ContractConfigurator.ExpressionParser
             List<T> output = new List<T>();
             int remaining = count;
             int size = input.Count();
-            foreach (T value in input)
+            for (int i = input.Count - 1; i >= 0; i--)
             {
+                T value = input[i];
                 double p = (double)remaining / size--;
                 if (r.NextDouble() < p)
                 {
@@ -186,8 +187,9 @@ namespace ContractConfigurator.ExpressionParser
                 string savedExpression = expression;
                 try
                 {
-                    foreach (T value in values)
+                    for (int i = values.Count - 1; i >= 0; i--)
                     {
+                        T value = values[i];
                         expression = savedExpression;
                         tempVariables[identifier] = new KeyValuePair<object, Type>(value, typeof(T));
                         ExpressionParser<T> parser = GetParser<T>(this);
@@ -257,11 +259,13 @@ namespace ContractConfigurator.ExpressionParser
             if (typeof(U) == typeof(string))
             {
                 string result = "[ ";
-                foreach (T t in value)
+                for (int i = value.Count - 1; i >= 0; i--)
                 {
+                    T t = value[i];
                     result += parserT.ConvertType<string>(t);
                     result += ",";
                 }
+
                 result = result.TrimEnd(new char[] { ',' }) + " ]";
                 return (U)(object)result;
             }

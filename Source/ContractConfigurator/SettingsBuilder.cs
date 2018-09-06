@@ -69,8 +69,9 @@ namespace ContractConfigurator
         public ContractGroupParametersTemplate()
         {
             // Default everything to on
-            foreach (FieldInfo fi in GetType().GetFields())
+            for (int i = GetType().GetFields().Length - 1; i >= 0; i--)
             {
+                FieldInfo fi = GetType().GetFields()[i];
                 if (fi.FieldType == typeof(bool))
                 {
                     fi.SetValue(this, true);
@@ -88,8 +89,9 @@ namespace ContractConfigurator
 
         public StockContractParametersTemplate()
         {
-            foreach (FieldInfo fi in GetType().GetFields())
+            for (int i = GetType().GetFields().Length - 1; i >= 0; i--)
             {
+                FieldInfo fi = GetType().GetFields()[i];
                 if (fi.FieldType == typeof(bool))
                 {
                     contractFields.Add(fi);
@@ -129,10 +131,12 @@ namespace ContractConfigurator
 
             // Start disabling via legacy method
             Dictionary<string, Type> contractsToDisable = new Dictionary<string, Type>();
-            foreach (ConfigNode node in nodes)
+            for (int i = nodes.Length - 1; i >= 0; i--)
             {
-                foreach (string contractType in node.GetValues("disabledContractType"))
+                ConfigNode node = nodes[i];
+                for (int j = node.GetValues("disabledContractType").Length - 1; j >= 0; j--)
                 {
+                    string contractType = node.GetValues("disabledContractType")[j];
                     SetContractToDisabled(contractType);
                     disabledCounter++;
                 }
@@ -141,8 +145,9 @@ namespace ContractConfigurator
             // Disable via new method
             foreach (ContractGroup contractGroup in ContractGroup.AllGroups.Where(g => g != null && g.parent == null))
             {
-                foreach (string contractType in contractGroup.disabledContractType)
+                for (int i = contractGroup.disabledContractType.Count - 1; i >= 0; i--)
                 {
+                    string contractType = contractGroup.disabledContractType[i];
                     SetContractToDisabled(contractType);
                     disabledCounter++;
                 }
@@ -154,8 +159,9 @@ namespace ContractConfigurator
         private void SeedStockContractDetails()
         {
             // Default everything to on
-            foreach (FieldInfo fi in GetType().GetFields())
+            for (int i = GetType().GetFields().Length - 1; i >= 0; i--)
             {
+                FieldInfo fi = GetType().GetFields()[i];
                 if (fi.FieldType == typeof(bool))
                 {
                     fi.SetValue(this, true);
@@ -165,8 +171,9 @@ namespace ContractConfigurator
 
         private void SetContractToDisabled(string contractType)
         {
-            foreach (FieldInfo fi in contractFields)
+            for (int i = contractFields.Count - 1; i >= 0; i--)
             {
+                FieldInfo fi = contractFields[i];
                 if (fi.Name == SettingsBuilder.SanitizeName(contractType))
                 {
                     fi.SetValue(this, false);

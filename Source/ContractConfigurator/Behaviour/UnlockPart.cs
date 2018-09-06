@@ -30,8 +30,9 @@ namespace ContractConfigurator.Behaviour
 
         protected override void OnCompleted()
         {
-            foreach (AvailablePart part in parts)
+            for (int i = parts.Count - 1; i >= 0; i--)
             {
+                AvailablePart part = parts[i];
                 DoUnlock(part);
             }
         }
@@ -70,10 +71,12 @@ namespace ContractConfigurator.Behaviour
 
         protected override void OnSave(ConfigNode configNode)
         {
-            foreach (AvailablePart part in parts)
+            for (int i = parts.Count - 1; i >= 0; i--)
             {
+                AvailablePart part = parts[i];
                 configNode.AddValue("part", part.name);
             }
+
             configNode.AddValue("unlockTech", unlockTech);
         }
 

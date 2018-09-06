@@ -91,8 +91,9 @@ namespace ContractConfigurator
 
                 allTech = new Dictionary<string, Tech>();
 
-                foreach (ConfigNode techNode in techTree.GetNodes("RDNode"))
+                for (int i = techTree.GetNodes("RDNode").Length - 1; i >= 0; i--)
                 {
+                    ConfigNode techNode = techTree.GetNodes("RDNode")[i];
                     Tech current = new Tech(techNode.GetValue("id"))
                     {
                         title = ConfigNodeUtil.ParseValue<string>(techNode, "title"),
@@ -102,8 +103,9 @@ namespace ContractConfigurator
                     };
 
                     bool hasParent = false;
-                    foreach (ConfigNode parentNode in techNode.GetNodes("Parent"))
+                    for (int j = techNode.GetNodes("Parent").Length - 1; j >= 0; j--)
                     {
+                        ConfigNode parentNode = techNode.GetNodes("Parent")[j];
                         string parentID = parentNode.GetValue("parentID");
                         if (allTech.ContainsKey(parentID))
                         {

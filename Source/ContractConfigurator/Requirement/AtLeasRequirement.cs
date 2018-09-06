@@ -29,8 +29,9 @@ namespace ContractConfigurator
         public override bool RequirementMet(ConfiguredContract contract)
         {
             int metCount = 0;
-            foreach (ContractRequirement requirement in childNodes)
+            for (int i = childNodes.Count - 1; i >= 0; i--)
             {
+                ContractRequirement requirement = childNodes[i];
                 if (requirement.enabled)
                 {
                     if (requirement.CheckRequirement(contract))

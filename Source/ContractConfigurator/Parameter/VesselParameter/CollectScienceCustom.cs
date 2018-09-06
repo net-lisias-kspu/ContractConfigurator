@@ -144,8 +144,9 @@ namespace ContractConfigurator.Parameters
             }
 
             // Add the experiments
-            foreach (string exp in experiment)
+            for (int i = experiment.Count - 1; i >= 0; i--)
             {
+                string exp = experiment[i];
                 string experimentStr = string.IsNullOrEmpty(exp) ? "Any" : ExperimentName(exp);
                 ContractParameter experimentParam = AddParameter(new ParameterDelegate<Vessel>("Experiment: " +
                     experimentStr, subj => recoveryDone.ContainsKey(exp)));
@@ -259,8 +260,9 @@ namespace ContractConfigurator.Parameters
                 node.AddValue("location", location);
             }
 
-            foreach (string exp in experiment)
+            for (int i = experiment.Count - 1; i >= 0; i--)
             {
+                string exp = experiment[i];
                 if (!string.IsNullOrEmpty(exp))
                 {
                     node.AddValue("experiment", exp);
@@ -288,8 +290,9 @@ namespace ContractConfigurator.Parameters
                 recoveryMethod = ConfigNodeUtil.ParseValue<ScienceRecoveryMethod>(node, "recoveryMethod");
 
                 List<string> recoveredExp = ConfigNodeUtil.ParseValue<List<string>>(node, "recovery", new List<string>());
-                foreach (string exp in recoveredExp)
+                for (int i = recoveredExp.Count - 1; i >= 0; i--)
                 {
+                    string exp = recoveredExp[i];
                     recoveryDone[exp] = true;
                 }
 
@@ -366,8 +369,9 @@ namespace ContractConfigurator.Parameters
 
             // Decide if this is a matching subject
             ScienceSubject subject = ResearchAndDevelopment.GetSubjectByID(scienceData.subjectID);
-            foreach (string exp in experiment)
+            for (int i = experiment.Count - 1; i >= 0; i--)
             {
+                string exp = experiment[i];
                 if (CheckSubject(exp, subject))
                 {
                     matchingSubjects[exp] = subject;
@@ -454,8 +458,9 @@ namespace ContractConfigurator.Parameters
             LoggingUtil.LogVerbose(this, "OnScienceReceived: " + subject.id + ", " + protoVessel.vesselID);
 
             // Check the given subject is okay
-            foreach (string exp in experiment)
+            for (int i = experiment.Count - 1; i >= 0; i--)
             {
+                string exp = experiment[i];
                 if (CheckSubject(exp, subject))
                 {
                     if (HighLogic.LoadedScene == GameScenes.FLIGHT)
@@ -474,6 +479,7 @@ namespace ContractConfigurator.Parameters
                     }
                 }
             }
+
             UpdateDelegates();
 
             CheckVessel(protoVessel.vesselRef);
@@ -489,8 +495,9 @@ namespace ContractConfigurator.Parameters
             matchingSubjects.Clear();
             foreach (ScienceSubject subject in GetVesselSubjects(vessel).GroupBy(subjid => subjid).Select(grp => ResearchAndDevelopment.GetSubjectByID(grp.Key)))
             {
-                foreach (string exp in experiment)
+                for (int j = experiment.Count - 1; j >= 0; j--)
                 {
+                    string exp = experiment[j];
                     if (CheckSubject(exp, subject))
                     {
                         matchingSubjects[exp] = subject;
@@ -505,13 +512,16 @@ namespace ContractConfigurator.Parameters
 
         private IEnumerable<string> GetVesselSubjects(ProtoVessel v)
         {
-            foreach (ProtoPartSnapshot pps in v.protoPartSnapshots)
+            for (int i = v.protoPartSnapshots.Count - 1; i >= 0; i--)
             {
-                foreach (ProtoPartModuleSnapshot ppms in pps.modules)
+                ProtoPartSnapshot pps = v.protoPartSnapshots[i];
+                for (int j = pps.modules.Count - 1; j >= 0; j--)
                 {
+                    ProtoPartModuleSnapshot ppms = pps.modules[j];
                     ConfigNode mod = ppms.moduleValues;
-                    foreach (ConfigNode scienceData in mod.GetNodes("ScienceData"))
+                    for (int k = mod.GetNodes("ScienceData").Length - 1; k >= 0; k--)
                     {
+                        ConfigNode scienceData = mod.GetNodes("ScienceData")[k];
                         string subjectID = ConfigNodeUtil.ParseValue<string>(scienceData, "subjectID");
                         if (!string.IsNullOrEmpty(subjectID))
                         {
@@ -524,15 +534,17 @@ namespace ContractConfigurator.Parameters
 
         private IEnumerable<string> GetVesselSubjects(Vessel v)
         {
-            foreach (Part p in v.parts)
+            for (int i = v.parts.Count - 1; i >= 0; i--)
             {
-                for (int i = 0; i < p.Modules.Count; i++)
+                Part p = v.parts[i];
+                for (int j = 0; j < p.Modules.Count; j++)
                 {
-                    IScienceDataContainer scienceContainer = p.Modules[i] as IScienceDataContainer;
+                    IScienceDataContainer scienceContainer = p.Modules[j] as IScienceDataContainer;
                     if (scienceContainer != null)
                     {
-                        foreach (ScienceData data in scienceContainer.GetData())
+                        for (int k = scienceContainer.GetData().Length - 1; k >= 0; k--)
                         {
+                            ScienceData data = scienceContainer.GetData()[k];
                             if (!string.IsNullOrEmpty(data.subjectID))
                             {
                                 yield return data.subjectID;

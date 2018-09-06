@@ -23,8 +23,9 @@ namespace ContractConfigurator.Behaviour
             bool valid = base.Load(configNode);
 
             int index = 0;
-            foreach (ConfigNode child in ConfigNodeUtil.GetChildNodes(configNode, "DIALOG_BOX"))
+            for (int i = ConfigNodeUtil.GetChildNodes(configNode, "DIALOG_BOX").Length - 1; i >= 0; i--)
             {
+                ConfigNode child = ConfigNodeUtil.GetChildNodes(configNode, "DIALOG_BOX")[i];
                 string dialogBoxNode = "DIALOG_BOX_" + index++;
                 DataNode childDataNode = new DataNode(dialogBoxNode, dataNode, this);
                 try
@@ -43,8 +44,9 @@ namespace ContractConfigurator.Behaviour
                         x => ValidateMandatoryParameter(x, detail.condition));
 
                     int sectionIndex = 0;
-                    foreach (ConfigNode sectionNode in child.GetNodes())
+                    for (int j = child.GetNodes().Length - 1; j >= 0; j--)
                     {
+                        ConfigNode sectionNode = child.GetNodes()[j];
                         DataNode sectionDataNode = new DataNode(dialogBoxNode + "_" + sectionIndex++, childDataNode, this);
                         ConfigNodeUtil.SetCurrentDataNode(sectionDataNode);
                         switch (sectionNode.name)
@@ -116,6 +118,7 @@ namespace ContractConfigurator.Behaviour
                     ConfigNodeUtil.SetCurrentDataNode(dataNode);
                 }
             }
+
             valid &= ConfigNodeUtil.ValidateMandatoryChild(configNode, "DIALOG_BOX", this);
 
             return valid;

@@ -27,8 +27,9 @@ namespace ContractConfigurator.Behaviour
         {
             base.OnSave(node);
 
-            foreach (Kerbal kerbal in kerbals)
+            for (int i = kerbals.Count - 1; i >= 0; i--)
             {
+                Kerbal kerbal = kerbals[i];
                 ConfigNode kerbalNode = new ConfigNode("KERBAL");
                 node.AddNode(kerbalNode);
 
@@ -40,8 +41,9 @@ namespace ContractConfigurator.Behaviour
         {
             base.OnLoad(node);
 
-            foreach (ConfigNode kerbalNode in node.GetNodes("KERBAL"))
+            for (int i = node.GetNodes("KERBAL").Length - 1; i >= 0; i--)
             {
+                ConfigNode kerbalNode = node.GetNodes("KERBAL")[i];
                 kerbals.Add(Kerbal.Load(kerbalNode));
             }
         }
@@ -85,10 +87,12 @@ namespace ContractConfigurator.Behaviour
         {
             LoggingUtil.LogDebug(this, "Removing kerbals...");
 
-            foreach (Kerbal kerbal in kerbals)
+            for (int i = kerbals.Count - 1; i >= 0; i--)
             {
+                Kerbal kerbal = kerbals[i];
                 Kerbal.RemoveKerbal(kerbal);
             }
+
             kerbals.Clear();
         }
     }

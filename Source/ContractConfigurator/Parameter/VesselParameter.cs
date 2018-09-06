@@ -102,8 +102,9 @@ namespace ContractConfigurator.Parameters
             }
 
             // Save docked sub-vessels
-            foreach (KeyValuePair<uint, KeyValuePair<ParamStrength, double>> p in dockedVesselInfo)
+            for (int i = dockedVesselInfo.Count - 1; i >= 0; i--)
             {
+                KeyValuePair<uint, KeyValuePair<ParamStrength, double>> p = dockedVesselInfo.ElementAt(i);
                 ConfigNode child = new ConfigNode("DOCKED_SUB_VESSEL");
                 child.AddValue("hash", p.Key);
                 child.AddValue("strength", p.Value.Key);
@@ -119,8 +120,9 @@ namespace ContractConfigurator.Parameters
             failWhenUnmet = ConfigNodeUtil.ParseValue<bool?>(node, "failWhenUnmet", (bool?)false).Value;
 
             // Load completion times
-            foreach (ConfigNode child in node.GetNodes("VESSEL_STATS"))
+            for (int i = node.GetNodes("VESSEL_STATS").Length - 1; i >= 0; i--)
             {
+                ConfigNode child = node.GetNodes("VESSEL_STATS")[i];
                 Guid id = new Guid(child.GetValue("vessel"));
                 Vessel vessel = FlightGlobals.Vessels.Find(v => v != null && v.id == id);
 
@@ -137,12 +139,13 @@ namespace ContractConfigurator.Parameters
             }
 
             // Load docked sub-vessels
-            foreach (ConfigNode child in node.GetNodes("DOCKED_SUB_VESSEL"))
+            for (int i = node.GetNodes("DOCKED_SUB_VESSEL").Length - 1; i >= 0; i--)
             {
+                ConfigNode child = node.GetNodes("DOCKED_SUB_VESSEL")[i];
                 uint hash = Convert.ToUInt32(child.GetValue("hash"));
                 ParamStrength strength = ConfigNodeUtil.ParseValue<ParamStrength>(child, "strength");
                 double completionTime = ConfigNodeUtil.ParseValue<double>(child, "completionTime", 0.0);
-                dockedVesselInfo[hash] = new KeyValuePair<ParamStrength,double>(strength, completionTime);
+                dockedVesselInfo[hash] = new KeyValuePair<ParamStrength, double>(strength, completionTime);
             }
         }
 

@@ -30,8 +30,9 @@ namespace ContractConfigurator
 
         public override void OnSave(ConfigNode configNode)
         {
-            foreach (AvailablePart part in parts)
+            for (int i = parts.Count - 1; i >= 0; i--)
             {
+                AvailablePart part = parts[i];
                 configNode.AddValue("part", part.name);
             }
         }
@@ -43,13 +44,15 @@ namespace ContractConfigurator
 
         public override bool RequirementMet(ConfiguredContract contract)
         {
-            foreach (AvailablePart part in parts)
+            for (int i = parts.Count - 1; i >= 0; i--)
             {
+                AvailablePart part = parts[i];
                 if (!ResearchAndDevelopment.PartModelPurchased(part))
                 {
                     return false;
                 }
             }
+
             return true;
         }
 

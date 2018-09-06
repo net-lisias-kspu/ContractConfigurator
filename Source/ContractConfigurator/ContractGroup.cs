@@ -163,8 +163,9 @@ namespace ContractConfigurator
                 LoggingUtil.CaptureLog = false;
 
                 // Load child groups
-                foreach (ConfigNode childNode in ConfigNodeUtil.GetChildNodes(configNode, "CONTRACT_GROUP"))
+                for (int i = ConfigNodeUtil.GetChildNodes(configNode, "CONTRACT_GROUP").Length - 1; i >= 0; i--)
                 {
+                    ConfigNode childNode = ConfigNodeUtil.GetChildNodes(configNode, "CONTRACT_GROUP")[i];
                     ContractGroup child = null;
                     string childName = childNode.GetValue("name");
                     try

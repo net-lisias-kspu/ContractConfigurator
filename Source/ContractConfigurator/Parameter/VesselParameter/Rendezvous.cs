@@ -59,8 +59,9 @@ namespace ContractConfigurator.Parameters
             base.OnRegister();
 
             // Add a waypoint for each possible vessel in the list
-            foreach (string vesselKey in vessels)
+            for (int i = vessels.Count - 1; i >= 0; i--)
             {
+                string vesselKey = vessels[i];
                 VesselWaypoint vesselWaypoint = new VesselWaypoint(Root, vesselKey);
                 vesselWaypoints.Add(vesselWaypoint);
                 vesselWaypoint.Register();
@@ -71,8 +72,9 @@ namespace ContractConfigurator.Parameters
         {
             base.OnUnregister();
 
-            foreach (VesselWaypoint vesselWaypoint in vesselWaypoints)
+            for (int i = vesselWaypoints.Count - 1; i >= 0; i--)
             {
+                VesselWaypoint vesselWaypoint = vesselWaypoints[i];
                 vesselWaypoint.Unregister();
             }
         }
@@ -81,8 +83,9 @@ namespace ContractConfigurator.Parameters
         {
             base.OnParameterSave(node);
             node.AddValue("distance", distance);
-            foreach (string vessel in vessels)
+            for (int i = vessels.Count - 1; i >= 0; i--)
             {
+                string vessel = vessels[i];
                 node.AddValue("vessel", vessel);
             }
         }
@@ -151,8 +154,9 @@ namespace ContractConfigurator.Parameters
                 }
                 else
                 {
-                    foreach (Vessel v in FlightGlobals.Vessels)
+                    for (int i = FlightGlobals.Vessels.Count - 1; i >= 0; i--)
                     {
+                        Vessel v = FlightGlobals.Vessels[i];
                         if (v != v1 && v.vesselType != VesselType.EVA && v.vesselType != VesselType.Debris && v.vesselType != VesselType.Flag)
                         {
                             float distance = Vector3.Distance(v1.transform.position, v.transform.position);

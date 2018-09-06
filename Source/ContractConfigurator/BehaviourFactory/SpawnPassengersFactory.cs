@@ -58,8 +58,9 @@ namespace ContractConfigurator.Behaviour
             }
 
             // Set the kerbal type
-            foreach (Kerbal kerbal in kerbals)
+            for (int i = kerbals.Count - 1; i >= 0; i--)
             {
+                Kerbal kerbal = kerbals[i];
                 kerbal.kerbalType = kerbalType;
             }
 

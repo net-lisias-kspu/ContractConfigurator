@@ -186,13 +186,15 @@ namespace ContractConfigurator.ExpressionParser
 
         public DataNode GetChild(string name)
         {
-            foreach (DataNode child in children)
+            for (int i = children.Count - 1; i >= 0; i--)
             {
+                DataNode child = children[i];
                 if (child.name == name)
                 {
                     return child;
                 }
             }
+
             return null;
         }
 
@@ -235,10 +237,10 @@ namespace ContractConfigurator.ExpressionParser
                 string prefix = node == this ? "" : node.name + ":";
                 if (node == this || node.root == null)
                 {
-                    foreach (KeyValuePair<string, Value> pair in node.data)
+                    for (int i = node.data.Count - 1; i >= 0; i--)
                     {
-                        nodeResults += (applyFormatting ? "<color=lime>" : "") + "    " + prefix + pair.Key + (applyFormatting ? "</color>" : "") + " = " + OutputValue(pair.Value.value) +
-                            ", deterministic = " + pair.Value.deterministic + "\n";
+                        KeyValuePair<string, Value> pair = node.data.ElementAt(i);
+                        nodeResults += (applyFormatting ? "<color=lime>" : "") + "    " + prefix + pair.Key + (applyFormatting ? "</color>" : "") + " = " + OutputValue(pair.Value.value) + ", deterministic = " + pair.Value.deterministic + "\n";
                     }
                 }
                 result = nodeResults + result;
@@ -333,8 +335,9 @@ namespace ContractConfigurator.ExpressionParser
         {
             bool valid = true;
 
-            foreach (ConfigNode data in ConfigNodeUtil.GetChildNodes(configNode, "DATA"))
+            for (int i = ConfigNodeUtil.GetChildNodes(configNode, "DATA").Length - 1; i >= 0; i--)
             {
+                ConfigNode data = ConfigNodeUtil.GetChildNodes(configNode, "DATA")[i];
                 Type type = null;
                 bool requiredValue = true;
                 bool hidden = true;
@@ -355,7 +358,7 @@ namespace ContractConfigurator.ExpressionParser
                 if (data.HasValue("uniqueValue") || data.HasValue("activeUniqueValue"))
                 {
                     LoggingUtil.LogWarning(this, "The use of uniqueValue and activeUniqueValue is obsolete since Contract Configurator 1.9.0, use uniquenessCheck instead.");
-                    
+
                     bool uniqueValue = false;
                     bool activeUniqueValue = false;
                     valid &= ConfigNodeUtil.ParseValue<bool>(data, "uniqueValue", x => uniqueValue = x, obj, false);
@@ -372,8 +375,9 @@ namespace ContractConfigurator.ExpressionParser
 
                 if (type != null)
                 {
-                    foreach (ConfigNode.Value pair in data.values)
+                    for (int j = data.values.Count - 1; j >= 0; j--)
                     {
+                        ConfigNode.Value pair = data.values[j];
                         string name = pair.name;
                         if (name != "type" && name != "title" && name != "hidden" && name != "requiredValue" && name != "uniqueValue" && name != "activeUniqueValue" && name != "uniquenessCheck" && name != "isLiteral")
                         {
@@ -454,8 +458,9 @@ namespace ContractConfigurator.ExpressionParser
                 valid &= ConfigNodeUtil.ParseValue<Type>(iteratorNode, "type", x => obj.iteratorType = x, obj);
                 if (obj.iteratorType != null)
                 {
-                    foreach (ConfigNode.Value pair in iteratorNode.values)
+                    for (int i = iteratorNode.values.Count - 1; i >= 0; i--)
                     {
+                        ConfigNode.Value pair = iteratorNode.values[i];
                         string name = pair.name;
                         if (name != "type")
                         {

@@ -85,8 +85,9 @@ namespace ContractConfigurator.Behaviour
         protected override void OnSave(ConfigNode configNode)
         {
             base.OnSave(configNode);
-            foreach (string v in vessels)
+            for (int i = vessels.Count - 1; i >= 0; i--)
             {
+                string v = vessels[i];
                 configNode.AddValue("vessel", v);
             }
         }

@@ -121,16 +121,19 @@ namespace ContractConfigurator.ExpressionParser
             }
 
             int count = 0;
-            foreach (ProtoPartSnapshot pps in v.protoVessel.protoPartSnapshots)
+            for (int i = v.protoVessel.protoPartSnapshots.Count - 1; i >= 0; i--)
             {
-                foreach (ProtoPartModuleSnapshot ppms in pps.modules)
+                ProtoPartSnapshot pps = v.protoVessel.protoPartSnapshots[i];
+                for (int j = pps.modules.Count - 1; j >= 0; j--)
                 {
+                    ProtoPartModuleSnapshot ppms = pps.modules[j];
                     if (ConfigNodeUtil.ParseValue<string>(ppms.moduleValues, "state", "") == "Ready")
                     {
                         count += 1;
                     }
                 }
             }
+
             return count;
         }
 

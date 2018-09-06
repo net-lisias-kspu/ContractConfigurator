@@ -93,14 +93,16 @@ namespace ContractConfigurator.Parameters
                 node.AddValue("completionText", completionText);
             }
 
-            foreach (KeyValuePair<Guid, double> pair in endTimes)
+            for (int i = endTimes.Count - 1; i >= 0; i--)
             {
+                KeyValuePair<Guid, double> pair = endTimes.ElementAt(i);
                 ConfigNode childNode = new ConfigNode("VESSEL_END_TIME");
                 node.AddNode(childNode);
 
                 childNode.AddValue("vessel", pair.Key);
                 childNode.AddValue("endTime", pair.Value);
             }
+
             node.AddValue("endTime", endTime);
             node.AddValue("startCriteria", startCriteria);
             foreach (string p in parameter)
@@ -122,8 +124,9 @@ namespace ContractConfigurator.Parameters
             parameter = ConfigNodeUtil.ParseValue<List<string>>(node, "parameter", new List<string>());
             triggered = ConfigNodeUtil.ParseValue<bool?>(node, "triggered", (bool?)true).Value;
 
-            foreach (ConfigNode childNode in node.GetNodes("VESSEL_END_TIME"))
+            for (int i = node.GetNodes("VESSEL_END_TIME").Length - 1; i >= 0; i--)
             {
+                ConfigNode childNode = node.GetNodes("VESSEL_END_TIME")[i];
                 Guid vesselId = ConfigNodeUtil.ParseValue<Guid>(childNode, "vessel");
                 if (vesselId != null)
                 {

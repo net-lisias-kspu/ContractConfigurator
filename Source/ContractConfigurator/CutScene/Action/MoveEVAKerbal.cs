@@ -132,8 +132,9 @@ namespace ContractConfigurator.CutScene
         {
             base.OnSave(configNode);
             configNode.AddValue("actorName", actorName);
-            foreach (EVAWaypoint w in waypoints)
+            for (int i = waypoints.Count - 1; i >= 0; i--)
             {
+                EVAWaypoint w = waypoints[i];
                 ConfigNode waypointNode = new ConfigNode("WAYPOINT");
                 configNode.AddNode(waypointNode);
 
@@ -146,8 +147,9 @@ namespace ContractConfigurator.CutScene
         {
             base.OnLoad(configNode);
             actorName = ConfigNodeUtil.ParseValue<string>(configNode, "actorName");
-            foreach (ConfigNode node in configNode.GetNodes("WAYPOINT"))
+            for (int i = configNode.GetNodes("WAYPOINT").Length - 1; i >= 0; i--)
             {
+                ConfigNode node = configNode.GetNodes("WAYPOINT")[i];
                 EVAWaypoint w = new EVAWaypoint
                 {
                     latitude = ConfigNodeUtil.ParseValue<double>(node, "latitude"),

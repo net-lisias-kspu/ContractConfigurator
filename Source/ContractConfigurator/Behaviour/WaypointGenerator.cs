@@ -103,10 +103,11 @@ namespace ContractConfigurator.Behaviour
         public WaypointGenerator(WaypointGenerator orig, ConfiguredContract contract)
             : base()
         {
-            foreach (WaypointData old in orig.waypoints)
+            for (int i = orig.waypoints.Count - 1; i >= 0; i--)
             {
+                WaypointData old = orig.waypoints[i];
                 // Copy waypoint data
-                for (int i = 0; i < old.count; i++)
+                for (int j = 0; j < old.count; j++)
                 {
                     WaypointData wpData = new WaypointData(old, contract);
                     waypoints.Add(wpData);
@@ -114,7 +115,7 @@ namespace ContractConfigurator.Behaviour
                     // Set the name
                     if (old.names.Any())
                     {
-                        wpData.waypoint.name = (old.names.Count() == 1 ? old.names.First() : old.names.ElementAtOrDefault(i));
+                        wpData.waypoint.name = (old.names.Count() == 1 ? old.names.First() : old.names.ElementAtOrDefault(j));
                     }
                     if (string.IsNullOrEmpty(wpData.waypoint.name) || wpData.waypoint.name.ToLower() == "site")
                     {
@@ -122,6 +123,7 @@ namespace ContractConfigurator.Behaviour
                     }
                 }
             }
+
             initialized = orig.initialized;
             orig.initialized = false;
             this.contract = contract;
@@ -134,8 +136,9 @@ namespace ContractConfigurator.Behaviour
             if (!initialized)
             {
                 LoggingUtil.LogVerbose(this, "Initializing waypoint generator.");
-                foreach (WaypointData wpData in waypoints)
+                for (int i = waypoints.Count - 1; i >= 0; i--)
                 {
+                    WaypointData wpData = waypoints[i];
                     CelestialBody body = FlightGlobals.Bodies.FirstOrDefault(b => b.name == wpData.waypoint.celestialName);
                     if (body == null)
                     {
@@ -152,7 +155,7 @@ namespace ContractConfigurator.Behaviour
                             // Generate the position
                             WaypointManager.ChooseRandomPosition(out wpData.waypoint.latitude, out wpData.waypoint.longitude,
                                 wpData.waypoint.celestialName, wpData.waterAllowed, wpData.forceEquatorial, random);
-                            
+
                             // Force a water waypoint
                             if (wpData.underwater)
                             {
@@ -281,8 +284,9 @@ namespace ContractConfigurator.Behaviour
 
             bool valid = true;
             int index = 0;
-            foreach (ConfigNode child in ConfigNodeUtil.GetChildNodes(configNode))
+            for (int ii = ConfigNodeUtil.GetChildNodes(configNode).Length - 1; ii >= 0; ii--)
             {
+                ConfigNode child = ConfigNodeUtil.GetChildNodes(configNode)[ii];
                 DataNode dataNode = new DataNode("WAYPOINT_" + index, factory.dataNode, factory);
                 try
                 {
@@ -312,7 +316,7 @@ namespace ContractConfigurator.Behaviour
                             onWaypointIconAdded.Fire(x);
                         }
                     };
-                    valid &= wpData.waypoint.visible 
+                    valid &= wpData.waypoint.visible
                             ? ConfigNodeUtil.ParseValue<string>(child, "icon", assignWaypoint, factory)
                             : ConfigNodeUtil.ParseValue<string>(child, "icon", assignWaypoint, factory, "")
                         ;
@@ -399,7 +403,7 @@ namespace ContractConfigurator.Behaviour
 
                     // Copy waypoint data
                     WaypointData old = wpData;
-                    for (int i = 0; i < old.count; i++)
+                    for (int i = old.count - 1; i >= 0; i--)
                     {
                         wpData = new WaypointData(old, null);
                         wpGenerator.waypoints.Add(wpData);
@@ -449,8 +453,9 @@ namespace ContractConfigurator.Behaviour
 
             GameEvents.onFlightReady.Remove(new EventVoid.OnEvent(OnFlightReady));
 
-            foreach (WaypointData wpData in waypoints)
+            for (int i = waypoints.Count - 1; i >= 0; i--)
             {
+                WaypointData wpData = waypoints[i];
                 WaypointManager.RemoveWaypoint(wpData.waypoint);
             }
         }
@@ -460,8 +465,9 @@ namespace ContractConfigurator.Behaviour
             if (filter == MapViewFiltering.VesselTypeFilter.None)
             {
                 // Reset state of renderers
-                foreach (WaypointData wpData in waypoints)
+                for (int i = waypoints.Count - 1; i >= 0; i--)
                 {
+                    WaypointData wpData = waypoints[i];
                     WaypointManager.RemoveWaypoint(wpData.waypoint);
                     wpData.isAdded = false;
                     AddWayPoint(wpData);
@@ -479,8 +485,9 @@ namespace ContractConfigurator.Behaviour
 
         protected override void OnOffered()
         {
-            foreach (WaypointData wpData in waypoints)
+            for (int i = waypoints.Count - 1; i >= 0; i--)
             {
+                WaypointData wpData = waypoints[i];
                 string paramID = wpData.parameter.FirstOrDefault();
                 if (wpData.waypoint.visible && (!wpData.parameter.Any() || contract.AllParameters.Any(p => p.ID == paramID && p.State == ParameterState.Complete)))
                 {
@@ -494,8 +501,9 @@ namespace ContractConfigurator.Behaviour
             LoggingUtil.LogVerbose(this, "OnFlightReady");
 
             // Handle late adjustments to PQS City based waypoint positions (workaround for Kopernicus bug)
-            foreach (WaypointData wpData in waypoints)
+            for (int i = waypoints.Count - 1; i >= 0; i--)
             {
+                WaypointData wpData = waypoints[i];
                 if (wpData.pqsCity != null)
                 {
                     LoggingUtil.LogDebug(this, "Adjusting PQS City offset coordinates for waypoint " + wpData.waypoint.name);
@@ -512,8 +520,9 @@ namespace ContractConfigurator.Behaviour
         {
             base.OnLoad(configNode);
 
-            foreach (ConfigNode child in configNode.GetNodes("WAYPOINT"))
+            for (int i = configNode.GetNodes("WAYPOINT").Length - 1; i >= 0; i--)
             {
+                ConfigNode child = configNode.GetNodes("WAYPOINT")[i];
                 // Read all the waypoint data
                 WaypointData wpData = new WaypointData
                 {
@@ -561,19 +570,24 @@ namespace ContractConfigurator.Behaviour
         {
             base.OnLoad(configNode);
 
-            foreach (WaypointData wpData in waypoints)
+            for (int i = waypoints.Count - 1; i >= 0; i--)
             {
+                WaypointData wpData = waypoints[i];
                 ConfigNode child = new ConfigNode("WAYPOINT");
 
                 child.AddValue("type", wpData.type);
-                foreach (string p in wpData.parameter)
+                for (int j = wpData.parameter.Count - 1; j >= 0; j--)
                 {
+                    string p = wpData.parameter[j];
                     child.AddValue("parameter", p);
                 }
-                foreach (string n in wpData.names)
+
+                for (int j = wpData.names.Count - 1; j >= 0; j--)
                 {
+                    string n = wpData.names[j];
                     child.AddValue("names", n);
                 }
+
                 child.AddValue("celestialName", wpData.waypoint.celestialName);
                 child.AddValue("name", wpData.waypoint.name);
                 child.AddValue("icon", wpData.waypoint.id);
@@ -635,8 +649,9 @@ namespace ContractConfigurator.Behaviour
 
         public IEnumerable<Waypoint> Waypoints()
         {
-            foreach (WaypointData wpd in waypoints)
+            for (int i = waypoints.Count - 1; i >= 0; i--)
             {
+                WaypointData wpd = waypoints[i];
                 yield return wpd.waypoint;
             }
         }

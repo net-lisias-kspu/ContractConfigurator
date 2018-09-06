@@ -92,8 +92,9 @@ namespace ContractConfigurator.Util
 
         public void Load(ConfigNode node)
         {
-            foreach (ConfigNode.Value pair in node.values)
+            for (int i = node.values.Count - 1; i >= 0; i--)
             {
+                ConfigNode.Value pair = node.values[i];
                 K key = (K)Convert.ChangeType(pair.name, typeof(K));
                 V val = (V)Convert.ChangeType(pair.value, typeof(V));
 

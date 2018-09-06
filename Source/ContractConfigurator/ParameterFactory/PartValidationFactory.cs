@@ -47,13 +47,16 @@ namespace ContractConfigurator
                 valid &= ConfigNodeUtil.ParseValue<string>(configNode, "manufacturer", x => filter.manufacturer = x, this, (string)null);
 
                 // Add modules
-                foreach (ConfigNode moduleNode in configNode.GetNodes("MODULE"))
+                for (int i = configNode.GetNodes("MODULE").Length - 1; i >= 0; i--)
                 {
+                    ConfigNode moduleNode = configNode.GetNodes("MODULE")[i];
                     ConfigNode.ValueList tmp = new ConfigNode.ValueList();
-                    foreach (ConfigNode.Value v in moduleNode.values)
+                    for (int j = moduleNode.values.Count - 1; j >= 0; j--)
                     {
+                        ConfigNode.Value v = moduleNode.values[j];
                         tmp.Add(new ConfigNode.Value(v.name, v.value));
                     }
+
                     filter.partModuleExtended.Add(tmp);
                 }
 
@@ -61,8 +64,9 @@ namespace ContractConfigurator
             }
 
             // Extended definition
-            foreach (ConfigNode child in ConfigNodeUtil.GetChildNodes(configNode))
+            for (int i = ConfigNodeUtil.GetChildNodes(configNode).Length - 1; i >= 0; i--)
             {
+                ConfigNode child = ConfigNodeUtil.GetChildNodes(configNode)[i];
                 ParameterDelegateMatchType matchType;
                 switch (child.name)
                 {
@@ -96,8 +100,9 @@ namespace ContractConfigurator
                 valid &= ConfigNodeUtil.ParseValue<PartCategories?>(child, "category", x => filter.category = x, this, (PartCategories?)null);
                 valid &= ConfigNodeUtil.ParseValue<string>(child, "manufacturer", x => filter.manufacturer = x, this, (string)null);
 
-                foreach (ConfigNode moduleNode in child.GetNodes("MODULE"))
+                for (int j = child.GetNodes("MODULE").Length - 1; j >= 0; j--)
                 {
+                    ConfigNode moduleNode = child.GetNodes("MODULE")[j];
                     ConfigNode.ValueList tmp = new ConfigNode.ValueList();
                     foreach (ConfigNode.Value v in moduleNode.values)
                     {

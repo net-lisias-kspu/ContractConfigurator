@@ -47,24 +47,27 @@ namespace ContractConfigurator.CutScene
             configNode.AddValue("name", name);
             configNode.AddValue("aspectRatio", aspectRatio);
 
-            foreach (CutSceneCamera cameraDefinition in cameras)
+            for (int i = cameras.Count - 1; i >= 0; i--)
             {
+                CutSceneCamera cameraDefinition = cameras[i];
                 ConfigNode child = new ConfigNode(cameraDefinition.GetType().Name);
                 configNode.AddNode(child);
 
                 cameraDefinition.OnSave(child);
             }
 
-            foreach (Actor actor in actors)
+            for (int i = actors.Count - 1; i >= 0; i--)
             {
+                Actor actor = actors[i];
                 ConfigNode child = new ConfigNode(actor.GetType().Name);
                 configNode.AddNode(child);
 
                 actor.OnSave(child);
             }
 
-            foreach (CutSceneAction action in actions)
+            for (int i = actions.Count - 1; i >= 0; i--)
             {
+                CutSceneAction action = actions[i];
                 ConfigNode child = new ConfigNode(action.GetType().Name);
                 configNode.AddNode(child);
 
@@ -77,8 +80,9 @@ namespace ContractConfigurator.CutScene
             name = ConfigNodeUtil.ParseValue<string>(configNode, "name");
             aspectRatio = ConfigNodeUtil.ParseValue<float>(configNode, "aspectRatio");
 
-            foreach (ConfigNode child in configNode.GetNodes())
+            for (int i = configNode.GetNodes().Length - 1; i >= 0; i--)
             {
+                ConfigNode child = configNode.GetNodes()[i];
                 Type nodeType = ConfigNodeUtil.ParseTypeValue(child.name);
                 if (nodeType.IsSubclassOf(typeof(CutSceneCamera)))
                 {

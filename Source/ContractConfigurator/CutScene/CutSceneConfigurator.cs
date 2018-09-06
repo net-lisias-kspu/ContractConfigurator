@@ -229,8 +229,9 @@ namespace CutSceneConfigurator
             {
                 case Modes.Camera:
                     listCount = currentCutScene.cameras.Count;
-                    foreach (CutSceneCamera camera in currentCutScene.cameras)
+                    for (int j = currentCutScene.cameras.Count - 1; j >= 0; j--)
                     {
+                        CutSceneCamera camera = currentCutScene.cameras[j];
                         if (currentCamera == camera)
                         {
                             currentIndex = i;
@@ -245,12 +246,14 @@ namespace CutSceneConfigurator
                         }
                         GUILayout.EndHorizontal();
                     }
+
                     break;
 
                 case Modes.Actor:
                     listCount = currentCutScene.actors.Count;
-                    foreach (Actor actor in currentCutScene.actors)
+                    for (int j = currentCutScene.actors.Count - 1; j >= 0; j--)
                     {
+                        Actor actor = currentCutScene.actors[j];
                         if (currentActor == actor)
                         {
                             currentIndex = i;
@@ -265,12 +268,14 @@ namespace CutSceneConfigurator
                         }
                         GUILayout.EndHorizontal();
                     }
+
                     break;
 
                 case Modes.Action:
                     listCount = currentCutScene.actions.Count;
-                    foreach (CutSceneAction action in currentCutScene.actions)
+                    for (int j = currentCutScene.actions.Count - 1; j >= 0; j--)
                     {
+                        CutSceneAction action = currentCutScene.actions[j];
                         if (currentAction == action)
                         {
                             currentIndex = i;
@@ -289,6 +294,7 @@ namespace CutSceneConfigurator
                         GUILayout.EndVertical();
                         GUILayout.EndHorizontal();
                     }
+
                     break;
 
                 default:

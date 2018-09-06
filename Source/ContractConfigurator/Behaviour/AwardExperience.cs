@@ -70,8 +70,9 @@ namespace ContractConfigurator.Behaviour
         protected void SetCrew(Vessel v)
         {
             LoggingUtil.LogVerbose(this, "Setting crew to those on vessel " + v.vesselName);
-            foreach (ProtoCrewMember pcm in v.GetVesselCrew())
+            for (int i = v.GetVesselCrew().Count - 1; i >= 0; i--)
             {
+                ProtoCrewMember pcm = v.GetVesselCrew()[i];
                 LoggingUtil.LogVerbose(this, "    Adding " + pcm.name + " to crew list.");
                 crew.AddUnique(pcm);
             }
@@ -137,14 +138,18 @@ namespace ContractConfigurator.Behaviour
 
         protected override void OnSave(ConfigNode configNode)
         {
-            foreach (string p in parameter)
+            for (int i = parameter.Count - 1; i >= 0; i--)
             {
+                string p = parameter[i];
                 configNode.AddValue("parameter", p);
             }
-            foreach (Kerbal k in kerbals)
+
+            for (int i = kerbals.Count - 1; i >= 0; i--)
             {
+                Kerbal k = kerbals[i];
                 configNode.AddValue("kerbal", k.name);
             }
+
             configNode.AddValue("experience", experience);
             configNode.AddValue("awardImmediately", awardImmediately);
 

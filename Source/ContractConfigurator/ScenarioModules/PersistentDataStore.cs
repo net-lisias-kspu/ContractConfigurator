@@ -131,8 +131,9 @@ namespace ContractConfigurator
                 if (dataNode != null)
                 {
                     // Handle individual values
-                    foreach (ConfigNode.Value pair in dataNode.values)
+                    for (int i = dataNode.values.Count - 1; i >= 0; i--)
                     {
+                        ConfigNode.Value pair = dataNode.values[i];
                         string typeName = pair.value.Remove(pair.value.IndexOf(":"));
                         string value = pair.value.Substring(typeName.Length + 1);
                         Type type = ConfigNodeUtil.ParseTypeValue(typeName);
@@ -162,8 +163,9 @@ namespace ContractConfigurator
                     }
 
                     // Handle config nodes
-                    foreach (ConfigNode childNode in dataNode.GetNodes())
+                    for (int i = dataNode.GetNodes().Length - 1; i >= 0; i--)
                     {
+                        ConfigNode childNode = dataNode.GetNodes()[i];
                         configNodes[childNode.name] = childNode;
                     }
                 }
@@ -186,8 +188,9 @@ namespace ContractConfigurator
                 node.AddNode(dataNode);
 
                 // Handle individual values
-                foreach (KeyValuePair<string, System.Object> p in data)
+                for (int i = data.Count - 1; i >= 0; i--)
                 {
+                    KeyValuePair<string, System.Object> p = data.ElementAt(i);
                     StoreToConfigNode(dataNode, p.Key, p.Value);
                 }
 

@@ -396,8 +396,9 @@ namespace ContractConfigurator
                 Dictionary<CelestialBody, CelestialBodyInfo> DictToReturn = new Dictionary<CelestialBody, CelestialBodyInfo>();
                 try
                 {
-                    foreach (var item in (IDictionary)actualCelestialBodies)
+                    for (int i = ((IDictionary)actualCelestialBodies).Count - 1; i >= 0; i--)
                     {
+                        var item = ((IDictionary)actualCelestialBodies)[i];
                         var typeitem = item.GetType();
                         PropertyInfo[] itemprops = typeitem.GetProperties(BindingFlags.Instance | BindingFlags.Public);
                         CelestialBody itemkey = (CelestialBody)itemprops[0].GetValue(item, null);

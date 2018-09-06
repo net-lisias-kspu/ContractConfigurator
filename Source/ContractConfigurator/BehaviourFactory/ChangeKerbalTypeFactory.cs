@@ -31,8 +31,9 @@ namespace ContractConfigurator.Behaviour
 
             kerbalInfo = new List<ChangeKerbalType.KerbalInfo>();
             int index = 0;
-            foreach (ConfigNode child in ConfigNodeUtil.GetChildNodes(configNode, "KERBAL_INFO"))
+            for (int i = ConfigNodeUtil.GetChildNodes(configNode, "KERBAL_INFO").Length - 1; i >= 0; i--)
             {
+                ConfigNode child = ConfigNodeUtil.GetChildNodes(configNode, "KERBAL_INFO")[i];
                 string kerbInfoNode = "KERBAL_INFO" + index++;
                 DataNode childDataNode = new DataNode(kerbInfoNode, dataNode, this);
 
@@ -51,6 +52,7 @@ namespace ContractConfigurator.Behaviour
                     ConfigNodeUtil.SetCurrentDataNode(dataNode);
                 }
             }
+
             valid &= ConfigNodeUtil.ValidateMandatoryChild(configNode, "KERBAL_INFO", this);
 
             return valid;

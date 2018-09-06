@@ -63,12 +63,14 @@ namespace ContractConfigurator.Util
         {
             ConfigNode[] experimentConfigs = GameDatabase.Instance.GetConfigNodes("CC_EXPERIMENT_DEFINITIONS");
 
-            foreach (ConfigNode experimentConfig in experimentConfigs)
+            for (int i = experimentConfigs.Length - 1; i >= 0; i--)
             {
+                ConfigNode experimentConfig = experimentConfigs[i];
                 LoggingUtil.LogDebug(this, "Loading experiment definitions for " + experimentConfig.GetValue("name"));
 
-                foreach (ConfigNode config in experimentConfig.GetNodes("EXPERIMENT"))
+                for (int j = experimentConfig.GetNodes("EXPERIMENT").Length - 1; j >= 0; j--)
                 {
+                    ConfigNode config = experimentConfig.GetNodes("EXPERIMENT")[j];
                     string name = ConfigNodeUtil.ParseValue<string>(config, "name");
                     LoggingUtil.LogVerbose(this, "    loading experiment " + name);
 
@@ -93,8 +95,9 @@ namespace ContractConfigurator.Util
                 }
 
                 // Add the experiment modules
-                foreach (ConfigNode config in experimentConfig.GetNodes("MODULE"))
+                for (int j = experimentConfig.GetNodes("MODULE").Length - 1; j >= 0; j--)
                 {
+                    ConfigNode config = experimentConfig.GetNodes("MODULE")[j];
                     string name = ConfigNodeUtil.ParseValue<string>(config, "name");
                     LoggingUtil.LogVerbose(this, "    loading module " + name);
 
@@ -409,8 +412,9 @@ namespace ContractConfigurator.Util
                         experimentParts[rules.id] = new List<AvailablePart>();
                     }
 
-                    foreach (string pname in rules.part)
+                    for (int i = rules.part.Count - 1; i >= 0; i--)
                     {
+                        string pname = rules.part[i];
                         foreach (AvailablePart p in PartLoader.Instance.loadedParts.Where(p => p.name == pname))
                         {
                             LoggingUtil.LogVerbose(typeof(Science), "Adding entry for " + rules.id + " = " + p.name);

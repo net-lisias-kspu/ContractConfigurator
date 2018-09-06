@@ -113,8 +113,9 @@ namespace ContractConfigurator.Behaviour
 
         protected override void OnSave(ConfigNode configNode)
         {
-            foreach (ConditionDetail cd in conditions)
+            for (int i = conditions.Count - 1; i >= 0; i--)
             {
+                ConditionDetail cd = conditions[i];
                 ConfigNode child = new ConfigNode("CONDITION");
                 configNode.AddNode(child);
 
@@ -125,14 +126,16 @@ namespace ContractConfigurator.Behaviour
                 }
                 child.AddValue("disabled", cd.disabled);
             }
+
             configNode.AddValue("title", title);
             configNode.AddValue("message", message);
         }
 
         protected override void OnLoad(ConfigNode configNode)
         {
-            foreach (ConfigNode child in configNode.GetNodes("CONDITION"))
+            for (int i = configNode.GetNodes("CONDITION").Length - 1; i >= 0; i--)
             {
+                ConfigNode child = configNode.GetNodes("CONDITION")[i];
                 ConditionDetail cd = new ConditionDetail
                 {
                     condition = ConfigNodeUtil.ParseValue<ConditionDetail.Condition>(child, "condition"),
@@ -141,6 +144,7 @@ namespace ContractConfigurator.Behaviour
                 };
                 conditions.Add(cd);
             }
+
             message = ConfigNodeUtil.ParseValue<string>(configNode, "message");
             title = ConfigNodeUtil.ParseValue<string>(configNode, "title");
         }

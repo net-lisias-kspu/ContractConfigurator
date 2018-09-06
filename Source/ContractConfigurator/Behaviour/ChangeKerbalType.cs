@@ -37,8 +37,9 @@ namespace ContractConfigurator.Behaviour
 
         protected override void TriggerAction()
         {
-            foreach (KerbalInfo kerb in kerbalInfo)
+            for (int i = kerbalInfo.Count - 1; i >= 0; i--)
             {
+                KerbalInfo kerb = kerbalInfo[i];
                 if (kerb.kerbal.pcm != null)
                 {
                     if (kerb.kerbalType != null)
@@ -64,8 +65,9 @@ namespace ContractConfigurator.Behaviour
         {
             base.OnSave(configNode);
 
-            foreach (KerbalInfo kerb in kerbalInfo)
+            for (int i = kerbalInfo.Count - 1; i >= 0; i--)
             {
+                KerbalInfo kerb = kerbalInfo[i];
                 ConfigNode child = new ConfigNode("KERBAL_INFO");
                 configNode.AddNode(child);
 
@@ -85,8 +87,9 @@ namespace ContractConfigurator.Behaviour
         {
             base.OnLoad(configNode);
 
-            foreach (ConfigNode child in configNode.GetNodes("KERBAL_INFO"))
+            for (int i = configNode.GetNodes("KERBAL_INFO").Length - 1; i >= 0; i--)
             {
+                ConfigNode child = configNode.GetNodes("KERBAL_INFO")[i];
                 KerbalInfo kerb = new KerbalInfo();
                 kerbalInfo.Add(kerb);
 

@@ -131,10 +131,10 @@ namespace ContractConfigurator.Parameters
             }
 
             // Validate specific kerbals
-            foreach (Kerbal kerbal in kerbals)
+            for (int i = kerbals.Count - 1; i >= 0; i--)
             {
-                AddParameter(new ParameterDelegate<ProtoCrewMember>(kerbal.name + ": On board",
-                    pcm => pcm == kerbal.pcm, ParameterDelegateMatchType.VALIDATE));
+                Kerbal kerbal = kerbals[i];
+                AddParameter(new ParameterDelegate<ProtoCrewMember>(kerbal.name + ": On board", pcm => pcm == kerbal.pcm, ParameterDelegateMatchType.VALIDATE));
             }
         }
 
@@ -149,15 +149,18 @@ namespace ContractConfigurator.Parameters
             node.AddValue("maxCrew", maxCrew);
             node.AddValue("minExperience", minExperience);
             node.AddValue("maxExperience", maxExperience);
-            foreach (Kerbal kerbal in kerbals)
+            for (int i = kerbals.Count - 1; i >= 0; i--)
             {
+                Kerbal kerbal = kerbals[i];
                 ConfigNode kerbalNode = new ConfigNode("KERBAL");
                 node.AddNode(kerbalNode);
 
                 kerbal.Save(kerbalNode);
             }
-            foreach (Kerbal kerbal in excludeKerbals)
+
+            for (int i = excludeKerbals.Count - 1; i >= 0; i--)
             {
+                Kerbal kerbal = excludeKerbals[i];
                 ConfigNode kerbalNode = new ConfigNode("KERBAL_EXCLUDE");
                 node.AddNode(kerbalNode);
 
@@ -176,12 +179,15 @@ namespace ContractConfigurator.Parameters
                 minCrew = Convert.ToInt32(node.GetValue("minCrew"));
                 maxCrew = Convert.ToInt32(node.GetValue("maxCrew"));
 
-                foreach (ConfigNode kerbalNode in node.GetNodes("KERBAL"))
+                for (int i = node.GetNodes("KERBAL").Length - 1; i >= 0; i--)
                 {
+                    ConfigNode kerbalNode = node.GetNodes("KERBAL")[i];
                     kerbals.Add(Kerbal.Load(kerbalNode));
                 }
-                foreach (ConfigNode kerbalNode in node.GetNodes("KERBAL_EXCLUDE"))
+
+                for (int i = node.GetNodes("KERBAL_EXCLUDE").Length - 1; i >= 0; i--)
                 {
+                    ConfigNode kerbalNode = node.GetNodes("KERBAL_EXCLUDE")[i];
                     excludeKerbals.Add(Kerbal.Load(kerbalNode));
                 }
 
@@ -307,10 +313,12 @@ namespace ContractConfigurator.Parameters
                     yield break;
                 }
 
-                foreach (Part p in v.parts)
+                for (int i = v.parts.Count - 1; i >= 0; i--)
                 {
-                    foreach (ProtoCrewMember pcm in p.protoModuleCrew)
+                    Part p = v.parts[i];
+                    for (int j = p.protoModuleCrew.Count - 1; j >= 0; j--)
                     {
+                        ProtoCrewMember pcm = p.protoModuleCrew[j];
                         if (!excludeKerbals.Any(k => k.pcm == pcm))
                         {
                             yield return pcm;
@@ -321,8 +329,9 @@ namespace ContractConfigurator.Parameters
             else
             {
                 // Vessel with crew
-                foreach (ProtoCrewMember pcm in v.GetVesselCrew())
+                for (int i = v.GetVesselCrew().Count - 1; i >= 0; i--)
                 {
+                    ProtoCrewMember pcm = v.GetVesselCrew()[i];
                     if (!excludeKerbals.Any(k => k.pcm == pcm) && (includeTourists || pcm.type == ProtoCrewMember.KerbalType.Crew))
                     {
                         yield return pcm;

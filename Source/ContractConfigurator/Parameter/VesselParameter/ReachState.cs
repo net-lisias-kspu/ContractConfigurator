@@ -230,8 +230,9 @@ namespace ContractConfigurator.Parameters
             base.OnParameterSave(node);
             if (targetBodies != null)
             {
-                foreach (CelestialBody targetBody in targetBodies)
+                for (int i = targetBodies.Count - 1; i >= 0; i--)
                 {
+                    CelestialBody targetBody = targetBodies[i];
                     if (targetBody != null)
                     {
                         node.AddValue("targetBody", targetBody.name);
@@ -243,9 +244,10 @@ namespace ContractConfigurator.Parameters
                 node.AddValue("biome", biome);
             }
 
-            
-            foreach (Vessel.Situations sit in situation)
+
+            for (int i = situation.Count - 1; i >= 0; i--)
             {
+                Vessel.Situations sit = situation[i];
                 node.AddValue("situation", sit);
             }
 

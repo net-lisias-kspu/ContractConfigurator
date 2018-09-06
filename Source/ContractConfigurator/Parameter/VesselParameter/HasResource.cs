@@ -59,18 +59,19 @@ namespace ContractConfigurator.Parameters
 
         protected void CreateDelegates()
         {
-            foreach (Filter filter in filters)
+            for (int i = filters.Count - 1; i >= 0; i--)
             {
+                Filter filter = filters[i];
                 string output = (capacity ? "Resource Capacity: " : "Resource: ") + filter.resource.name + ": ";
-                output += 
-                    filter.maxQuantity == 0 
-                          ? "None" 
-                    : filter.maxQuantity == double.MaxValue && (filter.minQuantity > 0.0 && filter.minQuantity <= 0.01) 
-                          ? "Not zero units" 
-                    : filter.maxQuantity == double.MaxValue 
-                          ? "At least " + filter.minQuantity + " units" 
-                    : filter.minQuantity == 0 
-                          ? "At most " + filter.maxQuantity + " units" 
+                output +=
+                    filter.maxQuantity == 0
+                          ? "None"
+                    : filter.maxQuantity == double.MaxValue && (filter.minQuantity > 0.0 && filter.minQuantity <= 0.01)
+                          ? "Not zero units"
+                    : filter.maxQuantity == double.MaxValue
+                          ? "At least " + filter.minQuantity + " units"
+                    : filter.minQuantity == 0
+                          ? "At most " + filter.maxQuantity + " units"
                     : "Between " + filter.minQuantity + " and " + filter.maxQuantity + " units";
                 AddParameter(new ParameterDelegate<Vessel>(output, v => VesselHasResource(v, filter.resource, capacity, filter.minQuantity, filter.maxQuantity), ParameterDelegateMatchType.VALIDATE));
             }
@@ -88,8 +89,9 @@ namespace ContractConfigurator.Parameters
 
             node.AddValue("capacity", capacity);
 
-            foreach (Filter filter in filters)
+            for (int i = filters.Count - 1; i >= 0; i--)
             {
+                Filter filter = filters[i];
                 ConfigNode childNode = new ConfigNode("RESOURCE");
                 node.AddNode(childNode);
 
@@ -110,8 +112,9 @@ namespace ContractConfigurator.Parameters
 
                 capacity = ConfigNodeUtil.ParseValue<bool?>(node, "capacity", (bool?)false).Value;
 
-                foreach (ConfigNode childNode in node.GetNodes("RESOURCE"))
+                for (int i = node.GetNodes("RESOURCE").Length - 1; i >= 0; i--)
                 {
+                    ConfigNode childNode = node.GetNodes("RESOURCE")[i];
                     Filter filter = new Filter
                     {
                         resource = ConfigNodeUtil.ParseValue<PartResourceDefinition>(childNode, "resource"),

@@ -94,8 +94,9 @@ namespace ContractConfigurator.Parameters
             for (int i = 0; i < 2; i++)
             {
                 Part p = i == 0 ? pj.Parent : pj.Child;
-                foreach (PartModule pm in p.Modules)
+                for (int j = p.Modules.Count - 1; j >= 0; j--)
                 {
+                    PartModule pm = p.Modules[j];
                     if (pm.moduleName.StartsWith("ModuleDocking"))
                     {
                         dockingPortCount++;

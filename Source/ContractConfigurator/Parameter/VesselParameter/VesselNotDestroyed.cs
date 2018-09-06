@@ -46,11 +46,13 @@ namespace ContractConfigurator.Parameters
             {
                 string output = "Vessels not destroyed: ";
                 bool first = true;
-                foreach (string vessel in vessels)
+                for (int i = vessels.Count - 1; i >= 0; i--)
                 {
+                    string vessel = vessels[i];
                     output += (first ? "" : ", ") + ContractVesselTracker.GetDisplayName(vessel);
                     first = false;
                 }
+
                 return output;
             }
 
@@ -80,8 +82,9 @@ namespace ContractConfigurator.Parameters
         protected override void OnParameterSave(ConfigNode node)
         {
             base.OnParameterSave(node);
-            foreach (string vessel in vessels)
+            for (int i = vessels.Count - 1; i >= 0; i--)
             {
+                string vessel = vessels[i];
                 node.AddValue("vessel", vessel);
             }
         }

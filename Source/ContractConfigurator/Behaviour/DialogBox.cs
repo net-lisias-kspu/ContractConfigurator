@@ -122,11 +122,13 @@ namespace ContractConfigurator.Behaviour
 
                 GUILayout.BeginHorizontal();
                 GUILayout.Space(8);
-                foreach (Section section in detail.sections)
+                for (int i = detail.sections.Count - 1; i >= 0; i--)
                 {
+                    Section section = detail.sections[i];
                     section.OnGUI();
                     GUILayout.Space(8);
                 }
+
                 GUILayout.EndHorizontal();
 
                 GUILayout.BeginHorizontal();
@@ -135,10 +137,12 @@ namespace ContractConfigurator.Behaviour
                 {
                     windowPos = new Rect(0, 0, 0, 0);
                     windowStyle = null;
-                    foreach (Section section in detail.sections)
+                    for (int i = detail.sections.Count - 1; i >= 0; i--)
                     {
+                        Section section = detail.sections[i];
                         section.OnDestroy();
                     }
+
                     dialogBox.displayQueue.Dequeue();
                     dialogBox.details.Remove(detail);
                 }
@@ -680,10 +684,12 @@ namespace ContractConfigurator.Behaviour
                 base.OnSave(configNode);
 
                 configNode.AddValue("crewIndex", crewIndex);
-                foreach (string exclude in excludeName)
+                for (int i = excludeName.Count - 1; i >= 0; i--)
                 {
+                    string exclude = excludeName[i];
                     configNode.AddValue("excludeName", exclude);
                 }
+
                 if (kerbal == null)
                 {
                     configNode.AddValue("gender", gender);
@@ -760,8 +766,9 @@ namespace ContractConfigurator.Behaviour
                 int b = (int)(titleColor.b * 255);
                 configNode.AddValue("titleColor", "#" + a.ToString("X2") + r.ToString("X2") + g.ToString("X2") + b.ToString("X2"));
 
-                foreach (Section section in sections)
+                for (int i = sections.Count - 1; i >= 0; i--)
                 {
+                    Section section = sections[i];
                     ConfigNode sectionNode = new ConfigNode(section.GetType().Name);
                     configNode.AddNode(sectionNode);
                     section.OnSave(sectionNode);
@@ -779,8 +786,9 @@ namespace ContractConfigurator.Behaviour
                 parameter = ConfigNodeUtil.ParseValue<string>(configNode, "parameter", "");
 
                 IEnumerable<Type> sectionTypes = ContractConfigurator.GetAllTypes<Section>();
-                foreach (ConfigNode sectionNode in configNode.GetNodes())
+                for (int i = configNode.GetNodes().Length - 1; i >= 0; i--)
                 {
+                    ConfigNode sectionNode = configNode.GetNodes()[i];
                     Type type = sectionTypes.FirstOrDefault(t => t.Name == sectionNode.name);
                     if (type == null)
                     {
@@ -807,8 +815,9 @@ namespace ContractConfigurator.Behaviour
             // Need to do a deep copy to support expresssion.  Rather than properly doing a copy
             // constructor, be lazy and serialize it.
             details = new List<DialogDetail>();
-            foreach (DialogDetail srcDetail in srcDetails)
+            for (int i = srcDetails.Count - 1; i >= 0; i--)
             {
+                DialogDetail srcDetail = srcDetails[i];
                 DialogDetail detail = new DialogDetail();
                 ConfigNode dummy = new ConfigNode("DUMMY");
                 srcDetail.OnSave(dummy);
@@ -923,8 +932,9 @@ namespace ContractConfigurator.Behaviour
 
         protected override void OnSave(ConfigNode configNode)
         {
-            foreach (DialogDetail detail in details)
+            for (int i = details.Count - 1; i >= 0; i--)
             {
+                DialogDetail detail = details[i];
                 ConfigNode child = new ConfigNode("DIALOG_BOX");
                 configNode.AddNode(child);
 
@@ -934,8 +944,9 @@ namespace ContractConfigurator.Behaviour
 
         protected override void OnLoad(ConfigNode configNode)
         {
-            foreach (ConfigNode child in configNode.GetNodes("DIALOG_BOX"))
+            for (int i = configNode.GetNodes("DIALOG_BOX").Length - 1; i >= 0; i--)
             {
+                ConfigNode child = configNode.GetNodes("DIALOG_BOX")[i];
                 DialogDetail detail = new DialogDetail();
                 detail.OnLoad(child);
 

@@ -52,8 +52,9 @@ namespace ContractConfigurator.Behaviour
         {
             base.OnSave(configNode);
             configNode.AddValue("owned", owned);
-            foreach (string v in vessels)
+            for (int i = vessels.Count - 1; i >= 0; i--)
             {
+                string v = vessels[i];
                 configNode.AddValue("vessel", v);
             }
         }

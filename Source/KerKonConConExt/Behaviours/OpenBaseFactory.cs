@@ -21,22 +21,24 @@ namespace KerKonConConExt
 			valid &= ConfigNodeUtil.ParseValue<string>(configNode, "basename", x => basename = x, this);
 
 			int index = 0;
-			foreach (ConfigNode child in ConfigNodeUtil.GetChildNodes(configNode, "CONDITION"))
-			{
-				DataNode childDataNode = new DataNode("CONDITION_" + index++, dataNode, this);
-				try
-				{
-					ConfigNodeUtil.SetCurrentDataNode(childDataNode);
-					OpenBase.ConditionDetail cd = new OpenBase.ConditionDetail();
-					valid &= ConfigNodeUtil.ParseValue<OpenBase.ConditionDetail.Condition>(child, "condition", x => cd.condition = x, this);
-					valid &= ConfigNodeUtil.ParseValue<string>(child, "parameter", x => cd.parameter = x, this, "", x => ValidateMandatoryParameter(x, cd.condition));
-					conditions.Add(cd);
-				}
-				finally
-				{
-					ConfigNodeUtil.SetCurrentDataNode(dataNode);
-				}
-			}
+			for (int i = ConfigNodeUtil.GetChildNodes(configNode, "CONDITION").Length - 1; i >= 0; i--)
+            {
+                ConfigNode child = ConfigNodeUtil.GetChildNodes(configNode, "CONDITION")[i];
+                DataNode childDataNode = new DataNode("CONDITION_" + index++, dataNode, this);
+                try
+                {
+                    ConfigNodeUtil.SetCurrentDataNode(childDataNode);
+                    OpenBase.ConditionDetail cd = new OpenBase.ConditionDetail();
+                    valid &= ConfigNodeUtil.ParseValue<OpenBase.ConditionDetail.Condition>(child, "condition", x => cd.condition = x, this);
+                    valid &= ConfigNodeUtil.ParseValue<string>(child, "parameter", x => cd.parameter = x, this, "", x => ValidateMandatoryParameter(x, cd.condition));
+                    conditions.Add(cd);
+                }
+                finally
+                {
+                    ConfigNodeUtil.SetCurrentDataNode(dataNode);
+                }
+            }
+
 			valid &= ConfigNodeUtil.ValidateMandatoryChild(configNode, "CONDITION", this);
 
 			return valid;

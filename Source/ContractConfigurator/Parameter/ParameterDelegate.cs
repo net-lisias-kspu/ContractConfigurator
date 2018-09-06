@@ -259,8 +259,9 @@ namespace ContractConfigurator.Parameters
         public static void OnDelegateContainerLoad(ConfigNode node)
         {
             // No delegate child parameters allowed!
-            foreach (ConfigNode child in node.GetNodes("PARAM"))
+            for (int i = node.GetNodes("PARAM").Length - 1; i >= 0; i--)
             {
+                ConfigNode child = node.GetNodes("PARAM")[i];
                 if (child.GetValue("name").EndsWith("`1"))
                 {
                     node.RemoveNode(child);

@@ -44,10 +44,10 @@ namespace ContractConfigurator.Parameters
 
         protected void CreateDelegates()
         {
-            foreach (string vessel in vessels)
+            for (int i = vessels.Count - 1; i >= 0; i--)
             {
-                AddParameter(new ParameterDelegate<string>("Target: " + (ContractVesselTracker.Instance != null ? ContractVesselTracker.GetDisplayName(vessel) : vessel),
-                    ignored => CheckTargetDestroyed(vessel), ParameterDelegateMatchType.VALIDATE_ALL, true));
+                string vessel = vessels[i];
+                AddParameter(new ParameterDelegate<string>("Target: " + (ContractVesselTracker.Instance != null ? ContractVesselTracker.GetDisplayName(vessel) : vessel), ignored => CheckTargetDestroyed(vessel), ParameterDelegateMatchType.VALIDATE_ALL, true));
             }
         }
 
@@ -75,12 +75,15 @@ namespace ContractConfigurator.Parameters
 
         protected override void OnParameterSave(ConfigNode node)
         {
-            foreach (string vessel in vessels)
+            for (int i = vessels.Count - 1; i >= 0; i--)
             {
+                string vessel = vessels[i];
                 node.AddValue("vessel", vessel);
             }
-            foreach (string destroyedTarget in destroyedTargets)
+
+            for (int i = destroyedTargets.Count - 1; i >= 0; i--)
             {
+                string destroyedTarget = destroyedTargets[i];
                 node.AddValue("destroyedTarget", destroyedTarget);
             }
         }
@@ -107,8 +110,9 @@ namespace ContractConfigurator.Parameters
             GameEvents.onVesselWasModified.Add(new EventData<Vessel>.OnEvent(OnVesselWasModified));
 
             // Add a waypoint for each possible vessel in the list
-            foreach (string vesselKey in vessels)
+            for (int i = vessels.Count - 1; i >= 0; i--)
             {
+                string vesselKey = vessels[i];
                 VesselWaypoint vesselWaypoint = new VesselWaypoint(Root, vesselKey);
                 vesselWaypoints.Add(vesselWaypoint);
                 vesselWaypoint.Register();
@@ -121,8 +125,9 @@ namespace ContractConfigurator.Parameters
             GameEvents.onVesselWillDestroy.Remove(new EventData<Vessel>.OnEvent(OnVesselWillDestroy));
             GameEvents.onVesselWasModified.Add(new EventData<Vessel>.OnEvent(OnVesselWasModified));
 
-            foreach (VesselWaypoint vesselWaypoint in vesselWaypoints)
+            for (int i = vesselWaypoints.Count - 1; i >= 0; i--)
             {
+                VesselWaypoint vesselWaypoint = vesselWaypoints[i];
                 vesselWaypoint.Unregister();
             }
         }

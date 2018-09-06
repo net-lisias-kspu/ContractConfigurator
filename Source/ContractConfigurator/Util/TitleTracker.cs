@@ -129,14 +129,16 @@ namespace ContractConfigurator
 
                 if (list != null)
                 {
-                    foreach (KSP.UI.UIListItem item in list.items)
+                    for (int i = list.items.Count - 1; i >= 0; i--)
                     {
+                        KSP.UI.UIListItem item = list.items[i];
                         TMPro.TextMeshProUGUI textComponent = item.GetComponentsInChildren<TMPro.TextMeshProUGUI>(true).FirstOrDefault();
                         if (textComponent != null)
                         {
                             // Check for any string in titleTracker
-                            foreach (string title in titles)
+                            for (int j = titles.Count - 1; j >= 0; j--)
                             {
+                                string title = titles[j];
                                 if (textComponent.text.EndsWith(">" + title + "</color>"))
                                 {
                                     text = textComponent;

@@ -235,8 +235,9 @@ namespace ContractConfigurator
                 {
                     if (vessel.loaded)
                     {
-                        foreach (Part p in vessel.parts)
+                        for (int i = vessel.parts.Count - 1; i >= 0; i--)
                         {
+                            Part p = vessel.parts[i];
                             if (p.protoModuleCrew.Contains(pcm))
                             {
                                 // Command seats
@@ -256,8 +257,9 @@ namespace ContractConfigurator
                     }
                     else
                     {
-                        foreach (ProtoPartSnapshot pps in vessel.protoVessel.protoPartSnapshots)
+                        for (int i = vessel.protoVessel.protoPartSnapshots.Count - 1; i >= 0; i--)
                         {
+                            ProtoPartSnapshot pps = vessel.protoVessel.protoPartSnapshots[i];
                             if (pps.HasCrew(pcm.name))
                             {
                                 // Command seats

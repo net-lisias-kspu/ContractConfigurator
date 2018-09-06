@@ -55,8 +55,9 @@ namespace ContractConfigurator.Util
 
                 // Load contract definitions
                 ConfigNode[] contractConfigs = GameDatabase.Instance.GetConfigNodes("CONTRACT_DEFINITION");
-                foreach (ConfigNode contractConfig in contractConfigs)
+                for (int i = contractConfigs.Length - 1; i >= 0; i--)
                 {
+                    ConfigNode contractConfig = contractConfigs[i];
                     // Get name
                     if (!contractConfig.HasValue("name"))
                     {
@@ -117,13 +118,15 @@ namespace ContractConfigurator.Util
 
             private static Agent GetAgent(string name)
             {
-                foreach (Agent agent in AgentList.Instance.Agencies)
+                for (int i = AgentList.Instance.Agencies.Count - 1; i >= 0; i--)
                 {
+                    Agent agent = AgentList.Instance.Agencies[i];
                     if (agent.Name == name)
                     {
                         return agent;
                     }
                 }
+
                 return null;
             }
 
@@ -142,14 +145,16 @@ namespace ContractConfigurator.Util
 
             public void SetState(bool expanded)
             {
-                foreach (GroupContainer childGroup in childGroups)
+                for (int i = childGroups.Count - 1; i >= 0; i--)
                 {
+                    GroupContainer childGroup = childGroups[i];
                     childGroup.mcListItem.gameObject.SetActive(expanded);
                     childGroup.SetState(expanded && childGroup.expanded);
                 }
 
-                foreach (ContractContainer childContract in childContracts)
+                for (int i = childContracts.Count - 1; i >= 0; i--)
                 {
+                    ContractContainer childContract = childContracts[i];
                     childContract.mcListItem.gameObject.SetActive(expanded);
                 }
             }
@@ -370,8 +375,9 @@ namespace ContractConfigurator.Util
                 contractCountRect.sizeDelta = new Vector2(contractCountRect.sizeDelta.x, contractCountRect.sizeDelta.y * 4);
 
                 // Set Positioning of child elements
-                foreach (RectTransform rect in new RectTransform[] { toggleAllRect, toggleAvailableRect, toggleActiveRect, toggleArchiveRect })
+                for (int i = new RectTransform[] { toggleAllRect, toggleAvailableRect, toggleActiveRect, toggleArchiveRect }.Length - 1; i >= 0; i--)
                 {
+                    RectTransform rect = new RectTransform[] { toggleAllRect, toggleAvailableRect, toggleActiveRect, toggleArchiveRect }[i];
                     RectTransform bgRect = rect.gameObject.GetChild("Background").GetComponent<RectTransform>();
                     bgRect.sizeDelta = rect.sizeDelta;
                     RectTransform checkRect = bgRect.gameObject.GetChild("Checkmark").GetComponent<RectTransform>();
@@ -957,8 +963,9 @@ namespace ContractConfigurator.Util
 
             // Count the available contracts
             int available = 0;
-            foreach (ContractContainer contractContainer in groupContainer.childContracts)
+            for (int i = groupContainer.childContracts.Count - 1; i >= 0; i--)
             {
+                ContractContainer contractContainer = groupContainer.childContracts[i];
                 if (contractContainer.contract != null)
                 {
                     if (contractContainer.contract.ContractState == Contract.State.Offered)
@@ -968,14 +975,17 @@ namespace ContractConfigurator.Util
                     groupContainer.unread |= contractContainer.contract.ContractViewed == Contract.Viewed.Unseen;
                 }
             }
-            foreach (GroupContainer childContainer in groupContainer.childGroups)
+
+            for (int i = groupContainer.childGroups.Count - 1; i >= 0; i--)
             {
+                GroupContainer childContainer = groupContainer.childGroups[i];
                 available += childContainer.availableContracts;
                 if (childContainer.unread)
                 {
                     groupContainer.unread = true;
                 }
             }
+
             groupContainer.availableContracts = available;
 
             // Get the main text object
@@ -1278,8 +1288,9 @@ namespace ContractConfigurator.Util
             int trivialCount = 0;
             int significantCount = 0;
             int exceptionalCount = 0;
-            foreach (Contract c in ContractSystem.Instance.Contracts)
+            for (int i = ContractSystem.Instance.Contracts.Count - 1; i >= 0; i--)
             {
+                Contract c = ContractSystem.Instance.Contracts[i];
                 if (c != null && c.ContractState == Contract.State.Active && !c.AutoAccept)
                 {
                     switch (c.Prestige)
@@ -1298,6 +1309,7 @@ namespace ContractConfigurator.Util
                     }
                 }
             }
+
             int trivialMax = Math.Min(ContractConfigurator.ContractLimit(Contract.ContractPrestige.Trivial), maxActive);
             int significantMax = Math.Min(ContractConfigurator.ContractLimit(Contract.ContractPrestige.Significant), maxActive);
             int exceptionalMax = Math.Min(ContractConfigurator.ContractLimit(Contract.ContractPrestige.Exceptional), maxActive);
@@ -1352,13 +1364,15 @@ namespace ContractConfigurator.Util
             groupContainer.Toggle();
 
             // Mark the contracts as unread without changing their display state
-            foreach (ContractContainer contractContainer in groupContainer.childContracts)
+            for (int i = groupContainer.childContracts.Count - 1; i >= 0; i--)
             {
+                ContractContainer contractContainer = groupContainer.childContracts[i];
                 if (contractContainer.contract != null && contractContainer.contract.ContractViewed == Contract.Viewed.Unseen)
                 {
                     contractContainer.contract.SetViewed(Contract.Viewed.Seen);
                 }
             }
+
             SetupGroupItem(groupContainer);
             SetupParentGroups(groupContainer);
         }
@@ -1540,8 +1554,9 @@ namespace ContractConfigurator.Util
             // Do check of required values
             List<string> titles = new List<string>();
             Dictionary<string, bool> titlesMet = new Dictionary<string, bool>();
-            foreach (KeyValuePair<string, ContractType.DataValueInfo> pair in contractType.dataValues)
+            for (int i = contractType.dataValues.Count - 1; i >= 0; i--)
             {
+                KeyValuePair<string, ContractType.DataValueInfo> pair = contractType.dataValues.ElementAt(i);
                 string name = pair.Key;
                 if (pair.Value.required && !contractType.dataNode.IsDeterministic(name) && !pair.Value.hidden && !pair.Value.IsIgnoredType())
                 {
@@ -1569,8 +1584,9 @@ namespace ContractConfigurator.Util
             }
 
             // Do the actual add
-            foreach (string title in titles)
+            for (int i = titles.Count - 1; i >= 0; i--)
             {
+                string title = titles[i];
                 text += RequirementLine(title, titlesMet[title]);
             }
 

@@ -38,10 +38,12 @@ namespace ContractConfigurator.Parameters
 
         protected override void OnParameterSave(ConfigNode node)
         {
-            foreach (string param in hiddenParameters)
+            for (int i = hiddenParameters.Count - 1; i >= 0; i--)
             {
+                string param = hiddenParameters[i];
                 node.AddValue("hiddenParameter", param);
             }
+
             node.AddValue("failWhenCompleteOutOfOrder", failWhenCompleteOutOfOrder);
         }
 

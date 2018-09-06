@@ -27,8 +27,9 @@ namespace ContractConfigurator
 
             void OnPreCull()
             {
-                foreach (VesselWaypoint vw in waypoints)
+                for (int i = waypoints.Count - 1; i >= 0; i--)
                 {
+                    VesselWaypoint vw = waypoints[i];
                     vw.UpdateWaypoint();
                 }
             }

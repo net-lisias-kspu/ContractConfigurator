@@ -60,17 +60,20 @@ namespace ContractConfigurator.Behaviour
         /// <param name="orig"></param>
         public SpawnKerbal(SpawnKerbal orig)
         {
-            foreach (KerbalData kerbal in orig.kerbals)
+            for (int i = orig.kerbals.Count - 1; i >= 0; i--)
             {
+                KerbalData kerbal = orig.kerbals[i];
                 kerbals.Add(new KerbalData(kerbal));
             }
 
             if (orig.initialized)
             {
-                foreach (KerbalData kd in orig.kerbals)
+                for (int i = orig.kerbals.Count - 1; i >= 0; i--)
                 {
+                    KerbalData kd = orig.kerbals[i];
                     kd.kerbal._pcm = null;
                 }
+
                 orig.initialized = false;
             }
             else
@@ -86,8 +89,9 @@ namespace ContractConfigurator.Behaviour
                 LoggingUtil.LogVerbose(this, "Initializing SpawnKerbal.");
 
                 // Update the position information
-                foreach (KerbalData kd in kerbals)
+                for (int ii = kerbals.Count - 1; ii >= 0; ii--)
                 {
+                    KerbalData kd = kerbals[ii];
                     LoggingUtil.LogVerbose(this, "Positioning kerbal " + kd.kerbal.name);
 
                     // Generate PQS city coordinates
@@ -132,8 +136,9 @@ namespace ContractConfigurator.Behaviour
 
             bool valid = true;
             int index = 0;
-            foreach (ConfigNode child in ConfigNodeUtil.GetChildNodes(configNode, "KERBAL"))
+            for (int i = ConfigNodeUtil.GetChildNodes(configNode, "KERBAL").Length - 1; i >= 0; i--)
             {
+                ConfigNode child = ConfigNodeUtil.GetChildNodes(configNode, "KERBAL")[i];
                 DataNode dataNode = new DataNode("KERBAL_" + index++, factory.dataNode, factory);
                 try
                 {
@@ -249,8 +254,9 @@ namespace ContractConfigurator.Behaviour
         protected override void OnAccepted()
         {
             // Actually spawn the kerbals in the game world!
-            foreach (KerbalData kd in kerbals)
+            for (int i = kerbals.Count - 1; i >= 0; i--)
             {
+                KerbalData kd = kerbals[i];
                 LoggingUtil.LogVerbose(this, "Spawning a Kerbal named " + kd.kerbal.name);
 
                 // Generate the ProtoCrewMember
@@ -321,7 +327,7 @@ namespace ContractConfigurator.Behaviour
                     protoVesselNode.SetValue("alt", kd.altitude.ToString());
                     protoVesselNode.SetValue("hgt", 0.276894391);
                     protoVesselNode.SetValue("rot", KSPUtil.WriteQuaternion(normal * rotation));
-                    
+
                     // Set the normal vector relative to the surface
                     Vector3 nrm = (rotation * Vector3.forward);
                     protoVesselNode.SetValue("nrm", nrm.x + "," + nrm.y + "," + nrm.z);
@@ -336,8 +342,9 @@ namespace ContractConfigurator.Behaviour
         {
             base.OnSave(configNode);
 
-            foreach (KerbalData kd in kerbals)
+            for (int i = kerbals.Count - 1; i >= 0; i--)
             {
+                KerbalData kd = kerbals[i];
                 ConfigNode child = new ConfigNode("KERBAL_DETAIL");
 
                 kd.kerbal.Save(child);
@@ -367,8 +374,9 @@ namespace ContractConfigurator.Behaviour
         {
             base.OnLoad(configNode);
 
-            foreach (ConfigNode child in configNode.GetNodes("KERBAL_DETAIL"))
+            for (int i = configNode.GetNodes("KERBAL_DETAIL").Length - 1; i >= 0; i--)
             {
+                ConfigNode child = configNode.GetNodes("KERBAL_DETAIL")[i];
                 // Read all the orbit data
                 KerbalData kd = new KerbalData
                 {
@@ -409,13 +417,16 @@ namespace ContractConfigurator.Behaviour
             // EVA vessel
             if (v.vesselType == VesselType.EVA)
             {
-                foreach (ProtoPartSnapshot p in v.protoPartSnapshots)
+                for (int i = v.protoPartSnapshots.Count - 1; i >= 0; i--)
                 {
-                    foreach (string name in p.protoCrewNames)
+                    ProtoPartSnapshot p = v.protoPartSnapshots[i];
+                    for (int j = p.protoCrewNames.Count - 1; j >= 0; j--)
                     {
+                        string name = p.protoCrewNames[j];
                         // Find this crew member in our data
-                        foreach (KerbalData kd in kerbals)
+                        for (int k = kerbals.Count - 1; k >= 0; k--)
                         {
+                            KerbalData kd = kerbals[k];
                             if (kd.kerbal.name == name && kd.addToRoster)
                             {
                                 // Add them to the roster
@@ -424,14 +435,15 @@ namespace ContractConfigurator.Behaviour
                         }
                     }
                 }
-
             }
 
             // Vessel with crew
-            foreach (ProtoCrewMember crewMember in v.GetVesselCrew())
+            for (int i = v.GetVesselCrew().Count - 1; i >= 0; i--)
             {
-                foreach (KerbalData kd in kerbals)
+                ProtoCrewMember crewMember = v.GetVesselCrew()[i];
+                for (int j = kerbals.Count - 1; j >= 0; j--)
                 {
+                    KerbalData kd = kerbals[j];
                     if (kd.kerbal.pcm == crewMember && kd.addToRoster)
                     {
                         // Add them to the roster
@@ -486,8 +498,9 @@ namespace ContractConfigurator.Behaviour
         private void RemoveKerbals(bool onlyUnowned = false)
         {
             LoggingUtil.LogVerbose(this, "Removing kerbals, onlyUnowned = " + onlyUnowned);
-            foreach (KerbalData kerbal in kerbals)
+            for (int i = kerbals.Count - 1; i >= 0; i--)
             {
+                KerbalData kerbal = kerbals[i];
                 if (!kerbal.addToRoster || !onlyUnowned)
                 {
                     LoggingUtil.LogVerbose(this, "    Removing " + kerbal.kerbal.name + "...");
@@ -504,8 +517,9 @@ namespace ContractConfigurator.Behaviour
                         {
                             if (vessel.loaded)
                             {
-                                foreach (Part p in vessel.parts)
+                                for (int j = vessel.parts.Count - 1; j >= 0; j--)
                                 {
+                                    Part p = vessel.parts[j];
                                     if (p.protoModuleCrew.Contains(kerbal.kerbal.pcm))
                                     {
                                         // Command seats
@@ -525,8 +539,9 @@ namespace ContractConfigurator.Behaviour
                             }
                             else
                             {
-                                foreach (ProtoPartSnapshot pps in vessel.protoVessel.protoPartSnapshots)
+                                for (int j = vessel.protoVessel.protoPartSnapshots.Count - 1; j >= 0; j--)
                                 {
+                                    ProtoPartSnapshot pps = vessel.protoVessel.protoPartSnapshots[j];
                                     if (pps.HasCrew(kerbal.kerbal.pcm.name))
                                     {
                                         LoggingUtil.LogVerbose(this, "    Removing " + kerbal.kerbal.name + " from part " + pps.partName + " on vessel " + vessel.vesselName);
@@ -553,6 +568,7 @@ namespace ContractConfigurator.Behaviour
                     }
                 }
             }
+
             kerbals.Clear();
         }
 
@@ -569,8 +585,9 @@ namespace ContractConfigurator.Behaviour
 
         public IEnumerable<Kerbal> Kerbals()
         {
-            foreach (KerbalData kd in kerbals)
+            for (int i = kerbals.Count - 1; i >= 0; i--)
             {
+                KerbalData kd = kerbals[i];
                 yield return kd.kerbal;
             }
         }

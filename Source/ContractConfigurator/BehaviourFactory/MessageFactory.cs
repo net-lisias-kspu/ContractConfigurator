@@ -26,8 +26,9 @@ namespace ContractConfigurator.Behaviour
             valid &= ConfigNodeUtil.ParseValue<string>(configNode, "message", x => message = x, this);
 
             int index = 0;
-            foreach (ConfigNode child in ConfigNodeUtil.GetChildNodes(configNode, "CONDITION"))
+            for (int i = ConfigNodeUtil.GetChildNodes(configNode, "CONDITION").Length - 1; i >= 0; i--)
             {
+                ConfigNode child = ConfigNodeUtil.GetChildNodes(configNode, "CONDITION")[i];
                 DataNode childDataNode = new DataNode("CONDITION_" + index++, dataNode, this);
                 try
                 {
@@ -42,6 +43,7 @@ namespace ContractConfigurator.Behaviour
                     ConfigNodeUtil.SetCurrentDataNode(dataNode);
                 }
             }
+
             valid &= ConfigNodeUtil.ValidateMandatoryChild(configNode, "CONDITION", this);
 
             return valid;

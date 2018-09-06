@@ -83,8 +83,9 @@ namespace KerKonConConExt
 
         protected override void OnLoad(ConfigNode configNode)
         {
-            foreach (ConfigNode child in configNode.GetNodes("CONDITION"))
+            for (int i = configNode.GetNodes("CONDITION").Length - 1; i >= 0; i--)
             {
+                ConfigNode child = configNode.GetNodes("CONDITION")[i];
                 ConditionDetail cd = new ConditionDetail
                 {
                     condition = ConfigNodeUtil.ParseValue<ConditionDetail.Condition>(child, "condition"),
@@ -93,13 +94,15 @@ namespace KerKonConConExt
                 };
                 conditions.Add(cd);
             }
+
             basename = ConfigNodeUtil.ParseValue<string>(configNode, "basename");
         }
 
         protected override void OnSave(ConfigNode configNode)
         {
-            foreach (ConditionDetail cd in conditions)
+            for (int i = conditions.Count - 1; i >= 0; i--)
             {
+                ConditionDetail cd = conditions[i];
                 ConfigNode child = new ConfigNode("CONDITION");
                 configNode.AddNode(child);
 
@@ -110,6 +113,7 @@ namespace KerKonConConExt
                 }
                 child.AddValue("disabled", cd.disabled);
             }
+
             configNode.AddValue("basename", basename);
         }
 

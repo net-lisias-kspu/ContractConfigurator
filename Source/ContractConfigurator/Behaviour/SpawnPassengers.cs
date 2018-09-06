@@ -173,8 +173,9 @@ namespace ContractConfigurator.Behaviour
 
                 int count = 0;
                 selectedPassengers = 0;
-                foreach (PassengerDetail pd in passengerDetails)
+                for (int i = passengerDetails.Count - 1; i >= 0; i--)
                 {
+                    PassengerDetail pd = passengerDetails[i];
                     pd.selected = GUILayout.Toggle(pd.selected, pd.passengerCount + " passenger" + (pd.passengerCount > 1 ? "s: " : ": ") + pd.contractTitle);
                     if (pd.selected)
                     {
@@ -187,16 +188,19 @@ namespace ContractConfigurator.Behaviour
 
                 if (GUILayout.Button("Load passengers", (count > emptySeats ? disabledButton : GUI.skin.button)) && count <= emptySeats)
                 {
-                    foreach (PassengerDetail pd in passengerDetails)
+                    for (int i = passengerDetails.Count - 1; i >= 0; i--)
                     {
+                        PassengerDetail pd = passengerDetails[i];
                         if (pd.selected)
                         {
-                            foreach (SpawnPassengers sp in pd.behaviourList)
+                            for (int j = pd.behaviourList.Count - 1; j >= 0; j--)
                             {
+                                SpawnPassengers sp = pd.behaviourList[j];
                                 sp.AddPassengersToActiveVessel();
                             }
                         }
                     }
+
                     visible = false;
                     Destroy(this);
                 }
@@ -269,10 +273,12 @@ namespace ContractConfigurator.Behaviour
             // EVA vessel
             if (v.vesselType == VesselType.EVA)
             {
-                foreach (ProtoPartSnapshot p in v.protoPartSnapshots)
+                for (int i = v.protoPartSnapshots.Count - 1; i >= 0; i--)
                 {
-                    foreach (string name in p.protoCrewNames)
+                    ProtoPartSnapshot p = v.protoPartSnapshots[i];
+                    for (int j = p.protoCrewNames.Count - 1; j >= 0; j--)
                     {
+                        string name = p.protoCrewNames[j];
                         // Find this crew member in our data and remove them
                         ProtoCrewMember passenger = passengers.Keys.FirstOrDefault(pcm => pcm.name == name);
                         if (passenger != null)
@@ -281,7 +287,6 @@ namespace ContractConfigurator.Behaviour
                         }
                     }
                 }
-
             }
 
             // Vessel with crew
@@ -307,8 +312,10 @@ namespace ContractConfigurator.Behaviour
                 return;
             }
 
-            foreach (ProtoCrewMember crewMember in passengers.Keys.Where(pcm => pcm.rosterStatus == ProtoCrewMember.RosterStatus.Available).ToList())
+            List<ProtoCrewMember> crewMembers = passengers.Keys.Where(pcm => pcm.rosterStatus == ProtoCrewMember.RosterStatus.Available).ToList();
+            for (int i = crewMembers.Count - 1; i >= 0; i--)
             {
+                ProtoCrewMember crewMember = crewMembers[i];
                 // Find a seat for the crew
                 Part part = v.parts.Find(p => p.protoModuleCrew.Count < p.CrewCapacity);
 
@@ -384,15 +391,17 @@ namespace ContractConfigurator.Behaviour
                 node.AddValue("removePassengers", false);
             }
 
-            foreach (Kerbal kerbal in kerbals)
+            for (int i = kerbals.Count - 1; i >= 0; i--)
             {
+                Kerbal kerbal = kerbals[i];
                 ConfigNode kerbalNode = new ConfigNode("KERBAL");
                 node.AddNode(kerbalNode);
 
                 kerbal.Save(kerbalNode);
             }
-            foreach (KeyValuePair<ProtoCrewMember, bool> pair in passengers)
+            for (int i = passengers.Count - 1; i >= 0; i--)
             {
+                KeyValuePair<ProtoCrewMember, bool> pair = passengers.ElementAt(i);
                 ConfigNode child = new ConfigNode("PASSENGER_DATA");
                 node.AddNode(child);
 
@@ -407,13 +416,15 @@ namespace ContractConfigurator.Behaviour
             count = Convert.ToInt32(node.GetValue("count"));
             removePassengers = ConfigNodeUtil.ParseValue<bool?>(node, "removePassengers", null) ?? true;
 
-            foreach (ConfigNode kerbalNode in node.GetNodes("KERBAL"))
+            for (int i = node.GetNodes("KERBAL").Length - 1; i >= 0; i--)
             {
+                ConfigNode kerbalNode = node.GetNodes("KERBAL")[i];
                 kerbals.Add(Kerbal.Load(kerbalNode));
             }
 
-            foreach (ConfigNode child in node.GetNodes("PASSENGER_DATA"))
+            for (int i = node.GetNodes("PASSENGER_DATA").Length - 1; i >= 0; i--)
             {
+                ConfigNode child = node.GetNodes("PASSENGER_DATA")[i];
                 ProtoCrewMember crew = ConfigNodeUtil.ParseValue<ProtoCrewMember>(child, "passenger");
                 bool loaded = ConfigNodeUtil.ParseValue<bool>(child, "loaded");
 

@@ -143,8 +143,9 @@ namespace ContractConfigurator.ExpressionParser
             {
                 for (int i = 0; i < PRECENDENCE_CONSTS.Length; i++)
                 {
-                    foreach (string token in PRECENDENCE_CONSTS[i])
+                    for (int j = PRECENDENCE_CONSTS[i].Length - 1; j >= 0; j--)
                     {
+                        string token = PRECENDENCE_CONSTS[i][j];
                         precedence[token] = i;
                     }
                 }
@@ -282,10 +283,12 @@ namespace ContractConfigurator.ExpressionParser
             log += "-> " + GetType().Name + (GetType().IsGenericType ? "[" + GetType().GetGenericArguments()[0].Name + "]" : "");
             log += "." + function + "<" + typeof(TResult).Name + ">(";
             List<string> stringArg = new List<string>();
-            foreach (object arg in args)
+            for (int i = args.Length - 1; i >= 0; i--)
             {
+                object arg = args[i];
                 stringArg.Add(arg != null ? arg.ToString() : "null");
             }
+
             log += string.Join(", ", stringArg.ToArray());
             log += "), expression = " + expression;
             LoggingUtil.LogVerbose(typeof(BaseParser), log);

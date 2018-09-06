@@ -132,8 +132,9 @@ namespace ContractConfigurator.Behaviour
 
         protected void UnlockParts()
         {
-            foreach (AvailablePart part in parts)
+            for (int i = parts.Count - 1; i >= 0; i--)
             {
+                AvailablePart part = parts[i];
                 ProtoTechNode techNode = ResearchAndDevelopment.Instance.GetTechState(part.TechRequired);
                 if (techNode == null || techNode.state != RDTech.State.Available)
                 {
@@ -144,18 +145,21 @@ namespace ContractConfigurator.Behaviour
 
         protected void LockParts()
         {
-            foreach (AvailablePart part in parts)
+            for (int i = parts.Count - 1; i >= 0; i--)
             {
+                AvailablePart part = parts[i];
                 ResearchAndDevelopment.RemoveExperimentalPart(part);
             }
         }
 
         protected override void OnSave(ConfigNode configNode)
         {
-            foreach (AvailablePart part in parts)
+            for (int i = parts.Count - 1; i >= 0; i--)
             {
+                AvailablePart part = parts[i];
                 configNode.AddValue("part", part.name);
             }
+
             configNode.AddValue("unlockCriteria", unlockCriteria);
             if (!string.IsNullOrEmpty(unlockParameter))
             {

@@ -366,8 +366,9 @@ namespace ContractConfigurator
             LoggingUtil.LogDebug(this, "Loading CONTRACT_GROUP nodes.");
             ConfigNode[] contractGroups = GameDatabase.Instance.GetConfigNodes("CONTRACT_GROUP");
 
-            foreach (ConfigNode groupConfig in contractGroups)
+            for (int i = contractGroups.Length - 1; i >= 0; i--)
             {
+                ConfigNode groupConfig = contractGroups[i];
                 // Create the group
                 string name = groupConfig.GetValue("name");
                 LoggingUtil.LogInfo(this, "Loading CONTRACT_GROUP: '" + name + "'");
@@ -446,8 +447,9 @@ namespace ContractConfigurator
             totalContracts = contractConfigs.Count();
 
             // First pass - create all the ContractType objects
-            foreach (ConfigNode contractConfig in contractConfigs)
+            for (int i = contractConfigs.Length - 1; i >= 0; i--)
             {
+                ConfigNode contractConfig = contractConfigs[i];
                 // Create the initial contract type
                 LoggingUtil.LogVerbose(this, "Pre-load for node: '" + contractConfig.GetValue("name") + "'");
                 try
@@ -461,8 +463,9 @@ namespace ContractConfigurator
             }
 
             // Second pass - do the actual loading of details
-            foreach (ConfigNode contractConfig in contractConfigs)
+            for (int i = contractConfigs.Length - 1; i >= 0; i--)
             {
+                ConfigNode contractConfig = contractConfigs[i];
                 attemptedContracts++;
                 if (reloading)
                 {
@@ -512,8 +515,9 @@ namespace ContractConfigurator
         {
             // Get everything that extends the given type
             List<Type> allTypes = new List<Type>();
-            foreach (Assembly assembly in AppDomain.CurrentDomain.GetAssemblies())
+            for (int i = AppDomain.CurrentDomain.GetAssemblies().Length - 1; i >= 0; i--)
             {
+                Assembly assembly = AppDomain.CurrentDomain.GetAssemblies()[i];
                 IEnumerable<Type> types = null;
                 try
                 {
@@ -549,8 +553,9 @@ namespace ContractConfigurator
         {
             if (hta.target == RDTech.OperationResult.Successful)
             {
-                foreach (AvailablePart p in hta.host.partsAssigned)
+                for (int i = hta.host.partsAssigned.Count - 1; i >= 0; i--)
                 {
+                    AvailablePart p = hta.host.partsAssigned[i];
                     ResearchAndDevelopment.RemoveExperimentalPart(p);
                 }
             }

@@ -92,8 +92,9 @@ namespace ContractConfigurator.RemoteTech
 
             private IEnumerable<NetworkLink<ISatellite>> FindNeighbors()
             {
-                foreach (ISatellite sat in RTCore.Instance.Satellites)
+                for (int i = RTCore.Instance.Satellites.Count - 1; i >= 0; i--)
                 {
+                    ISatellite sat = RTCore.Instance.Satellites.ElementAt(i);
                     NetworkLink<ISatellite> link = NetworkManager.GetLink(this, sat);
                     if (link != null)
                     {
@@ -164,8 +165,9 @@ namespace ContractConfigurator.RemoteTech
             if (!initialized)
             {
                 // Add celestial bodies to listing
-                foreach (CelestialBody cb in FlightGlobals.Bodies)
+                for (int i = FlightGlobals.Bodies.Count - 1; i >= 0; i--)
                 {
+                    CelestialBody cb = FlightGlobals.Bodies[i];
                     if (!celestialBodies.ContainsKey(cb))
                     {
                         CelestialBodyInfo cbi = new CelestialBodyInfo
@@ -178,7 +180,7 @@ namespace ContractConfigurator.RemoteTech
 
                     celestialBodies[cb].sat = RTCore.Instance.Satellites[cb.Guid()];
                 }
-                
+
                 initialized = true;
             }
         }
@@ -282,8 +284,9 @@ namespace ContractConfigurator.RemoteTech
             {
                 base.OnLoad(node);
                 nextCheck = ConfigNodeUtil.ParseValue<int>(node, "nextCheck", 0);
-                foreach (ConfigNode child in node.GetNodes("CelestialBodyInfo"))
+                for (int i = node.GetNodes("CelestialBodyInfo").Length - 1; i >= 0; i--)
                 {
+                    ConfigNode child = node.GetNodes("CelestialBodyInfo")[i];
                     CelestialBodyInfo cbi = new CelestialBodyInfo();
                     try
                     {

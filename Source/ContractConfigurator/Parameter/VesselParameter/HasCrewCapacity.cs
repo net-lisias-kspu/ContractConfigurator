@@ -100,10 +100,12 @@ namespace ContractConfigurator.Parameters
         {
             LoggingUtil.LogVerbose(this, "Checking VesselMeetsCondition: " + vessel.id);
             int capacity = 0;
-            foreach (Part part in vessel.Parts)
+            for (int i = vessel.Parts.Count - 1; i >= 0; i--)
             {
+                Part part = vessel.Parts[i];
                 capacity += part.CrewCapacity;
             }
+
             return capacity >= minCapacity && capacity <= maxCapacity;
         }
     }

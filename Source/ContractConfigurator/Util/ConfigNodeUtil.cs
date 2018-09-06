@@ -419,8 +419,9 @@ namespace ContractConfigurator
                         currentDataNode = new DataNode(key, oldNode, oldNode.Factory);
                     }
 
-                    foreach (string orbitKey in new string[] { "SMA", "ECC", "INC", "LPE", "LAN", "MNA", "EPH", "REF" })
+                    for (int i = new string[] { "SMA", "ECC", "INC", "LPE", "LAN", "MNA", "EPH", "REF" }.Length - 1; i >= 0; i--)
                     {
+                        string orbitKey = new string[] { "SMA", "ECC", "INC", "LPE", "LAN", "MNA", "EPH", "REF" }[i];
                         object orbitVal;
                         if (orbitKey == "REF")
                         {
@@ -687,10 +688,12 @@ namespace ContractConfigurator
         public static ConfigNode[] GetChildNodes(ConfigNode configNode)
         {
             ConfigNode[] nodes = configNode.GetNodes();
-            foreach (ConfigNode child in nodes)
+            for (int i = nodes.Length - 1; i >= 0; i--)
             {
+                ConfigNode child = nodes[i];
                 AddFoundKey(configNode, child.name);
             }
+
             return nodes;
         }
 
@@ -722,8 +725,9 @@ namespace ContractConfigurator
         public static bool AtLeastOne(ConfigNode configNode, string[] values, IContractConfiguratorFactory obj)
         {
             string output = "";
-            foreach (string value in values)
+            for (int i = values.Length - 1; i >= 0; i--)
             {
+                string value = values[i];
                 if (configNode.HasValue(value))
                 {
                     return true;
@@ -764,8 +768,9 @@ namespace ContractConfigurator
             string group2String = "";
             bool group1Value = false;
             bool group2Value = false;
-            foreach (string value in group1)
+            for (int i = group1.Length - 1; i >= 0; i--)
             {
+                string value = group1[i];
                 group1Value |= configNode.HasValue(value);
 
                 if (value == group1.First())
@@ -777,8 +782,10 @@ namespace ContractConfigurator
                     group1String += ", " + value;
                 }
             }
-            foreach (string value in group2)
+
+            for (int i = group2.Length - 1; i >= 0; i--)
             {
+                string value = group2[i];
                 group2Value |= configNode.HasValue(value);
 
                 if (value == group2.First())
@@ -1024,8 +1031,9 @@ namespace ContractConfigurator
 
                 // Rebuild the dependency tree
                 dependencies.Clear();
-                foreach (KeyValuePair<string, DeferredLoadBase> pair in deferredLoads)
+                for (int i = deferredLoads.Count - 1; i >= 0; i--)
                 {
+                    KeyValuePair<string, DeferredLoadBase> pair = deferredLoads.ElementAt(i);
                     MethodInfo method = methodGetDependencies.MakeGenericMethod(pair.Value.GetType().GetGenericArguments());
                     IEnumerable<string> localDependencies = (IEnumerable<string>)method.Invoke(null, new object[] { pair.Value });
                     dependencies[pair.Key] = new List<string>();
@@ -1052,11 +1060,13 @@ namespace ContractConfigurator
                 if (loadObj == null)
                 {
                     valid = false;
-                    foreach (KeyValuePair<string, DeferredLoadBase> pair in deferredLoads)
+                    for (int i = deferredLoads.Count - 1; i >= 0; i--)
                     {
+                        KeyValuePair<string, DeferredLoadBase> pair = deferredLoads.ElementAt(i);
                         MethodInfo method = methodLogCircularDependencyError.MakeGenericMethod(pair.Value.GetType().GetGenericArguments());
                         method.Invoke(null, new object[] { pair.Value });
                     }
+
                     deferredLoads.Clear();
                 }
                 // Found something we can execute
@@ -1097,8 +1107,9 @@ namespace ContractConfigurator
             }
 
             Dictionary<string, int> found = keysFound[configNode];
-            foreach (ConfigNode.Value pair in configNode.values)
+            for (int i = configNode.values.Count - 1; i >= 0; i--)
             {
+                ConfigNode.Value pair = configNode.values[i];
                 if (!found.ContainsKey(pair.name))
                 {
                     obj.hasWarnings = true;
@@ -1107,8 +1118,9 @@ namespace ContractConfigurator
                 }
             }
 
-            foreach (ConfigNode child in configNode.nodes)
+            for (int i = configNode.nodes.Count - 1; i >= 0; i--)
             {
+                ConfigNode child = configNode.nodes[i];
                 // Exceptions
                 if (child.name == "PARAMETER" && (obj is ContractType || obj is ParameterFactory) ||
                     child.name == "REQUIREMENT" && (obj is ContractType || obj is ParameterFactory || obj is ContractRequirement) ||
@@ -1125,7 +1137,6 @@ namespace ContractConfigurator
                         ": unexpected child node '" + child.name + "' found, ignored.");
                 }
             }
-
 
             return valid;
         }

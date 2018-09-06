@@ -82,8 +82,9 @@ namespace ContractConfigurator
         /// <return>Whether generation was successful or not</return>
         public static bool GenerateBehaviours(ConfiguredContract contract, List<BehaviourFactory> behaviourNodes)
         {
-            foreach (BehaviourFactory behaviourFactory in behaviourNodes)
+            for (int i = behaviourNodes.Count - 1; i >= 0; i--)
             {
+                BehaviourFactory behaviourFactory = behaviourNodes[i];
                 if (behaviourFactory.enabled)
                 {
                     ContractBehaviour behaviour = behaviourFactory.Generate(contract);

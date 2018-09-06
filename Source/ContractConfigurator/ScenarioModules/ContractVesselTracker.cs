@@ -67,8 +67,9 @@ namespace ContractConfigurator
             {
                 base.OnLoad(node);
 
-                foreach (ConfigNode child in node.GetNodes("VESSEL"))
+                for (int i = node.GetNodes("VESSEL").Length - 1; i >= 0; i--)
                 {
+                    ConfigNode child = node.GetNodes("VESSEL")[i];
                     string key = child.GetValue("key");
                     Guid id = new Guid(child.GetValue("id"));
                     uint hash = ConfigNodeUtil.ParseValue<uint>(child, "hash", 0);
@@ -117,8 +118,9 @@ namespace ContractConfigurator
             {
                 base.OnSave(node);
 
-                foreach (KeyValuePair<string, VesselInfo> p in vessels)
+                for (int i = vessels.Count - 1; i >= 0; i--)
                 {
+                    KeyValuePair<string, VesselInfo> p = vessels.ElementAt(i);
                     VesselInfo vi = p.Value;
 
                     // First find the vessel by id
@@ -206,8 +208,9 @@ namespace ContractConfigurator
             List<string> otherVesselKeys = GetAssociatedKeys(lastBreak).ToList();
 
             // Check the lists and see if we need to do a switch
-            foreach (string key in vesselKeys)
+            for (int i = vesselKeys.Count - 1; i >= 0; i--)
             {
+                string key = vesselKeys[i];
                 // Check if we need to switch over to the newly created vessel
                 VesselInfo vi = vessels[key];
                 if (otherVesselHashes.Contains(vi.hash))
@@ -217,8 +220,10 @@ namespace ContractConfigurator
                     OnVesselAssociation.Fire(new GameEvents.HostTargetAction<Vessel, string>(lastBreak, key));
                 }
             }
-            foreach (string key in otherVesselKeys)
+
+            for (int i = otherVesselKeys.Count - 1; i >= 0; i--)
             {
+                string key = otherVesselKeys[i];
                 // Check if we need to switch over to the newly created vessel
                 VesselInfo vi = vessels[key];
                 if (vesselHashes.Contains(vi.hash))
@@ -243,13 +248,15 @@ namespace ContractConfigurator
             }
 
             // Try to change any associations over if this is due to a docking event
-                foreach (string key in GetAssociatedKeys(vessel).ToList())
+            for (int i = GetAssociatedKeys(vessel).ToList().Count - 1; i >= 0; i--)
             {
+                string key = GetAssociatedKeys(vessel).ToList()[i];
                 LoggingUtil.LogVerbose(this, "    checking key " + key);
 
                 // Check if we need to switch over to the newly created vessel
                 VesselInfo vi = vessels[key];
-                Vessel newVessel = FlightGlobals.Vessels.Find(v => {
+                Vessel newVessel = FlightGlobals.Vessels.Find(v =>
+                {
                     if (v != null && v != vessel)
                     {
                         LoggingUtil.LogVerbose(this, "    loading protovessel for " + v.vesselName);

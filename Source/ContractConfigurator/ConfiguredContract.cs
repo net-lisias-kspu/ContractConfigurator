@@ -66,8 +66,9 @@ namespace ContractConfigurator
                         ReachState reachState = param as ReachState;
                         if (reachState != null && reachState.targetBodies != null)
                         {
-                            foreach (CelestialBody body in reachState.targetBodies)
+                            for (int i = reachState.targetBodies.Count - 1; i >= 0; i--)
                             {
+                                CelestialBody body = reachState.targetBodies[i];
                                 if (body != null)
                                 {
                                     contractBodies.Add(body);
@@ -402,8 +403,9 @@ namespace ContractConfigurator
                 if (dataNode != null)
                 {
                     // Handle individual values
-                    foreach (ConfigNode.Value pair in dataNode.values)
+                    for (int i = dataNode.values.Count - 1; i >= 0; i--)
                     {
+                        ConfigNode.Value pair = dataNode.values[i];
                         string typeName = pair.value.Remove(pair.value.IndexOf(":"));
                         string value = pair.value.Substring(typeName.Length + 1);
                         Type type = ConfigNodeUtil.ParseTypeValue(typeName);
@@ -430,14 +432,16 @@ namespace ContractConfigurator
                     }
                 }
 
-                foreach (ConfigNode child in node.GetNodes("BEHAVIOUR"))
+                for (int i = node.GetNodes("BEHAVIOUR").Length - 1; i >= 0; i--)
                 {
+                    ConfigNode child = node.GetNodes("BEHAVIOUR")[i];
                     ContractBehaviour behaviour = ContractBehaviour.LoadBehaviour(child, this);
                     behaviours.Add(behaviour);
                 }
 
-                foreach (ConfigNode child in node.GetNodes("REQUIREMENT"))
+                for (int i = node.GetNodes("REQUIREMENT").Length - 1; i >= 0; i--)
                 {
+                    ConfigNode child = node.GetNodes("REQUIREMENT")[i];
                     ContractRequirement requirement = ContractRequirement.LoadRequirement(child);
                     requirements.Add(requirement);
                 }
@@ -519,8 +523,9 @@ namespace ContractConfigurator
                     }
                 }
 
-                foreach (ContractBehaviour behaviour in behaviours)
+                for (int i = behaviours.Count - 1; i >= 0; i--)
                 {
+                    ContractBehaviour behaviour = behaviours[i];
                     ConfigNode child = new ConfigNode("BEHAVIOUR");
                     behaviour.Save(child);
                     node.AddNode(child);
@@ -604,8 +609,9 @@ namespace ContractConfigurator
         protected override void OnAccepted()
         {
             base.OnAccepted();
-            foreach (ContractBehaviour behaviour in behaviours)
+            for (int i = behaviours.Count - 1; i >= 0; i--)
             {
+                ContractBehaviour behaviour = behaviours[i];
                 behaviour.Accept();
             }
         }
@@ -613,8 +619,9 @@ namespace ContractConfigurator
         protected override void OnCancelled()
         {
             base.OnCancelled();
-            foreach (ContractBehaviour behaviour in behaviours)
+            for (int i = behaviours.Count - 1; i >= 0; i--)
             {
+                ContractBehaviour behaviour = behaviours[i];
                 behaviour.Cancel();
             }
         }
@@ -627,8 +634,9 @@ namespace ContractConfigurator
             // TODO - check post-0.25 to see if this is still necessary as a workaround
             dateFinished = Planetarium.GetUniversalTime();
 
-            foreach (ContractBehaviour behaviour in behaviours)
+            for (int i = behaviours.Count - 1; i >= 0; i--)
             {
+                ContractBehaviour behaviour = behaviours[i];
                 behaviour.Complete();
             }
         }
@@ -636,8 +644,9 @@ namespace ContractConfigurator
         protected override void OnDeadlineExpired()
         {
             base.OnDeadlineExpired();
-            foreach (ContractBehaviour behaviour in behaviours)
+            for (int i = behaviours.Count - 1; i >= 0; i--)
             {
+                ContractBehaviour behaviour = behaviours[i];
                 behaviour.ExpireDeadline();
             }
         }
@@ -645,8 +654,9 @@ namespace ContractConfigurator
         protected override void OnDeclined()
         {
             base.OnDeclined();
-            foreach (ContractBehaviour behaviour in behaviours)
+            for (int i = behaviours.Count - 1; i >= 0; i--)
             {
+                ContractBehaviour behaviour = behaviours[i];
                 behaviour.Decline();
             }
         }
@@ -654,8 +664,9 @@ namespace ContractConfigurator
         protected override void OnFailed()
         {
             base.OnFailed();
-            foreach (ContractBehaviour behaviour in behaviours)
+            for (int i = behaviours.Count - 1; i >= 0; i--)
             {
+                ContractBehaviour behaviour = behaviours[i];
                 behaviour.Fail();
             }
         }
@@ -663,8 +674,9 @@ namespace ContractConfigurator
         protected override void OnFinished()
         {
             base.OnFinished();
-            foreach (ContractBehaviour behaviour in behaviours)
+            for (int i = behaviours.Count - 1; i >= 0; i--)
             {
+                ContractBehaviour behaviour = behaviours[i];
                 behaviour.Finish();
             }
         }
@@ -672,8 +684,9 @@ namespace ContractConfigurator
         protected override void OnGenerateFailed()
         {
             base.OnGenerateFailed();
-            foreach (ContractBehaviour behaviour in behaviours)
+            for (int i = behaviours.Count - 1; i >= 0; i--)
             {
+                ContractBehaviour behaviour = behaviours[i];
                 behaviour.FailGeneration();
             }
         }
@@ -681,8 +694,9 @@ namespace ContractConfigurator
         protected override void OnOffered()
         {
             base.OnOffered();
-            foreach (ContractBehaviour behaviour in behaviours)
+            for (int i = behaviours.Count - 1; i >= 0; i--)
             {
+                ContractBehaviour behaviour = behaviours[i];
                 behaviour.Offer();
             }
         }
@@ -690,8 +704,9 @@ namespace ContractConfigurator
         protected override void OnOfferExpired()
         {
             base.OnOfferExpired();
-            foreach (ContractBehaviour behaviour in behaviours)
+            for (int i = behaviours.Count - 1; i >= 0; i--)
             {
+                ContractBehaviour behaviour = behaviours[i];
                 behaviour.ExpireOffer();
             }
         }
@@ -729,8 +744,9 @@ namespace ContractConfigurator
         {
             base.OnRegister();
             ContractConfigurator.OnParameterChange.Add(new EventData<Contract, ContractParameter>.OnEvent(OnParameterStateChange));
-            foreach (ContractBehaviour behaviour in behaviours)
+            for (int i = behaviours.Count - 1; i >= 0; i--)
             {
+                ContractBehaviour behaviour = behaviours[i];
                 behaviour.Register();
             }
 
@@ -742,8 +758,9 @@ namespace ContractConfigurator
         {
             base.OnUnregister();
             ContractConfigurator.OnParameterChange.Remove(new EventData<Contract, ContractParameter>.OnEvent(OnParameterStateChange));
-            foreach (ContractBehaviour behaviour in behaviours)
+            for (int i = behaviours.Count - 1; i >= 0; i--)
             {
+                ContractBehaviour behaviour = behaviours[i];
                 behaviour.Unregister();
             }
 

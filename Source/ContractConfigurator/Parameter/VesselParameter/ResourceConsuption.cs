@@ -46,8 +46,9 @@ namespace ContractConfigurator.Parameters
             {
                 int localCount = 0;
                 double quantity = 0.0;
-                foreach (Part part in FlightGlobals.ActiveVessel.Parts)
+                for (int i = FlightGlobals.ActiveVessel.Parts.Count - 1; i >= 0; i--)
                 {
+                    Part part = FlightGlobals.ActiveVessel.Parts[i];
                     localCount++;
                     PartResource pr = part.Resources[resource.name];
                     if (pr != null)

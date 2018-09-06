@@ -32,8 +32,9 @@ namespace ContractConfigurator
                 List<AvailablePart> parts = new List<AvailablePart>();
                 valid &= ConfigNodeUtil.ParseValue<List<AvailablePart>>(configNode, "part", x => parts = x, this);
 
-                foreach (AvailablePart part in parts)
+                for (int i = parts.Count - 1; i >= 0; i--)
                 {
+                    AvailablePart part = parts[i];
                     techs.AddUnique(part.TechRequired);
                 }
             }
@@ -45,8 +46,9 @@ namespace ContractConfigurator
 
         public override void OnSave(ConfigNode configNode)
         {
-            foreach (string tech in techs)
+            for (int i = techs.Count - 1; i >= 0; i--)
             {
+                string tech = techs[i];
                 configNode.AddValue("tech", tech);
             }
         }
@@ -74,8 +76,9 @@ namespace ContractConfigurator
                 }
             }
 
-            foreach (string tech in techs)
+            for (int i = techs.Count - 1; i >= 0; i--)
             {
+                string tech = techs[i];
                 ConfigNode techNode = techTree.GetNodes("RDNode").FirstOrDefault(n => n.GetValue("id") == tech);
 
                 if (techNode == null)

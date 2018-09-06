@@ -30,8 +30,9 @@ namespace ContractConfigurator
 
         public override void OnSave(ConfigNode configNode)
         {
-            foreach (string pm in partModules)
+            for (int i = partModules.Count - 1; i >= 0; i--)
             {
+                string pm = partModules[i];
                 configNode.AddValue("partModule", pm);
             }
         }
@@ -43,17 +44,20 @@ namespace ContractConfigurator
 
         public override bool RequirementMet(ConfiguredContract contract)
         {
-            foreach (string partModule in partModules)
+            for (int i = partModules.Count - 1; i >= 0; i--)
             {
+                string partModule = partModules[i];
 
                 // Search for a part that has our module
                 bool found = false;
-                foreach (AvailablePart p in PartLoader.Instance.loadedParts)
+                for (int j = PartLoader.Instance.loadedParts.Count - 1; j >= 0; j--)
                 {
+                    AvailablePart p = PartLoader.Instance.loadedParts[j];
                     if (p != null && p.partPrefab != null && p.partPrefab.Modules != null)
                     {
-                        foreach (PartModule pm in p.partPrefab.Modules)
+                        for (int k = p.partPrefab.Modules.Count - 1; k >= 0; k--)
                         {
+                            PartModule pm = p.partPrefab.Modules[k];
                             if (pm != null && pm.moduleName != null && pm.moduleName == partModule)
                             {
                                 found = true;
@@ -75,6 +79,7 @@ namespace ContractConfigurator
                     return false;
                 }
             }
+
             return true;
         }
 

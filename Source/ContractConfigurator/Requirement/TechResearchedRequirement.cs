@@ -32,8 +32,9 @@ namespace ContractConfigurator
                 List<AvailablePart> parts = new List<AvailablePart>();
                 valid &= ConfigNodeUtil.ParseValue<List<AvailablePart>>(configNode, "part", x => parts = x, this);
 
-                foreach (AvailablePart part in parts)
+                for (int i = parts.Count - 1; i >= 0; i--)
                 {
+                    AvailablePart part = parts[i];
                     techs.AddUnique(part.TechRequired);
                 }
             }
@@ -48,18 +49,21 @@ namespace ContractConfigurator
 
         public override void OnSave(ConfigNode configNode)
         {
-            foreach (string tech in techs)
+            for (int i = techs.Count - 1; i >= 0; i--)
             {
+                string tech = techs[i];
                 configNode.AddValue("tech", tech);
             }
 
-            foreach (string partModule in partModules)
+            for (int i = partModules.Count - 1; i >= 0; i--)
             {
+                string partModule = partModules[i];
                 configNode.AddValue("partModule", partModule);
             }
 
-            foreach (string partModuleType in partModuleTypes)
+            for (int i = partModuleTypes.Count - 1; i >= 0; i--)
             {
+                string partModuleType = partModuleTypes[i];
                 configNode.AddValue("partModuleType", partModuleType);
             }
         }
@@ -73,8 +77,9 @@ namespace ContractConfigurator
 
         public override bool RequirementMet(ConfiguredContract contract)
         {
-            foreach (string tech in techs)
+            for (int i = techs.Count - 1; i >= 0; i--)
             {
+                string tech = techs[i];
                 ProtoTechNode techNode = ResearchAndDevelopment.Instance.GetTechState(tech);
                 if (techNode == null || techNode.state != RDTech.State.Available)
                 {
@@ -82,11 +87,13 @@ namespace ContractConfigurator
                 }
             }
 
-            foreach (string partModule in partModules)
+            for (int i = partModules.Count - 1; i >= 0; i--)
             {
+                string partModule = partModules[i];
                 bool hasModule = false;
-                foreach (AvailablePart part in PartLoader.LoadedPartsList)
+                for (int j = PartLoader.LoadedPartsList.Count - 1; j >= 0; j--)
                 {
+                    AvailablePart part = PartLoader.LoadedPartsList[j];
                     if (part.partPrefab == null || part.partPrefab.Modules == null)
                     {
                         continue;
@@ -105,11 +112,13 @@ namespace ContractConfigurator
                 }
             }
 
-            foreach (string partModuleType in partModuleTypes)
+            for (int i = partModuleTypes.Count - 1; i >= 0; i--)
             {
+                string partModuleType = partModuleTypes[i];
                 bool hasType = false;
-                foreach (AvailablePart part in PartLoader.LoadedPartsList)
+                for (int j = PartLoader.LoadedPartsList.Count - 1; j >= 0; j--)
                 {
+                    AvailablePart part = PartLoader.LoadedPartsList[j];
                     if (part.partPrefab == null || part.partPrefab.Modules == null)
                     {
                         continue;

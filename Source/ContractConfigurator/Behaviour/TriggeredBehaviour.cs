@@ -141,8 +141,9 @@ namespace ContractConfigurator.Behaviour
         protected override void OnSave(ConfigNode configNode)
         {
             configNode.AddValue("onState", onState);
-            foreach (string p in parameter)
+            for (int i = parameter.Count - 1; i >= 0; i--)
             {
+                string p = parameter[i];
                 configNode.AddValue("parameter", p);
             }
         }

@@ -55,8 +55,9 @@ namespace ContractConfigurator
         {
             get
             {
-                foreach (KeyValuePair<string, ContractType> pair in contractTypes)
+                for (int i = contractTypes.Count - 1; i >= 0; i--)
                 {
+                    KeyValuePair<string, ContractType> pair = contractTypes.ElementAt(i);
                     if (pair.Value.enabled)
                     {
                         yield return pair.Value;
@@ -68,8 +69,9 @@ namespace ContractConfigurator
         {
             get
             {
-                foreach (KeyValuePair<string, ContractType> pair in contractTypes)
+                for (int i = contractTypes.Count - 1; i >= 0; i--)
                 {
+                    KeyValuePair<string, ContractType> pair = contractTypes.ElementAt(i);
                     if (pair.Value.enabled)
                     {
                         yield return pair.Key;
@@ -289,14 +291,16 @@ namespace ContractConfigurator
                 for (ContractGroup currentGroup = group; currentGroup != null; currentGroup = currentGroup.parent)
                 {
                     // Merge dataValues - this is a flag saying what values need to be unique at the contract level
-                    foreach (KeyValuePair<string, DataValueInfo> pair in currentGroup.dataValues)
+                    for (int i = currentGroup.dataValues.Count - 1; i >= 0; i--)
                     {
+                        KeyValuePair<string, DataValueInfo> pair = currentGroup.dataValues.ElementAt(i);
                         dataValues[currentGroup.name + ":" + pair.Key] = pair.Value;
                     }
 
                     // Merge uniquenessChecks
-                    foreach (KeyValuePair<string, DataNode.UniquenessCheck> pair in currentGroup.uniquenessChecks)
+                    for (int i = currentGroup.uniquenessChecks.Count - 1; i >= 0; i--)
                     {
+                        KeyValuePair<string, DataNode.UniquenessCheck> pair = currentGroup.uniquenessChecks.ElementAt(i);
                         uniquenessChecks[currentGroup.name + ":" + pair.Key] = pair.Value;
                     }
                 }
@@ -308,8 +312,9 @@ namespace ContractConfigurator
                 LoggingUtil.CaptureLog = false;
 
                 // Load parameters
-                foreach (ConfigNode contractParameter in ConfigNodeUtil.GetChildNodes(configNode, "PARAMETER"))
+                for (int i = ConfigNodeUtil.GetChildNodes(configNode, "PARAMETER").Length - 1; i >= 0; i--)
                 {
+                    ConfigNode contractParameter = ConfigNodeUtil.GetChildNodes(configNode, "PARAMETER")[i];
                     ParameterFactory paramFactory = null;
                     valid &= ParameterFactory.GenerateParameterFactory(contractParameter, this, out paramFactory);
                     if (paramFactory != null)
@@ -323,8 +328,9 @@ namespace ContractConfigurator
                 }
 
                 // Load behaviours
-                foreach (ConfigNode requirementNode in ConfigNodeUtil.GetChildNodes(configNode, "BEHAVIOUR"))
+                for (int i = ConfigNodeUtil.GetChildNodes(configNode, "BEHAVIOUR").Length - 1; i >= 0; i--)
                 {
+                    ConfigNode requirementNode = ConfigNodeUtil.GetChildNodes(configNode, "BEHAVIOUR")[i];
                     BehaviourFactory behaviourFactory = null;
                     valid &= BehaviourFactory.GenerateBehaviourFactory(requirementNode, this, out behaviourFactory);
                     if (behaviourFactory != null)
@@ -338,8 +344,9 @@ namespace ContractConfigurator
                 }
 
                 // Load requirements
-                foreach (ConfigNode requirementNode in ConfigNodeUtil.GetChildNodes(configNode, "REQUIREMENT"))
+                for (int i = ConfigNodeUtil.GetChildNodes(configNode, "REQUIREMENT").Length - 1; i >= 0; i--)
                 {
+                    ConfigNode requirementNode = ConfigNodeUtil.GetChildNodes(configNode, "REQUIREMENT")[i];
                     ContractRequirement requirement = null;
                     valid &= ContractRequirement.GenerateRequirement(requirementNode, this, out requirement);
                     if (requirement != null)
@@ -375,8 +382,9 @@ namespace ContractConfigurator
 
                     if (type != null)
                     {
-                        foreach (ConfigNode.Value pair in dataExpandNode.values)
+                        for (int i = dataExpandNode.values.Count - 1; i >= 0; i--)
                         {
+                            ConfigNode.Value pair = dataExpandNode.values[i];
                             string key = pair.name;
                             if (key != "type")
                             {
@@ -406,8 +414,9 @@ namespace ContractConfigurator
 
                                 // Expand
                                 configNode.RemoveNode(dataExpandNode);
-                                foreach (string val in values)
+                                for (int j = values.Count - 1; j >= 0; j--)
                                 {
+                                    string val = values[j];
                                     // Set up for expansion
                                     ConfigNode copy = configNode.CreateCopy();
                                     string newName = name + "." + val;
@@ -572,11 +581,13 @@ namespace ContractConfigurator
             }
 
             List<string> results = new List<string>();
-            foreach (T t in values)
+            for (int i = values.Count - 1; i >= 0; i--)
             {
+                T t = values[i];
                 Type type;
                 results.Add(PersistentDataStore.OutputValue(t, out type));
             }
+
             return results;
         }
 
@@ -743,8 +754,9 @@ namespace ContractConfigurator
                 // Check special values are not null
                 if (contract.contractType == null)
                 {
-                    foreach (KeyValuePair<string, DataValueInfo> pair in dataValues)
+                    for (int i = dataValues.Count - 1; i >= 0; i--)
                     {
+                        KeyValuePair<string, DataValueInfo> pair = dataValues.ElementAt(i);
                         // Only check if it is a required value
                         if (pair.Value.required)
                         {

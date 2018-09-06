@@ -62,8 +62,9 @@ namespace ContractConfigurator
             GameEvents.OnProgressReached.Remove(new EventData<ProgressNode>.OnEvent(OnProgressReached));
 
             // Unregister anything from offered contracts
-            foreach (ConfiguredContract contract in contracts)
+            for (int i = contracts.Count - 1; i >= 0; i--)
             {
+                ConfiguredContract contract = contracts[i];
                 contract.Unregister();
             }
         }
@@ -236,8 +237,9 @@ namespace ContractConfigurator
 
                 List<ContractType> contractTypes = ContractType.AllValidContractTypes.ToList();
                 contractTypes.Shuffle();
-                foreach (ContractType ct in contractTypes)
+                for (int j = contractTypes.Count - 1; j >= 0; j--)
                 {
+                    ContractType ct = contractTypes[j];
                     // Is the contract time part of this group, and is it allowed to attempt to generate
                     if (ct.group == group && ct.lastGenerationFailure + FAILURE_WAIT_TIME < Time.realtimeSinceStartup)
                     {
@@ -413,8 +415,9 @@ namespace ContractConfigurator
         {
             try
             {
-                foreach (ConfigNode child in node.GetNodes("CONTRACT"))
+                for (int i = node.GetNodes("CONTRACT").Length - 1; i >= 0; i--)
                 {
+                    ConfigNode child = node.GetNodes("CONTRACT")[i];
                     ConfiguredContract contract = null;
                     try
                     {

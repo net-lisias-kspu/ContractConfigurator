@@ -707,8 +707,9 @@ namespace ContractConfigurator
             GUILayout.EndHorizontal();
 
             scrollPosition2 = GUILayout.BeginScrollView(scrollPosition2, GUILayout.Width(550), GUILayout.ExpandHeight(true));
-            foreach (PQSCity city in body.GetComponentsInChildren<PQSCity>(true))
+            for (int i = body.GetComponentsInChildren<PQSCity>(true).Length - 1; i >= 0; i--)
             {
+                PQSCity city = body.GetComponentsInChildren<PQSCity>(true)[i];
                 // Translate to a position in the PQSCity's coordinate system
                 Vector3d vPos = FlightGlobals.ActiveVessel.transform.position - city.transform.position;
                 Vector3d pos = new Vector3d(Vector3d.Dot(vPos, city.transform.right), Vector3d.Dot(vPos, city.transform.forward), Vector3d.Dot(vPos, city.transform.up));
@@ -717,9 +718,10 @@ namespace ContractConfigurator
 
                 GUILayout.Label(new GUIContent(city.name, city.name), clippedLabel, GUILayout.Width(CITY_WIDTH));
                 GUILayout.TextField(pos.x.ToString() + ", " + pos.y.ToString() + ", " + pos.z.ToString(), GUILayout.Width(HEADING_WIDTH));
-                
+
                 GUILayout.EndHorizontal();
             }
+
             GUILayout.EndScrollView();
 
             if (Event.current.type == EventType.Repaint)

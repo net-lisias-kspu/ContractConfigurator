@@ -143,12 +143,14 @@ namespace ContractConfigurator.Behaviour
         {
             foreach (string node in map.Keys.Union(new string[] {"PARAMETER_COMPLETED"}))
             {
-                foreach (ConfigNode child in ConfigNodeUtil.GetChildNodes(configNode, node))
+                for (int i = ConfigNodeUtil.GetChildNodes(configNode, node).Length - 1; i >= 0; i--)
                 {
+                    ConfigNode child = ConfigNodeUtil.GetChildNodes(configNode, node)[i];
                     string parameter = ConfigNodeUtil.ParseValue<string>(child, "parameter", "");
                     Type type = ConfigNodeUtil.ParseValue<Type>(child, "type", typeof(double));
-                    foreach (ConfigNode.Value pair in child.values)
+                    for (int j = child.values.Count - 1; j >= 0; j--)
                     {
+                        ConfigNode.Value pair = child.values[j];
                         if (pair.name != "parameter" && pair.name != "type" && !string.IsNullOrEmpty(pair.value))
                         {
                             ExpVal expVal = new ExpVal(type, pair.name, pair.value);
@@ -194,8 +196,9 @@ namespace ContractConfigurator.Behaviour
             {
                 ConfigNode child = new ConfigNode(node);
                 configNode.AddNode(child);
-                foreach (ExpVal expVal in map[node])
+                for (int i = map[node].Count - 1; i >= 0; i--)
                 {
+                    ExpVal expVal = map[node][i];
                     string typeName = PersistentDataStore.GetTypeName(expVal.type);
                     if (!child.HasValue("type"))
                     {

@@ -39,12 +39,14 @@ namespace ContractConfigurator.ExpressionParser
         {
         }
 
+        private static readonly string[] CheckInitialized_identifier = { "name", "lat", "lon", "alt", "owned", "gender" };
         protected static void CheckInitialized(SpawnKerbalFactory skf)
         {
             foreach (DataNode dataNode in skf.dataNode.Children)
             {
-                foreach (string identifier in new string[] { "name", "lat", "lon", "alt", "owned", "gender" })
+                for (int i = CheckInitialized_identifier.Length - 1; i >= 0; i--)
                 {
+                    string identifier = CheckInitialized_identifier[i];
                     if (!dataNode.IsInitialized(identifier))
                     {
                         throw new DataNode.ValueNotInitialized(dataNode.Path() + identifier);

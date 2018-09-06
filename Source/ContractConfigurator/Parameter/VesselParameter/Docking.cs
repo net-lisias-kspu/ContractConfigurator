@@ -55,10 +55,12 @@ namespace ContractConfigurator.Parameters
         protected override void OnParameterSave(ConfigNode node)
         {
             base.OnParameterSave(node);
-            foreach (string vessel in vessels)
+            for (int i = vessels.Count - 1; i >= 0; i--)
             {
+                string vessel = vessels[i];
                 node.AddValue("vessel", vessel);
             }
+
             if (!string.IsNullOrEmpty(defineDockedVessel))
             {
                 node.AddValue("defineDockedVessel", defineDockedVessel);
@@ -78,8 +80,9 @@ namespace ContractConfigurator.Parameters
             GameEvents.onVesselDestroy.Add(new EventData<Vessel>.OnEvent(OnVesselDestroy));
 
             // Add a waypoint for each possible vessel in the list
-            foreach (string vesselKey in vessels)
+            for (int i = vessels.Count - 1; i >= 0; i--)
             {
+                string vesselKey = vessels[i];
                 VesselWaypoint vesselWaypoint = new VesselWaypoint(Root, vesselKey);
                 vesselWaypoints.Add(vesselWaypoint);
                 vesselWaypoint.Register();
@@ -91,8 +94,9 @@ namespace ContractConfigurator.Parameters
             base.OnUnregister();
             GameEvents.onVesselDestroy.Remove(new EventData<Vessel>.OnEvent(OnVesselDestroy));
 
-            foreach (VesselWaypoint vesselWaypoint in vesselWaypoints)
+            for (int i = vesselWaypoints.Count - 1; i >= 0; i--)
             {
+                VesselWaypoint vesselWaypoint = vesselWaypoints[i];
                 vesselWaypoint.Unregister();
             }
         }

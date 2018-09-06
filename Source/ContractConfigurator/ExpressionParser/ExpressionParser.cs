@@ -58,15 +58,17 @@ namespace ContractConfigurator.ExpressionParser
         {
             if (classFunctions.ContainsKey(name))
             {
-                foreach (Function f in classFunctions[name])
+                for (int i = classFunctions[name].Count - 1; i >= 0; i--)
                 {
+                    Function f = classFunctions[name][i];
                     yield return f;
                 }
             }
             if (globalFunctions.ContainsKey(name))
             {
-                foreach (Function f in globalFunctions[name])
+                for (int i = globalFunctions[name].Count - 1; i >= 0; i--)
                 {
+                    Function f = globalFunctions[name][i];
                     yield return f;
                 }
             }

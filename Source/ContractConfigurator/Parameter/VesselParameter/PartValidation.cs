@@ -74,28 +74,29 @@ namespace ContractConfigurator.Parameters
 
         protected void CreateDelegates()
         {
-            foreach (Filter filter in filters)
+            for (int i = filters.Count - 1; i >= 0; i--)
             {
+                Filter filter = filters[i];
                 if (filter.type == ParameterDelegateMatchType.VALIDATE)
                 {
-                    foreach (AvailablePart part in filter.parts)
+                    for (int j = filter.parts.Count - 1; j >= 0; j--)
                     {
-                        AddParameter(new CountParameterDelegate<Part>(filter.minCount, filter.maxCount, p => p.partInfo.name == part.name,
-                            part.title, false));
+                        AvailablePart part = filter.parts[j];
+                        AddParameter(new CountParameterDelegate<Part>(filter.minCount, filter.maxCount, p => p.partInfo.name == part.name, part.title, false));
                     }
 
                     // Filter by part modules
-                    foreach (string partModule in filter.partModules)
+                    for (int j = filter.partModules.Count - 1; j >= 0; j--)
                     {
-                        AddParameter(new CountParameterDelegate<Part>(filter.minCount, filter.maxCount, p => PartHasModule(p, partModule),
-                            "with module: " + ModuleName(partModule), false));
+                        string partModule = filter.partModules[j];
+                        AddParameter(new CountParameterDelegate<Part>(filter.minCount, filter.maxCount, p => PartHasModule(p, partModule), "with module: " + ModuleName(partModule), false));
                     }
 
                     // Filter by part module types
-                    foreach (string partModuleType in filter.partModuleTypes)
+                    for (int j = filter.partModuleTypes.Count - 1; j >= 0; j--)
                     {
-                        AddParameter(new CountParameterDelegate<Part>(filter.minCount, filter.maxCount, p => PartHasObjective(p, partModuleType),
-                            "with module type: " + partModuleType, false));
+                        string partModuleType = filter.partModuleTypes[j];
+                        AddParameter(new CountParameterDelegate<Part>(filter.minCount, filter.maxCount, p => PartHasObjective(p, partModuleType), "with module type: " + partModuleType, false));
                     }
                 }
                 else
@@ -109,20 +110,23 @@ namespace ContractConfigurator.Parameters
                     }
 
                     // Filter by part modules
-                    foreach (string partModule in filter.partModules)
+                    for (int j = filter.partModules.Count - 1; j >= 0; j--)
                     {
+                        string partModule = filter.partModules[j];
                         AddParameter(new ParameterDelegate<Part>(filter.type.Prefix() + "module: " + ModuleName(partModule), p => PartHasModule(p, partModule), filter.type));
                     }
 
                     // Filter by part modules
-                    foreach (string partModuleType in filter.partModuleTypes)
+                    for (int j = filter.partModuleTypes.Count - 1; j >= 0; j--)
                     {
+                        string partModuleType = filter.partModuleTypes[j];
                         AddParameter(new ParameterDelegate<Part>(filter.type.Prefix() + "module type: " + partModuleType, p => PartHasObjective(p, partModuleType), filter.type));
                     }
 
                     // Filter by part modules - extended mode
-                    foreach (ConfigNode.ValueList list in filter.partModuleExtended)
+                    for (int j = filter.partModuleExtended.Count - 1; j >= 0; j--)
                     {
+                        ConfigNode.ValueList list = filter.partModuleExtended[j];
                         ContractParameter wrapperParam = AddParameter(new AllParameterDelegate<Part>(filter.type.Prefix() + "module", filter.type));
 
                         foreach (ConfigNode.Value v in list)
@@ -173,13 +177,15 @@ namespace ContractConfigurator.Parameters
 
         private bool PartHasModule(Part p, string partModule)
         {
-            foreach (PartModule pm in p.Modules)
+            for (int i = p.Modules.Count - 1; i >= 0; i--)
             {
+                PartModule pm = p.Modules[i];
                 if (pm.moduleName.StartsWith(partModule) || pm.GetType().BaseType.Name.StartsWith(partModule))
                 {
                     return true;
                 }
             }
+
             return false;
         }
 
@@ -190,8 +196,9 @@ namespace ContractConfigurator.Parameters
 
         private bool PartModuleCheck(Part p, ConfigNode.Value v)
         {
-            foreach (PartModule pm in p.Modules)
+            for (int i = p.Modules.Count - 1; i >= 0; i--)
             {
+                PartModule pm = p.Modules[i];
                 switch (v.name)
                 {
                     case "name":
@@ -212,6 +219,7 @@ namespace ContractConfigurator.Parameters
                     }
                 }
             }
+
             return false;
         }
 
@@ -238,33 +246,43 @@ namespace ContractConfigurator.Parameters
             node.AddValue("minCount", minCount);
             node.AddValue("maxCount", maxCount);
 
-            foreach (Filter filter in filters)
+            for (int i = filters.Count - 1; i >= 0; i--)
             {
+                Filter filter = filters[i];
                 ConfigNode child = new ConfigNode("FILTER");
                 child.AddValue("type", filter.type);
 
-                foreach (AvailablePart part in filter.parts)
+                for (int j = filter.parts.Count - 1; j >= 0; j--)
                 {
+                    AvailablePart part = filter.parts[j];
                     child.AddValue("part", part.name);
                 }
-                foreach (string partModule in filter.partModules)
+
+                for (int j = filter.partModules.Count - 1; j >= 0; j--)
                 {
+                    string partModule = filter.partModules[j];
                     child.AddValue("partModule", partModule);
                 }
-                foreach (string partModuleType in filter.partModuleTypes)
+
+                for (int j = filter.partModuleTypes.Count - 1; j >= 0; j--)
                 {
+                    string partModuleType = filter.partModuleTypes[j];
                     child.AddValue("partModuleType", partModuleType);
                 }
-                foreach (ConfigNode.ValueList list in filter.partModuleExtended)
+
+                for (int j = filter.partModuleExtended.Count - 1; j >= 0; j--)
                 {
+                    ConfigNode.ValueList list = filter.partModuleExtended[j];
                     ConfigNode moduleNode = new ConfigNode("MODULE");
                     child.AddNode(moduleNode);
 
-                    foreach (ConfigNode.Value v in list)
+                    for (int k = list.Count - 1; k >= 0; k--)
                     {
+                        ConfigNode.Value v = list[k];
                         moduleNode.AddValue(v.name, v.value);
                     }
                 }
+
                 if (filter.category != null)
                 {
                     child.AddValue("category", filter.category);
@@ -293,8 +311,9 @@ namespace ContractConfigurator.Parameters
 
                 filters = new List<Filter>();
 
-                foreach (ConfigNode child in node.GetNodes("FILTER"))
+                for (int i = node.GetNodes("FILTER").Length - 1; i >= 0; i--)
                 {
+                    ConfigNode child = node.GetNodes("FILTER")[i];
                     Filter filter = new Filter
                     {
                         type = ConfigNodeUtil.ParseValue<ParameterDelegateMatchType>(child, "type"),
@@ -308,8 +327,9 @@ namespace ContractConfigurator.Parameters
                         maxCount = ConfigNodeUtil.ParseValue<int>(child, "maxCount", int.MaxValue)
                     };
 
-                    foreach (ConfigNode moduleNode in child.GetNodes("MODULE"))
+                    for (int j = child.GetNodes("MODULE").Length - 1; j >= 0; j--)
                     {
+                        ConfigNode moduleNode = child.GetNodes("MODULE")[j];
                         ConfigNode.ValueList tmp = new ConfigNode.ValueList();
                         foreach (ConfigNode.Value v in moduleNode.values)
                         {

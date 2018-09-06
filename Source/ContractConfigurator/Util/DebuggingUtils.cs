@@ -25,8 +25,9 @@ namespace ContractConfigurator.Util
 
         public static void Dump(this GameObject go, string indent = "")
         {
-            foreach (Component c in go.GetComponents<Component>())
+            for (int i = go.GetComponents<Component>().Length - 1; i >= 0; i--)
             {
+                Component c = go.GetComponents<Component>()[i];
                 Debug.Log(indent + c);
                 if (c is KerbalInstructor)
                 {
@@ -44,12 +45,15 @@ namespace ContractConfigurator.Util
         {
             Debug.Log(!string.IsNullOrEmpty(text) ? text : "Dumping object:");
 
-            foreach (FieldInfo fi in o.GetType().GetFields(System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Instance | BindingFlags.FlattenHierarchy))
+            for (int i = o.GetType().GetFields(System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Instance | BindingFlags.FlattenHierarchy).Length - 1; i >= 0; i--)
             {
+                FieldInfo fi = o.GetType().GetFields(System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Instance | BindingFlags.FlattenHierarchy)[i];
                 Debug.Log(string.Format("    {0} = {1}", fi.Name, fi.GetValue(o)));
             }
-            foreach (PropertyInfo pi in o.GetType().GetProperties(System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Instance | BindingFlags.FlattenHierarchy))
+
+            for (int i = o.GetType().GetProperties(System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Instance | BindingFlags.FlattenHierarchy).Length - 1; i >= 0; i--)
             {
+                PropertyInfo pi = o.GetType().GetProperties(System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Instance | BindingFlags.FlattenHierarchy)[i];
                 Debug.Log(string.Format("    {0} = {1}", pi.Name, pi.GetValue(o, null)));
             }
         }

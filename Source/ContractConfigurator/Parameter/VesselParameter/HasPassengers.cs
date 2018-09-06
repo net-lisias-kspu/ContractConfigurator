@@ -73,8 +73,9 @@ namespace ContractConfigurator.Parameters
                     RemoveParameter(0);
                 }
 
-                foreach (Kerbal passenger in passengers)
+                for (int i = passengers.Count - 1; i >= 0; i--)
                 {
+                    Kerbal passenger = passengers[i];
                     AddParameter(new ParameterDelegate<Vessel>("On Board: " + passenger.name, v => passenger.pcm != null && v.GetVesselCrew().Contains(passenger.pcm), ParameterDelegateMatchType.VALIDATE_ALL));
                 }
             }
@@ -86,8 +87,9 @@ namespace ContractConfigurator.Parameters
             node.AddValue("index", index);
             node.AddValue("count", count);
 
-            foreach (Kerbal passenger in passengers)
+            for (int i = passengers.Count - 1; i >= 0; i--)
             {
+                Kerbal passenger = passengers[i];
                 ConfigNode kerbalNode = new ConfigNode("KERBAL");
                 node.AddNode(kerbalNode);
 
@@ -112,8 +114,9 @@ namespace ContractConfigurator.Parameters
                 }
                 else
                 {
-                    foreach (ConfigNode kerbalNode in node.GetNodes("KERBAL"))
+                    for (int i = node.GetNodes("KERBAL").Length - 1; i >= 0; i--)
                     {
+                        ConfigNode kerbalNode = node.GetNodes("KERBAL")[i];
                         passengers.Add(Kerbal.Load(kerbalNode));
                     }
                 }
@@ -204,8 +207,9 @@ namespace ContractConfigurator.Parameters
 
         public IEnumerable<string> KerbalNames()
         {
-            foreach (Kerbal kerbal in passengers)
+            for (int i = passengers.Count - 1; i >= 0; i--)
             {
+                Kerbal kerbal = passengers[i];
                 yield return kerbal.name;
             }
         }

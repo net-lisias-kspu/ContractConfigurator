@@ -76,14 +76,16 @@ namespace ContractConfigurator
             }
 
             double quantity = 0.0;
-            foreach (Part part in vessel.Parts)
+            for (int i = vessel.Parts.Count - 1; i >= 0; i--)
             {
+                Part part = vessel.Parts[i];
                 PartResource pr = part.Resources[resource.name];
                 if (pr != null)
                 {
                     quantity += pr.amount;
                 }
             }
+
             return quantity;
         }
 
@@ -101,14 +103,16 @@ namespace ContractConfigurator
             }
 
             double quantity = 0.0;
-            foreach (Part part in vessel.Parts)
+            for (int i = vessel.Parts.Count - 1; i >= 0; i--)
             {
+                Part part = vessel.Parts[i];
                 PartResource pr = part.Resources[resource.name];
                 if (pr != null)
                 {
                     quantity += pr.maxAmount;
                 }
             }
+
             return quantity;
         }
 
@@ -196,8 +200,9 @@ namespace ContractConfigurator
                 }
 
                 // Special handling of certain modules
-                foreach (ProtoPartModuleSnapshot pm in p.modules)
+                for (int i = p.modules.Count - 1; i >= 0; i--)
                 {
+                    ProtoPartModuleSnapshot pm = p.modules[i];
                     if (pm.moduleName == "ModuleDecouple" || pm.moduleName == "ModuleDockingNode" || pm.moduleName == "ModuleGrappleNode")
                     {
                         // Just assume all parts can decouple from this, it's easier and

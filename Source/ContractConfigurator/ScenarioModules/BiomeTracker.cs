@@ -42,16 +42,18 @@ namespace ContractConfigurator
                 node.AddValue("landCount", landCount);
                 node.AddValue("waterCount", waterCount);
 
-                foreach (Vector2d v in landLocations)
+                for (int i = landLocations.Count - 1; i >= 0; i--)
                 {
+                    Vector2d v = landLocations[i];
                     ConfigNode location = new ConfigNode("LAND_LOCATION");
                     node.AddNode(location);
                     location.AddValue("lat", v.y);
                     location.AddValue("lon", v.x);
                 }
 
-                foreach (Vector2d v in waterLocations)
+                for (int i = waterLocations.Count - 1; i >= 0; i--)
                 {
+                    Vector2d v = waterLocations[i];
                     ConfigNode location = new ConfigNode("WATER_LOCATION");
                     node.AddNode(location);
                     location.AddValue("lat", v.y);
@@ -67,8 +69,9 @@ namespace ContractConfigurator
                     waterCount = ConfigNodeUtil.ParseValue<int>(node, "waterCount")
                 };
 
-                foreach (ConfigNode location in node.GetNodes("LAND_LOCATION"))
+                for (int i = node.GetNodes("LAND_LOCATION").Length - 1; i >= 0; i--)
                 {
+                    ConfigNode location = node.GetNodes("LAND_LOCATION")[i];
                     Vector2d v = new Vector2d
                     {
                         y = ConfigNodeUtil.ParseValue<double>(location, "lat"),
@@ -77,8 +80,9 @@ namespace ContractConfigurator
                     biomeData.landLocations.Add(v);
                 }
 
-                foreach (ConfigNode location in node.GetNodes("WATER_LOCATION"))
+                for (int i = node.GetNodes("WATER_LOCATION").Length - 1; i >= 0; i--)
                 {
+                    ConfigNode location = node.GetNodes("WATER_LOCATION")[i];
                     Vector2d v = new Vector2d
                     {
                         y = ConfigNodeUtil.ParseValue<double>(location, "lat"),
@@ -285,16 +289,18 @@ namespace ContractConfigurator
 
         protected void Load()
         {
-            foreach (string file in new string[] { DefaultBiomeDataFile, BiomeDataFile })
+            for (int i = new string[] { DefaultBiomeDataFile, BiomeDataFile }.Length - 1; i >= 0; i--)
             {
+                string file = new string[] { DefaultBiomeDataFile, BiomeDataFile }[i];
                 if (!File.Exists(file))
                 {
                     continue;
                 }
 
                 ConfigNode node = ConfigNode.Load(file);
-                foreach (ConfigNode bodyNode in node.GetNodes("CELESTIAL_BODY"))
+                for (int j = node.GetNodes("CELESTIAL_BODY").Length - 1; j >= 0; j--)
                 {
+                    ConfigNode bodyNode = node.GetNodes("CELESTIAL_BODY")[j];
                     CelestialBody body;
                     try
                     {
@@ -309,8 +315,9 @@ namespace ContractConfigurator
                     }
                     Dictionary<string, BiomeData> biomeDetails = bodyInfo[body] = new Dictionary<string, BiomeData>();
 
-                    foreach (ConfigNode biomeNode in bodyNode.GetNodes("BIOME"))
+                    for (int k = bodyNode.GetNodes("BIOME").Length - 1; k >= 0; k--)
                     {
+                        ConfigNode biomeNode = bodyNode.GetNodes("BIOME")[k];
                         BiomeData biomeData = BiomeData.Load(biomeNode);
                         biomeDetails.Add(biomeData.name, biomeData);
                     }
@@ -353,8 +360,9 @@ namespace ContractConfigurator
             double landRatio = Instance.bodyInfo[body][biome].landRatio;
             List<Vector2d> list = landRatio > 0.95 ? Instance.bodyInfo[body][biome].waterLocations :
                 landRatio < 0.05 ? Instance.bodyInfo[body][biome].landLocations : new List<Vector2d>();
-            foreach (Vector2d v in list)
+            for (int i = list.Count - 1; i >= 0; i--)
             {
+                Vector2d v = list[i];
                 yield return v;
             }
         }

@@ -76,8 +76,9 @@ namespace ContractConfigurator.Behaviour
                 pitch = vd.pitch;
                 roll = vd.roll;
 
-                foreach (CrewData cd in vd.crew)
+                for (int i = vd.crew.Count - 1; i >= 0; i--)
                 {
+                    CrewData cd = vd.crew[i];
                     crew.Add(new CrewData(cd));
                 }
             }
@@ -103,8 +104,9 @@ namespace ContractConfigurator.Behaviour
         public SpawnVessel(SpawnVessel orig)
         {
             deferVesselCreation = orig.deferVesselCreation;
-            foreach (VesselData vessel in orig.vessels)
+            for (int ii = orig.vessels.Count - 1; ii >= 0; ii--)
             {
+                VesselData vessel = orig.vessels[ii];
                 if (vessel.pqsCity != null)
                 {
                     // Generate PQS city coordinates
@@ -141,8 +143,9 @@ namespace ContractConfigurator.Behaviour
 
             bool valid = true;
             int index = 0;
-            foreach (ConfigNode child in ConfigNodeUtil.GetChildNodes(configNode, "VESSEL"))
+            for (int i = ConfigNodeUtil.GetChildNodes(configNode, "VESSEL").Length - 1; i >= 0; i--)
             {
+                ConfigNode child = ConfigNodeUtil.GetChildNodes(configNode, "VESSEL")[i];
                 DataNode dataNode = new DataNode("VESSEL_" + index++, factory.dataNode, factory);
                 try
                 {
@@ -231,11 +234,12 @@ namespace ContractConfigurator.Behaviour
                     valid &= ConfigNodeUtil.ParseValue<bool>(child, "owned", x => vessel.owned = x, factory, false);
 
                     // Handle the CREW nodes
-                    foreach (ConfigNode crewNode in ConfigNodeUtil.GetChildNodes(child, "CREW"))
+                    for (int j = ConfigNodeUtil.GetChildNodes(child, "CREW").Length - 1; j >= 0; j--)
                     {
+                        ConfigNode crewNode = ConfigNodeUtil.GetChildNodes(child, "CREW")[j];
                         int count = 1;
                         valid &= ConfigNodeUtil.ParseValue<int>(crewNode, "count", x => count = x, factory, 1);
-                        for (int i = 0; i < count; i++)
+                        for (int k = count - 1; k >= 0; k--)
                         {
                             CrewData cd = new CrewData();
 
@@ -288,8 +292,9 @@ namespace ContractConfigurator.Behaviour
             gameDataDir += "GameData";
 
             // Spawn the vessel in the game world
-            foreach (VesselData vesselData in vessels)
+            for (int i = vessels.Count - 1; i >= 0; i--)
             {
+                VesselData vesselData = vessels[i];
                 LoggingUtil.LogVerbose(this, "Spawning a vessel named '" + vesselData.name + "'");
 
                 // Set additional info for landed vessels
@@ -340,8 +345,9 @@ namespace ContractConfigurator.Behaviour
                     // Set some parameters that need to be at the part level
                     uint missionID = (uint)Guid.NewGuid().GetHashCode();
                     uint launchID = HighLogic.CurrentGame.launchID++;
-                    foreach (Part p in shipConstruct.parts)
+                    for (int j = shipConstruct.parts.Count - 1; j >= 0; j--)
                     {
+                        Part p = shipConstruct.parts[j];
                         p.flightID = ShipConstruction.GetUniqueFlightID(HighLogic.CurrentGame.flightState);
                         p.missionID = missionID;
                         p.launchID = launchID;
@@ -356,19 +362,20 @@ namespace ContractConfigurator.Behaviour
                     // Estimate an object class, numbers are based on the in game description of the
                     // size classes.
                     float size = shipConstruct.shipSize.magnitude / 2.0f;
-                    sizeClass = 
+                    sizeClass =
                         size < 4.0f
                             ? UntrackedObjectClass.A
                         : size < 7.0f
                             ? UntrackedObjectClass.B
-                        : size < 12.0f 
+                        : size < 12.0f
                             ? UntrackedObjectClass.C
                         : size < 18.0f
                             ? UntrackedObjectClass.D
                         : UntrackedObjectClass.E;
 
-                    foreach (CrewData cd in vesselData.crew)
+                    for (int j = vesselData.crew.Count - 1; j >= 0; j--)
                     {
+                        CrewData cd = vesselData.crew[j];
                         bool success = false;
 
                         // Find a seat for the crew
@@ -409,12 +416,15 @@ namespace ContractConfigurator.Behaviour
                     dummyProto.vesselRef = dummyVessel;
 
                     // Create the ProtoPartSnapshot objects and then initialize them
-                    foreach (Part p in shipConstruct.parts)
+                    for (int j = shipConstruct.parts.Count - 1; j >= 0; j--)
                     {
+                        Part p = shipConstruct.parts[j];
                         dummyProto.protoPartSnapshots.Add(new ProtoPartSnapshot(p, dummyProto));
                     }
-                    foreach (ProtoPartSnapshot p in dummyProto.protoPartSnapshots)
+
+                    for (int j = dummyProto.protoPartSnapshots.Count - 1; j >= 0; j--)
                     {
+                        ProtoPartSnapshot p = dummyProto.protoPartSnapshots[j];
                         p.storePartRefs();
                     }
 
@@ -428,9 +438,9 @@ namespace ContractConfigurator.Behaviour
                 {
                     // Create crew member array
                     ProtoCrewMember[] crewArray = new ProtoCrewMember[vesselData.crew.Count];
-                    int i = 0;
-                    foreach (CrewData cd in vesselData.crew)
+                    for (int j = vesselData.crew.Count - 1; j >= 0; j--)
                     {
+                        CrewData cd = vesselData.crew[j];
                         // Create the ProtoCrewMember
                         ProtoCrewMember crewMember = HighLogic.CurrentGame.CrewRoster.GetNewKerbal(ProtoCrewMember.KerbalType.Unowned);
                         if (cd.name != null)
@@ -438,7 +448,7 @@ namespace ContractConfigurator.Behaviour
                             crewMember.ChangeName(cd.name);
                         }
 
-                        crewArray[i++] = crewMember;
+                        crewArray[j++] = crewMember;
                     }
 
                     // Create part nodes
@@ -491,10 +501,12 @@ namespace ContractConfigurator.Behaviour
                     float lowest = float.MaxValue;
                     if (shipConstruct != null)
                     {
-                        foreach (Part p in shipConstruct.parts)
+                        for (int j = shipConstruct.parts.Count - 1; j >= 0; j--)
                         {
-                            foreach (Collider collider in p.GetComponentsInChildren<Collider>())
+                            Part p = shipConstruct.parts[j];
+                            for (int k = p.GetComponentsInChildren<Collider>().Length - 1; k >= 0; k--)
                             {
+                                Collider collider = p.GetComponentsInChildren<Collider>()[k];
                                 if (collider.gameObject.layer != 21 && collider.enabled)
                                 {
                                     lowest = Mathf.Min(lowest, collider.bounds.min.y);
@@ -504,8 +516,9 @@ namespace ContractConfigurator.Behaviour
                     }
                     else
                     {
-                        foreach (Collider collider in vesselData.craftPart.partPrefab.GetComponentsInChildren<Collider>())
+                        for (int j = vesselData.craftPart.partPrefab.GetComponentsInChildren<Collider>().Length - 1; j >= 0; j--)
                         {
+                            Collider collider = vesselData.craftPart.partPrefab.GetComponentsInChildren<Collider>()[j];
                             if (collider.gameObject.layer != 21 && collider.enabled)
                             {
                                 lowest = Mathf.Min(lowest, collider.bounds.min.y);
@@ -620,8 +633,9 @@ namespace ContractConfigurator.Behaviour
                 }
 
                 // Add crew data
-                foreach (CrewData cd in vd.crew)
+                for (int i = vd.crew.Count - 1; i >= 0; i--)
                 {
+                    CrewData cd = vd.crew[i];
                     ConfigNode crewNode = new ConfigNode("CREW");
 
                     if (!string.IsNullOrEmpty(cd.name))
@@ -643,8 +657,9 @@ namespace ContractConfigurator.Behaviour
             vesselsCreated = ConfigNodeUtil.ParseValue<bool>(configNode, "vesselsCreated");
             deferVesselCreation = ConfigNodeUtil.ParseValue<bool?>(configNode, "deferVesselCreation", (bool?)false).Value;
 
-            foreach (ConfigNode child in configNode.GetNodes("VESSEL_DETAIL"))
+            for (int i = configNode.GetNodes("VESSEL_DETAIL").Length - 1; i >= 0; i--)
             {
+                ConfigNode child = configNode.GetNodes("VESSEL_DETAIL")[i];
                 // Read all the orbit data
                 VesselData vd = new VesselData
                 {
@@ -706,17 +721,21 @@ namespace ContractConfigurator.Behaviour
             // EVA vessel
             if (v.vesselType == VesselType.EVA)
             {
-                foreach (ProtoPartSnapshot p in v.protoPartSnapshots)
+                for (int i = v.protoPartSnapshots.Count - 1; i >= 0; i--)
                 {
+                    ProtoPartSnapshot p = v.protoPartSnapshots[i];
                     {
                         LoggingUtil.LogVerbose(this, "    p: " + p);
-                        foreach (string name in p.protoCrewNames)
+                        for (int j = p.protoCrewNames.Count - 1; j >= 0; j--)
                         {
+                            string name = p.protoCrewNames[j];
                             // Find this crew member in our data
-                            foreach (VesselData vd in vessels)
+                            for (int k = vessels.Count - 1; k >= 0; k--)
                             {
-                                foreach (CrewData cd in vd.crew)
+                                VesselData vd = vessels[k];
+                                for (int l = vd.crew.Count - 1; l >= 0; l--)
                                 {
+                                    CrewData cd = vd.crew[l];
                                     if (cd.name == name && cd.addToRoster)
                                     {
                                         // Add them to the roster
@@ -728,7 +747,6 @@ namespace ContractConfigurator.Behaviour
                         }
                     }
                 }
-
             }
 
             // Vessel with crew
@@ -805,8 +823,9 @@ namespace ContractConfigurator.Behaviour
 
         private void RemoveVessels()
         {
-            foreach (VesselData vd in vessels)
+            for (int i = vessels.Count - 1; i >= 0; i--)
             {
+                VesselData vd = vessels[i];
                 Vessel vessel = FlightGlobals.Vessels.Find(v => v != null && v.id == vd.id);
                 if (vessel != null)
                 {
@@ -821,8 +840,9 @@ namespace ContractConfigurator.Behaviour
 
         private void RemoveCrew(VesselData vd)
         {
-            foreach (CrewData cd in vd.crew)
+            for (int i = vd.crew.Count - 1; i >= 0; i--)
             {
+                CrewData cd = vd.crew[i];
                 ProtoCrewMember crewMember = HighLogic.CurrentGame.CrewRoster.AllKerbals().FirstOrDefault(pcm => pcm.name == cd.name);
                 if (!cd.addToRoster && crewMember != null)
                 {
@@ -838,8 +858,9 @@ namespace ContractConfigurator.Behaviour
                         {
                             if (otherVessel.loaded)
                             {
-                                foreach (Part p in otherVessel.parts)
+                                for (int j = otherVessel.parts.Count - 1; j >= 0; j--)
                                 {
+                                    Part p = otherVessel.parts[j];
                                     if (p.protoModuleCrew.Contains(crewMember))
                                     {
                                         p.RemoveCrewmember(crewMember);
@@ -849,8 +870,9 @@ namespace ContractConfigurator.Behaviour
                             }
                             else
                             {
-                                foreach (ProtoPartSnapshot pps in otherVessel.protoVessel.protoPartSnapshots)
+                                for (int j = otherVessel.protoVessel.protoPartSnapshots.Count - 1; j >= 0; j--)
                                 {
+                                    ProtoPartSnapshot pps = otherVessel.protoVessel.protoPartSnapshots[j];
                                     if (pps.HasCrew(crewMember.name))
                                     {
                                         pps.RemoveCrew(crewMember);
@@ -876,8 +898,9 @@ namespace ContractConfigurator.Behaviour
         public Kerbal GetKerbal(int index)
         {
             int current = index;
-            foreach (VesselData vd in vessels)
+            for (int i = vessels.Count - 1; i >= 0; i--)
             {
+                VesselData vd = vessels[i];
                 if (current < vd.crew.Count)
                 {
                     return new Kerbal(HighLogic.CurrentGame.CrewRoster.AllKerbals().First(cm => cm.name == vd.crew[current].name));
@@ -891,10 +914,12 @@ namespace ContractConfigurator.Behaviour
 
         public IEnumerable<string> KerbalNames()
         {
-            foreach (VesselData vd in vessels)
+            for (int i = vessels.Count - 1; i >= 0; i--)
             {
-                foreach (CrewData cd in vd.crew)
+                VesselData vd = vessels[i];
+                for (int j = vd.crew.Count - 1; j >= 0; j--)
                 {
+                    CrewData cd = vd.crew[j];
                     yield return cd.name;
                 }
             }

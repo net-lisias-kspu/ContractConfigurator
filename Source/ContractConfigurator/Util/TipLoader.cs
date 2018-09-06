@@ -23,19 +23,22 @@ namespace ContractConfigurator.Util
 
                 // Read tips from root contract groups
                 ConfigNode[] contractGroups = GameDatabase.Instance.GetConfigNodes("CONTRACT_GROUP");
-                foreach (ConfigNode groupConfig in contractGroups)
+                for (int i = contractGroups.Length - 1; i >= 0; i--)
                 {
+                    ConfigNode groupConfig = contractGroups[i];
                     if (groupConfig.HasValue("tip"))
                     {
-                        foreach (string tip in groupConfig.GetValues("tip"))
+                        for (int j = groupConfig.GetValues("tip").Length - 1; j >= 0; j--)
                         {
+                            string tip = groupConfig.GetValues("tip")[j];
                             contractTips.Add(tip);
                         }
                     }
                 }
 
-                foreach (LoadingScreen.LoadingScreenState lss in LoadingScreen.Instance.Screens)
+                for (int i = LoadingScreen.Instance.Screens.Count - 1; i >= 0; i--)
                 {
+                    LoadingScreen.LoadingScreenState lss = LoadingScreen.Instance.Screens[i];
                     // Append our custom tips
                     lss.tips = lss.tips.Union(contractTips).ToArray();
                 }

@@ -97,9 +97,10 @@ namespace ContractConfigurator.Behaviour
         public OrbitGenerator(OrbitGenerator orig, Contract contract)
             : base()
         {
-            foreach (OrbitData old in orig.orbits)
+            for (int i = orig.orbits.Count - 1; i >= 0; i--)
             {
-                for (int i = 0; i < old.count; i++ )
+                OrbitData old = orig.orbits[i];
+                for (int j = old.count; j-- > 0;)
                 {
                     // Copy orbit data
                     orbits.Add(new OrbitData(old, contract));
@@ -112,8 +113,9 @@ namespace ContractConfigurator.Behaviour
             AlwaysTrue alwaysTrue = AlwaysTrue.FetchOrAdd(contract);
 
             int index = 0;
-            foreach (OrbitData obData in orbits)
+            for (int i = orbits.Count - 1; i >= 0; i--)
             {
+                OrbitData obData = orbits[i];
                 // Do type specific handling
                 if (obData.type == "RANDOM_ORBIT")
                 {
@@ -140,8 +142,9 @@ namespace ContractConfigurator.Behaviour
 
             bool valid = true;
             int index = 0;
-            foreach (ConfigNode child in ConfigNodeUtil.GetChildNodes(configNode))
+            for (int i = ConfigNodeUtil.GetChildNodes(configNode).Length - 1; i >= 0; i--)
             {
+                ConfigNode child = ConfigNodeUtil.GetChildNodes(configNode)[i];
                 DataNode dataNode = new DataNode("ORBIT_" + index++, factory.dataNode, factory);
                 try
                 {
@@ -225,8 +228,9 @@ namespace ContractConfigurator.Behaviour
 
         protected override void OnAccepted()
         {
-            foreach (OrbitData obData in orbits)
+            for (int i = orbits.Count - 1; i >= 0; i--)
             {
+                OrbitData obData = orbits[i];
                 obData.SetupRenderer();
             }
         }
@@ -241,8 +245,9 @@ namespace ContractConfigurator.Behaviour
         {
             base.OnUnregister();
 
-            foreach (OrbitData obData in orbits)
+            for (int i = orbits.Count - 1; i >= 0; i--)
             {
+                OrbitData obData = orbits[i];
                 obData.CleanupRenderer();
             }
         }
@@ -257,11 +262,12 @@ namespace ContractConfigurator.Behaviour
                 }
 
                 // Reset state of renderers
-                foreach (OrbitData obData in orbits)
+                for (int i = orbits.Count - 1; i >= 0; i--)
                 {
+                    OrbitData obData = orbits[i];
                     ContractConfiguratorParameters parms = HighLogic.CurrentGame.Parameters.CustomParams<ContractConfiguratorParameters>();
 
-                    if (parms != null  && obData != null)
+                    if (parms != null && obData != null)
                     {
                         if (contract.ContractState == Contract.State.Active && parms.DisplayActiveOrbits ||
                             contract.ContractState == Contract.State.Offered && parms.DisplayOfferedOrbits)
@@ -281,8 +287,9 @@ namespace ContractConfigurator.Behaviour
         {
             base.OnLoad(configNode);
 
-            foreach (ConfigNode child in configNode.GetNodes("ORBIT_DETAIL"))
+            for (int i = configNode.GetNodes("ORBIT_DETAIL").Length - 1; i >= 0; i--)
             {
+                ConfigNode child = configNode.GetNodes("ORBIT_DETAIL")[i];
                 // Read all the orbit data
                 OrbitData obData = new OrbitData
                 {
@@ -302,8 +309,9 @@ namespace ContractConfigurator.Behaviour
         {
             base.OnLoad(configNode);
 
-            foreach (OrbitData obData in orbits)
+            for (int i = orbits.Count - 1; i >= 0; i--)
             {
+                OrbitData obData = orbits[i];
                 ConfigNode child = new ConfigNode("ORBIT_DETAIL");
 
                 child.AddValue("type", obData.type);

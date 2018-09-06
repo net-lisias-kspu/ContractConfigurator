@@ -212,8 +212,9 @@ namespace ContractConfigurator
         /// <returns>Whether the generation was successful.</returns>
         public static bool GenerateParameters(ConfiguredContract contract, IContractParameterHost contractParamHost, List<ParameterFactory> paramFactories)
         {
-            foreach (ParameterFactory paramFactory in paramFactories)
+            for (int i = paramFactories.Count - 1; i >= 0; i--)
             {
+                ParameterFactory paramFactory = paramFactories[i];
                 if (paramFactory.enabled)
                 {
                     // Set up the iterator
@@ -231,7 +232,7 @@ namespace ContractConfigurator
                         int oldValue = DataNode.IteratorCurrentIndex;
                         if (paramFactory.iteratorType != null)
                         {
-                            DataNode.IteratorCurrentIndex = current-1;
+                            DataNode.IteratorCurrentIndex = current - 1;
                             ConfigNodeUtil.UpdateNonDeterministicValues(paramFactory.dataNode, paramFactory.dataNode);
                         }
 
@@ -346,8 +347,9 @@ namespace ContractConfigurator
             paramFactory.dataNode = new DataNode(name, parent != null ? parent.dataNode : contractType.dataNode, paramFactory);
 
             // Load child requirements
-            foreach (ConfigNode childNode in ConfigNodeUtil.GetChildNodes(parameterConfig, "REQUIREMENT"))
+            for (int i = ConfigNodeUtil.GetChildNodes(parameterConfig, "REQUIREMENT").Length - 1; i >= 0; i--)
             {
+                ConfigNode childNode = ConfigNodeUtil.GetChildNodes(parameterConfig, "REQUIREMENT")[i];
                 ContractRequirement req = null;
                 valid &= ContractRequirement.GenerateRequirement(childNode, contractType, out req, paramFactory);
                 if (req != null)
@@ -387,8 +389,9 @@ namespace ContractConfigurator
             LoggingUtil.CaptureLog = false;
 
             // Load child nodes
-            foreach (ConfigNode childNode in ConfigNodeUtil.GetChildNodes(parameterConfig, "PARAMETER"))
+            for (int i = ConfigNodeUtil.GetChildNodes(parameterConfig, "PARAMETER").Length - 1; i >= 0; i--)
             {
+                ConfigNode childNode = ConfigNodeUtil.GetChildNodes(parameterConfig, "PARAMETER")[i];
                 ParameterFactory child = null;
                 valid &= ParameterFactory.GenerateParameterFactory(childNode, contractType, out child, paramFactory);
                 if (child != null)

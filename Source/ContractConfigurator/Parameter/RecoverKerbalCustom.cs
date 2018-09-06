@@ -64,10 +64,10 @@ namespace ContractConfigurator.Parameters
 
         protected void CreateDelegates()
         {
-            foreach (Kerbal kerbal in kerbals)
+            for (int i = kerbals.Count - 1; i >= 0; i--)
             {
-                AddParameter(new ParameterDelegate<string>("Recover " + kerbal.name,
-                    unused => recovered[kerbal.name], ParameterDelegateMatchType.FILTER));
+                Kerbal kerbal = kerbals[i];
+                AddParameter(new ParameterDelegate<string>("Recover " + kerbal.name, unused => recovered[kerbal.name], ParameterDelegateMatchType.FILTER));
             }
         }
 
@@ -76,8 +76,9 @@ namespace ContractConfigurator.Parameters
             node.AddValue("count", count);
             node.AddValue("index", index);
 
-            foreach (Kerbal kerbal in kerbals)
+            for (int i = kerbals.Count - 1; i >= 0; i--)
             {
+                Kerbal kerbal = kerbals[i];
                 ConfigNode kerbalNode = new ConfigNode("KERBAL");
                 node.AddNode(kerbalNode);
 
@@ -93,8 +94,9 @@ namespace ContractConfigurator.Parameters
                 count = ConfigNodeUtil.ParseValue<int>(node, "count");
                 index = ConfigNodeUtil.ParseValue<int>(node, "index");
 
-                foreach (ConfigNode kerbalNode in node.GetNodes("KERBAL"))
+                for (int i = node.GetNodes("KERBAL").Length - 1; i >= 0; i--)
                 {
+                    ConfigNode kerbalNode = node.GetNodes("KERBAL")[i];
                     // Legacy support for Contract Configurator 1.8.3
                     if (kerbalNode.HasValue("kerbal"))
                     {
@@ -137,8 +139,9 @@ namespace ContractConfigurator.Parameters
 
         private void OnVesselCreate(Vessel v)
         {
-            foreach (ProtoCrewMember crew in v.GetVesselCrew())
+            for (int i = v.GetVesselCrew().Count - 1; i >= 0; i--)
             {
+                ProtoCrewMember crew = v.GetVesselCrew()[i];
                 if (recovered.ContainsKey(crew.name))
                 {
                     recovered[crew.name] = false;
@@ -171,10 +174,12 @@ namespace ContractConfigurator.Parameters
             {
                 if (v.protoPartSnapshots != null)
                 {
-                    foreach (ProtoPartSnapshot p in v.protoPartSnapshots)
+                    for (int i = v.protoPartSnapshots.Count - 1; i >= 0; i--)
                     {
-                        foreach (ProtoCrewMember pcm in p.protoModuleCrew)
+                        ProtoPartSnapshot p = v.protoPartSnapshots[i];
+                        for (int j = p.protoModuleCrew.Count - 1; j >= 0; j--)
                         {
+                            ProtoCrewMember pcm = p.protoModuleCrew[j];
                             recovered[pcm.name] = true;
                         }
                     }
@@ -182,8 +187,9 @@ namespace ContractConfigurator.Parameters
             }
             else
             {
-                foreach (ProtoCrewMember crew in v.GetVesselCrew())
+                for (int i = v.GetVesselCrew().Count - 1; i >= 0; i--)
                 {
+                    ProtoCrewMember crew = v.GetVesselCrew()[i];
                     if (recovered.ContainsKey(crew.name))
                     {
                         recovered[crew.name] = true;
@@ -226,15 +232,16 @@ namespace ContractConfigurator.Parameters
             if (contract == Root && kerbals.Count == 0)
             {
                 int count = this.count == 0 ? ((ConfiguredContract)contract).GetSpawnedKerbalCount() : this.count;
-                for (int i = 0; i < count; i++)
+                for (int i = count - 1; i >= 0; i--)
                 {
                     Kerbal kerbal = ((ConfiguredContract)contract).GetSpawnedKerbal(index + i);
                     kerbals.Add(kerbal);
                     recovered[kerbal.name] = false;
                 }
 
-                foreach (Kerbal kerbal in kerbals)
+                for (int i = 0, kerbalsCount = kerbals.Count; i < kerbalsCount; i++)
                 {
+                    Kerbal kerbal = kerbals[i];
                     // Instantiate the kerbals if necessary
                     if (kerbal.pcm == null)
                     {

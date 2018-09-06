@@ -63,8 +63,9 @@ namespace ContractConfigurator.Behaviour
             foreach (Part part in target.parts.Where(p => partsToTest.Contains(p.partInfo.title)))
             {
                 bool handled = false;
-                foreach (PartModule pm in part.Modules)
+                for (int i = part.Modules.Count - 1; i >= 0; i--)
                 {
+                    PartModule pm = part.Modules[i];
                     ModuleTestSubject mts = pm as ModuleTestSubject;
                     if (mts != null)
                     {
@@ -124,8 +125,9 @@ namespace ContractConfigurator.Behaviour
 
             foreach (Part part in targetVessel.parts.Where(p => partsToTest.Contains(p.partInfo.title)))
             {
-                foreach (PartModule pm in part.Modules)
+                for (int i = part.Modules.Count - 1; i >= 0; i--)
                 {
+                    PartModule pm = part.Modules[i];
                     ModuleTestSubject mts = pm as ModuleTestSubject;
                     if (mts != null)
                     {

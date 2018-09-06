@@ -31,8 +31,9 @@ namespace ContractConfigurator
 
         public override void OnSave(ConfigNode configNode)
         {
-            foreach (string pmt in partModuleTypes)
+            for (int i = partModuleTypes.Count - 1; i >= 0; i--)
             {
+                string pmt = partModuleTypes[i];
                 configNode.AddValue("partModuleType", pmt);
             }
         }
@@ -44,10 +45,12 @@ namespace ContractConfigurator
 
         public override bool RequirementMet(ConfiguredContract contract)
         {
-            foreach (string partModuleType in partModuleTypes)
+            for (int i = partModuleTypes.Count - 1; i >= 0; i--)
             {
-                foreach (AvailablePart part in PartLoader.LoadedPartsList)
+                string partModuleType = partModuleTypes[i];
+                for (int j = PartLoader.LoadedPartsList.Count - 1; j >= 0; j--)
                 {
+                    AvailablePart part = PartLoader.LoadedPartsList[j];
                     if (part.partPrefab == null || part.partPrefab.Modules == null)
                     {
                         continue;

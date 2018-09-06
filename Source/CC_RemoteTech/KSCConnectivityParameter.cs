@@ -55,8 +55,9 @@ namespace ContractConfigurator.RemoteTech
         {
             LoggingUtil.LogVerbose(this, "Checking VesselMeetsCondition: " + vessel.id);
             var satellite = RTCore.Instance.Satellites[vessel.id];
-            foreach (var v in RTCore.Instance.Network[satellite])
+            for (int i = RTCore.Instance.Network[satellite].Count - 1; i >= 0; i--)
             {
+                var v = RTCore.Instance.Network[satellite][i];
                 LoggingUtil.LogVerbose(this, "    Goal = " + v.Goal.Name);
                 LoggingUtil.LogVerbose(this, "    Links.Count = " + v.Links.Count);
             }

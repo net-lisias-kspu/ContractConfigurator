@@ -24,8 +24,9 @@ namespace ContractConfigurator
         {
             foreach (Part p in parts)
             {
-                foreach (PartModule pm in p.Modules)
+                for (int i = p.Modules.Count - 1; i >= 0; i--)
                 {
+                    PartModule pm = p.Modules[i];
                     if (pm.moduleName == partModule)
                     {
                         yield return p;

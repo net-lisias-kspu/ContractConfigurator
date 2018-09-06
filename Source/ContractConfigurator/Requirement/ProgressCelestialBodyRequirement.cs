@@ -47,8 +47,9 @@ namespace ContractConfigurator
         protected CelestialBodySubtree GetCelestialBodySubtree()
         {
             // Get the progress tree for our celestial body
-            foreach (var node in ProgressTracking.Instance.celestialBodyNodes)
+            for (int i = ProgressTracking.Instance.celestialBodyNodes.Length - 1; i >= 0; i--)
             {
+                var node = ProgressTracking.Instance.celestialBodyNodes[i];
                 if (node.Body == targetBody)
                 {
                     return node;

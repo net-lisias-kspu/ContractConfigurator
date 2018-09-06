@@ -78,8 +78,9 @@ namespace ContractConfigurator.ExpressionParser
             }
 
             List<Resource> resources = new List<Resource>();
-            foreach (PartResource r in p.partPrefab.Resources)
+            for (int i = p.partPrefab.Resources.Count - 1; i >= 0; i--)
             {
+                PartResource r = p.partPrefab.Resources[i];
                 var enumerator = PartResourceLibrary.Instance.resourceDefinitions.GetEnumerator();
                 try
                 {
@@ -97,6 +98,7 @@ namespace ContractConfigurator.ExpressionParser
                     enumerator.Dispose();
                 }
             }
+
             return resources;
         }
 
@@ -107,13 +109,15 @@ namespace ContractConfigurator.ExpressionParser
                 return 0.0f;
             }
 
-            foreach (PartResource pr in p.partPrefab.Resources)
+            for (int i = p.partPrefab.Resources.Count - 1; i >= 0; i--)
             {
+                PartResource pr = p.partPrefab.Resources[i];
                 if (pr.resourceName == r.res.name)
                 {
                     return pr.maxAmount;
                 }
             }
+
             return 0.0f;
         }
 
@@ -124,8 +128,9 @@ namespace ContractConfigurator.ExpressionParser
                 return 0.0f;
             }
 
-            foreach (PartModule pm in p.partPrefab.Modules)
+            for (int i = p.partPrefab.Modules.Count - 1; i >= 0; i--)
             {
+                PartModule pm = p.partPrefab.Modules[i];
                 if (pm.moduleName != null && pm.moduleName.StartsWith("ModuleEngines"))
                 {
                     ModuleEngines enginePM = pm as ModuleEngines;
@@ -143,8 +148,9 @@ namespace ContractConfigurator.ExpressionParser
                 return 0.0f;
             }
 
-            foreach (PartModule pm in p.partPrefab.Modules)
+            for (int i = p.partPrefab.Modules.Count - 1; i >= 0; i--)
             {
+                PartModule pm = p.partPrefab.Modules[i];
                 if (pm.moduleName != null && pm.moduleName.StartsWith("ModuleEngines"))
                 {
                     ModuleEngines enginePM = pm as ModuleEngines;
@@ -162,8 +168,9 @@ namespace ContractConfigurator.ExpressionParser
                 return 0.0f;
             }
 
-            foreach (PartModule pm in p.partPrefab.Modules)
+            for (int i = p.partPrefab.Modules.Count - 1; i >= 0; i--)
             {
+                PartModule pm = p.partPrefab.Modules[i];
                 if (pm.moduleName != null && pm.moduleName.StartsWith("ModuleEngines"))
                 {
                     ModuleEngines enginePM = pm as ModuleEngines;
@@ -181,8 +188,9 @@ namespace ContractConfigurator.ExpressionParser
                 return 0.0f;
             }
 
-            foreach (PartModule pm in p.partPrefab.Modules)
+            for (int i = p.partPrefab.Modules.Count - 1; i >= 0; i--)
             {
+                PartModule pm = p.partPrefab.Modules[i];
                 if (pm.moduleName != null && pm.moduleName.StartsWith("ModuleEngines"))
                 {
                     ModuleEngines enginePM = pm as ModuleEngines;

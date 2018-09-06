@@ -67,8 +67,9 @@ namespace ContractConfigurator.Parameters
         protected void CreateDelegates()
         {
             // Validate specific kerbals
-            foreach (Kerbal kerbal in kerbals)
+            for (int i = kerbals.Count - 1; i >= 0; i--)
             {
+                Kerbal kerbal = kerbals[i];
                 AddParameter(new ParameterDelegate<ProtoCrewMember>(kerbal.name, pcm => true));
             }
         }
@@ -102,8 +103,9 @@ namespace ContractConfigurator.Parameters
                 node.AddValue("vesselIdentifier", vesselIdentifier);
             }
 
-            foreach (Kerbal kerbal in kerbals)
+            for (int i = kerbals.Count - 1; i >= 0; i--)
             {
+                Kerbal kerbal = kerbals[i];
                 ConfigNode kerbalNode = new ConfigNode("KERBAL");
                 node.AddNode(kerbalNode);
 
@@ -119,8 +121,9 @@ namespace ContractConfigurator.Parameters
                 count = ConfigNodeUtil.ParseValue<int>(node, "count");
                 vesselIdentifier = ConfigNodeUtil.ParseValue<VesselIdentifier>(node, "vesselIdentifier", (VesselIdentifier)null);
 
-                foreach (ConfigNode kerbalNode in node.GetNodes("KERBAL"))
+                for (int i = node.GetNodes("KERBAL").Length - 1; i >= 0; i--)
                 {
+                    ConfigNode kerbalNode = node.GetNodes("KERBAL")[i];
                     kerbals.Add(Kerbal.Load(kerbalNode));
                 }
 
@@ -183,8 +186,9 @@ namespace ContractConfigurator.Parameters
 
         private void HandleVessel(Vessel vessel)
         {
-            foreach (ProtoCrewMember pcm in vessel.GetVesselCrew())
+            for (int i = vessel.GetVesselCrew().Count - 1; i >= 0; i--)
             {
+                ProtoCrewMember pcm = vessel.GetVesselCrew()[i];
                 AddCrewToList(pcm);
             }
         }
@@ -224,8 +228,9 @@ namespace ContractConfigurator.Parameters
 
         public IEnumerable<string> KerbalNames()
         {
-            foreach (Kerbal kerbal in kerbals)
+            for (int i = kerbals.Count - 1; i >= 0; i--)
             {
+                Kerbal kerbal = kerbals[i];
                 yield return kerbal.name;
             }
         }
