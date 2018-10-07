@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContractConfigurator", "source\ContractConfigurator\ContractConfigurator.csproj", "{4082B9BC-243E-456D-A9C5-705F4428EB36}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContractConfigurator", "Source\ContractConfigurator\ContractConfigurator.csproj", "{4082B9BC-243E-456D-A9C5-705F4428EB36}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CC_RemoteTech", "source\CC_RemoteTech\CC_RemoteTech.csproj", "{AA91A060-C3CA-4770-8B39-F053E6ADAB5F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CC_RemoteTech", "Source\CC_RemoteTech\CC_RemoteTech.csproj", "{AA91A060-C3CA-4770-8B39-F053E6ADAB5F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KerKonConConExt", "source\KerKonConConExt\KerKonConConExt.csproj", "{C733C176-867C-4B72-B979-1004A1A4F193}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KerKonConConExt", "Source\KerKonConConExt\KerKonConConExt.csproj", "{C733C176-867C-4B72-B979-1004A1A4F193}"
 	ProjectSection(ProjectDependencies) = postProject
 		{4082B9BC-243E-456D-A9C5-705F4428EB36} = {4082B9BC-243E-456D-A9C5-705F4428EB36}
 	EndProjectSection

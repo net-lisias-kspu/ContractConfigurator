@@ -35,5 +35,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyFileVersion(KerKonConConExt.Version.Number)]
 [assembly: AssemblyInformationalVersion(KerKonConConExt.Version.Number)]
 [assembly: KSPAssembly("KerKonConConExt", KerKonConConExt.Version.major, KerKonConConExt.Version.minor)]
+
+//[assembly: KSPAssemblyDependency("KSPe", 2, 0)]
 [assembly: KSPAssemblyDependency("ContractConfigurator", KerKonConConExt.Version.major, KerKonConConExt.Version.minor)]
 [assembly: KSPAssemblyDependency("KerbalKonstructs", 0, 9)]

@@ -42,3 +42,5 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyFileVersion(ContractConfigurator.PluginVersion.Number)]
 [assembly: AssemblyInformationalVersion(ContractConfigurator.PluginVersion.Number)]
 [assembly: KSPAssembly("ContractConfigurator", ContractConfigurator.PluginVersion.major, ContractConfigurator.PluginVersion.minor)]
+
+//[assembly: KSPAssemblyDependency("KSPe", 2, 0)]

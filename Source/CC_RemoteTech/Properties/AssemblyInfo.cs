@@ -36,5 +36,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyFileVersion(ContractConfigurator.RemoteTech.Version.Number)]
 [assembly: AssemblyInformationalVersion(ContractConfigurator.RemoteTech.Version.Number)]
 [assembly: KSPAssembly("CC_RemoteTech", ContractConfigurator.RemoteTech.Version.major, ContractConfigurator.RemoteTech.Version.minor)]
+
+//[assembly: KSPAssemblyDependency("KSPe", 2, 0)]
 [assembly: KSPAssemblyDependency("ContractConfigurator", ContractConfigurator.RemoteTech.Version.major, ContractConfigurator.RemoteTech.Version.minor)]
 [assembly: KSPAssemblyDependency("RemoteTech", 1, 8)]
