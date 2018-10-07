@@ -31,14 +31,20 @@ In your KSP GameData folder, delete any existing `ContractConfigurator` folder. 
 
 
 ### Dependencies
+<!--
+* Hard Dependencies
+	* [KSP API Extensions/L](https://github.com/net-lisias-ksp/KSPAPIExtensions) 2.0 or newer -->
 
-* [RemoteTech](https://forum.kerbalspaceprogram.com/index.php?/topic/139167-144-remotetech-v1812-2018-07-17/) (optional)
-* [Kerbal Konstructs](https://forum.kerbalspaceprogram.com/index.php?/topic/151818-145-131-122-kerbal-konstructs-1454-18082018/) (optional)
+* Optional Dependencies
+	* [RemoteTech](https://forum.kerbalspaceprogram.com/index.php?/topic/139167-144-remotetech-v1812-2018-07-17/)
+	* [Kerbal Konstructs](https://forum.kerbalspaceprogram.com/index.php?/topic/151818-145-131-122-kerbal-konstructs-1454-18082018/)
 
 
-## License:
+### Licensing:
 
 Parts released under MIT license, others under GPLv2. See [here](./LICENSE).
+
+Please note the [NOTICE](./NOTICE) file.
 
 
 ## UPSTREAM
