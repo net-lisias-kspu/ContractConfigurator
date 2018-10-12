@@ -4,11 +4,6 @@
 	"DOWNLOAD":	"https://github.com/net-lisias-kspu/ContractConfigurator/releases",
 	"CHANGE_LOG":	"https://github.com/net-lisias-kspu/ContractConfigurator/master/CHANGE_LOG.md",
 	"CHANGE_LOG_URL":"https://raw.githubusercontent.com/net-lisias-kspu/ContractConfigurator/CHANGES.md",
-	"GITHUB":{
-		"USERNAME":"net-lisias-kspu",
-		"REPOSITORY":"ContractConfigurator",
-		"ALLOW_PRE_RELEASE":false
-		},
 	"VERSION":{
 		"MAJOR":1,
 		"MINOR":25,
@@ -17,8 +12,7 @@
 		},
 	"KSP_VERSION":{
 		"MAJOR":1,
-		"MINOR":4,
-		"PATCH":3
+		"MINOR":4
 		},
 	"KSP_VERSION_MIN":{
 		"MAJOR":1,
@@ -28,6 +22,6 @@
 	"KSP_VERSION_MAX":{
 		"MAJOR":1,
 		"MINOR":4,
-		"PATCH":3
+		"PATCH":99
 		}
 }
