@@ -5,11 +5,11 @@ A config file based solution for creating new contracts for Kerbal Space Program
 
 ## In a Hurry
 
-* [Releases](https://github.com/net-lisias-kspu/ContractConfigurator/tree/Archive)
-* [Source](https://github.com/net-lisias-kspu/ContractConfigurator)
 * [Latest Release](https://github.com/net-lisias-kspu/ContractConfigurator/releases)
+	+ [Binaries](https://github.com/net-lisias-kspu/ContractConfigurator/tree/Archive)
+* [Source](https://github.com/net-lisias-kspu/ContractConfigurator)
 * [Change Log](./CHANGE_LOG.md)
- 
+
 
 ## Description
 
