@@ -422,11 +422,12 @@ namespace ContractConfigurator
                                     copy.SetValue("name", newName);
 
                                     // Set up the data node in the copy
-                                    ConfigNode dataNode = new ConfigNode("DATA");
-                                    copy.AddNode(dataNode);
-                                    dataNode.AddValue("type", dataExpandNode.GetValue("type"));
-                                    dataNode.AddValue(key, val);
-                                    dataNode.AddValue("isLiteral", true);
+                                    // disable once LocalVariableHidesMember
+                                    ConfigNode dataNode0 = new ConfigNode("DATA");
+                                    copy.AddNode(dataNode0);
+                                    dataNode0.AddValue("type", dataExpandNode.GetValue("type"));
+                                    dataNode0.AddValue(key, val);
+                                    dataNode0.AddValue("isLiteral", true);
 
                                     ContractType contractTypeCopy = new ContractType(newName);
                                     contractTypeCopy.Load(copy);
