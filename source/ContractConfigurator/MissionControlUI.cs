@@ -1017,7 +1017,8 @@ namespace ContractConfigurator.Util
             // Setup the available text
             TMPro.TextMeshProUGUI availableText = availableTextObject.GetComponent<TMPro.TextMeshProUGUI>();
             availableText.alignment = TMPro.TextAlignmentOptions.BottomRight;
-            availableText.text = "<color=#" + (groupContainer.availableContracts == 0 ? "CCCCCC" : "8BED8B") + Localizer.Format("#autoLOC_ContractConfigurator_010")/*>Offered: */ + groupContainer.availableContracts + "</color>";
+            string Offered =  Localizer.Format("#autoLOC_ContractConfigurator_010")/*>Offered: */;
+            availableText.text = "<color=#" + (groupContainer.availableContracts == 0 ? "CCCCCC" : "8BED8B") + Offered + groupContainer.availableContracts + "</color>";
             availableText.fontSize = groupContainer.mcListItem.title.fontSize - 3;
 
             // Setup the group text
