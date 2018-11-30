@@ -13,6 +13,7 @@ using KSP.UI;
 using KSP.UI.Screens;
 using Contracts.Templates;
 using FinePrint.Contracts;
+using KSP.Localization;
 
 namespace ContractConfigurator.Util
 {
@@ -294,10 +295,14 @@ namespace ContractConfigurator.Util
                 itemStatusStates[1] = new UIStateImage.ImageState();
                 itemStatusStates[2] = new UIStateImage.ImageState();
                 itemStatusStates[3] = new UIStateImage.ImageState();
-                itemStatusStates[0].name = "Offered";
-                itemStatusStates[1].name = "Active";
-                itemStatusStates[2].name = "Completed";
-                itemStatusStates[3].name = "Unavailable";
+                //itemStatusStates[0].name = "Offered";
+                //itemStatusStates[1].name = "Active";
+                //itemStatusStates[2].name = "Completed";
+                //itemStatusStates[3].name = "Unavailable";
+                itemStatusStates[0].name = Localizer.Format("#autoLOC_ContractConfigurator_002")/*Offered*/;
+                itemStatusStates[1].name = Localizer.Format("#autoLOC_ContractConfigurator_003")/*Active*/;
+                itemStatusStates[2].name = Localizer.Format("#autoLOC_ContractConfigurator_004")/*Completed*/;
+                itemStatusStates[3].name = Localizer.Format("#autoLOC_ContractConfigurator_005")/*Unavailable*/;
                 itemStatusStates[0].sprite = UnityEngine.Sprite.Create(uiAtlas, new Rect(118, 20, 1, 1), new Vector2(0.5f, 0.5f));
                 itemStatusStates[1].sprite = UnityEngine.Sprite.Create(uiAtlas, new Rect(118, 20, 10, 10), new Vector2(5f, 5f));
                 itemStatusStates[2].sprite = UnityEngine.Sprite.Create(uiAtlas, new Rect(118, 10, 10, 10), new Vector2(5f, 5f));
@@ -347,7 +352,8 @@ namespace ContractConfigurator.Util
 
                 // Setup the toggle
                 TMPro.TextMeshProUGUI toggleAllText = toggleAllObj.GetChild("Text").GetComponent<TMPro.TextMeshProUGUI>();
-                toggleAllText.text = "All";
+                //toggleAllText.text = "All";
+                toggleAllText.text = Localizer.Format("#autoLOC_ContractConfigurator_001")/*All*/;
                 Toggle toggleAll = toggleAllObj.GetComponent<Toggle>();
                 toggleAll.onValueChanged.AddListener(new UnityAction<bool>(OnClickAll));
                 sortGroup.GetComponent<ToggleGroup>().RegisterToggle(toggleAll);
@@ -1011,7 +1017,7 @@ namespace ContractConfigurator.Util
             // Setup the available text
             TMPro.TextMeshProUGUI availableText = availableTextObject.GetComponent<TMPro.TextMeshProUGUI>();
             availableText.alignment = TMPro.TextAlignmentOptions.BottomRight;
-            availableText.text = "<color=#" + (groupContainer.availableContracts == 0 ? "CCCCCC" : "8BED8B") + ">Offered: " + groupContainer.availableContracts + "</color>";
+            availableText.text = "<color=#" + (groupContainer.availableContracts == 0 ? "CCCCCC" : "8BED8B") + Localizer.Format("#autoLOC_ContractConfigurator_010")/*>Offered: */ + groupContainer.availableContracts + "</color>";
             availableText.fontSize = groupContainer.mcListItem.title.fontSize - 3;
 
             // Setup the group text
@@ -1315,10 +1321,10 @@ namespace ContractConfigurator.Util
             int exceptionalMax = Math.Min(ContractConfigurator.ContractLimit(Contract.ContractPrestige.Exceptional), maxActive);
 
             string output = "";
-            output += string.Format("<b><color=#f4ee21><sprite=\"CurrencySpriteAsset\" name=\"Reputation\" tint=1>\t\t</color><color=#DB8310>Trivial Contracts:\t\t</color></b>" + (trivialCount >= trivialMax ? "<color=#f97306>{0}  [Max: {1}]</color>\n" : "{0}  [Max: {1}]\n"), trivialCount, trivialMax);
-            output += string.Format("<b><color=#f4ee21><sprite=\"CurrencySpriteAsset\" name=\"Reputation\" tint=1><sprite=\"CurrencySpriteAsset\" name=\"Reputation\" tint=1>\t\t</color><color=#DB8310>Significant Contracts:\t</color></b>" + (significantCount >= significantMax ? "<color=#f97306>{0}  [Max: {1}]</color>\n" : "{0}  [Max: {1}]\n"), significantCount, significantMax);
-            output += string.Format("<b><color=#f4ee21><sprite=\"CurrencySpriteAsset\" name=\"Reputation\" tint=1><sprite=\"CurrencySpriteAsset\" name=\"Reputation\" tint=1><sprite=\"CurrencySpriteAsset\" name=\"Reputation\" tint=1>\t</color><color=#DB8310>Exceptional Contracts:\t</color></b>" + (exceptionalCount >= exceptionalMax ? "<color=#f97306>{0}  [Max: {1}]</color>\n" : "{0}  [Max: {1}]\n"), exceptionalCount, exceptionalMax);
-            output += string.Format("<b>\t\t<color=#DB8310>All Active Contracts:\t\t</color></b>" + (maxActive == int.MaxValue ? "{0}" : activeCount >= maxActive ? "<color=#f97306>{0}  [Max: {1}]</color>" : "{0}  [Max: {1}]"), activeCount, maxActive);
+            output += string.Format("<b><color=#f4ee21><sprite=\"CurrencySpriteAsset\" name=\"Reputation\" tint=1>\t\t</color></b>" + Localizer.Format ("#autoLOC_ContractConfigurator_006")/*<color=#DB8310>Trivial Contracts:\t\t</color>*/ + (trivialCount >= trivialMax ? "<color=#f97306>{0}  [Max: {1}]</color>\n" : "{0}  [Max: {1}]\n"), trivialCount, trivialMax);
+            output += string.Format("<b><color=#f4ee21><sprite=\"CurrencySpriteAsset\" name=\"Reputation\" tint=1><sprite=\"CurrencySpriteAsset\" name=\"Reputation\" tint=1>\t\t</color></b>" + Localizer.Format("#autoLOC_ContractConfigurator_007")/*<color=#DB8310>Significant Contracts:\t\t</color>*/ + (significantCount >= significantMax ? "<color=#f97306>{0}  [Max: {1}]</color>\n" : "{0}  [Max: {1}]\n"), significantCount, significantMax);
+            output += string.Format("<b><color=#f4ee21><sprite=\"CurrencySpriteAsset\" name=\"Reputation\" tint=1><sprite=\"CurrencySpriteAsset\" name=\"Reputation\" tint=1><sprite=\"CurrencySpriteAsset\" name=\"Reputation\" tint=1>\t</color></b>" + Localizer.Format ("#autoLOC_ContractConfigurator_008")/*<color=#DB8310>Exceptional Contracts:\t\t</color>*/ + (exceptionalCount >= exceptionalMax ? "<color=#f97306>{0}  [Max: {1}]</color>\n" : "{0}  [Max: {1}]\n"), exceptionalCount, exceptionalMax);
+            output += string.Format("<b>\t\t</b>" + Localizer.Format ("#autoLOC_ContractConfigurator_009")/*<color=#DB8310>All Active Contracts:\t\t</color>*/ + (maxActive == int.MaxValue ? "{0}" : activeCount >= maxActive ? "<color=#f97306>{0}  [Max: {1}]</color>" : "{0}  [Max: {1}]"), activeCount, maxActive);
             MissionControl.Instance.textMCStats.text = output;
         }
 

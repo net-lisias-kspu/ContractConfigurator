@@ -10,6 +10,7 @@ using UnityEngine.UI;
 using KSP.UI;
 using KSP.UI.Screens;
 using KSP.UI.TooltipTypes;
+using KSP.Localization;
 
 namespace ContractConfigurator.Util
 {
@@ -87,10 +88,10 @@ namespace ContractConfigurator.Util
             offeredOrbitButton.GetComponent<RectTransform>().SetLocalPositionZ(750);
 
             // Set up the tool-tips
-            activeWaypointButton.GetComponent<TooltipController_Text>().textString = "Toggle Active Waypoints";
-            offeredWaypointButton.GetComponent<TooltipController_Text>().textString = "Toggle Offered Waypoints";
-            activeOrbitButton.GetComponent<TooltipController_Text>().textString = "Toggle Active Orbits";
-            offeredOrbitButton.GetComponent<TooltipController_Text>().textString = "Toggle Offered Orbits";
+            activeWaypointButton.GetComponent<TooltipController_Text>().textString = Localizer.Format("#autoLOC_ContractConfigurator_011")/*Toggle Active Waypoints*/;
+            offeredWaypointButton.GetComponent<TooltipController_Text>().textString = Localizer.Format("#autoLOC_ContractConfigurator_012")/*Toggle Offered Waypoints*/;
+            activeOrbitButton.GetComponent<TooltipController_Text>().textString = Localizer.Format("#autoLOC_ContractConfigurator_013")/*Toggle Active Orbits*/;
+            offeredOrbitButton.GetComponent<TooltipController_Text>().textString = Localizer.Format("#autoLOC_ContractConfigurator_014")/*Toggle Offered Orbits*/;
 
             // Setup the button
             TrackingStationObjectButton activeWaypointTSButton = activeWaypointButton.GetComponent<TrackingStationObjectButton>();
