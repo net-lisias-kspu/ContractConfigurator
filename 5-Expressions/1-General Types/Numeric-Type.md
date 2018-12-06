@@ -12,6 +12,15 @@ The numeric data types include types such as `int`, `short`, `float` and `double
 | [`numeric`](Numeric-Type) `Log(`[`numeric`](Numeric-Type)` a, `[`numeric`](Numeric-Type)` b)` | Returns the logarithm of a in base b. |
 | [`numeric`](Numeric-Type) `Round(`[`numeric`](Numeric-Type)` value)` | Rounds the number to the nearest full integer value (uses bankers rounding). |
 | [`numeric`](Numeric-Type) `Round(`[`numeric`](Numeric-Type)` value, `[`numeric`](Numeric-Type)` precision)` | Rounds the number to the nearest multiple of `precision`.  For example `Round(113.0, 5.0)` would return `115.0`. |
+| [`numeric`](Numeric-Type)` Sin(`[`numeric`](Numeric-Type)` a)` | Calculates the sine of the angle specified in radians. |
+| [`numeric`](Numeric-Type)` Cos(`[`numeric`](Numeric-Type)` a)` | Calculates the cosine of the angle specified in radians. |
+| [`numeric`](Numeric-Type)` Tan(`[`numeric`](Numeric-Type)` a)` | Calculates the tangent of the angle specified in radians. |
+| [`numeric`](Numeric-Type)` Asin(`[`numeric`](Numeric-Type)` a)` | Calculates the arcsine of the angle specified in radians. |
+| [`numeric`](Numeric-Type)` Acos(`[`numeric`](Numeric-Type)` a)` | Calculates the arccosine of the angle specified in radians. |
+| [`numeric`](Numeric-Type)` Atan(`[`numeric`](Numeric-Type)` a)` | Calculates the arctangent of the angle specified in radians. |
+| [`numeric`](Numeric-Type)` Sinh(`[`numeric`](Numeric-Type)` a)` | Calculates the hyperbolic sine of the angle specified in radians. |
+| [`numeric`](Numeric-Type)` Cosh(`[`numeric`](Numeric-Type)` a)` | Calculates the hyperbolic cosine of the angle specified in radians. |
+| [`numeric`](Numeric-Type)` Tanh(`[`numeric`](Numeric-Type)` a)` | Calculates the hyperbolic tangent of the angle specified in radians. |
 
 **Global Functions**
 
