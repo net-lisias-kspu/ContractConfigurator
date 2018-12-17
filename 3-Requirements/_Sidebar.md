@@ -47,6 +47,7 @@
     * [[AtLeast|AtLeast-Requirement]]
     * [[AtMost|AtMost-Requirement]]
 * Miscellaneous Requirements
+    * [[Expansion|Expansion-Requirement]]
     * [[Expression|Expression-Requirement]]
     * [[VesselValid|VesselValid-Requirement]]
 
