@@ -18,3 +18,4 @@ The Biome class represents a biome for a planet or moon.
 | :--- | :--- |
 | [`List`](List-Type)`<`[`Biome`](Biome-Type)`> KSCBiomes()` | A list containing all the KSC biomes. |
 | [`List`](List-Type)`<`[`Biome`](Biome-Type)`> MainKSCBiomes()` | A list containing all the "main" KSC biomes. |
+| [`List`](List-Type)`<`[`Biome`](Biome-Type)`> OtherKerbinBiomes()` | A list containing other special Kerbin biomes (such as the Island Airfield, Woomerang, etc.). |
