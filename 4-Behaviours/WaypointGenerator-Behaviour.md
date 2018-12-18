@@ -385,5 +385,75 @@ BEHAVIOUR
         //
         pqsOffset = 447.307865750742, 5.14341771520321E-05, 24.9700656982985
     }
+
+    // Use this to generate a waypoint with fixed coordinates, based on a
+    // LaunchSite object.
+    LAUNCH_SITE
+    {
+        // The name of the waypoint - displayed on the marker
+        //
+        // Type:      <a href="String-Type">string</a>
+        // Required:  No (multiples allowed)
+        // Default:   A random waypoint name
+        //
+        name = Monolith
+
+        // The parameter that must be completed before the waypoint becomes
+        // visible.  If not specified, the waypoint is always visible.  More
+        // than one can be specified when there are multiple waypoints
+        // generated. 
+        //
+        // Type:      <a href="String-Type">string</a>
+        // Required:  No (multiples allowed)
+        //
+        parameter = SomeParameterName
+
+        // Specifies that the given waypoint should be secret.  If this flag is
+        // used, then the icon is not required.
+        //
+        // Type:      <a href="Boolean-Type">bool</a>
+        // Required:  No (defaulted)
+        // Default:   false
+        //
+        hidden = true
+
+        // Use this to specify that the waypoint is part of a cluster.  Waypoints
+        // that are clustered get a roman numeral appended to the name (based on the index).
+        //
+        // Type:      <a href="Boolean-Type">bool</a>
+        // Required:  No (defaulted)
+        // Default:   false
+        //
+        clustered = false
+
+        // Body for the waypoint - defaulted from the contract if not
+        // supplied.
+        //
+        // Type:      <a href="CelestialBody-Type">CelestialBody</a>
+        // Required:  No (defaulted)
+        //
+        targetBody = Kerbin
+
+        // The icon to use when displaying the waypoint.  If the path
+        // is not specified, the Squad/Contracts/Icons directory is
+        // assumed.  Otherwise, the path must be from GameData/
+        //
+        // Type:      <a href="String-Type">string</a>
+        // Required:  Yes
+        //
+        icon = thermometer
+
+        // The Launch Site identifier.
+        //
+        // Type:      <a href="String-Type">string</a>
+        // Required:  Yes
+        // Values (mods may add others):
+        //     Desert_Airfield
+        //     Desert_Launch_Site
+        //     Island_Airfield
+        //     Woomerang_Launch_Site
+        //
+        launchSite = KSC
+    }
 }
 </pre>

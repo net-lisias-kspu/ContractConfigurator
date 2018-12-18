@@ -10,6 +10,7 @@
     * [[CelestialBody|CelestialBody-Type]]
     * [[ExperienceTrait|ExperienceTrait-Type]]
     * [[Kerbal|Kerbal-Type]]
+    * [[LaunchSite|LaunchSite-Type]]
     * [[Location|Location-Type]]
     * [[Orbit|Orbit-Type]]
     * [[PQSCity|PQSCity-Type]]
