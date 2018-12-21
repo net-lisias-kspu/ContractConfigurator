@@ -118,6 +118,38 @@ PARAMETER
     //
     maxAcceleration = 5.0
 
+    // Minimum delta-vee (actual based on current atmospheric conditions).
+    //
+    // Type:      <a href="Numeric-Type">double</a>
+    // Required:  No (defaulted)
+    // Default:   0.0
+    //
+    minDeltaVeeActual = 1000
+
+    // Maximum delta-vee (actual based on current atmospheric conditions).
+    //
+    // Type:      <a href="Numeric-Type">double</a>
+    // Required:  No (defaulted)
+    // Default:   double.MaxValue
+    //
+    maxDeltaVeeActual = 5000
+
+    // Minimum vacuum delta-vee.
+    //
+    // Type:      <a href="Numeric-Type">double</a>
+    // Required:  No (defaulted)
+    // Default:   0.0
+    //
+    minDeltaVeeVacuum = 1000
+
+    // Maximum vacuum delta-vee.
+    //
+    // Type:      <a href="Numeric-Type">double</a>
+    // Required:  No (defaulted)
+    // Default:   double.MaxValue
+    //
+    maxDeltaVeeVacuum = 5000
+
     // Set to true to fail the contract if the vessel doesn't meet the
     // conditions.  Take care that the contract doesn't get written in such a
     // way that the player's other vessels cause the contract to faile (for
