@@ -9,3 +9,4 @@ GameData/*/README.md
 GameData/*/CHANGE_LOG.md
 GameData/*/CHANGES.md
 source/**/Properties/Version.cs
+Version.cs
