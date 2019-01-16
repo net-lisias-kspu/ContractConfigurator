@@ -71,11 +71,11 @@ namespace ContractConfigurator
         public string config { get; private set; }
         public string log { get; private set; }
         public DataNode dataNode { get; private set; }
-        public Version minVersion
+        public System.Version minVersion
         {
             get
             {
-                return string.IsNullOrEmpty(minVersionStr) ? new Version(1, 0) : Util.Version.ParseVersion(minVersionStr);
+                return string.IsNullOrEmpty(minVersionStr) ? new System.Version(1, 0) : Util.Version.ParseVersion(minVersionStr);
             }
         }
 

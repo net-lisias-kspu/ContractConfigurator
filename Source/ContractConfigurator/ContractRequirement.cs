@@ -45,7 +45,7 @@ namespace ContractConfigurator
         public string config { get; private set; }
         public string log { get; private set; }
         public DataNode dataNode { get; private set; }
-        public Version minVersion
+        public System.Version minVersion
         {
             get
             {
